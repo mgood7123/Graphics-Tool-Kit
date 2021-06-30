@@ -5,9 +5,6 @@
 #ifndef GRAPHICAL_TOOL_KIT_APPINSTANCE_H
 #define GRAPHICAL_TOOL_KIT_APPINSTANCE_H
 
-#include <RenderDevice.h>
-#include <RefCntAutoPtr.hpp>
-#include <SwapChain.h>
 #include <AppInstanceAndroidBase.h>
 #include <DiligentAppBase.h>
 

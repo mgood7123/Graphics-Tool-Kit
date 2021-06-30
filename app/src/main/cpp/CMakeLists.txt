@@ -9,45 +9,27 @@ cmake_minimum_required(VERSION 3.10.2)
 
 project("kit")
 
-add_subdirectory(DiligentEngine/DiligentCore)
-add_subdirectory(DiligentEngine/DiligentFX)
-add_subdirectory(DiligentEngine/DiligentTools)
+include_directories(DiligentEngine)
 
-include_directories(android)
-include_directories(helpers)
-include_directories(DiligentEngine/DiligentCore/Graphics/GraphicsEngine/include)
+add_subdirectory(AndroidBase)
+include_directories(AndroidBase)
+
+
+add_subdirectory(DiligentHelpers)
+include_directories(DiligentHelpers)
+
+add_subdirectory(Objects)
+include_directories(Objects)
 
 add_library(
         native-lib SHARED
-
-        # android
-        android/native-lib.cpp
-        android/AppInstanceAndroidBase.cpp
-        android/MotionEventSerializer.cpp
-        android/JVM_MANAGER.cpp
-
-        # helpers
-        helpers/DiligentAppBase.cpp
-
-        # user application
+        native-lib.cpp
         AppInstance.cpp
 )
 
-target_compile_options(native-lib PRIVATE -DUNICODE -DENGINE_DLL)
-
-target_link_libraries(native-lib
-        android
-        log
-        GLESv3
-        Diligent-AssetLoader
-        Diligent-BuildSettings
-        Diligent-Common
-        Diligent-GraphicsAccessories
-        Diligent-GraphicsEngineOpenGL-shared
-        Diligent-GraphicsEngineVk-shared
-        Diligent-GraphicsTools
-        Diligent-Imgui
-        Diligent-ShaderTools
-        Diligent-TargetPlatform
-        Diligent-TextureLoader
+target_link_libraries(
+        native-lib
+        AndroidBase
+        DiligentHelpers
+        Objects
 )

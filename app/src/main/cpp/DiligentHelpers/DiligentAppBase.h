@@ -6,11 +6,13 @@
 #define GRAPHICAL_TOOL_KIT_DILIGENTAPPBASE_H
 
 
-#include <RenderDevice.h>
-#include <RefCntAutoPtr.hpp>
-#include <SwapChain.h>
-#include "../DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/include/pch.h" // EGL
-#include "../DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/include/RenderDeviceGLImpl.hpp"
+#include <DiligentCore/Graphics/GraphicsEngine/interface/DeviceContext.h>
+#include <DiligentCore/Graphics/GraphicsEngine/interface/EngineFactory.h>
+#include <DiligentCore/Graphics/GraphicsEngine/interface/RenderDevice.h>
+#include <DiligentCore/Graphics/GraphicsEngine/interface/SwapChain.h>
+#include <DiligentCore/Graphics/GraphicsTools/interface/ScreenCapture.hpp>
+#include <DiligentCore/Primitives/interface/Errors.hpp>
+#include <DiligentTools/TextureLoader/interface/Image.h>
 
 class DiligentAppBase
 {
