@@ -21,4 +21,5 @@ target_link_libraries(AndroidBase
         android
         log
         GLESv3
+        DiligentAnyOpt
 )

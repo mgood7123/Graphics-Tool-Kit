@@ -7,21 +7,26 @@ cmake_minimum_required(VERSION 3.10.2)
 
 # Declares and names the project.
 
-project("DiligentHelper")
+project("DiligentHelpers")
 
 add_subdirectory(../DiligentEngine/DiligentCore ${CMAKE_CURRENT_BINARY_DIR}/DiligentCore)
 add_subdirectory(../DiligentEngine/DiligentFX ${CMAKE_CURRENT_BINARY_DIR}/DiligentFX)
 add_subdirectory(../DiligentEngine/DiligentTools ${CMAKE_CURRENT_BINARY_DIR}/DiligentTools)
 
+add_library(DiligentAnyOpt AnyOpt.cpp)
+target_compile_options(DiligentAnyOpt PRIVATE -DUNICODE -DENGINE_DLL)
+target_link_libraries(DiligentAnyOpt Diligent-Common)
+
 add_library(
-        DiligentHelper SHARED
+        DiligentHelpers SHARED
 
         DiligentAppBase.cpp
 )
 
-target_compile_options(DiligentHelper PRIVATE -DUNICODE -DENGINE_DLL)
+target_compile_options(DiligentHelpers PRIVATE -DUNICODE -DENGINE_DLL)
 
-target_link_libraries(DiligentHelper
+target_link_libraries(DiligentHelpers
+        DiligentAnyOpt
         Diligent-AssetLoader
         Diligent-BuildSettings
         Diligent-Common

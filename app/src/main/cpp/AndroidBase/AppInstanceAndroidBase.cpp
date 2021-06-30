@@ -3,15 +3,8 @@
 //
 
 #include <DiligentCore/Primitives/interface/Errors.hpp>
+
 #include "AppInstanceAndroidBase.h"
-
-AppInstanceAndroidBase::AppInstanceAndroidBase ()
-{
-}
-
-AppInstanceAndroidBase::~AppInstanceAndroidBase ()
-{
-}
 
 void AppInstanceAndroidBase::onEglSetup (JNIEnv * jenv, jobject classInstance, jstring name, jstring signature)
 {

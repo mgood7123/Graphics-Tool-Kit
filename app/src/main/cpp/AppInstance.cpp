@@ -3,10 +3,12 @@
 //
 
 #include "AppInstance.h"
-#include <Triangle>
+#include <Triangle.h>
 
 AppInstance::AppInstance ()
 {
+    objectBase.enableDebug();
+    objectBase = Triangle();
 }
 
 AppInstance::~AppInstance ()
@@ -27,7 +29,7 @@ void AppInstance::surfaceChanged (int w, int h)
     else
     {
         attachToContext(w, h);
-        Triangle::create(this);
+        objectBase.get<Triangle*>()->create(this);
     }
 }
 
@@ -38,7 +40,9 @@ bool AppInstance::onTouchEvent (JNIEnv * jenv, jfloatArray motionEventData)
 
 void AppInstance::onDraw ()
 {
-    Triangle::draw(this);
+    objectBase.disableDebug();
+    objectBase.get<Triangle*>()->draw(this);
+    objectBase.enableDebug();
     swapBuffers();
 }
 

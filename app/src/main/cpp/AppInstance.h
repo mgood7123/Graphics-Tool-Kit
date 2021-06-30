@@ -6,10 +6,14 @@
 #define GRAPHICAL_TOOL_KIT_APPINSTANCE_H
 
 #include <AppInstanceAndroidBase.h>
-#include <DiligentAppBase.h>
+#include <ObjectBase.h>
+#include <SDK/include/AnyOpt.h>
+
 
 class AppInstance : public AppInstanceAndroidBase, public DiligentAppBase
 {
+    AnyOpt objectBase;
+
 public:
     AppInstance ();
     ~AppInstance ();

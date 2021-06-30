@@ -25,10 +25,8 @@ public:
     MousePos previous;
     MousePos current;
     
-    AppInstanceAndroidBase();
-    
     // delete called on non-final that has virtual functions but non-virtual destructor
-    virtual ~AppInstanceAndroidBase();
+    virtual ~AppInstanceAndroidBase() = default;
     
     virtual void onEglSetup(JNIEnv *jenv, jobject classInstance, jstring name, jstring signature);
     virtual bool onTouchEvent(JNIEnv *jenv, jfloatArray motionEventData);

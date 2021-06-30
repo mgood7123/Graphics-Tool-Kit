@@ -9,14 +9,18 @@ cmake_minimum_required(VERSION 3.10.2)
 
 project("kit")
 
+
 include_directories(DiligentEngine)
+
+include_directories(WINAPI_KERNEL)
+
+add_subdirectory(DiligentHelpers)
+include_directories(DiligentHelpers)
 
 add_subdirectory(AndroidBase)
 include_directories(AndroidBase)
 
-
-add_subdirectory(DiligentHelpers)
-include_directories(DiligentHelpers)
+add_subdirectory(WINAPI_KERNEL)
 
 add_subdirectory(Objects)
 include_directories(Objects)
@@ -32,4 +36,5 @@ target_link_libraries(
         AndroidBase
         DiligentHelpers
         Objects
+        WINAPI::KERNEL
 )

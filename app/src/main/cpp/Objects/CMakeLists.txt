@@ -11,7 +11,7 @@ project("Objects")
 
 add_library(
         Objects SHARED
-
+        ObjectBase.cpp
         Triangle.cpp
 )
 

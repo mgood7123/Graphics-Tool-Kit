@@ -1,5 +1,5 @@
 #include <string>
-#include <AppInstance.h>
+#include "AppInstance.h"
 
 #define APP(jlong) reinterpret_cast<AppInstance*>(jlong)
 #define JLONG(ptr) reinterpret_cast<jlong>(ptr)
