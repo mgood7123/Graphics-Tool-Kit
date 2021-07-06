@@ -11,8 +11,9 @@
 class ObjectBase
 {
 public:
-    virtual void create(DiligentAppBase * base);
-    virtual void draw(DiligentAppBase * base);
+    DiligentAppBase * diligentAppBase;
+    virtual void create();
+    virtual void draw();
     // delete called on non-final that has virtual functions but non-virtual destructor
     virtual ~ObjectBase() = default;
 };

@@ -13,8 +13,8 @@ class Triangle : public ObjectBase
 public:
     static const char * triangle_VS;
     static const char * triangle_PS;
-    void create(DiligentAppBase * base) override;
-    void draw(DiligentAppBase * base) override;
+    void create() override;
+    void draw() override;
 };
 
 

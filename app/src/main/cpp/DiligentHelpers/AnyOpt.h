@@ -448,10 +448,12 @@ public:
     
     void enableDebug() {
         isDebug = true;
+        if (data != nullptr) data->enableDebug();
     }
     
     void disableDebug() {
         isDebug = false;
+        if (data != nullptr) data->disableDebug();
     }
     
     bool has_value() const {

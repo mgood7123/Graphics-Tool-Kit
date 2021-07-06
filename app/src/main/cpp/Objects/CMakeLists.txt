@@ -13,6 +13,7 @@ add_library(
         Objects SHARED
         ObjectBase.cpp
         Triangle.cpp
+        Cube.cpp
 )
 
 target_link_libraries(Objects)

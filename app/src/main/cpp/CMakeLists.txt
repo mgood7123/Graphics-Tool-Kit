@@ -10,7 +10,10 @@ cmake_minimum_required(VERSION 3.10.2)
 project("kit")
 
 
-include_directories(DiligentEngine)
+include_directories(
+        DiligentEngine
+        DiligentEngine/DiligentCore/Primitives/interface
+)
 
 include_directories(WINAPI_KERNEL)
 

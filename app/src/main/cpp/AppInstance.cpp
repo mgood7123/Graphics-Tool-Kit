@@ -4,11 +4,14 @@
 
 #include "AppInstance.h"
 #include <Triangle.h>
+#include <Cube.h>
 
 AppInstance::AppInstance ()
 {
     objectBase.enableDebug();
-    objectBase = Triangle();
+    Cube cube;
+    cube.diligentAppBase = this;
+    objectBase = std::move(cube);
 }
 
 AppInstance::~AppInstance ()
@@ -29,7 +32,7 @@ void AppInstance::surfaceChanged (int w, int h)
     else
     {
         attachToContext(w, h);
-        objectBase.get<Triangle*>()->create(this);
+        objectBase.get<ObjectBase*>()->create();
     }
 }
 
@@ -41,7 +44,7 @@ bool AppInstance::onTouchEvent (JNIEnv * jenv, jfloatArray motionEventData)
 void AppInstance::onDraw ()
 {
     objectBase.disableDebug();
-    objectBase.get<Triangle*>()->draw(this);
+    objectBase.get<ObjectBase*>()->draw();
     objectBase.enableDebug();
     swapBuffers();
 }

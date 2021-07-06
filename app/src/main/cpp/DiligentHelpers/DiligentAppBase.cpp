@@ -18,7 +18,8 @@ void DiligentAppBase::attachToContext (int32_t w, int32_t h)
 {
     Diligent::EngineGLCreateInfo EngineCI;
     
-    Diligent::GetEngineFactoryOpenGL()
+    m_pEngineFactory = Diligent::GetEngineFactoryOpenGL();
+    m_pEngineFactory.Cast<Diligent::IEngineFactoryOpenGL>(Diligent::IID_EngineFactoryOpenGL)
             ->CreateSwapChainGLAndAttachToActiveGLContext(
                     EngineCI, &m_pDevice, &m_pImmediateContext,
                     m_pSCDesc, &m_pSwapChain, w, h

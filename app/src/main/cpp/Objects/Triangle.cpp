@@ -43,7 +43,7 @@ void main(in  PSInput  PSIn,
 }
 )";
 
-void Triangle::create(DiligentAppBase * base) {
+void Triangle::create() {
     
     // create a pipeline
     // Pipeline state object encompasses configuration of all GPU stages
@@ -60,9 +60,9 @@ void Triangle::create(DiligentAppBase * base) {
     // This tutorial will render to a single render target
     PSOCreateInfo.GraphicsPipeline.NumRenderTargets             = 1;
     // Set render target format which is the format of the swap chain's color buffer
-    PSOCreateInfo.GraphicsPipeline.RTVFormats[0]                = base->m_pSwapChain->GetDesc().ColorBufferFormat;
+    PSOCreateInfo.GraphicsPipeline.RTVFormats[0]                = diligentAppBase->m_pSwapChain->GetDesc().ColorBufferFormat;
     // Use the depth buffer format from the swap chain
-    PSOCreateInfo.GraphicsPipeline.DSVFormat                    = base->m_pSwapChain->GetDesc().DepthBufferFormat;
+    PSOCreateInfo.GraphicsPipeline.DSVFormat                    = diligentAppBase->m_pSwapChain->GetDesc().DepthBufferFormat;
     // Primitive topology defines what kind of primitives will be rendered by this pipeline state
     PSOCreateInfo.GraphicsPipeline.PrimitiveTopology            = Diligent::PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
     // No back face culling for this tutorial
@@ -84,7 +84,7 @@ void Triangle::create(DiligentAppBase * base) {
         ShaderCI.EntryPoint      = "main";
         ShaderCI.Desc.Name       = "Triangle vertex shader";
         ShaderCI.Source          = triangle_VS;
-        base->m_pDevice->CreateShader(ShaderCI, &pVS);
+        diligentAppBase->m_pDevice->CreateShader(ShaderCI, &pVS);
     }
     
     // Create a pixel shader
@@ -94,34 +94,34 @@ void Triangle::create(DiligentAppBase * base) {
         ShaderCI.EntryPoint      = "main";
         ShaderCI.Desc.Name       = "Triangle pixel shader";
         ShaderCI.Source          = triangle_PS;
-        base->m_pDevice->CreateShader(ShaderCI, &pPS);
+        diligentAppBase->m_pDevice->CreateShader(ShaderCI, &pPS);
     }
     
     // Finally, create the pipeline state
     PSOCreateInfo.pVS = pVS;
     PSOCreateInfo.pPS = pPS;
-    base->m_pDevice->CreateGraphicsPipelineState(PSOCreateInfo, &base->m_pPSO);
+    diligentAppBase->m_pDevice->CreateGraphicsPipelineState(PSOCreateInfo, &diligentAppBase->m_pPSO);
 }
 
-void Triangle::draw (DiligentAppBase * base)
+void Triangle::draw ()
 {
     // Clear the back buffer
     const float ClearColor[] = {0.350f, 0.350f, 0.350f, 1.0f};
     // Let the engine perform required state transitions
     
-    auto* pRTV = base->m_pSwapChain->GetCurrentBackBufferRTV();
-    auto* pDSV = base->m_pSwapChain->GetDepthBufferDSV();
-    base->m_pImmediateContext->SetRenderTargets(1, &pRTV, pDSV, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
-    base->m_pImmediateContext->ClearRenderTarget(pRTV, ClearColor, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
-    base->m_pImmediateContext->ClearDepthStencil(pDSV, Diligent::CLEAR_DEPTH_FLAG, 1.f, 0, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
+    auto* pRTV = diligentAppBase->m_pSwapChain->GetCurrentBackBufferRTV();
+    auto* pDSV = diligentAppBase->m_pSwapChain->GetDepthBufferDSV();
+    diligentAppBase->m_pImmediateContext->SetRenderTargets(1, &pRTV, pDSV, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
+    diligentAppBase->m_pImmediateContext->ClearRenderTarget(pRTV, ClearColor, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
+    diligentAppBase->m_pImmediateContext->ClearDepthStencil(pDSV, Diligent::CLEAR_DEPTH_FLAG, 1.f, 0, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
     
     // Set the pipeline state in the immediate context
-    base->m_pImmediateContext->SetPipelineState(base->m_pPSO);
+    diligentAppBase->m_pImmediateContext->SetPipelineState(diligentAppBase->m_pPSO);
     
     // Typically we should now call CommitShaderResources(), however shaders in this example don't
     // use any resources.
     
     Diligent::DrawAttribs drawAttrs;
     drawAttrs.NumVertices = 3; // We will render 3 vertices
-    base->m_pImmediateContext->Draw(drawAttrs);
+    diligentAppBase->m_pImmediateContext->Draw(drawAttrs);
 }

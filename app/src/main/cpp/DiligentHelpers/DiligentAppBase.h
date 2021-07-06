@@ -13,17 +13,29 @@
 #include <DiligentCore/Graphics/GraphicsTools/interface/ScreenCapture.hpp>
 #include <DiligentCore/Primitives/interface/Errors.hpp>
 #include <DiligentTools/TextureLoader/interface/Image.h>
+#include <DiligentTools/Imgui/interface/ImGuiImplDiligent.hpp>
+#include <DiligentSamples/SampleBase/include/InputController.hpp>
 
 class DiligentAppBase
 {
 public:
-    Diligent::SwapChainDesc                           m_pSCDesc;
-    Diligent::RefCntAutoPtr<Diligent::IRenderDevice>  m_pDevice;
-    Diligent::RefCntAutoPtr<Diligent::IDeviceContext> m_pImmediateContext;
-    Diligent::RefCntAutoPtr<Diligent::ISwapChain>     m_pSwapChain;
-    Diligent::RefCntAutoPtr<Diligent::IPipelineState> m_pPSO;
-    Diligent::RENDER_DEVICE_TYPE                      m_DeviceType;
-
+    Diligent::SwapChainDesc                                        m_pSCDesc;
+    Diligent::RefCntAutoPtr<Diligent::IPipelineState>              m_pPSO;
+    Diligent::RENDER_DEVICE_TYPE                                   m_DeviceType;
+    Diligent::RefCntAutoPtr<Diligent::IEngineFactory>              m_pEngineFactory;
+    Diligent::RefCntAutoPtr<Diligent::IRenderDevice>               m_pDevice;
+    Diligent::RefCntAutoPtr<Diligent::IDeviceContext>              m_pImmediateContext;
+    std::vector<Diligent::RefCntAutoPtr<Diligent::IDeviceContext>> m_pDeferredContexts;
+    Diligent::RefCntAutoPtr<Diligent::ISwapChain>                  m_pSwapChain;
+    Diligent::ImGuiImplDiligent *                                  m_pImGui = nullptr;
+    
+    float  m_fSmoothFPS                   = 0;
+    double m_LastFPSTime                  = 0;
+    Diligent::Uint32 m_NumFramesRendered  = 0;
+    Diligent::Uint32 m_CurrentFrameNumber = 0;
+    
+    Diligent::InputController m_InputController;
+    
     DiligentAppBase ();
     ~DiligentAppBase ();
     
