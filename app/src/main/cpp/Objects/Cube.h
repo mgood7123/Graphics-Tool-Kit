@@ -17,8 +17,10 @@ public:
     static const char * cube_VS;
     static const char * cube_PS;
     void create() override;
+    void physics(const TimeEngine & timeEngine) override;
     void draw() override;
-    
+    void destroy() override;
+
     void CreatePipelineState();
     void CreateVertexBuffer();
     void CreateIndexBuffer();
@@ -29,6 +31,8 @@ public:
     Diligent::RefCntAutoPtr<Diligent::IBuffer>                m_CubeIndexBuffer;
     Diligent::RefCntAutoPtr<Diligent::IBuffer>                m_VSConstants;
     Diligent::float4x4                                        m_WorldViewProjMatrix;
+    double                                                    y;
+    Diligent::float4x4                                        CubeModelTransform;
 };
 
 

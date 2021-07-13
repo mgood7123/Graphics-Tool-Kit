@@ -7,25 +7,31 @@
 
 void Cube::create ()
 {
+    y = 0.0;
     CreatePipelineState();
     CreateVertexBuffer();
     CreateIndexBuffer();
     
 }
 
+void Cube::physics (const TimeEngine & timeEngine)
+{
+    using namespace Diligent;
+
+    y += 70.0 * timeEngine.delta;
+    auto radY = degreesToRadians(y);
+    CubeModelTransform = float4x4::RotationY(radY) * float4x4::RotationX(-PI_F * 0.1f);
+}
+
 void Cube::draw ()
 {
     using namespace Diligent;
-    
-    double CurrTime = 1;
-    
+
     auto* pRTV = diligentAppBase->m_pSwapChain->GetCurrentBackBufferRTV();
     auto* pDSV = diligentAppBase->m_pSwapChain->GetDepthBufferDSV();
     diligentAppBase->m_pImmediateContext->SetRenderTargets(1, &pRTV, pDSV, RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
 
-    // Apply rotation
-    float4x4 CubeModelTransform = float4x4::RotationY(static_cast<float>(CurrTime) * 1.0f) * float4x4::RotationX(-PI_F * 0.1f);
-    
+
     // Camera is at (0, 0, -5) looking along the Z axis
     float4x4 View = float4x4::Translation(0.f, 0.0f, 5.0f);
     
@@ -305,6 +311,8 @@ void Cube::CreateIndexBuffer ()
     diligentAppBase->m_pDevice->CreateBuffer(IndBuffDesc, &IBData, &m_CubeIndexBuffer);
 }
 
+
+
 const char * Cube::cube_VS = "cbuffer Constants\n"
                              "{\n"
                              "    float4x4 g_WorldViewProj;\n"
@@ -354,3 +362,11 @@ const char * Cube::cube_PS = "struct PSInput \n"
                              "{\n"
                              "    PSOut.Color = PSIn.Color; \n"
                              "}";
+
+void Cube::destroy() {
+    this->m_CubeVertexBuffer.Release();
+    this->m_CubeIndexBuffer.Release();
+    this->m_VSConstants.Release();
+    this->m_pPSO.Release();
+    this->m_pSRB.Release();
+}

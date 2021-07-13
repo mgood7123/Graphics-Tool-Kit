@@ -4,8 +4,19 @@
 
 #include "ObjectBase.h"
 
-void ObjectBase::create (DiligentAppBase * base)
+void ObjectBase::create ()
 {}
 
-void ObjectBase::draw (DiligentAppBase * base)
+void ObjectBase::draw ()
 {}
+
+void ObjectBase::destroy ()
+{}
+
+void ObjectBase::physics (const TimeEngine & timeEngine)
+{}
+
+double ObjectBase::degreesToRadians(double y)
+{
+    return y * (M_PI/180);
+}

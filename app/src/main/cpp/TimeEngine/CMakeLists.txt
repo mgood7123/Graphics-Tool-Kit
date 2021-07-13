@@ -7,16 +7,14 @@ cmake_minimum_required(VERSION 3.10.2)
 
 # Declares and names the project.
 
-project("Objects")
+project("TimeEngine")
 
 add_library(
-        Objects SHARED
-        ObjectBase.cpp
-        Triangle.cpp
-        Cube.cpp
+        TimeEngine SHARED
+        TimeEngine.cpp
 )
 
 target_link_libraries(
-        Objects
+        TimeEngine
         Diligent-Common # for logging
 )

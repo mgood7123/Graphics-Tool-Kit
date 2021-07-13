@@ -12,10 +12,15 @@ class ObjectBase
 {
 public:
     DiligentAppBase * diligentAppBase;
+
     virtual void create();
     virtual void draw();
+    virtual void destroy();
+    virtual void physics(const TimeEngine & timeEngine);
     // delete called on non-final that has virtual functions but non-virtual destructor
     virtual ~ObjectBase() = default;
+
+    static double degreesToRadians(double y);
 };
 
 

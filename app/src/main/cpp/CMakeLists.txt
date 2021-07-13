@@ -17,6 +17,13 @@ include_directories(
 
 include_directories(WINAPI_KERNEL)
 
+add_subdirectory(DiligentEngine/DiligentCore ${CMAKE_CURRENT_BINARY_DIR}/DiligentCore)
+add_subdirectory(DiligentEngine/DiligentFX ${CMAKE_CURRENT_BINARY_DIR}/DiligentFX)
+add_subdirectory(DiligentEngine/DiligentTools ${CMAKE_CURRENT_BINARY_DIR}/DiligentTools)
+
+add_subdirectory(TimeEngine)
+include_directories(TimeEngine)
+
 add_subdirectory(DiligentHelpers)
 include_directories(DiligentHelpers)
 
@@ -38,6 +45,7 @@ target_link_libraries(
         native-lib
         AndroidBase
         DiligentHelpers
+        TimeEngine
         Objects
         WINAPI::KERNEL
 )

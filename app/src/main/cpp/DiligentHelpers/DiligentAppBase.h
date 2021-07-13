@@ -5,7 +5,6 @@
 #ifndef GRAPHICAL_TOOL_KIT_DILIGENTAPPBASE_H
 #define GRAPHICAL_TOOL_KIT_DILIGENTAPPBASE_H
 
-
 #include <DiligentCore/Graphics/GraphicsEngine/interface/DeviceContext.h>
 #include <DiligentCore/Graphics/GraphicsEngine/interface/EngineFactory.h>
 #include <DiligentCore/Graphics/GraphicsEngine/interface/RenderDevice.h>
@@ -14,7 +13,8 @@
 #include <DiligentCore/Primitives/interface/Errors.hpp>
 #include <DiligentTools/TextureLoader/interface/Image.h>
 #include <DiligentTools/Imgui/interface/ImGuiImplDiligent.hpp>
-#include <DiligentSamples/SampleBase/include/InputController.hpp>
+#include <DiligentCore/Common/interface/Timer.hpp>
+#include <TimeEngine.h>
 
 class DiligentAppBase
 {
@@ -28,13 +28,13 @@ public:
     std::vector<Diligent::RefCntAutoPtr<Diligent::IDeviceContext>> m_pDeferredContexts;
     Diligent::RefCntAutoPtr<Diligent::ISwapChain>                  m_pSwapChain;
     Diligent::ImGuiImplDiligent *                                  m_pImGui = nullptr;
-    
+
+    TimeEngine timeEngine;
+
     float  m_fSmoothFPS                   = 0;
     double m_LastFPSTime                  = 0;
     Diligent::Uint32 m_NumFramesRendered  = 0;
     Diligent::Uint32 m_CurrentFrameNumber = 0;
-    
-    Diligent::InputController m_InputController;
     
     DiligentAppBase ();
     ~DiligentAppBase ();

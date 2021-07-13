@@ -8,10 +8,31 @@
 
 AppInstance::AppInstance ()
 {
-    objectBase.enableDebug();
+    objectBase.disableDebug();
     Cube cube;
     cube.diligentAppBase = this;
     objectBase = std::move(cube);
+
+    // 10000000 fps, delta will be incredibly small for each step
+    timeEngine.physicsTimeStep = 0.0000001;
+
+    // 1000000 fps
+    timeEngine.physicsTimeStep = 0.000001;
+
+    // 60.000024 fps
+    timeEngine.physicsTimeStep = 0.01666666;
+
+    // 120.000048 fps
+//    timeEngine.physicsTimeStep = 0.01666666/2;
+
+//    timeEngine.physicsTimeStep = 0.01666666/4;
+//    timeEngine.physicsTimeStep = 0.01666666/8;
+//    timeEngine.physicsTimeStep = 0.01666666/16;
+
+    timeEngine.physicsCallback = [&](const TimeEngine & timeEngine) {
+        auto obj = objectBase.get<ObjectBase*>();
+        obj->physics(timeEngine);
+    };
 }
 
 AppInstance::~AppInstance ()
@@ -33,6 +54,7 @@ void AppInstance::surfaceChanged (int w, int h)
     {
         attachToContext(w, h);
         objectBase.get<ObjectBase*>()->create();
+        timeEngine.startPhysicsThread();
     }
 }
 
@@ -43,14 +65,16 @@ bool AppInstance::onTouchEvent (JNIEnv * jenv, jfloatArray motionEventData)
 
 void AppInstance::onDraw ()
 {
-    objectBase.disableDebug();
-    objectBase.get<ObjectBase*>()->draw();
-    objectBase.enableDebug();
+    timeEngine.computeDelta();
+    auto obj = objectBase.get<ObjectBase*>();
+    obj->draw();
     swapBuffers();
 }
 
 void AppInstance::onEglTearDown ()
 {
+    timeEngine.stopPhysicsThread();
+    objectBase.get<ObjectBase*>()->destroy();
     m_pImmediateContext->Flush();
     m_pImmediateContext.Release();
     m_pSwapChain.Release();
