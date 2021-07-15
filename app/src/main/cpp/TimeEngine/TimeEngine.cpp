@@ -70,7 +70,7 @@ void TimeEngine::startPhysicsThread() {
                 continue;
             }
             if (skipped > 0) {
-                LOG_INFO_MESSAGE("physics");
+                if (logPhysics) LOG_INFO_MESSAGE("physics");
                 if (logPhysics) LOG_INFO_MESSAGE("skipped ", skipped, " empty frame", skipped == 1 ? "" : "s");
                 skipped = 0;
             }
