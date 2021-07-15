@@ -53,6 +53,7 @@ void AppInstance::surfaceChanged (int w, int h)
     else
     {
         attachToContext(w, h);
+        m_pSwapChain->Resize(w, h);
         objectBase.get<ObjectBase*>()->create();
         timeEngine.startPhysicsThread();
     }
