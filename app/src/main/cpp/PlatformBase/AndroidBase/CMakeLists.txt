@@ -7,16 +7,19 @@ cmake_minimum_required(VERSION 3.10.2)
 
 # Declares and names the project.
 
-project(Objects)
+project(AndroidBase)
 
 add_library(
-        Objects SHARED
-        ObjectBase.cpp
-        Triangle.cpp
-        Cube.cpp
+        AndroidBase SHARED
+
+        AppInstanceAndroidBase.cpp
+        MotionEventSerializer.cpp
+        JVM_MANAGER.cpp
 )
 
-target_link_libraries(
-        Objects
-        Diligent-Common # for logging
+target_link_libraries(AndroidBase
+        android
+        log
+        GLESv3
+        DiligentAnyOpt
 )

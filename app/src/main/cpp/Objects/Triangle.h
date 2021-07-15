@@ -5,7 +5,6 @@
 #ifndef GRAPHICAL_TOOL_KIT_TRIANGLE_H
 #define GRAPHICAL_TOOL_KIT_TRIANGLE_H
 
-
 #include "ObjectBase.h"
 
 class Triangle : public ObjectBase

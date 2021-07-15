@@ -7,19 +7,15 @@ cmake_minimum_required(VERSION 3.10.2)
 
 # Declares and names the project.
 
-project("AndroidBase")
+project(MacOSBase)
 
 add_library(
-        AndroidBase SHARED
-
-        AppInstanceAndroidBase.cpp
-        MotionEventSerializer.cpp
-        JVM_MANAGER.cpp
+        MacOSBase SHARED
+        AppInstanceMacOSBase.cpp
 )
 
-target_link_libraries(AndroidBase
-        android
-        log
-        GLESv3
+target_link_libraries(MacOSBase
+        "-framework OpenGL"
         DiligentAnyOpt
+        SDL2
 )

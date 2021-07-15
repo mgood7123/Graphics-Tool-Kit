@@ -39,10 +39,29 @@ AppInstance::~AppInstance ()
 {
 }
 
+#if PLATFORM_WIN32 || PLATFORM_LINUX || PLATFORM_MACOS
+#elif PLATFORM_UNIVERSAL_WINDOWS
+#elif PLATFORM_ANDROID
 void AppInstance::onEglSetup (JNIEnv * jenv, jobject classInstance, jstring name, jstring signature)
 {
-    AppInstanceAndroidBase::onEglSetup(jenv, classInstance, name, signature);
+    AppInstancePlatformBase::onEglSetup(jenv, classInstance, name, signature);
 }
+
+bool AppInstance::onTouchEvent (JNIEnv * jenv, jfloatArray motionEventData)
+{
+    return AppInstancePlatformBase::onTouchEvent(jenv, motionEventData);
+}
+
+void AppInstance::onEglTearDown ()
+{
+    destroyResources();
+    AppInstancePlatformBase::onEglTearDown();
+}
+#elif PLATFORM_IOS
+#elif PLATFORM_TVOS
+#else
+    #error "Unknown platform"
+#endif
 
 void AppInstance::surfaceChanged (int w, int h)
 {
@@ -59,11 +78,6 @@ void AppInstance::surfaceChanged (int w, int h)
     }
 }
 
-bool AppInstance::onTouchEvent (JNIEnv * jenv, jfloatArray motionEventData)
-{
-    return AppInstanceAndroidBase::onTouchEvent(jenv, motionEventData);
-}
-
 void AppInstance::onDraw ()
 {
     timeEngine.computeDelta();
@@ -72,7 +86,12 @@ void AppInstance::onDraw ()
     swapBuffers();
 }
 
-void AppInstance::onEglTearDown ()
+void AppInstance::swapBuffers ()
+{
+    AppInstancePlatformBase::swapBuffers();
+}
+
+void AppInstance::destroyResources ()
 {
     timeEngine.stopPhysicsThread();
     objectBase.get<ObjectBase*>()->destroy();
@@ -81,10 +100,4 @@ void AppInstance::onEglTearDown ()
     m_pSwapChain.Release();
     m_pDevice.Release();
     m_pPSO.Release();
-    AppInstanceAndroidBase::onEglTearDown();
-}
-
-void AppInstance::swapBuffers ()
-{
-    AppInstanceAndroidBase::swapBuffers();
 }

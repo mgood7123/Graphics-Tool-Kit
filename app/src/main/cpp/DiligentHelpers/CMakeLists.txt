@@ -20,6 +20,12 @@ add_library(
 
 target_compile_options(DiligentHelpers PRIVATE -DUNICODE -DENGINE_DLL)
 
+if (DILIGENT_NO_VULKAN)
+    set(VK_LIB "")
+else()
+    set(VK_LIB Diligent-GraphicsEngineVk-shared)
+endif()
+
 target_link_libraries(
         DiligentHelpers
         TimeEngine
@@ -29,7 +35,7 @@ target_link_libraries(
         Diligent-Common
         Diligent-GraphicsAccessories
         Diligent-GraphicsEngineOpenGL-shared
-        Diligent-GraphicsEngineVk-shared
+        ${VK_LIB}
         Diligent-GraphicsTools
         Diligent-Imgui
         Diligent-ShaderTools

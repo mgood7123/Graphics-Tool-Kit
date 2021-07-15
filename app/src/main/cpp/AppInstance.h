@@ -5,25 +5,35 @@
 #ifndef GRAPHICAL_TOOL_KIT_APPINSTANCE_H
 #define GRAPHICAL_TOOL_KIT_APPINSTANCE_H
 
-#include <AppInstanceAndroidBase.h>
+#include <AppInstancePlatformBase.h>
 #include <ObjectBase.h>
 #include <SDK/include/AnyOpt.h>
 
 
-class AppInstance : public AppInstanceAndroidBase, public DiligentAppBase
+class AppInstance : public AppInstancePlatformBase, public DiligentAppBase
 {
     AnyOpt objectBase;
 
 public:
     AppInstance ();
     ~AppInstance ();
-    
+
+#if PLATFORM_WIN32 || PLATFORM_LINUX || PLATFORM_MACOS
+
+#elif PLATFORM_UNIVERSAL_WINDOWS
+#elif PLATFORM_ANDROID
     void onEglSetup(JNIEnv *jenv, jobject classInstance, jstring name, jstring signature) override;
-    void surfaceChanged(int w, int h);
     bool onTouchEvent(JNIEnv *jenv, jfloatArray motionEventData) override;
-    void onDraw();
     void onEglTearDown() override;
+#elif PLATFORM_IOS
+    #elif PLATFORM_TVOS
+#else
+    #error "Unknown platform"
+#endif
+    void surfaceChanged(int w, int h);
+    void onDraw();
     void swapBuffers() override;
+    void destroyResources();
 };
 
 

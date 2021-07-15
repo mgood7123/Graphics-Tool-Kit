@@ -7,8 +7,21 @@ cmake_minimum_required(VERSION 3.10.2)
 
 # Declares and names the project.
 
-project("kit")
+project(Kit)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# Diligent Engine exposes the following macros:
+#
+# PLATFORM_WIN32
+# PLATFORM_UNIVERSAL_WINDOWS
+# PLATFORM_ANDROID
+# PLATFORM_LINUX
+# PLATFORM_MACOS
+# PLATFORM_IOS
+# PLATFORM_TVOS
 
 include_directories(
         DiligentEngine
@@ -17,9 +30,41 @@ include_directories(
 
 include_directories(WINAPI_KERNEL)
 
-add_subdirectory(DiligentEngine/DiligentCore ${CMAKE_CURRENT_BINARY_DIR}/DiligentCore)
-add_subdirectory(DiligentEngine/DiligentFX ${CMAKE_CURRENT_BINARY_DIR}/DiligentFX)
-add_subdirectory(DiligentEngine/DiligentTools ${CMAKE_CURRENT_BINARY_DIR}/DiligentTools)
+set(DILIGENT_NO_VULKAN 1 CACHE BOOL "don't need vulkan")
+
+if(WIN32)
+    if(${CMAKE_SYSTEM_NAME} STREQUAL "WindowsStore")
+        add_definitions(-DPLATFORM_UNIVERSAL_WINDOWS)
+    else()
+        add_definitions(-DPLATFORM_WIN32)
+    endif()
+else()
+    if(${CMAKE_SYSTEM_NAME} STREQUAL "Android")
+        add_definitions(-DPLATFORM_ANDROID)
+    elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+        add_definitions(-DPLATFORM_LINUX)
+    elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
+        if(IOS)
+            add_definitions(-DPLATFORM_IOS)
+        else()
+            add_definitions(-DPLATFORM_MACOS)
+        endif()
+    elseif(${CMAKE_SYSTEM_NAME} STREQUAL "iOS")
+        add_definitions(-DPLATFORM_IOS)
+    elseif(${CMAKE_SYSTEM_NAME} STREQUAL "tvOS")
+        add_definitions(-DPLATFORM_TVOS)
+    else()
+        message(FATAL_ERROR "Unsupported platform")
+    endif()
+endif(WIN32)
+
+if(PLATFORM_MACOS OR PLATFORM_IOS OR PLATFORM_TVOS)
+    add_definitions(-DPLATFORM_APPLE)
+endif()
+
+add_subdirectory(DiligentEngine/DiligentCore)
+add_subdirectory(DiligentEngine/DiligentFX)
+add_subdirectory(DiligentEngine/DiligentTools)
 
 add_subdirectory(TimeEngine)
 include_directories(TimeEngine)
@@ -27,8 +72,13 @@ include_directories(TimeEngine)
 add_subdirectory(DiligentHelpers)
 include_directories(DiligentHelpers)
 
-add_subdirectory(AndroidBase)
-include_directories(AndroidBase)
+if (PLATFORM_WIN32 OR PLATFORM_LINUX OR PLATFORM_MACOS)
+    add_subdirectory(SDL2-2.0.14)
+    include_directories(SDL2-2.0.14/include)
+endif()
+
+add_subdirectory(PlatformBase)
+include_directories(PlatformBase)
 
 add_subdirectory(WINAPI_KERNEL)
 
@@ -43,9 +93,27 @@ add_library(
 
 target_link_libraries(
         native-lib
-        AndroidBase
+        PlatformBase
         DiligentHelpers
         TimeEngine
         Objects
         WINAPI::KERNEL
 )
+
+macro(copyExe EXE)
+    if(CMAKE_RUNTIME_OUTPUT_DIRECTORY)
+        set(copyExe_IN_FILE ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${EXE})
+    else()
+        set(copyExe_IN_FILE ${EXE})
+    endif()
+
+
+    set(copyExe_OUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/EXECUTABLES/${EXE})
+
+
+    add_custom_command(
+            TARGET ${EXE}
+            POST_BUILD
+            COMMAND cp -v ${copyExe_IN_FILE} ${copyExe_OUT_FILE}
+    )
+endmacro()

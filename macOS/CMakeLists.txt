@@ -7,16 +7,11 @@ cmake_minimum_required(VERSION 3.10.2)
 
 # Declares and names the project.
 
-project(Objects)
+project(macOS)
 
-add_library(
-        Objects SHARED
-        ObjectBase.cpp
-        Triangle.cpp
-        Cube.cpp
-)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../app/src/main/cpp ${CMAKE_CURRENT_BINARY_DIR}/GRAPHICS)
 
-target_link_libraries(
-        Objects
-        Diligent-Common # for logging
-)
+add_executable(app dummy.cpp)
+
+target_link_libraries(app native-lib)
+copyExe(app)
