@@ -19,10 +19,10 @@ AppInstance::AppInstance ()
     // 1000000 fps
     timeEngine.physicsTimeStep = 0.000001;
 
-    // 60.000024 fps
+    // 60.000024 fps, a bit choppy
     timeEngine.physicsTimeStep = 0.01666666;
 
-    // 120.000048 fps
+    // 120.000048 fps, smooth
 //    timeEngine.physicsTimeStep = 0.01666666/2;
 
 //    timeEngine.physicsTimeStep = 0.01666666/4;
