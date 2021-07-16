@@ -90,16 +90,14 @@ void checkSDLError(int line = -1)
 #endif
 }
 
+// this may be called from another thread
 int filterEvents(void *userdata, SDL_Event *ev) {
     SDL_Event & event = *ev;
     switch( event.type ) {
         case SDL_WINDOWEVENT:
             switch ( event.window.event ) {
                 case SDL_WINDOWEVENT_RESIZED:
-                    LOG_ERROR_MESSAGE("RESIZING");
                     instance->surfaceChanged(event.window.data1, event.window.data2);
-
-                    // this may be called from another thread
                     instance->onDraw();
                     return 1;
             }
@@ -135,7 +133,6 @@ int main(int argc, char *argv[])
                 SDL_WINDOW_OPENGL
                 | SDL_WINDOW_SHOWN
                 | SDL_WINDOW_RESIZABLE
-//                | SDL_WINDOW_BORDERLESS
     );
 
     if (!instance->mainwindow) /* Die if creation failed */
@@ -169,7 +166,6 @@ int main(int argc, char *argv[])
 
         /* Grab all the events off the queue. */
         while( SDL_PollEvent( &event ) ) {
-            LOG_ERROR_MESSAGE("GOT EVENT");
             switch( event.type ) {
                 case SDL_KEYDOWN:
                     /* Handle key presses. */
