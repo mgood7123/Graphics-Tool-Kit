@@ -508,13 +508,19 @@ public:
                 AnyOpt_FLAG_MOVE_ONLY,
                 "this function is not allowed unless the move flag is set"
         );
-        const_cast<AnyOptCustomFlags*>(this)->data = obj->data;
-        const_cast<AnyOptCustomFlags*>(this)->data->isDebug = isDebug;
-        const_cast<AnyOptCustomFlags*>(this)->data_is_allocated = obj->data_is_allocated;
-        const_cast<AnyOptCustomFlags*>(this)->isAnyNullOpt = obj->isAnyNullOpt;
-        const_cast<AnyOptCustomFlags*>(obj)->data = nullptr;
-        const_cast<AnyOptCustomFlags*>(obj)->isAnyNullOpt = true;
-        const_cast<AnyOptCustomFlags*>(obj)->data_is_allocated = false;
+
+        AnyOptCustomFlags* this_ = const_cast<AnyOptCustomFlags*>(this);
+        AnyOptCustomFlags* obj_ = const_cast<AnyOptCustomFlags*>(obj);
+
+        deallocate();
+
+        this_->data = obj_->data;
+        this_->isAnyNullOpt = obj_->isAnyNullOpt;
+        this_->data_is_allocated = obj_->data_is_allocated;
+
+        obj_->data = nullptr;
+        obj_->isAnyNullOpt = true;
+        obj_->data_is_allocated = false;
     }
     
     void copy(const AnyOptCustomFlags * obj) const {
@@ -523,10 +529,17 @@ public:
                 AnyOpt_FLAG_COPY_ONLY,
                 "this function is not allowed unless the copy flag is set"
         );
-        const_cast<AnyOptCustomFlags*>(this)->data = obj->data->clone();
-        const_cast<AnyOptCustomFlags*>(this)->data->isDebug = isDebug;
-        const_cast<AnyOptCustomFlags*>(this)->isAnyNullOpt = false;
-        const_cast<AnyOptCustomFlags*>(this)->data_is_allocated = false;
+
+        AnyOptCustomFlags* this_ = const_cast<AnyOptCustomFlags*>(this);
+
+        deallocate();
+
+        if (obj->data != nullptr) {
+            this_->data = obj->data->clone();
+        }
+        this_->data->isDebug = isDebug;
+        this_->isAnyNullOpt = false;
+        this_->data_is_allocated = false;
     }
     
     template<class T, typename = typename std::enable_if<!std::is_same<typename std::remove_reference<T>::type, void>::value, T>::type>
@@ -545,13 +558,13 @@ public:
             const AnyOptCustomFlags * constobj = reinterpret_cast<const AnyOptCustomFlags*>(&what);
             AnyOptCustomFlags * obj = const_cast<AnyOptCustomFlags*>(constobj);
             if (
-                    obj->data &&
-                    obj->data_is_allocated &&
-                    flag_is_set(
-                            FLAGS,
-                            AnyOpt_FLAG_ENABLE_CONVERSION_OF_ALLOCATION_COPY_TO_ALLOCATION_MOVE
-                    )
-                    ) {
+                obj->data &&
+                obj->data_is_allocated &&
+                flag_is_set(
+                    FLAGS,
+                    AnyOpt_FLAG_ENABLE_CONVERSION_OF_ALLOCATION_COPY_TO_ALLOCATION_MOVE
+                )
+            ) {
                 ensure_flag_enabled(
                         FLAGS,
                         AnyOpt_FLAG_MOVE_ONLY,
@@ -570,7 +583,6 @@ public:
                 }
                 store_move(*obj, type);
             } else {
-                deallocate();
                 if (isDebug) {
                     LOG_INFO_MESSAGE("AnyOptCustomFlags copying data");
                 }
@@ -580,15 +592,11 @@ public:
                 }
             }
         } else {
+            deallocate();
             if (isDebug) {
                 LOG_INFO_MESSAGE("AnyOptCustomFlags allocating and assigning data");
             }
-            // use swap, move the data
-            if (data == nullptr) {
-                const_cast<AnyOptCustomFlags*>(this)->data = new storage<typename std::remove_reference<T>::type>(what, isDebug);
-            } else {
-                *static_cast<storage<typename std::remove_reference<T>::type>*>(data) = what;
-            }
+            const_cast<AnyOptCustomFlags*>(this)->data = new storage<typename std::remove_reference<T>::type>(what, isDebug);
             if (isDebug) {
                 LOG_INFO_MESSAGE("AnyOptCustomFlags allocated and assigned data");
             }
@@ -610,7 +618,6 @@ public:
             LOG_INFO_MESSAGE("AnyOptCustomFlags move ", type);
         }
         if (A || B) {
-            deallocate();
             if (isDebug) {
                 LOG_INFO_MESSAGE("AnyOptCustomFlags moving data");
             }
@@ -622,12 +629,8 @@ public:
             if (isDebug) {
                 LOG_INFO_MESSAGE("AnyOptCustomFlags allocating and assigning data");
             }
-            // use swap, move the data
-            if (data == nullptr) {
-                const_cast<AnyOptCustomFlags*>(this)->data = new storage<typename std::remove_reference<T>::type>(std::move(what), isDebug);
-            } else {
-                *static_cast<storage<typename std::remove_reference<T>::type>*>(data) = std::move(what);
-            }
+            deallocate();
+            const_cast<AnyOptCustomFlags*>(this)->data = new storage<typename std::remove_reference<T>::type>(std::move(what), isDebug);
             if (isDebug) {
                 LOG_INFO_MESSAGE("AnyOptCustomFlags allocated and assigned data");
             }
@@ -647,7 +650,7 @@ public:
             LOG_INFO_MESSAGE("AnyOptCustomFlags pointer ", type);
         }
         
-        // TODO; should pointers be reallocated if they are synthetic (allocated == false)?
+        // TODO: should pointers be reallocated if they are synthetic (allocated == false)?
         
         deallocate();
         if (isDebug) {
