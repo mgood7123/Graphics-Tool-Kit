@@ -514,7 +514,10 @@ public:
 
         deallocate();
 
-        this_->data = obj_->data;
+        if (obj_->data != nullptr) {
+            this_->data = obj_->data;
+            this_->data->isDebug = isDebug;
+        }
         this_->isAnyNullOpt = obj_->isAnyNullOpt;
         this_->data_is_allocated = obj_->data_is_allocated;
 
@@ -536,8 +539,8 @@ public:
 
         if (obj->data != nullptr) {
             this_->data = obj->data->clone();
+            this_->data->isDebug = isDebug;
         }
-        this_->data->isDebug = isDebug;
         this_->isAnyNullOpt = false;
         this_->data_is_allocated = false;
     }
