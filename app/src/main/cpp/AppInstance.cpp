@@ -72,6 +72,9 @@ void AppInstance::surfaceChanged (int w, int h)
         create = true;
     }
 
+    // Resizing the swap chain requires back and depth-stencil buffers
+    // to be unbound from the device context
+    m_pImmediateContext->SetRenderTargets(0, nullptr, nullptr, Diligent::RESOURCE_STATE_TRANSITION_MODE_NONE);
     m_pSwapChain->Resize(w, h);
 
     if (create)
