@@ -65,14 +65,17 @@ void AppInstance::onEglTearDown ()
 
 void AppInstance::surfaceChanged (int w, int h)
 {
-    if (m_pSwapChain)
-    {
-        m_pSwapChain->Resize(w, h);
-    }
-    else
+    bool create = false;
+    if (!m_pSwapChain)
     {
         attachToContext(w, h);
-        m_pSwapChain->Resize(w, h);
+        create = true;
+    }
+
+    m_pSwapChain->Resize(w, h);
+
+    if (create)
+    {
         objectBase.get<ObjectBase*>()->create();
         timeEngine.startPhysicsThread();
     }
