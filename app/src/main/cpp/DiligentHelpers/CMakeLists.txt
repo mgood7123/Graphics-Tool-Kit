@@ -30,15 +30,19 @@ target_link_libraries(
         DiligentHelpers
         TimeEngine
         DiligentAnyOpt
-        Diligent-AssetLoader
+
+#   DiligentCore
         Diligent-BuildSettings
         Diligent-Common
         Diligent-GraphicsAccessories
         Diligent-GraphicsEngineOpenGL-shared
-        ${VK_LIB}
         Diligent-GraphicsTools
-        Diligent-Imgui
         Diligent-ShaderTools
         Diligent-TargetPlatform
-        Diligent-TextureLoader
+        ${VK_LIB}
+
+#   DiligentTools
+#        Diligent-AssetLoader
+        Diligent-Imgui
+#        Diligent-TextureLoader
 )
