@@ -92,6 +92,9 @@ include_directories(PlatformBase)
 
 add_subdirectory(WINAPI_KERNEL)
 
+add_subdirectory(VertexEngine)
+include_directories(VertexEngine)
+
 add_subdirectory(Objects)
 include_directories(Objects)
 

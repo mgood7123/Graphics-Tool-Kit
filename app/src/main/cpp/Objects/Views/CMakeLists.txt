@@ -7,30 +7,16 @@ cmake_minimum_required(VERSION 3.10.2)
 
 # Declares and names the project.
 
-project(Objects)
+project(Views)
 
 add_library(
-        ObjectBase SHARED
-        ObjectBase.cpp
+        Views SHARED
+        View.cpp
+        TriangleView.cpp
+        RectangleView.cpp
 )
 
 target_link_libraries(
-        ObjectBase
-        VertexEngine
-        Diligent-Common
-)
-
-include_directories(.)
-
-add_subdirectory(Views)
-
-add_library(
-        Objects SHARED
-        Triangle.cpp
-        Cube.cpp
-)
-
-target_link_libraries(
-        Objects
         Views
+        ObjectBase
 )

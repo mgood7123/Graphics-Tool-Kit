@@ -20,3 +20,7 @@ double ObjectBase::degreesToRadians(double y)
 {
     return y * (M_PI/180);
 }
+
+VertexEngine ObjectBase::createVertexEngine(int width, int height) {
+    return VertexEngine(width, height);
+}

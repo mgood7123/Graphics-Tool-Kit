@@ -5,13 +5,14 @@
 #ifndef GRAPHICAL_TOOL_KIT_OBJECTBASE_H
 #define GRAPHICAL_TOOL_KIT_OBJECTBASE_H
 
-
 #include <DiligentAppBase.h>
+#include <VertexEngine.h>
 
 class ObjectBase
 {
 public:
-    DiligentAppBase * diligentAppBase;
+    DiligentAppBase * diligentAppBase = nullptr;
+    VertexEngine createVertexEngine(int width, int height);
 
     virtual void create();
     virtual void draw();

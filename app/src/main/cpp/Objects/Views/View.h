@@ -5,7 +5,7 @@
 #ifndef GRAPHICAL_TOOL_KIT_VIEW_H
 #define GRAPHICAL_TOOL_KIT_VIEW_H
 
-#include "ObjectBase.h"
+#include <ObjectBase.h>
 
 /**
  * an empty View, this does nothing by itself
