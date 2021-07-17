@@ -68,6 +68,17 @@ HANDLE VertexEngine::addData(HANDLE dataBufferHandle, std::initializer_list<floa
     }
 }
 
+std::vector<HANDLE> VertexEngine::addData(
+        std::initializer_list<std::pair<HANDLE, std::initializer_list<float>>> handle_and_data) {
+    std::vector<HANDLE> handles;
+    const std::pair<void *, std::initializer_list<float>> * pair = handle_and_data.begin();
+    for (int i = 0; i < handle_and_data.size(); i++) {
+        const std::pair<void *, std::initializer_list<float>> * data = pair+i;
+        handles.push_back(addData(data->first, data->second));
+    }
+    return handles;
+}
+
 void VertexEngine::order(std::initializer_list<HANDLE> data) {
     vertexBufferOrder = data;
 }

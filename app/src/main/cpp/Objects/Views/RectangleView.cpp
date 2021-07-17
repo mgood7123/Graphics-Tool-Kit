@@ -122,11 +122,16 @@ void RectangleView::create() {
     HANDLE posID   = vertexEngine.addDataBuffer(3);
     vertexEngine.order({posID, colorID});
 
-    vertexEngine.addData(colorID, {0, 1, 0, 1});
-    vertexEngine.addData(posID, {-1, +1, 0});
-    vertexEngine.addData(posID, {+1, +1, 0});
-    vertexEngine.addData(posID, {+1, -1, 0});
-    vertexEngine.addData(posID, {-1, -1, 0});
+    // vector of HANDLE objects are returned
+    // we currently have no direct use for these handles
+    // since our data does not need to be modified
+    vertexEngine.addData({
+        {colorID, { 0,  1,  0,  1}},
+        {posID,   {-1,  1,  0    }},
+        {posID,   { 1,  1,  0    }},
+        {posID,   { 1, -1,  0    }},
+        {posID,   {-1, -1,  0    }}
+    });
 
     VertexEngine::GenerationInfo bufferData = vertexEngine.generateGL();
 

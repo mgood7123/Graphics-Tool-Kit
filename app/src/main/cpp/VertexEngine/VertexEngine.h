@@ -72,6 +72,8 @@ public:
     /**
      * adds data to the specified dataBufferHandle
      * <br>
+     * data is given as floating-point
+     * <br>
      * <br>
      * if the dataBufferHandle is a static buffer, then:
      * <br>
@@ -85,10 +87,33 @@ public:
      * data will simply be added
      * <br>
      * <br>
-     * data is given in as type float
      * @return a handle to the added data
      */
     HANDLE addData(HANDLE dataBufferHandle, std::initializer_list<float> data);
+
+    /**
+     * adds data to the specified dataBufferHandle
+     * <br>
+     * data is given as sets of dataBufferHandle and floating-point
+     * <br>
+     * for each dataBufferHandle and floating-point pair:
+     * <br>
+     * <br>
+     * if the dataBufferHandle is a static buffer, then:
+     * <br>
+     * <br>
+     * if data does not exist it will be added
+     * <br>
+     * if data already exists it will be overwritten
+     * <br>
+     * <br>
+     * otherwise, if the dataBufferHandle is a non static buffer, then
+     * data will simply be added
+     * <br>
+     * <br>
+     * @return a vector of handles to the added data
+     */
+    std::vector<HANDLE> addData(std::initializer_list<std::pair<HANDLE, std::initializer_list<float>>> handle_and_data);
 
     /**
      * specifies the buffer order for output generation
