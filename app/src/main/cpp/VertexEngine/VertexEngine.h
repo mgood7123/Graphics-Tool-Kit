@@ -56,7 +56,7 @@ public:
      * creates a new static data buffer
      * <br>
      * a buffer that is static means there is only one data set
-     * and this data will be used when needed
+     * and this data will be reused when needed
      * <br>
      * @param length the length of the data buffer
      * @return a handle to the buffer
