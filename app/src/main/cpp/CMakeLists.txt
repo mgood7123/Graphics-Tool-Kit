@@ -30,7 +30,8 @@ include_directories(
 
 include_directories(WINAPI_KERNEL)
 
-set(DILIGENT_NO_VULKAN 1 CACHE BOOL "don't need vulkan")
+set(DILIGENT_NO_VULKAN TRUE CACHE BOOL "don't need vulkan")
+set(DILIGENT_NO_FORMAT_VALIDATION TRUE CACHE BOOL "don't need format validation")
 
 if(WIN32)
     if(${CMAKE_SYSTEM_NAME} STREQUAL "WindowsStore")
