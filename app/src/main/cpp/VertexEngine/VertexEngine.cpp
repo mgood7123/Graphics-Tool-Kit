@@ -84,7 +84,7 @@ VertexEngine::GenerationInfo::~GenerationInfo() {
 
 VertexEngine::GenerationInfo VertexEngine::generateGL() {
     // the vertex buffer order contains handles to data buffers
-    // and specifies the order in which we should generate out data
+    // and specifies the order in which we should generate output data
     //
     // vertex buffer data will not be generated for handles
     // that are not specified by the vertex buffer order
