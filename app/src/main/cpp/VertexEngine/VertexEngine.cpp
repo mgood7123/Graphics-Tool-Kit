@@ -73,8 +73,10 @@ void VertexEngine::order(std::initializer_list<HANDLE> data) {
 }
 
 VertexEngine::GenerationInfo::GenerationInfo(const size_t length, const float *data) :
-        length(length), sizeInBytes(length * sizeof(float)) {
-    this->data = new float[length];
+    data(new float[length]),
+    length(length),
+    sizeInBytes(length * sizeof(float))
+{
     memcpy(this->data, data, sizeInBytes);
 }
 
