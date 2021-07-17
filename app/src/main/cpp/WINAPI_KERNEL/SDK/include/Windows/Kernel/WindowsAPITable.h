@@ -17,6 +17,19 @@ typedef class Table {
         Table();
         ~Table();
 
+        class Iterator {
+            Table * table;
+            size_t index = 0;
+            size_t page = 1;
+        public:
+            Iterator(Table * t);
+            void skip(size_t amount);
+            bool hasNext();
+            Object * next();
+        };
+
+        Iterator getIterator();
+
         bool hasFreeIndex();
 
         size_t nextFreeIndex();

@@ -14,6 +14,37 @@ Table::~Table() {
     this->Page.removeAll();
 }
 
+Table::Iterator::Iterator(Table *t) {
+    table = t;
+}
+
+void Table::Iterator::skip(size_t amount) {
+    for (int i = 0; i < amount; ++i) this->index++;
+}
+
+bool Table::Iterator::hasNext() {
+    size_t page_size = this->table->page_size;
+    for (; this->page <= this->table->Page.count(); this->page++) {
+        size_t idx = ((page_size * this->page) - page_size);
+        for (; idx < page_size * this->page; idx++) {
+            if (idx >= this->index) {
+                this->index = idx;
+                if (this->table->table[this->index] != nullptr)
+                    return true;
+            }
+        }
+    }
+    return false;
+}
+
+Object* Table::Iterator::next() {
+    return this->table->table.at(this->index++);
+}
+
+Table::Iterator Table::getIterator() {
+    return Iterator(this);
+}
+
 bool Table::hasFreeIndex() {
     int page = 1;
     size_t index = 0;

@@ -9,23 +9,23 @@ Kernel::Kernel() {
 }
 
 Kernel::Kernel(const Kernel &x) {
-    if (table == nullptr) {
-        table = new WindowsAPITable();
-    }
-    if (x.table != nullptr) {
-        table->table = x.table->table;
-    }
+    this->table = new WindowsAPITable();
+    table->table = x.table->table;
 }
 
 Kernel::Kernel(Kernel &&x) {
+    this->table = new WindowsAPITable();
+    std::swap(table->table, x.table->table);
 }
 
 Kernel & Kernel::operator=(const Kernel &x) {
-    return *const_cast<Kernel*>(this);
+    table->table = x.table->table;
+    return *this;
 }
 
 Kernel & Kernel::operator=(Kernel &&x) {
-    return *const_cast<Kernel*>(this);
+    std::swap(table->table, x.table->table);
+    return *this;
 }
 
 Kernel::~Kernel() {

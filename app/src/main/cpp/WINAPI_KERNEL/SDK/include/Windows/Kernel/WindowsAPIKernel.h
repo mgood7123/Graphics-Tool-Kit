@@ -35,6 +35,8 @@ class Kernel {
 
         Handle *getHandle(HANDLE handle);
 
+        void removeHandle(HANDLE handle);
+
         Object *newObject(ObjectType type, ObjectFlag flags);
 
         template <typename T> Object * newObject(ObjectType type, ObjectFlag flags, T && resource) {

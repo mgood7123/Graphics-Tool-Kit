@@ -31,6 +31,7 @@ typedef class Object {
         ObjectType type;
         char *name;
         ObjectFlag flags;
+        HANDLE handle;
         int handles;
         ResourceType resource;
 

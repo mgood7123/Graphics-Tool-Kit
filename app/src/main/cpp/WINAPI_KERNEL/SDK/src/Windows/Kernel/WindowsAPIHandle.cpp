@@ -134,6 +134,7 @@ HANDLE Kernel::newHandle(ObjectType type, ResourceType resource) {
     hObject->object = this->newObject(type, 0, resource);
     assert(hObject->object != nullptr);
     hObject->invalidated = false;
+    hObject->object->handle = hObject;
     hObject->object->handles++;
     assert(this->validateHandle(hObject));
     return hObject;
@@ -141,4 +142,8 @@ HANDLE Kernel::newHandle(ObjectType type, ResourceType resource) {
 
 Handle *Kernel::getHandle(HANDLE handle) {
     return static_cast<Handle *>(handle);
+}
+
+void Kernel::removeHandle(HANDLE handle) {
+    deleteObject(getHandle(handle)->object);
 }

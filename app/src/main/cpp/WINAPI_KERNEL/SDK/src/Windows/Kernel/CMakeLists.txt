@@ -11,3 +11,4 @@ target_link_libraries(WINAPIKERNEL DiligentAnyOpt)
 
 # Windows API Kernel target alias for superprojects
 add_library(WINAPI::KERNEL ALIAS WINAPIKERNEL)
+add_library(WINAPI::Kernel ALIAS WINAPIKERNEL)
