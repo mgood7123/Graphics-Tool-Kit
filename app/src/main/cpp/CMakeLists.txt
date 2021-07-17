@@ -97,6 +97,7 @@ include_directories(VertexEngine)
 
 add_subdirectory(Objects)
 include_directories(Objects)
+include_directories(Objects/Views)
 
 add_library(
         native-lib SHARED

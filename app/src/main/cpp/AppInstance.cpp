@@ -3,15 +3,14 @@
 //
 
 #include "AppInstance.h"
-#include <Triangle.h>
+#include <TriangleView.h>
+#include <RectangleView.h>
 #include <Cube.h>
 
 AppInstance::AppInstance ()
 {
     objectBase.disableDebug();
-    Cube cube;
-    cube.diligentAppBase = this;
-    objectBase = std::move(cube);
+    objectBase = createObject<RectangleView>(this);
 
     // 10000000 fps, delta will be incredibly small for each step
     timeEngine.physicsTimeStep = 0.0000001;
@@ -39,6 +38,51 @@ AppInstance::~AppInstance ()
 {
 }
 
+void AppInstance::surfaceChanged (int w, int h)
+{
+    bool create = false;
+    if (!m_pSwapChain)
+    {
+        attachToContext(w, h);
+        create = true;
+    }
+
+    // Resizing the swap chain requires back and depth-stencil buffers
+    // to be unbound from the device context
+    m_pImmediateContext->SetRenderTargets(0, nullptr, nullptr, Diligent::RESOURCE_STATE_TRANSITION_MODE_NONE);
+    m_pSwapChain->Resize(w, h);
+
+    if (create)
+    {
+        objectBase.get<ObjectBase*>()->create();
+//        timeEngine.startPhysicsThread();
+    }
+}
+
+void AppInstance::onDraw ()
+{
+    timeEngine.computeDelta();
+    auto obj = objectBase.get<ObjectBase*>();
+    obj->draw();
+    swapBuffers();
+}
+
+void AppInstance::swapBuffers ()
+{
+    AppInstancePlatformBase::swapBuffers();
+}
+
+void AppInstance::destroyResources ()
+{
+//    timeEngine.stopPhysicsThread();
+    objectBase.get<ObjectBase*>()->destroy();
+    m_pImmediateContext->Flush();
+    m_pImmediateContext.Release();
+    m_pSwapChain.Release();
+    m_pDevice.Release();
+    m_pPSO.Release();
+}
+
 #if PLATFORM_WIN32 || PLATFORM_LINUX || PLATFORM_MACOS
 #elif PLATFORM_UNIVERSAL_WINDOWS
 #elif PLATFORM_ANDROID
@@ -62,48 +106,3 @@ void AppInstance::onEglTearDown ()
 #else
     #error "Unknown platform"
 #endif
-
-void AppInstance::surfaceChanged (int w, int h)
-{
-    bool create = false;
-    if (!m_pSwapChain)
-    {
-        attachToContext(w, h);
-        create = true;
-    }
-
-    // Resizing the swap chain requires back and depth-stencil buffers
-    // to be unbound from the device context
-    m_pImmediateContext->SetRenderTargets(0, nullptr, nullptr, Diligent::RESOURCE_STATE_TRANSITION_MODE_NONE);
-    m_pSwapChain->Resize(w, h);
-
-    if (create)
-    {
-        objectBase.get<ObjectBase*>()->create();
-        timeEngine.startPhysicsThread();
-    }
-}
-
-void AppInstance::onDraw ()
-{
-    timeEngine.computeDelta();
-    auto obj = objectBase.get<ObjectBase*>();
-    obj->draw();
-    swapBuffers();
-}
-
-void AppInstance::swapBuffers ()
-{
-    AppInstancePlatformBase::swapBuffers();
-}
-
-void AppInstance::destroyResources ()
-{
-    timeEngine.stopPhysicsThread();
-    objectBase.get<ObjectBase*>()->destroy();
-    m_pImmediateContext->Flush();
-    m_pImmediateContext.Release();
-    m_pSwapChain.Release();
-    m_pDevice.Release();
-    m_pPSO.Release();
-}

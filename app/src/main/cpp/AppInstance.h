@@ -15,8 +15,16 @@ class AppInstance : public AppInstancePlatformBase, public DiligentAppBase
     AnyOpt objectBase;
 
 public:
+
     AppInstance ();
     ~AppInstance ();
+
+    template <typename Object>
+    AnyOpt createObject(DiligentAppBase * diligentAppBase) {
+        Object * obj = new Object;
+        obj->diligentAppBase = diligentAppBase;
+        return AnyOpt(obj, true);
+    }
 
 #if PLATFORM_WIN32 || PLATFORM_LINUX || PLATFORM_MACOS
 
