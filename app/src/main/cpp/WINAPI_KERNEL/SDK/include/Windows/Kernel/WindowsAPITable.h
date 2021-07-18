@@ -15,6 +15,7 @@ typedef class Table {
         size_t page_size = 4096;
 
         Table();
+        Table(size_t page_size);
         ~Table();
 
         class Iterator {

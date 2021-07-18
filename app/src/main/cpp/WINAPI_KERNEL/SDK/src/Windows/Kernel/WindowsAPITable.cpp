@@ -10,6 +10,12 @@ Table::Table() {
     assert(this->table.size() == 0 && this->Page.count() == 0);
 }
 
+Table::Table(size_t page_size) {
+    this->page_size = page_size;
+    this->Page.table = this;
+    assert(this->table.size() == 0 && this->Page.count() == 0);
+}
+
 Table::~Table() {
     this->Page.removeAll();
 }

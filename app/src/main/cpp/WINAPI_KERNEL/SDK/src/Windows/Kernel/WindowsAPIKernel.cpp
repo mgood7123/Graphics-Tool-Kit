@@ -8,6 +8,10 @@ Kernel::Kernel() {
     this->table = new WindowsAPITable();
 }
 
+Kernel::Kernel(size_t page_size) {
+    this->table = new WindowsAPITable(page_size);
+}
+
 Kernel::Kernel(const Kernel &x) {
     this->table = new WindowsAPITable();
     table->table = x.table->table;

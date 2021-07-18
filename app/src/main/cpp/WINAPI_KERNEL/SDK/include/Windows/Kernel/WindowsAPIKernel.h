@@ -16,6 +16,8 @@ class Kernel {
     public:
         Kernel();
 
+        Kernel(size_t page_size);
+
         Kernel(const Kernel &x);
         Kernel(Kernel &&x);
 

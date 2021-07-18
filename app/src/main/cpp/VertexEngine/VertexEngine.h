@@ -11,7 +11,7 @@
 class VertexEngine {
     template <typename data_type, typename storage_type>
     class Buffer {
-        Kernel kernel;
+        Kernel kernel = Kernel(8);
     public:
         HANDLE add(data_type data);
 
