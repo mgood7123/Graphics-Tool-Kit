@@ -4,24 +4,30 @@
 
 #include "VertexEngine.h"
 
-template<typename storage_type, typename data_type>
-HANDLE VertexEngine::Buffer<storage_type, data_type>::add(data_type data) {
+#include <utility>
+
+template<typename data_type, typename storage_type>
+HANDLE VertexEngine::Buffer<data_type, storage_type>::add(data_type data) {
     return kernel.newHandle(ObjectTypeNone, storage_type(data));
 }
 
-template<typename storage_type, typename data_type>
-storage_type *VertexEngine::Buffer<storage_type, data_type>::get(HANDLE handle) {
+template<typename data_type, typename storage_type>
+storage_type *VertexEngine::Buffer<data_type, storage_type>::get(HANDLE handle) {
     return kernel.getHandle(handle)->object->resource.template get<storage_type*>();
 }
 
-template<typename storage_type, typename data_type>
-void VertexEngine::Buffer<storage_type, data_type>::remove(HANDLE handle) {
+template<typename data_type, typename storage_type>
+void VertexEngine::Buffer<data_type, storage_type>::remove(HANDLE handle) {
     kernel.removeHandle(handle);
 }
 
-template<typename storage_type, typename data_type>
-Table::Iterator VertexEngine::Buffer<storage_type, data_type>::getIterator() {
+template<typename data_type, typename storage_type>
+Table::Iterator VertexEngine::Buffer<data_type, storage_type>::getIterator() {
     return kernel.table->getIterator();
+}
+
+PixelToNDC::Coordinates<float> VertexEngine::toNDC(int x, int y, int z) {
+    return pixelConverter.toNDC<int, float>(x, y, z, width, height);
 }
 
 VertexEngine::VertexInfo::VertexInfo(size_t length, bool is_static) {
@@ -50,7 +56,7 @@ void VertexEngine::removeDataBuffer(HANDLE handle) {
     return vertexBuffer.remove(handle);
 }
 
-HANDLE VertexEngine::addData(HANDLE dataBufferHandle, std::initializer_list<float> data) {
+HANDLE VertexEngine::addData(HANDLE dataBufferHandle, const std::vector<float>& data) {
     VertexInfo * buffer = vertexBuffer.get(dataBufferHandle);
     size_t dataLength = data.size();
     size_t bufferLength = buffer->length;
@@ -69,26 +75,38 @@ HANDLE VertexEngine::addData(HANDLE dataBufferHandle, std::initializer_list<floa
 }
 
 std::vector<HANDLE> VertexEngine::addData(
-        std::initializer_list<std::pair<HANDLE, std::initializer_list<float>>> handle_and_data) {
+        const std::vector<std::pair<HANDLE, const std::vector<float>&>>& handle_and_data) {
     std::vector<HANDLE> handles;
-    const std::pair<void *, std::initializer_list<float>> * pair = handle_and_data.begin();
-    for (int i = 0; i < handle_and_data.size(); i++) {
-        const std::pair<void *, std::initializer_list<float>> * data = pair+i;
-        handles.push_back(addData(data->first, data->second));
+    handles.reserve(handle_and_data.size());
+    for (const std::pair<void *, const std::vector<float>&> & pair : handle_and_data) {
+        handles.push_back(addData(pair.first, pair.second));
     }
     return handles;
 }
 
-void VertexEngine::order(std::initializer_list<HANDLE> data) {
+HANDLE VertexEngine::addIndexData(const std::vector<uint32_t>& data) {
+    HANDLE handle = indexBuffer.add(data);
+    indexHandles.push_back(handle);
+    return handle;
+}
+
+void VertexEngine::order(const std::vector<HANDLE>& data) {
     vertexBufferOrder = data;
 }
 
-VertexEngine::GenerationInfo::GenerationInfo(const size_t length, const float *data) :
-    data(new float[length]),
-    length(length),
-    sizeInBytes(length * sizeof(float))
+VertexEngine::GenerationInfo::GenerationInfo(
+        const size_t lengthData, const float *data,
+        const size_t lengthIndices, const uint32_t *indices
+    ) :
+    data(new float[lengthData]),
+    lengthData(lengthData),
+    sizeInBytesData(lengthData * sizeof(float)),
+    indices(new uint32_t[lengthIndices]),
+    lengthIndices(lengthIndices),
+    sizeInBytesIndices(lengthIndices * sizeof(uint32_t))
 {
-    memcpy(this->data, data, sizeInBytes);
+    memcpy(this->data,    data,    sizeInBytesData);
+    memcpy(this->indices, indices, sizeInBytesIndices);
 }
 
 VertexEngine::GenerationInfo::~GenerationInfo() {
@@ -113,7 +131,25 @@ VertexEngine::GenerationInfo VertexEngine::generateGL() {
         }
     }
 
-    size_t index = 0;
+    size_t lengthData = 0;
+    size_t lengthIndices = 0;
+
+    // compute index buffer size
+    size_t indexBufferSize = 0;
+
+    for (HANDLE buffer : indexHandles) {
+        indexBufferSize += indexBuffer.get(buffer)->size();
+    }
+
+    uint32_t indicesBuffer[indexBufferSize];
+
+    // fill index buffer
+    for (HANDLE buffer : indexHandles) {
+        std::vector<uint32_t> *indices = indexBuffer.get(buffer);
+        for (size_t i = 0; i < indices->size(); i++) {
+            indicesBuffer[lengthIndices++] = *(indices->begin() + i);
+        }
+    }
 
     if (isAllStatic) {
         // if we have all static, then every group contains only a single buffer
@@ -121,25 +157,26 @@ VertexEngine::GenerationInfo VertexEngine::generateGL() {
         // ORDER A, B, C
         // OUT A.data, B.data, C.data
 
-        // compute buffer size
-        size_t bufferSize = 0;
+        // compute data buffer size
+        size_t dataBufferSize = 0;
 
         for (HANDLE group : vertexBufferOrder) {
-            bufferSize += vertexBuffer.get(group)->length;
+            VertexInfo * info = vertexBuffer.get(group);
+            dataBufferSize += info->length;
         }
 
-        float buffer[bufferSize];
+        float dataBuffer[dataBufferSize];
 
-        // fill buffer
+        // fill data buffer
         for (HANDLE group : vertexBufferOrder) {
             VertexInfo *info = vertexBuffer.get(group);
-            std::initializer_list<float> *data = info->dataBuffer.get(info->static_data);
-            for (size_t i = 0; i < data->size(); i++) {
-                buffer[index++] = *(data->begin() + i);
+            const std::vector<float>&data = *info->dataBuffer.get(info->static_data);
+            for (float i : data) {
+                dataBuffer[lengthData++] = i;
             }
         }
 
-        return GenerationInfo(index, buffer);
+        return GenerationInfo(lengthData, dataBuffer, lengthIndices, indicesBuffer);
     } else {
         // otherwise, every group contains multiple buffers
         // ensure they are all the same size
@@ -177,19 +214,19 @@ VertexEngine::GenerationInfo VertexEngine::generateGL() {
         // ORDER A, B, C
         // OUT A.data1, B.data1, C.data1, A.data2, B.data2, C.data2
 
-        // compute buffer size
-        size_t bufferSize = 0;
+        // compute data buffer size
+        size_t dataBufferSize = 0;
 
         for (size_t c = 0; c < bufferCount; c++) {
             for (HANDLE group : vertexBufferOrder) {
                 VertexInfo *info = vertexBuffer.get(group);
                 Table::Iterator iterator = info->dataBuffer.getIterator();
                 if (!info->is_static) iterator.skip(c);
-                if (iterator.hasNext()) bufferSize += info->length;
+                if (iterator.hasNext()) dataBufferSize += info->length;
             }
         }
 
-        float buffer[bufferSize];
+        float dataBuffer[dataBufferSize];
 
         // fill buffer
         for (size_t c = 0; c < bufferCount; c++) {
@@ -198,14 +235,37 @@ VertexEngine::GenerationInfo VertexEngine::generateGL() {
                 Table::Iterator iterator = info->dataBuffer.getIterator();
                 if (!info->is_static) iterator.skip(c);
                 if (iterator.hasNext()) {
-                    std::initializer_list<float> *data = info->dataBuffer.get(iterator.next()->handle);
-                    for (size_t i = 0; i < data->size(); i++) {
-                        buffer[index++] = *(data->begin() + i);
+                    const std::vector<float>&data = *info->dataBuffer.get(iterator.next()->handle);
+                    for (float i : data) {
+                        dataBuffer[lengthData++] = i;
                     }
                 }
             }
         }
 
-        return GenerationInfo(index, buffer);
+        return GenerationInfo(lengthData, dataBuffer, lengthIndices, indicesBuffer);
     }
+}
+
+void VertexEngine::plane(
+        HANDLE positionBuffer, int x, int y, int width, int height,
+        HANDLE colorBuffer, const std::vector<float>& colorData
+) {
+    std::vector topLeft = toNDC(x, y, 0).toVector();
+    std::vector topRight = toNDC(width, y, 0).toVector();
+    std::vector bottomRight = toNDC(width, height, 0).toVector();
+    std::vector bottomLeft = toNDC(x, height, 0).toVector();
+
+    addData({
+        {colorBuffer, colorData},
+        {positionBuffer, topLeft},
+        {positionBuffer, topRight},
+        {positionBuffer, bottomRight},
+        {positionBuffer, bottomLeft}
+    });
+
+    addIndexData({
+        0, 1, 2,
+        2, 3, 0
+    });
 }

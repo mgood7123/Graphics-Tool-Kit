@@ -114,54 +114,36 @@ void RectangleView::create() {
     PSOCreateInfo.pPS = pPS;
     diligentAppBase->m_pDevice->CreateGraphicsPipelineState(PSOCreateInfo, &diligentAppBase->m_pPSO);
 
-    // generate vertex and index info
     VertexEngine vertexEngine = createVertexEngine(400, 400);
 
-    // Layout of this structure matches the one we defined in the pipeline state
+    // Layout of this structure matches the one we defined in the shader
     HANDLE colorID = vertexEngine.addDataBufferStatic(4);
     HANDLE posID   = vertexEngine.addDataBuffer(3);
     vertexEngine.order({posID, colorID});
 
-    // vector of HANDLE objects are returned
-    // we currently have no direct use for these handles
-    // since our data does not need to be modified
-    vertexEngine.addData({
-        {colorID, { 0,  1,  0,  1}},
-        {posID,   {-1,  1,  0    }},
-        {posID,   { 1,  1,  0    }},
-        {posID,   { 1, -1,  0    }},
-        {posID,   {-1, -1,  0    }}
-    });
+    vertexEngine.plane(posID, 0, 0, 400, 400, colorID, {0, 1, 0, 1});
 
-    VertexEngine::GenerationInfo bufferData = vertexEngine.generateGL();
+    VertexEngine::GenerationInfo generationInfo = vertexEngine.generateGL();
 
     // Create a vertex buffer that stores cube vertices
     Diligent::BufferDesc VertBuffDesc;
     VertBuffDesc.Name          = "Rectangle vertex buffer";
     VertBuffDesc.Usage         = Diligent::USAGE_IMMUTABLE;
     VertBuffDesc.BindFlags     = Diligent::BIND_VERTEX_BUFFER;
-    VertBuffDesc.uiSizeInBytes = bufferData.sizeInBytes;
+    VertBuffDesc.uiSizeInBytes = generationInfo.sizeInBytesData;
     Diligent::BufferData VBData;
-    VBData.pData    = bufferData.data;
-    VBData.DataSize = bufferData.sizeInBytes;
+    VBData.pData    = generationInfo.data;
+    VBData.DataSize = generationInfo.sizeInBytesData;
     diligentAppBase->m_pDevice->CreateBuffer(VertBuffDesc, &VBData, &m_CubeVertexBuffer);
-
-    // clang-format off
-    Diligent::Uint32 Indices[] =
-    {
-            0, 1, 2,
-            2, 3, 0
-    };
-    // clang-format on
 
     Diligent::BufferDesc IndBuffDesc;
     IndBuffDesc.Name          = "Rectangle index buffer";
     IndBuffDesc.Usage         = Diligent::USAGE_IMMUTABLE;
     IndBuffDesc.BindFlags     = Diligent::BIND_INDEX_BUFFER;
-    IndBuffDesc.uiSizeInBytes = sizeof(Indices);
+    IndBuffDesc.uiSizeInBytes = generationInfo.sizeInBytesIndices;
     Diligent::BufferData IBData;
-    IBData.pData    = Indices;
-    IBData.DataSize = sizeof(Indices);
+    IBData.pData    = generationInfo.indices;
+    IBData.DataSize = generationInfo.sizeInBytesIndices;
     diligentAppBase->m_pDevice->CreateBuffer(IndBuffDesc, &IBData, &m_CubeIndexBuffer);
 }
 

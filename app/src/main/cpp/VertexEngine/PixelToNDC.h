@@ -6,10 +6,11 @@
 #define GRAPHICAL_TOOL_KIT_PIXEL_TO_NDC_H
 
 #include <DiligentCore/Primitives/interface/Errors.hpp>
+#include <vector>
 
 class PixelToNDC {
 public:
-    bool LOG_PRINT_CONVERSIONS = true;
+    bool LOG_PRINT_CONVERSIONS = false;
 
     template<typename TYPE> float inverse(TYPE num) {
         return num < 0 ? -num : -(num);
@@ -20,16 +21,21 @@ public:
         return (num - (num_max / 2)) / (num_max / 2);
     }
 
-    template<typename TYPE> class coordinates {
+    template<typename TYPE> class Coordinates {
     public:
-        coordinates() {}
-        coordinates(TYPE TYPE_INITIALIZER) {
-            TYPE x = TYPE_INITIALIZER;
-            TYPE y = TYPE_INITIALIZER;
-        }
-
         TYPE x;
         TYPE y;
+        TYPE z;
+        Coordinates() {}
+        Coordinates(TYPE TYPE_INITIALIZER) {
+            x = TYPE_INITIALIZER;
+            y = TYPE_INITIALIZER;
+            z = TYPE_INITIALIZER;
+        }
+
+        std::vector<TYPE> toVector() {
+            return {x, y, z};
+        };
     };
 
     constexpr static int CONVERSION_ORIGIN_TOP_LEFT = 0;
@@ -40,8 +46,9 @@ public:
     int CONVERSION_ORIGIN = CONVERSION_ORIGIN_TOP_LEFT;
 
     template<typename TYPEFROM, typename TYPETO>
-    class coordinates<TYPETO> pixel_location_to_normalized_device_coordinate(TYPETO TYPETO_INITIALIZER, TYPEFROM x, TYPEFROM y, TYPEFROM w, TYPEFROM h, bool clip) {
-        class coordinates<TYPETO> xy(TYPETO_INITIALIZER);
+    Coordinates<TYPETO> toNDC(TYPETO TYPETO_INITIALIZER, TYPEFROM x, TYPEFROM y, TYPEFROM z, TYPEFROM w, TYPEFROM h, bool clip) {
+        Coordinates<TYPETO> xyz(TYPETO_INITIALIZER);
+        xyz.z = z;
         if (x > w) {
             if (LOG_PRINT_CONVERSIONS)
                 LOG_INFO_MESSAGE("x is out of bounds (expected ", w, ", got ", x, ")");
@@ -72,19 +79,19 @@ public:
                 y = 0;
             }
         }
-        xy.x = convert<TYPETO>(static_cast<TYPETO>(x), static_cast<TYPETO>(w)); // x
-        xy.y = convert<TYPETO>(static_cast<TYPETO>(y), static_cast<TYPETO>(h)); // y
+        xyz.x = convert<TYPETO>(static_cast<TYPETO>(x), static_cast<TYPETO>(w)); // x
+        xyz.y = convert<TYPETO>(static_cast<TYPETO>(y), static_cast<TYPETO>(h)); // y
 
         switch (CONVERSION_ORIGIN) {
             case CONVERSION_ORIGIN_TOP_LEFT:
                 if (LOG_PRINT_CONVERSIONS) LOG_INFO_MESSAGE("inverting 'y'");
-                xy.y = inverse<TYPETO>(xy.y);
+                xyz.y = inverse<TYPETO>(xyz.y);
                 break;
             case CONVERSION_ORIGIN_TOP_RIGHT:
                 if (LOG_PRINT_CONVERSIONS) LOG_INFO_MESSAGE("inverting 'x'");
-                xy.x = inverse<TYPETO>(xy.x);
+                xyz.x = inverse<TYPETO>(xyz.x);
                 if (LOG_PRINT_CONVERSIONS) LOG_INFO_MESSAGE("inverting 'y'");
-                xy.y = inverse<TYPETO>(xy.y);
+                xyz.y = inverse<TYPETO>(xyz.y);
                 break;
             case CONVERSION_ORIGIN_BOTTOM_LEFT: {
                 if (LOG_PRINT_CONVERSIONS) LOG_INFO_MESSAGE("no conversion");
@@ -92,7 +99,7 @@ public:
             }
             case CONVERSION_ORIGIN_BOTTOM_RIGHT:
                 if (LOG_PRINT_CONVERSIONS) LOG_INFO_MESSAGE("inverting 'x'");
-                xy.x = inverse<TYPETO>(xy.x);
+                xyz.x = inverse<TYPETO>(xyz.x);
                 break;
             default:
                 if (LOG_PRINT_CONVERSIONS) LOG_INFO_MESSAGE("unknown conversion");
@@ -100,17 +107,27 @@ public:
         }
         if (LOG_PRINT_CONVERSIONS) {
             LOG_INFO_MESSAGE("CONVERSION INFO:",
-                             "\nx: ", x, ", y: ", y,
+                             "\nx: ", x, ", y: ", y, ", z: ", z,
                              "\nwidth: ", w, ", height: ", h,
-                             "\nNormalized Device Coordinates: ", xy.x, ", ", xy.y
+                             "\nNormalized Device Coordinates: ", xyz.x, ", ", xyz.y, ", ", xyz.z
             );
         }
-        return xy;
+        return xyz;
     }
 
     template<typename TYPEFROM, typename TYPETO>
-    class coordinates<TYPETO> pixel_location_to_normalized_device_coordinate(TYPEFROM x, TYPEFROM y, TYPEFROM w, TYPEFROM h) {
-        return pixel_location_to_normalized_device_coordinate<TYPEFROM, TYPETO>(0, x, y, w, h, true);
+    Coordinates<TYPETO> toNDC(TYPETO TYPETO_INITIALIZER, TYPEFROM x, TYPEFROM y, TYPEFROM w, TYPEFROM h, bool clip) {
+        return toNDC<TYPEFROM, TYPETO>(TYPETO_INITIALIZER, x, y, 0, w, h, true);
+    }
+
+    template<typename TYPEFROM, typename TYPETO>
+    Coordinates<TYPETO> toNDC(TYPEFROM x, TYPEFROM y, TYPEFROM w, TYPEFROM h) {
+        return toNDC<TYPEFROM, TYPETO>(0, x, y, 0, w, h, true);
+    }
+
+    template<typename TYPEFROM, typename TYPETO>
+    Coordinates<TYPETO> toNDC(TYPEFROM x, TYPEFROM y, TYPEFROM z, TYPEFROM w, TYPEFROM h) {
+        return toNDC<TYPEFROM, TYPETO>(0, x, y, z, w, h, true);
     }
 };
 

@@ -9,7 +9,7 @@
 #include <SDK/include/Windows/Kernel/WindowsAPIKernel.h>
 
 class VertexEngine {
-    template <typename storage_type, typename data_type>
+    template <typename data_type, typename storage_type>
     class Buffer {
         Kernel kernel;
     public:
@@ -24,20 +24,24 @@ class VertexEngine {
 
     class VertexInfo {
     public:
-        Buffer<std::initializer_list<float>, std::initializer_list<float>> dataBuffer;
+        Buffer<const std::vector<float>&, std::vector<float>> dataBuffer;
         size_t length;
         bool is_static;
         HANDLE static_data = nullptr;
         VertexInfo(size_t length, bool is_static);
     };
 
+
     Buffer<VertexInfo, VertexInfo> vertexBuffer;
-    std::initializer_list<HANDLE> vertexBufferOrder;
+    std::vector<HANDLE> vertexBufferOrder;
+    std::vector<HANDLE> indexHandles;
+    Buffer<const std::vector<uint32_t>&, std::vector<uint32_t>> indexBuffer;
 
     int width;
     int height;
     PixelToNDC pixelConverter;
 public:
+    PixelToNDC::Coordinates<float> toNDC(int x, int y, int z);
     VertexEngine(int width, int height);
     void resize(int width, int height);
 
@@ -89,7 +93,7 @@ public:
      * <br>
      * @return a handle to the added data
      */
-    HANDLE addData(HANDLE dataBufferHandle, std::initializer_list<float> data);
+    HANDLE addData(HANDLE dataBufferHandle, const std::vector<float>& data);
 
     /**
      * adds data to the specified dataBufferHandle
@@ -113,21 +117,36 @@ public:
      * <br>
      * @return a vector of handles to the added data
      */
-    std::vector<HANDLE> addData(std::initializer_list<std::pair<HANDLE, std::initializer_list<float>>> handle_and_data);
+    std::vector<HANDLE> addData(const std::vector<std::pair<HANDLE, const std::vector<float>&>>& handle_and_data);
+
+    /**
+     * adds index data to the specified dataBufferHandle
+     * <br>
+     * data is given as unsigned 32-bit integers
+     * @return a handle to the added data
+     */
+    HANDLE addIndexData(const std::vector<uint32_t>& data);
 
     /**
      * specifies the buffer order for output generation
      * @param data an ordered array of HANDLE's
      */
-    void order(std::initializer_list<HANDLE> data);
+    void order(const std::vector<HANDLE>& data);
 
     class GenerationInfo {
     public:
-        size_t length;
-        size_t sizeInBytes;
+        size_t lengthData;
+        size_t sizeInBytesData;
         float * data;
 
-        GenerationInfo(const size_t length, const float *data);
+        size_t lengthIndices;
+        size_t sizeInBytesIndices;
+        uint32_t * indices;
+
+        GenerationInfo(
+                const size_t lengthData, const float *data,
+                const size_t lengthIndices, const uint32_t *indices
+        );
 
         ~GenerationInfo();
     };
@@ -137,6 +156,13 @@ public:
      * @return information about the generated data
      */
     GenerationInfo generateGL();
+
+    // shape and geometry generation
+
+    void plane(
+            HANDLE positionBuffer, int x, int y, int width, int height,
+            HANDLE colorBuffer, const std::vector<float>& colorData
+    );
 };
 
 
