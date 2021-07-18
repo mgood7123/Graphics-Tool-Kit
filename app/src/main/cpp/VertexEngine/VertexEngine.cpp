@@ -247,25 +247,27 @@ VertexEngine::GenerationInfo VertexEngine::generateGL() {
     }
 }
 
-void VertexEngine::plane(
-        HANDLE positionBuffer, int x, int y, int width, int height,
-        HANDLE colorBuffer, const std::vector<float>& colorData
-) {
-    std::vector topLeft = toNDC(x, y, 0).toVector();
-    std::vector topRight = toNDC(width, y, 0).toVector();
-    std::vector bottomRight = toNDC(width, height, 0).toVector();
-    std::vector bottomLeft = toNDC(x, height, 0).toVector();
+void VertexEngine::plane(int x, int y, int width, int height, const std::vector<float>& colorData) {
+    return planeAt(x, y, x + width, y + height, colorData);
+}
+
+void VertexEngine::planeAt(int from_X, int from_Y, int to_X, int to_Y,
+                           const std::vector<float> &colorData) {
+    std::vector topLeft = toNDC(from_X, from_Y, 0).toVector();
+    std::vector topRight = toNDC(to_X, from_Y, 0).toVector();
+    std::vector bottomRight = toNDC(to_X, to_Y, 0).toVector();
+    std::vector bottomLeft = toNDC(from_X, to_Y, 0).toVector();
 
     addData({
-        {colorBuffer, colorData},
-        {positionBuffer, topLeft},
-        {positionBuffer, topRight},
-        {positionBuffer, bottomRight},
-        {positionBuffer, bottomLeft}
+        {defaultPositionBuffer, topLeft}, {defaultColorBuffer, colorData},
+        {defaultPositionBuffer, topRight}, {defaultColorBuffer, colorData},
+        {defaultPositionBuffer, bottomRight}, {defaultColorBuffer, colorData},
+        {defaultPositionBuffer, bottomLeft}, {defaultColorBuffer, colorData}
     });
 
     addIndexData({
-        0, 1, 2,
-        2, 3, 0
+        indexPosition + 0, indexPosition + 1, indexPosition + 2,
+        indexPosition + 2, indexPosition + 3, indexPosition + 0
     });
+    indexPosition += 4;
 }

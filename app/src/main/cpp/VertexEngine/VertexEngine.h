@@ -36,6 +36,7 @@ class VertexEngine {
     std::vector<HANDLE> vertexBufferOrder;
     std::vector<HANDLE> indexHandles;
     Buffer<const std::vector<uint32_t>&, std::vector<uint32_t>> indexBuffer;
+    uint32_t indexPosition = 0;
 
     int width;
     int height;
@@ -44,6 +45,9 @@ public:
     PixelToNDC::Coordinates<float> toNDC(int x, int y, int z);
     VertexEngine(int width, int height);
     void resize(int width, int height);
+
+    HANDLE defaultPositionBuffer = nullptr;
+    HANDLE defaultColorBuffer = nullptr;
 
     /**
      * creates a new non-static data buffer
@@ -159,10 +163,8 @@ public:
 
     // shape and geometry generation
 
-    void plane(
-            HANDLE positionBuffer, int x, int y, int width, int height,
-            HANDLE colorBuffer, const std::vector<float>& colorData
-    );
+    void plane(int x, int y, int width, int height, const std::vector<float>& colorData);
+    void planeAt(int from_X, int from_Y, int to_X, int to_Y, const std::vector<float>& colorData);
 };
 
 

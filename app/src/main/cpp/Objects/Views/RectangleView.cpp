@@ -42,6 +42,8 @@ void main(in  PSInput  PSIn,
 }
 )";
 
+int indicesToDraw = 0;
+
 void RectangleView::create() {
     
     // create a pipeline
@@ -114,37 +116,52 @@ void RectangleView::create() {
     PSOCreateInfo.pPS = pPS;
     diligentAppBase->m_pDevice->CreateGraphicsPipelineState(PSOCreateInfo, &diligentAppBase->m_pPSO);
 
+    Diligent::BufferData VBData;
+    Diligent::BufferDesc VertBuffDesc;
+    VertBuffDesc.Name = "Rectangle vertex buffer";
+    VertBuffDesc.Usage = Diligent::USAGE_IMMUTABLE;
+    VertBuffDesc.BindFlags = Diligent::BIND_VERTEX_BUFFER;
+
+    Diligent::BufferData IBData;
+    Diligent::BufferDesc IndBuffDesc;
+    IndBuffDesc.Name = "Rectangle index buffer";
+    IndBuffDesc.Usage = Diligent::USAGE_IMMUTABLE;
+    IndBuffDesc.BindFlags = Diligent::BIND_INDEX_BUFFER;
+
     VertexEngine vertexEngine = createVertexEngine(400, 400);
 
-    // Layout of this structure matches the one we defined in the shader
-    HANDLE colorID = vertexEngine.addDataBufferStatic(4);
-    HANDLE posID   = vertexEngine.addDataBuffer(3);
-    vertexEngine.order({posID, colorID});
+    // TODO: maybe make this internal?
+    auto posID = vertexEngine.addDataBuffer(3);
+    auto colorID = vertexEngine.addDataBuffer(4);
+    vertexEngine.defaultPositionBuffer = posID;
+    vertexEngine.defaultColorBuffer = colorID;
 
-    vertexEngine.plane(posID, 0, 0, 400, 400, colorID, {0, 1, 0, 1});
+    // make the Layout of this structure match the one we defined in the shader
+    vertexEngine.order({posID, colorID});
+    std::vector<float> green = {0, 1, 0, 1};
+    std::vector<float> blue = {0, 0, 1, 1};
+    std::vector<float> pink = {1, 0, 1, 1};
+
+
+    // from [x, y] to [x, y]
+    vertexEngine.planeAt(20, 20, 200, 200, green);
+    // from [x, y] to [x+width, y+width]
+    vertexEngine.plane(140, 140, 200, 200, blue);
+    vertexEngine.plane(160, 160, 80, 80, pink);
+
 
     VertexEngine::GenerationInfo generationInfo = vertexEngine.generateGL();
 
-    // Create a vertex buffer that stores cube vertices
-    Diligent::BufferDesc VertBuffDesc;
-    VertBuffDesc.Name          = "Rectangle vertex buffer";
-    VertBuffDesc.Usage         = Diligent::USAGE_IMMUTABLE;
-    VertBuffDesc.BindFlags     = Diligent::BIND_VERTEX_BUFFER;
     VertBuffDesc.uiSizeInBytes = generationInfo.sizeInBytesData;
-    Diligent::BufferData VBData;
-    VBData.pData    = generationInfo.data;
+    VBData.pData = generationInfo.data;
     VBData.DataSize = generationInfo.sizeInBytesData;
     diligentAppBase->m_pDevice->CreateBuffer(VertBuffDesc, &VBData, &m_CubeVertexBuffer);
 
-    Diligent::BufferDesc IndBuffDesc;
-    IndBuffDesc.Name          = "Rectangle index buffer";
-    IndBuffDesc.Usage         = Diligent::USAGE_IMMUTABLE;
-    IndBuffDesc.BindFlags     = Diligent::BIND_INDEX_BUFFER;
     IndBuffDesc.uiSizeInBytes = generationInfo.sizeInBytesIndices;
-    Diligent::BufferData IBData;
-    IBData.pData    = generationInfo.indices;
+    IBData.pData = generationInfo.indices;
     IBData.DataSize = generationInfo.sizeInBytesIndices;
     diligentAppBase->m_pDevice->CreateBuffer(IndBuffDesc, &IBData, &m_CubeIndexBuffer);
+    indicesToDraw = generationInfo.lengthIndices;
 }
 
 void RectangleView::draw ()
@@ -170,7 +187,7 @@ void RectangleView::draw ()
 
     Diligent::DrawIndexedAttribs DrawAttrs;     // This is an indexed draw call
     DrawAttrs.IndexType  = Diligent::VT_UINT32; // Index type
-    DrawAttrs.NumIndices = 6;
+    DrawAttrs.NumIndices = indicesToDraw;
     // Verify the state of vertex and index buffers
     DrawAttrs.Flags = Diligent::DRAW_FLAG_VERIFY_ALL;
     diligentAppBase->m_pImmediateContext->DrawIndexed(DrawAttrs);
