@@ -19,6 +19,8 @@ class VertexEngine {
 
         void remove(HANDLE handle);
 
+        void clear();
+
         Table::Iterator getIterator();
     };
 
@@ -43,8 +45,15 @@ class VertexEngine {
     PixelToNDC pixelConverter;
 public:
     PixelToNDC::Coordinates<float> toNDC(int x, int y, int z);
+    VertexEngine();
     VertexEngine(int width, int height);
+    ~VertexEngine();
     void resize(int width, int height);
+
+    /**
+     * clears the vertex and index buffers
+     */
+    void clear();
 
     HANDLE defaultPositionBuffer = nullptr;
     HANDLE defaultColorBuffer = nullptr;
@@ -138,13 +147,17 @@ public:
     void order(const std::vector<HANDLE>& data);
 
     class GenerationInfo {
+        size_t chunkReader;
     public:
-        size_t lengthData;
-        size_t sizeInBytesData;
+
+        size_t chunksGenerated;
+
+        const size_t lengthData;
+        const size_t sizeInBytesData;
         float * data;
 
-        size_t lengthIndices;
-        size_t sizeInBytesIndices;
+        const size_t lengthIndices;
+        const size_t sizeInBytesIndices;
         uint32_t * indices;
 
         GenerationInfo(
@@ -152,7 +165,24 @@ public:
                 const size_t lengthIndices, const uint32_t *indices
         );
 
+
+        GenerationInfo(const GenerationInfo& m) = delete;
+
+        GenerationInfo& operator=(const GenerationInfo& m) = delete;
+
+        GenerationInfo(GenerationInfo && m);
+
+        GenerationInfo& operator=(GenerationInfo&& m) = delete;
+
         ~GenerationInfo();
+
+        static bool isMultipleOf(size_t bytes, size_t dataSize, size_t multipleOf);
+
+        void resetChunkReader();
+
+        bool canGenerateChunk(size_t chunkSize) const;
+
+        GenerationInfo generateChunk(int posCount, int colorCount, size_t chunkSize);
     };
 
     /**

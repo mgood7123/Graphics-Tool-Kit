@@ -22,9 +22,18 @@ void VertexEngine::Buffer<data_type, storage_type>::remove(HANDLE handle) {
 }
 
 template<typename data_type, typename storage_type>
+void VertexEngine::Buffer<data_type, storage_type>::clear() {
+    Table::Iterator i = getIterator();
+    while (i.hasNext()) {
+        remove(i.next()->handle);
+    }
+}
+
+template<typename data_type, typename storage_type>
 Table::Iterator VertexEngine::Buffer<data_type, storage_type>::getIterator() {
     return kernel.table->getIterator();
 }
+
 
 PixelToNDC::Coordinates<float> VertexEngine::toNDC(int x, int y, int z) {
     return pixelConverter.toNDC<int, float>(x, y, z, width, height);
@@ -35,13 +44,32 @@ VertexEngine::VertexInfo::VertexInfo(size_t length, bool is_static) {
     this->is_static = is_static;
 }
 
+VertexEngine::VertexEngine() {
+    resize(0, 0);
+}
+
 VertexEngine::VertexEngine(int width, int height) {
     resize(width, height);
+}
+
+VertexEngine::~VertexEngine() {
+    clear();
 }
 
 void VertexEngine::resize(int width, int height) {
     this->width = width;
     this->height = height;
+}
+
+void VertexEngine::clear() {
+    auto i = vertexBuffer.getIterator();
+    while (i.hasNext()) {
+        auto v = vertexBuffer.get(i.next()->handle);
+        v->dataBuffer.clear();
+    }
+    indexBuffer.clear();
+    indexHandles.clear();
+    indexPosition = 0;
 }
 
 HANDLE VertexEngine::addDataBuffer(size_t length) {
@@ -103,14 +131,75 @@ VertexEngine::GenerationInfo::GenerationInfo(
     sizeInBytesData(lengthData * sizeof(float)),
     indices(new uint32_t[lengthIndices]),
     lengthIndices(lengthIndices),
-    sizeInBytesIndices(lengthIndices * sizeof(uint32_t))
+    sizeInBytesIndices(lengthIndices * sizeof(uint32_t)),
+    chunkReader(0),
+    chunksGenerated(0)
 {
-    memcpy(this->data,    data,    sizeInBytesData);
-    memcpy(this->indices, indices, sizeInBytesIndices);
+    if (data != nullptr) memcpy(this->data, data, sizeInBytesData);
+    else memset(this->data, 0, sizeInBytesData);
+    if (indices != nullptr) memcpy(this->indices, indices, sizeInBytesIndices);
+    else memset(this->indices, 0, sizeInBytesIndices);
+}
+
+VertexEngine::GenerationInfo::GenerationInfo(VertexEngine::GenerationInfo &&m) :
+        data(m.data),
+        lengthData(m.lengthData),
+        sizeInBytesData(m.sizeInBytesData),
+        indices(m.indices),
+        lengthIndices(m.lengthIndices),
+        sizeInBytesIndices(m.sizeInBytesIndices),
+        chunkReader(0),
+        chunksGenerated(0)
+{
+    m.data = nullptr;
+    m.indices = nullptr;
 }
 
 VertexEngine::GenerationInfo::~GenerationInfo() {
     delete[] data;
+    delete[] indices;
+}
+
+bool VertexEngine::GenerationInfo::isMultipleOf(size_t bytes, size_t dataSize, size_t multipleOf) {
+    return bytes % (dataSize*multipleOf) == 0;
+}
+
+void VertexEngine::GenerationInfo::resetChunkReader() {
+    chunkReader = 0;
+}
+
+bool VertexEngine::GenerationInfo::canGenerateChunk(size_t chunkSize) const {
+    if (chunkSize <= 0 || lengthIndices <= 0) return false;
+    if (chunkReader >= lengthIndices) return false;
+    if (chunkSize > lengthIndices) return true;
+    return isMultipleOf(sizeInBytesIndices, sizeof(uint32_t), chunkSize);
+}
+
+VertexEngine::GenerationInfo VertexEngine::GenerationInfo::generateChunk(
+        int posCount, int colorCount, size_t chunkSize
+) {
+    int size = posCount + colorCount;
+
+    VertexEngine::GenerationInfo out(size*chunkSize, nullptr, chunkSize, nullptr);
+
+    // indices increase from 0, 1, 2, ...
+    size_t vertexIndex = 0;
+    size_t indicesIndex = 0;
+    while(indicesIndex < chunkSize && chunkReader < lengthIndices) {
+        out.indices[indicesIndex] = indicesIndex;
+        indicesIndex++;
+
+        uint32_t target = indices[chunkReader];
+        chunkReader++;
+
+        uint32_t index = target * size;
+
+        for (int i = 0; i < size; i++) {
+            out.data[vertexIndex++] = data[index+i];
+        }
+    }
+    chunksGenerated++;
+    return out;
 }
 
 VertexEngine::GenerationInfo VertexEngine::generateGL() {
