@@ -4,8 +4,6 @@
 
 #include "VertexEngine.h"
 
-#include <utility>
-
 template<typename data_type, typename storage_type>
 HANDLE VertexEngine::Buffer<data_type, storage_type>::add(data_type data) {
     return kernel.newHandle(ObjectTypeNone, storage_type(data));
@@ -44,12 +42,24 @@ VertexEngine::VertexInfo::VertexInfo(size_t length, bool is_static) {
     this->is_static = is_static;
 }
 
-VertexEngine::VertexEngine() {
-    resize(0, 0);
+VertexEngine::VertexEngine() :
+    canvas(this),
+    defaultPositionBuffer(nullptr),
+    defaultColorBuffer(nullptr),
+    width(0),
+    height(0),
+    indexPosition(0)
+{
 }
 
-VertexEngine::VertexEngine(int width, int height) {
-    resize(width, height);
+VertexEngine::VertexEngine(int width, int height) :
+        canvas(this),
+        defaultPositionBuffer(nullptr),
+        defaultColorBuffer(nullptr),
+        width(width),
+        height(height),
+        indexPosition(0)
+{
 }
 
 VertexEngine::~VertexEngine() {
@@ -82,40 +92,6 @@ HANDLE VertexEngine::addDataBufferStatic(size_t length) {
 
 void VertexEngine::removeDataBuffer(HANDLE handle) {
     return vertexBuffer.remove(handle);
-}
-
-HANDLE VertexEngine::addData(HANDLE dataBufferHandle, const std::vector<float>& data) {
-    VertexInfo * buffer = vertexBuffer.get(dataBufferHandle);
-    size_t dataLength = data.size();
-    size_t bufferLength = buffer->length;
-    if (dataLength > bufferLength) {
-        LOG_FATAL_ERROR_AND_THROW("data length (", dataLength, ") is greater than buffer length (", bufferLength, ")");
-    }
-    if (buffer->is_static) {
-        if (buffer->static_data != nullptr) {
-            buffer->dataBuffer.remove(buffer->static_data);
-        }
-        buffer->static_data = buffer->dataBuffer.add(data);
-        return buffer->static_data;
-    } else {
-        return buffer->dataBuffer.add(data);
-    }
-}
-
-std::vector<HANDLE> VertexEngine::addData(
-        const std::vector<std::pair<HANDLE, const std::vector<float>&>>& handle_and_data) {
-    std::vector<HANDLE> handles;
-    handles.reserve(handle_and_data.size());
-    for (const std::pair<void *, const std::vector<float>&> & pair : handle_and_data) {
-        handles.push_back(addData(pair.first, pair.second));
-    }
-    return handles;
-}
-
-HANDLE VertexEngine::addIndexData(const std::vector<uint32_t>& data) {
-    HANDLE handle = indexBuffer.add(data);
-    indexHandles.push_back(handle);
-    return handle;
 }
 
 void VertexEngine::order(const std::vector<HANDLE>& data) {
@@ -336,27 +312,130 @@ VertexEngine::GenerationInfo VertexEngine::generateGL() {
     }
 }
 
-void VertexEngine::plane(int x, int y, int width, int height, const std::vector<float>& colorData) {
+VertexEngine::Canvas::Canvas(VertexEngine *engine) {
+    vertexEngine = engine;
+}
+
+HANDLE VertexEngine::Canvas::addData_(HANDLE dataBufferHandle, const std::vector<float>& data) {
+    VertexInfo * buffer = vertexEngine->vertexBuffer.get(dataBufferHandle);
+    size_t dataLength = data.size();
+    size_t bufferLength = buffer->length;
+    if (dataLength > bufferLength) {
+        LOG_FATAL_ERROR_AND_THROW("data length (", dataLength, ") is greater than buffer length (", bufferLength, ")");
+    }
+    if (buffer->is_static) {
+        if (buffer->static_data != nullptr) {
+            buffer->dataBuffer.remove(buffer->static_data);
+        }
+        buffer->static_data = buffer->dataBuffer.add(data);
+        return buffer->static_data;
+    } else {
+        return buffer->dataBuffer.add(data);
+    }
+}
+
+std::vector<HANDLE> VertexEngine::Canvas::addData_(
+        const std::vector<std::pair<HANDLE, const std::vector<float>&>>& handle_and_data) {
+    std::vector<HANDLE> handles;
+    handles.reserve(handle_and_data.size());
+    for (const std::pair<void *, const std::vector<float>&> & pair : handle_and_data) {
+        handles.push_back(addData_(pair.first, pair.second));
+    }
+    return handles;
+}
+
+HANDLE VertexEngine::Canvas::addIndexData_(const std::vector<uint32_t>& data) {
+    HANDLE handle = vertexEngine->indexBuffer.add(data);
+    vertexEngine->indexHandles.push_back(handle);
+    return handle;
+}
+
+void VertexEngine::Canvas::addData(const std::vector<std::pair<const Position3&, const Color4&>>& data) {
+    for (std::pair<const Position3&, const Color4&> pair : data) {
+        const Position3& position = pair.first;
+        const Color4& color = pair.second;
+        addData_({
+            {vertexEngine->defaultPositionBuffer, position.toVector()},
+            {vertexEngine->defaultColorBuffer, color.toVector()}
+        });
+    }
+}
+
+HANDLE VertexEngine::Canvas::addIndexData(const std::vector<uint32_t>& data) {
+    auto& mutableData = const_cast<std::vector<uint32_t>&>(data);
+    for (uint32_t & i : mutableData) i += vertexEngine->indexPosition;
+    return addIndexData_(data);
+}
+
+void VertexEngine::Canvas::clear() {
+    vertexEngine->clear();
+
+}
+
+void VertexEngine::Canvas::plane(int x, int y, int width, int height, const Color4& colorData) {
     return planeAt(x, y, x + width, y + height, colorData);
 }
 
-void VertexEngine::planeAt(int from_X, int from_Y, int to_X, int to_Y,
-                           const std::vector<float> &colorData) {
-    std::vector topLeft = toNDC(from_X, from_Y, 0).toVector();
-    std::vector topRight = toNDC(to_X, from_Y, 0).toVector();
-    std::vector bottomRight = toNDC(to_X, to_Y, 0).toVector();
-    std::vector bottomLeft = toNDC(from_X, to_Y, 0).toVector();
+void VertexEngine::Canvas::planeAt(int from_X, int from_Y, int to_X, int to_Y,
+                           const Color4 &colorData) {
+    Position3 topLeft = vertexEngine->toNDC(from_X, from_Y, 0).toArray();
+    Position3 topRight = vertexEngine->toNDC(to_X, from_Y, 0).toArray();
+    Position3 bottomRight = vertexEngine->toNDC(to_X, to_Y, 0).toArray();
+    Position3 bottomLeft = vertexEngine->toNDC(from_X, to_Y, 0).toArray();
 
     addData({
-        {defaultPositionBuffer, topLeft}, {defaultColorBuffer, colorData},
-        {defaultPositionBuffer, topRight}, {defaultColorBuffer, colorData},
-        {defaultPositionBuffer, bottomRight}, {defaultColorBuffer, colorData},
-        {defaultPositionBuffer, bottomLeft}, {defaultColorBuffer, colorData}
+        {topLeft, colorData},
+        {topRight, colorData},
+        {bottomRight, colorData},
+        {bottomLeft, colorData}
     });
 
     addIndexData({
-        indexPosition + 0, indexPosition + 1, indexPosition + 2,
-        indexPosition + 2, indexPosition + 3, indexPosition + 0
+        0, 1, 2,
+        2, 3, 0
     });
-    indexPosition += 4;
+    vertexEngine->indexPosition += 4;
+}
+
+VertexEngine::Canvas::Position3::Position3(const std::array<float, 3> &data) {
+    this->x = data[0];
+    this->y = data[1];
+    this->z = data[2];
+}
+
+VertexEngine::Canvas::Position3::Position3(const float &x, const float &y, const float &z) {
+    this->x = x;
+    this->y = y;
+    this->z = z;
+}
+
+std::array<float, 3> VertexEngine::Canvas::Position3::toArray() const {
+    return {x, y, z};
+}
+
+std::vector<float> VertexEngine::Canvas::Position3::toVector() const {
+    return {x, y, z};
+}
+
+VertexEngine::Canvas::Color4::Color4(const std::array<float, 4> &data) {
+    this->r = data[0];
+    this->g = data[1];
+    this->b = data[2];
+    this->a = data[3];
+}
+
+VertexEngine::Canvas::Color4::Color4(const float &r, const float &g, const float &b,
+                                     const float &a) {
+    this->r = r;
+    this->g = g;
+    this->b = b;
+    this->a = a;
+}
+
+std::array<float, 4> VertexEngine::Canvas::Color4::toArray() const {
+    return {r, g, b, a};
+}
+
+std::vector<float> VertexEngine::Canvas::Color4::toVector() const {
+    return {r, g, b, a};
 }

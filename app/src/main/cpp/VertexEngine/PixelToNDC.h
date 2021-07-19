@@ -6,7 +6,7 @@
 #define GRAPHICAL_TOOL_KIT_PIXEL_TO_NDC_H
 
 #include <DiligentCore/Primitives/interface/Errors.hpp>
-#include <vector>
+#include <array>
 
 class PixelToNDC {
 public:
@@ -33,7 +33,7 @@ public:
             z = TYPE_INITIALIZER;
         }
 
-        std::vector<TYPE> toVector() {
+        std::array<TYPE, 3> toArray() {
             return {x, y, z};
         };
     };

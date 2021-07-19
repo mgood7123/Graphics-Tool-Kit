@@ -7,6 +7,7 @@
 
 #include "PixelToNDC.h"
 #include <SDK/include/Windows/Kernel/WindowsAPIKernel.h>
+#include <vector>
 
 class VertexEngine {
     template <typename data_type, typename storage_type>
@@ -38,7 +39,7 @@ class VertexEngine {
     std::vector<HANDLE> vertexBufferOrder;
     std::vector<HANDLE> indexHandles;
     Buffer<const std::vector<uint32_t>&, std::vector<uint32_t>> indexBuffer;
-    uint32_t indexPosition = 0;
+    uint32_t indexPosition;
 
     int width;
     int height;
@@ -55,8 +56,8 @@ public:
      */
     void clear();
 
-    HANDLE defaultPositionBuffer = nullptr;
-    HANDLE defaultColorBuffer = nullptr;
+    HANDLE defaultPositionBuffer;
+    HANDLE defaultColorBuffer;
 
     /**
      * creates a new non-static data buffer
@@ -85,60 +86,6 @@ public:
      * @param handle a handle to the data buffer to remove
      */
     void removeDataBuffer(HANDLE handle);
-
-    /**
-     * adds data to the specified dataBufferHandle
-     * <br>
-     * data is given as floating-point
-     * <br>
-     * <br>
-     * if the dataBufferHandle is a static buffer, then:
-     * <br>
-     * <br>
-     * if data does not exist it will be added
-     * <br>
-     * if data already exists it will be overwritten
-     * <br>
-     * <br>
-     * otherwise, if the dataBufferHandle is a non static buffer, then
-     * data will simply be added
-     * <br>
-     * <br>
-     * @return a handle to the added data
-     */
-    HANDLE addData(HANDLE dataBufferHandle, const std::vector<float>& data);
-
-    /**
-     * adds data to the specified dataBufferHandle
-     * <br>
-     * data is given as sets of dataBufferHandle and floating-point
-     * <br>
-     * for each dataBufferHandle and floating-point pair:
-     * <br>
-     * <br>
-     * if the dataBufferHandle is a static buffer, then:
-     * <br>
-     * <br>
-     * if data does not exist it will be added
-     * <br>
-     * if data already exists it will be overwritten
-     * <br>
-     * <br>
-     * otherwise, if the dataBufferHandle is a non static buffer, then
-     * data will simply be added
-     * <br>
-     * <br>
-     * @return a vector of handles to the added data
-     */
-    std::vector<HANDLE> addData(const std::vector<std::pair<HANDLE, const std::vector<float>&>>& handle_and_data);
-
-    /**
-     * adds index data to the specified dataBufferHandle
-     * <br>
-     * data is given as unsigned 32-bit integers
-     * @return a handle to the added data
-     */
-    HANDLE addIndexData(const std::vector<uint32_t>& data);
 
     /**
      * specifies the buffer order for output generation
@@ -193,8 +140,115 @@ public:
 
     // shape and geometry generation
 
-    void plane(int x, int y, int width, int height, const std::vector<float>& colorData);
-    void planeAt(int from_X, int from_Y, int to_X, int to_Y, const std::vector<float>& colorData);
+    class Canvas {
+        VertexEngine * vertexEngine = nullptr;
+
+        typedef std::pair<HANDLE, const std::vector<float>&> Data;
+
+        /**
+         * adds data to the specified dataBufferHandle
+         * <br>
+         * data is given as floating-point
+         * <br>
+         * <br>
+         * if the dataBufferHandle is a static buffer, then:
+         * <br>
+         * <br>
+         * if data does not exist it will be added
+         * <br>
+         * if data already exists it will be overwritten
+         * <br>
+         * <br>
+         * otherwise, if the dataBufferHandle is a non static buffer, then
+         * data will simply be added
+         * <br>
+         * <br>
+         * @return a handle to the added data
+         */
+        HANDLE addData_(HANDLE dataBufferHandle, const std::vector<float>& data);
+
+        /**
+         * adds data to the specified dataBufferHandle
+         * <br>
+         * data is given as sets of dataBufferHandle and floating-point
+         * <br>
+         * for each dataBufferHandle and floating-point pair:
+         * <br>
+         * <br>
+         * if the dataBufferHandle is a static buffer, then:
+         * <br>
+         * <br>
+         * if data does not exist it will be added
+         * <br>
+         * if data already exists it will be overwritten
+         * <br>
+         * <br>
+         * otherwise, if the dataBufferHandle is a non static buffer, then
+         * data will simply be added
+         * <br>
+         * <br>
+         * @return a vector of handles to the added data
+         */
+        std::vector<HANDLE> addData_(const std::vector<Data>& handle_and_data);
+
+        /**
+         * adds index data
+         * <br>
+         * data is given as unsigned 32-bit integers
+         * @return a handle to the added data
+         */
+        HANDLE addIndexData_(const std::vector<uint32_t>& data);
+    public:
+        class Position3 {
+        public:
+            float x;
+            float y;
+            float z;
+
+            Position3(const std::array<float, 3> & data);
+            Position3(const float & x, const float & y, const float & z);
+            std::array<float, 3> toArray() const;
+            std::vector<float> toVector() const;
+        };
+
+        class Color4 {
+        public:
+            float r;
+            float g;
+            float b;
+            float a;
+
+            Color4(const std::array<float, 4> & data);
+            Color4(const float & r, const float & g, const float & b, const float & a);
+            std::array<float, 4> toArray() const;
+            std::vector<float> toVector() const;
+        };
+
+        Canvas(VertexEngine * engine);
+
+        /**
+         * adds position and color data
+         * <br>
+         * data is given as floating-point
+         */
+        void addData(const std::vector<std::pair<const Position3&, const Color4&>>& data);
+
+        /**
+         * adds index data
+         * <br>
+         * data is given as unsigned 32-bit integers
+         * @return a handle to the added data
+         */
+        HANDLE addIndexData(const std::vector<uint32_t>& data);
+
+        void clear();
+
+        void plane(int x, int y, int width, int height, const Color4& colorData);
+
+        void planeAt(int from_X, int from_Y, int to_X, int to_Y, const Color4& colorData);
+    };
+    Canvas canvas;
+
 };
 
 
