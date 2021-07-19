@@ -6,8 +6,6 @@
 #define GRAPHICAL_TOOL_KIT_RECTANGLEVIEW_H
 
 #include "View.h"
-#include <DiligentCore/Common/interface/BasicMath.hpp>
-#include <DiligentCore/Graphics/GraphicsEngine/interface/Buffer.h>
 
 class RectangleView : public View
 {

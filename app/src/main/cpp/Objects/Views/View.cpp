@@ -161,7 +161,9 @@ void View::draw () {
     // Set the pipeline state in the immediate context
     diligentAppBase->m_pImmediateContext->SetPipelineState(diligentAppBase->m_pPSO);
 
-    onDraw(vertexEngine.canvas);
+    vertexEngine.clear();
+    VertexEngine::Canvas canvas(&vertexEngine, 400, 400);
+    onDraw(canvas);
 
     VertexEngine::GenerationInfo generationInfo = vertexEngine.generateGL();
 

@@ -63,6 +63,11 @@ if(PLATFORM_MACOS OR PLATFORM_IOS OR PLATFORM_TVOS)
     add_definitions(-DPLATFORM_APPLE)
 endif()
 
+# TODO: seperate the logging library from Diligent-Common into a submodule DiligentLog
+# TODO: which DiligentCore will then link against
+#
+# add_subdirectory(DiligentEngine/DiligentLog)
+
 add_subdirectory(DiligentEngine/DiligentCore)
 
 #add_subdirectory(DiligentEngine/DiligentFX)

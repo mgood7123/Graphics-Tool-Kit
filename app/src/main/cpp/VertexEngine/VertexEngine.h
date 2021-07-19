@@ -224,7 +224,15 @@ public:
             std::vector<float> toVector() const;
         };
 
-        Canvas(VertexEngine * engine);
+        const int x;
+        const int y;
+        const int width;
+        const int height;
+
+        Canvas(VertexEngine * engine, int x, int y, int width, int height);
+        Canvas(VertexEngine * engine, int width, int height);
+
+        Canvas subCanvas(int x, int y, int width, int height);
 
         /**
          * adds position and color data
@@ -241,14 +249,24 @@ public:
          */
         HANDLE addIndexData(const std::vector<uint32_t>& data);
 
+        static Color4 black;
+
+        /**
+         * alias for fill(black);
+         */
         void clear();
 
-        void plane(int x, int y, int width, int height, const Color4& colorData);
+        /**
+         * alias for fill(color)
+         */
+        void clear(Color4 color);
+
+        void fill(Color4 color);
 
         void planeAt(int from_X, int from_Y, int to_X, int to_Y, const Color4& colorData);
-    };
-    Canvas canvas;
 
+        void plane(int x, int y, int width, int height, const Color4& colorData);
+    };
 };
 
 

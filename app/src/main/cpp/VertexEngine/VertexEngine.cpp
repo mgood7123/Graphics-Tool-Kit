@@ -42,23 +42,17 @@ VertexEngine::VertexInfo::VertexInfo(size_t length, bool is_static) {
     this->is_static = is_static;
 }
 
-VertexEngine::VertexEngine() :
-    canvas(this),
-    defaultPositionBuffer(nullptr),
-    defaultColorBuffer(nullptr),
-    width(0),
-    height(0),
-    indexPosition(0)
-{
-}
-
 VertexEngine::VertexEngine(int width, int height) :
-        canvas(this),
         defaultPositionBuffer(nullptr),
         defaultColorBuffer(nullptr),
         width(width),
         height(height),
         indexPosition(0)
+{
+}
+
+VertexEngine::VertexEngine() :
+        VertexEngine::VertexEngine(0,0)
 {
 }
 
@@ -312,10 +306,6 @@ VertexEngine::GenerationInfo VertexEngine::generateGL() {
     }
 }
 
-VertexEngine::Canvas::Canvas(VertexEngine *engine) {
-    vertexEngine = engine;
-}
-
 HANDLE VertexEngine::Canvas::addData_(HANDLE dataBufferHandle, const std::vector<float>& data) {
     VertexInfo * buffer = vertexEngine->vertexBuffer.get(dataBufferHandle);
     size_t dataLength = data.size();
@@ -350,6 +340,32 @@ HANDLE VertexEngine::Canvas::addIndexData_(const std::vector<uint32_t>& data) {
     return handle;
 }
 
+VertexEngine::Canvas::Canvas(VertexEngine *engine, int x, int y, int width, int height) :
+    x(x), y(y), width(width), height(height),
+    vertexEngine(engine)
+{}
+
+VertexEngine::Canvas::Canvas(VertexEngine *engine, int width, int height) :
+        VertexEngine::Canvas(engine, 0, 0, width, height)
+{
+}
+
+VertexEngine::Canvas VertexEngine::Canvas::subCanvas(int x, int y, int width, int height) {
+    int actualX = this->x + x;
+    int actualY = this->y + y;
+    int actualWidth = actualX + width;
+    int actualHeight = actualY + height;
+
+    if(actualWidth > this->width) {
+        LOG_FATAL_ERROR_AND_THROW("subcanvas actual width (", actualWidth, ") is greater than canvas width (", this->width, ")");
+    }
+    if(actualHeight > this->height) {
+        LOG_FATAL_ERROR_AND_THROW("subcanvas actual height (", actualHeight, ") is greater than canvas height (", this->height, ")");
+    }
+
+    return VertexEngine::Canvas(vertexEngine, x, y, width, height);
+}
+
 void VertexEngine::Canvas::addData(const std::vector<std::pair<const Position3&, const Color4&>>& data) {
     for (std::pair<const Position3&, const Color4&> pair : data) {
         const Position3& position = pair.first;
@@ -367,21 +383,26 @@ HANDLE VertexEngine::Canvas::addIndexData(const std::vector<uint32_t>& data) {
     return addIndexData_(data);
 }
 
-void VertexEngine::Canvas::clear() {
-    vertexEngine->clear();
+VertexEngine::Canvas::Color4 VertexEngine::Canvas::black = {0,0,0,1};
 
+void VertexEngine::Canvas::clear() {
+    fill(black);
 }
 
-void VertexEngine::Canvas::plane(int x, int y, int width, int height, const Color4& colorData) {
-    return planeAt(x, y, x + width, y + height, colorData);
+void VertexEngine::Canvas::clear(VertexEngine::Canvas::Color4 color) {
+    fill(color);
+}
+
+void VertexEngine::Canvas::fill(VertexEngine::Canvas::Color4 color) {
+    planeAt(x, y, width, height, color);
 }
 
 void VertexEngine::Canvas::planeAt(int from_X, int from_Y, int to_X, int to_Y,
                            const Color4 &colorData) {
-    Position3 topLeft = vertexEngine->toNDC(from_X, from_Y, 0).toArray();
-    Position3 topRight = vertexEngine->toNDC(to_X, from_Y, 0).toArray();
-    Position3 bottomRight = vertexEngine->toNDC(to_X, to_Y, 0).toArray();
-    Position3 bottomLeft = vertexEngine->toNDC(from_X, to_Y, 0).toArray();
+    Position3 topLeft = vertexEngine->toNDC(x + from_X, y + from_Y, 0).toArray();
+    Position3 topRight = vertexEngine->toNDC(x + to_X, y + from_Y, 0).toArray();
+    Position3 bottomRight = vertexEngine->toNDC(x + to_X, y + to_Y, 0).toArray();
+    Position3 bottomLeft = vertexEngine->toNDC(x + from_X, y + to_Y, 0).toArray();
 
     addData({
         {topLeft, colorData},
@@ -395,6 +416,10 @@ void VertexEngine::Canvas::planeAt(int from_X, int from_Y, int to_X, int to_Y,
         2, 3, 0
     });
     vertexEngine->indexPosition += 4;
+}
+
+void VertexEngine::Canvas::plane(int x, int y, int width, int height, const Color4& colorData) {
+    return planeAt(x, y, x + width, y + height, colorData);
 }
 
 VertexEngine::Canvas::Position3::Position3(const std::array<float, 3> &data) {
