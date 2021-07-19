@@ -13,11 +13,8 @@ class ObjectBase
 public:
     DiligentAppBase * diligentAppBase = nullptr;
 
-    VertexEngine vertexEngine;
-
     virtual void create();
     virtual void draw();
-    virtual void drawChunks(VertexEngine::GenerationInfo &info, size_t chunkSize);
     virtual void destroy();
     virtual void physics(const TimeEngine & timeEngine);
     // delete called on non-final that has virtual functions but non-virtual destructor

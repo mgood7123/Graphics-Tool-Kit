@@ -3,7 +3,6 @@
 //
 
 #include "AppInstance.h"
-#include <TriangleView.h>
 #include <RectangleView.h>
 #include <Cube.h>
 

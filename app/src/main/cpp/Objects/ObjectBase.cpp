@@ -10,9 +10,6 @@ void ObjectBase::create ()
 void ObjectBase::draw ()
 {}
 
-void ObjectBase::drawChunks(VertexEngine::GenerationInfo &info, size_t chunkSize)
-{}
-
 void ObjectBase::destroy ()
 {}
 

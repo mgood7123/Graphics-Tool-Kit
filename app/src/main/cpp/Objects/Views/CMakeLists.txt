@@ -12,7 +12,6 @@ project(Views)
 add_library(
         Views SHARED
         View.cpp
-        TriangleView.cpp
         RectangleView.cpp
 )
 
