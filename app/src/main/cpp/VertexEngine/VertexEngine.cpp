@@ -3,6 +3,13 @@
 //
 
 #include "VertexEngine.h"
+#include <cmath>
+#include <DiligentTools/TextureLoader/interface/TextureUtilities.h>
+
+template<typename A, typename B, typename C>
+VertexEngine::Triple<A, B, C>::Triple(A first, B second, C third):
+        first(first), second(second), third(third)
+{}
 
 template<typename data_type, typename storage_type>
 HANDLE VertexEngine::Buffer<data_type, storage_type>::add(data_type data) {
@@ -12,6 +19,16 @@ HANDLE VertexEngine::Buffer<data_type, storage_type>::add(data_type data) {
 template<typename data_type, typename storage_type>
 storage_type *VertexEngine::Buffer<data_type, storage_type>::get(HANDLE handle) {
     return kernel.getHandle(handle)->object->resource.template get<storage_type*>();
+}
+
+template<typename data_type, typename storage_type>
+storage_type *VertexEngine::Buffer<data_type, storage_type>::get(const size_t & index) {
+    return kernel.table->objectAt(index)->resource.template get<storage_type*>();
+}
+
+template<typename data_type, typename storage_type>
+size_t VertexEngine::Buffer<data_type, storage_type>::getIndex(HANDLE handle) {
+    return kernel.table->findObject(kernel.getHandle(handle)->object);
 }
 
 template<typename data_type, typename storage_type>
@@ -43,12 +60,15 @@ VertexEngine::VertexInfo::VertexInfo(size_t length, bool is_static) {
 }
 
 VertexEngine::VertexEngine(int width, int height) :
-        defaultPositionBuffer(nullptr),
-        defaultColorBuffer(nullptr),
+        defaultPositionBuffer(addDataBuffer(positionCount)),
+        defaultColorBuffer(addDataBuffer(colorCount+colorExtraCount)),
+        defaultTextureCoordinateBuffer(addDataBuffer(textureCoordinatesCount)),
         width(width),
         height(height),
-        indexPosition(0)
+        indexPosition(0),
+        textureManager(this)
 {
+    order({defaultPositionBuffer, defaultColorBuffer, defaultTextureCoordinateBuffer});
 }
 
 VertexEngine::VertexEngine() :
@@ -94,14 +114,17 @@ void VertexEngine::order(const std::vector<HANDLE>& data) {
 
 VertexEngine::GenerationInfo::GenerationInfo(
         const size_t lengthData, const float *data,
-        const size_t lengthIndices, const uint32_t *indices
-    ) :
+        const size_t lengthIndices, const uint32_t *indices,
+        const bool isTexture
+) :
     data(new float[lengthData]),
     lengthData(lengthData),
     sizeInBytesData(lengthData * sizeof(float)),
     indices(new uint32_t[lengthIndices]),
     lengthIndices(lengthIndices),
     sizeInBytesIndices(lengthIndices * sizeof(uint32_t)),
+    isTexture(isTexture),
+    textureIndex(0),
     chunkReader(0),
     chunksGenerated(0)
 {
@@ -109,6 +132,13 @@ VertexEngine::GenerationInfo::GenerationInfo(
     else memset(this->data, 0, sizeInBytesData);
     if (indices != nullptr) memcpy(this->indices, indices, sizeInBytesIndices);
     else memset(this->indices, 0, sizeInBytesIndices);
+}
+
+VertexEngine::GenerationInfo::GenerationInfo(
+        const size_t lengthData, const float *data,
+        const size_t lengthIndices, const uint32_t *indices
+) : GenerationInfo(lengthData, data, lengthIndices, indices, false)
+{
 }
 
 VertexEngine::GenerationInfo::GenerationInfo(VertexEngine::GenerationInfo &&m) :
@@ -145,27 +175,77 @@ bool VertexEngine::GenerationInfo::canGenerateChunk(size_t chunkSize) const {
     return isMultipleOf(sizeInBytesIndices, sizeof(uint32_t), chunkSize);
 }
 
-VertexEngine::GenerationInfo VertexEngine::GenerationInfo::generateChunk(
-        int posCount, int colorCount, size_t chunkSize
-) {
-    int size = posCount + colorCount;
-
-    VertexEngine::GenerationInfo out(size*chunkSize, nullptr, chunkSize, nullptr);
+VertexEngine::GenerationInfo VertexEngine::GenerationInfo::generateChunk(size_t chunkSize) {
+    VertexEngine::GenerationInfo out(strideLength*chunkSize, nullptr, chunkSize, nullptr, true);
 
     // indices increase from 0, 1, 2, ...
     size_t vertexIndex = 0;
     size_t indicesIndex = 0;
+
+    // for now, we know the stride length exactly:
+//        index + 0;  // pos x
+//        index + 1;  // pos y
+//        index + 2;  // pos z
+//        index + 3;  // col r
+//        index + 4;  // col g
+//        index + 5;  // col b
+//        index + 6;  // col a
+//        index + 7;  // col isTexture
+//        index + 8;  // col textureResource
+//        index + 9;  // tex x
+//        index + 10; // tex y
+
+    bool first = true;
+    float firstIsTexture;
+    bool firstTextureIndexIsNan;
+    float firstTextureIndex;
+
     while(indicesIndex < chunkSize && chunkReader < lengthIndices) {
-        out.indices[indicesIndex] = indicesIndex;
-        indicesIndex++;
+        uint32_t index = indices[chunkReader] * (strideLength + 1);
 
-        uint32_t target = indices[chunkReader];
-        chunkReader++;
+        // to support textures, we need to separate different textures into chunks
+        // same as generate: compare first input to rest of input
 
-        uint32_t index = target * size;
+        uint32_t isTextureIndex = index + 7;
+        uint32_t textureIndexIndex = isTextureIndex + 1;
+        if (first) {
+            first = false;
+            firstIsTexture = data[isTextureIndex];
+            firstTextureIndexIsNan = std::isnan(data[textureIndexIndex]);
+            firstTextureIndex = data[textureIndexIndex];
+            out.isTexture = firstIsTexture == FLOAT_TRUE ? true : false;
+            out.textureIndex = firstTextureIndexIsNan ? -1 : data[textureIndexIndex];
+        }
+        if (
+            firstIsTexture == data[isTextureIndex]
+            && firstTextureIndexIsNan ? (
+                firstTextureIndexIsNan == std::isnan(data[textureIndexIndex])
+            ) : ( firstTextureIndex == data[textureIndexIndex] )
+        ) {
+            chunkReader++;
 
-        for (int i = 0; i < size; i++) {
-            out.data[vertexIndex++] = data[index+i];
+            out.indices[indicesIndex] = indicesIndex;
+            indicesIndex++;
+
+            // position 3
+            out.data[vertexIndex++] = data[index++];
+            out.data[vertexIndex++] = data[index++];
+            out.data[vertexIndex++] = data[index++];
+            // color 4
+            out.data[vertexIndex++] = data[index++];
+            out.data[vertexIndex++] = data[index++];
+            out.data[vertexIndex++] = data[index++];
+            out.data[vertexIndex++] = data[index++];
+            // isTexture 1
+            out.data[vertexIndex++] = data[index++];
+            // skip textureIndex
+            index++;
+            // texture coordinate 2
+            out.data[vertexIndex++] = data[index++];
+            out.data[vertexIndex++] = data[index++];
+        } else {
+            LOG_WARNING_MESSAGE("chunk texture info differs from first chunk");
+            break;
         }
     }
     chunksGenerated++;
@@ -306,6 +386,57 @@ VertexEngine::GenerationInfo VertexEngine::generateGL() {
     }
 }
 
+VertexEngine::TextureManager::TextureManager(VertexEngine *engine):
+        vertexEngine(engine)
+{
+}
+
+void VertexEngine::TextureManager::createTextureFromFile(
+        const char * key,
+        const char *FilePath,
+        const Diligent::TextureLoadInfo &TexLoadInfo,
+        Diligent::IRenderDevice *pDevice
+) {
+    Diligent::ITexture * tex = nullptr;
+    Diligent::CreateTextureFromFile(FilePath, TexLoadInfo, pDevice, &tex);
+    vertexEngine->textureBuffer.add({key, strlen(key), tex});
+}
+
+Diligent::ITexture * VertexEngine::TextureManager::findTexture(const char * key) {
+    if (key == nullptr) return nullptr;
+    auto i = vertexEngine->textureBuffer.getIterator();
+    while (i.hasNext()) {
+        HANDLE h = i.next()->handle;
+        auto r = vertexEngine->textureBuffer.get(h);
+        if (memcmp(key, r->first, r->second) == 0) return r->third;
+    }
+    return nullptr;
+}
+
+VertexEngine::Triple<const char *, size_t, Diligent::ITexture *> *
+VertexEngine::TextureManager::getTexture(const size_t & index) {
+    if (index == -1) return nullptr;
+    VertexEngine::Triple<const char *, size_t, Diligent::ITexture *> * r = vertexEngine->textureBuffer.get(index);
+    return r == nullptr ? nullptr : r;
+}
+
+size_t VertexEngine::TextureManager::findTextureIndex(const char * key) {
+    auto i = vertexEngine->textureBuffer.getIterator();
+    while (i.hasNext()) {
+        auto idx = vertexEngine->textureBuffer.getIndex(i.next()->handle);
+        auto r = vertexEngine->textureBuffer.get(idx);
+        if (memcmp(key, r->first, r->second) == 0) return idx;
+    }
+    return -1;
+}
+
+void VertexEngine::TextureManager::deleteTexture(const char * key) {
+    Diligent::ITexture * texture = findTexture(key);
+    if (texture != nullptr) {
+        texture->Release();
+    }
+}
+
 HANDLE VertexEngine::Canvas::addData_(HANDLE dataBufferHandle, const std::vector<float>& data) {
     VertexInfo * buffer = vertexEngine->vertexBuffer.get(dataBufferHandle);
     size_t dataLength = data.size();
@@ -366,13 +497,13 @@ VertexEngine::Canvas VertexEngine::Canvas::subCanvas(int x, int y, int width, in
     return VertexEngine::Canvas(vertexEngine, x, y, width, height);
 }
 
-void VertexEngine::Canvas::addData(const std::vector<std::pair<const Position3&, const Color4&>>& data) {
-    for (std::pair<const Position3&, const Color4&> pair : data) {
-        const Position3& position = pair.first;
-        const Color4& color = pair.second;
+void VertexEngine::Canvas::addData(const std::vector<Triple<const Position3&, const Color4&, const TextureCoordinate2&>>& data) {
+    for (const Triple<const Position3&, const Color4&, const TextureCoordinate2&> & val : data) {
+        processTextureInColor4(val.second);
         addData_({
-            {vertexEngine->defaultPositionBuffer, position.toVector()},
-            {vertexEngine->defaultColorBuffer, color.toVector()}
+            {vertexEngine->defaultPositionBuffer, val.first.toVector()},
+            {vertexEngine->defaultColorBuffer, val.second.toVector()},
+            {vertexEngine->defaultTextureCoordinateBuffer, val.third.toVector()}
         });
     }
 }
@@ -394,21 +525,26 @@ void VertexEngine::Canvas::clear(VertexEngine::Canvas::Color4 color) {
 }
 
 void VertexEngine::Canvas::fill(VertexEngine::Canvas::Color4 color) {
-    planeAt(x, y, width, height, color);
+    planeAt(0, 0, width, height, color);
+}
+
+void VertexEngine::Canvas::plane(int x, int y, int width, int height, const Color4& colorData) {
+    return planeAt(x, y, x + width, y + height, colorData);
 }
 
 void VertexEngine::Canvas::planeAt(int from_X, int from_Y, int to_X, int to_Y,
                            const Color4 &colorData) {
+    processTextureInColor4(colorData);
     Position3 topLeft = vertexEngine->toNDC(x + from_X, y + from_Y, 0).toArray();
     Position3 topRight = vertexEngine->toNDC(x + to_X, y + from_Y, 0).toArray();
     Position3 bottomRight = vertexEngine->toNDC(x + to_X, y + to_Y, 0).toArray();
     Position3 bottomLeft = vertexEngine->toNDC(x + from_X, y + to_Y, 0).toArray();
 
     addData({
-        {topLeft, colorData},
-        {topRight, colorData},
-        {bottomRight, colorData},
-        {bottomLeft, colorData}
+        {topLeft, colorData, {0,0}},
+        {topRight, colorData, {1,0}},
+        {bottomRight, colorData, {1,1}},
+        {bottomLeft, colorData, {0,1}}
     });
 
     addIndexData({
@@ -418,8 +554,44 @@ void VertexEngine::Canvas::planeAt(int from_X, int from_Y, int to_X, int to_Y,
     vertexEngine->indexPosition += 4;
 }
 
-void VertexEngine::Canvas::plane(int x, int y, int width, int height, const Color4& colorData) {
-    return planeAt(x, y, x + width, y + height, colorData);
+void VertexEngine::Canvas::processTextureInColor4(const VertexEngine::Canvas::Color4 &colorData) {
+    Color4 &c = const_cast<Color4 &>(colorData);
+    if (colorData.isTexture == FLOAT_TRUE && std::isnan(c.textureResource)) {
+        if (colorData.key == nullptr) {
+            LOG_FATAL_ERROR_AND_THROW("key must not be nullptr");
+        }
+        size_t idx = vertexEngine->textureManager.findTextureIndex(colorData.key);
+        if (idx == -1) {
+            c.key = nullptr;
+            c.isTexture = FLOAT_FALSE;
+            c.textureResource = NAN;
+        } else {
+            c.textureResource = idx;
+        }
+    }
+}
+
+VertexEngine::Canvas::Position2::Position2(const std::array<float, 2> &data) {
+    this->x = data[0];
+    this->y = data[1];
+}
+
+VertexEngine::Canvas::Position2::Position2(const std::array<float, 3> &data) {
+    this->x = data[0];
+    this->y = data[1];
+}
+
+VertexEngine::Canvas::Position2::Position2(const float &x, const float &y) {
+    this->x = x;
+    this->y = y;
+}
+
+std::array<float, 2> VertexEngine::Canvas::Position2::toArray() const {
+    return {x, y};
+}
+
+std::vector<float> VertexEngine::Canvas::Position2::toVector() const {
+    return {x, y};
 }
 
 VertexEngine::Canvas::Position3::Position3(const std::array<float, 3> &data) {
@@ -447,6 +619,19 @@ VertexEngine::Canvas::Color4::Color4(const std::array<float, 4> &data) {
     this->g = data[1];
     this->b = data[2];
     this->a = data[3];
+    this->key = nullptr;
+    this->isTexture = false;
+    this->textureResource = NAN;
+}
+
+VertexEngine::Canvas::Color4::Color4(const std::array<float, 6> &data) {
+    this->r = data[0];
+    this->g = data[1];
+    this->b = data[2];
+    this->a = data[3];
+    this->key = nullptr;
+    this->isTexture = data[4] == FLOAT_FALSE ? FLOAT_FALSE : FLOAT_TRUE;
+    this->textureResource = data[5];
 }
 
 VertexEngine::Canvas::Color4::Color4(const float &r, const float &g, const float &b,
@@ -455,12 +640,33 @@ VertexEngine::Canvas::Color4::Color4(const float &r, const float &g, const float
     this->g = g;
     this->b = b;
     this->a = a;
+    this->key = nullptr;
+    this->isTexture = FLOAT_FALSE;
+    this->textureResource = NAN;
 }
 
-std::array<float, 4> VertexEngine::Canvas::Color4::toArray() const {
+VertexEngine::Canvas::Color4::Color4(const char * key) {
+    this->r = 0;
+    this->g = 0;
+    this->b = 0;
+    this->a = 1;
+    this->key = key;
+    this->isTexture = FLOAT_TRUE;
+    this->textureResource = NAN;
+}
+
+std::array<float, 4> VertexEngine::Canvas::Color4::toRGBAArray() const {
+    return {r, g, b, a};
+}
+
+std::array<float, 6> VertexEngine::Canvas::Color4::toArray() const {
+    return {r, g, b, a, isTexture, textureResource};
+}
+
+std::vector<float> VertexEngine::Canvas::Color4::toRGBAVector() const {
     return {r, g, b, a};
 }
 
 std::vector<float> VertexEngine::Canvas::Color4::toVector() const {
-    return {r, g, b, a};
+    return {r, g, b, a, isTexture, textureResource};
 }

@@ -14,7 +14,9 @@ public:
     VertexEngine::Canvas::Color4 blue = {0, 0, 1, 1};
     VertexEngine::Canvas::Color4 pink = {1, 0, 1, 1};
 
+    void onCreate(VertexEngine::TextureManager & textureManager) override;
     void onDraw(VertexEngine::Canvas &canvas) override;
+    void onDestroy(VertexEngine::TextureManager & textureManager) override;
 };
 
 

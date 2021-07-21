@@ -7,14 +7,18 @@
 const char * View::vertexShader = R"(
 struct VSInput
 {
-    float3 Pos   : ATTRIB0;
-    float4 Color : ATTRIB1;
+    float3 Pos       : ATTRIB0;
+    float4 Color     : ATTRIB1;
+    float  IsTexture : ATTRIB2;
+    float2 Texture   : ATTRIB3;
 };
 
 struct PSInput
 {
-    float4 Pos   : SV_POSITION;
-    float4 Color : COLOR0;
+    float4 Pos       : SV_POSITION;
+    float4 Color     : COLOR0;
+    float2 IsTexture : TEX_COORD;
+    float2 Texture   : TEX_COORD;
 };
 
 void main(in  VSInput VSIn,
@@ -22,14 +26,21 @@ void main(in  VSInput VSIn,
 {
     PSIn.Pos   = float4(VSIn.Pos, 1.0);
     PSIn.Color = VSIn.Color;
+    PSIn.IsTexture = float2(VSIn.IsTexture, 0);
+    PSIn.Texture = VSIn.Texture;
 }
 )";
 
 const char * View::pixelShader = R"(
+Texture2D    g_Texture;
+SamplerState g_Texture_sampler;
+
 struct PSInput
 {
-    float4 Pos   : SV_POSITION;
-    float4 Color : COLOR0;
+    float4 Pos       : SV_POSITION;
+    float4 Color     : COLOR0;
+    float2 IsTexture : TEX_COORD;
+    float2 Texture   : TEX_COORD;
 };
 struct PSOutput
 {
@@ -38,7 +49,7 @@ struct PSOutput
 void main(in  PSInput  PSIn,
           out PSOutput PSOut)
 {
-    PSOut.Color = PSIn.Color;
+    PSOut.Color = PSIn.IsTexture.x == 0 ? PSIn.Color : g_Texture.Sample(g_Texture_sampler, PSIn.Texture);
 }
 )";
 
@@ -103,23 +114,60 @@ void View::create() {
                     // Attribute 0 - vertex position
                     Diligent::LayoutElement{0, 0, 3, Diligent::VT_FLOAT32, Diligent::False},
                     // Attribute 1 - vertex color
-                    Diligent::LayoutElement{1, 0, 4, Diligent::VT_FLOAT32, Diligent::False}
+                    Diligent::LayoutElement{1, 0, 4, Diligent::VT_FLOAT32, Diligent::False},
+                    // Attribute 3 - Is Texture
+                    Diligent::LayoutElement{2, 0, 1, Diligent::VT_FLOAT32, Diligent::False},
+                    // Attribute 4 - Texture Coordinates
+                    Diligent::LayoutElement{3, 0, 2, Diligent::VT_FLOAT32, Diligent::False}
             };
     // clang-format on
     PSOCreateInfo.GraphicsPipeline.InputLayout.LayoutElements = LayoutElems;
     PSOCreateInfo.GraphicsPipeline.InputLayout.NumElements    = _countof(LayoutElems);
+
+    // define texture input layout
+    Diligent::ShaderResourceVariableDesc Vars[] =
+    {
+        {
+            Diligent::SHADER_TYPE_PIXEL,
+            "g_Texture",
+            Diligent::SHADER_RESOURCE_VARIABLE_TYPE_DYNAMIC
+        }
+    };
+    PSOCreateInfo.PSODesc.ResourceLayout.Variables    = Vars;
+    PSOCreateInfo.PSODesc.ResourceLayout.NumVariables = _countof(Vars);
+
+    Diligent::SamplerDesc SamLinearClampDesc
+    {
+            Diligent::FILTER_TYPE_LINEAR, Diligent::FILTER_TYPE_LINEAR, Diligent::FILTER_TYPE_LINEAR,
+            Diligent::TEXTURE_ADDRESS_BORDER, Diligent::TEXTURE_ADDRESS_BORDER, Diligent::TEXTURE_ADDRESS_BORDER
+    };
+    SamLinearClampDesc.BorderColor[0] = 0;
+    SamLinearClampDesc.BorderColor[1] = 0;
+    SamLinearClampDesc.BorderColor[2] = 0;
+    SamLinearClampDesc.BorderColor[3] = 1;
+    Diligent::ImmutableSamplerDesc ImtblSamplers[] =
+    {
+            {
+                Diligent::SHADER_TYPE_PIXEL,
+                "g_Texture",
+                SamLinearClampDesc
+            }
+    };
+    PSOCreateInfo.PSODesc.ResourceLayout.ImmutableSamplers    = ImtblSamplers;
+    PSOCreateInfo.PSODesc.ResourceLayout.NumImmutableSamplers = _countof(ImtblSamplers);
 
     // Finally, create the pipeline state
     PSOCreateInfo.pVS = pVS;
     PSOCreateInfo.pPS = pPS;
     diligentAppBase->m_pDevice->CreateGraphicsPipelineState(PSOCreateInfo, &diligentAppBase->m_pPSO);
 
-    VERIFY(chunkSize % 3 == 0, "chunk size is expected to be a multiple of 3");
+    diligentAppBase->m_pPSO->CreateShaderResourceBinding(&shaderResourceBinding, true);
+    textureVariable = shaderResourceBinding->GetVariableByName(Diligent::SHADER_TYPE_PIXEL, "g_Texture");
 
     VertBuffDesc.Name = "Rectangle vertex buffer";
     VertBuffDesc.Usage = Diligent::USAGE_DEFAULT;
     VertBuffDesc.BindFlags = Diligent::BIND_VERTEX_BUFFER;
-    VertBuffDesc.uiSizeInBytes = sizeof(float)*((3+4)*chunkSize);
+    VertBuffDesc.uiSizeInBytes = sizeof(float)*(VertexEngine::strideLength*chunkSize);
     diligentAppBase->m_pDevice->CreateBuffer(VertBuffDesc, &VBData, &vertexBuffer);
 
     IndBuffDesc.Name = "Rectangle index buffer";
@@ -130,15 +178,7 @@ void View::create() {
 
     vertexEngine.resize(canvas_width, canvas_height);
 
-    // TODO: maybe make this internal?
-    auto posID = vertexEngine.addDataBuffer(3);
-    auto colorID = vertexEngine.addDataBuffer(4);
-    vertexEngine.defaultPositionBuffer = posID;
-    vertexEngine.defaultColorBuffer = colorID;
-
-    // make the Layout of this structure match the one we defined in the shader
-    vertexEngine.order({posID, colorID});
-    onCreate();
+    onCreate(vertexEngine.textureManager);
 }
 
 void View::draw () {
@@ -177,7 +217,29 @@ void View::drawChunks(VertexEngine::GenerationInfo &info) {
     DrawAttrs.Flags = Diligent::DRAW_FLAG_VERIFY_ALL;
 
     while (info.canGenerateChunk(chunkSize)) {
-        VertexEngine::GenerationInfo chunk = info.generateChunk(3, 4, chunkSize);
+        VertexEngine::GenerationInfo chunk = info.generateChunk(chunkSize);
+
+        if (chunk.isTexture) {
+            auto tex = vertexEngine.textureManager.getTexture(chunk.textureIndex);
+            if (tex == nullptr) {
+                LOG_WARNING_MESSAGE(
+                        "texture referenced by index ", chunk.textureIndex, " is nullptr"
+                );
+                textureVariable->Set(nullptr);
+            } else if (tex->third == nullptr) {
+                LOG_WARNING_MESSAGE(
+                        "texture referenced by key ", tex->first, " is nullptr"
+                );
+                textureVariable->Set(nullptr);
+            } else {
+                auto v = tex->third->GetDefaultView(Diligent::TEXTURE_VIEW_SHADER_RESOURCE);
+                textureVariable->Set(v);
+            }
+        } else {
+            textureVariable->Set(nullptr);
+        }
+
+        diligentAppBase->m_pImmediateContext->CommitShaderResources(shaderResourceBinding, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
 
         diligentAppBase->m_pImmediateContext->UpdateBuffer(
                 vertexBuffer,
@@ -194,18 +256,23 @@ void View::drawChunks(VertexEngine::GenerationInfo &info) {
         );
 
         DrawAttrs.NumIndices = chunk.lengthIndices;
+
+        // Diligent Engine: ERROR: No resource is bound to variable 'g_Texture'
+        // in shader 'Simple rectangle PSO' of PSO 'Simple rectangle PSO'
         diligentAppBase->m_pImmediateContext->DrawIndexed(DrawAttrs);
     }
     LOG_INFO_MESSAGE("drawn ", info.chunksGenerated, " chunk", info.chunksGenerated == 1 ? "" : "s");
 }
 
 void View::destroy() {
-    onDestroy();
+    onDestroy(vertexEngine.textureManager);
+    textureVariable.Release();
+    shaderResourceBinding.Release();
     this->vertexBuffer.Release();
     this->indexBuffer.Release();
 }
 
-void View::onCreate() {
+void View::onCreate(VertexEngine::TextureManager &textureManager) {
 
 }
 
@@ -213,6 +280,6 @@ void View::onDraw(VertexEngine::Canvas & canvas) {
 
 }
 
-void View::onDestroy() {
+void View::onDestroy(VertexEngine::TextureManager &textureManager) {
 
 }

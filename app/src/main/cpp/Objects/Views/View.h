@@ -13,7 +13,8 @@
 class View : public ObjectBase {
 private:
     VertexEngine vertexEngine;
-    int chunkSize = 3*50;
+    int chunkSize = 3;
+
     int canvas_width = 400;
     int canvas_height = 400;
 
@@ -28,14 +29,18 @@ private:
     static const char * pixelShader;
     Diligent::RefCntAutoPtr<Diligent::IBuffer>                vertexBuffer;
     Diligent::RefCntAutoPtr<Diligent::IBuffer>                indexBuffer;
+    Diligent::RefCntAutoPtr<Diligent::IShaderResourceBinding> shaderResourceBinding;
+
+protected:
+    Diligent::RefCntAutoPtr<Diligent::IShaderResourceVariable> textureVariable;
 
 public:
     void create() override final;
     void draw() override final;
     void destroy() override final;
-    virtual void onCreate();
+    virtual void onCreate(VertexEngine::TextureManager & textureManager);
     virtual void onDraw(VertexEngine::Canvas & canvas);
-    virtual void onDestroy();
+    virtual void onDestroy(VertexEngine::TextureManager & textureManager);
 };
 
 #endif //GRAPHICAL_TOOL_KIT_VIEW_H
