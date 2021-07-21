@@ -69,17 +69,8 @@ endif()
 # add_subdirectory(DiligentEngine/DiligentLog)
 
 add_subdirectory(DiligentEngine/DiligentCore)
-
 #add_subdirectory(DiligentEngine/DiligentFX)
-#add_subdirectory(DiligentEngine/DiligentTools)
-
-set(DILIGENT_INSTALL_TOOLS OFF)
-
-add_subdirectory(DiligentEngine/DiligentTools/Imgui)
-
-if((PLATFORM_WIN32 OR PLATFORM_LINUX OR PLATFORM_MACOS) AND GL_SUPPORTED)
-    add_subdirectory(DiligentEngine/DiligentTools/HLSL2GLSLConverter)
-endif()
+add_subdirectory(DiligentEngine/DiligentTools)
 
 add_subdirectory(TimeEngine)
 include_directories(TimeEngine)
@@ -112,10 +103,8 @@ add_library(
 
 target_link_libraries(
         native-lib
-        PlatformBase
-        DiligentHelpers
-        TimeEngine
         Objects
+        PlatformBase
         WINAPI::KERNEL
 )
 

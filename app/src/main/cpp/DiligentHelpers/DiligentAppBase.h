@@ -29,8 +29,6 @@ public:
     Diligent::RefCntAutoPtr<Diligent::ISwapChain>                  m_pSwapChain;
     Diligent::ImGuiImplDiligent *                                  m_pImGui = nullptr;
 
-    TimeEngine timeEngine;
-
     float  m_fSmoothFPS                   = 0;
     double m_LastFPSTime                  = 0;
     Diligent::Uint32 m_NumFramesRendered  = 0;

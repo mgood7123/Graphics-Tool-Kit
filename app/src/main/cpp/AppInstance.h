@@ -13,6 +13,7 @@
 class AppInstance : public AppInstancePlatformBase, public DiligentAppBase
 {
     AnyOpt objectBase;
+    TimeEngine timeEngine;
 
 public:
 

@@ -16,8 +16,9 @@ add_library(
 
 target_link_libraries(
         ObjectBase
+        DiligentHelpers
+        TimeEngine
         VertexEngine
-        Diligent-Common
 )
 
 include_directories(.)

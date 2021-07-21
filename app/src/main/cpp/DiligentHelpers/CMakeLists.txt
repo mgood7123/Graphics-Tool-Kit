@@ -28,7 +28,6 @@ endif()
 
 target_link_libraries(
         DiligentHelpers
-        TimeEngine
         DiligentAnyOpt
 
 #   DiligentCore
@@ -42,7 +41,7 @@ target_link_libraries(
         ${VK_LIB}
 
 #   DiligentTools
-#        Diligent-AssetLoader
+        Diligent-AssetLoader
         Diligent-Imgui
-#        Diligent-TextureLoader
+        Diligent-TextureLoader
 )
