@@ -31,6 +31,9 @@ private:
     Diligent::RefCntAutoPtr<Diligent::IBuffer>                indexBuffer;
     Diligent::RefCntAutoPtr<Diligent::IShaderResourceBinding> shaderResourceBinding;
 
+    Diligent::RefCntAutoPtr<Diligent::ITexture> dummyTexture;
+    Diligent::ITextureView * dummyTextureView;
+
 protected:
     Diligent::RefCntAutoPtr<Diligent::IShaderResourceVariable> textureVariable;
 

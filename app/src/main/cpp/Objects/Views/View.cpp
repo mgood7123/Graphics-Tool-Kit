@@ -49,7 +49,7 @@ struct PSOutput
 void main(in  PSInput  PSIn,
           out PSOutput PSOut)
 {
-    PSOut.Color = PSIn.IsTexture.x == 0 ? PSIn.Color : g_Texture.Sample(g_Texture_sampler, PSIn.Texture);
+    PSOut.Color = PSIn.IsTexture.x == 0.0 ? PSIn.Color : g_Texture.Sample(g_Texture_sampler, PSIn.Texture);
 }
 )";
 
@@ -79,6 +79,17 @@ void View::create() {
     PSOCreateInfo.GraphicsPipeline.RasterizerDesc.CullMode      = Diligent::CULL_MODE_NONE;
     // Disable depth testing
     PSOCreateInfo.GraphicsPipeline.DepthStencilDesc.DepthEnable = false;
+
+    // create dummy texture
+    Diligent::TextureDesc ColorBuffDesc;
+    ColorBuffDesc.Type      = Diligent::RESOURCE_DIM_TEX_2D;
+    ColorBuffDesc.Name      = "dummy texture";
+    ColorBuffDesc.Width     = 1;
+    ColorBuffDesc.Height    = 1;
+    ColorBuffDesc.Format    = diligentAppBase->m_pSwapChain->GetDesc().ColorBufferFormat;
+    ColorBuffDesc.BindFlags = Diligent::BIND_SHADER_RESOURCE;
+    diligentAppBase->m_pDevice->CreateTexture(ColorBuffDesc, nullptr, &dummyTexture);
+    dummyTextureView = dummyTexture->GetDefaultView(Diligent::TEXTURE_VIEW_SHADER_RESOURCE);
 
     // create shaders
     Diligent::ShaderCreateInfo ShaderCI;
@@ -163,6 +174,9 @@ void View::create() {
 
     diligentAppBase->m_pPSO->CreateShaderResourceBinding(&shaderResourceBinding, true);
     textureVariable = shaderResourceBinding->GetVariableByName(Diligent::SHADER_TYPE_PIXEL, "g_Texture");
+    if (textureVariable.RawPtr() == nullptr) {
+        LOG_ERROR_AND_THROW("failed to acquire variable 'g_Texture'");
+    }
 
     VertBuffDesc.Name = "Rectangle vertex buffer";
     VertBuffDesc.Usage = Diligent::USAGE_DEFAULT;
@@ -225,18 +239,18 @@ void View::drawChunks(VertexEngine::GenerationInfo &info) {
                 LOG_WARNING_MESSAGE(
                         "texture referenced by index ", chunk.textureIndex, " is nullptr"
                 );
-                textureVariable->Set(nullptr);
+                textureVariable->Set(dummyTextureView);
             } else if (tex->third == nullptr) {
                 LOG_WARNING_MESSAGE(
                         "texture referenced by key ", tex->first, " is nullptr"
                 );
-                textureVariable->Set(nullptr);
+                textureVariable->Set(dummyTextureView);
             } else {
                 auto v = tex->third->GetDefaultView(Diligent::TEXTURE_VIEW_SHADER_RESOURCE);
                 textureVariable->Set(v);
             }
         } else {
-            textureVariable->Set(nullptr);
+            textureVariable->Set(dummyTextureView);
         }
 
         diligentAppBase->m_pImmediateContext->CommitShaderResources(shaderResourceBinding, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
@@ -266,6 +280,7 @@ void View::drawChunks(VertexEngine::GenerationInfo &info) {
 
 void View::destroy() {
     onDestroy(vertexEngine.textureManager);
+    dummyTexture.Release();
     textureVariable.Release();
     shaderResourceBinding.Release();
     this->vertexBuffer.Release();
