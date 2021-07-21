@@ -237,12 +237,12 @@ void View::drawChunks(VertexEngine::GenerationInfo &info) {
             auto tex = vertexEngine.textureManager.getTexture(chunk.textureIndex);
             if (tex == nullptr) {
                 LOG_WARNING_MESSAGE(
-                        "texture referenced by index ", chunk.textureIndex, " is nullptr"
+                        "texture container referenced by index '", chunk.textureIndex, "' is nullptr"
                 );
                 textureVariable->Set(dummyTextureView);
             } else if (tex->third == nullptr) {
                 LOG_WARNING_MESSAGE(
-                        "texture referenced by key ", tex->first, " is nullptr"
+                        "texture referenced by key '", tex->first, "' is nullptr"
                 );
                 textureVariable->Set(dummyTextureView);
             } else {
