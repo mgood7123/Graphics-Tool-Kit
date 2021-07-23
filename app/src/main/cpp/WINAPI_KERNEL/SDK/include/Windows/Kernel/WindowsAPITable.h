@@ -8,6 +8,7 @@
 #include <vector>
 #include "../WindowsAPIDefinitions.h"
 #include "WindowsAPIObject.h"
+#include "optional.h"
 
 typedef class Table {
     public:
@@ -33,11 +34,11 @@ typedef class Table {
 
         bool hasFreeIndex();
 
-        size_t nextFreeIndex();
+        tl::optional<size_t> nextFreeIndex();
 
         bool hasObject(Object *object);
 
-        size_t findObject(Object *object);
+        tl::optional<size_t> findObject(Object *object);
 
         Object * objectAt(size_t index);
 
@@ -45,7 +46,9 @@ typedef class Table {
 
         template <typename T> Object * add(ObjectType type, ObjectFlag flags, T * resource) {
             if (this->Page.count() == 0 || !this->hasFreeIndex()) this->Page.add();
-            size_t i = this->nextFreeIndex();
+            auto x = this->nextFreeIndex();
+            if (!x) return nullptr;
+            size_t i = x.value();
             this->table[i] = new Object();
             this->table[i]->type = type;
             this->table[i]->flags = flags;
@@ -55,7 +58,9 @@ typedef class Table {
 
         template <typename T> Object * add(ObjectType type, ObjectFlag flags, T && resource) {
             if (this->Page.count() == 0 || !this->hasFreeIndex()) this->Page.add();
-            size_t i = this->nextFreeIndex();
+            auto x = this->nextFreeIndex();
+            if (!x) return nullptr;
+            size_t i = x.value();
             this->table[i] = new Object();
             this->table[i]->type = type;
             this->table[i]->flags = flags;

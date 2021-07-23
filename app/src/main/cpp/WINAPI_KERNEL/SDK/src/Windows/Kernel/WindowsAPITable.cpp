@@ -53,35 +53,32 @@ Table::Iterator Table::getIterator() {
 
 bool Table::hasFreeIndex() {
     int page = 1;
-    size_t index = 0;
-    size_t page_size = this->page_size;
-    for (; page <= this->Page.count(); page++) {
+    size_t index;
+    for (; page <= Page.count(); page++) {
         index = ((page_size * page) - page_size);
         for (; index < page_size * page; index++)
-            if (this->table[index] == nullptr)
+            if (table[index] == nullptr)
                 return true;
     }
     return false;
 }
 
-size_t Table::nextFreeIndex() {
+tl::optional<size_t> Table::nextFreeIndex() {
     int page = 1;
-    size_t index = 0;
-    size_t page_size = this->page_size;
+    size_t index;
     for (; page <= this->Page.count(); page++) {
         index = ((page_size * page) - page_size);
         for (; index < page_size * page; index++)
             if (this->table[index] == nullptr)
                 return index;
     }
-    return 0;
+    return tl::nullopt;
 }
 
 bool Table::hasObject(Object *object) {
     if (object == nullptr) return false;
     int page = 1;
-    size_t index = 0;
-    size_t page_size = this->page_size;
+    size_t index;
     for (; page <= this->Page.count(); page++) {
         index = ((page_size * page) - page_size);
         for (; index < page_size * page; index++)
@@ -91,22 +88,21 @@ bool Table::hasObject(Object *object) {
     return false;
 }
 
-size_t Table::findObject(Object *object) {
+tl::optional<size_t> Table::findObject(Object *object) {
     int page = 1;
-    size_t index = 0;
-    size_t page_size = this->page_size;
+    size_t index;
     for (; page <= this->Page.count(); page++) {
         index = ((page_size * page) - page_size);
         for (; index < page_size * page; index++)
             if (this->table[index] != nullptr && object != nullptr)
                 if (*this->table[index] == *object) return index;
     }
-    return 0;
+    return tl::nullopt;
 }
 
 Object * Table::objectAt(size_t index) {
     if (index < this->table.size()) return this->table[index];
-    else return nullptr;
+    return nullptr;
 }
 
 Object *Table::add(ObjectType type, ObjectFlag flags) {
@@ -120,7 +116,9 @@ Object *Table::add(Object *object) {
 
 Object *Table::add(Object &object) {
     if (!this->hasFreeIndex()) this->Page.add();
-    size_t i = this->nextFreeIndex();
+    auto x = this->nextFreeIndex();
+    if (!x) return nullptr;
+    size_t i = x.value();
     this->table[i] = new Object();
     this->table[i]->inherit(object);
     return this->table[i];
@@ -135,7 +133,8 @@ void Table::DELETE(size_t index) {
 }
 
 void Table::remove(Object *object) {
-    if (this->hasObject(object)) this->DELETE(this->findObject(object));
+    auto o = this->findObject(object);
+    if (o) this->DELETE(o.value());
 }
 
 void Table::remove(Object &object) {
@@ -178,17 +177,15 @@ int Table::Page::indexToPageIndex(size_t index) {
 }
 
 void Table::Page::clean(int page) {
-    size_t index = 0;
     size_t page_size = this->table->page_size;
-    index = ((page_size * page) - page_size);
+    size_t index = ((page_size * page) - page_size);
     for (; index < page_size * page; index++)
         this->table->DELETE(index);
 }
 
 void Table::Page::zero(int page) {
-    size_t index = 0;
     size_t page_size = this->table->page_size;
-    index = ((page_size * page) - page_size);
+    size_t index = ((page_size * page) - page_size);
     for (; index < page_size * page; index++)
         this->table->table[index] = nullptr;
 }
