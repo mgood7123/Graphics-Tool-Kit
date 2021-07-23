@@ -9,11 +9,80 @@
 #include <SDK/include/Windows/Kernel/WindowsAPIKernel.h>
 #include <vector>
 #include <DiligentTools/TextureLoader/interface/TextureLoader.h>
+#include <DiligentCore/Common/interface/RefCntAutoPtr.hpp>
+#include <DiligentCore/Graphics/GraphicsEngine/interface/DeviceContext.h>
+#include <DiligentCore/Graphics/GraphicsEngine/interface/RenderDevice.h>
 
 class VertexEngine {
 public:
     constexpr static float FLOAT_FALSE = 0;
     constexpr static float FLOAT_TRUE = 1;
+
+    class Color4 {
+    public:
+        float red;
+        float green;
+        float blue;
+        float alpha;
+        const char * key;
+        float isTexture;
+        float textureResource;
+
+        // only used for [texture -> color] conversion
+        Diligent::ITexture* texture = nullptr;
+
+        Color4(const std::array<float, 4> & data);
+        Color4(const std::array<float, 6> & data);
+        Color4(const float &red, const float &green, const float &blue, const float &alpha);
+        Color4(const char * key);
+        Color4(Diligent::ITexture* texture);
+        Color4(const std::array<float, 4> & data, Diligent::ITexture* texture);
+        std::array<float, 4> to_RGBA_array() const;
+        std::array<float, 4> to_ARGB_array() const;
+        std::array<float, 6> to_array() const;
+        std::vector<float> to_RGBA_vector() const;
+        std::vector<float> to_ARGB_vector() const;
+        std::vector<float> to_vector() const;
+        uint32_t to_RGBA_unsigned_32bit_int() const;
+        uint32_t to_ARGB_unsigned_32bit_int() const;
+
+        static std::array<float, 4> float_RGBA_to_ARGB_array(const float & red, const float & green, const float & blue, const float & alpha);
+        static std::array<float, 4> float_RGBA_array_to_ARGB_array(const std::array<float, 4> & data);
+        static std::array<float, 4> float_RGBA_vector_to_ARGB_array(const std::vector<float> & data);
+        static std::vector<float> float_RGBA_to_ARGB_vector(const float & red, const float & green, const float & blue, const float & alpha);
+        static std::vector<float> float_RGBA_array_to_ARGB_vector(const std::array<float, 4> & data);
+        static std::vector<float> float_RGBA_vector_to_ARGB_vector(const std::vector<float> & data);
+
+        static std::array<float, 4> float_ARGB_to_RGBA_array(const float & alpha, const float & red, const float & green, const float & blue);
+        static std::array<float, 4> float_ARGB_array_to_RGBA_array(const std::array<float, 4> & data);
+        static std::array<float, 4> float_ARGB_vector_to_RGBA_array(const std::vector<float> & data);
+        static std::vector<float> float_ARGB_to_RGBA_vector(const float & alpha, const float & red, const float & green, const float & blue);
+        static std::vector<float> float_ARGB_array_to_RGBA_vector(const std::array<float, 4> & data);
+        static std::vector<float> float_ARGB_vector_to_RGBA_vector(const std::vector<float> & data);
+
+        static uint32_t unsigned_8bit_to_unsigned_32_bit(uint8_t a, uint8_t b, uint8_t c, uint8_t d);
+
+        static uint32_t unsigned_8bit_int_to_RGBA_unsigned_32bit_int(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha);
+        static uint32_t unsigned_8bit_int_to_RGBA_unsigned_32bit_int(const std::array<uint8_t, 4> & data);
+        static uint32_t float_to_RGBA_unsigned_32bit_int(const float & red, const float & green, const float & blue, const float & alpha);
+        static uint32_t float_to_RGBA_unsigned_32bit_int(const std::array<float, 4> & data);
+        static uint32_t unsigned_32bit_int_to_RGBA_unsigned_32bit_int(uint32_t red, uint32_t green, uint32_t blue, uint32_t alpha);
+        static uint32_t unsigned_32bit_int_to_RGBA_unsigned_32bit_int(const std::array<uint32_t, 4> & data);
+
+        static uint32_t unsigned_8bit_int_to_ARGB_unsigned_32bit_int(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha);
+        static uint32_t unsigned_8bit_int_to_ARGB_unsigned_32bit_int(const std::array<uint8_t, 4> & data);
+        static uint32_t float_to_ARGB_unsigned_32bit_int(const float & red, const float & green, const float & blue, const float & alpha);
+        static uint32_t float_to_ARGB_unsigned_32bit_int(const std::array<float, 4> & data);
+        static uint32_t unsigned_32bit_int_to_ARGB_unsigned_32bit_int(uint32_t red, uint32_t green, uint32_t blue, uint32_t alpha);
+        static uint32_t unsigned_32bit_int_to_ARGB_unsigned_32bit_int(const std::array<uint32_t, 4> & data);
+
+        static std::array<float, 4> unsigned_8bit_Component4_to_float_array(uint8_t a, uint8_t b, uint8_t c, uint8_t d);
+        static std::vector<float> unsigned_8bit_Component4_to_float_vector(uint8_t a, uint8_t b, uint8_t c, uint8_t d);
+        static std::array<float, 4> unsigned_8bit_array_to_float_array(const std::array<uint8_t, 4> & data);
+        static std::vector<float> unsigned_8bit_array_to_float_vector(const std::array<uint8_t, 4> & data);
+        static std::array<float, 4> unsigned_8bit_vector_to_float_array(const std::vector<uint8_t> & data);
+        static std::vector<float> unsigned_8bit_vector_to_float_vector(const std::vector<uint8_t> & data);
+    };
 
     template<typename A, typename B, typename C>
     class Triple {
@@ -34,7 +103,7 @@ private:
 
         storage_type * get(HANDLE handle);
         storage_type * get(const size_t & index);
-        size_t getIndex(HANDLE handle);
+        tl::optional<size_t> getIndex(HANDLE handle);
 
         void remove(HANDLE handle);
 
@@ -55,8 +124,8 @@ private:
 
     Buffer<VertexInfo, VertexInfo> vertexBuffer;
     Buffer<
-        Triple<const char *, size_t, Diligent::ITexture*>,
-        Triple<const char *, size_t, Diligent::ITexture*>
+            Triple<const char *, size_t, Color4>,
+            Triple<const char *, size_t, Color4>
     > textureBuffer;
     std::vector<HANDLE> vertexBufferOrder;
     std::vector<HANDLE> indexHandles;
@@ -131,6 +200,7 @@ public:
 
     class GenerationInfo {
         size_t chunkReader;
+        VertexEngine * vertexEngine;
     public:
 
         size_t chunksGenerated;
@@ -144,15 +214,15 @@ public:
         uint32_t * indices;
 
         bool isTexture;
-        size_t textureIndex;
+        tl::optional<size_t> textureIndex;
 
         GenerationInfo(
-                const size_t lengthData, const float *data,
+                VertexEngine * engine, const size_t lengthData, const float *data,
                 const size_t lengthIndices, const uint32_t *indices
         );
 
         GenerationInfo(
-                const size_t lengthData, const float *data,
+                VertexEngine * engine, const size_t lengthData, const float *data,
                 const size_t lengthIndices, const uint32_t *indices,
                 const bool isTexture
         );
@@ -174,6 +244,11 @@ public:
         bool canGenerateChunk(size_t chunkSize) const;
 
         GenerationInfo generateChunk(size_t chunkSize);
+
+        void fillColorData(const std::array<float, 4> &color);
+        void fillColorDataAndDisableTextureFlag(const std::array<float, 4> &color);
+        void fillColorDataAndDisableTextureFlag(const Color4 &color);
+        void fillColorDataAndDisableTextureFlag(const char *key);
     };
 
     /**
@@ -181,52 +256,6 @@ public:
      * @return information about the generated data
      */
     GenerationInfo generateGL();
-
-    class TextureManager {
-        VertexEngine * vertexEngine;
-    public:
-        TextureManager(VertexEngine * engine);
-
-        /**
-         * creates a texture from the specified path
-         * @param key the key that will be used to locate the texture
-         * @param FilePath Source file path
-         * @param TexLoadInfo Texture loading information
-         * @param pDevice Render device that will be used to create the texture
-         */
-        void createTextureFromFile(const char *key, const Diligent::Char *FilePath,
-                                   const Diligent::TextureLoadInfo &TexLoadInfo,
-                                   Diligent::IRenderDevice *pDevice);
-
-        /**
-         * finds a texture associated with the key used to create the texture
-         * @param key the key to locate the texture
-         * @return nullptr if the key cannot be found
-         */
-        Diligent::ITexture *findTexture(const char *key);
-
-        /**
-         * obtains a texture associated with the index returned by findTextureIndex
-         * @param index the index returned by findTextureIndex
-         * @return nullptr if the key cannot be found
-         */
-        Triple<const char *, size_t, Diligent::ITexture *> * getTexture(const size_t & index);
-
-        /**
-         * finds a texture associated with the key used to create the texture
-         * @param key the key to locate the texture
-         * @return -1 if the texture cannot be found
-         */
-        size_t findTextureIndex(const char *key);
-
-        /**
-         * deletes a texture associated with the key used to create the texture
-         * @param key the key to locate the texture
-         */
-        void deleteTexture(const char *key);
-    };
-
-    TextureManager textureManager;
 
     // shape and geometry generation
 
@@ -297,8 +326,8 @@ public:
             Position2(const std::array<float, 2> & data);
             Position2(const std::array<float, 3> & data);
             Position2(const float & x, const float & y);
-            std::array<float, 2> toArray() const;
-            std::vector<float> toVector() const;
+            std::array<float, 2> to_array() const;
+            std::vector<float> to_vector() const;
         };
 
         typedef Position2 TextureCoordinate2;
@@ -311,32 +340,14 @@ public:
 
             Position3(const std::array<float, 3> & data);
             Position3(const float & x, const float & y, const float & z);
-            std::array<float, 3> toArray() const;
-            std::vector<float> toVector() const;
+            std::array<float, 3> to_array() const;
+            std::vector<float> to_vector() const;
         };
 
-        class Color4 {
-        public:
-            float r;
-            float g;
-            float b;
-            float a;
-            const char * key;
-            float isTexture;
-            float textureResource;
-
-            Color4(const std::array<float, 4> & data);
-            Color4(const std::array<float, 6> & data);
-            Color4(const float & r, const float & g, const float & b, const float & a);
-            Color4(const char * key);
-            std::array<float, 4> toRGBAArray() const;
-            std::array<float, 6> toArray() const;
-            std::vector<float> toRGBAVector() const;
-            std::vector<float> toVector() const;
-        };
+        typedef VertexEngine::Color4 Color4;
 
     private:
-        void processTextureInColor4(const Color4& colorData);
+        void checkIfTextureKeyExists(const Color4& colorData);
 
     public:
 
@@ -370,6 +381,8 @@ public:
         HANDLE addIndexData(const std::vector<uint32_t>& data);
 
         static Color4 black;
+        static uint32_t black_RGBA_unsigned_32bit_int;
+        static uint32_t black_ARGB_unsigned_32bit_int;
 
         /**
          * alias for fill(black);
@@ -387,6 +400,156 @@ public:
         void plane(int x, int y, int width, int height, const Color4& colorData);
 
     };
+
+    class TextureManager {
+        VertexEngine * vertexEngine;
+        Diligent::IRenderDevice  * m_pDevice;
+        Diligent::IDeviceContext * m_pImmediateContext;
+    public:
+        TextureManager(VertexEngine * engine);
+
+        /**
+         * set the default device and context to use for texture operations
+         * <br>
+         * <br>
+         * this function should be called as follows:
+         * <br>
+         * <br>
+         * Diligent::RefCntAutoPtr<Diligent::IRenderDevice>  device;
+         * <br>
+         * Diligent::RefCntAutoPtr<Diligent::IDeviceContext> context;
+         * <br>
+         * <br>
+         * // init device and context
+         * <br>
+         * // ...
+         * <br>
+         * <br>
+         * setDefaultDevices(device.RawPtr(), context.RawPtr());
+         */
+        void setDefaultDevices(
+                Diligent::IRenderDevice  * m_pDevice,
+                Diligent::IDeviceContext * m_pImmediateContext
+        );
+
+        std::pair<bool, std::vector<uint8_t>> imageIsSolidColor(Diligent::RefCntAutoPtr<Diligent::Image> image);
+
+        /**
+         * creates a 1x1 texture with a specified color
+         * <br>
+         * <br>
+         * this is generally useful if a dummy texture is required for a shader
+         * <br>
+         * <br>
+         * however `createTextureFromColor(key, color)` should be used instead
+         * if your intent is to use a texture as a solid color
+         * <br>
+         * since the texture will be optimized away into vertex color data
+         * @param key the key that will be used to locate the texture
+         * @param color the color to use
+         */
+        void createSolidColorTexture(const char *key, const Color4 & color);
+
+        /**
+         * creates a 1x1 texture with a default color of black
+         * <br>
+         * <br>
+         * this is generally useful if a dummy texture is required for a shader
+         * <br>
+         * <br>
+         * however `createTextureFromColor(key)` should be used instead
+         * if your intent is to use a texture as a solid color
+         * <br>
+         * since the texture will be optimized away into vertex color data
+         * @param key the key that will be used to locate the texture
+         */
+        void createSolidColorTexture(const char *key);
+
+        /**
+         * creates a texture from the specified color
+         * <br>
+         * <br>
+         * this optimizes away the texture and instead uses the color
+         * directly as vertex color data
+         * <br>
+         * if you REALLY want a texture then please use
+         * `createSolidColorTexture(key, color)` instead
+         * @param key the key that will be used to locate the texture
+         * @param color the color to use
+         */
+        void createTextureFromColor(const char *key, const Color4 &color);
+
+        /**
+         * creates a texture with a default color of black
+         * <br>
+         * <br>
+         * this optimizes away the texture and instead uses the color
+         * directly as vertex color data
+         * <br>
+         * if you REALLY want a texture then please use
+         * `createSolidColorTexture(key)` instead
+         * @param key the key that will be used to locate the texture
+         */
+        void createTextureFromColor(const char *key);
+
+        /**
+         * creates a texture from the specified path
+         * <br>
+         * <br>
+         * this calls `createTextureFromColor(key, DETECTED_COLOR)` if the loaded image
+         * is detected to be a solid color, which is
+         * optimized away into vertex color data
+         * @param key the key that will be used to locate the texture
+         * @param FilePath Source file path
+         * @param TexLoadInfo Texture loading information
+         * @note this function is expensive and SHOULD NOT be called in onDraw
+         */
+        void createTextureFromFile(const char *key, const Diligent::Char *FilePath,
+                                   const Diligent::TextureLoadInfo &TexLoadInfo);
+
+        /**
+         * finds a texture associated with the key used to create the texture
+         * @param key the key to locate the texture
+         * @return nullptr if the key cannot be found
+         *          or if the texture has been converted into color data
+         */
+        Diligent::ITexture *findTexture(const char *key);
+
+        /**
+         * obtains a texture associated with the index returned by findTextureIndex
+         * @param index the index returned by findTextureIndex
+         * @return nullptr if the key cannot be found
+         *          or `third.texture == nullptr` if the texture has been
+         *          converted into color data
+         */
+        Triple<const char *, size_t, Color4> * getTexture(const size_t & index);
+
+        /**
+         * obtains a texture associated with the key used to create the texture
+         * @param key the key to locate the texture
+         * @return nullptr if the key cannot be found
+         *          or `third.texture == nullptr` if the texture has been
+         *          converted into color data
+         */
+        Triple<const char *, size_t, Color4> * getTexture(const char *key);
+
+        /**
+         * finds a texture associated with the key used to create the texture
+         * @param key the key to locate the texture
+         * @return tl::nullopt if the key cannot be found
+         *          or `getTexture(returnedIndex.value())->third.texture == nullptr`
+         *          if the texture has been converted into color data
+         */
+        tl::optional<size_t> findTextureIndex(const char *key);
+
+        /**
+         * deletes a texture associated with the key used to create the texture
+         * @param key the key to locate the texture
+         */
+        void deleteTexture(const char *key);
+    };
+
+    TextureManager textureManager;
 };
 
 

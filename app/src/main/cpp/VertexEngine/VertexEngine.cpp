@@ -5,6 +5,9 @@
 #include "VertexEngine.h"
 #include <cmath>
 #include <DiligentTools/TextureLoader/interface/TextureUtilities.h>
+#include <DiligentTools/TextureLoader/interface/TextureLoader.h>
+#include <DiligentCore/Graphics/GraphicsAccessories/interface/GraphicsAccessories.hpp>
+#include <DiligentTools/TextureLoader/interface/Image.h>
 
 template<typename A, typename B, typename C>
 VertexEngine::Triple<A, B, C>::Triple(A first, B second, C third):
@@ -27,7 +30,7 @@ storage_type *VertexEngine::Buffer<data_type, storage_type>::get(const size_t & 
 }
 
 template<typename data_type, typename storage_type>
-size_t VertexEngine::Buffer<data_type, storage_type>::getIndex(HANDLE handle) {
+tl::optional<size_t> VertexEngine::Buffer<data_type, storage_type>::getIndex(HANDLE handle) {
     return kernel.table->findObject(kernel.getHandle(handle)->object);
 }
 
@@ -113,10 +116,12 @@ void VertexEngine::order(const std::vector<HANDLE>& data) {
 }
 
 VertexEngine::GenerationInfo::GenerationInfo(
+        VertexEngine * engine,
         const size_t lengthData, const float *data,
         const size_t lengthIndices, const uint32_t *indices,
         const bool isTexture
 ) :
+    vertexEngine(engine),
     data(new float[lengthData]),
     lengthData(lengthData),
     sizeInBytesData(lengthData * sizeof(float)),
@@ -135,13 +140,15 @@ VertexEngine::GenerationInfo::GenerationInfo(
 }
 
 VertexEngine::GenerationInfo::GenerationInfo(
+        VertexEngine * engine,
         const size_t lengthData, const float *data,
         const size_t lengthIndices, const uint32_t *indices
-) : GenerationInfo(lengthData, data, lengthIndices, indices, false)
+) : GenerationInfo(engine, lengthData, data, lengthIndices, indices, false)
 {
 }
 
 VertexEngine::GenerationInfo::GenerationInfo(VertexEngine::GenerationInfo &&m) :
+        vertexEngine(m.vertexEngine),
         data(m.data),
         lengthData(m.lengthData),
         sizeInBytesData(m.sizeInBytesData),
@@ -149,8 +156,10 @@ VertexEngine::GenerationInfo::GenerationInfo(VertexEngine::GenerationInfo &&m) :
         lengthIndices(m.lengthIndices),
         sizeInBytesIndices(m.sizeInBytesIndices),
         chunkReader(0),
-        chunksGenerated(0)
+        chunksGenerated(0),
+        isTexture(isTexture)
 {
+    m.vertexEngine = nullptr;
     m.data = nullptr;
     m.indices = nullptr;
 }
@@ -176,7 +185,7 @@ bool VertexEngine::GenerationInfo::canGenerateChunk(size_t chunkSize) const {
 }
 
 VertexEngine::GenerationInfo VertexEngine::GenerationInfo::generateChunk(size_t chunkSize) {
-    VertexEngine::GenerationInfo out(strideLength*chunkSize, nullptr, chunkSize, nullptr, true);
+    VertexEngine::GenerationInfo out(vertexEngine, strideLength*chunkSize, nullptr, chunkSize, nullptr, true);
 
     // indices increase from 0, 1, 2, ...
     size_t vertexIndex = 0;
@@ -214,7 +223,11 @@ VertexEngine::GenerationInfo VertexEngine::GenerationInfo::generateChunk(size_t 
             firstTextureIndexIsNan = std::isnan(data[textureIndexIndex]);
             firstTextureIndex = data[textureIndexIndex];
             out.isTexture = firstIsTexture == FLOAT_TRUE ? true : false;
-            out.textureIndex = firstTextureIndexIsNan ? -1 : data[textureIndexIndex];
+            if (firstTextureIndexIsNan || data[textureIndexIndex] == -1.0f) {
+                out.textureIndex = tl::nullopt;
+            } else {
+                out.textureIndex = data[textureIndexIndex];
+            }
         }
         if (
             firstIsTexture == data[isTextureIndex]
@@ -250,6 +263,65 @@ VertexEngine::GenerationInfo VertexEngine::GenerationInfo::generateChunk(size_t 
     }
     chunksGenerated++;
     return out;
+}
+
+void VertexEngine::GenerationInfo::fillColorData(const std::array<float, 4> &color) {
+// for now, we know the stride length exactly:
+//        index + 0;  // pos x
+//        index + 1;  // pos y
+//        index + 2;  // pos z
+//        index + 3;  // col r
+//        index + 4;  // col g
+//        index + 5;  // col b
+//        index + 6;  // col a
+//        index + 7;  // col isTexture
+//        index + 8;  // tex x
+//        index + 9; // tex y
+
+    size_t vertexIndex = 0;
+    float colorData[4] = {color[0], color[1], color[2], color[3]};
+    size_t copy_amount = sizeof(float) * 4;
+    while(vertexIndex < lengthData) {
+        memcpy(data + 3 + vertexIndex, colorData, copy_amount);
+        vertexIndex += 10;
+    }
+}
+
+void VertexEngine::GenerationInfo::fillColorDataAndDisableTextureFlag(const std::array<float, 4> &color) {
+// for now, we know the stride length exactly:
+//        index + 0;  // pos x
+//        index + 1;  // pos y
+//        index + 2;  // pos z
+//        index + 3;  // col r
+//        index + 4;  // col g
+//        index + 5;  // col b
+//        index + 6;  // col a
+//        index + 7;  // col isTexture
+//        index + 8;  // tex x
+//        index + 9; // tex y
+
+    size_t vertexIndex = 0;
+    float colorData[5] = {color[0], color[1], color[2], color[3], FLOAT_FALSE};
+    size_t copy_amount = sizeof(float) * 5;
+    while(vertexIndex < lengthData) {
+        memcpy(data + 3 + vertexIndex, colorData, copy_amount);
+        vertexIndex += 10;
+    }
+}
+
+void VertexEngine::GenerationInfo::fillColorDataAndDisableTextureFlag(const Color4 &color) {
+    fillColorDataAndDisableTextureFlag(color.to_RGBA_array());
+}
+
+void VertexEngine::GenerationInfo::fillColorDataAndDisableTextureFlag(const char *key) {
+    if (key == nullptr) {
+        LOG_ERROR_AND_THROW("cannot fill color data from a nullptr key");
+    }
+    auto tex = vertexEngine->textureManager.getTexture(key);
+    if (tex == nullptr) {
+        LOG_ERROR_AND_THROW("key '", key, "' does not exist");
+    }
+    fillColorDataAndDisableTextureFlag(tex->third.to_RGBA_array());
 }
 
 VertexEngine::GenerationInfo VertexEngine::generateGL() {
@@ -315,7 +387,7 @@ VertexEngine::GenerationInfo VertexEngine::generateGL() {
             }
         }
 
-        return GenerationInfo(lengthData, dataBuffer, lengthIndices, indicesBuffer);
+        return GenerationInfo(this, lengthData, dataBuffer, lengthIndices, indicesBuffer);
     } else {
         // otherwise, every group contains multiple buffers
         // ensure they are all the same size
@@ -382,7 +454,7 @@ VertexEngine::GenerationInfo VertexEngine::generateGL() {
             }
         }
 
-        return GenerationInfo(lengthData, dataBuffer, lengthIndices, indicesBuffer);
+        return GenerationInfo(this, lengthData, dataBuffer, lengthIndices, indicesBuffer);
     }
 }
 
@@ -391,49 +463,188 @@ VertexEngine::TextureManager::TextureManager(VertexEngine *engine):
 {
 }
 
+void VertexEngine::TextureManager::setDefaultDevices(
+        Diligent::IRenderDevice  * m_pDevice,
+        Diligent::IDeviceContext * m_pImmediateContext
+) {
+    this->m_pDevice = m_pDevice;
+    this->m_pImmediateContext = m_pImmediateContext;
+}
+
+std::pair<bool, std::vector<uint8_t>>
+VertexEngine::TextureManager::imageIsSolidColor(
+        Diligent::RefCntAutoPtr<Diligent::Image> image
+) {
+    auto Desc = image->GetDesc();
+
+    if (Desc.NumComponents != 4) {
+        LOG_ERROR_MESSAGE("number of color components in image must be 4, was ", Desc.NumComponents);
+        return {false, {}};
+    }
+    uint8_t color[4];
+    uint8_t *pixels = static_cast<uint8_t *>(image->GetData()->GetDataPtr());
+    for (uint32_t y = 0; y < Desc.Height; y++) {
+        for (uint32_t x = 0; x < Desc.Width; x++) {
+            if (y == 0 && x == 0) {
+                // dst, src, length
+                memcpy(color, pixels, 4);
+            } else {
+                if (memcmp(&pixels[x * y * 4], color, 4) != 0) {
+                    return {false, {}};
+                }
+            }
+        }
+    }
+    return {true, {color[0], color[1], color[2], color[3]}};
+}
+
+void VertexEngine::TextureManager::createSolidColorTexture(const char *key, const Color4 & color) {
+    if (key == nullptr) {
+        LOG_ERROR_AND_THROW("a texture cannot be created using a nullptr key");
+    }
+    if (getTexture(key) != nullptr) {
+        LOG_ERROR_AND_THROW("a texture with the key '", key, "' already exists");
+    }
+    Diligent::TextureDesc TexDesc;
+    TexDesc.Name = "Dummy Texture";
+    TexDesc.Type = Diligent::RESOURCE_DIM_TEX_2D;
+    TexDesc.Format = Diligent::TEX_FORMAT_RGBA8_UNORM_SRGB;
+    TexDesc.Width = 1;
+    TexDesc.Height = 1;
+    TexDesc.MipLevels = 1;
+    TexDesc.BindFlags = Diligent::BIND_SHADER_RESOURCE;
+    TexDesc.Usage = Diligent::USAGE_IMMUTABLE;
+
+    // init texture with color data
+    Diligent::Uint32 pixelData[1] = {color.to_RGBA_unsigned_32bit_int()};
+    Diligent::Uint32 stride = TexDesc.Width*4;
+    Diligent::TextureSubResData subResData[] {{&pixelData, stride}};
+    Diligent::TextureData InitData;
+    InitData.pSubResources = subResData;
+    InitData.NumSubresources = _countof(subResData);
+
+    Diligent::ITexture * tex = nullptr;
+    m_pDevice->CreateTexture(TexDesc, &InitData, &tex);
+    vertexEngine->textureBuffer.add({key, strlen(key), {color.to_RGBA_array(), tex}});
+}
+
+void VertexEngine::TextureManager::createSolidColorTexture(const char *key) {
+    createSolidColorTexture(key, VertexEngine::Canvas::black);
+}
+
+void VertexEngine::TextureManager::createTextureFromColor(const char *key,
+                                                         const VertexEngine::Canvas::Color4 &color) {
+    if (key == nullptr) {
+        LOG_ERROR_AND_THROW("a texture cannot be created using a nullptr key");
+    }
+    if (getTexture(key) != nullptr) {
+        LOG_ERROR_AND_THROW("a texture with the key '", key, "' already exists");
+    }
+    // do not create a texture
+    vertexEngine->textureBuffer.add({key, strlen(key), color});
+}
+
+void VertexEngine::TextureManager::createTextureFromColor(const char *key) {
+    createTextureFromColor(key, VertexEngine::Canvas::black);
+}
+
 void VertexEngine::TextureManager::createTextureFromFile(
         const char * key,
         const char *FilePath,
-        const Diligent::TextureLoadInfo &TexLoadInfo,
-        Diligent::IRenderDevice *pDevice
+        const Diligent::TextureLoadInfo &TexLoadInfo
 ) {
-    Diligent::ITexture * tex = nullptr;
-    Diligent::CreateTextureFromFile(FilePath, TexLoadInfo, pDevice, &tex);
-    vertexEngine->textureBuffer.add({key, strlen(key), tex});
+    if (key == nullptr) {
+        LOG_ERROR_AND_THROW("a texture cannot be created using a nullptr key");
+    }
+    if (getTexture(key) != nullptr) {
+        LOG_ERROR_AND_THROW("a texture with the key '", key, "' already exists");
+    }
+    Diligent::RefCntAutoPtr<Diligent::Image>     pImage;
+    Diligent::RefCntAutoPtr<Diligent::IDataBlob> pRawData;
+
+    auto ImgFmt = Diligent::CreateImageFromFile(FilePath, &pImage, &pRawData);
+
+    if (pImage) {
+        auto r = imageIsSolidColor(pImage);
+        if (r.first) {
+            // associate key with solid color instead of texture
+            vertexEngine->textureBuffer.add({
+                key,
+                strlen(key),
+                Color4::unsigned_8bit_vector_to_float_array(r.second)
+            });
+            return;
+        } else {
+            Diligent::ITexture * tex = nullptr;
+            Diligent::CreateTextureFromImage(pImage, TexLoadInfo, m_pDevice, &tex);
+            vertexEngine->textureBuffer.add({key, strlen(key), tex});
+        }
+    } else if (pRawData) {
+        // TODO: can DDS and KTX be solid color?
+        if (ImgFmt == Diligent::IMAGE_FILE_FORMAT_DDS) {
+            Diligent::ITexture * tex = nullptr;
+            Diligent::CreateTextureFromDDS(pRawData->GetConstDataPtr(), pRawData->GetSize(),
+                                           TexLoadInfo, m_pDevice, &tex);
+            vertexEngine->textureBuffer.add({key, strlen(key), tex});
+        } else if (ImgFmt == Diligent::IMAGE_FILE_FORMAT_KTX) {
+            Diligent::ITexture * tex = nullptr;
+            Diligent::CreateTextureFromKTX(pRawData->GetConstDataPtr(), pRawData->GetSize(),
+                                           TexLoadInfo, m_pDevice, &tex);
+            vertexEngine->textureBuffer.add({key, strlen(key), tex});
+        } else {
+            LOG_ERROR_AND_THROW("Unexpected format");
+        }
+    }
 }
 
 Diligent::ITexture * VertexEngine::TextureManager::findTexture(const char * key) {
+    auto r = getTexture(key);
+    if (r == nullptr) return nullptr;
+    if (memcmp(key, r->first, r->second) == 0) return r->third.texture;
+    return nullptr;
+}
+
+VertexEngine::Triple<const char *, size_t, VertexEngine::Color4> *
+VertexEngine::TextureManager::getTexture(const size_t & index) {
+    if (index == -1) return nullptr;
+    VertexEngine::Triple<const char *, size_t, VertexEngine::Color4> * r = vertexEngine->textureBuffer.get(index);
+    return r == nullptr ? nullptr : r;
+}
+
+VertexEngine::Triple<const char *, size_t, VertexEngine::Color4> *
+VertexEngine::TextureManager::getTexture(const char * key) {
     if (key == nullptr) return nullptr;
     auto i = vertexEngine->textureBuffer.getIterator();
     while (i.hasNext()) {
-        HANDLE h = i.next()->handle;
-        auto r = vertexEngine->textureBuffer.get(h);
-        if (memcmp(key, r->first, r->second) == 0) return r->third;
+        auto r = vertexEngine->textureBuffer.get(i.next()->handle);
+        if (memcmp(key, r->first, r->second) == 0) return r;
     }
     return nullptr;
 }
 
-VertexEngine::Triple<const char *, size_t, Diligent::ITexture *> *
-VertexEngine::TextureManager::getTexture(const size_t & index) {
-    if (index == -1) return nullptr;
-    VertexEngine::Triple<const char *, size_t, Diligent::ITexture *> * r = vertexEngine->textureBuffer.get(index);
-    return r == nullptr ? nullptr : r;
-}
-
-size_t VertexEngine::TextureManager::findTextureIndex(const char * key) {
+tl::optional<size_t> VertexEngine::TextureManager::findTextureIndex(const char * key) {
     auto i = vertexEngine->textureBuffer.getIterator();
     while (i.hasNext()) {
         auto idx = vertexEngine->textureBuffer.getIndex(i.next()->handle);
-        auto r = vertexEngine->textureBuffer.get(idx);
+        if (!idx) continue;
+        auto r = vertexEngine->textureBuffer.get(idx.value());
         if (memcmp(key, r->first, r->second) == 0) return idx;
     }
-    return -1;
+    return tl::nullopt;
 }
 
 void VertexEngine::TextureManager::deleteTexture(const char * key) {
-    Diligent::ITexture * texture = findTexture(key);
-    if (texture != nullptr) {
-        texture->Release();
+    if (key != nullptr) {
+        auto i = vertexEngine->textureBuffer.getIterator();
+        while (i.hasNext()) {
+            HANDLE h = i.next()->handle;
+            auto r = vertexEngine->textureBuffer.get(h);
+            if (memcmp(key, r->first, r->second) == 0) {
+                if (r->third.texture != nullptr) r->third.texture->Release();
+                vertexEngine->textureBuffer.remove(h);
+                break;
+            }
+        }
     }
 }
 
@@ -499,11 +710,11 @@ VertexEngine::Canvas VertexEngine::Canvas::subCanvas(int x, int y, int width, in
 
 void VertexEngine::Canvas::addData(const std::vector<Triple<const Position3&, const Color4&, const TextureCoordinate2&>>& data) {
     for (const Triple<const Position3&, const Color4&, const TextureCoordinate2&> & val : data) {
-        processTextureInColor4(val.second);
+        checkIfTextureKeyExists(val.second);
         addData_({
-            {vertexEngine->defaultPositionBuffer, val.first.toVector()},
-            {vertexEngine->defaultColorBuffer, val.second.toVector()},
-            {vertexEngine->defaultTextureCoordinateBuffer, val.third.toVector()}
+            {vertexEngine->defaultPositionBuffer, val.first.to_vector()},
+            {vertexEngine->defaultColorBuffer, val.second.to_vector()},
+            {vertexEngine->defaultTextureCoordinateBuffer, val.third.to_vector()}
         });
     }
 }
@@ -515,6 +726,8 @@ HANDLE VertexEngine::Canvas::addIndexData(const std::vector<uint32_t>& data) {
 }
 
 VertexEngine::Canvas::Color4 VertexEngine::Canvas::black = {0,0,0,1};
+uint32_t VertexEngine::Canvas::black_RGBA_unsigned_32bit_int = VertexEngine::Color4::float_to_RGBA_unsigned_32bit_int(0, 0, 0, 1);
+uint32_t VertexEngine::Canvas::black_ARGB_unsigned_32bit_int = VertexEngine::Color4::float_to_ARGB_unsigned_32bit_int(1, 0, 0, 0);
 
 void VertexEngine::Canvas::clear() {
     fill(black);
@@ -534,11 +747,11 @@ void VertexEngine::Canvas::plane(int x, int y, int width, int height, const Colo
 
 void VertexEngine::Canvas::planeAt(int from_X, int from_Y, int to_X, int to_Y,
                            const Color4 &colorData) {
-    processTextureInColor4(colorData);
-    Position3 topLeft = vertexEngine->toNDC(x + from_X, y + from_Y, 0).toArray();
-    Position3 topRight = vertexEngine->toNDC(x + to_X, y + from_Y, 0).toArray();
-    Position3 bottomRight = vertexEngine->toNDC(x + to_X, y + to_Y, 0).toArray();
-    Position3 bottomLeft = vertexEngine->toNDC(x + from_X, y + to_Y, 0).toArray();
+    checkIfTextureKeyExists(colorData);
+    Position3 topLeft = vertexEngine->toNDC(x + from_X, y + from_Y, 0).to_array();
+    Position3 topRight = vertexEngine->toNDC(x + to_X, y + from_Y, 0).to_array();
+    Position3 bottomRight = vertexEngine->toNDC(x + to_X, y + to_Y, 0).to_array();
+    Position3 bottomLeft = vertexEngine->toNDC(x + from_X, y + to_Y, 0).to_array();
 
     addData({
         {topLeft, colorData, {0,0}},
@@ -554,19 +767,33 @@ void VertexEngine::Canvas::planeAt(int from_X, int from_Y, int to_X, int to_Y,
     vertexEngine->indexPosition += 4;
 }
 
-void VertexEngine::Canvas::processTextureInColor4(const VertexEngine::Canvas::Color4 &colorData) {
+void VertexEngine::Canvas::checkIfTextureKeyExists(const VertexEngine::Canvas::Color4 &colorData) {
     Color4 &c = const_cast<Color4 &>(colorData);
     if (colorData.isTexture == FLOAT_TRUE && std::isnan(c.textureResource)) {
         if (colorData.key == nullptr) {
             LOG_FATAL_ERROR_AND_THROW("key must not be nullptr");
         }
-        size_t idx = vertexEngine->textureManager.findTextureIndex(colorData.key);
-        if (idx == -1) {
-            c.key = nullptr;
-            c.isTexture = FLOAT_FALSE;
-            c.textureResource = NAN;
+        auto & tm = vertexEngine->textureManager;
+        auto textureIndex = tm.findTextureIndex(colorData.key);
+        if (!textureIndex.has_value()) {
+            LOG_WARNING_MESSAGE(
+                    "the key '", colorData.key, "' is not associated to any texture"
+            );
+            c.textureResource = -1;
         } else {
-            c.textureResource = idx;
+            auto & texColor = tm.getTexture(textureIndex.value())->third;
+            if (texColor.texture != nullptr) {
+                // texture is not solid color
+                c.textureResource = textureIndex.value();
+            } else {
+                // texture is solid color
+                c.isTexture = FLOAT_FALSE;
+                c.textureResource = -1;
+                c.red = texColor.red;
+                c.green = texColor.green;
+                c.blue = texColor.blue;
+                c.alpha = texColor.alpha;
+            }
         }
     }
 }
@@ -586,11 +813,11 @@ VertexEngine::Canvas::Position2::Position2(const float &x, const float &y) {
     this->y = y;
 }
 
-std::array<float, 2> VertexEngine::Canvas::Position2::toArray() const {
+std::array<float, 2> VertexEngine::Canvas::Position2::to_array() const {
     return {x, y};
 }
 
-std::vector<float> VertexEngine::Canvas::Position2::toVector() const {
+std::vector<float> VertexEngine::Canvas::Position2::to_vector() const {
     return {x, y};
 }
 
@@ -606,67 +833,259 @@ VertexEngine::Canvas::Position3::Position3(const float &x, const float &y, const
     this->z = z;
 }
 
-std::array<float, 3> VertexEngine::Canvas::Position3::toArray() const {
+std::array<float, 3> VertexEngine::Canvas::Position3::to_array() const {
     return {x, y, z};
 }
 
-std::vector<float> VertexEngine::Canvas::Position3::toVector() const {
+std::vector<float> VertexEngine::Canvas::Position3::to_vector() const {
     return {x, y, z};
 }
 
-VertexEngine::Canvas::Color4::Color4(const std::array<float, 4> &data) {
-    this->r = data[0];
-    this->g = data[1];
-    this->b = data[2];
-    this->a = data[3];
+VertexEngine::Color4::Color4(const std::array<float, 4> &data) {
+    this->red = data[0];
+    this->green = data[1];
+    this->blue = data[2];
+    this->alpha = data[3];
     this->key = nullptr;
     this->isTexture = false;
     this->textureResource = NAN;
+    this->texture = nullptr;
 }
 
-VertexEngine::Canvas::Color4::Color4(const std::array<float, 6> &data) {
-    this->r = data[0];
-    this->g = data[1];
-    this->b = data[2];
-    this->a = data[3];
+VertexEngine::Color4::Color4(const std::array<float, 6> &data) {
+    this->red = data[0];
+    this->green = data[1];
+    this->blue = data[2];
+    this->alpha = data[3];
     this->key = nullptr;
     this->isTexture = data[4] == FLOAT_FALSE ? FLOAT_FALSE : FLOAT_TRUE;
     this->textureResource = data[5];
+    this->texture = nullptr;
 }
 
-VertexEngine::Canvas::Color4::Color4(const float &r, const float &g, const float &b,
-                                     const float &a) {
-    this->r = r;
-    this->g = g;
-    this->b = b;
-    this->a = a;
+VertexEngine::Color4::Color4(
+        const float &red, const float &green, const float &blue, const float &alpha
+) {
+    this->red = red;
+    this->green = green;
+    this->blue = blue;
+    this->alpha = alpha;
     this->key = nullptr;
     this->isTexture = FLOAT_FALSE;
     this->textureResource = NAN;
+    this->texture = nullptr;
 }
 
-VertexEngine::Canvas::Color4::Color4(const char * key) {
-    this->r = 0;
-    this->g = 0;
-    this->b = 0;
-    this->a = 1;
+VertexEngine::Color4::Color4(const char * key) {
+    this->red = 0;
+    this->green = 0;
+    this->blue = 0;
+    this->alpha = 1;
     this->key = key;
     this->isTexture = FLOAT_TRUE;
     this->textureResource = NAN;
+    this->texture = nullptr;
 }
 
-std::array<float, 4> VertexEngine::Canvas::Color4::toRGBAArray() const {
-    return {r, g, b, a};
+VertexEngine::Color4::Color4(Diligent::ITexture* texture) {
+    this->red = 0;
+    this->green = 0;
+    this->blue = 0;
+    this->alpha = 1;
+    this->key = nullptr;
+    this->isTexture = FLOAT_TRUE;
+    this->textureResource = NAN;
+    this->texture = texture;
 }
 
-std::array<float, 6> VertexEngine::Canvas::Color4::toArray() const {
-    return {r, g, b, a, isTexture, textureResource};
+VertexEngine::Color4::Color4(const std::array<float, 4> & data, Diligent::ITexture* texture) {
+    this->red = data[0];
+    this->green = data[1];
+    this->blue = data[2];
+    this->alpha = data[3];
+    this->key = nullptr;
+    this->isTexture = FLOAT_TRUE;
+    this->textureResource = NAN;
+    this->texture = texture;
 }
 
-std::vector<float> VertexEngine::Canvas::Color4::toRGBAVector() const {
-    return {r, g, b, a};
+std::array<float, 4> VertexEngine::Color4::to_RGBA_array() const {
+    return {red, green, blue, alpha};
 }
 
-std::vector<float> VertexEngine::Canvas::Color4::toVector() const {
-    return {r, g, b, a, isTexture, textureResource};
+std::array<float, 4> VertexEngine::Color4::to_ARGB_array() const {
+    return {alpha, red, green, blue};
+}
+
+std::array<float, 6> VertexEngine::Color4::to_array() const {
+    return {red, green, blue, alpha, isTexture, textureResource};
+}
+
+std::vector<float> VertexEngine::Color4::to_RGBA_vector() const {
+    return {red, green, blue, alpha};
+}
+
+std::vector<float> VertexEngine::Color4::to_ARGB_vector() const {
+    return {alpha, red, green, blue};
+}
+
+std::vector<float> VertexEngine::Color4::to_vector() const {
+    return {red, green, blue, alpha, isTexture, textureResource};
+}
+
+uint32_t VertexEngine::Color4::unsigned_8bit_to_unsigned_32_bit(uint8_t a, uint8_t b, uint8_t c, uint8_t d) {
+    // u32   ff ff ff ff
+    // u8[]  a  b  c  d
+    uint32_t u32 = a + (b << 8) | (c << 16) + (d << 24);
+    return u32;
+}
+
+uint32_t VertexEngine::Color4::to_RGBA_unsigned_32bit_int() const {
+    return float_to_RGBA_unsigned_32bit_int(red, green, blue, alpha);
+}
+
+uint32_t VertexEngine::Color4::to_ARGB_unsigned_32bit_int() const {
+    return float_to_ARGB_unsigned_32bit_int(alpha, red, green, blue);
+}
+
+std::array<float, 4> VertexEngine::Color4::float_RGBA_to_ARGB_array(const float & red, const float & green, const float & blue, const float & alpha) {
+    return {alpha, red, green, blue};
+}
+
+std::array<float, 4> VertexEngine::Color4::float_RGBA_array_to_ARGB_array(const std::array<float, 4> & data) {
+    return {data[0], data[1], data[2], data[3]};
+}
+
+std::array<float, 4> VertexEngine::Color4::float_RGBA_vector_to_ARGB_array(const std::vector<float> & data) {
+    return {data[0], data[1], data[2], data[3]};
+}
+
+std::vector<float> VertexEngine::Color4::float_RGBA_to_ARGB_vector(const float & red, const float & green, const float & blue, const float & alpha) {
+    return {alpha, red, green, blue};
+}
+
+std::vector<float> VertexEngine::Color4::float_RGBA_array_to_ARGB_vector(const std::array<float, 4> & data) {
+    return {data[0], data[1], data[2], data[3]};
+}
+
+std::vector<float> VertexEngine::Color4::float_RGBA_vector_to_ARGB_vector(const std::vector<float> & data) {
+    return {data[0], data[1], data[2], data[3]};
+}
+
+std::array<float, 4> VertexEngine::Color4::float_ARGB_to_RGBA_array(const float & alpha, const float & red, const float & green, const float & blue) {
+    return {red, green, blue, alpha};
+}
+
+std::array<float, 4> VertexEngine::Color4::float_ARGB_array_to_RGBA_array(const std::array<float, 4> & data) {
+    return {data[1], data[2], data[3], data[0]};
+}
+
+std::array<float, 4> VertexEngine::Color4::float_ARGB_vector_to_RGBA_array(const std::vector<float> & data) {
+    return {data[1], data[2], data[3], data[0]};
+}
+
+std::vector<float> VertexEngine::Color4::float_ARGB_to_RGBA_vector(const float & alpha, const float & red, const float & green, const float & blue) {
+    return {red, green, blue, alpha};
+}
+
+std::vector<float> VertexEngine::Color4::float_ARGB_array_to_RGBA_vector(const std::array<float, 4> & data) {
+    return {data[1], data[2], data[3], data[0]};
+}
+
+std::vector<float> VertexEngine::Color4::float_ARGB_vector_to_RGBA_vector(const std::vector<float> & data) {
+    return {data[1], data[2], data[3], data[0]};
+}
+
+uint32_t VertexEngine::Color4::unsigned_8bit_int_to_RGBA_unsigned_32bit_int(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha) {
+    return unsigned_8bit_to_unsigned_32_bit(red, green, blue, alpha);
+}
+
+uint32_t VertexEngine::Color4::unsigned_8bit_int_to_RGBA_unsigned_32bit_int(const std::array<uint8_t, 4> & data) {
+    return unsigned_8bit_int_to_RGBA_unsigned_32bit_int(data[0], data[1], data[2], data[3]);
+}
+
+uint32_t VertexEngine::Color4::float_to_RGBA_unsigned_32bit_int(const float & red, const float & green, const float & blue, const float & alpha) {
+    return unsigned_8bit_int_to_RGBA_unsigned_32bit_int(static_cast<uint8_t>(255 * red), static_cast<uint8_t>(255 * green), static_cast<uint8_t>(255 * blue), static_cast<uint8_t>(255 * alpha));
+}
+
+uint32_t VertexEngine::Color4::float_to_RGBA_unsigned_32bit_int(const std::array<float, 4> & data) {
+    return float_to_RGBA_unsigned_32bit_int(data[0], data[1], data[2], data[3]);
+}
+
+uint32_t VertexEngine::Color4::unsigned_32bit_int_to_RGBA_unsigned_32bit_int(uint32_t red, uint32_t green, uint32_t blue, uint32_t alpha) {
+    // To extract each byte, we can mask them using bitwise AND (&)
+    // then shift them right to the first byte.
+    return unsigned_8bit_int_to_RGBA_unsigned_32bit_int(
+            (red & 0xff000000) >> 24,
+            (green & 0x00ff0000) >> 16,
+            (blue & 0x0000ff00) >> 8,
+            alpha & 0x000000ff
+    );
+}
+
+uint32_t VertexEngine::Color4::unsigned_32bit_int_to_RGBA_unsigned_32bit_int(const std::array<uint32_t, 4> & data) {
+    return unsigned_32bit_int_to_RGBA_unsigned_32bit_int(data[0], data[1], data[2], data[3]);
+}
+
+uint32_t VertexEngine::Color4::unsigned_8bit_int_to_ARGB_unsigned_32bit_int(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha) {
+    return unsigned_8bit_to_unsigned_32_bit(alpha, red, green, blue);
+}
+
+uint32_t VertexEngine::Color4::unsigned_8bit_int_to_ARGB_unsigned_32bit_int(const std::array<uint8_t, 4> & data) {
+    return unsigned_8bit_int_to_ARGB_unsigned_32bit_int(data[0], data[1], data[2], data[3]);
+}
+
+uint32_t VertexEngine::Color4::float_to_ARGB_unsigned_32bit_int(const float & red, const float & green, const float & blue, const float & alpha) {
+    return unsigned_8bit_int_to_ARGB_unsigned_32bit_int(static_cast<uint8_t>(255 * red), static_cast<uint8_t>(255 * green), static_cast<uint8_t>(255 * blue), static_cast<uint8_t>(255 * alpha));
+}
+
+uint32_t VertexEngine::Color4::float_to_ARGB_unsigned_32bit_int(const std::array<float, 4> & data) {
+    return float_to_ARGB_unsigned_32bit_int(data[0], data[1], data[2], data[3]);
+}
+
+uint32_t VertexEngine::Color4::unsigned_32bit_int_to_ARGB_unsigned_32bit_int(uint32_t red, uint32_t green, uint32_t blue, uint32_t alpha) {
+    // To extract each byte, we can mask them using bitwise AND (&)
+    // then shift them right to the first byte.
+    return unsigned_8bit_int_to_ARGB_unsigned_32bit_int(
+            (red & 0xff000000) >> 24,
+            (green & 0x00ff0000) >> 16,
+            (blue & 0x0000ff00) >> 8,
+            alpha & 0x000000ff
+    );
+}
+
+uint32_t VertexEngine::Color4::unsigned_32bit_int_to_ARGB_unsigned_32bit_int(const std::array<uint32_t, 4> & data) {
+    return unsigned_32bit_int_to_ARGB_unsigned_32bit_int(data[0], data[1], data[2], data[3]);
+}
+
+std::array<float, 4>
+VertexEngine::Color4::unsigned_8bit_Component4_to_float_array(uint8_t a, uint8_t b,
+                                                                      uint8_t c, uint8_t d) {
+    return {static_cast<float>(a) / 255.0f, static_cast<float>(b) / 255.0f, static_cast<float>(c) / 255.0f, static_cast<float>(d) / 255.0f};
+}
+
+std::vector<float>
+VertexEngine::Color4::unsigned_8bit_Component4_to_float_vector(uint8_t a, uint8_t b,
+                                                                       uint8_t c, uint8_t d) {
+    return {static_cast<float>(a) / 255.0f, static_cast<float>(b) / 255.0f, static_cast<float>(c) / 255.0f, static_cast<float>(d) / 255.0f};
+}
+
+std::array<float, 4> VertexEngine::Color4::unsigned_8bit_array_to_float_array(
+        const std::array<uint8_t, 4> &data) {
+    return {static_cast<float>(data[0]) / 255.0f, static_cast<float>(data[1]) / 255.0f, static_cast<float>(data[2]) / 255.0f, static_cast<float>(data[3]) / 255.0f};
+}
+
+std::vector<float> VertexEngine::Color4::unsigned_8bit_array_to_float_vector(
+        const std::array<uint8_t, 4> &data) {
+    return {static_cast<float>(data[0]) / 255.0f, static_cast<float>(data[1]) / 255.0f, static_cast<float>(data[2]) / 255.0f, static_cast<float>(data[3]) / 255.0f};
+}
+
+std::array<float, 4> VertexEngine::Color4::unsigned_8bit_vector_to_float_array(
+        const std::vector<uint8_t> &data) {
+    return {static_cast<float>(data[0]) / 255.0f, static_cast<float>(data[1]) / 255.0f, static_cast<float>(data[2]) / 255.0f, static_cast<float>(data[3]) / 255.0f};
+}
+
+std::vector<float> VertexEngine::Color4::unsigned_8bit_vector_to_float_vector(
+        const std::vector<uint8_t> &data) {
+    return {static_cast<float>(data[0]) / 255.0f, static_cast<float>(data[1]) / 255.0f, static_cast<float>(data[2]) / 255.0f, static_cast<float>(data[3]) / 255.0f};
 }
