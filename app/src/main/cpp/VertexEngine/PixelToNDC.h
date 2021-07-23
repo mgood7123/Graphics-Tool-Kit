@@ -117,7 +117,7 @@ public:
 
     template<typename TYPEFROM, typename TYPETO>
     Coordinates<TYPETO> toNDC(TYPETO TYPETO_INITIALIZER, TYPEFROM x, TYPEFROM y, TYPEFROM w, TYPEFROM h, bool clip) {
-        return toNDC<TYPEFROM, TYPETO>(TYPETO_INITIALIZER, x, y, 0, w, h, true);
+        return toNDC<TYPEFROM, TYPETO>(TYPETO_INITIALIZER, x, y, 0, w, h, clip);
     }
 
     template<typename TYPEFROM, typename TYPETO>
