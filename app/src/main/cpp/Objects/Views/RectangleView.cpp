@@ -10,20 +10,17 @@ void RectangleView::onCreate(VertexEngine::TextureManager &textureManager) {
     textureManager.createTextureFromFile(
             "A",
             "/Users/smallville7123/Documents/s1.png",
-            loadInfo,
-            diligentAppBase->m_pDevice
+            loadInfo
     );
     textureManager.createTextureFromFile(
             "B",
             "/Users/smallville7123/Documents/sticker2.jpg",
-            loadInfo,
-            diligentAppBase->m_pDevice
+            loadInfo
     );
     textureManager.createTextureFromFile(
             "C",
             "/Users/smallville7123/Documents/sticker.jpg",
-            loadInfo,
-            diligentAppBase->m_pDevice
+            loadInfo
     );
 }
 

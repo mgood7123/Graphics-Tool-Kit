@@ -58,8 +58,6 @@ void View::create() {
     // create a pipeline
     // Pipeline state object encompasses configuration of all GPU stages
 
-    Diligent::GraphicsPipelineStateCreateInfo PSOCreateInfo;
-
     // Pipeline state name is used by the engine to report issues.
     // It is always a good idea to give objects descriptive names.
     PSOCreateInfo.PSODesc.Name = "Simple rectangle PSO";
@@ -79,17 +77,6 @@ void View::create() {
     PSOCreateInfo.GraphicsPipeline.RasterizerDesc.CullMode      = Diligent::CULL_MODE_NONE;
     // Disable depth testing
     PSOCreateInfo.GraphicsPipeline.DepthStencilDesc.DepthEnable = false;
-
-    // create dummy texture
-    Diligent::TextureDesc ColorBuffDesc;
-    ColorBuffDesc.Type      = Diligent::RESOURCE_DIM_TEX_2D;
-    ColorBuffDesc.Name      = "dummy texture";
-    ColorBuffDesc.Width     = 1;
-    ColorBuffDesc.Height    = 1;
-    ColorBuffDesc.Format    = diligentAppBase->m_pSwapChain->GetDesc().ColorBufferFormat;
-    ColorBuffDesc.BindFlags = Diligent::BIND_SHADER_RESOURCE;
-    diligentAppBase->m_pDevice->CreateTexture(ColorBuffDesc, nullptr, &dummyTexture);
-    dummyTextureView = dummyTexture->GetDefaultView(Diligent::TEXTURE_VIEW_SHADER_RESOURCE);
 
     // create shaders
     Diligent::ShaderCreateInfo ShaderCI;
@@ -173,8 +160,8 @@ void View::create() {
     diligentAppBase->m_pDevice->CreateGraphicsPipelineState(PSOCreateInfo, &diligentAppBase->m_pPSO);
 
     diligentAppBase->m_pPSO->CreateShaderResourceBinding(&shaderResourceBinding, true);
-    textureVariable = shaderResourceBinding->GetVariableByName(Diligent::SHADER_TYPE_PIXEL, "g_Texture");
-    if (textureVariable.RawPtr() == nullptr) {
+    shaderResourceVariable_Texture = shaderResourceBinding->GetVariableByName(Diligent::SHADER_TYPE_PIXEL, "g_Texture");
+    if (shaderResourceVariable_Texture.RawPtr() == nullptr) {
         LOG_ERROR_AND_THROW("failed to acquire variable 'g_Texture'");
     }
 
@@ -182,15 +169,26 @@ void View::create() {
     VertBuffDesc.Usage = Diligent::USAGE_DEFAULT;
     VertBuffDesc.BindFlags = Diligent::BIND_VERTEX_BUFFER;
     VertBuffDesc.uiSizeInBytes = sizeof(float)*(VertexEngine::strideLength*chunkSize);
-    diligentAppBase->m_pDevice->CreateBuffer(VertBuffDesc, &VBData, &vertexBuffer);
 
     IndBuffDesc.Name = "Rectangle index buffer";
     IndBuffDesc.Usage = Diligent::USAGE_DEFAULT;
     IndBuffDesc.BindFlags = Diligent::BIND_INDEX_BUFFER;
     IndBuffDesc.uiSizeInBytes = sizeof(uint32_t)*chunkSize;
+
+    diligentAppBase->m_pDevice->CreateBuffer(VertBuffDesc, &VBData, &vertexBuffer);
     diligentAppBase->m_pDevice->CreateBuffer(IndBuffDesc, &IBData, &indexBuffer);
 
     vertexEngine.resize(canvas_width, canvas_height);
+
+    vertexEngine.textureManager.setDefaultDevices(
+            diligentAppBase->m_pDevice.RawPtr(),
+            diligentAppBase->m_pImmediateContext.RawPtr()
+    );
+
+    vertexEngine.textureManager.createSolidColorTexture(DUMMY_TEXTURE_KEY, {0,0,0,1});
+    auto c = vertexEngine.textureManager.getTexture(DUMMY_TEXTURE_KEY)->third;
+    dummyTextureColorRef = c.to_RGBA_array();
+    dummyTextureView = c.texture->GetDefaultView(Diligent::TEXTURE_VIEW_SHADER_RESOURCE);
 
     onCreate(vertexEngine.textureManager);
 }
@@ -211,7 +209,6 @@ void View::draw () {
     Diligent::IBuffer* pBuffs[] = {vertexBuffer};
     diligentAppBase->m_pImmediateContext->SetVertexBuffers(0, 1, pBuffs, &offset, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION, Diligent::SET_VERTEX_BUFFERS_FLAG_RESET);
     diligentAppBase->m_pImmediateContext->SetIndexBuffer(indexBuffer, 0, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
-
     // Set the pipeline state in the immediate context
     diligentAppBase->m_pImmediateContext->SetPipelineState(diligentAppBase->m_pPSO);
 
@@ -225,8 +222,12 @@ void View::draw () {
 }
 
 void View::drawChunks(VertexEngine::GenerationInfo &info) {
-    Diligent::DrawIndexedAttribs DrawAttrs;     // This is an indexed draw call
-    DrawAttrs.IndexType = Diligent::VT_UINT32; // Index type
+    // This is an indexed draw call
+    Diligent::DrawIndexedAttribs DrawAttrs;
+
+    // Index type
+    DrawAttrs.IndexType = Diligent::VT_UINT32;
+
     // Verify the state of vertex and index buffers
     DrawAttrs.Flags = Diligent::DRAW_FLAG_VERIFY_ALL;
 
@@ -234,23 +235,31 @@ void View::drawChunks(VertexEngine::GenerationInfo &info) {
         VertexEngine::GenerationInfo chunk = info.generateChunk(chunkSize);
 
         if (chunk.isTexture) {
-            auto tex = vertexEngine.textureManager.getTexture(chunk.textureIndex);
-            if (tex == nullptr) {
-                LOG_WARNING_MESSAGE(
-                        "texture container referenced by index '", chunk.textureIndex, "' is nullptr"
-                );
-                textureVariable->Set(dummyTextureView);
-            } else if (tex->third == nullptr) {
-                LOG_WARNING_MESSAGE(
-                        "texture referenced by key '", tex->first, "' is nullptr"
-                );
-                textureVariable->Set(dummyTextureView);
+            if (chunk.textureIndex.has_value()) {
+                size_t textureIndex = chunk.textureIndex.value();
+                auto tex = vertexEngine.textureManager.getTexture(textureIndex);
+                if (tex == nullptr) {
+                    LOG_WARNING_MESSAGE(
+                            "texture container referenced by index '", textureIndex, "' is nullptr"
+                    );
+                    chunk.fillColorDataAndDisableTextureFlag(dummyTextureColorRef);
+                    shaderResourceVariable_Texture->Set(dummyTextureView);
+                } else if (tex->third.texture == nullptr) {
+                    LOG_WARNING_MESSAGE(
+                            "texture referenced by key '", tex->first, "' is nullptr"
+                    );
+                    chunk.fillColorDataAndDisableTextureFlag(dummyTextureColorRef);
+                    shaderResourceVariable_Texture->Set(dummyTextureView);
+                } else {
+                    auto v = tex->third.texture->GetDefaultView(Diligent::TEXTURE_VIEW_SHADER_RESOURCE);
+                    shaderResourceVariable_Texture->Set(v);
+                }
             } else {
-                auto v = tex->third->GetDefaultView(Diligent::TEXTURE_VIEW_SHADER_RESOURCE);
-                textureVariable->Set(v);
+                chunk.fillColorDataAndDisableTextureFlag(dummyTextureColorRef);
+                shaderResourceVariable_Texture->Set(dummyTextureView);
             }
         } else {
-            textureVariable->Set(dummyTextureView);
+            shaderResourceVariable_Texture->Set(dummyTextureView);
         }
 
         diligentAppBase->m_pImmediateContext->CommitShaderResources(shaderResourceBinding, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
@@ -271,8 +280,6 @@ void View::drawChunks(VertexEngine::GenerationInfo &info) {
 
         DrawAttrs.NumIndices = chunk.lengthIndices;
 
-        // Diligent Engine: ERROR: No resource is bound to variable 'g_Texture'
-        // in shader 'Simple rectangle PSO' of PSO 'Simple rectangle PSO'
         diligentAppBase->m_pImmediateContext->DrawIndexed(DrawAttrs);
     }
     LOG_INFO_MESSAGE("drawn ", info.chunksGenerated, " chunk", info.chunksGenerated == 1 ? "" : "s");
@@ -280,11 +287,11 @@ void View::drawChunks(VertexEngine::GenerationInfo &info) {
 
 void View::destroy() {
     onDestroy(vertexEngine.textureManager);
-    dummyTexture.Release();
-    textureVariable.Release();
+    vertexEngine.textureManager.deleteTexture(DUMMY_TEXTURE_KEY);
+    shaderResourceVariable_Texture.Release();
     shaderResourceBinding.Release();
-    this->vertexBuffer.Release();
-    this->indexBuffer.Release();
+    vertexBuffer.Release();
+    indexBuffer.Release();
 }
 
 void View::onCreate(VertexEngine::TextureManager &textureManager) {

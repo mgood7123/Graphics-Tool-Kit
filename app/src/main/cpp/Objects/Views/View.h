@@ -14,12 +14,14 @@ class View : public ObjectBase {
 private:
     VertexEngine vertexEngine;
     int chunkSize = 3;
+    const char * DUMMY_TEXTURE_KEY = "DEFAULT_WHEN_NO_TEXTURE";
 
     int canvas_width = 400;
     int canvas_height = 400;
 
     void drawChunks(VertexEngine::GenerationInfo &info);
 
+    Diligent::GraphicsPipelineStateCreateInfo PSOCreateInfo;
     Diligent::BufferData VBData;
     Diligent::BufferDesc VertBuffDesc;
     Diligent::BufferData IBData;
@@ -31,11 +33,11 @@ private:
     Diligent::RefCntAutoPtr<Diligent::IBuffer>                indexBuffer;
     Diligent::RefCntAutoPtr<Diligent::IShaderResourceBinding> shaderResourceBinding;
 
-    Diligent::RefCntAutoPtr<Diligent::ITexture> dummyTexture;
+    std::array<float, 4> dummyTextureColorRef;
     Diligent::ITextureView * dummyTextureView;
 
 protected:
-    Diligent::RefCntAutoPtr<Diligent::IShaderResourceVariable> textureVariable;
+    Diligent::RefCntAutoPtr<Diligent::IShaderResourceVariable> shaderResourceVariable_Texture;
 
 public:
     void create() override final;
