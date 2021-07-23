@@ -27,9 +27,9 @@ AppInstance::AppInstance ()
 //    timeEngine.physicsTimeStep = 0.01666666/8;
 //    timeEngine.physicsTimeStep = 0.01666666/16;
 
-    timeEngine.physicsCallback = [&](const TimeEngine & timeEngine) {
+    timeEngine.physicsCallback = [&](const TimeEngine & timeEngine_) {
         auto obj = objectBase.get<ObjectBase*>();
-        obj->physics(timeEngine);
+        obj->physics(timeEngine_);
     };
 }
 
