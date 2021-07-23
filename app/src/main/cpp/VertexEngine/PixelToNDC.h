@@ -33,7 +33,7 @@ public:
             z = TYPE_INITIALIZER;
         }
 
-        std::array<TYPE, 3> toArray() {
+        std::array<TYPE, 3> to_array() {
             return {x, y, z};
         };
     };
