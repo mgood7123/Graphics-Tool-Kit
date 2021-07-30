@@ -5,6 +5,8 @@
 #ifndef GRAPHICAL_TOOL_KIT_APPINSTANCEPLATFORMBASE_H
 #define GRAPHICAL_TOOL_KIT_APPINSTANCEPLATFORMBASE_H
 
+#include <MultiTouch.h>
+
 #if PLATFORM_WIN32 || PLATFORM_UNIVERSAL_WINDOWS
     #include <WindowsBase/AppInstanceWindowsBase.h>
     typedef AppInstanceWindowsBase AppInstancePlatformBase;

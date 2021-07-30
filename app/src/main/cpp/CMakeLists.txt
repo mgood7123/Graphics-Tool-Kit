@@ -72,6 +72,9 @@ add_subdirectory(DiligentEngine/DiligentCore)
 #add_subdirectory(DiligentEngine/DiligentFX)
 add_subdirectory(DiligentEngine/DiligentTools)
 
+add_subdirectory(MultiTouch)
+include_directories(MultiTouch)
+
 add_subdirectory(TimeEngine)
 include_directories(TimeEngine)
 

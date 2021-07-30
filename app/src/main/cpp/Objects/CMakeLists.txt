@@ -19,6 +19,7 @@ target_link_libraries(
         DiligentHelpers
         TimeEngine
         VertexEngine
+        MultiTouch
 )
 
 include_directories(.)

@@ -10,6 +10,10 @@ void ObjectBase::create ()
 void ObjectBase::draw ()
 {}
 
+bool ObjectBase::onTouchEvent(MultiTouch &multiTouch) {
+    return false;
+}
+
 void ObjectBase::destroy ()
 {}
 

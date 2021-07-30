@@ -7,6 +7,7 @@
 
 #include <DiligentAppBase.h>
 #include <VertexEngine.h>
+#include <MultiTouch.h>
 
 class ObjectBase
 {
@@ -15,6 +16,7 @@ public:
 
     virtual void create();
     virtual void draw();
+    virtual bool onTouchEvent(MultiTouch &touch);
     virtual void destroy();
     virtual void physics(const TimeEngine & timeEngine);
     // delete called on non-final that has virtual functions but non-virtual destructor

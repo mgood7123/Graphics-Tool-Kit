@@ -1,6 +1,8 @@
 #include <string>
 #include "AppInstance.h"
 
+MultiTouch multiTouch;
+
 #if PLATFORM_ANDROID
 
 #define APP(jlong) reinterpret_cast<AppInstance*>(jlong)
@@ -11,9 +13,11 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
         JNIEnv * env, jobject thiz
 )
 {
+    multiTouch.setMaxSupportedTouches(10);
     LOG_ERROR_MESSAGE("CREATE APP");
     return JLONG(new AppInstance());
 }
+
 extern "C" JNIEXPORT void JNICALL
 Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_destroyNativeInstance (
         JNIEnv * env, jobject thiz, jlong instance
@@ -22,6 +26,7 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
     LOG_ERROR_MESSAGE("DESTROY APP");
     delete APP(instance);
 }
+
 extern "C" JNIEXPORT void JNICALL
 Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_onEglSetup (
         JNIEnv * env, jobject thiz, jlong instance, jobject class_instance, jstring name,
@@ -31,6 +36,7 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
     LOG_ERROR_MESSAGE("EGL SETUP");
     APP(instance)->onEglSetup(env, class_instance, name, signature);
 }
+
 extern "C" JNIEXPORT void JNICALL
 Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_surfaceChanged (
         JNIEnv * env, jobject thiz, jlong instance, jint w, jint h
@@ -39,13 +45,123 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
     LOG_ERROR_MESSAGE("EGL SURFACE CHANGE");
     APP(instance)->surfaceChanged(w, h);
 }
-extern "C" JNIEXPORT jboolean JNICALL
-Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_onTouchEvent (
-        JNIEnv * env, jobject thiz, jlong instance, jfloatArray motion_event
+
+extern "C" JNIEXPORT void JNICALL
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_addTouch__JJFF(
+        JNIEnv * env, jobject thiz, jlong instance,
+        jlong identifier, jfloat x, jfloat y
 )
 {
-    return APP(instance)->onTouchEvent(env, motion_event);
+    multiTouch.addTouch(identifier, x, y);
 }
+
+extern "C" JNIEXPORT void JNICALL
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_addTouch__JJFFF (
+        JNIEnv * env, jobject thiz, jlong instance,
+        jlong identifier, jfloat x, jfloat y, jfloat size
+)
+{
+    multiTouch.addTouch(identifier, x, y, size);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_addTouch__JJFFFF (
+        JNIEnv * env, jobject thiz, jlong instance,
+        jlong identifier, jfloat x, jfloat y, jfloat size, jfloat pressure
+)
+{
+    multiTouch.addTouch(identifier, x, y, size, pressure);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_moveTouch__JJFF (
+        JNIEnv * env, jobject thiz, jlong instance,
+        jlong identifier, jfloat x, jfloat y
+)
+{
+    multiTouch.moveTouch(identifier, x, y);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_moveTouch__JJFFF (
+        JNIEnv * env, jobject thiz, jlong instance,
+        jlong identifier, jfloat x, jfloat y, jfloat size
+)
+{
+    multiTouch.moveTouch(identifier, x, y, size);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_moveTouch__JJFFFF (
+        JNIEnv * env, jobject thiz, jlong instance,
+        jlong identifier, jfloat x, jfloat y, jfloat size, jfloat pressure
+)
+{
+    multiTouch.moveTouch(identifier, x, y, size, pressure);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_removeTouch__JJFF (
+        JNIEnv * env, jobject thiz, jlong instance,
+        jlong identifier, jfloat x, jfloat y
+)
+{
+    multiTouch.removeTouch(identifier, x, y);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_removeTouch__JJFFF (
+        JNIEnv * env, jobject thiz, jlong instance,
+        jlong identifier, jfloat x, jfloat y, jfloat size
+)
+{
+    multiTouch.removeTouch(identifier, x, y, size);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_removeTouch__JJFFFF (
+        JNIEnv * env, jobject thiz, jlong instance,
+        jlong identifier, jfloat x, jfloat y, jfloat size, jfloat pressure
+)
+{
+    multiTouch.removeTouch(identifier, x, y, size, pressure);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_cancelTouch__JJFF (
+        JNIEnv * env, jobject thiz, jlong instance,
+        jlong identifier, jfloat x, jfloat y
+)
+{
+    multiTouch.cancelTouch(identifier, x, y);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_cancelTouch__JJFFF (
+        JNIEnv * env, jobject thiz, jlong instance,
+        jlong identifier, jfloat x, jfloat y, jfloat size
+)
+{
+    multiTouch.cancelTouch(identifier, x, y, size);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_cancelTouch__JJFFFF (
+        JNIEnv * env, jobject thiz, jlong instance,
+        jlong identifier, jfloat x, jfloat y, jfloat size, jfloat pressure
+)
+{
+    multiTouch.cancelTouch(identifier, x, y, size, pressure);
+}
+
+extern "C" JNIEXPORT jboolean JNICALL
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_onTouchEvent (
+        JNIEnv * env, jobject thiz, jlong instance
+)
+{
+    return APP(instance)->onTouchEvent(multiTouch);
+}
+
 extern "C" JNIEXPORT void JNICALL
 Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_onDraw (
         JNIEnv * env, jobject thiz, jlong instance
@@ -53,6 +169,7 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
 {
     APP(instance)->onDraw();
 }
+
 extern "C" JNIEXPORT void JNICALL
 Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_onEglTearDown (
         JNIEnv * env, jobject thiz, jlong instance
@@ -61,6 +178,7 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
     LOG_ERROR_MESSAGE("EGL TEAR DOWN");
     APP(instance)->onEglTearDown();
 }
+
 #elif PLATFORM_MACOS
 
 AppInstance * instance;
