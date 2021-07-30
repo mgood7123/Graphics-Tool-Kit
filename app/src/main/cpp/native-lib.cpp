@@ -47,8 +47,8 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_addTouch__JJFF(
-        JNIEnv * env, jobject thiz, jlong instance,
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_addTouch__JFF(
+        JNIEnv * env, jobject thiz,
         jlong identifier, jfloat x, jfloat y
 )
 {
@@ -56,8 +56,8 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_addTouch__JJFFF (
-        JNIEnv * env, jobject thiz, jlong instance,
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_addTouch__JFFF (
+        JNIEnv * env, jobject thiz,
         jlong identifier, jfloat x, jfloat y, jfloat size
 )
 {
@@ -65,8 +65,8 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_addTouch__JJFFFF (
-        JNIEnv * env, jobject thiz, jlong instance,
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_addTouch__JFFFF (
+        JNIEnv * env, jobject thiz,
         jlong identifier, jfloat x, jfloat y, jfloat size, jfloat pressure
 )
 {
@@ -74,8 +74,8 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_moveTouch__JJFF (
-        JNIEnv * env, jobject thiz, jlong instance,
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_moveTouch__JFF (
+        JNIEnv * env, jobject thiz,
         jlong identifier, jfloat x, jfloat y
 )
 {
@@ -83,8 +83,8 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_moveTouch__JJFFF (
-        JNIEnv * env, jobject thiz, jlong instance,
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_moveTouch__JFFF (
+        JNIEnv * env, jobject thiz,
         jlong identifier, jfloat x, jfloat y, jfloat size
 )
 {
@@ -92,8 +92,8 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_moveTouch__JJFFFF (
-        JNIEnv * env, jobject thiz, jlong instance,
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_moveTouch__JFFFF (
+        JNIEnv * env, jobject thiz,
         jlong identifier, jfloat x, jfloat y, jfloat size, jfloat pressure
 )
 {
@@ -110,8 +110,8 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_removeTouch__JJFFF (
-        JNIEnv * env, jobject thiz, jlong instance,
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_removeTouch__JFFF (
+        JNIEnv * env, jobject thiz,
         jlong identifier, jfloat x, jfloat y, jfloat size
 )
 {
@@ -119,8 +119,8 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_removeTouch__JJFFFF (
-        JNIEnv * env, jobject thiz, jlong instance,
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_removeTouch__JFFFF (
+        JNIEnv * env, jobject thiz,
         jlong identifier, jfloat x, jfloat y, jfloat size, jfloat pressure
 )
 {
@@ -128,8 +128,8 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_cancelTouch__JJFF (
-        JNIEnv * env, jobject thiz, jlong instance,
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_cancelTouch__JFF (
+        JNIEnv * env, jobject thiz,
         jlong identifier, jfloat x, jfloat y
 )
 {
@@ -137,8 +137,8 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_cancelTouch__JJFFF (
-        JNIEnv * env, jobject thiz, jlong instance,
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_cancelTouch__JFFF (
+        JNIEnv * env, jobject thiz,
         jlong identifier, jfloat x, jfloat y, jfloat size
 )
 {
@@ -146,8 +146,8 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_cancelTouch__JJFFFF (
-        JNIEnv * env, jobject thiz, jlong instance,
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_cancelTouch__JFFFF (
+        JNIEnv * env, jobject thiz,
         jlong identifier, jfloat x, jfloat y, jfloat size, jfloat pressure
 )
 {

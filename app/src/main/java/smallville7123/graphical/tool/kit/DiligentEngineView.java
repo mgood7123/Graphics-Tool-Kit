@@ -67,7 +67,6 @@ public class DiligentEngineView extends EGLTextureView {
                         case MotionEvent.ACTION_DOWN:
                         case MotionEvent.ACTION_POINTER_DOWN:
                             renderer.addTouch(
-                                    renderer.nativeInstance,
                                     id,
                                     event.getX(actionIndex),
                                     event.getY(actionIndex),
@@ -78,7 +77,6 @@ public class DiligentEngineView extends EGLTextureView {
                         case MotionEvent.ACTION_UP:
                         case MotionEvent.ACTION_POINTER_UP:
                             renderer.removeTouch(
-                                    renderer.nativeInstance,
                                     id,
                                     event.getX(actionIndex),
                                     event.getY(actionIndex),
@@ -92,7 +90,6 @@ public class DiligentEngineView extends EGLTextureView {
 
             if (actionIndex != i || !isUpDown) {
                 renderer.moveTouch(
-                        renderer.nativeInstance,
                         pid,
                         event.getX(i),
                         event.getY(i),
@@ -110,18 +107,18 @@ public class DiligentEngineView extends EGLTextureView {
         native void destroyNativeInstance(long instance);
         native void onEglSetup(long instance, Object classInstance, String name, String signature);
         native void surfaceChanged(long instance, int w, int h);
-        native void addTouch(long instance, long identity, float x, float y);
-        native void addTouch(long instance, long identity, float x, float y, float size);
-        native void addTouch(long instance, long identity, float x, float y, float size, float pressure);
-        native void moveTouch(long instance, long identity, float x, float y);
-        native void moveTouch(long instance, long identity, float x, float y, float size);
-        native void moveTouch(long instance, long identity, float x, float y, float size, float pressure);
-        native void removeTouch(long instance, long identity, float x, float y);
-        native void removeTouch(long instance, long identity, float x, float y, float size);
-        native void removeTouch(long instance, long identity, float x, float y, float size, float pressure);
-        native void cancelTouch(long instance, long identity, float x, float y);
-        native void cancelTouch(long instance, long identity, float x, float y, float size);
-        native void cancelTouch(long instance, long identity, float x, float y, float size, float pressure);
+        native void addTouch(long identity, float x, float y);
+        native void addTouch(long identity, float x, float y, float size);
+        native void addTouch(long identity, float x, float y, float size, float pressure);
+        native void moveTouch(long identity, float x, float y);
+        native void moveTouch(long identity, float x, float y, float size);
+        native void moveTouch(long identity, float x, float y, float size, float pressure);
+        native void removeTouch(long identity, float x, float y);
+        native void removeTouch(long identity, float x, float y, float size);
+        native void removeTouch(long identity, float x, float y, float size, float pressure);
+        native void cancelTouch(long identity, float x, float y);
+        native void cancelTouch(long identity, float x, float y, float size);
+        native void cancelTouch(long identity, float x, float y, float size, float pressure);
         native boolean onTouchEvent(long instance);
         native void onDraw(long instance);
         native void onEglTearDown(long instance);
