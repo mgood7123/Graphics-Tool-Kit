@@ -40,8 +40,18 @@ public:
 #else
     #error "Unknown platform"
 #endif
+
+    struct MousePos {
+        float x;
+        float y;
+    };
+
+    MousePos previous;
+    MousePos current;
+
     void surfaceChanged(int w, int h);
     void onDraw();
+    bool onTouchEvent(MultiTouch & touchEvent);
     void swapBuffers() override;
     void destroyResources();
 };
