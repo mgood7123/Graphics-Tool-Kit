@@ -35,6 +35,7 @@ AppInstance::AppInstance ()
 
 AppInstance::~AppInstance ()
 {
+    destroyResources();
 }
 
 void AppInstance::surfaceChanged (int w, int h)
@@ -44,6 +45,7 @@ void AppInstance::surfaceChanged (int w, int h)
     {
         attachToContext(w, h);
         create = true;
+        destroyed.store(false);
     }
 
     // Resizing the swap chain requires back and depth-stencil buffers
@@ -60,6 +62,7 @@ void AppInstance::surfaceChanged (int w, int h)
 
 void AppInstance::onDraw ()
 {
+    if (destroyed.load()) return;
     timeEngine.computeDelta();
     auto obj = objectBase.get<ObjectBase*>();
     obj->draw();
@@ -73,6 +76,8 @@ void AppInstance::swapBuffers ()
 
 void AppInstance::destroyResources ()
 {
+    if (destroyed.load()) return;
+    destroyed.store(true);
 //    timeEngine.stopPhysicsThread();
     objectBase.get<ObjectBase*>()->destroy();
     m_pImmediateContext->Flush();
@@ -88,11 +93,6 @@ void AppInstance::destroyResources ()
 void AppInstance::onEglSetup (JNIEnv * jenv, jobject classInstance, jstring name, jstring signature)
 {
     AppInstancePlatformBase::onEglSetup(jenv, classInstance, name, signature);
-}
-
-bool AppInstance::onTouchEvent (JNIEnv * jenv, jfloatArray motionEventData)
-{
-    return AppInstancePlatformBase::onTouchEvent(jenv, motionEventData);
 }
 
 void AppInstance::onEglTearDown ()

@@ -14,6 +14,8 @@ class AppInstance : public AppInstancePlatformBase, public DiligentAppBase
 {
     AnyOpt objectBase;
     TimeEngine timeEngine;
+    
+    std::atomic_bool destroyed;
 
 public:
 
@@ -32,7 +34,6 @@ public:
 #elif PLATFORM_UNIVERSAL_WINDOWS
 #elif PLATFORM_ANDROID
     void onEglSetup(JNIEnv *jenv, jobject classInstance, jstring name, jstring signature) override;
-    bool onTouchEvent(JNIEnv *jenv, jfloatArray motionEventData) override;
     void onEglTearDown() override;
 #elif PLATFORM_IOS
     #elif PLATFORM_TVOS
