@@ -11,9 +11,7 @@ project(AndroidBase)
 
 add_library(
         AndroidBase SHARED
-
         AppInstanceAndroidBase.cpp
-        MotionEventSerializer.cpp
         JVM_MANAGER.cpp
 )
 
