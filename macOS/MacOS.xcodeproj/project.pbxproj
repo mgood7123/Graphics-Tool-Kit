@@ -1,0 +1,1054 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B7629B426B3DEF30023ED35 /* libAppInstance.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8F5D26B1600D0009EB3E /* libAppInstance.dylib */; };
+		5B7629B526B3DEF30023ED35 /* libAppInstance.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5B7F8F5D26B1600D0009EB3E /* libAppInstance.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5B7629B626B3DEF30023ED35 /* libDiligentHelpers.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8F7F26B1600D0009EB3E /* libDiligentHelpers.dylib */; };
+		5B7629B726B3DEF30023ED35 /* libDiligentHelpers.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5B7F8F7F26B1600D0009EB3E /* libDiligentHelpers.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5B7629B826B3DEF30023ED35 /* libGraphicsEngineOpenGL.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8F6B26B1600D0009EB3E /* libGraphicsEngineOpenGL.dylib */; };
+		5B7629B926B3DEF30023ED35 /* libGraphicsEngineOpenGL.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5B7F8F6B26B1600D0009EB3E /* libGraphicsEngineOpenGL.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5B7629BA26B3DEF30023ED35 /* libMacOSBase.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8F8B26B1600D0009EB3E /* libMacOSBase.dylib */; };
+		5B7629BB26B3DEF30023ED35 /* libMacOSBase.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5B7F8F8B26B1600D0009EB3E /* libMacOSBase.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5B7629BC26B3DEF30023ED35 /* libMotionEvent.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8F8D26B1600D0009EB3E /* libMotionEvent.dylib */; };
+		5B7629BD26B3DEF30023ED35 /* libMotionEvent.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5B7F8F8D26B1600D0009EB3E /* libMotionEvent.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5B7629BE26B3DEF30023ED35 /* libnative-lib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8FA126B1600D0009EB3E /* libnative-lib.dylib */; };
+		5B7629BF26B3DEF30023ED35 /* libnative-lib.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5B7F8FA126B1600D0009EB3E /* libnative-lib.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5B7629C026B3DEF30023ED35 /* libObjectBase.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8F8F26B1600D0009EB3E /* libObjectBase.dylib */; };
+		5B7629C126B3DEF30023ED35 /* libObjectBase.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5B7F8F8F26B1600D0009EB3E /* libObjectBase.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5B7629C226B3DEF30023ED35 /* libObjects.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8F9126B1600D0009EB3E /* libObjects.dylib */; };
+		5B7629C326B3DEF30023ED35 /* libObjects.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5B7F8F9126B1600D0009EB3E /* libObjects.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5B7629C426B3DEF30023ED35 /* libPlatformBase.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8F9326B1600D0009EB3E /* libPlatformBase.dylib */; };
+		5B7629C526B3DEF30023ED35 /* libPlatformBase.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5B7F8F9326B1600D0009EB3E /* libPlatformBase.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5B7629C626B3DEF30023ED35 /* libTimeEngine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8F9526B1600D0009EB3E /* libTimeEngine.dylib */; };
+		5B7629C726B3DEF30023ED35 /* libTimeEngine.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5B7F8F9526B1600D0009EB3E /* libTimeEngine.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5B7629C826B3DEF30023ED35 /* libUtils.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7628E926B2C46C0023ED35 /* libUtils.dylib */; };
+		5B7629C926B3DEF30023ED35 /* libUtils.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5B7628E926B2C46C0023ED35 /* libUtils.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5B7629CA26B3DEF30023ED35 /* libVertexEngine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8F9726B1600D0009EB3E /* libVertexEngine.dylib */; };
+		5B7629CB26B3DEF30023ED35 /* libVertexEngine.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5B7F8F9726B1600D0009EB3E /* libVertexEngine.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5B7629CC26B3DEF30023ED35 /* libViews.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8F9926B1600D0009EB3E /* libViews.dylib */; };
+		5B7629CD26B3DEF30023ED35 /* libViews.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5B7F8F9926B1600D0009EB3E /* libViews.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5B7629CE26B3DEF30023ED35 /* libWINAPIKERNEL.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8F9B26B1600D0009EB3E /* libWINAPIKERNEL.dylib */; };
+		5B7629CF26B3DEF30023ED35 /* libWINAPIKERNEL.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5B7F8F9B26B1600D0009EB3E /* libWINAPIKERNEL.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5B7F8E6926B0FCBC0009EB3E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5B7F8E6826B0FCBC0009EB3E /* AppDelegate.mm */; };
+		5B7F8E6B26B0FCC20009EB3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B7F8E6A26B0FCC20009EB3E /* Assets.xcassets */; };
+		5B7F8E6E26B0FCC20009EB3E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B7F8E6C26B0FCC20009EB3E /* MainMenu.xib */; };
+		5B7F8E7126B0FCC20009EB3E /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5B7F8E7026B0FCC20009EB3E /* main.mm */; };
+		5B7F8E7926B0FCEC0009EB3E /* GLEssentialsGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5B7F8E7826B0FCEC0009EB3E /* GLEssentialsGLView.mm */; };
+		5B7F8E8426B118AF0009EB3E /* OpenGLRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5B7F8E8326B118AF0009EB3E /* OpenGLRenderer.mm */; };
+		5B7F8F1726B1567C0009EB3E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8F1626B1567C0009EB3E /* Cocoa.framework */; };
+		5B7F8F2826B157700009EB3E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8F1826B1569A0009EB3E /* CoreVideo.framework */; };
+		5B7F8F2E26B1579A0009EB3E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7F8E5B26B0FA870009EB3E /* OpenGL.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5B7628E826B2C46C0023ED35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6361BA429BDB45E1B805459B;
+			remoteInfo = Utils;
+		};
+		5B7F8EBA26B13ED30009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8EB426B13ED20009EB3E /* macOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F4534351E79E4E0B81C9C0DB;
+			remoteInfo = test;
+		};
+		5B7F8EF626B14C800009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8EF026B14C800009EB3E /* ExampleProject.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AFEDEF46F378460BBF5A655D;
+			remoteInfo = app;
+		};
+		5B7F8F5C26B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A8E3DB4897834451AF0D01D9;
+			remoteInfo = AppInstance;
+		};
+		5B7F8F5E26B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75E691C3D04140C9891C8EA3;
+			remoteInfo = "Diligent-ApplePlatform";
+		};
+		5B7F8F6026B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D17313B792A24E3F96F49358;
+			remoteInfo = "Diligent-AssetLoader";
+		};
+		5B7F8F6226B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B547986956924405B81D3291;
+			remoteInfo = "Diligent-BasicPlatform";
+		};
+		5B7F8F6426B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E32CFE6E2C74DDF8A6555CE;
+			remoteInfo = "Diligent-Common";
+		};
+		5B7F8F6626B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 252683C848D74B0F8FD34D88;
+			remoteInfo = "Diligent-GraphicsAccessories";
+		};
+		5B7F8F6826B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B203396BDF04D33A817C8FE;
+			remoteInfo = "Diligent-GraphicsEngine";
+		};
+		5B7F8F6A26B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8015942CFDF8418F851897FB;
+			remoteInfo = "Diligent-GraphicsEngineOpenGL-shared";
+		};
+		5B7F8F6C26B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 687102CC072A4EF88790D047;
+			remoteInfo = "Diligent-GraphicsEngineOpenGL-static";
+		};
+		5B7F8F6E26B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AF710AC0825B487AB145C7A2;
+			remoteInfo = "Diligent-GraphicsTools";
+		};
+		5B7F8F7026B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0B64E0532A694BF58F1298F3;
+			remoteInfo = "Diligent-HLSL2GLSLConverterLib";
+		};
+		5B7F8F7226B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D980B44AD8C4FB19AFC6D79;
+			remoteInfo = "Diligent-Imgui";
+		};
+		5B7F8F7426B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B851624F83524FBCAA00EFD6;
+			remoteInfo = "Diligent-NativeAppBase";
+		};
+		5B7F8F7626B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F0EAED007814315B1A8C7EC;
+			remoteInfo = "Diligent-Primitives";
+		};
+		5B7F8F7826B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 57260E34B19241C5B7A1D6AC;
+			remoteInfo = "Diligent-ShaderTools";
+		};
+		5B7F8F7A26B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4A2523B925B74C8B97DC6CDC;
+			remoteInfo = "Diligent-TextureLoader";
+		};
+		5B7F8F7C26B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 28D122F9F1F74B6A81949399;
+			remoteInfo = DiligentAnyOpt;
+		};
+		5B7F8F7E26B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EDE0DB02A4694EE283231F50;
+			remoteInfo = DiligentHelpers;
+		};
+		5B7F8F8026B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1AC8C6A4C04447FE95240A67;
+			remoteInfo = File2String;
+		};
+		5B7F8F8226B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4EC906A2C13A4C3F9969151A;
+			remoteInfo = HLSL2GLSLConverter;
+		};
+		5B7F8F8426B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A1FA4355DDD04F05A15CA2B8;
+			remoteInfo = LibJpeg;
+		};
+		5B7F8F8626B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B52AA099B5384A5193CA12A8;
+			remoteInfo = LibPng;
+		};
+		5B7F8F8826B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A4499FCDC66482C86B2583E;
+			remoteInfo = LibTiff;
+		};
+		5B7F8F8A26B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B38E645739584BEFA0402411;
+			remoteInfo = MacOSBase;
+		};
+		5B7F8F8C26B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 13A6563C640940C9A6C28DA8;
+			remoteInfo = MotionEvent;
+		};
+		5B7F8F8E26B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4524340F6584AF2B9985E54;
+			remoteInfo = ObjectBase;
+		};
+		5B7F8F9026B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C35F4F06EE02462BAB8D7414;
+			remoteInfo = Objects;
+		};
+		5B7F8F9226B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F94889A7FB924696941A729F;
+			remoteInfo = PlatformBase;
+		};
+		5B7F8F9426B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7135B2C69CE9418886D14F56;
+			remoteInfo = TimeEngine;
+		};
+		5B7F8F9626B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27D9EF616C334E3D96A041C5;
+			remoteInfo = VertexEngine;
+		};
+		5B7F8F9826B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 739B6D0E9C8A4933A58AF02D;
+			remoteInfo = Views;
+		};
+		5B7F8F9A26B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 64B973756764437888DEE3CD;
+			remoteInfo = WINAPIKERNEL;
+		};
+		5B7F8F9C26B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19A3DE2404C3443D8F782EA8;
+			remoteInfo = ZLib;
+		};
+		5B7F8F9E26B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2AE39C4B772D4B00B594DD47;
+			remoteInfo = "glew-static";
+		};
+		5B7F8FA026B1600D0009EB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7536866AFA0D4323BFE447B3;
+			remoteInfo = "native-lib";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5B7629D026B3DEF30023ED35 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5B7629B726B3DEF30023ED35 /* libDiligentHelpers.dylib in Embed Libraries */,
+				5B7629CF26B3DEF30023ED35 /* libWINAPIKERNEL.dylib in Embed Libraries */,
+				5B7629C126B3DEF30023ED35 /* libObjectBase.dylib in Embed Libraries */,
+				5B7629CD26B3DEF30023ED35 /* libViews.dylib in Embed Libraries */,
+				5B7629BB26B3DEF30023ED35 /* libMacOSBase.dylib in Embed Libraries */,
+				5B7629C326B3DEF30023ED35 /* libObjects.dylib in Embed Libraries */,
+				5B7629C926B3DEF30023ED35 /* libUtils.dylib in Embed Libraries */,
+				5B7629BD26B3DEF30023ED35 /* libMotionEvent.dylib in Embed Libraries */,
+				5B7629CB26B3DEF30023ED35 /* libVertexEngine.dylib in Embed Libraries */,
+				5B7629C726B3DEF30023ED35 /* libTimeEngine.dylib in Embed Libraries */,
+				5B7629B926B3DEF30023ED35 /* libGraphicsEngineOpenGL.dylib in Embed Libraries */,
+				5B7629B526B3DEF30023ED35 /* libAppInstance.dylib in Embed Libraries */,
+				5B7629BF26B3DEF30023ED35 /* libnative-lib.dylib in Embed Libraries */,
+				5B7629C526B3DEF30023ED35 /* libPlatformBase.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5B7F8E5B26B0FA870009EB3E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		5B7F8E6526B0FCBC0009EB3E /* OpenGLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B7F8E6726B0FCBC0009EB3E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5B7F8E6826B0FCBC0009EB3E /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		5B7F8E6A26B0FCC20009EB3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B7F8E6D26B0FCC20009EB3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5B7F8E6F26B0FCC20009EB3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B7F8E7026B0FCC20009EB3E /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		5B7F8E7226B0FCC20009EB3E /* OpenGLApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenGLApp.entitlements; sourceTree = "<group>"; };
+		5B7F8E7826B0FCEC0009EB3E /* GLEssentialsGLView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GLEssentialsGLView.mm; sourceTree = "<group>"; };
+		5B7F8E7C26B0FD1E0009EB3E /* GLEssentialsGLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLEssentialsGLView.h; sourceTree = "<group>"; };
+		5B7F8E8326B118AF0009EB3E /* OpenGLRenderer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenGLRenderer.mm; sourceTree = "<group>"; };
+		5B7F8E8726B118BA0009EB3E /* OpenGLRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLRenderer.h; sourceTree = "<group>"; };
+		5B7F8EB426B13ED20009EB3E /* macOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = macOS.xcodeproj; path = OpenGLApp/CMake/build_xcode/macOS.xcodeproj; sourceTree = "<group>"; };
+		5B7F8ECA26B140630009EB3E /* import_CMake_project.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = import_CMake_project.sh; sourceTree = "<group>"; };
+		5B7F8EF026B14C800009EB3E /* ExampleProject.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ExampleProject.xcodeproj; path = IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/ExampleProject.xcodeproj; sourceTree = "<group>"; };
+		5B7F8F1626B1567C0009EB3E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		5B7F8F1826B1569A0009EB3E /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kit.xcodeproj; path = IMPORTED_CMAKE_PROJECTS/cpp/Kit.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B7F8E6226B0FCBC0009EB3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B7629CE26B3DEF30023ED35 /* libWINAPIKERNEL.dylib in Frameworks */,
+				5B7F8F2E26B1579A0009EB3E /* OpenGL.framework in Frameworks */,
+				5B7629B626B3DEF30023ED35 /* libDiligentHelpers.dylib in Frameworks */,
+				5B7629C426B3DEF30023ED35 /* libPlatformBase.dylib in Frameworks */,
+				5B7629CA26B3DEF30023ED35 /* libVertexEngine.dylib in Frameworks */,
+				5B7629BE26B3DEF30023ED35 /* libnative-lib.dylib in Frameworks */,
+				5B7629CC26B3DEF30023ED35 /* libViews.dylib in Frameworks */,
+				5B7629C226B3DEF30023ED35 /* libObjects.dylib in Frameworks */,
+				5B7F8F2826B157700009EB3E /* CoreVideo.framework in Frameworks */,
+				5B7629BA26B3DEF30023ED35 /* libMacOSBase.dylib in Frameworks */,
+				5B7F8F1726B1567C0009EB3E /* Cocoa.framework in Frameworks */,
+				5B7629C826B3DEF30023ED35 /* libUtils.dylib in Frameworks */,
+				5B7629C026B3DEF30023ED35 /* libObjectBase.dylib in Frameworks */,
+				5B7629C626B3DEF30023ED35 /* libTimeEngine.dylib in Frameworks */,
+				5B7629BC26B3DEF30023ED35 /* libMotionEvent.dylib in Frameworks */,
+				5B7629B826B3DEF30023ED35 /* libGraphicsEngineOpenGL.dylib in Frameworks */,
+				5B7629B426B3DEF30023ED35 /* libAppInstance.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B7F8DFD26B0F22F0009EB3E = {
+			isa = PBXGroup;
+			children = (
+				5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */,
+				5B7F8EF026B14C800009EB3E /* ExampleProject.xcodeproj */,
+				5B7F8ECA26B140630009EB3E /* import_CMake_project.sh */,
+				5B7F8E6626B0FCBC0009EB3E /* OpenGLApp */,
+				5B7F8E0926B0F4220009EB3E /* Products */,
+				5B7F8E5A26B0FA860009EB3E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5B7F8E0926B0F4220009EB3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B7F8E6526B0FCBC0009EB3E /* OpenGLApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B7F8E5A26B0FA860009EB3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B7F8F1826B1569A0009EB3E /* CoreVideo.framework */,
+				5B7F8F1626B1567C0009EB3E /* Cocoa.framework */,
+				5B7F8EB426B13ED20009EB3E /* macOS.xcodeproj */,
+				5B7F8E5B26B0FA870009EB3E /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B7F8E6626B0FCBC0009EB3E /* OpenGLApp */ = {
+			isa = PBXGroup;
+			children = (
+				5B7F8E6726B0FCBC0009EB3E /* AppDelegate.h */,
+				5B7F8E6826B0FCBC0009EB3E /* AppDelegate.mm */,
+				5B7F8E6A26B0FCC20009EB3E /* Assets.xcassets */,
+				5B7F8E6C26B0FCC20009EB3E /* MainMenu.xib */,
+				5B7F8E6F26B0FCC20009EB3E /* Info.plist */,
+				5B7F8E7026B0FCC20009EB3E /* main.mm */,
+				5B7F8E7226B0FCC20009EB3E /* OpenGLApp.entitlements */,
+				5B7F8E7826B0FCEC0009EB3E /* GLEssentialsGLView.mm */,
+				5B7F8E7C26B0FD1E0009EB3E /* GLEssentialsGLView.h */,
+				5B7F8E8326B118AF0009EB3E /* OpenGLRenderer.mm */,
+				5B7F8E8726B118BA0009EB3E /* OpenGLRenderer.h */,
+			);
+			path = OpenGLApp;
+			sourceTree = "<group>";
+		};
+		5B7F8EB526B13ED20009EB3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B7F8EBB26B13ED30009EB3E /* libtest.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B7F8EF126B14C800009EB3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B7F8EF726B14C800009EB3E /* libapp.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B7F8F3226B1600B0009EB3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B7F8F5D26B1600D0009EB3E /* libAppInstance.dylib */,
+				5B7F8F5F26B1600D0009EB3E /* libDiligent-ApplePlatform.a */,
+				5B7F8F6126B1600D0009EB3E /* libDiligent-AssetLoader.a */,
+				5B7F8F6326B1600D0009EB3E /* libDiligent-BasicPlatform.a */,
+				5B7F8F6526B1600D0009EB3E /* libDiligent-Common.a */,
+				5B7F8F6726B1600D0009EB3E /* libDiligent-GraphicsAccessories.a */,
+				5B7F8F6926B1600D0009EB3E /* libDiligent-GraphicsEngine.a */,
+				5B7F8F6B26B1600D0009EB3E /* libGraphicsEngineOpenGL.dylib */,
+				5B7F8F6D26B1600D0009EB3E /* libDiligent-GraphicsEngineOpenGL-static.a */,
+				5B7F8F6F26B1600D0009EB3E /* libDiligent-GraphicsTools.a */,
+				5B7F8F7126B1600D0009EB3E /* libDiligent-HLSL2GLSLConverterLib.a */,
+				5B7F8F7326B1600D0009EB3E /* libDiligent-Imgui.a */,
+				5B7F8F7526B1600D0009EB3E /* libDiligent-NativeAppBase.a */,
+				5B7F8F7726B1600D0009EB3E /* libDiligent-Primitives.a */,
+				5B7F8F7926B1600D0009EB3E /* libDiligent-ShaderTools.a */,
+				5B7F8F7B26B1600D0009EB3E /* libDiligent-TextureLoader.a */,
+				5B7F8F7D26B1600D0009EB3E /* libDiligentAnyOpt.a */,
+				5B7F8F7F26B1600D0009EB3E /* libDiligentHelpers.dylib */,
+				5B7F8F8126B1600D0009EB3E /* File2String */,
+				5B7F8F8326B1600D0009EB3E /* HLSL2GLSLConverter */,
+				5B7F8F8526B1600D0009EB3E /* libLibJpeg.a */,
+				5B7F8F8726B1600D0009EB3E /* libLibPng.a */,
+				5B7F8F8926B1600D0009EB3E /* libLibTiff.a */,
+				5B7F8F8B26B1600D0009EB3E /* libMacOSBase.dylib */,
+				5B7F8F8D26B1600D0009EB3E /* libMotionEvent.dylib */,
+				5B7F8F8F26B1600D0009EB3E /* libObjectBase.dylib */,
+				5B7F8F9126B1600D0009EB3E /* libObjects.dylib */,
+				5B7F8F9326B1600D0009EB3E /* libPlatformBase.dylib */,
+				5B7F8F9526B1600D0009EB3E /* libTimeEngine.dylib */,
+				5B7628E926B2C46C0023ED35 /* libUtils.dylib */,
+				5B7F8F9726B1600D0009EB3E /* libVertexEngine.dylib */,
+				5B7F8F9926B1600D0009EB3E /* libViews.dylib */,
+				5B7F8F9B26B1600D0009EB3E /* libWINAPIKERNEL.dylib */,
+				5B7F8F9D26B1600D0009EB3E /* libZLib.a */,
+				5B7F8F9F26B1600D0009EB3E /* libglew-static.a */,
+				5B7F8FA126B1600D0009EB3E /* libnative-lib.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B7F8E6426B0FCBC0009EB3E /* OpenGLApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B7F8E7326B0FCC20009EB3E /* Build configuration list for PBXNativeTarget "OpenGLApp" */;
+			buildPhases = (
+				5B7F8E6126B0FCBC0009EB3E /* Sources */,
+				5B7F8E6226B0FCBC0009EB3E /* Frameworks */,
+				5B7F8E6326B0FCBC0009EB3E /* Resources */,
+				5B7629D026B3DEF30023ED35 /* Embed Libraries */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenGLApp;
+			productName = OpenGLApp;
+			productReference = 5B7F8E6526B0FCBC0009EB3E /* OpenGLApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B7F8DFE26B0F22F0009EB3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					5B7F8E6426B0FCBC0009EB3E = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 5B7F8E0126B0F22F0009EB3E /* Build configuration list for PBXProject "MacOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5B7F8DFD26B0F22F0009EB3E;
+			productRefGroup = 5B7F8E0926B0F4220009EB3E /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5B7F8EF126B14C800009EB3E /* Products */;
+					ProjectRef = 5B7F8EF026B14C800009EB3E /* ExampleProject.xcodeproj */;
+				},
+				{
+					ProductGroup = 5B7F8F3226B1600B0009EB3E /* Products */;
+					ProjectRef = 5B7F8F3126B1600B0009EB3E /* Kit.xcodeproj */;
+				},
+				{
+					ProductGroup = 5B7F8EB526B13ED20009EB3E /* Products */;
+					ProjectRef = 5B7F8EB426B13ED20009EB3E /* macOS.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				5B7F8E6426B0FCBC0009EB3E /* OpenGLApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5B7628E926B2C46C0023ED35 /* libUtils.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libUtils.dylib;
+			remoteRef = 5B7628E826B2C46C0023ED35 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8EBB26B13ED30009EB3E /* libtest.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libtest.dylib;
+			remoteRef = 5B7F8EBA26B13ED30009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8EF726B14C800009EB3E /* libapp.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libapp.dylib;
+			remoteRef = 5B7F8EF626B14C800009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F5D26B1600D0009EB3E /* libAppInstance.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libAppInstance.dylib;
+			remoteRef = 5B7F8F5C26B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F5F26B1600D0009EB3E /* libDiligent-ApplePlatform.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDiligent-ApplePlatform.a";
+			remoteRef = 5B7F8F5E26B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F6126B1600D0009EB3E /* libDiligent-AssetLoader.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDiligent-AssetLoader.a";
+			remoteRef = 5B7F8F6026B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F6326B1600D0009EB3E /* libDiligent-BasicPlatform.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDiligent-BasicPlatform.a";
+			remoteRef = 5B7F8F6226B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F6526B1600D0009EB3E /* libDiligent-Common.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDiligent-Common.a";
+			remoteRef = 5B7F8F6426B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F6726B1600D0009EB3E /* libDiligent-GraphicsAccessories.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDiligent-GraphicsAccessories.a";
+			remoteRef = 5B7F8F6626B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F6926B1600D0009EB3E /* libDiligent-GraphicsEngine.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDiligent-GraphicsEngine.a";
+			remoteRef = 5B7F8F6826B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F6B26B1600D0009EB3E /* libGraphicsEngineOpenGL.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libGraphicsEngineOpenGL.dylib;
+			remoteRef = 5B7F8F6A26B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F6D26B1600D0009EB3E /* libDiligent-GraphicsEngineOpenGL-static.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDiligent-GraphicsEngineOpenGL-static.a";
+			remoteRef = 5B7F8F6C26B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F6F26B1600D0009EB3E /* libDiligent-GraphicsTools.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDiligent-GraphicsTools.a";
+			remoteRef = 5B7F8F6E26B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F7126B1600D0009EB3E /* libDiligent-HLSL2GLSLConverterLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDiligent-HLSL2GLSLConverterLib.a";
+			remoteRef = 5B7F8F7026B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F7326B1600D0009EB3E /* libDiligent-Imgui.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDiligent-Imgui.a";
+			remoteRef = 5B7F8F7226B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F7526B1600D0009EB3E /* libDiligent-NativeAppBase.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDiligent-NativeAppBase.a";
+			remoteRef = 5B7F8F7426B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F7726B1600D0009EB3E /* libDiligent-Primitives.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDiligent-Primitives.a";
+			remoteRef = 5B7F8F7626B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F7926B1600D0009EB3E /* libDiligent-ShaderTools.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDiligent-ShaderTools.a";
+			remoteRef = 5B7F8F7826B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F7B26B1600D0009EB3E /* libDiligent-TextureLoader.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDiligent-TextureLoader.a";
+			remoteRef = 5B7F8F7A26B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F7D26B1600D0009EB3E /* libDiligentAnyOpt.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDiligentAnyOpt.a;
+			remoteRef = 5B7F8F7C26B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F7F26B1600D0009EB3E /* libDiligentHelpers.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libDiligentHelpers.dylib;
+			remoteRef = 5B7F8F7E26B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F8126B1600D0009EB3E /* File2String */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = File2String;
+			remoteRef = 5B7F8F8026B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F8326B1600D0009EB3E /* HLSL2GLSLConverter */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = HLSL2GLSLConverter;
+			remoteRef = 5B7F8F8226B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F8526B1600D0009EB3E /* libLibJpeg.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLibJpeg.a;
+			remoteRef = 5B7F8F8426B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F8726B1600D0009EB3E /* libLibPng.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLibPng.a;
+			remoteRef = 5B7F8F8626B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F8926B1600D0009EB3E /* libLibTiff.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLibTiff.a;
+			remoteRef = 5B7F8F8826B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F8B26B1600D0009EB3E /* libMacOSBase.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libMacOSBase.dylib;
+			remoteRef = 5B7F8F8A26B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F8D26B1600D0009EB3E /* libMotionEvent.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libMotionEvent.dylib;
+			remoteRef = 5B7F8F8C26B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F8F26B1600D0009EB3E /* libObjectBase.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libObjectBase.dylib;
+			remoteRef = 5B7F8F8E26B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F9126B1600D0009EB3E /* libObjects.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libObjects.dylib;
+			remoteRef = 5B7F8F9026B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F9326B1600D0009EB3E /* libPlatformBase.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libPlatformBase.dylib;
+			remoteRef = 5B7F8F9226B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F9526B1600D0009EB3E /* libTimeEngine.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libTimeEngine.dylib;
+			remoteRef = 5B7F8F9426B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F9726B1600D0009EB3E /* libVertexEngine.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libVertexEngine.dylib;
+			remoteRef = 5B7F8F9626B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F9926B1600D0009EB3E /* libViews.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libViews.dylib;
+			remoteRef = 5B7F8F9826B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F9B26B1600D0009EB3E /* libWINAPIKERNEL.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libWINAPIKERNEL.dylib;
+			remoteRef = 5B7F8F9A26B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F9D26B1600D0009EB3E /* libZLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libZLib.a;
+			remoteRef = 5B7F8F9C26B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8F9F26B1600D0009EB3E /* libglew-static.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libglew-static.a";
+			remoteRef = 5B7F8F9E26B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B7F8FA126B1600D0009EB3E /* libnative-lib.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = "libnative-lib.dylib";
+			remoteRef = 5B7F8FA026B1600D0009EB3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B7F8E6326B0FCBC0009EB3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B7F8E6B26B0FCC20009EB3E /* Assets.xcassets in Resources */,
+				5B7F8E6E26B0FCC20009EB3E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B7F8E6126B0FCBC0009EB3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B7F8E7126B0FCC20009EB3E /* main.mm in Sources */,
+				5B7F8E6926B0FCBC0009EB3E /* AppDelegate.mm in Sources */,
+				5B7F8E7926B0FCEC0009EB3E /* GLEssentialsGLView.mm in Sources */,
+				5B7F8E8426B118AF0009EB3E /* OpenGLRenderer.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5B7F8E6C26B0FCC20009EB3E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B7F8E6D26B0FCC20009EB3E /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5B7F8E0226B0F22F0009EB3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		5B7F8E0326B0F22F0009EB3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5B7F8E7426B0FCC20009EB3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = OpenGLApp/OpenGLApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/**";
+				INFOPLIST_FILE = OpenGLApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = smallville7123.OpenGLApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		5B7F8E7526B0FCC20009EB3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = OpenGLApp/OpenGLApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/**";
+				INFOPLIST_FILE = OpenGLApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = smallville7123.OpenGLApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B7F8E0126B0F22F0009EB3E /* Build configuration list for PBXProject "MacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B7F8E0226B0F22F0009EB3E /* Debug */,
+				5B7F8E0326B0F22F0009EB3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B7F8E7326B0FCC20009EB3E /* Build configuration list for PBXNativeTarget "OpenGLApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B7F8E7426B0FCC20009EB3E /* Debug */,
+				5B7F8E7526B0FCC20009EB3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B7F8DFE26B0F22F0009EB3E /* Project object */;
+}

@@ -1,0 +1,662 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		876A17B0EBA8417685BFD171 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4E1313B41D6A41C3818B40AB /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				8B73D4F8986C8C6AC0846FBC /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		B8B3B524C95D4652B02F6944 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 826F62E923D742B79EB6AA11 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				A4939F523C0F74EC9D0129A1 /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				BE2BBE3B071745D39B533FFD /* PBXTargetDependency */,
+				5AC76AE6E1B8406F9C100A80 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		289BC776C425444B87154F55 /* dummy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8ACFE6851E8D4A628D1DC130 /* dummy.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A8D07AE9DC444169F7ED68A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 954B229496AC4C89AC07E38A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 876A17B0EBA8417685BFD171;
+			remoteInfo = ZERO_CHECK;
+		};
+		6C0FBDCAF9A84F30ADF792EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 954B229496AC4C89AC07E38A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 876A17B0EBA8417685BFD171;
+			remoteInfo = ZERO_CHECK;
+		};
+		F84E2EAE0AFE4FB0A84F7701 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 954B229496AC4C89AC07E38A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7A17370B74B4094A757D7F4;
+			remoteInfo = app;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5B7F8EF926B14E2C0009EB3E /* render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = render.h; sourceTree = "<group>"; };
+		8ACFE6851E8D4A628D1DC130 /* dummy.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = dummy.cpp; sourceTree = SOURCE_ROOT; };
+		ABF816ACD9C54729973B9F92 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		AFEDEF46F378460BBF5A655D /* libapp.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapp.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5BCB8CFF6C0422AB9B68C13 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC4A2199AFBF4E46B18C84A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01FD03F9DB3D422E878BCAD3 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				8ACFE6851E8D4A628D1DC130 /* dummy.cpp */,
+				5B7F8EF926B14E2C0009EB3E /* render.h */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		4ADB85D5D20B4B9E9DE42262 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				01FD03F9DB3D422E878BCAD3 /* Source Files */,
+				C5BCB8CFF6C0422AB9B68C13 /* CMakeLists.txt */,
+			);
+			name = app;
+			sourceTree = "<group>";
+		};
+		500BEB8587184B20BCFF7D75 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				FBAE66851C5F48DB97C6DE37 /* CMake Rules */,
+				ABF816ACD9C54729973B9F92 /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		5C19322AC9264C11A85CAE7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AFEDEF46F378460BBF5A655D /* libapp.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6938E2BAD574415792266B2D = {
+			isa = PBXGroup;
+			children = (
+				4ADB85D5D20B4B9E9DE42262 /* app */,
+				500BEB8587184B20BCFF7D75 /* ALL_BUILD */,
+				5C19322AC9264C11A85CAE7F /* Products */,
+				BC2A99E8779C460881954AFA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BC2A99E8779C460881954AFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBAE66851C5F48DB97C6DE37 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7A17370B74B4094A757D7F4 /* app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9318C20F20244FD68E93F229 /* Build configuration list for PBXNativeTarget "app" */;
+			buildPhases = (
+				91863D7500514D33A7547171 /* Sources */,
+				FC4A2199AFBF4E46B18C84A0 /* Frameworks */,
+				73BE797BEB022A6062ED2254 /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7DBCFADCFDE48C3B6D66CD5 /* PBXTargetDependency */,
+			);
+			name = app;
+			productName = app;
+			productReference = AFEDEF46F378460BBF5A655D /* libapp.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		954B229496AC4C89AC07E38A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 3F10658BA7FD483FB71E180E /* Build configuration list for PBXProject "ExampleProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6938E2BAD574415792266B2D;
+			projectDirPath = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/exampleCmakeDirectory";
+			projectRoot = "";
+			targets = (
+				B8B3B524C95D4652B02F6944 /* ALL_BUILD */,
+				876A17B0EBA8417685BFD171 /* ZERO_CHECK */,
+				C7A17370B74B4094A757D7F4 /* app */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		73BE797BEB022A6062ED2254 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nif test \"$CONFIGURATION\" = \"Debug\"; then :\n  cd /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory\n  /usr/local/Cellar/cmake/3.20.5/bin/cmake -E cmake_symlink_library /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/Debug/libapp.dylib /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/Debug/libapp.dylib /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/Debug/libapp.dylib\nfi\nif test \"$CONFIGURATION\" = \"Release\"; then :\n  cd /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory\n  /usr/local/Cellar/cmake/3.20.5/bin/cmake -E cmake_symlink_library /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/Release/libapp.dylib /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/Release/libapp.dylib /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/Release/libapp.dylib\nfi\nif test \"$CONFIGURATION\" = \"MinSizeRel\"; then :\n  cd /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory\n  /usr/local/Cellar/cmake/3.20.5/bin/cmake -E cmake_symlink_library /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/MinSizeRel/libapp.dylib /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/MinSizeRel/libapp.dylib /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/MinSizeRel/libapp.dylib\nfi\nif test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :\n  cd /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory\n  /usr/local/Cellar/cmake/3.20.5/bin/cmake -E cmake_symlink_library /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/RelWithDebInfo/libapp.dylib /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/RelWithDebInfo/libapp.dylib /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/RelWithDebInfo/libapp.dylib\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8B73D4F8986C8C6AC0846FBC /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+				"/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/CMakeFiles/ZERO_CHECK",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nif test \"$CONFIGURATION\" = \"Debug\"; then :\n  cd /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory\n  make -f /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/CMakeScripts/ReRunCMake.make\nfi\nif test \"$CONFIGURATION\" = \"Release\"; then :\n  cd /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory\n  make -f /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/CMakeScripts/ReRunCMake.make\nfi\nif test \"$CONFIGURATION\" = \"MinSizeRel\"; then :\n  cd /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory\n  make -f /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/CMakeScripts/ReRunCMake.make\nfi\nif test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :\n  cd /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory\n  make -f /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/CMakeScripts/ReRunCMake.make\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A4939F523C0F74EC9D0129A1 /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+				"/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/CMakeFiles/ALL_BUILD",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nif test \"$CONFIGURATION\" = \"Debug\"; then :\n  cd /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"Release\"; then :\n  cd /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"MinSizeRel\"; then :\n  cd /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :\n  cd /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory\n  echo Build\\ all\\ projects\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		91863D7500514D33A7547171 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				289BC776C425444B87154F55 /* dummy.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AC76AE6E1B8406F9C100A80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 876A17B0EBA8417685BFD171 /* ZERO_CHECK */;
+			targetProxy = 6C0FBDCAF9A84F30ADF792EC /* PBXContainerItemProxy */;
+		};
+		B7DBCFADCFDE48C3B6D66CD5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 876A17B0EBA8417685BFD171 /* ZERO_CHECK */;
+			targetProxy = 2A8D07AE9DC444169F7ED68A /* PBXContainerItemProxy */;
+		};
+		BE2BBE3B071745D39B533FFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7A17370B74B4094A757D7F4 /* app */;
+			targetProxy = F84E2EAE0AFE4FB0A84F7701 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		19B11BE9576749488E2F6A35 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		1FF1DD300DE6444B81A97DD1 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					app_EXPORTS,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "@rpath";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = app;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		2B8216527B8C4F4396BBDB86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/build";
+			};
+			name = Debug;
+		};
+		4F67A148A5CC47EEB12283C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		5E0343D5500240F69DB418F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/build";
+			};
+			name = Release;
+		};
+		62EAF73FD43B47BB87CBE4BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		7C90C451E7644197BADD326B /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/build";
+			};
+			name = RelWithDebInfo;
+		};
+		91C3D278A21446859EF2BCCD /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		BC9692FAA02F4463A8B14782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		BDF05D7A13644D248893005C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/build";
+			};
+			name = MinSizeRel;
+		};
+		BF69198FF6A544DDBA74BFDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					app_EXPORTS,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "@rpath";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = "   -fPIC ";
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = app;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		C1C9C95E81B64755BFAD260C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					app_EXPORTS,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "@rpath";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = app;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		CD930F44896949529C7EA0C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		DF84CC40FA9548C1943F7E91 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					app_EXPORTS,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "@rpath";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = app;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		E3831BE45948494296A5A951 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		F560F4923524446AB59131CE /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F10658BA7FD483FB71E180E /* Build configuration list for PBXProject "ExampleProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B8216527B8C4F4396BBDB86 /* Debug */,
+				5E0343D5500240F69DB418F7 /* Release */,
+				BDF05D7A13644D248893005C /* MinSizeRel */,
+				7C90C451E7644197BADD326B /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4E1313B41D6A41C3818B40AB /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62EAF73FD43B47BB87CBE4BD /* Debug */,
+				BC9692FAA02F4463A8B14782 /* Release */,
+				91C3D278A21446859EF2BCCD /* MinSizeRel */,
+				19B11BE9576749488E2F6A35 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		826F62E923D742B79EB6AA11 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F67A148A5CC47EEB12283C6 /* Debug */,
+				CD930F44896949529C7EA0C2 /* Release */,
+				E3831BE45948494296A5A951 /* MinSizeRel */,
+				F560F4923524446AB59131CE /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9318C20F20244FD68E93F229 /* Build configuration list for PBXNativeTarget "app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF69198FF6A544DDBA74BFDF /* Debug */,
+				C1C9C95E81B64755BFAD260C /* Release */,
+				1FF1DD300DE6444B81A97DD1 /* MinSizeRel */,
+				DF84CC40FA9548C1943F7E91 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 954B229496AC4C89AC07E38A /* Project object */;
+}
