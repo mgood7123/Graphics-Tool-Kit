@@ -102,32 +102,17 @@ include_directories(Objects)
 include_directories(Objects/Views)
 
 add_library(
-        native-lib SHARED
-        native-lib.cpp
+        AppInstance SHARED
         AppInstance.cpp
 )
 
 target_link_libraries(
-        native-lib
+        AppInstance
         Objects
         PlatformBase
         WINAPI::KERNEL
 )
 
-macro(copyExe EXE)
-    if(CMAKE_RUNTIME_OUTPUT_DIRECTORY)
-        set(copyExe_IN_FILE ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${EXE})
-    else()
-        set(copyExe_IN_FILE ${EXE})
-    endif()
+add_library(native-lib SHARED native-lib.cpp)
 
-
-    set(copyExe_OUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/EXECUTABLES/${EXE})
-
-
-    add_custom_command(
-            TARGET ${EXE}
-            POST_BUILD
-            COMMAND cp -v ${copyExe_IN_FILE} ${copyExe_OUT_FILE}
-    )
-endmacro()
+target_link_libraries(native-lib AppInstance)
