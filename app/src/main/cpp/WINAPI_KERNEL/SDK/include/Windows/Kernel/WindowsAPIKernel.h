@@ -35,7 +35,7 @@ class Kernel {
 
         HANDLE newHandle(ObjectType type, ResourceType resource);
 
-        Handle *getHandle(HANDLE handle);
+        HandleClass *getHandle(HANDLE handle);
 
         void removeHandle(HANDLE handle);
 

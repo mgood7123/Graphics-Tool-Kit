@@ -3127,7 +3127,9 @@ DrawAnimatedRects(
  */
 #define FVIRTKEY  TRUE          /* Assumed to be == TRUE */
 #define FNOINVERT 0x02
-#define FSHIFT    0x04
+
+/* on MAC OS the definition FSHIFT is defined for bit shifting */
+#define FSHIFT_ACCEL    0x04
 #define FCONTROL  0x08
 #define FALT      0x10
 

@@ -13,15 +13,16 @@
 
 #define INVALID_HANDLE_VALUE ((HANDLE)(LONG_PTR)-1)
 
-typedef class Handle {
+// on MAC OS, Handle is typedef'd as part of MacOS Memory Manager types
+class HandleClass {
     public:
-        Handle();
+        HandleClass();
 
-        ~Handle();
+        ~HandleClass();
 
         bool invalidated;
         Object *object;
-} Handle;
+};
 
 //
 // Prototypes

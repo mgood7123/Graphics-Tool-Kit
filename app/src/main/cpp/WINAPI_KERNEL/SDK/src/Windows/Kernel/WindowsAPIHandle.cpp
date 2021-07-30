@@ -30,7 +30,7 @@ CloseHandle(
     _In_ _Post_ptr_invalid_ HANDLE hObject
 ) {
     if (!KERNEL.validateHandle(hObject)) return 0;
-    Handle *h = KERNEL.getHandle(hObject);
+    HandleClass *h = KERNEL.getHandle(hObject);
     if (h->object->handles == 1) KERNEL.deleteObject(h->object);
     else h->object->handles--;
     h->object = nullptr;
@@ -64,8 +64,8 @@ CompareObjectHandles(
 ) {
     // we cannot use validHandle() here because two HANDLE's may differ even when invalid
     if (hFirstObjectHandle != nullptr && hSecondObjectHandle != nullptr) {
-        Handle *h1 = KERNEL.getHandle(hFirstObjectHandle);
-        Handle *h2 = KERNEL.getHandle(hSecondObjectHandle);
+        HandleClass *h1 = KERNEL.getHandle(hFirstObjectHandle);
+        HandleClass *h2 = KERNEL.getHandle(hSecondObjectHandle);
 
         // it is unspecified what happens when two invalidated HANDLE's are compared
 
@@ -108,19 +108,19 @@ SetHandleInformation(
     return 0;
 }
 
-Handle::Handle() {
+HandleClass::HandleClass() {
     this->invalidated = true;
     this->object = nullptr;
 }
 
-Handle::~Handle() {
+HandleClass::~HandleClass() {
     this->invalidated = true;
     this->object = nullptr;
 }
 
 bool Kernel::validateHandle(HANDLE hObject) {
     if (hObject == nullptr) return 0;
-    Handle *h = this->getHandle(hObject);
+    HandleClass *h = this->getHandle(hObject);
     if (h->object == nullptr) return 0;
     return !h->invalidated;
 }
@@ -130,7 +130,7 @@ HANDLE Kernel::newHandle(ObjectType type) {
 }
 
 HANDLE Kernel::newHandle(ObjectType type, ResourceType resource) {
-    Handle *hObject = new Handle();
+    HandleClass *hObject = new HandleClass();
     hObject->object = this->newObject(type, 0, resource);
     assert(hObject->object != nullptr);
     hObject->invalidated = false;
@@ -140,8 +140,8 @@ HANDLE Kernel::newHandle(ObjectType type, ResourceType resource) {
     return hObject;
 }
 
-Handle *Kernel::getHandle(HANDLE handle) {
-    return static_cast<Handle *>(handle);
+HandleClass *Kernel::getHandle(HANDLE handle) {
+    return static_cast<HandleClass *>(handle);
 }
 
 void Kernel::removeHandle(HANDLE handle) {

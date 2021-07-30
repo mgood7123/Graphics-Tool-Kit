@@ -38,7 +38,8 @@ typedef PVOID HANDLE;
 #define CONST               const
 
 typedef unsigned long DWORD;
-typedef int BOOL;
+// on MAC OS, BOOL is typedef'd as a signed char
+typedef signed char BOOL;
 typedef unsigned char BYTE;
 typedef unsigned short WORD;
 typedef float FLOAT;
