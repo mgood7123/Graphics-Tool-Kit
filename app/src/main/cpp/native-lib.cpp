@@ -101,8 +101,8 @@ Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRen
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_removeTouch__JJFF (
-        JNIEnv * env, jobject thiz, jlong instance,
+Java_smallville7123_graphical_tool_kit_DiligentEngineView_00024DiligentEngineRenderer_removeTouch__JFF (
+        JNIEnv * env, jobject thiz,
         jlong identifier, jfloat x, jfloat y
 )
 {
