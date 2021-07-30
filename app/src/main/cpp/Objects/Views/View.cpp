@@ -282,7 +282,7 @@ void View::drawChunks(VertexEngine::GenerationInfo &info) {
 
         diligentAppBase->m_pImmediateContext->DrawIndexed(DrawAttrs);
     }
-    LOG_INFO_MESSAGE("drawn ", info.chunksGenerated, " chunk", info.chunksGenerated == 1 ? "" : "s");
+    // LOG_INFO_MESSAGE("drawn ", info.chunksGenerated, " chunk", info.chunksGenerated == 1 ? "" : "s");
 }
 
 void View::destroy() {
