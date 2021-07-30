@@ -56,6 +56,34 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
 
 }
 
+- (void)keyDown:(NSEvent *)event
+{
+    if ([event type] == NSEventTypeKeyDown) {
+        if ([event keyCode] == 12 || [event keyCode] == 53) {
+            NSLog(@"Exiting...");
+            [[self window] performClose:self];
+        } else if ([event keyCode] == 36) {
+            NSLog(@"\n");
+        } else {
+            NSLog(@"%s: %d", __FUNCTION__, [event keyCode]);
+        }
+    }
+}
+
+- (void)mouseEntered:(NSEvent *)event {
+    if (!mouseInView) {
+        NSLog(@"mouseEntered");
+        mouseInView = YES;
+    }
+}
+
+-(void)mouseExited:(NSEvent *)event {
+    if (mouseInView) {
+        NSLog(@"mouseExited");
+        mouseInView = NO;
+    }
+}
+
 - (void)updateTrackingAreas {
     [self initTrackingArea];
 }
@@ -82,50 +110,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
     return YES;
 }
 
-- (void)mouseEntered:(NSEvent *)event {
-    if (!mouseInView) {
-        NSLog(@"mouseEntered");
-        mouseInView = YES;
-    }
-}
-
--(void)mouseExited:(NSEvent *)event {
-    if (mouseInView) {
-        NSLog(@"mouseExited");
-        mouseInView = NO;
-    }
-}
-
-- (void)keyDown:(NSEvent *)event
-{
-    if ([event type] == NSEventTypeKeyDown) {
-        if ([event keyCode] == 12 || [event keyCode] == 53) {
-            NSLog(@"Exiting...");
-            [[self window] performClose:self];
-        } else if ([event keyCode] == 36) {
-            NSLog(@"\n");
-        } else {
-            NSLog(@"%s: %d", __FUNCTION__, [event keyCode]);
-        }
-    }
-}
-
 // https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/EventOverview/HandlingTouchEvents/HandlingTouchEvents.html#//apple_ref/doc/uid/10000060i-CH13-SW21
-
-- (void) printTouches:(NSSet *) touches {
-//    auto initialPoint = [self convertPointFromBase:[event locationInWindow]];
-
-    NSArray *array = [touches allObjects];
-    
-    NSUInteger numberOfTouches = [array count];
-    NSLog(@"number of touches: %lu", (unsigned long)numberOfTouches);
-    for (unsigned long i = 0; i < numberOfTouches; i++) {
-        NSTouch *t = [array objectAtIndex:i];
-        NSLog(@" touch point: %lu", i);
-        NSLog(@"   touch identity: %p", t.identity);
-        NSLog(@"   touch position: %g, %g", t.normalizedPosition.x, t.normalizedPosition.y);
-    }
-}
 
 - (void)touchesBeganWithEvent:(NSEvent *)event {
     [_renderer touchesBeganWithEvent:[event touchesMatchingPhase:NSTouchPhaseBegan inView:self]];
