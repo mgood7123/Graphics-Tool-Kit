@@ -84,7 +84,7 @@ include_directories(TimeEngine)
 add_subdirectory(DiligentHelpers)
 include_directories(DiligentHelpers)
 
-if (PLATFORM_WIN32 OR PLATFORM_LINUX OR PLATFORM_MACOS)
+if (PLATFORM_WIN32 OR PLATFORM_LINUX)
     add_subdirectory(SDL2-2.0.14)
     include_directories(SDL2-2.0.14/include)
 endif()

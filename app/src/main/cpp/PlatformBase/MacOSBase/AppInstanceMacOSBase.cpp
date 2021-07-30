@@ -6,5 +6,4 @@
 
 void AppInstanceMacOSBase::swapBuffers ()
 {
-    SDL_GL_SwapWindow(mainwindow);
 }

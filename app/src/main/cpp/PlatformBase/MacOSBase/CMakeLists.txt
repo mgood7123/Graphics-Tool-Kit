@@ -17,5 +17,4 @@ add_library(
 target_link_libraries(MacOSBase
         "-framework OpenGL"
         DiligentAnyOpt
-        SDL2
 )
