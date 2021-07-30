@@ -1329,17 +1329,17 @@ template <class T, class U = T> struct is_nothrow_swappable : std::true_type {};
 
         /// Returns the stored value if there is one, otherwise returns `u`
         template <class U> constexpr U value_or_cast(U &&u) const & {
-            static_assert(std::is_copy_constructible<T>::value &&
+            static_assert(std::is_copy_constructible<U>::value &&
                           std::is_convertible<T, U>::value,
-                          "T must be copy constructible and convertible to U");
+                          "U must be copy constructible and convertible from T");
             return has_value() ? static_cast<U>(**this) : std::forward<U>(u);
         }
 
         /// Returns the stored value if there is one, otherwise returns `u`
         template <class U> TL_OPTIONAL_11_CONSTEXPR U value_or_cast(U &&u) && {
-            static_assert(std::is_move_constructible<T>::value &&
+            static_assert(std::is_move_constructible<U>::value &&
                           std::is_convertible<T, U>::value,
-                          "T must be move constructible and convertible to U");
+                          "U must be move constructible and convertible from T");
             return has_value() ? static_cast<U>(**this) : std::forward<U>(u);
         }
 
@@ -2056,17 +2056,17 @@ auto optional_map_impl(Opt &&opt, F &&f) {
 
         /// Returns the stored value if there is one, otherwise returns `u`
         template <class U> constexpr U value_or_cast(U &&u) const & noexcept {
-            static_assert(std::is_copy_constructible<T>::value &&
+            static_assert(std::is_copy_constructible<U>::value &&
                           std::is_convertible<T, U>::value,
-                          "T must be copy constructible and convertible to U");
+                          "U must be copy constructible and convertible from T");
             return has_value() ? static_cast<U>(**this) : std::forward<U>(u);
         }
 
         /// \group value_or_cast
         template <class U> TL_OPTIONAL_11_CONSTEXPR U value_or_cast(U &&u) && noexcept {
-            static_assert(std::is_move_constructible<T>::value &&
+            static_assert(std::is_move_constructible<U>::value &&
                           std::is_convertible<T, U>::value,
-                          "T must be move constructible and convertible to U");
+                          "U must be move constructible and convertible from T");
             return has_value() ? static_cast<U>(**this) : std::forward<U>(u);
         }
 
