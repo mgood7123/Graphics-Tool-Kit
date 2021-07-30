@@ -38,10 +38,10 @@ public:
         };
     };
 
-    constexpr static int CONVERSION_ORIGIN_TOP_LEFT = 0;
-    constexpr static int CONVERSION_ORIGIN_TOP_RIGHT = 1;
-    constexpr static int CONVERSION_ORIGIN_BOTTOM_LEFT = 2;
-    constexpr static int CONVERSION_ORIGIN_BOTTOM_RIGHT = 3;
+    static const int CONVERSION_ORIGIN_TOP_LEFT = 0;
+    static const int CONVERSION_ORIGIN_TOP_RIGHT = 1;
+    static const int CONVERSION_ORIGIN_BOTTOM_LEFT = 2;
+    static const int CONVERSION_ORIGIN_BOTTOM_RIGHT = 3;
 
     int CONVERSION_ORIGIN = CONVERSION_ORIGIN_TOP_LEFT;
 

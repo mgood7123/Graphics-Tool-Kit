@@ -157,7 +157,7 @@ VertexEngine::GenerationInfo::GenerationInfo(VertexEngine::GenerationInfo &&m) :
         sizeInBytesIndices(m.sizeInBytesIndices),
         chunkReader(0),
         chunksGenerated(0),
-        isTexture(isTexture)
+        isTexture(m.isTexture)
 {
     m.vertexEngine = nullptr;
     m.data = nullptr;
@@ -477,25 +477,28 @@ VertexEngine::TextureManager::imageIsSolidColor(
 ) {
     auto Desc = image->GetDesc();
 
-    if (Desc.NumComponents != 4) {
-        LOG_ERROR_MESSAGE("number of color components in image must be 4, was ", Desc.NumComponents);
-        return {false, {}};
-    }
-    uint8_t color[4];
-    uint8_t *pixels = static_cast<uint8_t *>(image->GetData()->GetDataPtr());
-    for (uint32_t y = 0; y < Desc.Height; y++) {
-        for (uint32_t x = 0; x < Desc.Width; x++) {
-            if (y == 0 && x == 0) {
-                // dst, src, length
-                memcpy(color, pixels, 4);
-            } else {
-                if (memcmp(&pixels[x * y * 4], color, 4) != 0) {
-                    return {false, {}};
+    // image can be ARGB or RGB
+    // we only support ARGB for now
+    if (Desc.NumComponents == 4) {
+        uint8_t color[Desc.NumComponents];
+        uint8_t *pixels = static_cast<uint8_t *>(image->GetData()->GetDataPtr());
+        for (uint32_t y = 0; y < Desc.Height; y++) {
+            for (uint32_t x = 0; x < Desc.Width; x++) {
+                if (y == 0 && x == 0) {
+                    // dst, src, length
+                    memcpy(color, pixels, Desc.NumComponents);
+                } else {
+                    if (memcmp(&pixels[x * y * Desc.NumComponents], color, Desc.NumComponents) != 0) {
+                        return {false, {}};
+                    }
                 }
             }
         }
+        return {true, {color[0], color[1], color[2], color[3]}};
+    } else {
+        LOG_ERROR_MESSAGE("Error while testing if image is a solid color: number of color components in image must be 4, was ", Desc.NumComponents);
+        return {false, {}};
     }
-    return {true, {color[0], color[1], color[2], color[3]}};
 }
 
 void VertexEngine::TextureManager::createSolidColorTexture(const char *key, const Color4 & color) {
@@ -600,14 +603,13 @@ void VertexEngine::TextureManager::createTextureFromFile(
 Diligent::ITexture * VertexEngine::TextureManager::findTexture(const char * key) {
     auto r = getTexture(key);
     if (r == nullptr) return nullptr;
-    if (memcmp(key, r->first, r->second) == 0) return r->third.texture;
-    return nullptr;
+    return keyMatches(key, r) ? r->third.texture : nullptr;
 }
 
 VertexEngine::Triple<const char *, size_t, VertexEngine::Color4> *
 VertexEngine::TextureManager::getTexture(const size_t & index) {
     if (index == -1) return nullptr;
-    VertexEngine::Triple<const char *, size_t, VertexEngine::Color4> * r = vertexEngine->textureBuffer.get(index);
+    auto * r = vertexEngine->textureBuffer.get(index);
     return r == nullptr ? nullptr : r;
 }
 
@@ -617,7 +619,7 @@ VertexEngine::TextureManager::getTexture(const char * key) {
     auto i = vertexEngine->textureBuffer.getIterator();
     while (i.hasNext()) {
         auto r = vertexEngine->textureBuffer.get(i.next()->handle);
-        if (memcmp(key, r->first, r->second) == 0) return r;
+        if (keyMatches(key, r)) return r;
     }
     return nullptr;
 }
@@ -628,7 +630,7 @@ tl::optional<size_t> VertexEngine::TextureManager::findTextureIndex(const char *
         auto idx = vertexEngine->textureBuffer.getIndex(i.next()->handle);
         if (!idx) continue;
         auto r = vertexEngine->textureBuffer.get(idx.value());
-        if (memcmp(key, r->first, r->second) == 0) return idx;
+        if (keyMatches(key, r)) return idx;
     }
     return tl::nullopt;
 }
@@ -639,13 +641,19 @@ void VertexEngine::TextureManager::deleteTexture(const char * key) {
         while (i.hasNext()) {
             HANDLE h = i.next()->handle;
             auto r = vertexEngine->textureBuffer.get(h);
-            if (memcmp(key, r->first, r->second) == 0) {
+            if (keyMatches(key, r)) {
                 if (r->third.texture != nullptr) r->third.texture->Release();
                 vertexEngine->textureBuffer.remove(h);
                 break;
             }
         }
     }
+}
+
+bool VertexEngine::TextureManager::keyMatches(
+        const char *key, VertexEngine::Triple<const char *, size_t, VertexEngine::Color4> *p
+) {
+    return strlen(key) == p->second ? memcmp(key, p->first, p->second) == 0 : false;
 }
 
 HANDLE VertexEngine::Canvas::addData_(HANDLE dataBufferHandle, const std::vector<float>& data) {

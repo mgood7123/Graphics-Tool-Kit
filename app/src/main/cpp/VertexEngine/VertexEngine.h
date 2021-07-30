@@ -181,11 +181,11 @@ private:
     void order(const std::vector<HANDLE>& data);
 
 public:
-    constexpr static int positionCount = 3;
-    constexpr static int colorCount = 4;
-    constexpr static int colorExtraCount = 2;
-    constexpr static int textureCoordinatesCount = 2;
-    constexpr static int strideLength = 3+5+2;
+    static const int positionCount = 3;
+    static const int colorCount = 4;
+    static const int colorExtraCount = 2;
+    static const int textureCoordinatesCount = 2;
+    static const int strideLength = 3+5+2;
 
     PixelToNDC::Coordinates<float> toNDC(int x, int y, int z);
     VertexEngine();
@@ -547,6 +547,8 @@ public:
          * @param key the key to locate the texture
          */
         void deleteTexture(const char *key);
+
+        bool keyMatches(const char *key, Triple<const char *, size_t, Color4> *pTriple);
     };
 
     TextureManager textureManager;
