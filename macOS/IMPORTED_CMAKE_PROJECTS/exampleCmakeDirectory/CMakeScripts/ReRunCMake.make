@@ -5,10 +5,10 @@ empty:=
 space:= $(empty) $(empty)
 spaceplus:= $(empty)\ $(empty)
 
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/CMakeFiles/3.20.5/CMakeCCompiler.cmake))
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/CMakeFiles/3.20.5/CMakeCXXCompiler.cmake))
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/CMakeFiles/3.20.5/CMakeSystem.cmake))
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/exampleCmakeDirectory/CMakeLists.txt))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/macOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/CMakeFiles/3.20.5/CMakeCCompiler.cmake))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/macOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/CMakeFiles/3.20.5/CMakeCXXCompiler.cmake))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/macOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/CMakeFiles/3.20.5/CMakeSystem.cmake))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/macOS/exampleCmakeDirectory/CMakeLists.txt))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /usr/local/Cellar/cmake/3.20.5/share/cmake/Modules/CMakeCCompiler.cmake.in))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /usr/local/Cellar/cmake/3.20.5/share/cmake/Modules/CMakeCCompilerABI.c))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /usr/local/Cellar/cmake/3.20.5/share/cmake/Modules/CMakeCInformation.cmake))
@@ -99,5 +99,5 @@ TARGETS += $(subst $(space),$(spaceplus),$(wildcard /usr/local/Cellar/cmake/3.20
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /usr/local/Cellar/cmake/3.20.5/share/cmake/Modules/Platform/Darwin.cmake))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /usr/local/Cellar/cmake/3.20.5/share/cmake/Modules/Platform/UnixPaths.cmake))
 
-/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/CMakeFiles/cmake.check_cache: $(TARGETS)
-	/usr/local/Cellar/cmake/3.20.5/bin/cmake -H/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/exampleCmakeDirectory -B/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOSX/MacOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory
+/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/macOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory/CMakeFiles/cmake.check_cache: $(TARGETS)
+	/usr/local/Cellar/cmake/3.20.5/bin/cmake -H/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/macOS/exampleCmakeDirectory -B/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/macOS/IMPORTED_CMAKE_PROJECTS/exampleCmakeDirectory
