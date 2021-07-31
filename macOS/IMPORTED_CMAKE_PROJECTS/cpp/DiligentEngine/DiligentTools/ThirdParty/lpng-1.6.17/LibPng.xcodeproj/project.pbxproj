@@ -7,9 +7,21 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		0CC1E13E75164C739D2D0FB4 /* ZERO_CHECK */ = {
+		4C161972DCC540808363BE2C /* install */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 4ED6FB1024F04925A913E9F6 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = 7D1AB998749E4F7CAFFB180B /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				2B040CD736A548418D9D4AE2 /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+		A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 64F56A51ED9B4701906D5131 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
 				D8F12D8CFF76397162144AAD /* Generate CMakeFiles/ZERO_CHECK */,
 			);
@@ -18,27 +30,15 @@
 			name = ZERO_CHECK;
 			productName = ZERO_CHECK;
 		};
-		2C2E6CC00BD94CA1835E62AD /* install */ = {
+		C170553A14944B729938E9E6 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 881019D515A54085A6E83F10 /* Build configuration list for PBXAggregateTarget "install" */;
-			buildPhases = (
-				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
-			);
-			dependencies = (
-				44F7A1849B8149799C2439E0 /* PBXTargetDependency */,
-			);
-			name = install;
-			productName = install;
-		};
-		8E50B0849231401AACD5F522 /* ALL_BUILD */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 1E9E9836EC2944CEA748E8A4 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = 0550A9D3B6CE4B7DB89D2E36 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
 				704258A1ACD7955FA3A792BF /* Generate CMakeFiles/ALL_BUILD */,
 			);
 			dependencies = (
-				3950D850CF15466BB63E70C6 /* PBXTargetDependency */,
-				A5BB67C471C64EF1847BF2CC /* PBXTargetDependency */,
+				B4D67326074D449685C0B2F8 /* PBXTargetDependency */,
+				ADEB9813138946569C40AFC2 /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
@@ -46,121 +46,121 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		05015B5D5EB243EBA0DE425A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwrite.c */ = {isa = PBXBuildFile; fileRef = E3C3ADADAF1548EB9F75EA21 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwrite.c */; };
-		12E5522348504A06AF40BB6F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngget.c */ = {isa = PBXBuildFile; fileRef = DDEE6049FBB34528AE57E6B8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngget.c */; };
-		2A6840ED971C490089E1D448 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpriv.h */ = {isa = PBXBuildFile; fileRef = 8BA65775F95542FEA6DCBEBB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpriv.h */; };
-		36CA93B5D90E4043B882060A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngmem.c */ = {isa = PBXBuildFile; fileRef = AFA117B757AE4EEA9C45B7A0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngmem.c */; };
-		372B6ADB7C0B4337837F20E8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngread.c */ = {isa = PBXBuildFile; fileRef = 17EBFC466DC34E66A18FCBB5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngread.c */; };
-		39D0808986C94D278C62B09F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngset.c */ = {isa = PBXBuildFile; fileRef = B439236158074C3183ED4F0C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngset.c */; };
-		4AFE056555D047549EDC2E1E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 8BBA29BD5DBD4C5CA068B602 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/CMakeLists.txt */; };
-		568C8E6CC5384834A229F11D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pnginfo.h */ = {isa = PBXBuildFile; fileRef = 2DA70D2A6E5941B495BBE5B3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pnginfo.h */; };
-		5705DE20B9B645B6AC1CC3A9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngstruct.h */ = {isa = PBXBuildFile; fileRef = 4B2856D5A0344592942F2B49 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngstruct.h */; };
-		6F36BE5DAE104B6785C1D7EF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwio.c */ = {isa = PBXBuildFile; fileRef = FDFB09532D5D4724B330EA23 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwio.c */; };
-		7121F7B46EDC425293737733 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwutil.c */ = {isa = PBXBuildFile; fileRef = 1EC5790662CE440EAC1A74F0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwutil.c */; };
-		8D36FA511611464F9AA9D21A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrtran.c */ = {isa = PBXBuildFile; fileRef = F790055C2D524EAAA5F5730D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrtran.c */; };
-		8DC24BE6219B4A018E680949 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.c */ = {isa = PBXBuildFile; fileRef = D69DDB53A67C408BA90447D5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.c */; };
-		8FF1F9C7C83442BD9DCF735D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpread.c */ = {isa = PBXBuildFile; fileRef = D5D1F16C87B24D23935806CD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpread.c */; };
-		A4BA65EA09894A73BA671A18 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngdebug.h */ = {isa = PBXBuildFile; fileRef = 794C81DEAE7A4FE88CA79386 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngdebug.h */; };
-		A753A34721004977A4E34725 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngconf.h */ = {isa = PBXBuildFile; fileRef = 65C7EEAFDCB94CA38F67D36B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngconf.h */; };
-		AC826D269BA04F22AA61C521 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.h */ = {isa = PBXBuildFile; fileRef = AD635AE741BB464ABB4FB40A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.h */; };
-		DACF661E040C40CFBC067A1C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngtrans.c */ = {isa = PBXBuildFile; fileRef = EB6D62F8E22E4257986F6AB6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngtrans.c */; };
-		E8007BE7CC9E4B1F8030437C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwtran.c */ = {isa = PBXBuildFile; fileRef = 085E850744034A7688E91DAF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwtran.c */; };
-		E863E2A5B0684F7DAE2085D5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrio.c */ = {isa = PBXBuildFile; fileRef = 2A4D33E885F349C493B116A8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrio.c */; };
-		EC3DD6F7134C478C915A58CD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngerror.c */ = {isa = PBXBuildFile; fileRef = AC3DD9881E804D69A226F3FF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngerror.c */; };
-		FCDEEB579D544203B13B3B4D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrutil.c */ = {isa = PBXBuildFile; fileRef = 08C2AAB505CD4DCB883D0A72 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrutil.c */; };
+		050EBE649DE845449C057F2C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwio.c */ = {isa = PBXBuildFile; fileRef = D2A55CA4B81243079174CB4A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwio.c */; };
+		293667FE59D8479FB2F53EBF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngmem.c */ = {isa = PBXBuildFile; fileRef = 2A5C7B81B2084CF7A9183054 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngmem.c */; };
+		31F4CA89AC3646CDB41B77DC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.c */ = {isa = PBXBuildFile; fileRef = CCD67221AAD64CCB9C8345E8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.c */; };
+		4B31EB144A9243539F907F0F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.h */ = {isa = PBXBuildFile; fileRef = DFFDBB1F00744C8EA93DC25C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.h */; };
+		558406427D7C4757A355B4C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrutil.c */ = {isa = PBXBuildFile; fileRef = 36F11ED89A8E48D1A321BD0A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrutil.c */; };
+		5A203BA7BD944B9589259715 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngtrans.c */ = {isa = PBXBuildFile; fileRef = 94AF80B2C5F448BAB9EF8B40 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngtrans.c */; };
+		81EA796B10EE4018BC60B9CE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwutil.c */ = {isa = PBXBuildFile; fileRef = 38E4717C838D4B2EB8EA2852 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwutil.c */; };
+		8A1F19388E9D475CB06E18D8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngerror.c */ = {isa = PBXBuildFile; fileRef = 6B6D9CD141C94423AD8699C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngerror.c */; };
+		930D324C656145B0B50F9438 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngstruct.h */ = {isa = PBXBuildFile; fileRef = 0BEBFEDE77834837BA491C9D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngstruct.h */; };
+		99671975550041B284269EFA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwrite.c */ = {isa = PBXBuildFile; fileRef = BDE83935A45B4A5BA635B627 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwrite.c */; };
+		A7A133C8EC7B485386FD46F2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = B54A741275E94F2BBA5DF35A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/CMakeLists.txt */; };
+		BA7BDA535DA04E35A1466FA5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwtran.c */ = {isa = PBXBuildFile; fileRef = B0781D1D86394A6FBF59737A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwtran.c */; };
+		C127B70731C3445CB7AA6AB5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pnginfo.h */ = {isa = PBXBuildFile; fileRef = D9BC760EA95448B2BFFBA488 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pnginfo.h */; };
+		C51D6FD105434E94916AA358 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpriv.h */ = {isa = PBXBuildFile; fileRef = 7769A1C24D984512912E13A1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpriv.h */; };
+		D224867EC3F7415FABC61DBB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrtran.c */ = {isa = PBXBuildFile; fileRef = 6BBC04CEB25A47F68CF5DCC6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrtran.c */; };
+		D49DB3260F854637B45A1837 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngread.c */ = {isa = PBXBuildFile; fileRef = 2BE649F4347C4C4281678F7D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngread.c */; };
+		DAF7A7E08BE54D7DB8CF6A12 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpread.c */ = {isa = PBXBuildFile; fileRef = 24BC7375C4F24399847FC961 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpread.c */; };
+		E0227EF57F4D4AC085D17ED1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngconf.h */ = {isa = PBXBuildFile; fileRef = DB1675B2002243E69353CD7B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngconf.h */; };
+		EA0703BB80A148EDA8EEEE02 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngdebug.h */ = {isa = PBXBuildFile; fileRef = 5AB2922B4E7746338804F1B4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngdebug.h */; };
+		EE34B115A8F84361A9AC9DC5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngget.c */ = {isa = PBXBuildFile; fileRef = DE5DE33091A1430397D7F135 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngget.c */; };
+		EF153F21101A4FC98E715A61 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrio.c */ = {isa = PBXBuildFile; fileRef = 6B13DDC1663848B9810667AC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrio.c */; };
+		FF516F993774463AB12EF464 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngset.c */ = {isa = PBXBuildFile; fileRef = 382B9088828B4A54A837F8AD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngset.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		300EC418FED74CC48947CDCF /* Debug */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Debug;
-		};
-		6B852EF925CA4651A04068FC /* RelWithDebInfo */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = RelWithDebInfo;
-		};
-		CB86C5EB3F4B4717998ACCD3 /* Release */ = {
+		0308E53D4F444F91A144A0B6 /* Release */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = Release;
 		};
-		F7ECD3DF9F624D729F497A14 /* MinSizeRel */ = {
+		1279CFE852474ECEAE24F31D /* MinSizeRel */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = MinSizeRel;
 		};
+		3FDBC405D726418BAC632D47 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		E7D48843E6B74515B34D799A /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		156EAB545B114EEB8A663300 /* PBXContainerItemProxy */ = {
+		014579731BFE4AD8B74F9C48 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CAA74B3F04F04A18B2197FA7 /* Project object */;
+			containerPortal = C24590B8DA8A47C79B9F13BB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0CC1E13E75164C739D2D0FB4;
+			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
 			remoteInfo = ZERO_CHECK;
 		};
-		2C6806744A8D42AF9A7D04F1 /* PBXContainerItemProxy */ = {
+		180FBAAC33C5403A9652F742 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CAA74B3F04F04A18B2197FA7 /* Project object */;
+			containerPortal = C24590B8DA8A47C79B9F13BB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0CC1E13E75164C739D2D0FB4;
+			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
 			remoteInfo = ZERO_CHECK;
 		};
-		74E437B62E7D455F975DCF9B /* PBXContainerItemProxy */ = {
+		93FB5320863F40DEA705EA1E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CAA74B3F04F04A18B2197FA7 /* Project object */;
+			containerPortal = C24590B8DA8A47C79B9F13BB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8E50B0849231401AACD5F522;
-			remoteInfo = ALL_BUILD;
-		};
-		EFC0290D8ABB468AA152F410 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CAA74B3F04F04A18B2197FA7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 552AA59EB090491DB7536A35;
+			remoteGlobalIDString = 2B551EAE8E5C4A8A9D4D41B4;
 			remoteInfo = LibPng;
+		};
+		F22CE31227B74ADBBAD60981 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C24590B8DA8A47C79B9F13BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C170553A14944B729938E9E6;
+			remoteInfo = ALL_BUILD;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		085E850744034A7688E91DAF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwtran.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngwtran.c; path = pngwtran.c; sourceTree = SOURCE_ROOT; };
-		08C2AAB505CD4DCB883D0A72 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrutil.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngrutil.c; path = pngrutil.c; sourceTree = SOURCE_ROOT; };
-		17EBFC466DC34E66A18FCBB5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngread.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngread.c; path = pngread.c; sourceTree = SOURCE_ROOT; };
-		1EC5790662CE440EAC1A74F0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwutil.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngwutil.c; path = pngwutil.c; sourceTree = SOURCE_ROOT; };
-		2A4D33E885F349C493B116A8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrio.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngrio.c; path = pngrio.c; sourceTree = SOURCE_ROOT; };
-		2DA70D2A6E5941B495BBE5B3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pnginfo.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = pnginfo.h; path = pnginfo.h; sourceTree = SOURCE_ROOT; };
-		33423C1CED1E44F48B956181 /* LibPng */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libLibPng.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B2856D5A0344592942F2B49 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngstruct.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = pngstruct.h; path = pngstruct.h; sourceTree = SOURCE_ROOT; };
-		637BEFC1B8504797B056057D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		65C7EEAFDCB94CA38F67D36B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngconf.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = pngconf.h; path = pngconf.h; sourceTree = SOURCE_ROOT; };
-		794C81DEAE7A4FE88CA79386 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngdebug.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = pngdebug.h; path = pngdebug.h; sourceTree = SOURCE_ROOT; };
-		8BA65775F95542FEA6DCBEBB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpriv.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = pngpriv.h; path = pngpriv.h; sourceTree = SOURCE_ROOT; };
-		8BBA29BD5DBD4C5CA068B602 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		AC3DD9881E804D69A226F3FF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngerror.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngerror.c; path = pngerror.c; sourceTree = SOURCE_ROOT; };
-		AD635AE741BB464ABB4FB40A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = png.h; path = png.h; sourceTree = SOURCE_ROOT; };
-		AFA117B757AE4EEA9C45B7A0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngmem.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngmem.c; path = pngmem.c; sourceTree = SOURCE_ROOT; };
-		B439236158074C3183ED4F0C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngset.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngset.c; path = pngset.c; sourceTree = SOURCE_ROOT; };
-		D5D1F16C87B24D23935806CD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpread.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngpread.c; path = pngpread.c; sourceTree = SOURCE_ROOT; };
-		D69DDB53A67C408BA90447D5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = png.c; path = png.c; sourceTree = SOURCE_ROOT; };
-		DDEE6049FBB34528AE57E6B8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngget.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngget.c; path = pngget.c; sourceTree = SOURCE_ROOT; };
-		E3C3ADADAF1548EB9F75EA21 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwrite.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngwrite.c; path = pngwrite.c; sourceTree = SOURCE_ROOT; };
-		EB6D62F8E22E4257986F6AB6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngtrans.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngtrans.c; path = pngtrans.c; sourceTree = SOURCE_ROOT; };
-		F790055C2D524EAAA5F5730D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrtran.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngrtran.c; path = pngrtran.c; sourceTree = SOURCE_ROOT; };
-		FDFB09532D5D4724B330EA23 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwio.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngwio.c; path = pngwio.c; sourceTree = SOURCE_ROOT; };
+		0BEBFEDE77834837BA491C9D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngstruct.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = pngstruct.h; path = pngstruct.h; sourceTree = SOURCE_ROOT; };
+		0D9EBE22424C41849133A944 /* LibPng */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libLibPng.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		24BC7375C4F24399847FC961 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpread.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngpread.c; path = pngpread.c; sourceTree = SOURCE_ROOT; };
+		2A5C7B81B2084CF7A9183054 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngmem.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngmem.c; path = pngmem.c; sourceTree = SOURCE_ROOT; };
+		2BE649F4347C4C4281678F7D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngread.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngread.c; path = pngread.c; sourceTree = SOURCE_ROOT; };
+		36F11ED89A8E48D1A321BD0A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrutil.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngrutil.c; path = pngrutil.c; sourceTree = SOURCE_ROOT; };
+		382B9088828B4A54A837F8AD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngset.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngset.c; path = pngset.c; sourceTree = SOURCE_ROOT; };
+		38E4717C838D4B2EB8EA2852 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwutil.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngwutil.c; path = pngwutil.c; sourceTree = SOURCE_ROOT; };
+		5AA8E2F8D0ED49F89DB38707 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		5AB2922B4E7746338804F1B4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngdebug.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = pngdebug.h; path = pngdebug.h; sourceTree = SOURCE_ROOT; };
+		6B13DDC1663848B9810667AC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrio.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngrio.c; path = pngrio.c; sourceTree = SOURCE_ROOT; };
+		6B6D9CD141C94423AD8699C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngerror.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngerror.c; path = pngerror.c; sourceTree = SOURCE_ROOT; };
+		6BBC04CEB25A47F68CF5DCC6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrtran.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngrtran.c; path = pngrtran.c; sourceTree = SOURCE_ROOT; };
+		7769A1C24D984512912E13A1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpriv.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = pngpriv.h; path = pngpriv.h; sourceTree = SOURCE_ROOT; };
+		94AF80B2C5F448BAB9EF8B40 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngtrans.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngtrans.c; path = pngtrans.c; sourceTree = SOURCE_ROOT; };
+		B0781D1D86394A6FBF59737A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwtran.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngwtran.c; path = pngwtran.c; sourceTree = SOURCE_ROOT; };
+		B54A741275E94F2BBA5DF35A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		BDE83935A45B4A5BA635B627 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwrite.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngwrite.c; path = pngwrite.c; sourceTree = SOURCE_ROOT; };
+		CCD67221AAD64CCB9C8345E8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = png.c; path = png.c; sourceTree = SOURCE_ROOT; };
+		D2A55CA4B81243079174CB4A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwio.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngwio.c; path = pngwio.c; sourceTree = SOURCE_ROOT; };
+		D9BC760EA95448B2BFFBA488 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pnginfo.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = pnginfo.h; path = pnginfo.h; sourceTree = SOURCE_ROOT; };
+		DB1675B2002243E69353CD7B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngconf.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = pngconf.h; path = pngconf.h; sourceTree = SOURCE_ROOT; };
+		DE5DE33091A1430397D7F135 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngget.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = pngget.c; path = pngget.c; sourceTree = SOURCE_ROOT; };
+		DFFDBB1F00744C8EA93DC25C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = png.h; path = png.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		52310538D90E4EE69335C23C /* Frameworks */ = {
+		5064A324EBB548DCB6FF5F3A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -170,104 +170,104 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00F35F2294F74649B3CBEA38 /* Frameworks */ = {
+		40A0D12788694F868C3556A1 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				CCD67221AAD64CCB9C8345E8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.c */,
+				6B6D9CD141C94423AD8699C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngerror.c */,
+				DE5DE33091A1430397D7F135 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngget.c */,
+				2A5C7B81B2084CF7A9183054 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngmem.c */,
+				24BC7375C4F24399847FC961 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpread.c */,
+				2BE649F4347C4C4281678F7D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngread.c */,
+				6B13DDC1663848B9810667AC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrio.c */,
+				6BBC04CEB25A47F68CF5DCC6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrtran.c */,
+				36F11ED89A8E48D1A321BD0A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrutil.c */,
+				382B9088828B4A54A837F8AD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngset.c */,
+				94AF80B2C5F448BAB9EF8B40 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngtrans.c */,
+				D2A55CA4B81243079174CB4A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwio.c */,
+				BDE83935A45B4A5BA635B627 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwrite.c */,
+				B0781D1D86394A6FBF59737A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwtran.c */,
+				38E4717C838D4B2EB8EA2852 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwutil.c */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		52297B99663944AAB97A67D1 /* LibPng */ = {
+			isa = PBXGroup;
+			children = (
+				40A0D12788694F868C3556A1 /* src */,
+				CA51195DC1214BA88B2DE3CE /* include */,
+				B54A741275E94F2BBA5DF35A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/CMakeLists.txt */,
+			);
+			name = LibPng;
+			sourceTree = "<group>";
+		};
+		7306DAE5E54C4FD990998BE1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0F090CD3DE76460A96CADD57 /* Products */ = {
+		74BFE7D5AF2B460ABFDDE974 = {
 			isa = PBXGroup;
 			children = (
-				33423C1CED1E44F48B956181 /* LibPng */,
+				CC4DC5D2E5054EE382EB82A1 /* DiligentTools */,
+				9777CB3001EC4738916955EB /* ALL_BUILD */,
+				8CB5CA1382724C84958064BE /* Products */,
+				7306DAE5E54C4FD990998BE1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8CB5CA1382724C84958064BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D9EBE22424C41849133A944 /* LibPng */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		12C2043E970C4727967A63ED = {
+		9777CB3001EC4738916955EB /* ALL_BUILD */ = {
 			isa = PBXGroup;
 			children = (
-				F836D7E76FC94BE3B4252EEC /* DiligentTools */,
-				6A4211C36DFD461E94F742EB /* ALL_BUILD */,
-				0F090CD3DE76460A96CADD57 /* Products */,
-				00F35F2294F74649B3CBEA38 /* Frameworks */,
+				BF295090011147838169BB52 /* CMake Rules */,
+				5AA8E2F8D0ED49F89DB38707 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/CMakeLists.txt */,
 			);
+			name = ALL_BUILD;
 			sourceTree = "<group>";
 		};
-		152EF9ADA2774099A416EADA /* CMake Rules */ = {
+		98A3D3D477134B7D9E0C8AA2 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				52297B99663944AAB97A67D1 /* LibPng */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		BF295090011147838169BB52 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		523C0AAC91374B23AFAA2436 /* src */ = {
+		CA51195DC1214BA88B2DE3CE /* include */ = {
 			isa = PBXGroup;
 			children = (
-				D69DDB53A67C408BA90447D5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.c */,
-				AC3DD9881E804D69A226F3FF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngerror.c */,
-				DDEE6049FBB34528AE57E6B8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngget.c */,
-				AFA117B757AE4EEA9C45B7A0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngmem.c */,
-				D5D1F16C87B24D23935806CD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpread.c */,
-				17EBFC466DC34E66A18FCBB5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngread.c */,
-				2A4D33E885F349C493B116A8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrio.c */,
-				F790055C2D524EAAA5F5730D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrtran.c */,
-				08C2AAB505CD4DCB883D0A72 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrutil.c */,
-				B439236158074C3183ED4F0C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngset.c */,
-				EB6D62F8E22E4257986F6AB6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngtrans.c */,
-				FDFB09532D5D4724B330EA23 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwio.c */,
-				E3C3ADADAF1548EB9F75EA21 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwrite.c */,
-				085E850744034A7688E91DAF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwtran.c */,
-				1EC5790662CE440EAC1A74F0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwutil.c */,
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
-		6A4211C36DFD461E94F742EB /* ALL_BUILD */ = {
-			isa = PBXGroup;
-			children = (
-				152EF9ADA2774099A416EADA /* CMake Rules */,
-				637BEFC1B8504797B056057D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/CMakeLists.txt */,
-			);
-			name = ALL_BUILD;
-			sourceTree = "<group>";
-		};
-		AACFC070E14F451C853A41FB /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-				F748DE66631444C68BE9FD45 /* LibPng */,
-			);
-			name = ThirdParty;
-			sourceTree = "<group>";
-		};
-		C6D007442636483AAB4CB3F1 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				AD635AE741BB464ABB4FB40A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.h */,
-				65C7EEAFDCB94CA38F67D36B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngconf.h */,
-				794C81DEAE7A4FE88CA79386 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngdebug.h */,
-				2DA70D2A6E5941B495BBE5B3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pnginfo.h */,
-				8BA65775F95542FEA6DCBEBB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpriv.h */,
-				4B2856D5A0344592942F2B49 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngstruct.h */,
+				DFFDBB1F00744C8EA93DC25C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.h */,
+				DB1675B2002243E69353CD7B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngconf.h */,
+				5AB2922B4E7746338804F1B4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngdebug.h */,
+				D9BC760EA95448B2BFFBA488 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pnginfo.h */,
+				7769A1C24D984512912E13A1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpriv.h */,
+				0BEBFEDE77834837BA491C9D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngstruct.h */,
 			);
 			name = include;
 			sourceTree = "<group>";
 		};
-		F748DE66631444C68BE9FD45 /* LibPng */ = {
+		CC4DC5D2E5054EE382EB82A1 /* DiligentTools */ = {
 			isa = PBXGroup;
 			children = (
-				523C0AAC91374B23AFAA2436 /* src */,
-				C6D007442636483AAB4CB3F1 /* include */,
-				8BBA29BD5DBD4C5CA068B602 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/CMakeLists.txt */,
-			);
-			name = LibPng;
-			sourceTree = "<group>";
-		};
-		F836D7E76FC94BE3B4252EEC /* DiligentTools */ = {
-			isa = PBXGroup;
-			children = (
-				AACFC070E14F451C853A41FB /* ThirdParty */,
+				98A3D3D477134B7D9E0C8AA2 /* ThirdParty */,
 			);
 			name = DiligentTools;
 			sourceTree = "<group>";
@@ -275,51 +275,51 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		552AA59EB090491DB7536A35 /* LibPng */ = {
+		2B551EAE8E5C4A8A9D4D41B4 /* LibPng */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 54223CD2FDC04426ABA0842A /* Build configuration list for PBXNativeTarget "LibPng" */;
+			buildConfigurationList = 7872F6ABB7044E38807A6A52 /* Build configuration list for PBXNativeTarget "LibPng" */;
 			buildPhases = (
-				F825723DF1754E5FB24082E2 /* Sources */,
-				52310538D90E4EE69335C23C /* Frameworks */,
+				B6D093186DC940DDA38A841E /* Sources */,
+				5064A324EBB548DCB6FF5F3A /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4F94319E15D84F4A96C56ECB /* PBXTargetDependency */,
+				4993A8CB1FBE4817B1B8B503 /* PBXTargetDependency */,
 			);
 			name = LibPng;
 			productName = LibPng;
-			productReference = 33423C1CED1E44F48B956181 /* LibPng */;
+			productReference = 0D9EBE22424C41849133A944 /* LibPng */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CAA74B3F04F04A18B2197FA7 /* Project object */ = {
+		C24590B8DA8A47C79B9F13BB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1240;
 			};
-			buildConfigurationList = 62D83A331B1A4908B84240CC /* Build configuration list for PBXProject "LibPng" */;
+			buildConfigurationList = DE4C3C91430C47B084344F9D /* Build configuration list for PBXProject "LibPng" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				300EC418FED74CC48947CDCF /* Debug */,
-				CB86C5EB3F4B4717998ACCD3 /* Release */,
-				F7ECD3DF9F624D729F497A14 /* MinSizeRel */,
-				6B852EF925CA4651A04068FC /* RelWithDebInfo */,
+				3FDBC405D726418BAC632D47 /* Debug */,
+				0308E53D4F444F91A144A0B6 /* Release */,
+				1279CFE852474ECEAE24F31D /* MinSizeRel */,
+				E7D48843E6B74515B34D799A /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = 12C2043E970C4727967A63ED;
+			mainGroup = 74BFE7D5AF2B460ABFDDE974;
 			projectDirPath = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
 			projectRoot = "";
 			targets = (
-				8E50B0849231401AACD5F522 /* ALL_BUILD */,
-				552AA59EB090491DB7536A35 /* LibPng */,
-				0CC1E13E75164C739D2D0FB4 /* ZERO_CHECK */,
-				2C2E6CC00BD94CA1835E62AD /* install */,
+				C170553A14944B729938E9E6 /* ALL_BUILD */,
+				2B551EAE8E5C4A8A9D4D41B4 /* LibPng */,
+				A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */,
+				4C161972DCC540808363BE2C /* install */,
 			);
 		};
 /* End PBXProject section */
@@ -470,233 +470,55 @@ fi
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F825723DF1754E5FB24082E2 /* Sources */ = {
+		B6D093186DC940DDA38A841E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DC24BE6219B4A018E680949 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.c */,
-				EC3DD6F7134C478C915A58CD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngerror.c */,
-				12E5522348504A06AF40BB6F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngget.c */,
-				36CA93B5D90E4043B882060A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngmem.c */,
-				8FF1F9C7C83442BD9DCF735D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpread.c */,
-				372B6ADB7C0B4337837F20E8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngread.c */,
-				E863E2A5B0684F7DAE2085D5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrio.c */,
-				8D36FA511611464F9AA9D21A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrtran.c */,
-				FCDEEB579D544203B13B3B4D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrutil.c */,
-				39D0808986C94D278C62B09F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngset.c */,
-				DACF661E040C40CFBC067A1C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngtrans.c */,
-				6F36BE5DAE104B6785C1D7EF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwio.c */,
-				05015B5D5EB243EBA0DE425A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwrite.c */,
-				E8007BE7CC9E4B1F8030437C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwtran.c */,
-				7121F7B46EDC425293737733 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwutil.c */,
+				31F4CA89AC3646CDB41B77DC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/png.c */,
+				8A1F19388E9D475CB06E18D8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngerror.c */,
+				EE34B115A8F84361A9AC9DC5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngget.c */,
+				293667FE59D8479FB2F53EBF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngmem.c */,
+				DAF7A7E08BE54D7DB8CF6A12 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngpread.c */,
+				D49DB3260F854637B45A1837 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngread.c */,
+				EF153F21101A4FC98E715A61 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrio.c */,
+				D224867EC3F7415FABC61DBB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrtran.c */,
+				558406427D7C4757A355B4C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngrutil.c */,
+				FF516F993774463AB12EF464 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngset.c */,
+				5A203BA7BD944B9589259715 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngtrans.c */,
+				050EBE649DE845449C057F2C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwio.c */,
+				99671975550041B284269EFA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwrite.c */,
+				BA7BDA535DA04E35A1466FA5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwtran.c */,
+				81EA796B10EE4018BC60B9CE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/pngwutil.c */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3950D850CF15466BB63E70C6 /* PBXTargetDependency */ = {
+		2B040CD736A548418D9D4AE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 552AA59EB090491DB7536A35 /* LibPng */;
-			targetProxy = EFC0290D8ABB468AA152F410 /* PBXContainerItemProxy */;
+			target = C170553A14944B729938E9E6 /* ALL_BUILD */;
+			targetProxy = F22CE31227B74ADBBAD60981 /* PBXContainerItemProxy */;
 		};
-		44F7A1849B8149799C2439E0 /* PBXTargetDependency */ = {
+		4993A8CB1FBE4817B1B8B503 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8E50B0849231401AACD5F522 /* ALL_BUILD */;
-			targetProxy = 74E437B62E7D455F975DCF9B /* PBXContainerItemProxy */;
+			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
+			targetProxy = 180FBAAC33C5403A9652F742 /* PBXContainerItemProxy */;
 		};
-		4F94319E15D84F4A96C56ECB /* PBXTargetDependency */ = {
+		ADEB9813138946569C40AFC2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0CC1E13E75164C739D2D0FB4 /* ZERO_CHECK */;
-			targetProxy = 156EAB545B114EEB8A663300 /* PBXContainerItemProxy */;
+			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
+			targetProxy = 014579731BFE4AD8B74F9C48 /* PBXContainerItemProxy */;
 		};
-		A5BB67C471C64EF1847BF2CC /* PBXTargetDependency */ = {
+		B4D67326074D449685C0B2F8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0CC1E13E75164C739D2D0FB4 /* ZERO_CHECK */;
-			targetProxy = 2C6806744A8D42AF9A7D04F1 /* PBXContainerItemProxy */;
+			target = 2B551EAE8E5C4A8A9D4D41B4 /* LibPng */;
+			targetProxy = 93FB5320863F40DEA705EA1E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0142AF9D8F0F4625A7F646A7 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		17DCC879317C4C1CA0210700 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 2;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'PNG_ARM_NEON_OPT=0'",PLATFORM_MACOS,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/.","$(inherited)");
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = "       -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
-				OTHER_LIBTOOLFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = LibPng;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		1D55B97F6C144211A19EE13C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		1F11A1B064424A249DC11C0A /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/build";
-			};
-			name = MinSizeRel;
-		};
-		2AC73FAABA904655AAF1551D /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/build";
-			};
-			name = RelWithDebInfo;
-		};
-		417F11BE4C4D445F9B3E150D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		484894AF9C7549EC83C7DD76 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/build";
-			};
-			name = Debug;
-		};
-		4DABB51815374F82A6D41964 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		675D0EE684D748E9A57654FE /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		6964D9530748403FBD8D23F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		84620D8ECE0A4DD682157549 /* Debug */ = {
+		0C2027B6AD90446DB6658D2C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -705,9 +527,9 @@ fi
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'PNG_ARM_NEON_OPT=0'",PLATFORM_MACOS,_DEBUG,DEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'",DILIGENT_DEVELOPMENT,DILIGENT_DEBUG);
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'PNG_ARM_NEON_OPT=0'",PLATFORM_MACOS,PLATFORM_APPLE,_DEBUG,DEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'",DILIGENT_DEVELOPMENT,DILIGENT_DEBUG);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/.","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/.","$(inherited)");
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
 				OTHER_CFLAGS = "   -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter '-std=gnu11' ";
@@ -721,7 +543,7 @@ fi
 			};
 			name = Debug;
 		};
-		8D66C3187E67414499532460 /* Release */ = {
+		0C77029DF0554A43AEB8D5F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -739,9 +561,9 @@ fi
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = Release;
+			name = Debug;
 		};
-		A432E9235C78454999E2C15B /* Release */ = {
+		18F70FC8B3C34304A73FC40E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -761,32 +583,18 @@ fi
 			};
 			name = Release;
 		};
-		B97EF8E5ECCD43DCBC4FF219 /* MinSizeRel */ = {
+		3332A4B5B2A84B98ACD8DBFD /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'PNG_ARM_NEON_OPT=0'",PLATFORM_MACOS,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/.","$(inherited)");
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
-				OTHER_LIBTOOLFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = LibPng;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/build";
 			};
-			name = MinSizeRel;
+			name = RelWithDebInfo;
 		};
-		C0992817740C4E75B2734D3B /* RelWithDebInfo */ = {
+		4022DA82D61745E18C22BFF0 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -798,7 +606,7 @@ fi
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = ("");
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
+				PRODUCT_NAME = install;
 				SECTORDER_FLAGS = "";
 				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
 				USE_HEADERMAP = NO;
@@ -806,7 +614,7 @@ fi
 			};
 			name = RelWithDebInfo;
 		};
-		C8676945C4D84CF78F51D5B6 /* Release */ = {
+		54354354504E4BCEA3155861 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -826,7 +634,38 @@ fi
 			};
 			name = Release;
 		};
-		CBEEB844F14A465DB71DB0C4 /* MinSizeRel */ = {
+		6B13F1A44CC2433A92CAACA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/build";
+			};
+			name = Release;
+		};
+		6D81FAE5763748DDAF46D9D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		7A255EAE511A43218EA8A4C1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -844,20 +683,69 @@ fi
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = MinSizeRel;
-		};
-		E0C3D97F2B6F48D8A3A90CD1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/build";
-			};
 			name = Release;
 		};
-		F1765DE65A85497EBC5BAB38 /* MinSizeRel */ = {
+		7BC4251BD0364587A5CBEB10 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		8F26F1C7134D4BB98ACE500D /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		ACDB3F1BD87E41BBBF314B38 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		AEE479AA97D54C0DBA4C9E91 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -877,7 +765,7 @@ fi
 			};
 			name = MinSizeRel;
 		};
-		F482D66AFDBD439EB17954CE /* Release */ = {
+		B21D8E7B073D4C3CAF9F60A6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -886,9 +774,9 @@ fi
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'PNG_ARM_NEON_OPT=0'",PLATFORM_MACOS,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'PNG_ARM_NEON_OPT=0'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/.","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/.","$(inherited)");
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
 				OTHER_CFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
@@ -902,65 +790,177 @@ fi
 			};
 			name = Release;
 		};
+		B28897B82B184AB791CD16B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/build";
+			};
+			name = Debug;
+		};
+		B584265722844912942A939B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/build";
+			};
+			name = MinSizeRel;
+		};
+		DDA985C147C04AD7B49C641B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		EE4E9FBDCBB240D9BE4E4193 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'PNG_ARM_NEON_OPT=0'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/.","$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = LibPng;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		F3ACE503A73E49129182718A /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'PNG_ARM_NEON_OPT=0'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/.","$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = LibPng;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		FFE10E0D9B0849E4BA155C3B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1E9E9836EC2944CEA748E8A4 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		0550A9D3B6CE4B7DB89D2E36 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D55B97F6C144211A19EE13C /* Debug */,
-				8D66C3187E67414499532460 /* Release */,
-				CBEEB844F14A465DB71DB0C4 /* MinSizeRel */,
-				C0992817740C4E75B2734D3B /* RelWithDebInfo */,
+				0C77029DF0554A43AEB8D5F1 /* Debug */,
+				7A255EAE511A43218EA8A4C1 /* Release */,
+				FFE10E0D9B0849E4BA155C3B /* MinSizeRel */,
+				ACDB3F1BD87E41BBBF314B38 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		4ED6FB1024F04925A913E9F6 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		64F56A51ED9B4701906D5131 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6964D9530748403FBD8D23F6 /* Debug */,
-				A432E9235C78454999E2C15B /* Release */,
-				F1765DE65A85497EBC5BAB38 /* MinSizeRel */,
-				675D0EE684D748E9A57654FE /* RelWithDebInfo */,
+				DDA985C147C04AD7B49C641B /* Debug */,
+				18F70FC8B3C34304A73FC40E /* Release */,
+				AEE479AA97D54C0DBA4C9E91 /* MinSizeRel */,
+				7BC4251BD0364587A5CBEB10 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		54223CD2FDC04426ABA0842A /* Build configuration list for PBXNativeTarget "LibPng" */ = {
+		7872F6ABB7044E38807A6A52 /* Build configuration list for PBXNativeTarget "LibPng" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				84620D8ECE0A4DD682157549 /* Debug */,
-				F482D66AFDBD439EB17954CE /* Release */,
-				B97EF8E5ECCD43DCBC4FF219 /* MinSizeRel */,
-				17DCC879317C4C1CA0210700 /* RelWithDebInfo */,
+				0C2027B6AD90446DB6658D2C /* Debug */,
+				B21D8E7B073D4C3CAF9F60A6 /* Release */,
+				F3ACE503A73E49129182718A /* MinSizeRel */,
+				EE4E9FBDCBB240D9BE4E4193 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		62D83A331B1A4908B84240CC /* Build configuration list for PBXProject "LibPng" */ = {
+		7D1AB998749E4F7CAFFB180B /* Build configuration list for PBXAggregateTarget "install" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				484894AF9C7549EC83C7DD76 /* Debug */,
-				E0C3D97F2B6F48D8A3A90CD1 /* Release */,
-				1F11A1B064424A249DC11C0A /* MinSizeRel */,
-				2AC73FAABA904655AAF1551D /* RelWithDebInfo */,
+				6D81FAE5763748DDAF46D9D6 /* Debug */,
+				54354354504E4BCEA3155861 /* Release */,
+				8F26F1C7134D4BB98ACE500D /* MinSizeRel */,
+				4022DA82D61745E18C22BFF0 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		881019D515A54085A6E83F10 /* Build configuration list for PBXAggregateTarget "install" */ = {
+		DE4C3C91430C47B084344F9D /* Build configuration list for PBXProject "LibPng" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				417F11BE4C4D445F9B3E150D /* Debug */,
-				C8676945C4D84CF78F51D5B6 /* Release */,
-				4DABB51815374F82A6D41964 /* MinSizeRel */,
-				0142AF9D8F0F4625A7F646A7 /* RelWithDebInfo */,
+				B28897B82B184AB791CD16B9 /* Debug */,
+				6B13F1A44CC2433A92CAACA3 /* Release */,
+				B584265722844912942A939B /* MinSizeRel */,
+				3332A4B5B2A84B98ACD8DBFD /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CAA74B3F04F04A18B2197FA7 /* Project object */;
+	rootObject = C24590B8DA8A47C79B9F13BB /* Project object */;
 }

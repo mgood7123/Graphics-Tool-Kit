@@ -70,7 +70,6 @@ void AppInstance::onDraw ()
 }
 
 bool AppInstance::onTouchEvent(MultiTouch & touchEvent) {
-    LOG_INFO_MESSAGE("onTouchEvent: ", touchEvent.toString());
     if (destroyed.load()) return false;
     return true;
 //    int pointerIndex = motionEvent.getActionIndex();

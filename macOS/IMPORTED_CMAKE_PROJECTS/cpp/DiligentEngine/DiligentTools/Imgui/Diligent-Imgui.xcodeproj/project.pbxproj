@@ -7,9 +7,21 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		0CC1E13E75164C739D2D0FB4 /* ZERO_CHECK */ = {
+		4C161972DCC540808363BE2C /* install */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 3B623AE0F6744A728516D342 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = 3216DE6F75AC4ECEA6D678E4 /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				2DDABAAB20FB45E0AA21C396 /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+		A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3E3C0A882BBB4D2E999203E1 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
 				7DD53B6049471FCAD45D7D25 /* Generate CMakeFiles/ZERO_CHECK */,
 			);
@@ -18,27 +30,15 @@
 			name = ZERO_CHECK;
 			productName = ZERO_CHECK;
 		};
-		2C2E6CC00BD94CA1835E62AD /* install */ = {
+		C170553A14944B729938E9E6 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 26B766551A0845FD8467259D /* Build configuration list for PBXAggregateTarget "install" */;
-			buildPhases = (
-				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
-			);
-			dependencies = (
-				DC256D9A77B94BDB90808F96 /* PBXTargetDependency */,
-			);
-			name = install;
-			productName = install;
-		};
-		8E50B0849231401AACD5F522 /* ALL_BUILD */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = A6A571CC9B9140BE9F2E3B90 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = 7C2CEAE761D34075BC4603A5 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
 				200A410B146BF73D280DBC3C /* Generate CMakeFiles/ALL_BUILD */,
 			);
 			dependencies = (
-				9D448E69DA544EE598F21F41 /* PBXTargetDependency */,
-				25165A4C68184A93BB8D3E20 /* PBXTargetDependency */,
+				DF93A1F638D84C83947504F6 /* PBXTargetDependency */,
+				667BCC48FDDB4590AF6C82DF /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
@@ -46,125 +46,125 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		080F4343E13A46ABBB2F2AA1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplMacOS.mm */ = {isa = PBXBuildFile; fileRef = 5E6F554D9EF540239480BAAB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplMacOS.mm */; };
-		083D20B69F9F4991A13C2889 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiUtils.hpp */ = {isa = PBXBuildFile; fileRef = 5A19C87E436544C29166A963 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiUtils.hpp */; };
-		09E0921325CD4B4EB32FFD30 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplDiligent.cpp */ = {isa = PBXBuildFile; fileRef = D54E15F0747B4E77856FAF72 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplDiligent.cpp */; };
-		0AB0486D7B9643E8BE6588D6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiDiligentRenderer.hpp */ = {isa = PBXBuildFile; fileRef = 76A68BDA823F4ED4A883B2BE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiDiligentRenderer.hpp */; };
-		0D3929ACB9394D748424725E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = CAEE2D4A890F4B04B1AC8A14 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/CMakeLists.txt */; };
-		1522E4C6CBC74DCDB5D92B41 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_draw.cpp */ = {isa = PBXBuildFile; fileRef = EB8D42AE990E435885B3F1E9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_draw.cpp */; };
-		1B710E0F76134DA6A1928431 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiDiligentRenderer.cpp */ = {isa = PBXBuildFile; fileRef = 416CCFCCF6F447828EC62BA7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiDiligentRenderer.cpp */; };
-		23974439112F4C95AC49354A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.mm */ = {isa = PBXBuildFile; fileRef = 121EA9F7DC014561B91B4DD3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.mm */; };
-		2609155C76994059A89C10CD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_textedit.h */ = {isa = PBXBuildFile; fileRef = 2834C6A4D8064A1C9CEEEA14 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_textedit.h */; };
-		4A3602B29D17471A9F30F525 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_internal.h */ = {isa = PBXBuildFile; fileRef = F456196AD8B24AD18C68E10E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_internal.h */; };
-		56276156BE8F46469668823F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.cpp */ = {isa = PBXBuildFile; fileRef = DEA3ACE5109E4E20BBFECC7E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.cpp */; };
-		578E8DEF84D947F5A30AD416 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.cpp */ = {isa = PBXBuildFile; fileRef = 62D22EF426A44D048EE854A7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.cpp */; };
-		61561B9D79C242CA913A667C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_tables.cpp */ = {isa = PBXBuildFile; fileRef = CD37285B673341CEBE5DC874 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_tables.cpp */; };
-		6788E7A4313B483ABB19D79A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplDiligent.hpp */ = {isa = PBXBuildFile; fileRef = FAAA4FC7DA624D2ABB928D95 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplDiligent.hpp */; };
-		B81306B93C47493E9CAA602B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.h */ = {isa = PBXBuildFile; fileRef = 5FA4F2BD589845B2AD1E7B3A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.h */; };
-		BC294102864F4F6E8BEE39EF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_widgets.cpp */ = {isa = PBXBuildFile; fileRef = 92698E462F514CF99748571F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_widgets.cpp */; };
-		C0941222B3FB4D2B90759D4F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_truetype.h */ = {isa = PBXBuildFile; fileRef = FB450486B3A04903913485A3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_truetype.h */; };
-		C1772679DE1F43BDA5C2476D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.h */ = {isa = PBXBuildFile; fileRef = D14F140D98F048EF8E318578 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.h */; };
-		C32FA882D0C448D9B55DFEA8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_rectpack.h */ = {isa = PBXBuildFile; fileRef = 05FF47E764E54312B49E134C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_rectpack.h */; };
-		CAAB51786CA84F3B96EAAFDD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.cpp */ = {isa = PBXBuildFile; fileRef = 720DB448F48E4AB0B74B75C7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.cpp */; };
-		D1DFDBD5F5714A56877D6FCD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplMacOS.hpp */ = {isa = PBXBuildFile; fileRef = EAC782AD548747A3A7FA6A3F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplMacOS.hpp */; };
-		D3E39A48F4624DF3B0EDB548 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.h */ = {isa = PBXBuildFile; fileRef = 465A3019E888440393422A54 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.h */; };
-		DE8065F60D304B13B0345602 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imconfig.h */ = {isa = PBXBuildFile; fileRef = 0D380036430B4EAC931C0C26 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imconfig.h */; };
-		F289030000EE47CEB313C242 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.h */ = {isa = PBXBuildFile; fileRef = 00B5BE8C4D4B41FC8A02772B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.h */; };
+		0CC8380754BF41CB858E3381 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplMacOS.hpp */ = {isa = PBXBuildFile; fileRef = 2113B64496F149AEA8078C1E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplMacOS.hpp */; };
+		0DA30605858745A4B30C549E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.h */ = {isa = PBXBuildFile; fileRef = 49BD9D3AB825448D856812C6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.h */; };
+		2238B0BC184F4FAEB9BF1987 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_rectpack.h */ = {isa = PBXBuildFile; fileRef = 577092C571D34BAAB3B85070 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_rectpack.h */; };
+		2D616633BCB94F39ABC47D08 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplMacOS.mm */ = {isa = PBXBuildFile; fileRef = AC48FC45C4E2426C8A51671D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplMacOS.mm */; };
+		42D2BE062E6C43569018A6BB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_internal.h */ = {isa = PBXBuildFile; fileRef = 74BB0D862E1548F89C99362C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_internal.h */; };
+		44DC45C13B814327935184AB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.h */ = {isa = PBXBuildFile; fileRef = 5B23BF023CDB49F0B009B31C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.h */; };
+		49DD3A7D523A474A83E4E299 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 4145D5481E1548ACB8A7FC1B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/CMakeLists.txt */; };
+		4D7BC050499E44D38C2764A7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.h */ = {isa = PBXBuildFile; fileRef = 53978DA2C1B94FC69FF996CD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.h */; };
+		50C67D50355C4AA285A2CE8D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplDiligent.hpp */ = {isa = PBXBuildFile; fileRef = 161E615C17254642ADEDB67F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplDiligent.hpp */; };
+		55DAADA05EA84453B7B310E0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.h */ = {isa = PBXBuildFile; fileRef = 3A49AE71EE414F64A438973A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.h */; };
+		562B1B3E09204EB3ABCECB7D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_textedit.h */ = {isa = PBXBuildFile; fileRef = A3D57A6193464046A3627B8C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_textedit.h */; };
+		588E8243076C466CBBFC1282 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.mm */ = {isa = PBXBuildFile; fileRef = 23159204677342ED9B065599 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.mm */; };
+		6E437C2FEB38408C9AF4FF23 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_truetype.h */ = {isa = PBXBuildFile; fileRef = 8F1B5E21252D4BA3AF2854B1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_truetype.h */; };
+		78DDE74C0F034EAEA18CA310 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.cpp */ = {isa = PBXBuildFile; fileRef = 25E6B9289CE844A78440175B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.cpp */; };
+		7ACE31B676394351B2866F85 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiDiligentRenderer.cpp */ = {isa = PBXBuildFile; fileRef = 3F436A6D132E442CB6F74F8E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiDiligentRenderer.cpp */; };
+		9354C130B8E3475FA5A9C9B1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_draw.cpp */ = {isa = PBXBuildFile; fileRef = 5B1CC11307DA48E5976E8F02 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_draw.cpp */; };
+		A547005EDA644BAD8D05218E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_widgets.cpp */ = {isa = PBXBuildFile; fileRef = 2311A022DA4E48ADAD997623 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_widgets.cpp */; };
+		AF413C5F43D3418DB353B0EE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.cpp */ = {isa = PBXBuildFile; fileRef = A3EC8F70F0EB49A2922D0130 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.cpp */; };
+		C1D532519439437DBBCB3F57 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiUtils.hpp */ = {isa = PBXBuildFile; fileRef = 49902770C88B48219489C0A1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiUtils.hpp */; };
+		D5281D4F2AF44F0A8CD896A2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiDiligentRenderer.hpp */ = {isa = PBXBuildFile; fileRef = D46597CAD0764EECB1D38B08 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiDiligentRenderer.hpp */; };
+		DBCBA807EED146CE957EC081 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_tables.cpp */ = {isa = PBXBuildFile; fileRef = E73F5651147C4D47BC940C33 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_tables.cpp */; };
+		E020D179C6094CB19C661FA7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplDiligent.cpp */ = {isa = PBXBuildFile; fileRef = 9B042AC036CB479CBB963762 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplDiligent.cpp */; };
+		F914F96A976C4633A12C8516 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.cpp */ = {isa = PBXBuildFile; fileRef = D0F9B7C28A4540E1914503C7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.cpp */; };
+		FF447243944B4BF8B85462AB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imconfig.h */ = {isa = PBXBuildFile; fileRef = 77EC3F5552D547868EE4A494 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imconfig.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		36A779D116034B548F3B1690 /* MinSizeRel */ = {
+		266BC28E238048369CE42062 /* MinSizeRel */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = MinSizeRel;
 		};
-		60BCA2ABB2D8465EB961A2CD /* RelWithDebInfo */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = RelWithDebInfo;
-		};
-		6A9261CA7DEC49EDA9E54F2B /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Release;
-		};
-		725C86B008564480855FB355 /* Debug */ = {
+		8D814CAC4F264664856E07D8 /* Debug */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = Debug;
 		};
+		B82414342E824C3687F221A8 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		EED609751EF24C5F8CB94BA9 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		7C1B191B6BBD4B2AABBCB18D /* PBXContainerItemProxy */ = {
+		038B1E2B20DD4129B14EA082 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 71ABF53C9C274649B64BB99D /* Project object */;
+			containerPortal = 4D90389C9470464D8CC4B820 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0CC1E13E75164C739D2D0FB4;
+			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
 			remoteInfo = ZERO_CHECK;
 		};
-		89DE7193FEB44504846D25C7 /* PBXContainerItemProxy */ = {
+		51EEA4E9C15C466D86010993 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 71ABF53C9C274649B64BB99D /* Project object */;
+			containerPortal = 4D90389C9470464D8CC4B820 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0CC1E13E75164C739D2D0FB4;
+			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
 			remoteInfo = ZERO_CHECK;
 		};
-		A874804E5D9E45C1A3CE7809 /* PBXContainerItemProxy */ = {
+		BEFE8B3AD74F4F799DFB7B71 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 71ABF53C9C274649B64BB99D /* Project object */;
+			containerPortal = 4D90389C9470464D8CC4B820 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8E50B0849231401AACD5F522;
-			remoteInfo = ALL_BUILD;
-		};
-		FCB6F924D5FC448F9D546336 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 71ABF53C9C274649B64BB99D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6158D040E76A40E392BDA784;
+			remoteGlobalIDString = E5B8969094A24A37B1B45B10;
 			remoteInfo = "Diligent-Imgui";
+		};
+		D8A1FFF0DBD343EA96CA4CF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D90389C9470464D8CC4B820 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C170553A14944B729938E9E6;
+			remoteInfo = ALL_BUILD;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00B5BE8C4D4B41FC8A02772B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imgui_stdlib.h; path = ../ThirdParty/imgui/misc/cpp/imgui_stdlib.h; sourceTree = SOURCE_ROOT; };
-		05FF47E764E54312B49E134C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_rectpack.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imstb_rectpack.h; path = ../ThirdParty/imgui/imstb_rectpack.h; sourceTree = SOURCE_ROOT; };
-		0D380036430B4EAC931C0C26 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imconfig.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imconfig.h; path = ../ThirdParty/imgui/imconfig.h; sourceTree = SOURCE_ROOT; };
-		121EA9F7DC014561B91B4DD3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = imgui_impl_osx.mm; path = ../ThirdParty/imgui/backends/imgui_impl_osx.mm; sourceTree = SOURCE_ROOT; };
-		2834C6A4D8064A1C9CEEEA14 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_textedit.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imstb_textedit.h; path = ../ThirdParty/imgui/imstb_textedit.h; sourceTree = SOURCE_ROOT; };
-		416CCFCCF6F447828EC62BA7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiDiligentRenderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ImGuiDiligentRenderer.cpp; path = src/ImGuiDiligentRenderer.cpp; sourceTree = SOURCE_ROOT; };
-		465A3019E888440393422A54 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imgui_impl_osx.h; path = ../ThirdParty/imgui/backends/imgui_impl_osx.h; sourceTree = SOURCE_ROOT; };
-		5A19C87E436544C29166A963 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiUtils.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ImGuiUtils.hpp; path = interface/ImGuiUtils.hpp; sourceTree = SOURCE_ROOT; };
-		5E6F554D9EF540239480BAAB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplMacOS.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = ImGuiImplMacOS.mm; path = src/ImGuiImplMacOS.mm; sourceTree = SOURCE_ROOT; };
-		5FA4F2BD589845B2AD1E7B3A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imGuIZMO.h; path = ../ThirdParty/imGuIZMO.quat/imGuIZMO.h; sourceTree = SOURCE_ROOT; };
-		62D22EF426A44D048EE854A7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_stdlib.cpp; path = ../ThirdParty/imgui/misc/cpp/imgui_stdlib.cpp; sourceTree = SOURCE_ROOT; };
-		720DB448F48E4AB0B74B75C7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imGuIZMO.cpp; path = ../ThirdParty/imGuIZMO.quat/imGuIZMO.cpp; sourceTree = SOURCE_ROOT; };
-		76A68BDA823F4ED4A883B2BE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiDiligentRenderer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ImGuiDiligentRenderer.hpp; path = interface/ImGuiDiligentRenderer.hpp; sourceTree = SOURCE_ROOT; };
-		92698E462F514CF99748571F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_widgets.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_widgets.cpp; path = ../ThirdParty/imgui/imgui_widgets.cpp; sourceTree = SOURCE_ROOT; };
-		A9CE5F04D09E4D65BD3C024A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		CAEE2D4A890F4B04B1AC8A14 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		CD37285B673341CEBE5DC874 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_tables.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_tables.cpp; path = ../ThirdParty/imgui/imgui_tables.cpp; sourceTree = SOURCE_ROOT; };
-		D14F140D98F048EF8E318578 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imgui.h; path = ../ThirdParty/imgui/imgui.h; sourceTree = SOURCE_ROOT; };
-		D5339CFA498A49D294330190 /* Diligent-Imgui */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libDiligent-Imgui.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D54E15F0747B4E77856FAF72 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplDiligent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ImGuiImplDiligent.cpp; path = src/ImGuiImplDiligent.cpp; sourceTree = SOURCE_ROOT; };
-		DEA3ACE5109E4E20BBFECC7E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui.cpp; path = ../ThirdParty/imgui/imgui.cpp; sourceTree = SOURCE_ROOT; };
-		EAC782AD548747A3A7FA6A3F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplMacOS.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ImGuiImplMacOS.hpp; path = interface/ImGuiImplMacOS.hpp; sourceTree = SOURCE_ROOT; };
-		EB8D42AE990E435885B3F1E9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_draw.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_draw.cpp; path = ../ThirdParty/imgui/imgui_draw.cpp; sourceTree = SOURCE_ROOT; };
-		F456196AD8B24AD18C68E10E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_internal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imgui_internal.h; path = ../ThirdParty/imgui/imgui_internal.h; sourceTree = SOURCE_ROOT; };
-		FAAA4FC7DA624D2ABB928D95 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplDiligent.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ImGuiImplDiligent.hpp; path = interface/ImGuiImplDiligent.hpp; sourceTree = SOURCE_ROOT; };
-		FB450486B3A04903913485A3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_truetype.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imstb_truetype.h; path = ../ThirdParty/imgui/imstb_truetype.h; sourceTree = SOURCE_ROOT; };
+		1397DD8D5C6E4214AEEDEC64 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		161E615C17254642ADEDB67F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplDiligent.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ImGuiImplDiligent.hpp; path = interface/ImGuiImplDiligent.hpp; sourceTree = SOURCE_ROOT; };
+		2113B64496F149AEA8078C1E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplMacOS.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ImGuiImplMacOS.hpp; path = interface/ImGuiImplMacOS.hpp; sourceTree = SOURCE_ROOT; };
+		2311A022DA4E48ADAD997623 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_widgets.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_widgets.cpp; path = ../ThirdParty/imgui/imgui_widgets.cpp; sourceTree = SOURCE_ROOT; };
+		23159204677342ED9B065599 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = imgui_impl_osx.mm; path = ../ThirdParty/imgui/backends/imgui_impl_osx.mm; sourceTree = SOURCE_ROOT; };
+		25E6B9289CE844A78440175B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui.cpp; path = ../ThirdParty/imgui/imgui.cpp; sourceTree = SOURCE_ROOT; };
+		3A49AE71EE414F64A438973A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imGuIZMO.h; path = ../ThirdParty/imGuIZMO.quat/imGuIZMO.h; sourceTree = SOURCE_ROOT; };
+		3F436A6D132E442CB6F74F8E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiDiligentRenderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ImGuiDiligentRenderer.cpp; path = src/ImGuiDiligentRenderer.cpp; sourceTree = SOURCE_ROOT; };
+		4145D5481E1548ACB8A7FC1B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		49902770C88B48219489C0A1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiUtils.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ImGuiUtils.hpp; path = interface/ImGuiUtils.hpp; sourceTree = SOURCE_ROOT; };
+		49BD9D3AB825448D856812C6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imgui.h; path = ../ThirdParty/imgui/imgui.h; sourceTree = SOURCE_ROOT; };
+		53978DA2C1B94FC69FF996CD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imgui_stdlib.h; path = ../ThirdParty/imgui/misc/cpp/imgui_stdlib.h; sourceTree = SOURCE_ROOT; };
+		577092C571D34BAAB3B85070 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_rectpack.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imstb_rectpack.h; path = ../ThirdParty/imgui/imstb_rectpack.h; sourceTree = SOURCE_ROOT; };
+		5B1CC11307DA48E5976E8F02 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_draw.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_draw.cpp; path = ../ThirdParty/imgui/imgui_draw.cpp; sourceTree = SOURCE_ROOT; };
+		5B23BF023CDB49F0B009B31C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imgui_impl_osx.h; path = ../ThirdParty/imgui/backends/imgui_impl_osx.h; sourceTree = SOURCE_ROOT; };
+		74BB0D862E1548F89C99362C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_internal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imgui_internal.h; path = ../ThirdParty/imgui/imgui_internal.h; sourceTree = SOURCE_ROOT; };
+		77EC3F5552D547868EE4A494 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imconfig.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imconfig.h; path = ../ThirdParty/imgui/imconfig.h; sourceTree = SOURCE_ROOT; };
+		8F1B5E21252D4BA3AF2854B1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_truetype.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imstb_truetype.h; path = ../ThirdParty/imgui/imstb_truetype.h; sourceTree = SOURCE_ROOT; };
+		990DAF3E317246CFAE81837A /* Diligent-Imgui */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libDiligent-Imgui.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B042AC036CB479CBB963762 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplDiligent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ImGuiImplDiligent.cpp; path = src/ImGuiImplDiligent.cpp; sourceTree = SOURCE_ROOT; };
+		A3D57A6193464046A3627B8C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_textedit.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imstb_textedit.h; path = ../ThirdParty/imgui/imstb_textedit.h; sourceTree = SOURCE_ROOT; };
+		A3EC8F70F0EB49A2922D0130 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_stdlib.cpp; path = ../ThirdParty/imgui/misc/cpp/imgui_stdlib.cpp; sourceTree = SOURCE_ROOT; };
+		AC48FC45C4E2426C8A51671D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplMacOS.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = ImGuiImplMacOS.mm; path = src/ImGuiImplMacOS.mm; sourceTree = SOURCE_ROOT; };
+		D0F9B7C28A4540E1914503C7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imGuIZMO.cpp; path = ../ThirdParty/imGuIZMO.quat/imGuIZMO.cpp; sourceTree = SOURCE_ROOT; };
+		D46597CAD0764EECB1D38B08 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiDiligentRenderer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ImGuiDiligentRenderer.hpp; path = interface/ImGuiDiligentRenderer.hpp; sourceTree = SOURCE_ROOT; };
+		E73F5651147C4D47BC940C33 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_tables.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_tables.cpp; path = ../ThirdParty/imgui/imgui_tables.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F73226E9F7C343B68DEFDEDC /* Frameworks */ = {
+		842F2E50B5AB4D8A9349EC95 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -174,138 +174,138 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		17ED19BF3F8F452CADCB4854 /* cpp */ = {
+		14D937C9E5A24B6382500439 /* dear_imgui */ = {
 			isa = PBXGroup;
 			children = (
-				62D22EF426A44D048EE854A7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.cpp */,
-				00B5BE8C4D4B41FC8A02772B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.h */,
+				3F150DF285994DECB7813C27 /* misc */,
+				7373703EA965419F8CE47B5F /* backends */,
+				77EC3F5552D547868EE4A494 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imconfig.h */,
+				25E6B9289CE844A78440175B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.cpp */,
+				49BD9D3AB825448D856812C6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.h */,
+				5B1CC11307DA48E5976E8F02 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_draw.cpp */,
+				74BB0D862E1548F89C99362C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_internal.h */,
+				E73F5651147C4D47BC940C33 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_tables.cpp */,
+				2311A022DA4E48ADAD997623 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_widgets.cpp */,
+				577092C571D34BAAB3B85070 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_rectpack.h */,
+				A3D57A6193464046A3627B8C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_textedit.h */,
+				8F1B5E21252D4BA3AF2854B1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_truetype.h */,
 			);
-			name = cpp;
+			name = dear_imgui;
 			sourceTree = "<group>";
 		};
-		36D7096E5C004277BA689B88 /* DiligentTools */ = {
+		232730A1B78D4AD4ACF40ECF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				59E1C7C0A0DE4603A5E74C07 /* Diligent-Imgui */,
-			);
-			name = DiligentTools;
-			sourceTree = "<group>";
-		};
-		44B356D4CC794C57AA0A6DFB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D5339CFA498A49D294330190 /* Diligent-Imgui */,
+				990DAF3E317246CFAE81837A /* Diligent-Imgui */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4538DD382B8F4F25852E08BE /* src */ = {
+		2DA694804FCB4199AA90816D /* imGuIZMO.quat */ = {
 			isa = PBXGroup;
 			children = (
-				416CCFCCF6F447828EC62BA7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiDiligentRenderer.cpp */,
-				D54E15F0747B4E77856FAF72 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplDiligent.cpp */,
-				5E6F554D9EF540239480BAAB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplMacOS.mm */,
+				D0F9B7C28A4540E1914503C7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.cpp */,
+				3A49AE71EE414F64A438973A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.h */,
+			);
+			name = imGuIZMO.quat;
+			sourceTree = "<group>";
+		};
+		3F150DF285994DECB7813C27 /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				5E34DF3452474196A21274B3 /* cpp */,
+			);
+			name = misc;
+			sourceTree = "<group>";
+		};
+		543B59A20D6540BA95AC82B8 /* DiligentTools */ = {
+			isa = PBXGroup;
+			children = (
+				F14E0E02F80C46BE8F9E1331 /* Diligent-Imgui */,
+			);
+			name = DiligentTools;
+			sourceTree = "<group>";
+		};
+		5DBC622DE68D445CB8BA3B1F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				3F436A6D132E442CB6F74F8E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiDiligentRenderer.cpp */,
+				9B042AC036CB479CBB963762 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplDiligent.cpp */,
+				AC48FC45C4E2426C8A51671D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplMacOS.mm */,
 			);
 			name = src;
 			sourceTree = "<group>";
 		};
-		59429BBFD6774D1491753B5F /* Frameworks */ = {
+		5E34DF3452474196A21274B3 /* cpp */ = {
+			isa = PBXGroup;
+			children = (
+				A3EC8F70F0EB49A2922D0130 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.cpp */,
+				53978DA2C1B94FC69FF996CD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.h */,
+			);
+			name = cpp;
+			sourceTree = "<group>";
+		};
+		7373703EA965419F8CE47B5F /* backends */ = {
+			isa = PBXGroup;
+			children = (
+				5B23BF023CDB49F0B009B31C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.h */,
+				23159204677342ED9B065599 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.mm */,
+			);
+			name = backends;
+			sourceTree = "<group>";
+		};
+		73959D3A66DA40F795E0C744 = {
+			isa = PBXGroup;
+			children = (
+				543B59A20D6540BA95AC82B8 /* DiligentTools */,
+				FF836D19615745BE9F7FF257 /* ALL_BUILD */,
+				232730A1B78D4AD4ACF40ECF /* Products */,
+				EC4A8B9E9B8D4D2FA74B950A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EC4A8B9E9B8D4D2FA74B950A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		59E1C7C0A0DE4603A5E74C07 /* Diligent-Imgui */ = {
+		F14E0E02F80C46BE8F9E1331 /* Diligent-Imgui */ = {
 			isa = PBXGroup;
 			children = (
-				4538DD382B8F4F25852E08BE /* src */,
-				B6BA8C07518F48B4B143F17D /* interface */,
-				AD8D5755EE4A46DFA3A34123 /* dear_imgui */,
-				B08430BD8FF04B0194176190 /* imGuIZMO.quat */,
-				CAEE2D4A890F4B04B1AC8A14 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/CMakeLists.txt */,
+				5DBC622DE68D445CB8BA3B1F /* src */,
+				FA2F9095A52641ED8593E105 /* interface */,
+				14D937C9E5A24B6382500439 /* dear_imgui */,
+				2DA694804FCB4199AA90816D /* imGuIZMO.quat */,
+				4145D5481E1548ACB8A7FC1B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/CMakeLists.txt */,
 			);
 			name = "Diligent-Imgui";
 			sourceTree = "<group>";
 		};
-		61B3EBDA116B46A4AA8B0726 /* backends */ = {
-			isa = PBXGroup;
-			children = (
-				465A3019E888440393422A54 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.h */,
-				121EA9F7DC014561B91B4DD3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.mm */,
-			);
-			name = backends;
-			sourceTree = "<group>";
-		};
-		7856DB8BB3DC42DF954BF7E3 /* misc */ = {
-			isa = PBXGroup;
-			children = (
-				17ED19BF3F8F452CADCB4854 /* cpp */,
-			);
-			name = misc;
-			sourceTree = "<group>";
-		};
-		95ECB36149724406B6D2EEC8 /* CMake Rules */ = {
+		F373BB407052421280235F66 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		AD8D5755EE4A46DFA3A34123 /* dear_imgui */ = {
+		FA2F9095A52641ED8593E105 /* interface */ = {
 			isa = PBXGroup;
 			children = (
-				7856DB8BB3DC42DF954BF7E3 /* misc */,
-				61B3EBDA116B46A4AA8B0726 /* backends */,
-				0D380036430B4EAC931C0C26 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imconfig.h */,
-				DEA3ACE5109E4E20BBFECC7E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.cpp */,
-				D14F140D98F048EF8E318578 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.h */,
-				EB8D42AE990E435885B3F1E9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_draw.cpp */,
-				F456196AD8B24AD18C68E10E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_internal.h */,
-				CD37285B673341CEBE5DC874 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_tables.cpp */,
-				92698E462F514CF99748571F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_widgets.cpp */,
-				05FF47E764E54312B49E134C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_rectpack.h */,
-				2834C6A4D8064A1C9CEEEA14 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_textedit.h */,
-				FB450486B3A04903913485A3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imstb_truetype.h */,
-			);
-			name = dear_imgui;
-			sourceTree = "<group>";
-		};
-		B08430BD8FF04B0194176190 /* imGuIZMO.quat */ = {
-			isa = PBXGroup;
-			children = (
-				720DB448F48E4AB0B74B75C7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.cpp */,
-				5FA4F2BD589845B2AD1E7B3A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.h */,
-			);
-			name = imGuIZMO.quat;
-			sourceTree = "<group>";
-		};
-		B6BA8C07518F48B4B143F17D /* interface */ = {
-			isa = PBXGroup;
-			children = (
-				76A68BDA823F4ED4A883B2BE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiDiligentRenderer.hpp */,
-				FAAA4FC7DA624D2ABB928D95 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplDiligent.hpp */,
-				EAC782AD548747A3A7FA6A3F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplMacOS.hpp */,
-				5A19C87E436544C29166A963 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiUtils.hpp */,
+				D46597CAD0764EECB1D38B08 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiDiligentRenderer.hpp */,
+				161E615C17254642ADEDB67F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplDiligent.hpp */,
+				2113B64496F149AEA8078C1E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiImplMacOS.hpp */,
+				49902770C88B48219489C0A1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface/ImGuiUtils.hpp */,
 			);
 			name = interface;
 			sourceTree = "<group>";
 		};
-		CD67353AF81844518F6734A7 = {
+		FF836D19615745BE9F7FF257 /* ALL_BUILD */ = {
 			isa = PBXGroup;
 			children = (
-				36D7096E5C004277BA689B88 /* DiligentTools */,
-				F52BD1F2B7AB4ACF824C2503 /* ALL_BUILD */,
-				44B356D4CC794C57AA0A6DFB /* Products */,
-				59429BBFD6774D1491753B5F /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		F52BD1F2B7AB4ACF824C2503 /* ALL_BUILD */ = {
-			isa = PBXGroup;
-			children = (
-				95ECB36149724406B6D2EEC8 /* CMake Rules */,
-				A9CE5F04D09E4D65BD3C024A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/CMakeLists.txt */,
+				F373BB407052421280235F66 /* CMake Rules */,
+				1397DD8D5C6E4214AEEDEC64 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/CMakeLists.txt */,
 			);
 			name = ALL_BUILD;
 			sourceTree = "<group>";
@@ -313,51 +313,51 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6158D040E76A40E392BDA784 /* Diligent-Imgui */ = {
+		E5B8969094A24A37B1B45B10 /* Diligent-Imgui */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 23B0FA8B5B6648CAB097874E /* Build configuration list for PBXNativeTarget "Diligent-Imgui" */;
+			buildConfigurationList = CFD434566BF54AD0B7612ACC /* Build configuration list for PBXNativeTarget "Diligent-Imgui" */;
 			buildPhases = (
-				740867DBBFAD4B90A2B4DE31 /* Sources */,
-				F73226E9F7C343B68DEFDEDC /* Frameworks */,
+				5B453E196912400F8C13FAA6 /* Sources */,
+				842F2E50B5AB4D8A9349EC95 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8DD8F60E2573417B88F544ED /* PBXTargetDependency */,
+				0635221AD3224E6A8DF255F8 /* PBXTargetDependency */,
 			);
 			name = "Diligent-Imgui";
 			productName = "Diligent-Imgui";
-			productReference = D5339CFA498A49D294330190 /* Diligent-Imgui */;
+			productReference = 990DAF3E317246CFAE81837A /* Diligent-Imgui */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		71ABF53C9C274649B64BB99D /* Project object */ = {
+		4D90389C9470464D8CC4B820 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1240;
 			};
-			buildConfigurationList = 4A80C3EB7B5048A7A64D5368 /* Build configuration list for PBXProject "Diligent-Imgui" */;
+			buildConfigurationList = CE040DC45BD644E7B733F6FE /* Build configuration list for PBXProject "Diligent-Imgui" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				725C86B008564480855FB355 /* Debug */,
-				6A9261CA7DEC49EDA9E54F2B /* Release */,
-				36A779D116034B548F3B1690 /* MinSizeRel */,
-				60BCA2ABB2D8465EB961A2CD /* RelWithDebInfo */,
+				8D814CAC4F264664856E07D8 /* Debug */,
+				EED609751EF24C5F8CB94BA9 /* Release */,
+				266BC28E238048369CE42062 /* MinSizeRel */,
+				B82414342E824C3687F221A8 /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = CD67353AF81844518F6734A7;
+			mainGroup = 73959D3A66DA40F795E0C744;
 			projectDirPath = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui";
 			projectRoot = "";
 			targets = (
-				8E50B0849231401AACD5F522 /* ALL_BUILD */,
-				6158D040E76A40E392BDA784 /* Diligent-Imgui */,
-				0CC1E13E75164C739D2D0FB4 /* ZERO_CHECK */,
-				2C2E6CC00BD94CA1835E62AD /* install */,
+				C170553A14944B729938E9E6 /* ALL_BUILD */,
+				E5B8969094A24A37B1B45B10 /* Diligent-Imgui */,
+				A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */,
+				4C161972DCC540808363BE2C /* install */,
 			);
 		};
 /* End PBXProject section */
@@ -508,106 +508,50 @@ exit 0";
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		740867DBBFAD4B90A2B4DE31 /* Sources */ = {
+		5B453E196912400F8C13FAA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B710E0F76134DA6A1928431 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiDiligentRenderer.cpp */,
-				09E0921325CD4B4EB32FFD30 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplDiligent.cpp */,
-				080F4343E13A46ABBB2F2AA1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplMacOS.mm */,
-				CAAB51786CA84F3B96EAAFDD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.cpp */,
-				23974439112F4C95AC49354A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.mm */,
-				56276156BE8F46469668823F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.cpp */,
-				1522E4C6CBC74DCDB5D92B41 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_draw.cpp */,
-				61561B9D79C242CA913A667C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_tables.cpp */,
-				BC294102864F4F6E8BEE39EF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_widgets.cpp */,
-				578E8DEF84D947F5A30AD416 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.cpp */,
+				7ACE31B676394351B2866F85 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiDiligentRenderer.cpp */,
+				E020D179C6094CB19C661FA7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplDiligent.cpp */,
+				2D616633BCB94F39ABC47D08 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/src/ImGuiImplMacOS.mm */,
+				F914F96A976C4633A12C8516 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imGuIZMO.quat/imGuIZMO.cpp */,
+				588E8243076C466CBBFC1282 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/backends/imgui_impl_osx.mm */,
+				78DDE74C0F034EAEA18CA310 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui.cpp */,
+				9354C130B8E3475FA5A9C9B1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_draw.cpp */,
+				DBCBA807EED146CE957EC081 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_tables.cpp */,
+				A547005EDA644BAD8D05218E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/imgui_widgets.cpp */,
+				AF413C5F43D3418DB353B0EE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/imgui/misc/cpp/imgui_stdlib.cpp */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		25165A4C68184A93BB8D3E20 /* PBXTargetDependency */ = {
+		0635221AD3224E6A8DF255F8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0CC1E13E75164C739D2D0FB4 /* ZERO_CHECK */;
-			targetProxy = 7C1B191B6BBD4B2AABBCB18D /* PBXContainerItemProxy */;
+			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
+			targetProxy = 038B1E2B20DD4129B14EA082 /* PBXContainerItemProxy */;
 		};
-		8DD8F60E2573417B88F544ED /* PBXTargetDependency */ = {
+		2DDABAAB20FB45E0AA21C396 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0CC1E13E75164C739D2D0FB4 /* ZERO_CHECK */;
-			targetProxy = 89DE7193FEB44504846D25C7 /* PBXContainerItemProxy */;
+			target = C170553A14944B729938E9E6 /* ALL_BUILD */;
+			targetProxy = D8A1FFF0DBD343EA96CA4CF9 /* PBXContainerItemProxy */;
 		};
-		9D448E69DA544EE598F21F41 /* PBXTargetDependency */ = {
+		667BCC48FDDB4590AF6C82DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6158D040E76A40E392BDA784 /* Diligent-Imgui */;
-			targetProxy = FCB6F924D5FC448F9D546336 /* PBXContainerItemProxy */;
+			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
+			targetProxy = 51EEA4E9C15C466D86010993 /* PBXContainerItemProxy */;
 		};
-		DC256D9A77B94BDB90808F96 /* PBXTargetDependency */ = {
+		DF93A1F638D84C83947504F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8E50B0849231401AACD5F522 /* ALL_BUILD */;
-			targetProxy = A874804E5D9E45C1A3CE7809 /* PBXContainerItemProxy */;
+			target = E5B8969094A24A37B1B45B10 /* Diligent-Imgui */;
+			targetProxy = BEFE8B3AD74F4F799DFB7B71 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0A75B446B8EB4EC8A045DDC4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		14FEDEECC6A74B4EB8172036 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","$(inherited)");
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
-				OTHER_LIBTOOLFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "Diligent-Imgui";
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		250106A2A4554EE39A13B4A7 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui/build";
-			};
-			name = RelWithDebInfo;
-		};
-		2CFEEE96A9B949A3936F7517 /* RelWithDebInfo */ = {
+		0895A17AC4BB47B8A97EEC22 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -625,9 +569,9 @@ exit 0";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = RelWithDebInfo;
+			name = Release;
 		};
-		35A9CFA8C80C4BA5BD18B730 /* Debug */ = {
+		14E9AA73AD464AAEAC261CE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -638,18 +582,27 @@ exit 0";
 			};
 			name = Debug;
 		};
-		36FCA60D1ED84F8FA4C6FDF0 /* Release */ = {
+		1D9848DCD6E84807A9C668E4 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui/build";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = Release;
+			name = MinSizeRel;
 		};
-		4B24E882AF5049DD9F040336 /* Debug */ = {
+		22D47FECA6CE47ADBD92BC8C /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -667,9 +620,60 @@ exit 0";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
+			name = MinSizeRel;
+		};
+		26D92D640F8044C2ACAECC64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		2C13C47FFFA1415295E4432D /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui/build";
+			};
+			name = MinSizeRel;
+		};
+		3BDF5E4E44E84770BE43190A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
 			name = Debug;
 		};
-		54051630031445369624A0BD /* MinSizeRel */ = {
+		684713085A864AD09FC7FC23 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -689,7 +693,7 @@ exit 0";
 			};
 			name = MinSizeRel;
 		};
-		5EFA47DC35B04F37B547653C /* RelWithDebInfo */ = {
+		91BB761905464F60A74329C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -701,26 +705,15 @@ exit 0";
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = ("");
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
+				PRODUCT_NAME = ZERO_CHECK;
 				SECTORDER_FLAGS = "";
 				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = RelWithDebInfo;
+			name = Debug;
 		};
-		5F6B30EF8141436AA64F3433 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui/build";
-			};
-			name = MinSizeRel;
-		};
-		83B6C1EDC8D74B1F81211A68 /* RelWithDebInfo */ = {
+		96D0CEA720C24859A99C1492 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -729,9 +722,9 @@ exit 0";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 2;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","$(inherited)");
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
 				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
@@ -745,7 +738,7 @@ exit 0";
 			};
 			name = RelWithDebInfo;
 		};
-		A018FC7ADA0B44999BDF9449 /* RelWithDebInfo */ = {
+		9CB525A7BB7D4DCC9DFC74BC /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -765,72 +758,7 @@ exit 0";
 			};
 			name = RelWithDebInfo;
 		};
-		A2644E48E9B848DB817F7F78 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		B294C8DB613943D6B0276794 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		B38771341DA449758CED0530 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,_DEBUG,DEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'",DILIGENT_DEVELOPMENT,DILIGENT_DEBUG);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","$(inherited)");
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = "   -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter '-std=c++14' ";
-				OTHER_LIBTOOLFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "Diligent-Imgui";
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		C3610829B7FB47CD8CA5367C /* MinSizeRel */ = {
+		A353D5510E5942F491DCCD05 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -848,9 +776,20 @@ exit 0";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = MinSizeRel;
+			name = Debug;
 		};
-		D53B0874A420405AB3161BAC /* Release */ = {
+		AAC937EAC1A340DF992075DB /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui/build";
+			};
+			name = RelWithDebInfo;
+		};
+		B241783EF3DD4CCCB17C9790 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -859,9 +798,9 @@ exit 0";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","$(inherited)");
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
 				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
@@ -875,7 +814,7 @@ exit 0";
 			};
 			name = Release;
 		};
-		DCCF026EB36944FEA01E19DC /* MinSizeRel */ = {
+		BAC842E19F15497E98D6079E /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -893,9 +832,9 @@ exit 0";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = MinSizeRel;
+			name = RelWithDebInfo;
 		};
-		DFB42C33F5B949699F9953A6 /* Release */ = {
+		BCFDD07A9F9D443A9B10CA3F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -915,7 +854,7 @@ exit 0";
 			};
 			name = Release;
 		};
-		E6F8A515DEB24E65A5D59891 /* Debug */ = {
+		CF09507EA8FC4F549B6BD574 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -927,7 +866,32 @@ exit 0";
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = ("");
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		D3B45366E2BE441E88350B58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,_DEBUG,DEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'",DILIGENT_DEVELOPMENT,DILIGENT_DEBUG);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "   -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter '-std=c++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "Diligent-Imgui";
 				SECTORDER_FLAGS = "";
 				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui";
 				USE_HEADERMAP = NO;
@@ -935,65 +899,101 @@ exit 0";
 			};
 			name = Debug;
 		};
+		F68ED8509FD4435085875F24 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "Diligent-Imgui";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		FCF00FFF21D54063982EAAE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui/build";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		23B0FA8B5B6648CAB097874E /* Build configuration list for PBXNativeTarget "Diligent-Imgui" */ = {
+		3216DE6F75AC4ECEA6D678E4 /* Build configuration list for PBXAggregateTarget "install" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B38771341DA449758CED0530 /* Debug */,
-				D53B0874A420405AB3161BAC /* Release */,
-				14FEDEECC6A74B4EB8172036 /* MinSizeRel */,
-				83B6C1EDC8D74B1F81211A68 /* RelWithDebInfo */,
+				A353D5510E5942F491DCCD05 /* Debug */,
+				BCFDD07A9F9D443A9B10CA3F /* Release */,
+				22D47FECA6CE47ADBD92BC8C /* MinSizeRel */,
+				9CB525A7BB7D4DCC9DFC74BC /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		26B766551A0845FD8467259D /* Build configuration list for PBXAggregateTarget "install" */ = {
+		3E3C0A882BBB4D2E999203E1 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4B24E882AF5049DD9F040336 /* Debug */,
-				DFB42C33F5B949699F9953A6 /* Release */,
-				C3610829B7FB47CD8CA5367C /* MinSizeRel */,
-				A018FC7ADA0B44999BDF9449 /* RelWithDebInfo */,
+				91BB761905464F60A74329C2 /* Debug */,
+				0895A17AC4BB47B8A97EEC22 /* Release */,
+				684713085A864AD09FC7FC23 /* MinSizeRel */,
+				CF09507EA8FC4F549B6BD574 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		3B623AE0F6744A728516D342 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		7C2CEAE761D34075BC4603A5 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A2644E48E9B848DB817F7F78 /* Debug */,
-				B294C8DB613943D6B0276794 /* Release */,
-				54051630031445369624A0BD /* MinSizeRel */,
-				2CFEEE96A9B949A3936F7517 /* RelWithDebInfo */,
+				3BDF5E4E44E84770BE43190A /* Debug */,
+				26D92D640F8044C2ACAECC64 /* Release */,
+				1D9848DCD6E84807A9C668E4 /* MinSizeRel */,
+				BAC842E19F15497E98D6079E /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		4A80C3EB7B5048A7A64D5368 /* Build configuration list for PBXProject "Diligent-Imgui" */ = {
+		CE040DC45BD644E7B733F6FE /* Build configuration list for PBXProject "Diligent-Imgui" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				35A9CFA8C80C4BA5BD18B730 /* Debug */,
-				36FCA60D1ED84F8FA4C6FDF0 /* Release */,
-				5F6B30EF8141436AA64F3433 /* MinSizeRel */,
-				250106A2A4554EE39A13B4A7 /* RelWithDebInfo */,
+				14E9AA73AD464AAEAC261CE8 /* Debug */,
+				FCF00FFF21D54063982EAAE2 /* Release */,
+				2C13C47FFFA1415295E4432D /* MinSizeRel */,
+				AAC937EAC1A340DF992075DB /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		A6A571CC9B9140BE9F2E3B90 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		CFD434566BF54AD0B7612ACC /* Build configuration list for PBXNativeTarget "Diligent-Imgui" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E6F8A515DEB24E65A5D59891 /* Debug */,
-				0A75B446B8EB4EC8A045DDC4 /* Release */,
-				DCCF026EB36944FEA01E19DC /* MinSizeRel */,
-				5EFA47DC35B04F37B547653C /* RelWithDebInfo */,
+				D3B45366E2BE441E88350B58 /* Debug */,
+				B241783EF3DD4CCCB17C9790 /* Release */,
+				F68ED8509FD4435085875F24 /* MinSizeRel */,
+				96D0CEA720C24859A99C1492 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 71ABF53C9C274649B64BB99D /* Project object */;
+	rootObject = 4D90389C9470464D8CC4B820 /* Project object */;
 }

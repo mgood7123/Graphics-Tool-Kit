@@ -20,6 +20,7 @@
     NSUInteger numberOfTouches = [array count];
     for (unsigned long i = 0; i < numberOfTouches; i++) {
         NSTouch *t = [array objectAtIndex:i];
+        NSLog(@"touch x: %g, y: %g", t.normalizedPosition.x, t.normalizedPosition.y);
         multiTouch.addTouch(
             ((NSInteger) t.identity),
             t.normalizedPosition.x,

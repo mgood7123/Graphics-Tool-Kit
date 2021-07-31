@@ -280,13 +280,13 @@ DILIGENT_NO_OPENGL:BOOL=OFF
 DILIGENT_NO_VULKAN:BOOL=TRUE
 
 //Value Computed by CMake
-Diligent-ApplePlatform_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Platforms/Apple
+Diligent-ApplePlatform_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple
 
 //Dependencies for the target
-Diligent-ApplePlatform_LIB_DEPENDS:STATIC=general;Diligent-BasicPlatform;general;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/AppKit.framework;
+Diligent-ApplePlatform_LIB_DEPENDS:STATIC=general;Diligent-BuildSettings;general;Diligent-BasicPlatform_LOG;general;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/AppKit.framework;
 
 //Value Computed by CMake
-Diligent-ApplePlatform_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Apple
+Diligent-ApplePlatform_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple
 
 //Value Computed by CMake
 Diligent-AssetLoader_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/AssetLoader
@@ -298,13 +298,13 @@ Diligent-AssetLoader_LIB_DEPENDS:STATIC=general;Diligent-Common;general;Diligent
 Diligent-AssetLoader_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/AssetLoader
 
 //Value Computed by CMake
-Diligent-BasicPlatform_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Platforms/Basic
+Diligent-BasicPlatform_LOG_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic
 
 //Dependencies for the target
-Diligent-BasicPlatform_LIB_DEPENDS:STATIC=general;Diligent-Primitives;
+Diligent-BasicPlatform_LOG_LIB_DEPENDS:STATIC=general;Diligent-BuildSettings;general;Diligent-Primitives;
 
 //Value Computed by CMake
-Diligent-BasicPlatform_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Basic
+Diligent-BasicPlatform_LOG_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic
 
 //Value Computed by CMake
 Diligent-Common_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common
@@ -373,6 +373,15 @@ Diligent-Imgui_LIB_DEPENDS:STATIC=general;Diligent-Common;general;Diligent-Graph
 Diligent-Imgui_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui
 
 //Value Computed by CMake
+Diligent-Log_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog
+
+//Dependencies for the target
+Diligent-Log_LIB_DEPENDS:STATIC=general;Diligent-Primitives;general;Diligent-TargetPlatform;
+
+//Value Computed by CMake
+Diligent-Log_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog
+
+//Value Computed by CMake
 Diligent-NativeAppBase_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/NativeApp
 
 //Dependencies for the target
@@ -382,10 +391,10 @@ Diligent-NativeAppBase_LIB_DEPENDS:STATIC=general;Diligent-Common;
 Diligent-NativeAppBase_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/NativeApp
 
 //Value Computed by CMake
-Diligent-Primitives_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Primitives
+Diligent-Primitives_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives
 
 //Value Computed by CMake
-Diligent-Primitives_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Primitives
+Diligent-Primitives_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives
 
 //Value Computed by CMake
 Diligent-ShaderTools_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/ShaderTools
@@ -472,13 +481,13 @@ MacOSBase_LIB_DEPENDS:STATIC=general;-framework OpenGL;general;DiligentAnyOpt;
 MacOSBase_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase/MacOSBase
 
 //Value Computed by CMake
-MotionEvent_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MotionEvent
+MultiTouch_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch
 
 //Dependencies for the target
-MotionEvent_LIB_DEPENDS:STATIC=general;Utils;
+MultiTouch_LIB_DEPENDS:STATIC=general;Diligent-Log;
 
 //Value Computed by CMake
-MotionEvent_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MotionEvent
+MultiTouch_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch
 
 //Include for OpenGL on OS X
 OPENGL_INCLUDE_DIR:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework
@@ -490,7 +499,7 @@ OPENGL_gl_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/
 OPENGL_glu_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework
 
 //Dependencies for the target
-ObjectBase_LIB_DEPENDS:STATIC=general;DiligentHelpers;general;TimeEngine;general;VertexEngine;general;MotionEvent;
+ObjectBase_LIB_DEPENDS:STATIC=general;DiligentHelpers;general;TimeEngine;general;VertexEngine;general;MultiTouch;
 
 //Value Computed by CMake
 Objects_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects
@@ -505,7 +514,7 @@ Objects_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Ki
 PlatformBase_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/PlatformBase
 
 //Dependencies for the target
-PlatformBase_LIB_DEPENDS:STATIC=general;MacOSBase;general;MotionEvent;
+PlatformBase_LIB_DEPENDS:STATIC=general;MacOSBase;general;MultiTouch;
 
 //Value Computed by CMake
 PlatformBase_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase
@@ -518,15 +527,6 @@ TimeEngine_LIB_DEPENDS:STATIC=general;Diligent-Common;
 
 //Value Computed by CMake
 TimeEngine_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine
-
-//Value Computed by CMake
-Utils_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Utils
-
-//Dependencies for the target
-Utils_LIB_DEPENDS:STATIC=general;Diligent-Common;
-
-//Value Computed by CMake
-Utils_SOURCE_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Utils
 
 //Value Computed by CMake
 VertexEngine_BINARY_DIR:STATIC=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine
@@ -573,11 +573,11 @@ native-lib_LIB_DEPENDS:STATIC=general;AppInstance;
 ########################
 
 //Stored Xcode object GUID
-ALL_BUILD_GUID_CMAKE:INTERNAL=8E50B0849231401AACD5F522
+ALL_BUILD_GUID_CMAKE:INTERNAL=C170553A14944B729938E9E6
 //64-bit architecture
 ARCH:INTERNAL=64
 //Stored Xcode object GUID
-AppInstance_GUID_CMAKE:INTERNAL=089B5B082310426EB8823AB1
+AppInstance_GUID_CMAKE:INTERNAL=5D5ABAC49EDC4B26A226E345
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -744,73 +744,75 @@ DEBUG_CONFIGURATIONS:INTERNAL=DEBUG
 //Diligent Core installation directory
 DILIGENT_CORE_DIR:INTERNAL=DiligentEngine/DiligentCore
 //Core libraries installation list
-DILIGENT_CORE_INSTALL_LIBS_LIST:INTERNAL=Diligent-Primitives;Diligent-BasicPlatform;Diligent-ApplePlatform;Diligent-Common;Diligent-GraphicsAccessories;Diligent-GraphicsEngine;Diligent-HLSL2GLSLConverterLib;Diligent-ShaderTools;Diligent-GraphicsEngineOpenGL-static;Diligent-GraphicsTools
+DILIGENT_CORE_INSTALL_LIBS_LIST:INTERNAL=Diligent-Common;Diligent-GraphicsAccessories;Diligent-GraphicsEngine;Diligent-HLSL2GLSLConverterLib;Diligent-ShaderTools;Diligent-GraphicsEngineOpenGL-static;Diligent-GraphicsTools
 //DiligentCore module source directory
 DILIGENT_CORE_SOURCE_DIR:INTERNAL=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore
 //Diligent tools libraries installation list
-DILIGENT_TOOLS_INSTALL_LIBS_LIST:INTERNAL=LibJpeg;LibPng;LibTiff;ZLib;Diligent-TextureLoader;Diligent-AssetLoader;Diligent-Imgui
+DILIGENT_TOOLS_INSTALL_LIBS_LIST:INTERNAL=LibJpeg;LibPng;LibTiff;ZLib;Diligent-TextureLoader;Diligent-AssetLoader;Diligent-Imgui;LibJpeg;LibPng;LibTiff;ZLib;Diligent-TextureLoader;Diligent-AssetLoader;Diligent-Imgui
 //Stored Xcode object GUID
-Diligent-ApplePlatform_GUID_CMAKE:INTERNAL=3243A818A1704F72AA37E78C
+Diligent-ApplePlatform_GUID_CMAKE:INTERNAL=76E7AB27CC7A4A1CAC5EBBEA
 //Stored Xcode object GUID
-Diligent-AssetLoader_GUID_CMAKE:INTERNAL=C24BFC2959BD419FA8EA0E2D
+Diligent-AssetLoader_GUID_CMAKE:INTERNAL=F2CDB3EFB72F4F999F67A7FC
 //Stored Xcode object GUID
-Diligent-BasicPlatform_GUID_CMAKE:INTERNAL=714341199511481EB38B3536
+Diligent-BasicPlatform_LOG_GUID_CMAKE:INTERNAL=2A283B7E212B43D08866F823
 //Stored Xcode object GUID
-Diligent-Common_GUID_CMAKE:INTERNAL=7B1ABB8CFA994C26B5B6D927
+Diligent-Common_GUID_CMAKE:INTERNAL=FFE9624675394CEABA18F53D
 //Stored Xcode object GUID
-Diligent-GraphicsAccessories_GUID_CMAKE:INTERNAL=BC90E1470F98449685C47711
+Diligent-GraphicsAccessories_GUID_CMAKE:INTERNAL=C12B91ABEF014436BC8C857A
 //Stored Xcode object GUID
-Diligent-GraphicsEngineOpenGL-shared_GUID_CMAKE:INTERNAL=B96C6AF5B59949C7ACC6D228
+Diligent-GraphicsEngineOpenGL-shared_GUID_CMAKE:INTERNAL=58627BC9102F4B3FA2538DF5
 //Stored Xcode object GUID
-Diligent-GraphicsEngineOpenGL-static_GUID_CMAKE:INTERNAL=D13C91F8B15B4D91A8688FE9
+Diligent-GraphicsEngineOpenGL-static_GUID_CMAKE:INTERNAL=C156C786A5D444118FB1176D
 //Stored Xcode object GUID
-Diligent-GraphicsEngine_GUID_CMAKE:INTERNAL=6062D9B717CE4BD9A451DE3D
+Diligent-GraphicsEngine_GUID_CMAKE:INTERNAL=A2937C7DF2AE4120A20D2AC4
 //Stored Xcode object GUID
-Diligent-GraphicsTools_GUID_CMAKE:INTERNAL=AD814EACD45145759ECB6C50
+Diligent-GraphicsTools_GUID_CMAKE:INTERNAL=06B180604CC94AE195BD4C17
 //Stored Xcode object GUID
-Diligent-HLSL2GLSLConverterLib_GUID_CMAKE:INTERNAL=2084C7630041473F81B8C00D
+Diligent-HLSL2GLSLConverterLib_GUID_CMAKE:INTERNAL=26C6CB7C727641FBA8606BD6
 //Stored Xcode object GUID
-Diligent-Imgui_GUID_CMAKE:INTERNAL=6158D040E76A40E392BDA784
+Diligent-Imgui_GUID_CMAKE:INTERNAL=E5B8969094A24A37B1B45B10
 //Stored Xcode object GUID
-Diligent-NativeAppBase_GUID_CMAKE:INTERNAL=AA8086FE37944FE280DDA874
+Diligent-Log_GUID_CMAKE:INTERNAL=A30AC4B06BE64590848FE217
 //Stored Xcode object GUID
-Diligent-Primitives_GUID_CMAKE:INTERNAL=B89A120C8645400FB507D79F
+Diligent-NativeAppBase_GUID_CMAKE:INTERNAL=4A7D37380D294F7D87AE44C7
 //Stored Xcode object GUID
-Diligent-ShaderTools_GUID_CMAKE:INTERNAL=8F37CB19D9BB412F83479AC0
+Diligent-Primitives_GUID_CMAKE:INTERNAL=F7980F00E7AB4663859DF4E1
 //Stored Xcode object GUID
-Diligent-TextureLoader_GUID_CMAKE:INTERNAL=9F845559946D45949089ED79
+Diligent-ShaderTools_GUID_CMAKE:INTERNAL=1976E6B1EC014F0B8871D789
 //Stored Xcode object GUID
-DiligentAnyOpt_GUID_CMAKE:INTERNAL=F8668A568FC54E83B8AE3AB6
+Diligent-TextureLoader_GUID_CMAKE:INTERNAL=0A66AEA610EB45A5BE5560BD
 //Stored Xcode object GUID
-DiligentCore-static_GUID_CMAKE:INTERNAL=F1458D8459D942229EAE9583
+DiligentAnyOpt_GUID_CMAKE:INTERNAL=AC53A41373344480AEE049AA
 //Stored Xcode object GUID
-DiligentHelpers_GUID_CMAKE:INTERNAL=8E702B6399344E4993103E4A
+DiligentCore-static_GUID_CMAKE:INTERNAL=100E18F2A9A248799AC47600
 //Stored Xcode object GUID
-DiligentTools-static_GUID_CMAKE:INTERNAL=E298FA22191B46EBB887EEB6
+DiligentHelpers_GUID_CMAKE:INTERNAL=07C1627CFF3040A483F3B8D6
+//Stored Xcode object GUID
+DiligentTools-static_GUID_CMAKE:INTERNAL=FE1CA037988F4E3D8586DF44
 //File2String utility
 FILE2STRING_PATH:INTERNAL=/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/BuildTools/File2Include/bin/MacOS/File2String
 //Details about finding OpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework][/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework][c ][v()]
 //Stored Xcode object GUID
-File2String_GUID_CMAKE:INTERNAL=1F1EBC9658774E50922737D5
+File2String_GUID_CMAKE:INTERNAL=4A4193DDFC5E4D308DDAE59A
 //GLES is not supported
 GLES_SUPPORTED:INTERNAL=FALSE
 //OpenGL is supported on MacOS platform
 GL_SUPPORTED:INTERNAL=TRUE
 //Stored Xcode object GUID
-HLSL2GLSLConverter_GUID_CMAKE:INTERNAL=41E9499512624E90A680B7D6
+HLSL2GLSLConverter_GUID_CMAKE:INTERNAL=76F88BF26E21406188E6F786
 //Stored Xcode object GUID
-LibJpeg_GUID_CMAKE:INTERNAL=627FF2C3050A48368D58BD3B
+LibJpeg_GUID_CMAKE:INTERNAL=9BC266DF969C4C5185C88512
 //Stored Xcode object GUID
-LibPng_GUID_CMAKE:INTERNAL=552AA59EB090491DB7536A35
+LibPng_GUID_CMAKE:INTERNAL=2B551EAE8E5C4A8A9D4D41B4
 //Stored Xcode object GUID
-LibTiff_GUID_CMAKE:INTERNAL=E9598B5108FC4E33863C406A
+LibTiff_GUID_CMAKE:INTERNAL=8A7A1452BA524BD79ABDB0E0
 //Metal is not supported
 METAL_SUPPORTED:INTERNAL=FALSE
 //Stored Xcode object GUID
-MacOSBase_GUID_CMAKE:INTERNAL=0D0FFBD669E042ADA2B54846
+MacOSBase_GUID_CMAKE:INTERNAL=D0C6F630C1FE4D2BA0678F35
 //Stored Xcode object GUID
-MotionEvent_GUID_CMAKE:INTERNAL=34A38BBD4342436D80FD9E72
+MultiTouch_GUID_CMAKE:INTERNAL=02E53C4CA1EC4334B954CB6B
 //noall_load flag
 NO_WHOLE_ARCHIVE_FLAG:INTERNAL=-Wl,-noall_load
 //ADVANCED property for variable: OPENGL_INCLUDE_DIR
@@ -820,9 +822,9 @@ OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_glu_LIBRARY
 OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
 //Stored Xcode object GUID
-ObjectBase_GUID_CMAKE:INTERNAL=1FE3675BBCCD4B1EADD03B61
+ObjectBase_GUID_CMAKE:INTERNAL=8F67D666733D4EB7946AD71D
 //Stored Xcode object GUID
-Objects_GUID_CMAKE:INTERNAL=266B6C2D642A4A3D9EFF6388
+Objects_GUID_CMAKE:INTERNAL=9F425A18C232484286281343
 PLATFORM_ANDROID:INTERNAL=FALSE
 //Apple platform (macOS, iOS, or tvOS)
 PLATFORM_APPLE:INTERNAL=TRUE
@@ -834,97 +836,95 @@ PLATFORM_TVOS:INTERNAL=FALSE
 PLATFORM_UNIVERSAL_WINDOWS:INTERNAL=FALSE
 PLATFORM_WIN32:INTERNAL=FALSE
 //Stored Xcode object GUID
-PROJECT_Diligent-ApplePlatform_GUID_CMAKE:INTERNAL=25F88230D962401FA6F66DF9
+PROJECT_Diligent-ApplePlatform_GUID_CMAKE:INTERNAL=D54D65E1D48B416A962F3A41
 //Stored Xcode object GUID
-PROJECT_Diligent-AssetLoader_GUID_CMAKE:INTERNAL=62FF7A38B4FC45CDB94B1D39
+PROJECT_Diligent-AssetLoader_GUID_CMAKE:INTERNAL=5EE7211FF18248D79B9D09BB
 //Stored Xcode object GUID
-PROJECT_Diligent-BasicPlatform_GUID_CMAKE:INTERNAL=017CB3DC206F4C3C9A8F1C22
+PROJECT_Diligent-BasicPlatform_LOG_GUID_CMAKE:INTERNAL=C828E83F1C3C4BD89FFEBC7C
 //Stored Xcode object GUID
-PROJECT_Diligent-Common_GUID_CMAKE:INTERNAL=5C9123685823459E8E19E7F8
+PROJECT_Diligent-Common_GUID_CMAKE:INTERNAL=AAE028FA2DEF4FD5BACD8086
 //Stored Xcode object GUID
-PROJECT_Diligent-GraphicsAccessories_GUID_CMAKE:INTERNAL=2E826AC6083245758444F5EF
+PROJECT_Diligent-GraphicsAccessories_GUID_CMAKE:INTERNAL=B835122AC9964304B35B8F9F
 //Stored Xcode object GUID
-PROJECT_Diligent-GraphicsEngineOpenGL_GUID_CMAKE:INTERNAL=E6EE0C62BB4B4C8BA991CCCD
+PROJECT_Diligent-GraphicsEngineOpenGL_GUID_CMAKE:INTERNAL=4EBD7F8C793F4E1C9E039593
 //Stored Xcode object GUID
-PROJECT_Diligent-GraphicsEngine_GUID_CMAKE:INTERNAL=B7F22B386C9A4E03BB238176
+PROJECT_Diligent-GraphicsEngine_GUID_CMAKE:INTERNAL=91F2F69A0B1D4271BF1F371E
 //Stored Xcode object GUID
-PROJECT_Diligent-GraphicsTools_GUID_CMAKE:INTERNAL=BACD6BD5424A4C46B0CF0895
+PROJECT_Diligent-GraphicsTools_GUID_CMAKE:INTERNAL=FA12D932A5C94B629B886197
 //Stored Xcode object GUID
-PROJECT_Diligent-HLSL2GLSLConverterLib_GUID_CMAKE:INTERNAL=013B7D9E65CD45EFBFEC0581
+PROJECT_Diligent-HLSL2GLSLConverterLib_GUID_CMAKE:INTERNAL=78AB58C5BEC44015B0C28F28
 //Stored Xcode object GUID
-PROJECT_Diligent-Imgui_GUID_CMAKE:INTERNAL=71ABF53C9C274649B64BB99D
+PROJECT_Diligent-Imgui_GUID_CMAKE:INTERNAL=4D90389C9470464D8CC4B820
 //Stored Xcode object GUID
-PROJECT_Diligent-NativeAppBase_GUID_CMAKE:INTERNAL=E2B5B33C5B1B4F4CB8A6F5D3
+PROJECT_Diligent-Log_GUID_CMAKE:INTERNAL=E9313DBEFAA649FD8CFFF6AD
 //Stored Xcode object GUID
-PROJECT_Diligent-Primitives_GUID_CMAKE:INTERNAL=1134C22D8D97450A915961D8
+PROJECT_Diligent-NativeAppBase_GUID_CMAKE:INTERNAL=A0BDF03263824E30B66F00D1
 //Stored Xcode object GUID
-PROJECT_Diligent-ShaderTools_GUID_CMAKE:INTERNAL=825ACCB30604468FA6F36FC5
+PROJECT_Diligent-Primitives_GUID_CMAKE:INTERNAL=9784A038235547E78DF15A8F
 //Stored Xcode object GUID
-PROJECT_Diligent-TextureLoader_GUID_CMAKE:INTERNAL=F5F4F2F1E1F5474F94D9700C
+PROJECT_Diligent-ShaderTools_GUID_CMAKE:INTERNAL=BE9121C148D144B2883C3EC6
 //Stored Xcode object GUID
-PROJECT_DiligentCore_GUID_CMAKE:INTERNAL=23DD9E11FC7B4C94AC1D6186
+PROJECT_Diligent-TextureLoader_GUID_CMAKE:INTERNAL=DF53BA9A2A5D4A5C8B36C52C
 //Stored Xcode object GUID
-PROJECT_DiligentHelpers_GUID_CMAKE:INTERNAL=98430544A8D34B378F15D044
+PROJECT_DiligentCore_GUID_CMAKE:INTERNAL=569FCCE97DEB4E2380950B46
 //Stored Xcode object GUID
-PROJECT_File2Include_GUID_CMAKE:INTERNAL=3964C753518341C282315563
+PROJECT_DiligentHelpers_GUID_CMAKE:INTERNAL=908888FD9490456DA51CFB9F
 //Stored Xcode object GUID
-PROJECT_HLSL2GLSLConverter_GUID_CMAKE:INTERNAL=3BD94E08C768477290F3BAFD
+PROJECT_File2Include_GUID_CMAKE:INTERNAL=4B8CA0A1C64D4E5C863B148F
 //Stored Xcode object GUID
-PROJECT_Kit_GUID_CMAKE:INTERNAL=183349AB528F4F3781C3D24D
+PROJECT_HLSL2GLSLConverter_GUID_CMAKE:INTERNAL=433C436728E64586A57BB8CB
 //Stored Xcode object GUID
-PROJECT_LibJpeg_GUID_CMAKE:INTERNAL=D172FE65688944A99001B014
+PROJECT_Kit_GUID_CMAKE:INTERNAL=04F9CCDDE391492388797167
 //Stored Xcode object GUID
-PROJECT_LibPng_GUID_CMAKE:INTERNAL=CAA74B3F04F04A18B2197FA7
+PROJECT_LibJpeg_GUID_CMAKE:INTERNAL=3FEA98AD40F14BE8833C8587
 //Stored Xcode object GUID
-PROJECT_LibTiff_GUID_CMAKE:INTERNAL=E49957D28121477C884046DC
+PROJECT_LibPng_GUID_CMAKE:INTERNAL=C24590B8DA8A47C79B9F13BB
 //Stored Xcode object GUID
-PROJECT_MacOSBase_GUID_CMAKE:INTERNAL=10DD44BB13004424A05AA5CB
+PROJECT_LibTiff_GUID_CMAKE:INTERNAL=CB0A44708FC84278B64C6F74
 //Stored Xcode object GUID
-PROJECT_MotionEvent_GUID_CMAKE:INTERNAL=406D7BDB4EB14622AE689FBE
+PROJECT_MacOSBase_GUID_CMAKE:INTERNAL=F95CCB7532A54091A0F303CB
 //Stored Xcode object GUID
-PROJECT_Objects_GUID_CMAKE:INTERNAL=97D985197F6B40E28C6DE23C
+PROJECT_MultiTouch_GUID_CMAKE:INTERNAL=7E95B2CA6FB346F580773E26
 //Stored Xcode object GUID
-PROJECT_PlatformBase_GUID_CMAKE:INTERNAL=E3EDC6AB5A0F4532B71F21A3
+PROJECT_Objects_GUID_CMAKE:INTERNAL=2665452C6A75440E8E4861D2
 //Stored Xcode object GUID
-PROJECT_TimeEngine_GUID_CMAKE:INTERNAL=25415CF44C2F4786BCC0307B
+PROJECT_PlatformBase_GUID_CMAKE:INTERNAL=486BB014189646599449560F
 //Stored Xcode object GUID
-PROJECT_Utils_GUID_CMAKE:INTERNAL=47B829CFEEF74389814EBC87
+PROJECT_TimeEngine_GUID_CMAKE:INTERNAL=3598F902F9DE46DFA8E2BC8C
 //Stored Xcode object GUID
-PROJECT_VertexEngine_GUID_CMAKE:INTERNAL=9ECBBD005253438DBB436D7D
+PROJECT_VertexEngine_GUID_CMAKE:INTERNAL=374B98913F9D4810A71C042C
 //Stored Xcode object GUID
-PROJECT_Views_GUID_CMAKE:INTERNAL=146C072415934E3B95EEC6DD
+PROJECT_Views_GUID_CMAKE:INTERNAL=26DD5CC84C944427A6F5DCC1
 //Stored Xcode object GUID
-PROJECT_ZLib_GUID_CMAKE:INTERNAL=1E9910107E6147F2B7036463
+PROJECT_ZLib_GUID_CMAKE:INTERNAL=321CEF2E4FAB47029EC6AF2F
 //Stored Xcode object GUID
-PROJECT_glew-static_GUID_CMAKE:INTERNAL=815799C55BCF453D824E61B8
+PROJECT_glew-static_GUID_CMAKE:INTERNAL=F24DFFB35CFC4BD69B339A62
 //Stored Xcode object GUID
-PlatformBase_GUID_CMAKE:INTERNAL=62654C45EEB84CB28E5785A5
+PlatformBase_GUID_CMAKE:INTERNAL=0963CBB1763D49DB8FCD1BB1
 //Release configurations
 RELEASE_CONFIGURATIONS:INTERNAL=RELEASE;RELWITHDEBINFO;MINSIZEREL
 //Stored Xcode object GUID
-TimeEngine_GUID_CMAKE:INTERNAL=9BFADD9C22B94CE587D444A6
-//Stored Xcode object GUID
-Utils_GUID_CMAKE:INTERNAL=9D34E9B5A472450792CE142F
+TimeEngine_GUID_CMAKE:INTERNAL=ECB98E6C788243AF93A26BC5
 //Vulkan backend is forcibly disabled
 VULKAN_SUPPORTED:INTERNAL=FALSE
 //Stored Xcode object GUID
-VertexEngine_GUID_CMAKE:INTERNAL=A7A74892024B4306B4034E72
+VertexEngine_GUID_CMAKE:INTERNAL=ACB38682414B445B8A642CC2
 //Stored Xcode object GUID
-Views_GUID_CMAKE:INTERNAL=809CAECCD1D3438E85798A4E
+Views_GUID_CMAKE:INTERNAL=FAC505A258C24509AC1E581C
 //all_load flag
 WHOLE_ARCHIVE_FLAG:INTERNAL=-Wl,-all_load
 //Stored Xcode object GUID
-WINAPIKERNEL_GUID_CMAKE:INTERNAL=39D7D190526547FBA82BA0BF
+WINAPIKERNEL_GUID_CMAKE:INTERNAL=8CE2045051AA4BE6A954D554
 //Stored Xcode object GUID
-ZERO_CHECK_GUID_CMAKE:INTERNAL=0CC1E13E75164C739D2D0FB4
+ZERO_CHECK_GUID_CMAKE:INTERNAL=A5FD1883C18C4AD982DE3EF9
 //Stored Xcode object GUID
-ZLib_GUID_CMAKE:INTERNAL=AB55DDADF17B48F6BF8A0225
+ZLib_GUID_CMAKE:INTERNAL=3076B0E83F4E420B8875C9AC
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 //Stored Xcode object GUID
-glew-static_GUID_CMAKE:INTERNAL=D7800FDF428746AFAC4A71DA
+glew-static_GUID_CMAKE:INTERNAL=F5297B1FBBE348CFB39DFC63
 //Stored Xcode object GUID
-install_GUID_CMAKE:INTERNAL=2C2E6CC00BD94CA1835E62AD
+install_GUID_CMAKE:INTERNAL=4C161972DCC540808363BE2C
 //Stored Xcode object GUID
-native-lib_GUID_CMAKE:INTERNAL=94162C55E2F1404A92C781A7
+native-lib_GUID_CMAKE:INTERNAL=7C616ACF945D4202AA5808F4
 

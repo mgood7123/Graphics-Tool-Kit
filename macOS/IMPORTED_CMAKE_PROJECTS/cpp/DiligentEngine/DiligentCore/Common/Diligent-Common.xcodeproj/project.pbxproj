@@ -7,9 +7,21 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		0CC1E13E75164C739D2D0FB4 /* ZERO_CHECK */ = {
+		4C161972DCC540808363BE2C /* install */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 453C14A3ADA2441DAC428611 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = AFC18B4373724FEC9F50D8B6 /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				5BC1F7190E0B43E1BB0E6659 /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+		A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1BC89D3C427A4DE68C642EF6 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
 				C1D4F2AFA3857BFA563A6C62 /* Generate CMakeFiles/ZERO_CHECK */,
 			);
@@ -18,27 +30,15 @@
 			name = ZERO_CHECK;
 			productName = ZERO_CHECK;
 		};
-		2C2E6CC00BD94CA1835E62AD /* install */ = {
+		C170553A14944B729938E9E6 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = DA3503A7012C4AA8A3FE39FB /* Build configuration list for PBXAggregateTarget "install" */;
-			buildPhases = (
-				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
-			);
-			dependencies = (
-				0422EC85BF594562BB48C016 /* PBXTargetDependency */,
-			);
-			name = install;
-			productName = install;
-		};
-		8E50B0849231401AACD5F522 /* ALL_BUILD */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 62C461B21C524A93AF483E7A /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = B69D4101095441DEBC255116 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
 				34EAEFB40E17FCDD6B209A2D /* Generate CMakeFiles/ALL_BUILD */,
 			);
 			dependencies = (
-				D3B19646755C4D3E80EA5C1E /* PBXTargetDependency */,
-				385AC320D4034F59BBAF6EB2 /* PBXTargetDependency */,
+				62D9DDFDEAD846A4AFA8C64B /* PBXTargetDependency */,
+				924D8E281AC04B97AEEF0BBF /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
@@ -46,67 +46,67 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		091B2B54394142B1B55E9E94 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicMath.hpp */ = {isa = PBXBuildFile; fileRef = BA6EF035099940B8B9BAF681 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicMath.hpp */; };
-		159248206546413590C5B330 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ObjectBase.hpp */ = {isa = PBXBuildFile; fileRef = 7459DE0F50A84BEE9B8CD31E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ObjectBase.hpp */; };
-		15A5196449E1443698A7D893 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/HashUtils.hpp */ = {isa = PBXBuildFile; fileRef = 45297E3B82E34B1FB12F92A9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/HashUtils.hpp */; };
-		168817E779E74927AB26062A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedLinearAllocator.hpp */ = {isa = PBXBuildFile; fileRef = 59D69A43FFBA4D9A8B87DB9B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedLinearAllocator.hpp */; };
-		1A4B13B9A5BE4B1E9169CBBB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FilteringTools.hpp */ = {isa = PBXBuildFile; fileRef = ECCE61D1557E4EDFA3925655 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FilteringTools.hpp */; };
-		1D16D16F558045E792BD3465 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DefaultRawMemoryAllocator.hpp */ = {isa = PBXBuildFile; fileRef = 244B5CED53374B3AA757832E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DefaultRawMemoryAllocator.hpp */; };
-		22535CE87E7640DA8EBED12A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringPool.hpp */ = {isa = PBXBuildFile; fileRef = E80272D70C3F4195823B7275 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringPool.hpp */; };
-		364E1438625144F4B0462B30 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/UniqueIdentifier.hpp */ = {isa = PBXBuildFile; fileRef = 49A33FBDC14D478B9B6A40A7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/UniqueIdentifier.hpp */; };
-		3A6E3F3290944A9B83F5C031 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedBlockMemoryAllocator.hpp */ = {isa = PBXBuildFile; fileRef = 4BDA0996051549708757C495 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedBlockMemoryAllocator.hpp */; };
-		3B5FFB21100440E28791EA67 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringTools.hpp */ = {isa = PBXBuildFile; fileRef = A8D6AB0965D648C98C7836C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringTools.hpp */; };
-		3D974398079F4B2980E93ED9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringDataBlobImpl.hpp */ = {isa = PBXBuildFile; fileRef = C04FE3116BF947AD9EA9C0DB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringDataBlobImpl.hpp */; };
-		4676391B1B084ECFAFE85FE5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/MemoryFileStream.hpp */ = {isa = PBXBuildFile; fileRef = 8158FB57590C4DFABFCF3227 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/MemoryFileStream.hpp */; };
-		47E6852AA1BA4C739F3CDC6E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DefaultRawMemoryAllocator.cpp */ = {isa = PBXBuildFile; fileRef = 34BFA42BA85A460487939B55 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DefaultRawMemoryAllocator.cpp */; };
-		491DE2BD5CB046C39DEA5F59 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/LockHelper.cpp */ = {isa = PBXBuildFile; fileRef = 259CFB4351AD4F9387522015 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/LockHelper.cpp */; };
-		5306A4B645D942E085D4576D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FastRand.hpp */ = {isa = PBXBuildFile; fileRef = CC69D637B49949E0BD835F85 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FastRand.hpp */; };
-		5C54F589D8BC481787B34ACE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DataBlobImpl.cpp */ = {isa = PBXBuildFile; fileRef = 71E2B251C12E4A0BBB7DD288 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DataBlobImpl.cpp */; };
-		5CE4E05059C645BFADD99D37 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicFileStream.hpp */ = {isa = PBXBuildFile; fileRef = 1E3B4291C9C648BB949F2597 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicFileStream.hpp */; };
-		60629D0C72A84B9E85F5B36B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/FixedBlockMemoryAllocator.cpp */ = {isa = PBXBuildFile; fileRef = EF5BAEA2D121426A89803D39 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/FixedBlockMemoryAllocator.cpp */; };
-		65827A50DCEC4D8DBD15728D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/Timer.cpp */ = {isa = PBXBuildFile; fileRef = A8CE20128E974FAB9460D97E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/Timer.cpp */; };
-		7DF492B7588748D4A16296F4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ValidatedCast.hpp */ = {isa = PBXBuildFile; fileRef = C6E5796DA198486EA9C6E5D7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ValidatedCast.hpp */; };
-		8081A709CE9D47C9877ACA1A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/LockHelper.hpp */ = {isa = PBXBuildFile; fileRef = 369AA74EFDDB4CC8B8C9FD7F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/LockHelper.hpp */; };
-		840AA7D4BACC41128A9D3EB2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Align.hpp */ = {isa = PBXBuildFile; fileRef = 601E7120BD354403A59AB902 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Align.hpp */; };
-		9249DBEB8943420EBF4CA3D2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/CompilerDefinitions.h */ = {isa = PBXBuildFile; fileRef = 01611EE559ED4EBBAF572936 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/CompilerDefinitions.h */; };
-		94FDDF04BFF84AB08BE03E37 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCntAutoPtr.hpp */ = {isa = PBXBuildFile; fileRef = 7D8F49CF21D545AD9149D6E0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCntAutoPtr.hpp */; };
-		9DC211472AB84A65897FA988 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/AdvancedMath.hpp */ = {isa = PBXBuildFile; fileRef = D30EBDD493314912BBCD976D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/AdvancedMath.hpp */; };
-		9DE24874E4A44546B7DA942E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include/pch.h */ = {isa = PBXBuildFile; fileRef = 437C85E364D54DE6879EE8C6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include/pch.h */; };
-		A50E6DF32B9547C6883E764D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/STDAllocator.hpp */ = {isa = PBXBuildFile; fileRef = 0E8BF8C2FBC6432483AF7C91 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/STDAllocator.hpp */; };
-		A795DD8EE73548EB84B3164E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ThreadSignal.hpp */ = {isa = PBXBuildFile; fileRef = DF424D97973E470EB106CA38 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ThreadSignal.hpp */; };
-		AB29F55058BE43AE85E16E71 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = DA5F3C3C704B48A08CFC0900 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/CMakeLists.txt */; };
-		BDA55359494F4663AB1EE597 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/MemoryFileStream.cpp */ = {isa = PBXBuildFile; fileRef = D7F1F7B3A57344E4A7B6863A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/MemoryFileStream.cpp */; };
-		D5C1CA57DD384C3DB26A0E9F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/BasicFileStream.cpp */ = {isa = PBXBuildFile; fileRef = F7B33105CA4B40A088B49545 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/BasicFileStream.cpp */; };
-		D68406364B1C4801936F494F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FileWrapper.hpp */ = {isa = PBXBuildFile; fileRef = 3B3667A89FE944E8AC1FFB92 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FileWrapper.hpp */; };
-		E3BC483AEF564F5F824F41D9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DataBlobImpl.hpp */ = {isa = PBXBuildFile; fileRef = C0A4CB33F3594C808A5D8942 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DataBlobImpl.hpp */; };
-		FCAB10D1A8684B3EBA379780 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Timer.hpp */ = {isa = PBXBuildFile; fileRef = 1880BD39FEBE4D3C993C41D3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Timer.hpp */; };
-		FF509DD6F21241E89458FFAC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DynamicLinearAllocator.hpp */ = {isa = PBXBuildFile; fileRef = BAE67F7CDBC74C019E83427E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DynamicLinearAllocator.hpp */; };
-		FFBC9BD2AA7F45EDB935A0C5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCountedObjectImpl.hpp */ = {isa = PBXBuildFile; fileRef = 4A3F9DBC67BC40859C337D01 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCountedObjectImpl.hpp */; };
+		0B0230EEF0B74E58AF0DC71B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringTools.hpp */ = {isa = PBXBuildFile; fileRef = FA451B7C8C7E4381AC1B54E4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringTools.hpp */; };
+		0D3F9DEDE18B460597C3ABD8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include/pch.h */ = {isa = PBXBuildFile; fileRef = 2C20FC0D8296465DA9486974 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include/pch.h */; };
+		1D4A5E11F55440378368F473 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/MemoryFileStream.hpp */ = {isa = PBXBuildFile; fileRef = 16BDCDA01D814C09942586B0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/MemoryFileStream.hpp */; };
+		241CB149A7754A01989D6332 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/LockHelper.cpp */ = {isa = PBXBuildFile; fileRef = 07B38C0E578F4EEE802EC877 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/LockHelper.cpp */; };
+		2442B8918E0A4407A8CBA36F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FastRand.hpp */ = {isa = PBXBuildFile; fileRef = 866976FA07AE40DFA4341252 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FastRand.hpp */; };
+		25A51B6AC1EB42F1AFAB67AB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCntAutoPtr.hpp */ = {isa = PBXBuildFile; fileRef = 25FB89F5AB814548A9B03F2B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCntAutoPtr.hpp */; };
+		2C8165E88C694D8B8D648D16 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/HashUtils.hpp */ = {isa = PBXBuildFile; fileRef = 1430152C87624B0C90FA90BA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/HashUtils.hpp */; };
+		365CB3CE6295401AB53A8F7C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DefaultRawMemoryAllocator.hpp */ = {isa = PBXBuildFile; fileRef = 7E5ACFEC9A3345048DEB0B43 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DefaultRawMemoryAllocator.hpp */; };
+		3C8955980EB5455C8E06628C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/LockHelper.hpp */ = {isa = PBXBuildFile; fileRef = C76742DA84B84AE8A48C6733 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/LockHelper.hpp */; };
+		42C67E90AF024523B9056961 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/MemoryFileStream.cpp */ = {isa = PBXBuildFile; fileRef = EAAD860B22A941A3850358C9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/MemoryFileStream.cpp */; };
+		60FF863F43644B459749E519 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/CompilerDefinitions.h */ = {isa = PBXBuildFile; fileRef = D29F7FBC11894B7F9E69BD09 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/CompilerDefinitions.h */; };
+		64ED61E68E334FCA9FB8E2D1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/AdvancedMath.hpp */ = {isa = PBXBuildFile; fileRef = 2D0A38E9E85949DF88CAB235 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/AdvancedMath.hpp */; };
+		6DEA1EACE4974AA28CE7CDEA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/FixedBlockMemoryAllocator.cpp */ = {isa = PBXBuildFile; fileRef = 8E7CC7FE11FA40E49CFC6ECD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/FixedBlockMemoryAllocator.cpp */; };
+		7219521A2A2F4E32A57041E6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicMath.hpp */ = {isa = PBXBuildFile; fileRef = B6820CEB5D154270B6492D0F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicMath.hpp */; };
+		7FC9E1E510114198BD9B81C6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringDataBlobImpl.hpp */ = {isa = PBXBuildFile; fileRef = DF8B73CA61644EA18291384C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringDataBlobImpl.hpp */; };
+		812ECFC1480E41E9AF9A9F7A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DataBlobImpl.hpp */ = {isa = PBXBuildFile; fileRef = 6EC2FB74D38B4722AE3F80D7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DataBlobImpl.hpp */; };
+		8190DDA620234C13AF1328D9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Align.hpp */ = {isa = PBXBuildFile; fileRef = 5727155ECCB8454AA560291E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Align.hpp */; };
+		8716913FEE814DB1BFBBDF9A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = C9BB90D9EDC048EB8F82A8BF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/CMakeLists.txt */; };
+		89D554C1D8734095A67C5AEF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DefaultRawMemoryAllocator.cpp */ = {isa = PBXBuildFile; fileRef = D7F26F0056184AA3B5373CDF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DefaultRawMemoryAllocator.cpp */; };
+		8BD4193104A9407D8EE12384 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicFileStream.hpp */ = {isa = PBXBuildFile; fileRef = 18362CEDEB1E433D9803F507 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicFileStream.hpp */; };
+		8CC8CF14F3A648D58CF85AB1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/UniqueIdentifier.hpp */ = {isa = PBXBuildFile; fileRef = 5CC450ADDDA54BF1A86F401A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/UniqueIdentifier.hpp */; };
+		91D71671832E4672A3207897 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Timer.hpp */ = {isa = PBXBuildFile; fileRef = 1B4BA509B8824E6AA0974EDE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Timer.hpp */; };
+		92B1BF58223B43738B4D9A76 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ValidatedCast.hpp */ = {isa = PBXBuildFile; fileRef = 79B00A90382E499A9D619F9B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ValidatedCast.hpp */; };
+		9368D0ACC6124C5A855B242B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringPool.hpp */ = {isa = PBXBuildFile; fileRef = 680D2401541246B38220DEBE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringPool.hpp */; };
+		987A42D604064DFF947CC60A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/BasicFileStream.cpp */ = {isa = PBXBuildFile; fileRef = 5539A0BD77AB424EB41253A8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/BasicFileStream.cpp */; };
+		98EFCC51AC644B09AA4E1301 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/STDAllocator.hpp */ = {isa = PBXBuildFile; fileRef = 68AAC3BDC7DA424B8209C569 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/STDAllocator.hpp */; };
+		9C108BB1F72942028BAD223C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DataBlobImpl.cpp */ = {isa = PBXBuildFile; fileRef = 32521C95B02740FAA3D5E10B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DataBlobImpl.cpp */; };
+		9D9E7AAEFCCE4594951EBCC9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FilteringTools.hpp */ = {isa = PBXBuildFile; fileRef = D2A30BA6996D4E53A17029F7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FilteringTools.hpp */; };
+		B3C0656C67A44E2B8E48626B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedBlockMemoryAllocator.hpp */ = {isa = PBXBuildFile; fileRef = 3B6E1A17B7F0478782B22AC2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedBlockMemoryAllocator.hpp */; };
+		BC38233211F2421091510AC1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DynamicLinearAllocator.hpp */ = {isa = PBXBuildFile; fileRef = 9468DDFF89D141BCB7CFFE5C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DynamicLinearAllocator.hpp */; };
+		C6BE092A451F4F52A453015A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCountedObjectImpl.hpp */ = {isa = PBXBuildFile; fileRef = F42DF29BEC4B46DB8F9D0C6B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCountedObjectImpl.hpp */; };
+		CAFC4FDB9C0E49608DA89C58 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FileWrapper.hpp */ = {isa = PBXBuildFile; fileRef = 645025699B6B4E3CBCCD713F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FileWrapper.hpp */; };
+		D142476721B94F7AA5ADC8AC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ObjectBase.hpp */ = {isa = PBXBuildFile; fileRef = 236D7EABA1E349129DC10DC4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ObjectBase.hpp */; };
+		E18F54E8AE88467CBEAE5829 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/Timer.cpp */ = {isa = PBXBuildFile; fileRef = F245266D4E6C4806AF0EF639 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/Timer.cpp */; };
+		ECE071C48F0C4067A7A332CC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedLinearAllocator.hpp */ = {isa = PBXBuildFile; fileRef = 8286570DF28F42AA82833F87 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedLinearAllocator.hpp */; };
+		FE115E9F69E1413DBACCCB87 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ThreadSignal.hpp */ = {isa = PBXBuildFile; fileRef = B07DA1607EE249C49F744AC6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ThreadSignal.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		1A11AE53D4CA4FCAA01C2EFC /* MinSizeRel */ = {
+		1F0099DA93B64B45BE0FE9AD /* MinSizeRel */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = MinSizeRel;
 		};
-		7AF234AA4C784806AF98EDDD /* Debug */ = {
+		3399007C9E8A4170A340ADD0 /* Debug */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = Debug;
 		};
-		8CCF4E50CC7C4426BFE69659 /* RelWithDebInfo */ = {
+		33D79E15BD8E4DA6AB4D07AF /* RelWithDebInfo */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = RelWithDebInfo;
 		};
-		EE19132D60E249B9941AC251 /* Release */ = {
+		479B0F3218C4487A99A7E083 /* Release */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
@@ -116,79 +116,79 @@
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		0F5A6140A4BD4729A46EAA67 /* PBXContainerItemProxy */ = {
+		1847950E7AA742C5AC3CE526 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5C9123685823459E8E19E7F8 /* Project object */;
+			containerPortal = AAE028FA2DEF4FD5BACD8086 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0CC1E13E75164C739D2D0FB4;
-			remoteInfo = ZERO_CHECK;
-		};
-		25ABECE759DC473F907B8D89 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5C9123685823459E8E19E7F8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8E50B0849231401AACD5F522;
+			remoteGlobalIDString = C170553A14944B729938E9E6;
 			remoteInfo = ALL_BUILD;
 		};
-		90E2EC55FA494472B8146726 /* PBXContainerItemProxy */ = {
+		43295B703BC942349BC1E034 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5C9123685823459E8E19E7F8 /* Project object */;
+			containerPortal = AAE028FA2DEF4FD5BACD8086 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7B1ABB8CFA994C26B5B6D927;
-			remoteInfo = "Diligent-Common";
-		};
-		918F5E15D501417C87A57510 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5C9123685823459E8E19E7F8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0CC1E13E75164C739D2D0FB4;
+			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
 			remoteInfo = ZERO_CHECK;
+		};
+		56F32F14D5734AAD94FF5F58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAE028FA2DEF4FD5BACD8086 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
+			remoteInfo = ZERO_CHECK;
+		};
+		A39CACF612E443ABAD3AD3AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAE028FA2DEF4FD5BACD8086 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFE9624675394CEABA18F53D;
+			remoteInfo = "Diligent-Common";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01611EE559ED4EBBAF572936 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/CompilerDefinitions.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = CompilerDefinitions.h; path = interface/CompilerDefinitions.h; sourceTree = SOURCE_ROOT; };
-		0E8BF8C2FBC6432483AF7C91 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/STDAllocator.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = STDAllocator.hpp; path = interface/STDAllocator.hpp; sourceTree = SOURCE_ROOT; };
-		14DB1215EE5046409D8AC415 /* Diligent-Common */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libDiligent-Common.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1880BD39FEBE4D3C993C41D3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Timer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Timer.hpp; path = interface/Timer.hpp; sourceTree = SOURCE_ROOT; };
-		1E3B4291C9C648BB949F2597 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicFileStream.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BasicFileStream.hpp; path = interface/BasicFileStream.hpp; sourceTree = SOURCE_ROOT; };
-		244B5CED53374B3AA757832E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DefaultRawMemoryAllocator.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DefaultRawMemoryAllocator.hpp; path = interface/DefaultRawMemoryAllocator.hpp; sourceTree = SOURCE_ROOT; };
-		259CFB4351AD4F9387522015 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/LockHelper.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = LockHelper.cpp; path = src/LockHelper.cpp; sourceTree = SOURCE_ROOT; };
-		34BFA42BA85A460487939B55 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DefaultRawMemoryAllocator.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DefaultRawMemoryAllocator.cpp; path = src/DefaultRawMemoryAllocator.cpp; sourceTree = SOURCE_ROOT; };
-		369AA74EFDDB4CC8B8C9FD7F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/LockHelper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = LockHelper.hpp; path = interface/LockHelper.hpp; sourceTree = SOURCE_ROOT; };
-		38D38FAC75E34920A8111EE8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		3B3667A89FE944E8AC1FFB92 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FileWrapper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FileWrapper.hpp; path = interface/FileWrapper.hpp; sourceTree = SOURCE_ROOT; };
-		437C85E364D54DE6879EE8C6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include/pch.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = pch.h; path = include/pch.h; sourceTree = SOURCE_ROOT; };
-		45297E3B82E34B1FB12F92A9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/HashUtils.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = HashUtils.hpp; path = interface/HashUtils.hpp; sourceTree = SOURCE_ROOT; };
-		49A33FBDC14D478B9B6A40A7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/UniqueIdentifier.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = UniqueIdentifier.hpp; path = interface/UniqueIdentifier.hpp; sourceTree = SOURCE_ROOT; };
-		4A3F9DBC67BC40859C337D01 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCountedObjectImpl.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = RefCountedObjectImpl.hpp; path = interface/RefCountedObjectImpl.hpp; sourceTree = SOURCE_ROOT; };
-		4BDA0996051549708757C495 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedBlockMemoryAllocator.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FixedBlockMemoryAllocator.hpp; path = interface/FixedBlockMemoryAllocator.hpp; sourceTree = SOURCE_ROOT; };
-		59D69A43FFBA4D9A8B87DB9B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedLinearAllocator.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FixedLinearAllocator.hpp; path = interface/FixedLinearAllocator.hpp; sourceTree = SOURCE_ROOT; };
-		601E7120BD354403A59AB902 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Align.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Align.hpp; path = interface/Align.hpp; sourceTree = SOURCE_ROOT; };
-		71E2B251C12E4A0BBB7DD288 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DataBlobImpl.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DataBlobImpl.cpp; path = src/DataBlobImpl.cpp; sourceTree = SOURCE_ROOT; };
-		7459DE0F50A84BEE9B8CD31E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ObjectBase.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ObjectBase.hpp; path = interface/ObjectBase.hpp; sourceTree = SOURCE_ROOT; };
-		7D8F49CF21D545AD9149D6E0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCntAutoPtr.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = RefCntAutoPtr.hpp; path = interface/RefCntAutoPtr.hpp; sourceTree = SOURCE_ROOT; };
-		8158FB57590C4DFABFCF3227 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/MemoryFileStream.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = MemoryFileStream.hpp; path = interface/MemoryFileStream.hpp; sourceTree = SOURCE_ROOT; };
-		A8CE20128E974FAB9460D97E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/Timer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Timer.cpp; path = src/Timer.cpp; sourceTree = SOURCE_ROOT; };
-		A8D6AB0965D648C98C7836C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringTools.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = StringTools.hpp; path = interface/StringTools.hpp; sourceTree = SOURCE_ROOT; };
-		BA6EF035099940B8B9BAF681 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicMath.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BasicMath.hpp; path = interface/BasicMath.hpp; sourceTree = SOURCE_ROOT; };
-		BAE67F7CDBC74C019E83427E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DynamicLinearAllocator.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DynamicLinearAllocator.hpp; path = interface/DynamicLinearAllocator.hpp; sourceTree = SOURCE_ROOT; };
-		C04FE3116BF947AD9EA9C0DB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringDataBlobImpl.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = StringDataBlobImpl.hpp; path = interface/StringDataBlobImpl.hpp; sourceTree = SOURCE_ROOT; };
-		C0A4CB33F3594C808A5D8942 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DataBlobImpl.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DataBlobImpl.hpp; path = interface/DataBlobImpl.hpp; sourceTree = SOURCE_ROOT; };
-		C6E5796DA198486EA9C6E5D7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ValidatedCast.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ValidatedCast.hpp; path = interface/ValidatedCast.hpp; sourceTree = SOURCE_ROOT; };
-		CC69D637B49949E0BD835F85 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FastRand.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FastRand.hpp; path = interface/FastRand.hpp; sourceTree = SOURCE_ROOT; };
-		D30EBDD493314912BBCD976D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/AdvancedMath.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = AdvancedMath.hpp; path = interface/AdvancedMath.hpp; sourceTree = SOURCE_ROOT; };
-		D7F1F7B3A57344E4A7B6863A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/MemoryFileStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MemoryFileStream.cpp; path = src/MemoryFileStream.cpp; sourceTree = SOURCE_ROOT; };
-		DA5F3C3C704B48A08CFC0900 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		DF424D97973E470EB106CA38 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ThreadSignal.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ThreadSignal.hpp; path = interface/ThreadSignal.hpp; sourceTree = SOURCE_ROOT; };
-		E80272D70C3F4195823B7275 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringPool.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = StringPool.hpp; path = interface/StringPool.hpp; sourceTree = SOURCE_ROOT; };
-		ECCE61D1557E4EDFA3925655 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FilteringTools.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FilteringTools.hpp; path = interface/FilteringTools.hpp; sourceTree = SOURCE_ROOT; };
-		EF5BAEA2D121426A89803D39 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/FixedBlockMemoryAllocator.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FixedBlockMemoryAllocator.cpp; path = src/FixedBlockMemoryAllocator.cpp; sourceTree = SOURCE_ROOT; };
-		F7B33105CA4B40A088B49545 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/BasicFileStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = BasicFileStream.cpp; path = src/BasicFileStream.cpp; sourceTree = SOURCE_ROOT; };
+		07B38C0E578F4EEE802EC877 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/LockHelper.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = LockHelper.cpp; path = src/LockHelper.cpp; sourceTree = SOURCE_ROOT; };
+		1430152C87624B0C90FA90BA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/HashUtils.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = HashUtils.hpp; path = interface/HashUtils.hpp; sourceTree = SOURCE_ROOT; };
+		16BDCDA01D814C09942586B0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/MemoryFileStream.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = MemoryFileStream.hpp; path = interface/MemoryFileStream.hpp; sourceTree = SOURCE_ROOT; };
+		18362CEDEB1E433D9803F507 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicFileStream.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BasicFileStream.hpp; path = interface/BasicFileStream.hpp; sourceTree = SOURCE_ROOT; };
+		1B4BA509B8824E6AA0974EDE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Timer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Timer.hpp; path = interface/Timer.hpp; sourceTree = SOURCE_ROOT; };
+		236D7EABA1E349129DC10DC4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ObjectBase.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ObjectBase.hpp; path = interface/ObjectBase.hpp; sourceTree = SOURCE_ROOT; };
+		25FB89F5AB814548A9B03F2B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCntAutoPtr.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = RefCntAutoPtr.hpp; path = interface/RefCntAutoPtr.hpp; sourceTree = SOURCE_ROOT; };
+		2C20FC0D8296465DA9486974 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include/pch.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = pch.h; path = include/pch.h; sourceTree = SOURCE_ROOT; };
+		2D0A38E9E85949DF88CAB235 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/AdvancedMath.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = AdvancedMath.hpp; path = interface/AdvancedMath.hpp; sourceTree = SOURCE_ROOT; };
+		32521C95B02740FAA3D5E10B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DataBlobImpl.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DataBlobImpl.cpp; path = src/DataBlobImpl.cpp; sourceTree = SOURCE_ROOT; };
+		3B6E1A17B7F0478782B22AC2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedBlockMemoryAllocator.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FixedBlockMemoryAllocator.hpp; path = interface/FixedBlockMemoryAllocator.hpp; sourceTree = SOURCE_ROOT; };
+		5539A0BD77AB424EB41253A8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/BasicFileStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = BasicFileStream.cpp; path = src/BasicFileStream.cpp; sourceTree = SOURCE_ROOT; };
+		5727155ECCB8454AA560291E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Align.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Align.hpp; path = interface/Align.hpp; sourceTree = SOURCE_ROOT; };
+		5CC450ADDDA54BF1A86F401A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/UniqueIdentifier.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = UniqueIdentifier.hpp; path = interface/UniqueIdentifier.hpp; sourceTree = SOURCE_ROOT; };
+		645025699B6B4E3CBCCD713F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FileWrapper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FileWrapper.hpp; path = interface/FileWrapper.hpp; sourceTree = SOURCE_ROOT; };
+		680D2401541246B38220DEBE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringPool.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = StringPool.hpp; path = interface/StringPool.hpp; sourceTree = SOURCE_ROOT; };
+		68AAC3BDC7DA424B8209C569 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/STDAllocator.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = STDAllocator.hpp; path = interface/STDAllocator.hpp; sourceTree = SOURCE_ROOT; };
+		6EC2FB74D38B4722AE3F80D7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DataBlobImpl.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DataBlobImpl.hpp; path = interface/DataBlobImpl.hpp; sourceTree = SOURCE_ROOT; };
+		79B00A90382E499A9D619F9B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ValidatedCast.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ValidatedCast.hpp; path = interface/ValidatedCast.hpp; sourceTree = SOURCE_ROOT; };
+		7E5ACFEC9A3345048DEB0B43 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DefaultRawMemoryAllocator.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DefaultRawMemoryAllocator.hpp; path = interface/DefaultRawMemoryAllocator.hpp; sourceTree = SOURCE_ROOT; };
+		8286570DF28F42AA82833F87 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedLinearAllocator.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FixedLinearAllocator.hpp; path = interface/FixedLinearAllocator.hpp; sourceTree = SOURCE_ROOT; };
+		866976FA07AE40DFA4341252 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FastRand.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FastRand.hpp; path = interface/FastRand.hpp; sourceTree = SOURCE_ROOT; };
+		8E7CC7FE11FA40E49CFC6ECD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/FixedBlockMemoryAllocator.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FixedBlockMemoryAllocator.cpp; path = src/FixedBlockMemoryAllocator.cpp; sourceTree = SOURCE_ROOT; };
+		9468DDFF89D141BCB7CFFE5C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DynamicLinearAllocator.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DynamicLinearAllocator.hpp; path = interface/DynamicLinearAllocator.hpp; sourceTree = SOURCE_ROOT; };
+		B07DA1607EE249C49F744AC6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ThreadSignal.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ThreadSignal.hpp; path = interface/ThreadSignal.hpp; sourceTree = SOURCE_ROOT; };
+		B6820CEB5D154270B6492D0F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicMath.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BasicMath.hpp; path = interface/BasicMath.hpp; sourceTree = SOURCE_ROOT; };
+		C76742DA84B84AE8A48C6733 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/LockHelper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = LockHelper.hpp; path = interface/LockHelper.hpp; sourceTree = SOURCE_ROOT; };
+		C9BB90D9EDC048EB8F82A8BF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D29F7FBC11894B7F9E69BD09 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/CompilerDefinitions.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = CompilerDefinitions.h; path = interface/CompilerDefinitions.h; sourceTree = SOURCE_ROOT; };
+		D2A30BA6996D4E53A17029F7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FilteringTools.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FilteringTools.hpp; path = interface/FilteringTools.hpp; sourceTree = SOURCE_ROOT; };
+		D7F26F0056184AA3B5373CDF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DefaultRawMemoryAllocator.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DefaultRawMemoryAllocator.cpp; path = src/DefaultRawMemoryAllocator.cpp; sourceTree = SOURCE_ROOT; };
+		DF8B73CA61644EA18291384C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringDataBlobImpl.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = StringDataBlobImpl.hpp; path = interface/StringDataBlobImpl.hpp; sourceTree = SOURCE_ROOT; };
+		EAAD860B22A941A3850358C9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/MemoryFileStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MemoryFileStream.cpp; path = src/MemoryFileStream.cpp; sourceTree = SOURCE_ROOT; };
+		EB56AFDD036245C9B1A93DE0 /* Diligent-Common */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libDiligent-Common.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F245266D4E6C4806AF0EF639 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/Timer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Timer.cpp; path = src/Timer.cpp; sourceTree = SOURCE_ROOT; };
+		F42DF29BEC4B46DB8F9D0C6B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCountedObjectImpl.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = RefCountedObjectImpl.hpp; path = interface/RefCountedObjectImpl.hpp; sourceTree = SOURCE_ROOT; };
+		FA451B7C8C7E4381AC1B54E4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringTools.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = StringTools.hpp; path = interface/StringTools.hpp; sourceTree = SOURCE_ROOT; };
+		FACFB858743A44359796EB3B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F867A7C77A714DF093885972 /* Frameworks */ = {
+		1A79C297EA0C472F8611FB44 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -198,170 +198,170 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18851D41A1114479A8DC1DE9 /* include */ = {
+		0FEF1C6E13554F778F58F48C /* DiligentCore */ = {
 			isa = PBXGroup;
 			children = (
-				437C85E364D54DE6879EE8C6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include/pch.h */,
+				CB978587738640348B8E223E /* Diligent-Common */,
 			);
-			name = include;
+			name = DiligentCore;
 			sourceTree = "<group>";
 		};
-		31C69DD114BD42548238A331 /* Frameworks */ = {
+		2F116A723C184989B2CDB4F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB56AFDD036245C9B1A93DE0 /* Diligent-Common */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5DC37BA0FA964DAF84FC8F12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		751CABE6916942AC9EB868CF /* interface */ = {
+		6D8BE3E12D83494B91F76E33 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				D30EBDD493314912BBCD976D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/AdvancedMath.hpp */,
-				601E7120BD354403A59AB902 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Align.hpp */,
-				1E3B4291C9C648BB949F2597 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicFileStream.hpp */,
-				BA6EF035099940B8B9BAF681 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicMath.hpp */,
-				01611EE559ED4EBBAF572936 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/CompilerDefinitions.h */,
-				C0A4CB33F3594C808A5D8942 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DataBlobImpl.hpp */,
-				244B5CED53374B3AA757832E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DefaultRawMemoryAllocator.hpp */,
-				BAE67F7CDBC74C019E83427E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DynamicLinearAllocator.hpp */,
-				CC69D637B49949E0BD835F85 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FastRand.hpp */,
-				3B3667A89FE944E8AC1FFB92 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FileWrapper.hpp */,
-				ECCE61D1557E4EDFA3925655 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FilteringTools.hpp */,
-				4BDA0996051549708757C495 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedBlockMemoryAllocator.hpp */,
-				59D69A43FFBA4D9A8B87DB9B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedLinearAllocator.hpp */,
-				45297E3B82E34B1FB12F92A9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/HashUtils.hpp */,
-				369AA74EFDDB4CC8B8C9FD7F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/LockHelper.hpp */,
-				8158FB57590C4DFABFCF3227 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/MemoryFileStream.hpp */,
-				7459DE0F50A84BEE9B8CD31E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ObjectBase.hpp */,
-				7D8F49CF21D545AD9149D6E0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCntAutoPtr.hpp */,
-				4A3F9DBC67BC40859C337D01 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCountedObjectImpl.hpp */,
-				0E8BF8C2FBC6432483AF7C91 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/STDAllocator.hpp */,
-				C04FE3116BF947AD9EA9C0DB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringDataBlobImpl.hpp */,
-				E80272D70C3F4195823B7275 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringPool.hpp */,
-				A8D6AB0965D648C98C7836C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringTools.hpp */,
-				DF424D97973E470EB106CA38 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ThreadSignal.hpp */,
-				1880BD39FEBE4D3C993C41D3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Timer.hpp */,
-				49A33FBDC14D478B9B6A40A7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/UniqueIdentifier.hpp */,
-				C6E5796DA198486EA9C6E5D7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ValidatedCast.hpp */,
+				5539A0BD77AB424EB41253A8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/BasicFileStream.cpp */,
+				32521C95B02740FAA3D5E10B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DataBlobImpl.cpp */,
+				D7F26F0056184AA3B5373CDF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DefaultRawMemoryAllocator.cpp */,
+				8E7CC7FE11FA40E49CFC6ECD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/FixedBlockMemoryAllocator.cpp */,
+				07B38C0E578F4EEE802EC877 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/LockHelper.cpp */,
+				EAAD860B22A941A3850358C9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/MemoryFileStream.cpp */,
+				F245266D4E6C4806AF0EF639 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/Timer.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		A7D843430E6D445FAD6219BF /* interface */ = {
+			isa = PBXGroup;
+			children = (
+				2D0A38E9E85949DF88CAB235 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/AdvancedMath.hpp */,
+				5727155ECCB8454AA560291E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Align.hpp */,
+				18362CEDEB1E433D9803F507 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicFileStream.hpp */,
+				B6820CEB5D154270B6492D0F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/BasicMath.hpp */,
+				D29F7FBC11894B7F9E69BD09 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/CompilerDefinitions.h */,
+				6EC2FB74D38B4722AE3F80D7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DataBlobImpl.hpp */,
+				7E5ACFEC9A3345048DEB0B43 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DefaultRawMemoryAllocator.hpp */,
+				9468DDFF89D141BCB7CFFE5C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/DynamicLinearAllocator.hpp */,
+				866976FA07AE40DFA4341252 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FastRand.hpp */,
+				645025699B6B4E3CBCCD713F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FileWrapper.hpp */,
+				D2A30BA6996D4E53A17029F7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FilteringTools.hpp */,
+				3B6E1A17B7F0478782B22AC2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedBlockMemoryAllocator.hpp */,
+				8286570DF28F42AA82833F87 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/FixedLinearAllocator.hpp */,
+				1430152C87624B0C90FA90BA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/HashUtils.hpp */,
+				C76742DA84B84AE8A48C6733 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/LockHelper.hpp */,
+				16BDCDA01D814C09942586B0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/MemoryFileStream.hpp */,
+				236D7EABA1E349129DC10DC4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ObjectBase.hpp */,
+				25FB89F5AB814548A9B03F2B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCntAutoPtr.hpp */,
+				F42DF29BEC4B46DB8F9D0C6B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/RefCountedObjectImpl.hpp */,
+				68AAC3BDC7DA424B8209C569 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/STDAllocator.hpp */,
+				DF8B73CA61644EA18291384C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringDataBlobImpl.hpp */,
+				680D2401541246B38220DEBE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringPool.hpp */,
+				FA451B7C8C7E4381AC1B54E4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/StringTools.hpp */,
+				B07DA1607EE249C49F744AC6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ThreadSignal.hpp */,
+				1B4BA509B8824E6AA0974EDE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/Timer.hpp */,
+				5CC450ADDDA54BF1A86F401A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/UniqueIdentifier.hpp */,
+				79B00A90382E499A9D619F9B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface/ValidatedCast.hpp */,
 			);
 			name = interface;
 			sourceTree = "<group>";
 		};
-		762C71464F41422CA4D2F4B9 /* Diligent-Common */ = {
+		C04E26DDBBEF413CAF3FF23E /* include */ = {
 			isa = PBXGroup;
 			children = (
-				FE5F9AF25B5F48E29AC85787 /* src */,
-				18851D41A1114479A8DC1DE9 /* include */,
-				751CABE6916942AC9EB868CF /* interface */,
-				DA5F3C3C704B48A08CFC0900 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/CMakeLists.txt */,
+				2C20FC0D8296465DA9486974 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include/pch.h */,
 			);
-			name = "Diligent-Common";
+			name = include;
 			sourceTree = "<group>";
 		};
-		83F9508B7D8948B1851E62E4 /* ALL_BUILD */ = {
+		CAF8557C940643C08C506CAB /* ALL_BUILD */ = {
 			isa = PBXGroup;
 			children = (
-				D902D81665A64332BFB268D2 /* CMake Rules */,
-				38D38FAC75E34920A8111EE8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/CMakeLists.txt */,
+				FD25720A9855478EAF1B0BF8 /* CMake Rules */,
+				FACFB858743A44359796EB3B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/CMakeLists.txt */,
 			);
 			name = ALL_BUILD;
 			sourceTree = "<group>";
 		};
-		9BDAF817CC9A481B8491A9FD = {
+		CB978587738640348B8E223E /* Diligent-Common */ = {
 			isa = PBXGroup;
 			children = (
-				D432F05DB8C14FBDAAB16BB9 /* DiligentCore */,
-				83F9508B7D8948B1851E62E4 /* ALL_BUILD */,
-				FCD458FDE5A4497A82DFC8A2 /* Products */,
-				31C69DD114BD42548238A331 /* Frameworks */,
+				6D8BE3E12D83494B91F76E33 /* src */,
+				C04E26DDBBEF413CAF3FF23E /* include */,
+				A7D843430E6D445FAD6219BF /* interface */,
+				C9BB90D9EDC048EB8F82A8BF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/CMakeLists.txt */,
+			);
+			name = "Diligent-Common";
+			sourceTree = "<group>";
+		};
+		E4036FACB3FE4E249FAE061A = {
+			isa = PBXGroup;
+			children = (
+				0FEF1C6E13554F778F58F48C /* DiligentCore */,
+				CAF8557C940643C08C506CAB /* ALL_BUILD */,
+				2F116A723C184989B2CDB4F3 /* Products */,
+				5DC37BA0FA964DAF84FC8F12 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		D432F05DB8C14FBDAAB16BB9 /* DiligentCore */ = {
-			isa = PBXGroup;
-			children = (
-				762C71464F41422CA4D2F4B9 /* Diligent-Common */,
-			);
-			name = DiligentCore;
-			sourceTree = "<group>";
-		};
-		D902D81665A64332BFB268D2 /* CMake Rules */ = {
+		FD25720A9855478EAF1B0BF8 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		FCD458FDE5A4497A82DFC8A2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				14DB1215EE5046409D8AC415 /* Diligent-Common */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		FE5F9AF25B5F48E29AC85787 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				F7B33105CA4B40A088B49545 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/BasicFileStream.cpp */,
-				71E2B251C12E4A0BBB7DD288 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DataBlobImpl.cpp */,
-				34BFA42BA85A460487939B55 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DefaultRawMemoryAllocator.cpp */,
-				EF5BAEA2D121426A89803D39 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/FixedBlockMemoryAllocator.cpp */,
-				259CFB4351AD4F9387522015 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/LockHelper.cpp */,
-				D7F1F7B3A57344E4A7B6863A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/MemoryFileStream.cpp */,
-				A8CE20128E974FAB9460D97E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/Timer.cpp */,
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7B1ABB8CFA994C26B5B6D927 /* Diligent-Common */ = {
+		FFE9624675394CEABA18F53D /* Diligent-Common */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C5E61A5023F54835AAFA391B /* Build configuration list for PBXNativeTarget "Diligent-Common" */;
+			buildConfigurationList = 96C0888DCFFD4A51BD5603BD /* Build configuration list for PBXNativeTarget "Diligent-Common" */;
 			buildPhases = (
-				5FE7AF0D179F4A228994B83E /* Sources */,
-				F867A7C77A714DF093885972 /* Frameworks */,
+				7BA8C5C5BD8847B0AB2C21EC /* Sources */,
+				1A79C297EA0C472F8611FB44 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				18D6A5FFD3DE48C88755B1EB /* PBXTargetDependency */,
+				10239CE2ED5549F5965B27AC /* PBXTargetDependency */,
 			);
 			name = "Diligent-Common";
 			productName = "Diligent-Common";
-			productReference = 14DB1215EE5046409D8AC415 /* Diligent-Common */;
+			productReference = EB56AFDD036245C9B1A93DE0 /* Diligent-Common */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5C9123685823459E8E19E7F8 /* Project object */ = {
+		AAE028FA2DEF4FD5BACD8086 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1240;
 			};
-			buildConfigurationList = 1CFF647157DB4B62B9DD4138 /* Build configuration list for PBXProject "Diligent-Common" */;
+			buildConfigurationList = 95BAC9E109EB45F686A21686 /* Build configuration list for PBXProject "Diligent-Common" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				7AF234AA4C784806AF98EDDD /* Debug */,
-				EE19132D60E249B9941AC251 /* Release */,
-				1A11AE53D4CA4FCAA01C2EFC /* MinSizeRel */,
-				8CCF4E50CC7C4426BFE69659 /* RelWithDebInfo */,
+				3399007C9E8A4170A340ADD0 /* Debug */,
+				479B0F3218C4487A99A7E083 /* Release */,
+				1F0099DA93B64B45BE0FE9AD /* MinSizeRel */,
+				33D79E15BD8E4DA6AB4D07AF /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = 9BDAF817CC9A481B8491A9FD;
+			mainGroup = E4036FACB3FE4E249FAE061A;
 			projectDirPath = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common";
 			projectRoot = "";
 			targets = (
-				8E50B0849231401AACD5F522 /* ALL_BUILD */,
-				7B1ABB8CFA994C26B5B6D927 /* Diligent-Common */,
-				0CC1E13E75164C739D2D0FB4 /* ZERO_CHECK */,
-				2C2E6CC00BD94CA1835E62AD /* install */,
+				C170553A14944B729938E9E6 /* ALL_BUILD */,
+				FFE9624675394CEABA18F53D /* Diligent-Common */,
+				A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */,
+				4C161972DCC540808363BE2C /* install */,
 			);
 		};
 /* End PBXProject section */
@@ -512,47 +512,157 @@ fi
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5FE7AF0D179F4A228994B83E /* Sources */ = {
+		7BA8C5C5BD8847B0AB2C21EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5C1CA57DD384C3DB26A0E9F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/BasicFileStream.cpp */,
-				5C54F589D8BC481787B34ACE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DataBlobImpl.cpp */,
-				47E6852AA1BA4C739F3CDC6E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DefaultRawMemoryAllocator.cpp */,
-				60629D0C72A84B9E85F5B36B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/FixedBlockMemoryAllocator.cpp */,
-				491DE2BD5CB046C39DEA5F59 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/LockHelper.cpp */,
-				BDA55359494F4663AB1EE597 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/MemoryFileStream.cpp */,
-				65827A50DCEC4D8DBD15728D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/Timer.cpp */,
+				987A42D604064DFF947CC60A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/BasicFileStream.cpp */,
+				9C108BB1F72942028BAD223C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DataBlobImpl.cpp */,
+				89D554C1D8734095A67C5AEF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/DefaultRawMemoryAllocator.cpp */,
+				6DEA1EACE4974AA28CE7CDEA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/FixedBlockMemoryAllocator.cpp */,
+				241CB149A7754A01989D6332 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/LockHelper.cpp */,
+				42C67E90AF024523B9056961 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/MemoryFileStream.cpp */,
+				E18F54E8AE88467CBEAE5829 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/src/Timer.cpp */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0422EC85BF594562BB48C016 /* PBXTargetDependency */ = {
+		10239CE2ED5549F5965B27AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8E50B0849231401AACD5F522 /* ALL_BUILD */;
-			targetProxy = 25ABECE759DC473F907B8D89 /* PBXContainerItemProxy */;
+			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
+			targetProxy = 43295B703BC942349BC1E034 /* PBXContainerItemProxy */;
 		};
-		18D6A5FFD3DE48C88755B1EB /* PBXTargetDependency */ = {
+		5BC1F7190E0B43E1BB0E6659 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0CC1E13E75164C739D2D0FB4 /* ZERO_CHECK */;
-			targetProxy = 0F5A6140A4BD4729A46EAA67 /* PBXContainerItemProxy */;
+			target = C170553A14944B729938E9E6 /* ALL_BUILD */;
+			targetProxy = 1847950E7AA742C5AC3CE526 /* PBXContainerItemProxy */;
 		};
-		385AC320D4034F59BBAF6EB2 /* PBXTargetDependency */ = {
+		62D9DDFDEAD846A4AFA8C64B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0CC1E13E75164C739D2D0FB4 /* ZERO_CHECK */;
-			targetProxy = 918F5E15D501417C87A57510 /* PBXContainerItemProxy */;
+			target = FFE9624675394CEABA18F53D /* Diligent-Common */;
+			targetProxy = A39CACF612E443ABAD3AD3AF /* PBXContainerItemProxy */;
 		};
-		D3B19646755C4D3E80EA5C1E /* PBXTargetDependency */ = {
+		924D8E281AC04B97AEEF0BBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7B1ABB8CFA994C26B5B6D927 /* Diligent-Common */;
-			targetProxy = 90E2EC55FA494472B8146726 /* PBXContainerItemProxy */;
+			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
+			targetProxy = 56F32F14D5734AAD94FF5F58 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0406DF1CFBE942B9A214A52A /* RelWithDebInfo */ = {
+		1D77BC06A9974EA7B3FA7ED0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		1F6ACCE6540D466BA5256201 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		2D3F1D8ABA6C4E0D9A642118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "Diligent-Common";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		490D737EEE414F30BB5B54A2 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		58BA771788EA486B988E9A8C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "Diligent-Common";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		5F8556C50ADB46FA9CB27645 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -561,9 +671,9 @@ fi
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 2;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/interface","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
 				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
@@ -577,7 +687,7 @@ fi
 			};
 			name = RelWithDebInfo;
 		};
-		05B1116BB29D4010A694EE12 /* Debug */ = {
+		5FCCA7922BA24F649A91D93A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -595,9 +705,9 @@ fi
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = Debug;
+			name = Release;
 		};
-		13C5ED4EBFEE4CE68ACE092B /* RelWithDebInfo */ = {
+		7455A778E8AB4B08BE0EDEB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -609,124 +719,35 @@ fi
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = ("");
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
+				PRODUCT_NAME = install;
 				SECTORDER_FLAGS = "";
 				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = RelWithDebInfo;
+			name = Debug;
 		};
-		1FC80E99D4284F37AB139251 /* Release */ = {
+		83F8F61940EE4EF0BB17FAC1 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/interface","$(inherited)");
 				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
-				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_LDFLAGS = ("");
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "Diligent-Common";
+				PRODUCT_NAME = install;
 				SECTORDER_FLAGS = "";
 				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		27387D43839A4463800A9290 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/build";
 			};
 			name = MinSizeRel;
 		};
-		32365E8D0DA94FFEA3D686E2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/build";
-			};
-			name = Release;
-		};
-		470FC6646362476597E1EAFE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		4FD855F01C4D43ECA7139757 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		619149AC2FE7452D8D96E37D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/build";
-			};
-			name = Debug;
-		};
-		69D04B76EB284D24ADD06C38 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/build";
-			};
-			name = RelWithDebInfo;
-		};
-		75F5742F61CB4A8BBAD06602 /* Debug */ = {
+		87D3795BE877435791081214 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -735,9 +756,9 @@ fi
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,_DEBUG,DEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'",DILIGENT_DEVELOPMENT,DILIGENT_DEBUG);
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,_DEBUG,DEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'",DILIGENT_DEVELOPMENT,DILIGENT_DEBUG);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/interface","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
 				OTHER_CPLUSPLUSFLAGS = "   -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter '-std=c++14' ";
@@ -751,52 +772,7 @@ fi
 			};
 			name = Debug;
 		};
-		83811D31990845FD8A472386 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		8DE06FF8728C4895B75B3F77 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Platforms/interface","$(inherited)");
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
-				OTHER_LIBTOOLFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "Diligent-Common";
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		970CC41C9D04445DB36A64D5 /* Debug */ = {
+		8BA5923394224D15945EA931 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -816,7 +792,131 @@ fi
 			};
 			name = Debug;
 		};
-		979B9D07D0CF47AD943AC95D /* Release */ = {
+		9361BBBB4A04488A9AEFC301 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		97AA203812644A2EB95946A2 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		997E11DC74D64959B7A44CC7 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		9C55BAC53C6B41C18C3B7F14 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/build";
+			};
+			name = MinSizeRel;
+		};
+		A1DA95F523D5466E97A2C3F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/build";
+			};
+			name = Debug;
+		};
+		B7153074C9E742FCAF9C8263 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		BEAF16AA446044E4864BBC95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/build";
+			};
+			name = Release;
+		};
+		CDB0700278024148B86714CA /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/build";
+			};
+			name = RelWithDebInfo;
+		};
+		CED6524C54BB41EABCD63141 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -836,165 +936,65 @@ fi
 			};
 			name = Release;
 		};
-		B9CD4B1F41F74FF09941A320 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		CECF4C9CCF124F71B631E49A /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		DDA7304FE31440F6AB0BF6E4 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		DE305593E31A419BAF4AF5F6 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		E038D59F2E9F4B1E95A2C678 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1CFF647157DB4B62B9DD4138 /* Build configuration list for PBXProject "Diligent-Common" */ = {
+		1BC89D3C427A4DE68C642EF6 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				619149AC2FE7452D8D96E37D /* Debug */,
-				32365E8D0DA94FFEA3D686E2 /* Release */,
-				27387D43839A4463800A9290 /* MinSizeRel */,
-				69D04B76EB284D24ADD06C38 /* RelWithDebInfo */,
+				1D77BC06A9974EA7B3FA7ED0 /* Debug */,
+				5FCCA7922BA24F649A91D93A /* Release */,
+				B7153074C9E742FCAF9C8263 /* MinSizeRel */,
+				997E11DC74D64959B7A44CC7 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		453C14A3ADA2441DAC428611 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		95BAC9E109EB45F686A21686 /* Build configuration list for PBXProject "Diligent-Common" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				05B1116BB29D4010A694EE12 /* Debug */,
-				83811D31990845FD8A472386 /* Release */,
-				DDA7304FE31440F6AB0BF6E4 /* MinSizeRel */,
-				E038D59F2E9F4B1E95A2C678 /* RelWithDebInfo */,
+				A1DA95F523D5466E97A2C3F3 /* Debug */,
+				BEAF16AA446044E4864BBC95 /* Release */,
+				9C55BAC53C6B41C18C3B7F14 /* MinSizeRel */,
+				CDB0700278024148B86714CA /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		62C461B21C524A93AF483E7A /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		96C0888DCFFD4A51BD5603BD /* Build configuration list for PBXNativeTarget "Diligent-Common" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				970CC41C9D04445DB36A64D5 /* Debug */,
-				979B9D07D0CF47AD943AC95D /* Release */,
-				B9CD4B1F41F74FF09941A320 /* MinSizeRel */,
-				13C5ED4EBFEE4CE68ACE092B /* RelWithDebInfo */,
+				87D3795BE877435791081214 /* Debug */,
+				2D3F1D8ABA6C4E0D9A642118 /* Release */,
+				58BA771788EA486B988E9A8C /* MinSizeRel */,
+				5F8556C50ADB46FA9CB27645 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		C5E61A5023F54835AAFA391B /* Build configuration list for PBXNativeTarget "Diligent-Common" */ = {
+		AFC18B4373724FEC9F50D8B6 /* Build configuration list for PBXAggregateTarget "install" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				75F5742F61CB4A8BBAD06602 /* Debug */,
-				1FC80E99D4284F37AB139251 /* Release */,
-				8DE06FF8728C4895B75B3F77 /* MinSizeRel */,
-				0406DF1CFBE942B9A214A52A /* RelWithDebInfo */,
+				7455A778E8AB4B08BE0EDEB6 /* Debug */,
+				9361BBBB4A04488A9AEFC301 /* Release */,
+				83F8F61940EE4EF0BB17FAC1 /* MinSizeRel */,
+				490D737EEE414F30BB5B54A2 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		DA3503A7012C4AA8A3FE39FB /* Build configuration list for PBXAggregateTarget "install" */ = {
+		B69D4101095441DEBC255116 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				470FC6646362476597E1EAFE /* Debug */,
-				4FD855F01C4D43ECA7139757 /* Release */,
-				DE305593E31A419BAF4AF5F6 /* MinSizeRel */,
-				CECF4C9CCF124F71B631E49A /* RelWithDebInfo */,
+				8BA5923394224D15945EA931 /* Debug */,
+				CED6524C54BB41EABCD63141 /* Release */,
+				1F6ACCE6540D466BA5256201 /* MinSizeRel */,
+				97AA203812644A2EB95946A2 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5C9123685823459E8E19E7F8 /* Project object */;
+	rootObject = AAE028FA2DEF4FD5BACD8086 /* Project object */;
 }

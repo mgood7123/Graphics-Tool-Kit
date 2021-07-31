@@ -23,11 +23,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # PLATFORM_IOS
 # PLATFORM_TVOS
 
-include_directories(
-        DiligentEngine
-        DiligentEngine/DiligentCore/Primitives/interface
-)
-
 include_directories(WINAPI_KERNEL)
 
 set(DILIGENT_NO_VULKAN TRUE CACHE BOOL "don't need vulkan")
@@ -68,13 +63,17 @@ endif()
 #
 # add_subdirectory(DiligentEngine/DiligentLog)
 
+add_subdirectory(MultiTouch)
+include_directories(MultiTouch/DiligentLog/Primitives/interface)
 add_subdirectory(DiligentEngine/DiligentCore)
 #add_subdirectory(DiligentEngine/DiligentFX)
 add_subdirectory(DiligentEngine/DiligentTools)
 
-add_subdirectory(MultiTouch)
-include_directories(MultiTouch)
-include_directories(MultiTouch/Utils)
+include_directories(
+        DiligentEngine
+        MultiTouch
+        MultiTouch/Utils
+)
 
 add_subdirectory(TimeEngine)
 include_directories(TimeEngine)
