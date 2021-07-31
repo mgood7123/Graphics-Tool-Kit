@@ -5,6 +5,8 @@
 #include "RectangleView.h"
 
 void RectangleView::onCreate(VertexEngine::TextureManager &textureManager) {
+    x = 0;
+    y = 0;
 #if PLATFORM_ANDROID
 #else
     auto pathA = "/Users/smallville7123/Documents/s1.png";
@@ -19,6 +21,8 @@ void RectangleView::onCreate(VertexEngine::TextureManager &textureManager) {
 #endif
 }
 
+
+
 void RectangleView::onDraw(VertexEngine::Canvas &canvas) {
 #if PLATFORM_ANDROID
 #else
@@ -30,6 +34,15 @@ void RectangleView::onDraw(VertexEngine::Canvas &canvas) {
 //     from [x, y] to [x+width, y+width]
     canvas.plane(140, 140, 200, 200, blue);
     canvas.plane(160, 160, 80, 80, pink);
+
+    auto desc = diligentAppBase->m_pSwapChain->GetDesc();
+    float newWidth = canvas.width;
+    float newHeight = canvas.height;
+    float currentWidth = desc.Width;
+    float currentHeight = desc.Height;
+    auto newX = (x/currentWidth)*newWidth;
+    auto newY = (y/currentHeight)*newHeight;
+    canvas.plane(((int)newX)-20, ((int)newY)-20, 40, 40, red);
 
 #if PLATFORM_ANDROID
 #else
@@ -44,4 +57,11 @@ void RectangleView::onDestroy(VertexEngine::TextureManager &textureManager) {
     textureManager.deleteTexture("B");
     textureManager.deleteTexture("C");
 #endif
+}
+
+bool RectangleView::onTouchEvent(MultiTouch &touch) {
+    auto t = touch.getTouchAt(touch.getTouchIndex());
+    x = t.x;
+    y = t.y;
+    return true;
 }

@@ -71,10 +71,9 @@ void AppInstance::onDraw ()
 
 bool AppInstance::onTouchEvent(MultiTouch & touchEvent) {
     if (destroyed.load()) return false;
-    return true;
+    return objectBase.get<ObjectBase*>()->onTouchEvent(touchEvent);
 //    int pointerIndex = motionEvent.getActionIndex();
 //    int action = motionEvent.getAction(pointerIndex);
-//    if (objectBase.get<ObjectBase*>()->onTouchEvent(motionEvent)) return true;
 //    bool r;
 //    switch (action) {
 //        case MotionEventSerializer::MOTION_EVENT_ACTION_DOWN:
