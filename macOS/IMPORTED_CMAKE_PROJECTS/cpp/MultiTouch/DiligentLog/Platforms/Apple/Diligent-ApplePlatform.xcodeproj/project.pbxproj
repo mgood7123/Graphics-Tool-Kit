@@ -9,19 +9,19 @@
 /* Begin PBXAggregateTarget section */
 		4C161972DCC540808363BE2C /* install */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 14FDF031F0974E58832BC8FD /* Build configuration list for PBXAggregateTarget "install" */;
+			buildConfigurationList = 9CD870294F0B40289C98D579 /* Build configuration list for PBXAggregateTarget "install" */;
 			buildPhases = (
 				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
 			);
 			dependencies = (
-				91A68B7C060B4EF985B58586 /* PBXTargetDependency */,
+				4D9F92FB2C074BEB9F3C42B9 /* PBXTargetDependency */,
 			);
 			name = install;
 			productName = install;
 		};
 		A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 3FAB96B912294649B45D57CE /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = C81FB82991004DBFBC4ED25B /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
 				E85D33B2397C34EF4AF567AF /* Generate CMakeFiles/ZERO_CHECK */,
 			);
@@ -32,13 +32,13 @@
 		};
 		C170553A14944B729938E9E6 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = D045B4DEBBCF40D1B8936DA5 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = CFBF3AA3D8FB4E3A9E353F46 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
 				D174464C6EF20CB9BAA5D7ED /* Generate CMakeFiles/ALL_BUILD */,
 			);
 			dependencies = (
-				0AD8E04BAF7D44EA9E10BACA /* PBXTargetDependency */,
-				F4AE5A684B394D4CA488018C /* PBXTargetDependency */,
+				5DE3D56F896947BEBDE41842 /* PBXTargetDependency */,
+				27582F26B8D9418895E13F03 /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
@@ -46,107 +46,107 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		050350A5AB8C41BD9291BFD5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDebug.hpp */ = {isa = PBXBuildFile; fileRef = DECAF8FADC1E4CD897F6DFDC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDebug.hpp */; };
-		0FE33F6220FE46538357BCF3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleFileSystem.hpp */ = {isa = PBXBuildFile; fileRef = 63348A2436AA44118DFCC7E3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleFileSystem.hpp */; };
-		2D3A8A29AAA0424B9E8329F2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/MacOSNativeWindow.h */ = {isa = PBXBuildFile; fileRef = B14267F167EC4355A360AFB0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/MacOSNativeWindow.h */; };
-		3001DC243B8F48E9AE03ED17 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/CFObjectWrapper.hpp */ = {isa = PBXBuildFile; fileRef = 26FA074B9A0E449CA05D72B9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/CFObjectWrapper.hpp */; };
-		319C2262BAB048D4AB6FFE71 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformMisc.hpp */ = {isa = PBXBuildFile; fileRef = F990EEF77EC64DC58F057F12 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformMisc.hpp */; };
-		746624817B1F45D8ADF66EF6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDefinitions.h */ = {isa = PBXBuildFile; fileRef = 098466A0B2354532B7D1CFBA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDefinitions.h */; };
-		75AF3CB85C6F4385A0FF5209 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/NativeWindow.h */ = {isa = PBXBuildFile; fileRef = 7E7FD398AEBE4C6E931E38E2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/NativeWindow.h */; };
-		7C730581D1224597BEE52D92 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleDebug.hpp */ = {isa = PBXBuildFile; fileRef = 918BB9FB1FD84B268580E037 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleDebug.hpp */; };
-		81303D82F9A244C2B3020EF6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformDefinitions.h */ = {isa = PBXBuildFile; fileRef = 446AF10391F74326921CC510 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformDefinitions.h */; };
-		9AE1529E332F407C8E687904 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleDebug.mm */ = {isa = PBXBuildFile; fileRef = 95BFB5A1FF6140BDA0AD9257 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleDebug.mm */; };
-		A5830B6A9E344E459BEEEB5E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformMisc.hpp */ = {isa = PBXBuildFile; fileRef = 7B0F0ED56BE443B8BA61EE59 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformMisc.hpp */; };
-		ADE457D5D1824B06B9128663 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/FileSystem.hpp */ = {isa = PBXBuildFile; fileRef = 08A2604510854D0687342493 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/FileSystem.hpp */; };
-		B6F5FDDCB17E44AA9DE8702C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleFileSystem.cpp */ = {isa = PBXBuildFile; fileRef = 6BD6A81D3CA24A58B1EC687B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleFileSystem.cpp */; };
-		CFA089D787274A27ADB40912 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 6774830E5BFA48F19B27D773 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/CMakeLists.txt */; };
-		FDC4DDC4D9724A5BBEA897EB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/Atomics.hpp */ = {isa = PBXBuildFile; fileRef = 6F955BEA3E2447D0B258D0F9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/Atomics.hpp */; };
+		182F64F42CA24FA0AFCD0ECC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/CFObjectWrapper.hpp */ = {isa = PBXBuildFile; fileRef = 2A97C3FB806A444FA2BDF533 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/CFObjectWrapper.hpp */; };
+		371BB800E91B442F9D55179D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/NativeWindow.h */ = {isa = PBXBuildFile; fileRef = 591DCBC5D57B4BCEB84D79CF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/NativeWindow.h */; };
+		4F254680F3ED4991B7E1F28E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleDebug.hpp */ = {isa = PBXBuildFile; fileRef = B17594BDC7FF4EF1A155D620 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleDebug.hpp */; };
+		5DBBC4B18C4740939ADE51FD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformDefinitions.h */ = {isa = PBXBuildFile; fileRef = D6E7FFFC7D8E4BA683F2CE80 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformDefinitions.h */; };
+		6C8244BC9A8747B4852FED13 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 5B879444B8904CDBBE568CE1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/CMakeLists.txt */; };
+		6DFBF439F421491DA9AF896E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/FileSystem.hpp */ = {isa = PBXBuildFile; fileRef = CC6D487ADEE242B2B3C136E3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/FileSystem.hpp */; };
+		854BC37753104D2D896F68E5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDebug.hpp */ = {isa = PBXBuildFile; fileRef = 02C9DC883E67409591E62FD1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDebug.hpp */; };
+		8E13A921BCA24B78AD9B4741 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/Atomics.hpp */ = {isa = PBXBuildFile; fileRef = 68F0D9484BD64A308F01F484 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/Atomics.hpp */; };
+		B9FF6DD2FF30423D932CF057 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformMisc.hpp */ = {isa = PBXBuildFile; fileRef = 59285B6DEF224891ABA63C8A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformMisc.hpp */; };
+		BF70F2E1E319429DB8AA776F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/MacOSNativeWindow.h */ = {isa = PBXBuildFile; fileRef = 07080880CF42418797917E74 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/MacOSNativeWindow.h */; };
+		CF89FCC8370449BFAF5193B5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleFileSystem.cpp */ = {isa = PBXBuildFile; fileRef = 6ED4AAC854EC40728C80E587 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleFileSystem.cpp */; };
+		D92DC29499DF4B89945DC1E1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDefinitions.h */ = {isa = PBXBuildFile; fileRef = 6BC0E694142040059A0CD8E1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDefinitions.h */; };
+		E1A7CABB2B1D4116BDECF767 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleDebug.mm */ = {isa = PBXBuildFile; fileRef = F6246E5A888F410EA5ABD88D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleDebug.mm */; };
+		E99F702EFFFC423693DFA3D4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformMisc.hpp */ = {isa = PBXBuildFile; fileRef = C60E64480FE646DF95FF9214 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformMisc.hpp */; };
+		FFCDE4FB48BA438297D4081A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleFileSystem.hpp */ = {isa = PBXBuildFile; fileRef = 2D386E8A3FB24B19A8780476 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleFileSystem.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		356A0644884F4BD3873D2DD0 /* Debug */ = {
+		34A02ECE251940F69D0142CD /* Debug */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = Debug;
 		};
-		80C8031A9AAC4580B8881697 /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Release;
-		};
-		E41DCDF03CAE43BA80FEEA6E /* MinSizeRel */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = MinSizeRel;
-		};
-		EEFC139A93764D62A4C4EF9B /* RelWithDebInfo */ = {
+		78CFCE883CC443EF89D35AE1 /* RelWithDebInfo */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = RelWithDebInfo;
 		};
+		A3D18004A3EB4B0CB419AEEF /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		C39820595EDA4B56AF06BC26 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		08DB886EA90D4C71BDCAF10F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D54D65E1D48B416A962F3A41 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C170553A14944B729938E9E6;
-			remoteInfo = ALL_BUILD;
-		};
-		771EED1572F542BF9B9D0BC9 /* PBXContainerItemProxy */ = {
+		613A10CFE97648998FE5F18A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D54D65E1D48B416A962F3A41 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
 			remoteInfo = ZERO_CHECK;
 		};
-		BF71B66AF6014082A21C16DC /* PBXContainerItemProxy */ = {
+		6CA2A761442345E192FAFD5E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D54D65E1D48B416A962F3A41 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
 			remoteInfo = ZERO_CHECK;
 		};
-		F809C03429C84769A846D985 /* PBXContainerItemProxy */ = {
+		A748799D68B84180BB2930CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D54D65E1D48B416A962F3A41 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 76E7AB27CC7A4A1CAC5EBBEA;
 			remoteInfo = "Diligent-ApplePlatform";
 		};
+		D9FD722205CA4F78B614BFE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D54D65E1D48B416A962F3A41 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C170553A14944B729938E9E6;
+			remoteInfo = ALL_BUILD;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08A2604510854D0687342493 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/FileSystem.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FileSystem.hpp; path = ../interface/FileSystem.hpp; sourceTree = SOURCE_ROOT; };
-		098466A0B2354532B7D1CFBA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDefinitions.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PlatformDefinitions.h; path = ../interface/PlatformDefinitions.h; sourceTree = SOURCE_ROOT; };
-		1CAF924DDFD24012A311682C /* Diligent-ApplePlatform */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libDiligent-ApplePlatform.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		26FA074B9A0E449CA05D72B9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/CFObjectWrapper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CFObjectWrapper.hpp; path = interface/CFObjectWrapper.hpp; sourceTree = SOURCE_ROOT; };
-		446AF10391F74326921CC510 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformDefinitions.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ApplePlatformDefinitions.h; path = interface/ApplePlatformDefinitions.h; sourceTree = SOURCE_ROOT; };
-		63348A2436AA44118DFCC7E3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleFileSystem.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = AppleFileSystem.hpp; path = interface/AppleFileSystem.hpp; sourceTree = SOURCE_ROOT; };
-		6774830E5BFA48F19B27D773 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		6BD6A81D3CA24A58B1EC687B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleFileSystem.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = AppleFileSystem.cpp; path = src/AppleFileSystem.cpp; sourceTree = SOURCE_ROOT; };
-		6F955BEA3E2447D0B258D0F9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/Atomics.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Atomics.hpp; path = ../interface/Atomics.hpp; sourceTree = SOURCE_ROOT; };
-		7B0F0ED56BE443B8BA61EE59 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformMisc.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ApplePlatformMisc.hpp; path = interface/ApplePlatformMisc.hpp; sourceTree = SOURCE_ROOT; };
-		7E7FD398AEBE4C6E931E38E2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/NativeWindow.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = NativeWindow.h; path = ../interface/NativeWindow.h; sourceTree = SOURCE_ROOT; };
-		918BB9FB1FD84B268580E037 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleDebug.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = AppleDebug.hpp; path = interface/AppleDebug.hpp; sourceTree = SOURCE_ROOT; };
-		95BFB5A1FF6140BDA0AD9257 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleDebug.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = AppleDebug.mm; path = src/AppleDebug.mm; sourceTree = SOURCE_ROOT; };
-		96F7EF66FDA8446B88D3B66D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		B14267F167EC4355A360AFB0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/MacOSNativeWindow.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MacOSNativeWindow.h; path = interface/MacOSNativeWindow.h; sourceTree = SOURCE_ROOT; };
-		DECAF8FADC1E4CD897F6DFDC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDebug.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = PlatformDebug.hpp; path = ../interface/PlatformDebug.hpp; sourceTree = SOURCE_ROOT; };
-		F990EEF77EC64DC58F057F12 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformMisc.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = PlatformMisc.hpp; path = ../interface/PlatformMisc.hpp; sourceTree = SOURCE_ROOT; };
+		02C9DC883E67409591E62FD1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDebug.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = PlatformDebug.hpp; path = ../interface/PlatformDebug.hpp; sourceTree = SOURCE_ROOT; };
+		07080880CF42418797917E74 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/MacOSNativeWindow.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MacOSNativeWindow.h; path = interface/MacOSNativeWindow.h; sourceTree = SOURCE_ROOT; };
+		1FC7FBBE5B8D4594BA3DA18A /* Diligent-ApplePlatform */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libDiligent-ApplePlatform.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A97C3FB806A444FA2BDF533 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/CFObjectWrapper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CFObjectWrapper.hpp; path = interface/CFObjectWrapper.hpp; sourceTree = SOURCE_ROOT; };
+		2D386E8A3FB24B19A8780476 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleFileSystem.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = AppleFileSystem.hpp; path = interface/AppleFileSystem.hpp; sourceTree = SOURCE_ROOT; };
+		591DCBC5D57B4BCEB84D79CF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/NativeWindow.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = NativeWindow.h; path = ../interface/NativeWindow.h; sourceTree = SOURCE_ROOT; };
+		59285B6DEF224891ABA63C8A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformMisc.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = PlatformMisc.hpp; path = ../interface/PlatformMisc.hpp; sourceTree = SOURCE_ROOT; };
+		5B879444B8904CDBBE568CE1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		5C9D3D8E799648C288F1DF5B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		68F0D9484BD64A308F01F484 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/Atomics.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Atomics.hpp; path = ../interface/Atomics.hpp; sourceTree = SOURCE_ROOT; };
+		6BC0E694142040059A0CD8E1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDefinitions.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PlatformDefinitions.h; path = ../interface/PlatformDefinitions.h; sourceTree = SOURCE_ROOT; };
+		6ED4AAC854EC40728C80E587 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleFileSystem.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = AppleFileSystem.cpp; path = src/AppleFileSystem.cpp; sourceTree = SOURCE_ROOT; };
+		B17594BDC7FF4EF1A155D620 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleDebug.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = AppleDebug.hpp; path = interface/AppleDebug.hpp; sourceTree = SOURCE_ROOT; };
+		C60E64480FE646DF95FF9214 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformMisc.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ApplePlatformMisc.hpp; path = interface/ApplePlatformMisc.hpp; sourceTree = SOURCE_ROOT; };
+		CC6D487ADEE242B2B3C136E3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/FileSystem.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FileSystem.hpp; path = ../interface/FileSystem.hpp; sourceTree = SOURCE_ROOT; };
+		D6E7FFFC7D8E4BA683F2CE80 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformDefinitions.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ApplePlatformDefinitions.h; path = interface/ApplePlatformDefinitions.h; sourceTree = SOURCE_ROOT; };
+		F6246E5A888F410EA5ABD88D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleDebug.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = AppleDebug.mm; path = src/AppleDebug.mm; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F227DFEB12BE46D0969CB727 /* Frameworks */ = {
+		234076C48EC64A6695F850AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -156,105 +156,105 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		12BB072F715849DABD69B425 /* ALL_BUILD */ = {
+		065AC6B441E34C51BCE0D3A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				659B6C0CA9864F94B1B9B99F /* CMake Rules */,
-				96F7EF66FDA8446B88D3B66D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/CMakeLists.txt */,
+				1FC7FBBE5B8D4594BA3DA18A /* Diligent-ApplePlatform */,
 			);
-			name = ALL_BUILD;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		2FA297E73DF541B4BDD701DC /* Diligent-ApplePlatform */ = {
-			isa = PBXGroup;
-			children = (
-				3940BB063F644DED898712B8 /* src */,
-				C854B9916F704776B975764B /* Header Files */,
-				E1A00E6C10A44B90BF040E50 /* interface */,
-				6774830E5BFA48F19B27D773 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/CMakeLists.txt */,
-			);
-			name = "Diligent-ApplePlatform";
-			sourceTree = "<group>";
-		};
-		3940BB063F644DED898712B8 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				95BFB5A1FF6140BDA0AD9257 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleDebug.mm */,
-				6BD6A81D3CA24A58B1EC687B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleFileSystem.cpp */,
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
-		659B6C0CA9864F94B1B9B99F /* CMake Rules */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "CMake Rules";
-			sourceTree = "<group>";
-		};
-		74D99DC1F94A407DB4B9D236 /* DiligentLog */ = {
-			isa = PBXGroup;
-			children = (
-				AC686E62CB5E419F841DD52E /* Platforms */,
-			);
-			name = DiligentLog;
-			sourceTree = "<group>";
-		};
-		91C82D2B0FEC42D69F53D19A /* Frameworks */ = {
+		085FF925104B4C5C9045D3F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		93DDFCBED7A94EEB92DFC300 = {
+		1719AA5DDB6842B6B75D21AC /* ALL_BUILD */ = {
 			isa = PBXGroup;
 			children = (
-				74D99DC1F94A407DB4B9D236 /* DiligentLog */,
-				12BB072F715849DABD69B425 /* ALL_BUILD */,
-				B4AE7097EE644ACB9434F247 /* Products */,
-				91C82D2B0FEC42D69F53D19A /* Frameworks */,
+				9E889D23475E47E5BD0D0A31 /* CMake Rules */,
+				5C9D3D8E799648C288F1DF5B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/CMakeLists.txt */,
 			);
+			name = ALL_BUILD;
 			sourceTree = "<group>";
 		};
-		AC686E62CB5E419F841DD52E /* Platforms */ = {
+		46106C7A9F244AB68A1C3BA0 /* Diligent-ApplePlatform */ = {
 			isa = PBXGroup;
 			children = (
-				2FA297E73DF541B4BDD701DC /* Diligent-ApplePlatform */,
+				6EC743BADCCB4D31ABF6BE9F /* src */,
+				CF30EFC4A2214989A49FC765 /* Header Files */,
+				F32C69B7D1994A1593B90B58 /* interface */,
+				5B879444B8904CDBBE568CE1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/CMakeLists.txt */,
+			);
+			name = "Diligent-ApplePlatform";
+			sourceTree = "<group>";
+		};
+		62119D612C3D4D00BD0B621D /* Platforms */ = {
+			isa = PBXGroup;
+			children = (
+				46106C7A9F244AB68A1C3BA0 /* Diligent-ApplePlatform */,
 			);
 			name = Platforms;
 			sourceTree = "<group>";
 		};
-		B4AE7097EE644ACB9434F247 /* Products */ = {
+		6EC743BADCCB4D31ABF6BE9F /* src */ = {
 			isa = PBXGroup;
 			children = (
-				1CAF924DDFD24012A311682C /* Diligent-ApplePlatform */,
+				F6246E5A888F410EA5ABD88D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleDebug.mm */,
+				6ED4AAC854EC40728C80E587 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleFileSystem.cpp */,
 			);
-			name = Products;
+			name = src;
 			sourceTree = "<group>";
 		};
-		C854B9916F704776B975764B /* Header Files */ = {
+		7CCF0BCF5F4C4486B79439B8 = {
 			isa = PBXGroup;
 			children = (
-				918BB9FB1FD84B268580E037 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleDebug.hpp */,
-				63348A2436AA44118DFCC7E3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleFileSystem.hpp */,
-				446AF10391F74326921CC510 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformDefinitions.h */,
-				7B0F0ED56BE443B8BA61EE59 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformMisc.hpp */,
-				26FA074B9A0E449CA05D72B9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/CFObjectWrapper.hpp */,
-				B14267F167EC4355A360AFB0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/MacOSNativeWindow.h */,
+				B793784982B145D9AC1803BA /* DiligentLog */,
+				1719AA5DDB6842B6B75D21AC /* ALL_BUILD */,
+				065AC6B441E34C51BCE0D3A2 /* Products */,
+				085FF925104B4C5C9045D3F5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9E889D23475E47E5BD0D0A31 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		B793784982B145D9AC1803BA /* DiligentLog */ = {
+			isa = PBXGroup;
+			children = (
+				62119D612C3D4D00BD0B621D /* Platforms */,
+			);
+			name = DiligentLog;
+			sourceTree = "<group>";
+		};
+		CF30EFC4A2214989A49FC765 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				B17594BDC7FF4EF1A155D620 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleDebug.hpp */,
+				2D386E8A3FB24B19A8780476 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/AppleFileSystem.hpp */,
+				D6E7FFFC7D8E4BA683F2CE80 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformDefinitions.h */,
+				C60E64480FE646DF95FF9214 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/ApplePlatformMisc.hpp */,
+				2A97C3FB806A444FA2BDF533 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/CFObjectWrapper.hpp */,
+				07080880CF42418797917E74 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface/MacOSNativeWindow.h */,
 			);
 			name = "Header Files";
 			sourceTree = "<group>";
 		};
-		E1A00E6C10A44B90BF040E50 /* interface */ = {
+		F32C69B7D1994A1593B90B58 /* interface */ = {
 			isa = PBXGroup;
 			children = (
-				6F955BEA3E2447D0B258D0F9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/Atomics.hpp */,
-				08A2604510854D0687342493 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/FileSystem.hpp */,
-				7E7FD398AEBE4C6E931E38E2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/NativeWindow.h */,
-				DECAF8FADC1E4CD897F6DFDC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDebug.hpp */,
-				098466A0B2354532B7D1CFBA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDefinitions.h */,
-				F990EEF77EC64DC58F057F12 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformMisc.hpp */,
+				68F0D9484BD64A308F01F484 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/Atomics.hpp */,
+				CC6D487ADEE242B2B3C136E3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/FileSystem.hpp */,
+				591DCBC5D57B4BCEB84D79CF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/NativeWindow.h */,
+				02C9DC883E67409591E62FD1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDebug.hpp */,
+				6BC0E694142040059A0CD8E1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformDefinitions.h */,
+				59285B6DEF224891ABA63C8A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface/PlatformMisc.hpp */,
 			);
 			name = interface;
 			sourceTree = "<group>";
@@ -264,19 +264,19 @@
 /* Begin PBXNativeTarget section */
 		76E7AB27CC7A4A1CAC5EBBEA /* Diligent-ApplePlatform */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 67728F616AD34B198AC6207F /* Build configuration list for PBXNativeTarget "Diligent-ApplePlatform" */;
+			buildConfigurationList = 3E6D032D2DBE4756BCB04CF8 /* Build configuration list for PBXNativeTarget "Diligent-ApplePlatform" */;
 			buildPhases = (
-				32C5B9525C47477495AE4C31 /* Sources */,
-				F227DFEB12BE46D0969CB727 /* Frameworks */,
+				F279C7EE5E214135896B05B7 /* Sources */,
+				234076C48EC64A6695F850AE /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CC5F6ED809F7450989E28025 /* PBXTargetDependency */,
+				1C86D571B13C42E6AA021463 /* PBXTargetDependency */,
 			);
 			name = "Diligent-ApplePlatform";
 			productName = "Diligent-ApplePlatform";
-			productReference = 1CAF924DDFD24012A311682C /* Diligent-ApplePlatform */;
+			productReference = 1FC7FBBE5B8D4594BA3DA18A /* Diligent-ApplePlatform */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -288,18 +288,18 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1240;
 			};
-			buildConfigurationList = DFEED6FBE16341FAB2A10B62 /* Build configuration list for PBXProject "Diligent-ApplePlatform" */;
+			buildConfigurationList = 23F76B775D794E72B26A1206 /* Build configuration list for PBXProject "Diligent-ApplePlatform" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				356A0644884F4BD3873D2DD0 /* Debug */,
-				80C8031A9AAC4580B8881697 /* Release */,
-				E41DCDF03CAE43BA80FEEA6E /* MinSizeRel */,
-				EEFC139A93764D62A4C4EF9B /* RelWithDebInfo */,
+				34A02ECE251940F69D0142CD /* Debug */,
+				A3D18004A3EB4B0CB419AEEF /* Release */,
+				C39820595EDA4B56AF06BC26 /* MinSizeRel */,
+				78CFCE883CC443EF89D35AE1 /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = 93DDFCBED7A94EEB92DFC300;
+			mainGroup = 7CCF0BCF5F4C4486B79439B8;
 			projectDirPath = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple";
 			projectRoot = "";
 			targets = (
@@ -457,42 +457,42 @@ fi
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		32C5B9525C47477495AE4C31 /* Sources */ = {
+		F279C7EE5E214135896B05B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AE1529E332F407C8E687904 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleDebug.mm */,
-				B6F5FDDCB17E44AA9DE8702C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleFileSystem.cpp */,
+				E1A7CABB2B1D4116BDECF767 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleDebug.mm */,
+				CF89FCC8370449BFAF5193B5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/src/AppleFileSystem.cpp */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0AD8E04BAF7D44EA9E10BACA /* PBXTargetDependency */ = {
+		1C86D571B13C42E6AA021463 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
-			targetProxy = 771EED1572F542BF9B9D0BC9 /* PBXContainerItemProxy */;
+			targetProxy = 6CA2A761442345E192FAFD5E /* PBXContainerItemProxy */;
 		};
-		91A68B7C060B4EF985B58586 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C170553A14944B729938E9E6 /* ALL_BUILD */;
-			targetProxy = 08DB886EA90D4C71BDCAF10F /* PBXContainerItemProxy */;
-		};
-		CC5F6ED809F7450989E28025 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
-			targetProxy = BF71B66AF6014082A21C16DC /* PBXContainerItemProxy */;
-		};
-		F4AE5A684B394D4CA488018C /* PBXTargetDependency */ = {
+		27582F26B8D9418895E13F03 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 76E7AB27CC7A4A1CAC5EBBEA /* Diligent-ApplePlatform */;
-			targetProxy = F809C03429C84769A846D985 /* PBXContainerItemProxy */;
+			targetProxy = A748799D68B84180BB2930CD /* PBXContainerItemProxy */;
+		};
+		4D9F92FB2C074BEB9F3C42B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C170553A14944B729938E9E6 /* ALL_BUILD */;
+			targetProxy = D9FD722205CA4F78B614BFE2 /* PBXContainerItemProxy */;
+		};
+		5DE3D56F896947BEBDE41842 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
+			targetProxy = 613A10CFE97648998FE5F18A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0BF95EC438504C9F83A43199 /* MinSizeRel */ = {
+		030CD887AE914D9580982EB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -501,40 +501,9 @@ fi
 				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
 				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/build";
 			};
-			name = MinSizeRel;
+			name = Debug;
 		};
-		0E72180F49834E0C8691C438 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		160724E18B2A41339CB29712 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/build";
-			};
-			name = RelWithDebInfo;
-		};
-		1A9E4E65DC934F15829794AE /* MinSizeRel */ = {
+		0AD8E7A83670415199AAAE60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -552,45 +521,29 @@ fi
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = MinSizeRel;
+			name = Release;
 		};
-		21B4EEAC70B848ACA9161CB6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/build";
-			};
-			name = Debug;
-		};
-		30EDE69AA5484090949D1F1D /* Debug */ = {
+		0F6BE5B8B389496DBB984502 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,_DEBUG,DEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'",DILIGENT_DEVELOPMENT,DILIGENT_DEBUG);
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
 				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = "   -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter '-std=c++14' ";
-				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_LDFLAGS = ("");
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "Diligent-ApplePlatform";
+				PRODUCT_NAME = ZERO_CHECK;
 				SECTORDER_FLAGS = "";
 				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = Debug;
+			name = RelWithDebInfo;
 		};
-		329D48B19D6148B8AE807B86 /* RelWithDebInfo */ = {
+		1567D3CFA3534A728255539F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -608,9 +561,9 @@ fi
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = RelWithDebInfo;
+			name = Debug;
 		};
-		350A5DDDE0BD41919C5FF193 /* RelWithDebInfo */ = {
+		25768B455BF34CCD95A4A13B /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -630,7 +583,47 @@ fi
 			};
 			name = RelWithDebInfo;
 		};
-		67C79D28636C4A1C9CAA159B /* Release */ = {
+		267686B3171442AAAF158E6F /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		3188C795E0584E588146B7B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		43097DB09A7A4D69942B3227 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -648,9 +641,9 @@ fi
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = Release;
+			name = MinSizeRel;
 		};
-		6DF08153B39B4B53B4D593AC /* Debug */ = {
+		6AA11157ACB243BDBC28F5D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -670,7 +663,58 @@ fi
 			};
 			name = Debug;
 		};
-		791120649AC14D3E970EA52D /* MinSizeRel */ = {
+		81923F1CED9F46AFAF5CC21E /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		91BF5770B90A4246A66CCF79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		99BDA4FB6F684F3096909458 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/build";
+			};
+			name = MinSizeRel;
+		};
+		9A37D3628DB24C1781B2C15B /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -690,103 +734,7 @@ fi
 			};
 			name = MinSizeRel;
 		};
-		99394CDD988B494C901C010A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		AD1E4C96B8A848B1AD34D902 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
-				OTHER_LIBTOOLFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "Diligent-ApplePlatform";
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		B37DAFC9F6844F0FBBA27CFE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		C59B780B2CF74CABB8909194 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		D672E7EA8FF0413AA3AAC234 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/build";
-			};
-			name = Release;
-		};
-		DF8DD4495E21413EA4D9514E /* RelWithDebInfo */ = {
+		9D5D2FA263524CB7B13887C0 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -797,7 +745,7 @@ fi
 				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
 				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
@@ -811,7 +759,7 @@ fi
 			};
 			name = RelWithDebInfo;
 		};
-		E1F2E31D6C264C0E9ACA1A4E /* MinSizeRel */ = {
+		A4091D577C09466686E97F87 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -822,7 +770,7 @@ fi
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
 				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
@@ -836,7 +784,79 @@ fi
 			};
 			name = MinSizeRel;
 		};
-		F3E3D477A79449B3945DD933 /* Debug */ = {
+		AE58ABCEF49B41AA91552774 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/build";
+			};
+			name = Release;
+		};
+		B854E12A637D4BB2A8006512 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,_DEBUG,DEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'",DILIGENT_DEVELOPMENT,DILIGENT_DEBUG);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "   -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter '-std=c++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "Diligent-ApplePlatform";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		B9D49586D1CF4474B2819D7C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/build";
+			};
+			name = RelWithDebInfo;
+		};
+		D18B59C275B547DBA9AE0F88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "Diligent-ApplePlatform";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		E686489067AD4261B0333EBF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -854,82 +874,62 @@ fi
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = Debug;
-		};
-		FA454980524C46E59CD49D95 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		14FDF031F0974E58832BC8FD /* Build configuration list for PBXAggregateTarget "install" */ = {
+		23F76B775D794E72B26A1206 /* Build configuration list for PBXProject "Diligent-ApplePlatform" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F3E3D477A79449B3945DD933 /* Debug */,
-				B37DAFC9F6844F0FBBA27CFE /* Release */,
-				0E72180F49834E0C8691C438 /* MinSizeRel */,
-				329D48B19D6148B8AE807B86 /* RelWithDebInfo */,
+				030CD887AE914D9580982EB9 /* Debug */,
+				AE58ABCEF49B41AA91552774 /* Release */,
+				99BDA4FB6F684F3096909458 /* MinSizeRel */,
+				B9D49586D1CF4474B2819D7C /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		3FAB96B912294649B45D57CE /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		3E6D032D2DBE4756BCB04CF8 /* Build configuration list for PBXNativeTarget "Diligent-ApplePlatform" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				99394CDD988B494C901C010A /* Debug */,
-				C59B780B2CF74CABB8909194 /* Release */,
-				791120649AC14D3E970EA52D /* MinSizeRel */,
-				FA454980524C46E59CD49D95 /* RelWithDebInfo */,
+				B854E12A637D4BB2A8006512 /* Debug */,
+				D18B59C275B547DBA9AE0F88 /* Release */,
+				A4091D577C09466686E97F87 /* MinSizeRel */,
+				9D5D2FA263524CB7B13887C0 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		67728F616AD34B198AC6207F /* Build configuration list for PBXNativeTarget "Diligent-ApplePlatform" */ = {
+		9CD870294F0B40289C98D579 /* Build configuration list for PBXAggregateTarget "install" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				30EDE69AA5484090949D1F1D /* Debug */,
-				AD1E4C96B8A848B1AD34D902 /* Release */,
-				E1F2E31D6C264C0E9ACA1A4E /* MinSizeRel */,
-				DF8DD4495E21413EA4D9514E /* RelWithDebInfo */,
+				1567D3CFA3534A728255539F /* Debug */,
+				E686489067AD4261B0333EBF /* Release */,
+				81923F1CED9F46AFAF5CC21E /* MinSizeRel */,
+				267686B3171442AAAF158E6F /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		D045B4DEBBCF40D1B8936DA5 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		C81FB82991004DBFBC4ED25B /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6DF08153B39B4B53B4D593AC /* Debug */,
-				67C79D28636C4A1C9CAA159B /* Release */,
-				1A9E4E65DC934F15829794AE /* MinSizeRel */,
-				350A5DDDE0BD41919C5FF193 /* RelWithDebInfo */,
+				91BF5770B90A4246A66CCF79 /* Debug */,
+				3188C795E0584E588146B7B1 /* Release */,
+				9A37D3628DB24C1781B2C15B /* MinSizeRel */,
+				0F6BE5B8B389496DBB984502 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		DFEED6FBE16341FAB2A10B62 /* Build configuration list for PBXProject "Diligent-ApplePlatform" */ = {
+		CFBF3AA3D8FB4E3A9E353F46 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				21B4EEAC70B848ACA9161CB6 /* Debug */,
-				D672E7EA8FF0413AA3AAC234 /* Release */,
-				0BF95EC438504C9F83A43199 /* MinSizeRel */,
-				160724E18B2A41339CB29712 /* RelWithDebInfo */,
+				6AA11157ACB243BDBC28F5D0 /* Debug */,
+				0AD8E7A83670415199AAAE60 /* Release */,
+				43097DB09A7A4D69942B3227 /* MinSizeRel */,
+				25768B455BF34CCD95A4A13B /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

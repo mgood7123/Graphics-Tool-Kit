@@ -9,19 +9,19 @@
 /* Begin PBXAggregateTarget section */
 		4C161972DCC540808363BE2C /* install */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = F1130B8C1EDF409D96F83500 /* Build configuration list for PBXAggregateTarget "install" */;
+			buildConfigurationList = 0A90DA7F6AEF4B8190E66530 /* Build configuration list for PBXAggregateTarget "install" */;
 			buildPhases = (
 				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
 			);
 			dependencies = (
-				630E36D09D6D49E99177BC57 /* PBXTargetDependency */,
+				129EFE0AE2B7406D867994B8 /* PBXTargetDependency */,
 			);
 			name = install;
 			productName = install;
 		};
 		A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 80F6DFE83EAA4C7598CF9914 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = 869E38B651704DFD878A4326 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
 				D2087CDE3F160464F60B3CCA /* Generate CMakeFiles/ZERO_CHECK */,
 			);
@@ -32,13 +32,13 @@
 		};
 		C170553A14944B729938E9E6 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 6E735D223F934ADCB2611367 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = 722CE1AE48B7494C85EECF35 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
 				4EF242EE5DE42BD483B4D3F8 /* Generate CMakeFiles/ALL_BUILD */,
 			);
 			dependencies = (
-				153DAA5D66AD40FF995F8AB0 /* PBXTargetDependency */,
-				FA78228E0AFF4FC8BB38A9D5 /* PBXTargetDependency */,
+				AB26AF9D5DBE4F2593F27267 /* PBXTargetDependency */,
+				6AC4C313A5AF4F6ABD5E3187 /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
@@ -46,199 +46,199 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		05A95AADC04E443B9000AC24 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.h */ = {isa = PBXBuildFile; fileRef = 4F06E5D63B75437CA03E5636 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.h */; };
-		074D675B0BB1439097D66917 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.vc.h */ = {isa = PBXBuildFile; fileRef = 72053E19EE7548029AEC4BDC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.vc.h */; };
-		081390E775A34AB086BD9AB6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffvers.h */ = {isa = PBXBuildFile; fileRef = E615BD4F487F4E848F93D08C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffvers.h */; };
-		091A0660AA06435DBDB2F0A0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.c */ = {isa = PBXBuildFile; fileRef = 0820BC5F10054F0389A40B34 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.c */; };
-		0A73783179744A708F90A261 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3sm.c */ = {isa = PBXBuildFile; fileRef = 76DE95C4DCA944EF9A43DE59 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3sm.c */; };
-		0B5D057F2FD244D79BE14209 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_tile.c */ = {isa = PBXBuildFile; fileRef = B24DF47ADD3449F48B82EF35 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_tile.c */; };
-		0E2D2C3799A84E208648ACEC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiff.h */ = {isa = PBXBuildFile; fileRef = 65F4F18B70EF4AABA88A7823 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiff.h */; };
-		0F425FC7FBC14A22BB24283B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_thunder.c */ = {isa = PBXBuildFile; fileRef = 4ED47292CA2247E4A1FFED5B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_thunder.c */; };
-		1064477411F2464AA50E53E8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.hxx */ = {isa = PBXBuildFile; fileRef = 358C949ADEB1411197859787 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.hxx */; };
-		10DA5127E6654F0FAB3619CA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.c */ = {isa = PBXBuildFile; fileRef = 7745A554DD944827B35B4DFF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.c */; };
-		132DD10532EB40C7ACB7570C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.wince.h */ = {isa = PBXBuildFile; fileRef = 158996B941E648B2AD3CE931 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.wince.h */; };
-		175A47899EE64481B6BD97E2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/uvcode.h */ = {isa = PBXBuildFile; fileRef = 47031921A92F4102A8D291B1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/uvcode.h */; };
-		196B079A1BFB406080DEBF3C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_codec.c */ = {isa = PBXBuildFile; fileRef = A3BD558CC5CF4B82BE7E00B2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_codec.c */; };
-		20AF3D42F1CB4A04BE8779E7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.linux.h */ = {isa = PBXBuildFile; fileRef = 4EB9B791E6144B6384FA84C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.linux.h */; };
-		22FEF0BBD3784252A269B800 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_next.c */ = {isa = PBXBuildFile; fileRef = D7BDD439E5B745B5BA894950 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_next.c */; };
-		2734290ECFEE458F8D136C91 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 7E04629C05E84197A66ACBBC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/CMakeLists.txt */; };
-		2DBE4EC992A74D7994640185 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_strip.c */ = {isa = PBXBuildFile; fileRef = 4BFC3F600FE24199AD1D1D8D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_strip.c */; };
-		2DDBE08B3CC147F0991F2B8A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_warning.c */ = {isa = PBXBuildFile; fileRef = 363E71E36038465C9FCE35C5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_warning.c */; };
-		3152CCD05FED4A6984108F0C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_write.c */ = {isa = PBXBuildFile; fileRef = FE1098876ED0425BAE9306AA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_write.c */; };
-		32158BD54059406AB1048ECC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dumpmode.c */ = {isa = PBXBuildFile; fileRef = 6CAEB5B8A3F34E7EB93A2555 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dumpmode.c */; };
-		3A52F215EC0E41A489C005DE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffiop.h */ = {isa = PBXBuildFile; fileRef = BB0BAD1E742E41AAB150E1F6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffiop.h */; };
-		3B35AA69D93F4B3F9030A8D7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_read.c */ = {isa = PBXBuildFile; fileRef = 971F3D02676747C98B4323C6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_read.c */; };
-		3B9D289E6F284C7BA0C170A1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg_12.c */ = {isa = PBXBuildFile; fileRef = DA85283BC55944BB8858BBE0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg_12.c */; };
-		4348498E38E44A75A70D1A3F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_ojpeg.c */ = {isa = PBXBuildFile; fileRef = D009F9666FC2478A88520EE5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_ojpeg.c */; };
-		4566500CBC8C4E14B3967516 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_pixarlog.c */ = {isa = PBXBuildFile; fileRef = 9D66CA82947B47BC85CB0042 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_pixarlog.c */; };
-		4652E5512AD74216B8C9EBFE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzw.c */ = {isa = PBXBuildFile; fileRef = CF72693420C54563BDE312F7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzw.c */; };
-		4AFD6EE4372E438888145CD8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.h */ = {isa = PBXBuildFile; fileRef = 62FB9AE54E9F43F4BDFEC53A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.h */; };
-		4D8552026E0E402A8ECBD17F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_aux.c */ = {isa = PBXBuildFile; fileRef = 50DF248BEA2A440FBED8C609 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_aux.c */; };
-		4DAA1DB0CEE14D5180BD3790 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirwrite.c */ = {isa = PBXBuildFile; fileRef = 7DC3B875CB0645FB9087FDD5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirwrite.c */; };
-		50A9CCF50D5A4F8CBC1F3F1F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h */ = {isa = PBXBuildFile; fileRef = 2DDDE4E2A73546B7874FDA12 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h */; };
-		54AF66242D5947008A1265E8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.h */ = {isa = PBXBuildFile; fileRef = 94F6B98C75AE49F5BA4A645E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.h */; };
-		5DBEDA0888FD49A7B5B10E08 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirread.c */ = {isa = PBXBuildFile; fileRef = 30F38343B94C4CCCA00E1511 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirread.c */; };
-		688B6D6FB16442E89E7C8094 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_open.c */ = {isa = PBXBuildFile; fileRef = 31F22801D5E14E85ADC170CE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_open.c */; };
-		6C2D470663DB4C63BB363CB6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_stream.cxx */ = {isa = PBXBuildFile; fileRef = A93A7A35C39D4C92BA5F3227 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_stream.cxx */; };
-		716EFE38B1A14E849A251C06 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_luv.c */ = {isa = PBXBuildFile; fileRef = 9167EF720A8F40A594854646 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_luv.c */; };
-		726E2323F0684801899A4738 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_compress.c */ = {isa = PBXBuildFile; fileRef = 3023F2FC29584A4194782B8C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_compress.c */; };
-		73A27CB3BB4A47B6B126A1C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.vc.h */ = {isa = PBXBuildFile; fileRef = E6997D2BFEFB42968DC83A12 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.vc.h */; };
-		75650DB6CED24EE6B2BD8685 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jbig.c */ = {isa = PBXBuildFile; fileRef = A542CD49EFBE4E4B9F8C7764 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jbig.c */; };
-		7BD08ED7401A414CAC38C97F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.h */ = {isa = PBXBuildFile; fileRef = BAEB1E3A4E00491C9F9FD4EB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.h */; };
-		7E75C1561B78423BAD13869F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_version.c */ = {isa = PBXBuildFile; fileRef = 5C8665BE80984CC887CA5150 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_version.c */; };
-		89CC75483380409C8262F4F9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.android.h */ = {isa = PBXBuildFile; fileRef = 4E1D36BAD88B40FA8F72D805 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.android.h */; };
-		8C8BE7AB8A394107B808E207 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg.c */ = {isa = PBXBuildFile; fileRef = EA4FE711F1FD46ED946447F3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg.c */; };
-		9C170939E3D8467C85E76028 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.c */ = {isa = PBXBuildFile; fileRef = 6486C73FC7F04C6BAAFC74F1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.c */; };
-		A1CB8C8B0E344DEBA5D0E208 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/t4.h */ = {isa = PBXBuildFile; fileRef = 6D8780D081CA44118C8D8F9C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/t4.h */; };
-		A80606F53191445B8BC7775B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_print.c */ = {isa = PBXBuildFile; fileRef = 325FFFADA48C4F9A80B4E792 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_print.c */; };
-		A876D278AA7A4500834B5920 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_extension.c */ = {isa = PBXBuildFile; fileRef = C7EBB7FC715649C6853DAB29 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_extension.c */; };
-		B3F73CF1CE704475A9862697 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_close.c */ = {isa = PBXBuildFile; fileRef = 788C580CE93645928DF4E751 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_close.c */; };
-		BC9158D3F3EF4A639DF7A20E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_packbits.c */ = {isa = PBXBuildFile; fileRef = 6C29583FBFE04BA68C08EF0E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_packbits.c */; };
-		C44B0836CCE84F6B81EB467B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_zip.c */ = {isa = PBXBuildFile; fileRef = D0231D44F3384925A70EC46F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_zip.c */; };
-		C4E35D2629DD4804BFE237A8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.linux.h */ = {isa = PBXBuildFile; fileRef = 84026C23923E4856BA1C3B35 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.linux.h */; };
-		C8C1B90B8296497CAA8F2272 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.wince.h */ = {isa = PBXBuildFile; fileRef = D43FE805A0B54ABBB919A343 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.wince.h */; };
-		D69C2D91A3A240DBAB9D7208 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirinfo.c */ = {isa = PBXBuildFile; fileRef = 8A43BCC8818B4FCC9F108E79 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirinfo.c */; };
-		D6A5225AF4C747BFB820B675 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_flush.c */ = {isa = PBXBuildFile; fileRef = 2E1C7ABAB9B346928619A35A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_flush.c */; };
-		D6E24E0CACB741E9B4D87AA7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_getimage.c */ = {isa = PBXBuildFile; fileRef = 76DC6838A6BB452CBF1D0390 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_getimage.c */; };
-		D7A38E54200D4F81AF61524E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzma.c */ = {isa = PBXBuildFile; fileRef = 7D50005DDEA943EA923EC9FA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzma.c */; };
-		DD8374E1B97C4165B345532A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.h */ = {isa = PBXBuildFile; fileRef = 7443554727224AB2B7E8543D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.h */; };
-		F48E8E1B7344450CA132F996 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_error.c */ = {isa = PBXBuildFile; fileRef = 307353AE231B44F5B721CF65 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_error.c */; };
-		F5AA329035744EC8B130056B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_swab.c */ = {isa = PBXBuildFile; fileRef = A26A2DBD736B432788D8E9FC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_swab.c */; };
-		F61FDF7E95774653AFEE09F4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h-vms */ = {isa = PBXBuildFile; fileRef = A05F639095B44A8AB510B21C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h-vms */; };
-		F6664DDC5D9B48D2A488901F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_unix.c */ = {isa = PBXBuildFile; fileRef = D85778E04CFD40BA85B083FC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_unix.c */; settings = {COMPILER_FLAGS = "-Wno-pointer-to-int-cast -Wno-int-to-pointer-cast"; }; };
-		FF1B4334DFB242C2A6FADD6B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_color.c */ = {isa = PBXBuildFile; fileRef = A3E6BF71F37046B78BC465F1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_color.c */; };
+		05D1D591EDAD4E87B4EEE21A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.hxx */ = {isa = PBXBuildFile; fileRef = 7386EB9492564EAB886533B1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.hxx */; };
+		07AAE4D2FFBB4FD7A2419A5E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.c */ = {isa = PBXBuildFile; fileRef = 00B7FBFC26B24397ABEEA045 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.c */; };
+		0ABBDB051BCE4DB9B2A3FB61 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_compress.c */ = {isa = PBXBuildFile; fileRef = 466255E267D6429E9BE497DF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_compress.c */; };
+		16BBB980F0814A6494D67417 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_pixarlog.c */ = {isa = PBXBuildFile; fileRef = D277DE587C874C99826A0712 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_pixarlog.c */; };
+		1A2C37AEC9F14597B34142F7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.h */ = {isa = PBXBuildFile; fileRef = 7FE236161DD540A3AEAE3F9F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.h */; };
+		20F3955EAF0A4691B0EE63EF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.linux.h */ = {isa = PBXBuildFile; fileRef = 008C022EB8F9432C8495F8C0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.linux.h */; };
+		2612A252928E4414A9C788D8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.vc.h */ = {isa = PBXBuildFile; fileRef = B5FC00E980B64486B97F7607 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.vc.h */; };
+		28CBF93DC87B4D5C9B7CBF0B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_open.c */ = {isa = PBXBuildFile; fileRef = F5C2F71B57D242618B3F8EF1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_open.c */; };
+		2ACFBE641E61498EB422C603 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h-vms */ = {isa = PBXBuildFile; fileRef = CB3AA44A52D34B40870EC1D7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h-vms */; };
+		2F7EB2320673454FB5221197 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_tile.c */ = {isa = PBXBuildFile; fileRef = 4E4394DA82F04D098F0B1806 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_tile.c */; };
+		306A7C881BF942CC9EB16429 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.c */ = {isa = PBXBuildFile; fileRef = C3CD16EAC5BF452FA0D900BB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.c */; };
+		34A6EC75D26D48EC98170098 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_close.c */ = {isa = PBXBuildFile; fileRef = 793026D7BCA64E22AC7C1E04 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_close.c */; };
+		419070649B924224BF93CB98 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.h */ = {isa = PBXBuildFile; fileRef = F306170DDFBF420AA69F186B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.h */; };
+		43D77B41649C4DD4B7515397 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzma.c */ = {isa = PBXBuildFile; fileRef = 1610139B3C644BB2B35E9B00 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzma.c */; };
+		446BCB6453E645EFAA1EB4B4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h */ = {isa = PBXBuildFile; fileRef = 33A43B43E18046D1BC716FDB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h */; };
+		4B99FDE967E14F088BDFCAB2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.c */ = {isa = PBXBuildFile; fileRef = 8BB08F125DFB48B9A2A6BD96 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.c */; };
+		4FB26FB42DB24F52B5980F76 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.linux.h */ = {isa = PBXBuildFile; fileRef = D24114F37CEC49B8ACF5D624 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.linux.h */; };
+		50A005B4EC1A411CBF0A2C54 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_zip.c */ = {isa = PBXBuildFile; fileRef = 7691E4B5384942EEA24F10FF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_zip.c */; };
+		580AEEAAE77546CD975D5C4D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_packbits.c */ = {isa = PBXBuildFile; fileRef = F08509E043EC42E0955F84EA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_packbits.c */; };
+		5864929DE5F64CB9BF4812A3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/t4.h */ = {isa = PBXBuildFile; fileRef = DFE030B5B0874577A2745E5B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/t4.h */; };
+		660E307F75E14337BD997FEC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirread.c */ = {isa = PBXBuildFile; fileRef = 8C42A9452C6D4292BB89154A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirread.c */; };
+		6EB38BA841874B008B1EECBF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.wince.h */ = {isa = PBXBuildFile; fileRef = 45E051C0758A492E80D6DF3C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.wince.h */; };
+		78EBBADCA53D44B8A544EC4D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_swab.c */ = {isa = PBXBuildFile; fileRef = 85D69F2876184C74A48AC3C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_swab.c */; };
+		7BE83AD2DF5848F193E235B6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiff.h */ = {isa = PBXBuildFile; fileRef = 53C43F1B8A1946958A1D0BED /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiff.h */; };
+		7C28E32DE052440CBAE3BA84 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_extension.c */ = {isa = PBXBuildFile; fileRef = 8B5DEC0D516D4250AD8A634F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_extension.c */; };
+		7DF6AC0606EA4F81B5741052 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.vc.h */ = {isa = PBXBuildFile; fileRef = 6A3715D708F14A1586651841 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.vc.h */; };
+		7E4042837D004EAAB72A3834 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.wince.h */ = {isa = PBXBuildFile; fileRef = D8A2A6FA168445CC8C1FCD77 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.wince.h */; };
+		7EBE3092DD164931AA2F5407 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_ojpeg.c */ = {isa = PBXBuildFile; fileRef = 64064210BDD24B74B4DE3A70 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_ojpeg.c */; };
+		84479A3849FA489393BC9AF8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3sm.c */ = {isa = PBXBuildFile; fileRef = 5446E1C51217449A90AB6757 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3sm.c */; };
+		847C7A39B9D14EE1A57FE008 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_unix.c */ = {isa = PBXBuildFile; fileRef = 7CFF9365AA2649B785D5F00D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_unix.c */; settings = {COMPILER_FLAGS = "-Wno-pointer-to-int-cast -Wno-int-to-pointer-cast"; }; };
+		8569486A2024467CBD10FFD0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_write.c */ = {isa = PBXBuildFile; fileRef = E5A397AB8FB14E3B99E215B8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_write.c */; };
+		8C6E95E30CA04548BC0024F9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_next.c */ = {isa = PBXBuildFile; fileRef = 4C2DE799DA1E4414BDC68C49 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_next.c */; };
+		8E3A9A2D11E44B5CA56BD3AA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_strip.c */ = {isa = PBXBuildFile; fileRef = E9F2FEF9954044DFA8B91489 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_strip.c */; };
+		8E88A9A8410749E7B15E6307 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirwrite.c */ = {isa = PBXBuildFile; fileRef = F51EAE5F86DC4EB3ACEB037C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirwrite.c */; };
+		8EEC17814B1848DFBD40C519 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_aux.c */ = {isa = PBXBuildFile; fileRef = F040E085C95C441BAD2F0B89 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_aux.c */; };
+		8FFBE792AC624170B4EB6A90 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.h */ = {isa = PBXBuildFile; fileRef = 98F38D4CC80D4353A2CF22AF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.h */; };
+		9495F4D9BD0243F4A32D7578 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffvers.h */ = {isa = PBXBuildFile; fileRef = 8FD6DB14C8C246D5B8228B36 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffvers.h */; };
+		99ED5684CCE548BF9A0676DF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_getimage.c */ = {isa = PBXBuildFile; fileRef = 7C704709BC1C43BBAEF988F4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_getimage.c */; };
+		A41ABE8764DB467FB577D018 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirinfo.c */ = {isa = PBXBuildFile; fileRef = 5F14004A6B9A4484B2E6F258 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirinfo.c */; };
+		A67C1B7A978F40F3B574B8F1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.h */ = {isa = PBXBuildFile; fileRef = 1707D3751C5143238ACE755A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.h */; };
+		A7F9D052130F4A9587EA879A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_thunder.c */ = {isa = PBXBuildFile; fileRef = 1EFADAF80A744F3B843145B2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_thunder.c */; };
+		AFEBB936FDD2436ABF1BB31B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_luv.c */ = {isa = PBXBuildFile; fileRef = B35E079F83BC4E91AC22A8A5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_luv.c */; };
+		B341B0B9048847CC8A8F14CB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_color.c */ = {isa = PBXBuildFile; fileRef = 928FCE19ADA448838A23FB09 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_color.c */; };
+		BBDE88E6CBE0475AAE78A37D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_warning.c */ = {isa = PBXBuildFile; fileRef = 3F399507DA004C49BA078B07 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_warning.c */; };
+		BE5F7FFDADFB40D48C0B51D0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_stream.cxx */ = {isa = PBXBuildFile; fileRef = D1A6A7898B7B4EA3B9E0F07E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_stream.cxx */; };
+		C16CDB44A7B3441A91262E33 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg_12.c */ = {isa = PBXBuildFile; fileRef = C48C99CF8055489F864F2BBB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg_12.c */; };
+		CA27E1DB6ABA4201A998F300 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.h */ = {isa = PBXBuildFile; fileRef = 8FA79FAD64104B0D8914E987 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.h */; };
+		D6ED0C4E77A84B65B594F099 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.android.h */ = {isa = PBXBuildFile; fileRef = AF354C296BB0467E9233995A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.android.h */; };
+		D858B712304A4E5D9EEAC3CE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_flush.c */ = {isa = PBXBuildFile; fileRef = 1FF1145B712A443C96F7BBC6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_flush.c */; };
+		DBE275C3EF2F4A78A7D297F7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_read.c */ = {isa = PBXBuildFile; fileRef = 2939C57C6EDE4540858A3DFD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_read.c */; };
+		DD57CC5592504895AAB0C127 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dumpmode.c */ = {isa = PBXBuildFile; fileRef = 274E798A6865430D96884818 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dumpmode.c */; };
+		E3D8AF229B294ACFA8AF758F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_print.c */ = {isa = PBXBuildFile; fileRef = B6052429C5544AF5B7425B78 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_print.c */; };
+		E42F1A7EB0934E26BDF069BC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_error.c */ = {isa = PBXBuildFile; fileRef = 63F567CA7FDF41A2BD5EA303 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_error.c */; };
+		E66E8E52B1EC48F9BDE632F1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffiop.h */ = {isa = PBXBuildFile; fileRef = 37C233FD6D5245F4993313A9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffiop.h */; };
+		EBEBF2D444A142A3BCB78750 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg.c */ = {isa = PBXBuildFile; fileRef = BA2385229BDE4EBFA333DC9E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg.c */; };
+		EE281A881FAB465A93E62E7E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/uvcode.h */ = {isa = PBXBuildFile; fileRef = 43930318AF8D40AAB0A83EFD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/uvcode.h */; };
+		F0412D1C32E24FE499C0C069 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jbig.c */ = {isa = PBXBuildFile; fileRef = 54106A3D97C3465D943B80B3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jbig.c */; };
+		F270F4E72965461F85D0A3E3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_version.c */ = {isa = PBXBuildFile; fileRef = 9B3A78B249BA4096BBDA4D73 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_version.c */; };
+		FC5AC249B6BA4F50BAD20969 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_codec.c */ = {isa = PBXBuildFile; fileRef = 0DF9D88A5B5647C0BF7A5239 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_codec.c */; };
+		FC898F30E8024B5D9340E18D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 774E42FF79CC4398B56A3D1B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/CMakeLists.txt */; };
+		FED9828C7EAB4AD2B3DD7CBA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzw.c */ = {isa = PBXBuildFile; fileRef = 469B1D6A6B8B4B708B4630F3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzw.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		629AEA23AE1147C6B9510CFF /* Debug */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Debug;
-		};
-		9DC6DBD2DC0747FEABE78C44 /* RelWithDebInfo */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = RelWithDebInfo;
-		};
-		E3FC93EA29A5489FA3473566 /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Release;
-		};
-		EF14B1F7925744ADB378D5A1 /* MinSizeRel */ = {
+		02F900EA0BA742899B117EFD /* MinSizeRel */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = MinSizeRel;
 		};
+		6C6354555DC24803AF5786A8 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		B0A258B9B79A40DB93233079 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		CF96BC787E384FFBAFD5B9E5 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		0A7070EE0D51450BB1FA6176 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB0A44708FC84278B64C6F74 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8A7A1452BA524BD79ABDB0E0;
-			remoteInfo = LibTiff;
-		};
-		430C5485180A4CAAB46BE9BC /* PBXContainerItemProxy */ = {
+		7F7CFF8A950C4FAFBE2F8138 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB0A44708FC84278B64C6F74 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C170553A14944B729938E9E6;
 			remoteInfo = ALL_BUILD;
 		};
-		73E84CF4A728458BA714FE8F /* PBXContainerItemProxy */ = {
+		88E464F59D304C3F910E174E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB0A44708FC84278B64C6F74 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
 			remoteInfo = ZERO_CHECK;
 		};
-		BEDE97096DD04E0AAFC8333B /* PBXContainerItemProxy */ = {
+		A6CE46DFE0924F3AB6DDA6E3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB0A44708FC84278B64C6F74 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
 			remoteInfo = ZERO_CHECK;
+		};
+		EBE9C491A16245D9AC0A8F97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB0A44708FC84278B64C6F74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A7A1452BA524BD79ABDB0E0;
+			remoteInfo = LibTiff;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0820BC5F10054F0389A40B34 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_fax3.c; path = tif_fax3.c; sourceTree = SOURCE_ROOT; };
-		158996B941E648B2AD3CE931 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.wince.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiffconf.wince.h; path = tiffconf.wince.h; sourceTree = SOURCE_ROOT; };
-		2AAEB07AC238463B817D268D /* LibTiff */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libLibTiff.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2DDDE4E2A73546B7874FDA12 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_config.h; path = tif_config.h; sourceTree = SOURCE_ROOT; };
-		2E1C7ABAB9B346928619A35A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_flush.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_flush.c; path = tif_flush.c; sourceTree = SOURCE_ROOT; };
-		3023F2FC29584A4194782B8C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_compress.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_compress.c; path = tif_compress.c; sourceTree = SOURCE_ROOT; };
-		307353AE231B44F5B721CF65 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_error.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_error.c; path = tif_error.c; sourceTree = SOURCE_ROOT; };
-		30F38343B94C4CCCA00E1511 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirread.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_dirread.c; path = tif_dirread.c; sourceTree = SOURCE_ROOT; };
-		31F22801D5E14E85ADC170CE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_open.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_open.c; path = tif_open.c; sourceTree = SOURCE_ROOT; };
-		325FFFADA48C4F9A80B4E792 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_print.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_print.c; path = tif_print.c; sourceTree = SOURCE_ROOT; };
-		358C949ADEB1411197859787 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.hxx */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = tiffio.hxx; path = tiffio.hxx; sourceTree = SOURCE_ROOT; };
-		363E71E36038465C9FCE35C5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_warning.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_warning.c; path = tif_warning.c; sourceTree = SOURCE_ROOT; };
-		3A72DE95A76F4385A1F8066E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		47031921A92F4102A8D291B1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/uvcode.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = uvcode.h; path = uvcode.h; sourceTree = SOURCE_ROOT; };
-		4BFC3F600FE24199AD1D1D8D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_strip.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_strip.c; path = tif_strip.c; sourceTree = SOURCE_ROOT; };
-		4E1D36BAD88B40FA8F72D805 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.android.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_config.android.h; path = tif_config.android.h; sourceTree = SOURCE_ROOT; };
-		4EB9B791E6144B6384FA84C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.linux.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_config.linux.h; path = tif_config.linux.h; sourceTree = SOURCE_ROOT; };
-		4ED47292CA2247E4A1FFED5B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_thunder.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_thunder.c; path = tif_thunder.c; sourceTree = SOURCE_ROOT; };
-		4F06E5D63B75437CA03E5636 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiffconf.h; path = tiffconf.h; sourceTree = SOURCE_ROOT; };
-		50DF248BEA2A440FBED8C609 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_aux.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_aux.c; path = tif_aux.c; sourceTree = SOURCE_ROOT; };
-		5C8665BE80984CC887CA5150 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_version.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_version.c; path = tif_version.c; sourceTree = SOURCE_ROOT; };
-		62FB9AE54E9F43F4BDFEC53A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_fax3.h; path = tif_fax3.h; sourceTree = SOURCE_ROOT; };
-		6486C73FC7F04C6BAAFC74F1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_predict.c; path = tif_predict.c; sourceTree = SOURCE_ROOT; };
-		65F4F18B70EF4AABA88A7823 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiff.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiff.h; path = tiff.h; sourceTree = SOURCE_ROOT; };
-		6C29583FBFE04BA68C08EF0E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_packbits.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_packbits.c; path = tif_packbits.c; sourceTree = SOURCE_ROOT; };
-		6CAEB5B8A3F34E7EB93A2555 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dumpmode.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_dumpmode.c; path = tif_dumpmode.c; sourceTree = SOURCE_ROOT; };
-		6D8780D081CA44118C8D8F9C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/t4.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = t4.h; path = t4.h; sourceTree = SOURCE_ROOT; };
-		72053E19EE7548029AEC4BDC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.vc.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_config.vc.h; path = tif_config.vc.h; sourceTree = SOURCE_ROOT; };
-		7443554727224AB2B7E8543D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_predict.h; path = tif_predict.h; sourceTree = SOURCE_ROOT; };
-		76DC6838A6BB452CBF1D0390 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_getimage.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_getimage.c; path = tif_getimage.c; sourceTree = SOURCE_ROOT; };
-		76DE95C4DCA944EF9A43DE59 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3sm.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_fax3sm.c; path = tif_fax3sm.c; sourceTree = SOURCE_ROOT; };
-		7745A554DD944827B35B4DFF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_dir.c; path = tif_dir.c; sourceTree = SOURCE_ROOT; };
-		788C580CE93645928DF4E751 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_close.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_close.c; path = tif_close.c; sourceTree = SOURCE_ROOT; };
-		7D50005DDEA943EA923EC9FA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzma.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_lzma.c; path = tif_lzma.c; sourceTree = SOURCE_ROOT; };
-		7DC3B875CB0645FB9087FDD5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirwrite.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_dirwrite.c; path = tif_dirwrite.c; sourceTree = SOURCE_ROOT; };
-		7E04629C05E84197A66ACBBC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		84026C23923E4856BA1C3B35 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.linux.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiffconf.linux.h; path = tiffconf.linux.h; sourceTree = SOURCE_ROOT; };
-		8A43BCC8818B4FCC9F108E79 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirinfo.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_dirinfo.c; path = tif_dirinfo.c; sourceTree = SOURCE_ROOT; };
-		9167EF720A8F40A594854646 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_luv.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_luv.c; path = tif_luv.c; sourceTree = SOURCE_ROOT; };
-		94F6B98C75AE49F5BA4A645E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiffio.h; path = tiffio.h; sourceTree = SOURCE_ROOT; };
-		971F3D02676747C98B4323C6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_read.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_read.c; path = tif_read.c; sourceTree = SOURCE_ROOT; };
-		9D66CA82947B47BC85CB0042 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_pixarlog.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_pixarlog.c; path = tif_pixarlog.c; sourceTree = SOURCE_ROOT; };
-		A05F639095B44A8AB510B21C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h-vms */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = "tif_config.h-vms"; path = "tif_config.h-vms"; sourceTree = SOURCE_ROOT; };
-		A26A2DBD736B432788D8E9FC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_swab.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_swab.c; path = tif_swab.c; sourceTree = SOURCE_ROOT; };
-		A3BD558CC5CF4B82BE7E00B2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_codec.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_codec.c; path = tif_codec.c; sourceTree = SOURCE_ROOT; };
-		A3E6BF71F37046B78BC465F1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_color.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_color.c; path = tif_color.c; sourceTree = SOURCE_ROOT; };
-		A542CD49EFBE4E4B9F8C7764 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jbig.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_jbig.c; path = tif_jbig.c; sourceTree = SOURCE_ROOT; };
-		A93A7A35C39D4C92BA5F3227 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_stream.cxx */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tif_stream.cxx; path = tif_stream.cxx; sourceTree = SOURCE_ROOT; };
-		B24DF47ADD3449F48B82EF35 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_tile.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_tile.c; path = tif_tile.c; sourceTree = SOURCE_ROOT; };
-		BAEB1E3A4E00491C9F9FD4EB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_dir.h; path = tif_dir.h; sourceTree = SOURCE_ROOT; };
-		BB0BAD1E742E41AAB150E1F6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffiop.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiffiop.h; path = tiffiop.h; sourceTree = SOURCE_ROOT; };
-		C7EBB7FC715649C6853DAB29 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_extension.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_extension.c; path = tif_extension.c; sourceTree = SOURCE_ROOT; };
-		CF72693420C54563BDE312F7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzw.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_lzw.c; path = tif_lzw.c; sourceTree = SOURCE_ROOT; };
-		D009F9666FC2478A88520EE5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_ojpeg.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_ojpeg.c; path = tif_ojpeg.c; sourceTree = SOURCE_ROOT; };
-		D0231D44F3384925A70EC46F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_zip.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_zip.c; path = tif_zip.c; sourceTree = SOURCE_ROOT; };
-		D43FE805A0B54ABBB919A343 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.wince.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_config.wince.h; path = tif_config.wince.h; sourceTree = SOURCE_ROOT; };
-		D7BDD439E5B745B5BA894950 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_next.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_next.c; path = tif_next.c; sourceTree = SOURCE_ROOT; };
-		D85778E04CFD40BA85B083FC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_unix.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_unix.c; path = tif_unix.c; sourceTree = SOURCE_ROOT; };
-		DA85283BC55944BB8858BBE0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg_12.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_jpeg_12.c; path = tif_jpeg_12.c; sourceTree = SOURCE_ROOT; };
-		E615BD4F487F4E848F93D08C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffvers.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiffvers.h; path = tiffvers.h; sourceTree = SOURCE_ROOT; };
-		E6997D2BFEFB42968DC83A12 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.vc.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiffconf.vc.h; path = tiffconf.vc.h; sourceTree = SOURCE_ROOT; };
-		EA4FE711F1FD46ED946447F3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_jpeg.c; path = tif_jpeg.c; sourceTree = SOURCE_ROOT; };
-		FE1098876ED0425BAE9306AA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_write.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_write.c; path = tif_write.c; sourceTree = SOURCE_ROOT; };
+		008C022EB8F9432C8495F8C0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.linux.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiffconf.linux.h; path = tiffconf.linux.h; sourceTree = SOURCE_ROOT; };
+		00B7FBFC26B24397ABEEA045 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_dir.c; path = tif_dir.c; sourceTree = SOURCE_ROOT; };
+		0DF9D88A5B5647C0BF7A5239 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_codec.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_codec.c; path = tif_codec.c; sourceTree = SOURCE_ROOT; };
+		1610139B3C644BB2B35E9B00 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzma.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_lzma.c; path = tif_lzma.c; sourceTree = SOURCE_ROOT; };
+		1707D3751C5143238ACE755A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_predict.h; path = tif_predict.h; sourceTree = SOURCE_ROOT; };
+		1EFADAF80A744F3B843145B2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_thunder.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_thunder.c; path = tif_thunder.c; sourceTree = SOURCE_ROOT; };
+		1FF1145B712A443C96F7BBC6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_flush.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_flush.c; path = tif_flush.c; sourceTree = SOURCE_ROOT; };
+		274E798A6865430D96884818 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dumpmode.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_dumpmode.c; path = tif_dumpmode.c; sourceTree = SOURCE_ROOT; };
+		2939C57C6EDE4540858A3DFD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_read.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_read.c; path = tif_read.c; sourceTree = SOURCE_ROOT; };
+		33A43B43E18046D1BC716FDB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_config.h; path = tif_config.h; sourceTree = SOURCE_ROOT; };
+		37C233FD6D5245F4993313A9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffiop.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiffiop.h; path = tiffiop.h; sourceTree = SOURCE_ROOT; };
+		3F399507DA004C49BA078B07 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_warning.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_warning.c; path = tif_warning.c; sourceTree = SOURCE_ROOT; };
+		43930318AF8D40AAB0A83EFD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/uvcode.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = uvcode.h; path = uvcode.h; sourceTree = SOURCE_ROOT; };
+		45E051C0758A492E80D6DF3C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.wince.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_config.wince.h; path = tif_config.wince.h; sourceTree = SOURCE_ROOT; };
+		466255E267D6429E9BE497DF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_compress.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_compress.c; path = tif_compress.c; sourceTree = SOURCE_ROOT; };
+		469B1D6A6B8B4B708B4630F3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzw.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_lzw.c; path = tif_lzw.c; sourceTree = SOURCE_ROOT; };
+		4C2DE799DA1E4414BDC68C49 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_next.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_next.c; path = tif_next.c; sourceTree = SOURCE_ROOT; };
+		4E4394DA82F04D098F0B1806 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_tile.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_tile.c; path = tif_tile.c; sourceTree = SOURCE_ROOT; };
+		53C43F1B8A1946958A1D0BED /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiff.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiff.h; path = tiff.h; sourceTree = SOURCE_ROOT; };
+		54106A3D97C3465D943B80B3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jbig.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_jbig.c; path = tif_jbig.c; sourceTree = SOURCE_ROOT; };
+		5446E1C51217449A90AB6757 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3sm.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_fax3sm.c; path = tif_fax3sm.c; sourceTree = SOURCE_ROOT; };
+		5F14004A6B9A4484B2E6F258 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirinfo.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_dirinfo.c; path = tif_dirinfo.c; sourceTree = SOURCE_ROOT; };
+		63F567CA7FDF41A2BD5EA303 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_error.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_error.c; path = tif_error.c; sourceTree = SOURCE_ROOT; };
+		64064210BDD24B74B4DE3A70 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_ojpeg.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_ojpeg.c; path = tif_ojpeg.c; sourceTree = SOURCE_ROOT; };
+		6A3715D708F14A1586651841 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.vc.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiffconf.vc.h; path = tiffconf.vc.h; sourceTree = SOURCE_ROOT; };
+		7386EB9492564EAB886533B1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.hxx */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = tiffio.hxx; path = tiffio.hxx; sourceTree = SOURCE_ROOT; };
+		7691E4B5384942EEA24F10FF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_zip.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_zip.c; path = tif_zip.c; sourceTree = SOURCE_ROOT; };
+		774E42FF79CC4398B56A3D1B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		793026D7BCA64E22AC7C1E04 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_close.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_close.c; path = tif_close.c; sourceTree = SOURCE_ROOT; };
+		7C704709BC1C43BBAEF988F4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_getimage.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_getimage.c; path = tif_getimage.c; sourceTree = SOURCE_ROOT; };
+		7CFF9365AA2649B785D5F00D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_unix.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_unix.c; path = tif_unix.c; sourceTree = SOURCE_ROOT; };
+		7FE236161DD540A3AEAE3F9F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_fax3.h; path = tif_fax3.h; sourceTree = SOURCE_ROOT; };
+		85D69F2876184C74A48AC3C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_swab.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_swab.c; path = tif_swab.c; sourceTree = SOURCE_ROOT; };
+		8B5DEC0D516D4250AD8A634F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_extension.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_extension.c; path = tif_extension.c; sourceTree = SOURCE_ROOT; };
+		8BB08F125DFB48B9A2A6BD96 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_fax3.c; path = tif_fax3.c; sourceTree = SOURCE_ROOT; };
+		8C42A9452C6D4292BB89154A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirread.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_dirread.c; path = tif_dirread.c; sourceTree = SOURCE_ROOT; };
+		8FA79FAD64104B0D8914E987 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiffio.h; path = tiffio.h; sourceTree = SOURCE_ROOT; };
+		8FD6DB14C8C246D5B8228B36 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffvers.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiffvers.h; path = tiffvers.h; sourceTree = SOURCE_ROOT; };
+		928FCE19ADA448838A23FB09 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_color.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_color.c; path = tif_color.c; sourceTree = SOURCE_ROOT; };
+		98F38D4CC80D4353A2CF22AF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_dir.h; path = tif_dir.h; sourceTree = SOURCE_ROOT; };
+		9B3A78B249BA4096BBDA4D73 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_version.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_version.c; path = tif_version.c; sourceTree = SOURCE_ROOT; };
+		A880B21068F9433B88F4AA5E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		AF354C296BB0467E9233995A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.android.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_config.android.h; path = tif_config.android.h; sourceTree = SOURCE_ROOT; };
+		B35E079F83BC4E91AC22A8A5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_luv.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_luv.c; path = tif_luv.c; sourceTree = SOURCE_ROOT; };
+		B5FC00E980B64486B97F7607 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.vc.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_config.vc.h; path = tif_config.vc.h; sourceTree = SOURCE_ROOT; };
+		B6052429C5544AF5B7425B78 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_print.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_print.c; path = tif_print.c; sourceTree = SOURCE_ROOT; };
+		BA2385229BDE4EBFA333DC9E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_jpeg.c; path = tif_jpeg.c; sourceTree = SOURCE_ROOT; };
+		C3CD16EAC5BF452FA0D900BB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_predict.c; path = tif_predict.c; sourceTree = SOURCE_ROOT; };
+		C3ED1F7B1FAD439783365DD2 /* LibTiff */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libLibTiff.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C48C99CF8055489F864F2BBB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg_12.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_jpeg_12.c; path = tif_jpeg_12.c; sourceTree = SOURCE_ROOT; };
+		CB3AA44A52D34B40870EC1D7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h-vms */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = "tif_config.h-vms"; path = "tif_config.h-vms"; sourceTree = SOURCE_ROOT; };
+		D1A6A7898B7B4EA3B9E0F07E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_stream.cxx */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tif_stream.cxx; path = tif_stream.cxx; sourceTree = SOURCE_ROOT; };
+		D24114F37CEC49B8ACF5D624 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.linux.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tif_config.linux.h; path = tif_config.linux.h; sourceTree = SOURCE_ROOT; };
+		D277DE587C874C99826A0712 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_pixarlog.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_pixarlog.c; path = tif_pixarlog.c; sourceTree = SOURCE_ROOT; };
+		D8A2A6FA168445CC8C1FCD77 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.wince.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiffconf.wince.h; path = tiffconf.wince.h; sourceTree = SOURCE_ROOT; };
+		DFE030B5B0874577A2745E5B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/t4.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = t4.h; path = t4.h; sourceTree = SOURCE_ROOT; };
+		E5A397AB8FB14E3B99E215B8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_write.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_write.c; path = tif_write.c; sourceTree = SOURCE_ROOT; };
+		E9F2FEF9954044DFA8B91489 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_strip.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_strip.c; path = tif_strip.c; sourceTree = SOURCE_ROOT; };
+		F040E085C95C441BAD2F0B89 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_aux.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_aux.c; path = tif_aux.c; sourceTree = SOURCE_ROOT; };
+		F08509E043EC42E0955F84EA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_packbits.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_packbits.c; path = tif_packbits.c; sourceTree = SOURCE_ROOT; };
+		F306170DDFBF420AA69F186B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tiffconf.h; path = tiffconf.h; sourceTree = SOURCE_ROOT; };
+		F51EAE5F86DC4EB3ACEB037C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirwrite.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_dirwrite.c; path = tif_dirwrite.c; sourceTree = SOURCE_ROOT; };
+		F5C2F71B57D242618B3F8EF1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_open.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tif_open.c; path = tif_open.c; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E432879B4991427E8422FD75 /* Frameworks */ = {
+		4BBEA758DA904936B37BCFC7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -248,145 +248,145 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0CCAB23B923745CD9E6A2BDA /* ThirdParty */ = {
+		084408EEA426474C89F1919C /* ALL_BUILD */ = {
 			isa = PBXGroup;
 			children = (
-				D81AF6158BC24F2380D97185 /* LibTiff */,
-			);
-			name = ThirdParty;
-			sourceTree = "<group>";
-		};
-		1CD392E947734FB794905D7A /* CMake Rules */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "CMake Rules";
-			sourceTree = "<group>";
-		};
-		226D79CC7247469EA0B786B3 /* ALL_BUILD */ = {
-			isa = PBXGroup;
-			children = (
-				1CD392E947734FB794905D7A /* CMake Rules */,
-				3A72DE95A76F4385A1F8066E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/CMakeLists.txt */,
+				EF22045175204D3B9D1FC1AE /* CMake Rules */,
+				A880B21068F9433B88F4AA5E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/CMakeLists.txt */,
 			);
 			name = ALL_BUILD;
 			sourceTree = "<group>";
 		};
-		2C5EA2E81E314D8984E1D5BB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2AAEB07AC238463B817D268D /* LibTiff */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		8F49E1410E3A4C3BA0F07837 /* DiligentTools */ = {
-			isa = PBXGroup;
-			children = (
-				0CCAB23B923745CD9E6A2BDA /* ThirdParty */,
-			);
-			name = DiligentTools;
-			sourceTree = "<group>";
-		};
-		9B7762F94E19457B95697396 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				6D8780D081CA44118C8D8F9C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/t4.h */,
-				4E1D36BAD88B40FA8F72D805 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.android.h */,
-				2DDDE4E2A73546B7874FDA12 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h */,
-				A05F639095B44A8AB510B21C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h-vms */,
-				4EB9B791E6144B6384FA84C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.linux.h */,
-				72053E19EE7548029AEC4BDC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.vc.h */,
-				D43FE805A0B54ABBB919A343 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.wince.h */,
-				BAEB1E3A4E00491C9F9FD4EB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.h */,
-				62FB9AE54E9F43F4BDFEC53A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.h */,
-				7443554727224AB2B7E8543D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.h */,
-				65F4F18B70EF4AABA88A7823 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiff.h */,
-				4F06E5D63B75437CA03E5636 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.h */,
-				84026C23923E4856BA1C3B35 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.linux.h */,
-				E6997D2BFEFB42968DC83A12 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.vc.h */,
-				158996B941E648B2AD3CE931 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.wince.h */,
-				94F6B98C75AE49F5BA4A645E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.h */,
-				358C949ADEB1411197859787 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.hxx */,
-				BB0BAD1E742E41AAB150E1F6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffiop.h */,
-				E615BD4F487F4E848F93D08C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffvers.h */,
-				47031921A92F4102A8D291B1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/uvcode.h */,
-			);
-			name = include;
-			sourceTree = "<group>";
-		};
-		A3A66188297745D592DF1C8A /* src */ = {
-			isa = PBXGroup;
-			children = (
-				50DF248BEA2A440FBED8C609 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_aux.c */,
-				788C580CE93645928DF4E751 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_close.c */,
-				A3BD558CC5CF4B82BE7E00B2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_codec.c */,
-				A3E6BF71F37046B78BC465F1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_color.c */,
-				3023F2FC29584A4194782B8C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_compress.c */,
-				7745A554DD944827B35B4DFF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.c */,
-				8A43BCC8818B4FCC9F108E79 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirinfo.c */,
-				30F38343B94C4CCCA00E1511 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirread.c */,
-				7DC3B875CB0645FB9087FDD5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirwrite.c */,
-				6CAEB5B8A3F34E7EB93A2555 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dumpmode.c */,
-				307353AE231B44F5B721CF65 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_error.c */,
-				C7EBB7FC715649C6853DAB29 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_extension.c */,
-				0820BC5F10054F0389A40B34 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.c */,
-				76DE95C4DCA944EF9A43DE59 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3sm.c */,
-				2E1C7ABAB9B346928619A35A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_flush.c */,
-				76DC6838A6BB452CBF1D0390 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_getimage.c */,
-				A542CD49EFBE4E4B9F8C7764 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jbig.c */,
-				EA4FE711F1FD46ED946447F3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg.c */,
-				DA85283BC55944BB8858BBE0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg_12.c */,
-				9167EF720A8F40A594854646 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_luv.c */,
-				7D50005DDEA943EA923EC9FA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzma.c */,
-				CF72693420C54563BDE312F7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzw.c */,
-				D7BDD439E5B745B5BA894950 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_next.c */,
-				D009F9666FC2478A88520EE5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_ojpeg.c */,
-				31F22801D5E14E85ADC170CE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_open.c */,
-				6C29583FBFE04BA68C08EF0E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_packbits.c */,
-				9D66CA82947B47BC85CB0042 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_pixarlog.c */,
-				6486C73FC7F04C6BAAFC74F1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.c */,
-				325FFFADA48C4F9A80B4E792 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_print.c */,
-				971F3D02676747C98B4323C6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_read.c */,
-				A93A7A35C39D4C92BA5F3227 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_stream.cxx */,
-				4BFC3F600FE24199AD1D1D8D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_strip.c */,
-				A26A2DBD736B432788D8E9FC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_swab.c */,
-				4ED47292CA2247E4A1FFED5B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_thunder.c */,
-				B24DF47ADD3449F48B82EF35 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_tile.c */,
-				D85778E04CFD40BA85B083FC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_unix.c */,
-				5C8665BE80984CC887CA5150 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_version.c */,
-				363E71E36038465C9FCE35C5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_warning.c */,
-				FE1098876ED0425BAE9306AA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_write.c */,
-				D0231D44F3384925A70EC46F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_zip.c */,
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
-		BEC6AD6040EA4613B01B3329 /* Frameworks */ = {
+		0DE8E450868649BD8A7C41B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D81AF6158BC24F2380D97185 /* LibTiff */ = {
+		368FB20E899446869C77CFB7 /* DiligentTools */ = {
 			isa = PBXGroup;
 			children = (
-				A3A66188297745D592DF1C8A /* src */,
-				9B7762F94E19457B95697396 /* include */,
-				7E04629C05E84197A66ACBBC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/CMakeLists.txt */,
+				BC4DEA6AF29C4363B17E4C66 /* ThirdParty */,
+			);
+			name = DiligentTools;
+			sourceTree = "<group>";
+		};
+		438D22816BBD430CA474750E = {
+			isa = PBXGroup;
+			children = (
+				368FB20E899446869C77CFB7 /* DiligentTools */,
+				084408EEA426474C89F1919C /* ALL_BUILD */,
+				7904DBB4B0834F9C9C2F7C05 /* Products */,
+				0DE8E450868649BD8A7C41B0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		64EB2F6A2ADD441BB93EB941 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				DFE030B5B0874577A2745E5B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/t4.h */,
+				AF354C296BB0467E9233995A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.android.h */,
+				33A43B43E18046D1BC716FDB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h */,
+				CB3AA44A52D34B40870EC1D7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.h-vms */,
+				D24114F37CEC49B8ACF5D624 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.linux.h */,
+				B5FC00E980B64486B97F7607 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.vc.h */,
+				45E051C0758A492E80D6DF3C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_config.wince.h */,
+				98F38D4CC80D4353A2CF22AF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.h */,
+				7FE236161DD540A3AEAE3F9F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.h */,
+				1707D3751C5143238ACE755A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.h */,
+				53C43F1B8A1946958A1D0BED /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiff.h */,
+				F306170DDFBF420AA69F186B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.h */,
+				008C022EB8F9432C8495F8C0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.linux.h */,
+				6A3715D708F14A1586651841 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.vc.h */,
+				D8A2A6FA168445CC8C1FCD77 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffconf.wince.h */,
+				8FA79FAD64104B0D8914E987 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.h */,
+				7386EB9492564EAB886533B1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffio.hxx */,
+				37C233FD6D5245F4993313A9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffiop.h */,
+				8FD6DB14C8C246D5B8228B36 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tiffvers.h */,
+				43930318AF8D40AAB0A83EFD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/uvcode.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		7904DBB4B0834F9C9C2F7C05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3ED1F7B1FAD439783365DD2 /* LibTiff */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7906B413B971439AA9833483 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				F040E085C95C441BAD2F0B89 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_aux.c */,
+				793026D7BCA64E22AC7C1E04 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_close.c */,
+				0DF9D88A5B5647C0BF7A5239 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_codec.c */,
+				928FCE19ADA448838A23FB09 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_color.c */,
+				466255E267D6429E9BE497DF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_compress.c */,
+				00B7FBFC26B24397ABEEA045 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.c */,
+				5F14004A6B9A4484B2E6F258 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirinfo.c */,
+				8C42A9452C6D4292BB89154A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirread.c */,
+				F51EAE5F86DC4EB3ACEB037C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirwrite.c */,
+				274E798A6865430D96884818 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dumpmode.c */,
+				63F567CA7FDF41A2BD5EA303 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_error.c */,
+				8B5DEC0D516D4250AD8A634F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_extension.c */,
+				8BB08F125DFB48B9A2A6BD96 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.c */,
+				5446E1C51217449A90AB6757 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3sm.c */,
+				1FF1145B712A443C96F7BBC6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_flush.c */,
+				7C704709BC1C43BBAEF988F4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_getimage.c */,
+				54106A3D97C3465D943B80B3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jbig.c */,
+				BA2385229BDE4EBFA333DC9E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg.c */,
+				C48C99CF8055489F864F2BBB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg_12.c */,
+				B35E079F83BC4E91AC22A8A5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_luv.c */,
+				1610139B3C644BB2B35E9B00 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzma.c */,
+				469B1D6A6B8B4B708B4630F3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzw.c */,
+				4C2DE799DA1E4414BDC68C49 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_next.c */,
+				64064210BDD24B74B4DE3A70 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_ojpeg.c */,
+				F5C2F71B57D242618B3F8EF1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_open.c */,
+				F08509E043EC42E0955F84EA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_packbits.c */,
+				D277DE587C874C99826A0712 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_pixarlog.c */,
+				C3CD16EAC5BF452FA0D900BB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.c */,
+				B6052429C5544AF5B7425B78 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_print.c */,
+				2939C57C6EDE4540858A3DFD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_read.c */,
+				D1A6A7898B7B4EA3B9E0F07E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_stream.cxx */,
+				E9F2FEF9954044DFA8B91489 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_strip.c */,
+				85D69F2876184C74A48AC3C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_swab.c */,
+				1EFADAF80A744F3B843145B2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_thunder.c */,
+				4E4394DA82F04D098F0B1806 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_tile.c */,
+				7CFF9365AA2649B785D5F00D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_unix.c */,
+				9B3A78B249BA4096BBDA4D73 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_version.c */,
+				3F399507DA004C49BA078B07 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_warning.c */,
+				E5A397AB8FB14E3B99E215B8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_write.c */,
+				7691E4B5384942EEA24F10FF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_zip.c */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		BC4DEA6AF29C4363B17E4C66 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				D9F369770BB4462181FE7619 /* LibTiff */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		D9F369770BB4462181FE7619 /* LibTiff */ = {
+			isa = PBXGroup;
+			children = (
+				7906B413B971439AA9833483 /* src */,
+				64EB2F6A2ADD441BB93EB941 /* include */,
+				774E42FF79CC4398B56A3D1B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/CMakeLists.txt */,
 			);
 			name = LibTiff;
 			sourceTree = "<group>";
 		};
-		D86BF78A4B404FE7B99ECF5B = {
+		EF22045175204D3B9D1FC1AE /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
-				8F49E1410E3A4C3BA0F07837 /* DiligentTools */,
-				226D79CC7247469EA0B786B3 /* ALL_BUILD */,
-				2C5EA2E81E314D8984E1D5BB /* Products */,
-				BEC6AD6040EA4613B01B3329 /* Frameworks */,
 			);
+			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,19 +394,19 @@
 /* Begin PBXNativeTarget section */
 		8A7A1452BA524BD79ABDB0E0 /* LibTiff */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32B0B0F2F9BF444BBD20F041 /* Build configuration list for PBXNativeTarget "LibTiff" */;
+			buildConfigurationList = 0A633AF6D0CF4BCD94158886 /* Build configuration list for PBXNativeTarget "LibTiff" */;
 			buildPhases = (
-				22B7E43E82B544429F5EC0D3 /* Sources */,
-				E432879B4991427E8422FD75 /* Frameworks */,
+				5CCF19CAE754488C9D0D38B3 /* Sources */,
+				4BBEA758DA904936B37BCFC7 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C78574CE215242B98857DF61 /* PBXTargetDependency */,
+				0DB8F85EF9C04358A0974C8C /* PBXTargetDependency */,
 			);
 			name = LibTiff;
 			productName = LibTiff;
-			productReference = 2AAEB07AC238463B817D268D /* LibTiff */;
+			productReference = C3ED1F7B1FAD439783365DD2 /* LibTiff */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -418,18 +418,18 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1240;
 			};
-			buildConfigurationList = 992EAD88BF4847A093F3F1F7 /* Build configuration list for PBXProject "LibTiff" */;
+			buildConfigurationList = 0FA0D723BA694CF5832D47B7 /* Build configuration list for PBXProject "LibTiff" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				629AEA23AE1147C6B9510CFF /* Debug */,
-				E3FC93EA29A5489FA3473566 /* Release */,
-				EF14B1F7925744ADB378D5A1 /* MinSizeRel */,
-				9DC6DBD2DC0747FEABE78C44 /* RelWithDebInfo */,
+				CF96BC787E384FFBAFD5B9E5 /* Debug */,
+				6C6354555DC24803AF5786A8 /* Release */,
+				02F900EA0BA742899B117EFD /* MinSizeRel */,
+				B0A258B9B79A40DB93233079 /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = D86BF78A4B404FE7B99ECF5B;
+			mainGroup = 438D22816BBD430CA474750E;
 			projectDirPath = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
 			projectRoot = "";
 			targets = (
@@ -587,442 +587,80 @@ fi
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		22B7E43E82B544429F5EC0D3 /* Sources */ = {
+		5CCF19CAE754488C9D0D38B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D8552026E0E402A8ECBD17F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_aux.c */,
-				B3F73CF1CE704475A9862697 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_close.c */,
-				196B079A1BFB406080DEBF3C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_codec.c */,
-				FF1B4334DFB242C2A6FADD6B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_color.c */,
-				726E2323F0684801899A4738 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_compress.c */,
-				10DA5127E6654F0FAB3619CA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.c */,
-				D69C2D91A3A240DBAB9D7208 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirinfo.c */,
-				5DBEDA0888FD49A7B5B10E08 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirread.c */,
-				4DAA1DB0CEE14D5180BD3790 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirwrite.c */,
-				32158BD54059406AB1048ECC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dumpmode.c */,
-				F48E8E1B7344450CA132F996 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_error.c */,
-				A876D278AA7A4500834B5920 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_extension.c */,
-				091A0660AA06435DBDB2F0A0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.c */,
-				0A73783179744A708F90A261 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3sm.c */,
-				D6A5225AF4C747BFB820B675 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_flush.c */,
-				D6E24E0CACB741E9B4D87AA7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_getimage.c */,
-				75650DB6CED24EE6B2BD8685 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jbig.c */,
-				8C8BE7AB8A394107B808E207 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg.c */,
-				3B9D289E6F284C7BA0C170A1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg_12.c */,
-				716EFE38B1A14E849A251C06 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_luv.c */,
-				D7A38E54200D4F81AF61524E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzma.c */,
-				4652E5512AD74216B8C9EBFE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzw.c */,
-				22FEF0BBD3784252A269B800 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_next.c */,
-				4348498E38E44A75A70D1A3F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_ojpeg.c */,
-				688B6D6FB16442E89E7C8094 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_open.c */,
-				BC9158D3F3EF4A639DF7A20E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_packbits.c */,
-				4566500CBC8C4E14B3967516 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_pixarlog.c */,
-				9C170939E3D8467C85E76028 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.c */,
-				A80606F53191445B8BC7775B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_print.c */,
-				3B35AA69D93F4B3F9030A8D7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_read.c */,
-				6C2D470663DB4C63BB363CB6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_stream.cxx */,
-				2DBE4EC992A74D7994640185 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_strip.c */,
-				F5AA329035744EC8B130056B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_swab.c */,
-				0F425FC7FBC14A22BB24283B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_thunder.c */,
-				0B5D057F2FD244D79BE14209 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_tile.c */,
-				F6664DDC5D9B48D2A488901F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_unix.c */,
-				7E75C1561B78423BAD13869F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_version.c */,
-				2DDBE08B3CC147F0991F2B8A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_warning.c */,
-				3152CCD05FED4A6984108F0C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_write.c */,
-				C44B0836CCE84F6B81EB467B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_zip.c */,
+				8EEC17814B1848DFBD40C519 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_aux.c */,
+				34A6EC75D26D48EC98170098 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_close.c */,
+				FC5AC249B6BA4F50BAD20969 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_codec.c */,
+				B341B0B9048847CC8A8F14CB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_color.c */,
+				0ABBDB051BCE4DB9B2A3FB61 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_compress.c */,
+				07AAE4D2FFBB4FD7A2419A5E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dir.c */,
+				A41ABE8764DB467FB577D018 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirinfo.c */,
+				660E307F75E14337BD997FEC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirread.c */,
+				8E88A9A8410749E7B15E6307 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dirwrite.c */,
+				DD57CC5592504895AAB0C127 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_dumpmode.c */,
+				E42F1A7EB0934E26BDF069BC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_error.c */,
+				7C28E32DE052440CBAE3BA84 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_extension.c */,
+				4B99FDE967E14F088BDFCAB2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3.c */,
+				84479A3849FA489393BC9AF8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_fax3sm.c */,
+				D858B712304A4E5D9EEAC3CE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_flush.c */,
+				99ED5684CCE548BF9A0676DF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_getimage.c */,
+				F0412D1C32E24FE499C0C069 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jbig.c */,
+				EBEBF2D444A142A3BCB78750 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg.c */,
+				C16CDB44A7B3441A91262E33 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_jpeg_12.c */,
+				AFEBB936FDD2436ABF1BB31B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_luv.c */,
+				43D77B41649C4DD4B7515397 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzma.c */,
+				FED9828C7EAB4AD2B3DD7CBA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_lzw.c */,
+				8C6E95E30CA04548BC0024F9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_next.c */,
+				7EBE3092DD164931AA2F5407 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_ojpeg.c */,
+				28CBF93DC87B4D5C9B7CBF0B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_open.c */,
+				580AEEAAE77546CD975D5C4D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_packbits.c */,
+				16BBB980F0814A6494D67417 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_pixarlog.c */,
+				306A7C881BF942CC9EB16429 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_predict.c */,
+				E3D8AF229B294ACFA8AF758F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_print.c */,
+				DBE275C3EF2F4A78A7D297F7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_read.c */,
+				BE5F7FFDADFB40D48C0B51D0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_stream.cxx */,
+				8E3A9A2D11E44B5CA56BD3AA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_strip.c */,
+				78EBBADCA53D44B8A544EC4D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_swab.c */,
+				A7F9D052130F4A9587EA879A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_thunder.c */,
+				2F7EB2320673454FB5221197 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_tile.c */,
+				847C7A39B9D14EE1A57FE008 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_unix.c */,
+				F270F4E72965461F85D0A3E3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_version.c */,
+				BBDE88E6CBE0475AAE78A37D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_warning.c */,
+				8569486A2024467CBD10FFD0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_write.c */,
+				50A005B4EC1A411CBF0A2C54 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/tif_zip.c */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		153DAA5D66AD40FF995F8AB0 /* PBXTargetDependency */ = {
+		0DB8F85EF9C04358A0974C8C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8A7A1452BA524BD79ABDB0E0 /* LibTiff */;
-			targetProxy = 0A7070EE0D51450BB1FA6176 /* PBXContainerItemProxy */;
+			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
+			targetProxy = A6CE46DFE0924F3AB6DDA6E3 /* PBXContainerItemProxy */;
 		};
-		630E36D09D6D49E99177BC57 /* PBXTargetDependency */ = {
+		129EFE0AE2B7406D867994B8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C170553A14944B729938E9E6 /* ALL_BUILD */;
-			targetProxy = 430C5485180A4CAAB46BE9BC /* PBXContainerItemProxy */;
+			targetProxy = 7F7CFF8A950C4FAFBE2F8138 /* PBXContainerItemProxy */;
 		};
-		C78574CE215242B98857DF61 /* PBXTargetDependency */ = {
+		6AC4C313A5AF4F6ABD5E3187 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A7A1452BA524BD79ABDB0E0 /* LibTiff */;
+			targetProxy = EBE9C491A16245D9AC0A8F97 /* PBXContainerItemProxy */;
+		};
+		AB26AF9D5DBE4F2593F27267 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
-			targetProxy = BEDE97096DD04E0AAFC8333B /* PBXContainerItemProxy */;
-		};
-		FA78228E0AFF4FC8BB38A9D5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
-			targetProxy = 73E84CF4A728458BA714FE8F /* PBXContainerItemProxy */;
+			targetProxy = 88E464F59D304C3F910E174E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		089D98F476CF4027BBD71004 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		24454385D7504E13AA330EDA /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/build";
-			};
-			name = MinSizeRel;
-		};
-		6E859E7AECB84958812A045F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		709FB246D60C4C3996B6296D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		72A955FD5B1F446AB3E39FB3 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		77EA915BD6A542E69B7655AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		799CB6615C384D8887675E2A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		81E7813A99024257BEC948BA /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		8334B422CC454AC8A32392EB /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		886490F9506A4B219403262E /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		A8D0A56301634BE4B70D104C /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		ABAE5E39B71B4327A8F0CF65 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/build";
-			};
-			name = RelWithDebInfo;
-		};
-		AE465B933F6D43728525AFE8 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/.","$(inherited)");
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
-				OTHER_LIBTOOLFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = LibTiff;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		BC6FF7E36FBF4765A643FAEF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/.","$(inherited)");
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
-				OTHER_LIBTOOLFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = LibTiff;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		C0FBD0E077494812AF87E2AC /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		C742BCAAC7334E41B53A1B6C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/build";
-			};
-			name = Debug;
-		};
-		C7B323513A1843EEB3F8D55B /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 2;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/.","$(inherited)");
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = "       -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
-				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
-				OTHER_LIBTOOLFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = LibTiff;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		F3A372F3629A40C89341B532 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/build";
-			};
-			name = Release;
-		};
-		FC07FC2F763247298AF1ECC9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		FF7E40C0E4704C1DB0EB3ADE /* Debug */ = {
+		0F0E5D2F064E4FE3B22C7612 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1033,7 +671,7 @@ fi
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,_DEBUG,DEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'",DILIGENT_DEVELOPMENT,DILIGENT_DEBUG);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/.","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/.","$(inherited)");
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
 				OTHER_CFLAGS = "   -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter '-std=gnu11' ";
@@ -1048,60 +686,422 @@ fi
 			};
 			name = Debug;
 		};
+		2319D4F92F36486AAF9A9779 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		3873C28F7CDF416AA118C3F1 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/.","$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = LibTiff;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		3F1F12831F5640BE84F46FB9 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		3FE3D93AF6D745CE8632E64C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		4DF1327F81C3478B873EBF2A /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		5F15ECAA02A34E09B7AE7217 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		851D7AABDC8447D586A68060 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/build";
+			};
+			name = MinSizeRel;
+		};
+		898631BB6BC14F54BDF768C7 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		95DAEFBF3ABF4ABFA7CE6B57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/build";
+			};
+			name = Debug;
+		};
+		A6FEFA2D949B43EA977308A4 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		A89082C5BCD941EDA5A18304 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		B3DF61C8F7904AE2AFC57FFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		B9241795F5994ACE9D1F24BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/.","$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = LibTiff;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		D102C86DC0D2411399A73252 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/build";
+			};
+			name = RelWithDebInfo;
+		};
+		DF4D6FEFDCC947E5BFDC85B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/build";
+			};
+			name = Release;
+		};
+		E640CBB4486545C185623EE1 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/.","$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = LibTiff;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		EFCC2E89D8C6446FAA23BBA5 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		F5FFB813B1CF40128C846C5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		FCDBA1D97E054C30B068E381 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		32B0B0F2F9BF444BBD20F041 /* Build configuration list for PBXNativeTarget "LibTiff" */ = {
+		0A633AF6D0CF4BCD94158886 /* Build configuration list for PBXNativeTarget "LibTiff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FF7E40C0E4704C1DB0EB3ADE /* Debug */,
-				BC6FF7E36FBF4765A643FAEF /* Release */,
-				AE465B933F6D43728525AFE8 /* MinSizeRel */,
-				C7B323513A1843EEB3F8D55B /* RelWithDebInfo */,
+				0F0E5D2F064E4FE3B22C7612 /* Debug */,
+				B9241795F5994ACE9D1F24BD /* Release */,
+				E640CBB4486545C185623EE1 /* MinSizeRel */,
+				3873C28F7CDF416AA118C3F1 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		6E735D223F934ADCB2611367 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		0A90DA7F6AEF4B8190E66530 /* Build configuration list for PBXAggregateTarget "install" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				799CB6615C384D8887675E2A /* Debug */,
-				089D98F476CF4027BBD71004 /* Release */,
-				8334B422CC454AC8A32392EB /* MinSizeRel */,
-				886490F9506A4B219403262E /* RelWithDebInfo */,
+				A89082C5BCD941EDA5A18304 /* Debug */,
+				3FE3D93AF6D745CE8632E64C /* Release */,
+				898631BB6BC14F54BDF768C7 /* MinSizeRel */,
+				4DF1327F81C3478B873EBF2A /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		80F6DFE83EAA4C7598CF9914 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		0FA0D723BA694CF5832D47B7 /* Build configuration list for PBXProject "LibTiff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC07FC2F763247298AF1ECC9 /* Debug */,
-				6E859E7AECB84958812A045F /* Release */,
-				C0FBD0E077494812AF87E2AC /* MinSizeRel */,
-				A8D0A56301634BE4B70D104C /* RelWithDebInfo */,
+				95DAEFBF3ABF4ABFA7CE6B57 /* Debug */,
+				DF4D6FEFDCC947E5BFDC85B8 /* Release */,
+				851D7AABDC8447D586A68060 /* MinSizeRel */,
+				D102C86DC0D2411399A73252 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		992EAD88BF4847A093F3F1F7 /* Build configuration list for PBXProject "LibTiff" */ = {
+		722CE1AE48B7494C85EECF35 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C742BCAAC7334E41B53A1B6C /* Debug */,
-				F3A372F3629A40C89341B532 /* Release */,
-				24454385D7504E13AA330EDA /* MinSizeRel */,
-				ABAE5E39B71B4327A8F0CF65 /* RelWithDebInfo */,
+				F5FFB813B1CF40128C846C5E /* Debug */,
+				5F15ECAA02A34E09B7AE7217 /* Release */,
+				3F1F12831F5640BE84F46FB9 /* MinSizeRel */,
+				EFCC2E89D8C6446FAA23BBA5 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		F1130B8C1EDF409D96F83500 /* Build configuration list for PBXAggregateTarget "install" */ = {
+		869E38B651704DFD878A4326 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				77EA915BD6A542E69B7655AC /* Debug */,
-				709FB246D60C4C3996B6296D /* Release */,
-				81E7813A99024257BEC948BA /* MinSizeRel */,
-				72A955FD5B1F446AB3E39FB3 /* RelWithDebInfo */,
+				B3DF61C8F7904AE2AFC57FFB /* Debug */,
+				FCDBA1D97E054C30B068E381 /* Release */,
+				A6FEFA2D949B43EA977308A4 /* MinSizeRel */,
+				2319D4F92F36486AAF9A9779 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

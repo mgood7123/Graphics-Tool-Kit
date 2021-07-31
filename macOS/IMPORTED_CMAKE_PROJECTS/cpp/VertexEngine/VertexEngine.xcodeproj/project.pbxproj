@@ -9,19 +9,19 @@
 /* Begin PBXAggregateTarget section */
 		4C161972DCC540808363BE2C /* install */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 9BC1DAA186C84A9CA97C29C0 /* Build configuration list for PBXAggregateTarget "install" */;
+			buildConfigurationList = 5D51E3535FB44349BD7CA8A8 /* Build configuration list for PBXAggregateTarget "install" */;
 			buildPhases = (
 				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
 			);
 			dependencies = (
-				AD5DB94A09C24CA48E770077 /* PBXTargetDependency */,
+				DDA944C58E4446FB81FAE441 /* PBXTargetDependency */,
 			);
 			name = install;
 			productName = install;
 		};
 		A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = D071C9E4853F4659AB7540E7 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = 15DFE0390E9A424FA929B71E /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
 				CBA475F645027284B82604D1 /* Generate CMakeFiles/ZERO_CHECK */,
 			);
@@ -32,13 +32,13 @@
 		};
 		C170553A14944B729938E9E6 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 32493E74A2BD424F8DC47E0E /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = 1EF24E6DCBF049C789AD7F19 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
 				0C93475B9E4B9EBF72BEF32D /* Generate CMakeFiles/ALL_BUILD */,
 			);
 			dependencies = (
-				320CCE13E25245CDA3D4A172 /* PBXTargetDependency */,
-				37ABBB70A9524C7692CDEB51 /* PBXTargetDependency */,
+				FEB0517B6DA64C16A8040D7A /* PBXTargetDependency */,
+				8616EB6869054FFEA4A7F49A /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
@@ -46,64 +46,64 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		E1AAB80C54C442BA8628AB65 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = BA602A00EDC44CF6B37A9BC0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/CMakeLists.txt */; };
-		E63B06D1B24741D0A0F39813 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/VertexEngine.cpp */ = {isa = PBXBuildFile; fileRef = 4D7C408C0F1845908E360EB3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/VertexEngine.cpp */; };
+		7769B319A4E4488AA3E4118D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 06ADCB96E0C84D0AB7A5EF08 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/CMakeLists.txt */; };
+		ECA895E825D14565A2CF7DE3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/VertexEngine.cpp */ = {isa = PBXBuildFile; fileRef = D60B5A62E2854A22A20090FF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/VertexEngine.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		33C8FCE4A6C1478B9738AAA1 /* Release */ = {
+		460F760CEEAD46EAB198C154 /* Release */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = Release;
 		};
-		44972B5D8F894914AA42807A /* Debug */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Debug;
-		};
-		8B96AE587BF04F85A38C8400 /* RelWithDebInfo */ = {
+		5B5DD9C903A4481D87ED017A /* RelWithDebInfo */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = RelWithDebInfo;
 		};
-		F8923102A640499F9ED1CC41 /* MinSizeRel */ = {
+		E038149A42734402AB6C9568 /* MinSizeRel */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = MinSizeRel;
 		};
+		FE891AA7A4E7415194B91DED /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		07916F936AF240B8A630CB68 /* PBXContainerItemProxy */ = {
+		3D647FFF6522456186A1A40B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 374B98913F9D4810A71C042C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
 			remoteInfo = ZERO_CHECK;
 		};
-		B4C6F8529005422F8325F8F6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 374B98913F9D4810A71C042C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
-			remoteInfo = ZERO_CHECK;
-		};
-		E5942D2A8634469F8503B920 /* PBXContainerItemProxy */ = {
+		BCDBD52B6D2A4B2BA5CC6DEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 374B98913F9D4810A71C042C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C170553A14944B729938E9E6;
 			remoteInfo = ALL_BUILD;
 		};
-		FE90B2E1DF8843A0B303A5AB /* PBXContainerItemProxy */ = {
+		CEA5BD9E8889493FAD4BF06A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 374B98913F9D4810A71C042C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
+			remoteInfo = ZERO_CHECK;
+		};
+		F4B8BD1EDB3A42EC80EF0972 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 374B98913F9D4810A71C042C /* Project object */;
 			proxyType = 1;
@@ -113,14 +113,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1674AAA65FA3481FABA97292 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		4D7C408C0F1845908E360EB3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/VertexEngine.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = VertexEngine.cpp; path = VertexEngine.cpp; sourceTree = SOURCE_ROOT; };
-		BA602A00EDC44CF6B37A9BC0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		C0B40F967B794C86A4CC5E37 /* VertexEngine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libVertexEngine.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		06ADCB96E0C84D0AB7A5EF08 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		3089DB421C3C43F8AD23C3A7 /* VertexEngine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libVertexEngine.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		90AA8F93C9EB490BBB9DD538 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D60B5A62E2854A22A20090FF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/VertexEngine.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = VertexEngine.cpp; path = VertexEngine.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		084D150FB8AD42B68D3CE6AB /* Frameworks */ = {
+		397428E70C4D4393B1123903 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -130,62 +130,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03F8724D43674DF48FB508FB /* CMake Rules */ = {
+		04F8A72F08344595A590FC3B /* VertexEngine */ = {
+			isa = PBXGroup;
+			children = (
+				CD3D483C8AC74FDFB21D6481 /* Source Files */,
+				06ADCB96E0C84D0AB7A5EF08 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/CMakeLists.txt */,
+			);
+			name = VertexEngine;
+			sourceTree = "<group>";
+		};
+		06049F232C3C4220A6E3265F = {
+			isa = PBXGroup;
+			children = (
+				04F8A72F08344595A590FC3B /* VertexEngine */,
+				677B8AA4849744B4B5DCC6BC /* ALL_BUILD */,
+				E6733496748E4125AAB0BA90 /* Products */,
+				E21EE98677C343C79F76F7F3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		677B8AA4849744B4B5DCC6BC /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				692BB581DA714E6198EFBDDD /* CMake Rules */,
+				90AA8F93C9EB490BBB9DD538 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		692BB581DA714E6198EFBDDD /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		AA8661F6062D4B899FA777EF = {
+		CD3D483C8AC74FDFB21D6481 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				C2BC25FADA3C4E65A6BE5CAE /* VertexEngine */,
-				EA0C84118F4A4691A4C81882 /* ALL_BUILD */,
-				BD5AF11471BA46A693E1683F /* Products */,
-				F02D4579021E4664B1803B90 /* Frameworks */,
+				D60B5A62E2854A22A20090FF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/VertexEngine.cpp */,
 			);
+			name = "Source Files";
 			sourceTree = "<group>";
 		};
-		BD5AF11471BA46A693E1683F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C0B40F967B794C86A4CC5E37 /* VertexEngine */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C2BC25FADA3C4E65A6BE5CAE /* VertexEngine */ = {
-			isa = PBXGroup;
-			children = (
-				FCD0A3BE2FC5401B819766F9 /* Source Files */,
-				BA602A00EDC44CF6B37A9BC0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/CMakeLists.txt */,
-			);
-			name = VertexEngine;
-			sourceTree = "<group>";
-		};
-		EA0C84118F4A4691A4C81882 /* ALL_BUILD */ = {
-			isa = PBXGroup;
-			children = (
-				03F8724D43674DF48FB508FB /* CMake Rules */,
-				1674AAA65FA3481FABA97292 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/CMakeLists.txt */,
-			);
-			name = ALL_BUILD;
-			sourceTree = "<group>";
-		};
-		F02D4579021E4664B1803B90 /* Frameworks */ = {
+		E21EE98677C343C79F76F7F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FCD0A3BE2FC5401B819766F9 /* Source Files */ = {
+		E6733496748E4125AAB0BA90 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4D7C408C0F1845908E360EB3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/VertexEngine.cpp */,
+				3089DB421C3C43F8AD23C3A7 /* VertexEngine */,
 			);
-			name = "Source Files";
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,20 +193,20 @@
 /* Begin PBXNativeTarget section */
 		ACB38682414B445B8A642CC2 /* VertexEngine */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94DD4890D51A4150AE297896 /* Build configuration list for PBXNativeTarget "VertexEngine" */;
+			buildConfigurationList = D97F7088A3DB4428BFC02A93 /* Build configuration list for PBXNativeTarget "VertexEngine" */;
 			buildPhases = (
-				67B7C1A01CDB4979B93EBB3E /* Sources */,
-				084D150FB8AD42B68D3CE6AB /* Frameworks */,
+				9E697D0871ED46A4A168C1DA /* Sources */,
+				397428E70C4D4393B1123903 /* Frameworks */,
 				0FEA27E320F39C15F1A1C51B /* CMake PostBuild Rules */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D6BD1847F5104F6EA368E0EE /* PBXTargetDependency */,
+				2C38D0F92A414442A0CEB6DB /* PBXTargetDependency */,
 			);
 			name = VertexEngine;
 			productName = VertexEngine;
-			productReference = C0B40F967B794C86A4CC5E37 /* VertexEngine */;
+			productReference = 3089DB421C3C43F8AD23C3A7 /* VertexEngine */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -218,18 +218,18 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1240;
 			};
-			buildConfigurationList = 79DD6DFC34BE45A09702B654 /* Build configuration list for PBXProject "VertexEngine" */;
+			buildConfigurationList = E6374B83CB5D44BDA636ADF0 /* Build configuration list for PBXProject "VertexEngine" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				44972B5D8F894914AA42807A /* Debug */,
-				33C8FCE4A6C1478B9738AAA1 /* Release */,
-				F8923102A640499F9ED1CC41 /* MinSizeRel */,
-				8B96AE587BF04F85A38C8400 /* RelWithDebInfo */,
+				FE891AA7A4E7415194B91DED /* Debug */,
+				460F760CEEAD46EAB198C154 /* Release */,
+				E038149A42734402AB6C9568 /* MinSizeRel */,
+				5B5DD9C903A4481D87ED017A /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = AA8661F6062D4B899FA777EF;
+			mainGroup = 06049F232C3C4220A6E3265F;
 			projectDirPath = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine";
 			projectRoot = "";
 			targets = (
@@ -418,41 +418,81 @@ fi
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		67B7C1A01CDB4979B93EBB3E /* Sources */ = {
+		9E697D0871ED46A4A168C1DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E63B06D1B24741D0A0F39813 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/VertexEngine.cpp */,
+				ECA895E825D14565A2CF7DE3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine/VertexEngine.cpp */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		320CCE13E25245CDA3D4A172 /* PBXTargetDependency */ = {
+		2C38D0F92A414442A0CEB6DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
-			targetProxy = 07916F936AF240B8A630CB68 /* PBXContainerItemProxy */;
+			targetProxy = CEA5BD9E8889493FAD4BF06A /* PBXContainerItemProxy */;
 		};
-		37ABBB70A9524C7692CDEB51 /* PBXTargetDependency */ = {
+		8616EB6869054FFEA4A7F49A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ACB38682414B445B8A642CC2 /* VertexEngine */;
-			targetProxy = FE90B2E1DF8843A0B303A5AB /* PBXContainerItemProxy */;
+			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
+			targetProxy = 3D647FFF6522456186A1A40B /* PBXContainerItemProxy */;
 		};
-		AD5DB94A09C24CA48E770077 /* PBXTargetDependency */ = {
+		DDA944C58E4446FB81FAE441 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C170553A14944B729938E9E6 /* ALL_BUILD */;
-			targetProxy = E5942D2A8634469F8503B920 /* PBXContainerItemProxy */;
+			targetProxy = BCDBD52B6D2A4B2BA5CC6DEF /* PBXContainerItemProxy */;
 		};
-		D6BD1847F5104F6EA368E0EE /* PBXTargetDependency */ = {
+		FEB0517B6DA64C16A8040D7A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
-			targetProxy = B4C6F8529005422F8325F8F6 /* PBXContainerItemProxy */;
+			target = ACB38682414B445B8A642CC2 /* VertexEngine */;
+			targetProxy = F4B8BD1EDB3A42EC80EF0972 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		080278EA91E943FD804C1A14 /* MinSizeRel */ = {
+		02F32D70A42B4582B0A74EA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		044BD8AEF75A4DDCB020C2B4 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		09714D3C897A4D75B8244D2C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -461,9 +501,9 @@ fi
 				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
 				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/build";
 			};
-			name = MinSizeRel;
+			name = Release;
 		};
-		10D62272A5CE4472A2117AD2 /* MinSizeRel */ = {
+		0EFAC917B1464313A3D6A0E1 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -475,27 +515,7 @@ fi
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = ("");
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		21A09940E74B499786F08789 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
+				PRODUCT_NAME = ZERO_CHECK;
 				SECTORDER_FLAGS = "";
 				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
 				USE_HEADERMAP = NO;
@@ -503,35 +523,7 @@ fi
 			};
 			name = RelWithDebInfo;
 		};
-		3D9E72F82A0C4C38BEFF8FD2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = "";
-				DYLIB_CURRENT_VERSION = "";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .dylib;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",VertexEngine_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
-				INSTALL_PATH = "@rpath";
-				LD_RUNPATH_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/Debug","$(inherited)");
-				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = "   -fPIC '-std=c++17' ";
-				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/Debug/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/TextureLoader/Debug/libDiligent-TextureLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/Debug/libWINAPIKERNEL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/Debug/libDiligent-GraphicsTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/Debug/libDiligent-GraphicsAccessories.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/Debug/libLibJpeg.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/Debug/libLibPng.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/Debug/libLibTiff.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/Debug/libZLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/Debug/libDiligentAnyOpt.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/Debug/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/Debug/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/Debug/libDiligent-BasicPlatform_LOG.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/Debug/libDiligent-Primitives.a","-framework AppKit");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = VertexEngine;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		3E0BE96185E04B64AEF15AEA /* Release */ = {
+		2A03D3E933E547A3AD113A88 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -551,75 +543,7 @@ fi
 			};
 			name = Release;
 		};
-		3E57C6A51EB44E518F9A8CEE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		43EBB61B56184484907797EF /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = "";
-				DYLIB_CURRENT_VERSION = "";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .dylib;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 2;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",VertexEngine_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
-				INSTALL_PATH = "@rpath";
-				LD_RUNPATH_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/RelWithDebInfo","$(inherited)");
-				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG -fPIC '-std=c++17' ";
-				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/RelWithDebInfo/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/TextureLoader/RelWithDebInfo/libDiligent-TextureLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/RelWithDebInfo/libWINAPIKERNEL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/RelWithDebInfo/libDiligent-GraphicsTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/RelWithDebInfo/libDiligent-GraphicsAccessories.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/RelWithDebInfo/libLibJpeg.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/RelWithDebInfo/libLibPng.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/RelWithDebInfo/libLibTiff.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/RelWithDebInfo/libZLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/RelWithDebInfo/libDiligentAnyOpt.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/RelWithDebInfo/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/RelWithDebInfo/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/RelWithDebInfo/libDiligent-BasicPlatform_LOG.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/RelWithDebInfo/libDiligent-Primitives.a","-framework AppKit");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = VertexEngine;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		68503125C5CB464AB117AC3D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		6D76588155664B04AE931A5D /* Release */ = {
+		3E0A748EB637499396767EB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -632,7 +556,7 @@ fi
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",VertexEngine_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/Release","$(inherited)");
 				LIBRARY_STYLE = DYNAMIC;
@@ -647,58 +571,7 @@ fi
 			};
 			name = Release;
 		};
-		70D015B3D4A6451DB29C17BA /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		72F305F57C254FF593D18193 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/build";
-			};
-			name = Release;
-		};
-		7599C9BE105344B3AC36D77D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		779BA42FDDED43D08BA07CF4 /* MinSizeRel */ = {
+		46EA41BAF1B741C9AC70BA8B /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -706,17 +579,17 @@ fi
 				DYLIB_CURRENT_VERSION = "";
 				EXECUTABLE_PREFIX = lib;
 				EXECUTABLE_SUFFIX = .dylib;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",VertexEngine_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
 				INSTALL_PATH = "@rpath";
-				LD_RUNPATH_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/MinSizeRel","$(inherited)");
+				LD_RUNPATH_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/RelWithDebInfo","$(inherited)");
 				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC '-std=c++17' ";
-				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/MinSizeRel/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/TextureLoader/MinSizeRel/libDiligent-TextureLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/MinSizeRel/libWINAPIKERNEL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/MinSizeRel/libDiligent-GraphicsTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/MinSizeRel/libDiligent-GraphicsAccessories.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/MinSizeRel/libLibJpeg.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/MinSizeRel/libLibPng.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/MinSizeRel/libLibTiff.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/MinSizeRel/libZLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/MinSizeRel/libDiligentAnyOpt.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/MinSizeRel/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/MinSizeRel/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/MinSizeRel/libDiligent-BasicPlatform_LOG.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/MinSizeRel/libDiligent-Primitives.a","-framework AppKit");
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG -fPIC '-std=c++17' ";
+				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/RelWithDebInfo/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/TextureLoader/RelWithDebInfo/libDiligent-TextureLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/RelWithDebInfo/libWINAPIKERNEL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/RelWithDebInfo/libDiligent-GraphicsTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/RelWithDebInfo/libDiligent-GraphicsAccessories.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/RelWithDebInfo/libLibJpeg.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/RelWithDebInfo/libLibPng.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/RelWithDebInfo/libLibTiff.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/RelWithDebInfo/libZLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/RelWithDebInfo/libDiligentAnyOpt.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/RelWithDebInfo/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/RelWithDebInfo/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/RelWithDebInfo/libDiligent-BasicPlatform_LOG.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/RelWithDebInfo/libDiligent-Primitives.a","-framework AppKit");
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = VertexEngine;
 				SECTORDER_FLAGS = "";
@@ -724,91 +597,9 @@ fi
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = MinSizeRel;
-		};
-		8CAF2236381D4A8AA3E7D3D9 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/build";
-			};
 			name = RelWithDebInfo;
 		};
-		A12919539D174BCBAD2482A9 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		B0A390FA93714260BCE74A80 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		B67E04C32DDC4DFE914967CD /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		EA6570446ADE4631BC699B66 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/build";
-			};
-			name = Debug;
-		};
-		F52BC21A6A1E4FFB888169D0 /* Debug */ = {
+		526D536DC9D84A27ABA9C3C8 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -826,9 +617,156 @@ fi
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
+			name = RelWithDebInfo;
+		};
+		586315412D1F4428A3AED016 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/build";
+			};
+			name = RelWithDebInfo;
+		};
+		59EFCE1E89DA45C6A998D1A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
 			name = Debug;
 		};
-		F9A72C5CD75B480894CCC7DC /* RelWithDebInfo */ = {
+		5D97034C47D74E07805E55AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		75FD0F95B06B4216B04C54E9 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",VertexEngine_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/MinSizeRel","$(inherited)");
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC '-std=c++17' ";
+				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/MinSizeRel/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/TextureLoader/MinSizeRel/libDiligent-TextureLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/MinSizeRel/libWINAPIKERNEL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/MinSizeRel/libDiligent-GraphicsTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/MinSizeRel/libDiligent-GraphicsAccessories.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/MinSizeRel/libLibJpeg.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/MinSizeRel/libLibPng.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/MinSizeRel/libLibTiff.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/MinSizeRel/libZLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/MinSizeRel/libDiligentAnyOpt.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/MinSizeRel/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/MinSizeRel/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/MinSizeRel/libDiligent-BasicPlatform_LOG.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/MinSizeRel/libDiligent-Primitives.a","-framework AppKit");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = VertexEngine;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		8A4D894F72AD4ECAA578615B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		8FB33BA65B0347FCA9BD5CA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",VertexEngine_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/Debug","$(inherited)");
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = "   -fPIC '-std=c++17' ";
+				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/Debug/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/TextureLoader/Debug/libDiligent-TextureLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/Debug/libWINAPIKERNEL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/Debug/libDiligent-GraphicsTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/Debug/libDiligent-GraphicsAccessories.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/Debug/libLibJpeg.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/Debug/libLibPng.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/Debug/libLibTiff.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/Debug/libZLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/Debug/libDiligentAnyOpt.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/Debug/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/Debug/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/Debug/libDiligent-BasicPlatform_LOG.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/Debug/libDiligent-Primitives.a","-framework AppKit");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = VertexEngine;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		97412C0EA67A4D13BB379386 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		9ED660BD06A148079C2BAAD6 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -848,60 +786,122 @@ fi
 			};
 			name = RelWithDebInfo;
 		};
+		BCB46C7C77F542409716CD04 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		C7F8B4AB84524C11A1F1937E /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/build";
+			};
+			name = MinSizeRel;
+		};
+		D2740A71CF6548A5A34B128A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		F916A642D5E44D04BD1A2C55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/build";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		32493E74A2BD424F8DC47E0E /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		15DFE0390E9A424FA929B71E /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				68503125C5CB464AB117AC3D /* Debug */,
-				3E0BE96185E04B64AEF15AEA /* Release */,
-				B67E04C32DDC4DFE914967CD /* MinSizeRel */,
-				F9A72C5CD75B480894CCC7DC /* RelWithDebInfo */,
+				59EFCE1E89DA45C6A998D1A2 /* Debug */,
+				97412C0EA67A4D13BB379386 /* Release */,
+				BCB46C7C77F542409716CD04 /* MinSizeRel */,
+				0EFAC917B1464313A3D6A0E1 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		79DD6DFC34BE45A09702B654 /* Build configuration list for PBXProject "VertexEngine" */ = {
+		1EF24E6DCBF049C789AD7F19 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EA6570446ADE4631BC699B66 /* Debug */,
-				72F305F57C254FF593D18193 /* Release */,
-				080278EA91E943FD804C1A14 /* MinSizeRel */,
-				8CAF2236381D4A8AA3E7D3D9 /* RelWithDebInfo */,
+				D2740A71CF6548A5A34B128A /* Debug */,
+				2A03D3E933E547A3AD113A88 /* Release */,
+				8A4D894F72AD4ECAA578615B /* MinSizeRel */,
+				9ED660BD06A148079C2BAAD6 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		94DD4890D51A4150AE297896 /* Build configuration list for PBXNativeTarget "VertexEngine" */ = {
+		5D51E3535FB44349BD7CA8A8 /* Build configuration list for PBXAggregateTarget "install" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3D9E72F82A0C4C38BEFF8FD2 /* Debug */,
-				6D76588155664B04AE931A5D /* Release */,
-				779BA42FDDED43D08BA07CF4 /* MinSizeRel */,
-				43EBB61B56184484907797EF /* RelWithDebInfo */,
+				02F32D70A42B4582B0A74EA0 /* Debug */,
+				5D97034C47D74E07805E55AC /* Release */,
+				044BD8AEF75A4DDCB020C2B4 /* MinSizeRel */,
+				526D536DC9D84A27ABA9C3C8 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		9BC1DAA186C84A9CA97C29C0 /* Build configuration list for PBXAggregateTarget "install" */ = {
+		D97F7088A3DB4428BFC02A93 /* Build configuration list for PBXNativeTarget "VertexEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F52BC21A6A1E4FFB888169D0 /* Debug */,
-				3E57C6A51EB44E518F9A8CEE /* Release */,
-				10D62272A5CE4472A2117AD2 /* MinSizeRel */,
-				21A09940E74B499786F08789 /* RelWithDebInfo */,
+				8FB33BA65B0347FCA9BD5CA0 /* Debug */,
+				3E0A748EB637499396767EB0 /* Release */,
+				75FD0F95B06B4216B04C54E9 /* MinSizeRel */,
+				46EA41BAF1B741C9AC70BA8B /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		D071C9E4853F4659AB7540E7 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		E6374B83CB5D44BDA636ADF0 /* Build configuration list for PBXProject "VertexEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7599C9BE105344B3AC36D77D /* Debug */,
-				B0A390FA93714260BCE74A80 /* Release */,
-				70D015B3D4A6451DB29C17BA /* MinSizeRel */,
-				A12919539D174BCBAD2482A9 /* RelWithDebInfo */,
+				F916A642D5E44D04BD1A2C55 /* Debug */,
+				09714D3C897A4D75B8244D2C /* Release */,
+				C7F8B4AB84524C11A1F1937E /* MinSizeRel */,
+				586315412D1F4428A3AED016 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

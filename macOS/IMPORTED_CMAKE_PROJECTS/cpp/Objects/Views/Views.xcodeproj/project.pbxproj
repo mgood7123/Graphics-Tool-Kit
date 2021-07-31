@@ -9,19 +9,19 @@
 /* Begin PBXAggregateTarget section */
 		4C161972DCC540808363BE2C /* install */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = F824546FC92F41D0B960A84B /* Build configuration list for PBXAggregateTarget "install" */;
+			buildConfigurationList = 88EAD263927F49058126AFEE /* Build configuration list for PBXAggregateTarget "install" */;
 			buildPhases = (
 				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
 			);
 			dependencies = (
-				197A043201164B4F83D12164 /* PBXTargetDependency */,
+				6E412D0CC7334A6B977DFB02 /* PBXTargetDependency */,
 			);
 			name = install;
 			productName = install;
 		};
 		A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 634E7BD971EE4DB19E009A4F /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = E8F3ED45D0664CF0BD386E67 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
 				591DD87993911EE85880F34F /* Generate CMakeFiles/ZERO_CHECK */,
 			);
@@ -32,13 +32,13 @@
 		};
 		C170553A14944B729938E9E6 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = F4FD2422472B4AF78F707055 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = 737397F1AEA7428BA4C0FC9B /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
 				7CD6DB57B678DC5D870D126F /* Generate CMakeFiles/ALL_BUILD */,
 			);
 			dependencies = (
-				A5F1E9A7FB774C84B4E04A25 /* PBXTargetDependency */,
-				D972622EF3F5488D884DE66A /* PBXTargetDependency */,
+				A7DE5E4A87FB4EA3986F3729 /* PBXTargetDependency */,
+				C3093EC45BFF46829CC3154F /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
@@ -46,65 +46,65 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		68540F6B132F4D90A7DCE523 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/View.cpp */ = {isa = PBXBuildFile; fileRef = C68083D025B445DB9F47C23D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/View.cpp */; };
-		B31E27AF93E745EF86F7B1CE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/RectangleView.cpp */ = {isa = PBXBuildFile; fileRef = DE8837BD94184103A850E2CB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/RectangleView.cpp */; };
-		DB6123C486804FBE849330D2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 39B8E35554C946E0AD7E4AD9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/CMakeLists.txt */; };
+		4A9DFFCFFF3442CBAC32CB49 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 37516D02387A4D1BB7129521 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/CMakeLists.txt */; };
+		F577E6F2E4284587B68C7E36 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/RectangleView.cpp */ = {isa = PBXBuildFile; fileRef = 56EF65A318A54021B35BFD8A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/RectangleView.cpp */; };
+		FAD35661E165496C9DAE6156 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/View.cpp */ = {isa = PBXBuildFile; fileRef = 2CC5635B8F9F436CA2FE9AA4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/View.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		117F0782B888459ABDCA1A99 /* Debug */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Debug;
-		};
-		6EB5F5CC60244ACE956DFC6E /* MinSizeRel */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = MinSizeRel;
-		};
-		8956F553939B44C2B7722CA5 /* RelWithDebInfo */ = {
+		0461F34F84D0466D9235A6D7 /* RelWithDebInfo */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = RelWithDebInfo;
 		};
-		AC76C6D20F504058A17BF028 /* Release */ = {
+		5EEF1D7538D0415E8E3DC699 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		E8F676733CA849CAA54968EB /* Release */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = Release;
 		};
+		FFDE88A2071B4838BF5A5671 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		2173AA07543C4F45BC743387 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 26DD5CC84C944427A6F5DCC1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FAC505A258C24509AC1E581C;
-			remoteInfo = Views;
-		};
-		972C593659914895910221C3 /* PBXContainerItemProxy */ = {
+		24CEB2463B9A41A686F550EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 26DD5CC84C944427A6F5DCC1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C170553A14944B729938E9E6;
 			remoteInfo = ALL_BUILD;
 		};
-		A84510040C7945B9B119CACD /* PBXContainerItemProxy */ = {
+		6F41331B337A44EB9A605E1F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 26DD5CC84C944427A6F5DCC1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
 			remoteInfo = ZERO_CHECK;
 		};
-		B4D43C252F804D28844A02DF /* PBXContainerItemProxy */ = {
+		809398486A1D446DA1C5B4CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26DD5CC84C944427A6F5DCC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAC505A258C24509AC1E581C;
+			remoteInfo = Views;
+		};
+		D84BC4F228D84B27949BC3AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 26DD5CC84C944427A6F5DCC1 /* Project object */;
 			proxyType = 1;
@@ -114,15 +114,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03C31A1F00D749BFA9E42B15 /* Views */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libViews.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		39B8E35554C946E0AD7E4AD9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		C68083D025B445DB9F47C23D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/View.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = View.cpp; path = View.cpp; sourceTree = SOURCE_ROOT; };
-		DE8837BD94184103A850E2CB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/RectangleView.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = RectangleView.cpp; path = RectangleView.cpp; sourceTree = SOURCE_ROOT; };
-		FD878E62DED64707BB082917 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		2CC5635B8F9F436CA2FE9AA4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/View.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = View.cpp; path = View.cpp; sourceTree = SOURCE_ROOT; };
+		37516D02387A4D1BB7129521 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		56EF65A318A54021B35BFD8A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/RectangleView.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = RectangleView.cpp; path = RectangleView.cpp; sourceTree = SOURCE_ROOT; };
+		7112926A887C4387BA1EB04B /* Views */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libViews.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7DF21B1E8244FCA853B8EE0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5228C8C60F224670A509EB30 /* Frameworks */ = {
+		692D039B22304AA4A36C55DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -132,63 +132,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		64355D4A480B44C78969D88E /* Frameworks */ = {
+		20DA9BCAE7DB4315B03402D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8194D85B56794327A256266A /* Products */ = {
+		2A76A1EE620F4D78B5E05D70 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				03C31A1F00D749BFA9E42B15 /* Views */,
+				7112926A887C4387BA1EB04B /* Views */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		97653F5BE6F7445B9CB5231C /* CMake Rules */ = {
+		4C6777AC0AD14452B7E7DB07 /* ALL_BUILD */ = {
 			isa = PBXGroup;
 			children = (
+				C4CEE9553F17499AAF55FB5A /* CMake Rules */,
+				B7DF21B1E8244FCA853B8EE0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/CMakeLists.txt */,
 			);
-			name = "CMake Rules";
+			name = ALL_BUILD;
 			sourceTree = "<group>";
 		};
-		C4AEB69518E44EBB92A190AA = {
+		4D7D5504C80E4B908AC7B1D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ED883EDC4AC942AF9CE8DC68 /* Views */,
-				F7136BB4284F44D0BD3377EE /* ALL_BUILD */,
-				8194D85B56794327A256266A /* Products */,
-				64355D4A480B44C78969D88E /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		C72416FDFFEC4E63AE969E8A /* Source Files */ = {
-			isa = PBXGroup;
-			children = (
-				DE8837BD94184103A850E2CB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/RectangleView.cpp */,
-				C68083D025B445DB9F47C23D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/View.cpp */,
-			);
-			name = "Source Files";
-			sourceTree = "<group>";
-		};
-		ED883EDC4AC942AF9CE8DC68 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				C72416FDFFEC4E63AE969E8A /* Source Files */,
-				39B8E35554C946E0AD7E4AD9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/CMakeLists.txt */,
+				75D3DE4E03A643EF97AFBE71 /* Source Files */,
+				37516D02387A4D1BB7129521 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/CMakeLists.txt */,
 			);
 			name = Views;
 			sourceTree = "<group>";
 		};
-		F7136BB4284F44D0BD3377EE /* ALL_BUILD */ = {
+		75D3DE4E03A643EF97AFBE71 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				97653F5BE6F7445B9CB5231C /* CMake Rules */,
-				FD878E62DED64707BB082917 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/CMakeLists.txt */,
+				56EF65A318A54021B35BFD8A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/RectangleView.cpp */,
+				2CC5635B8F9F436CA2FE9AA4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/View.cpp */,
 			);
-			name = ALL_BUILD;
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		AB3862971E1547EA96A3CB61 = {
+			isa = PBXGroup;
+			children = (
+				4D7D5504C80E4B908AC7B1D9 /* Views */,
+				4C6777AC0AD14452B7E7DB07 /* ALL_BUILD */,
+				2A76A1EE620F4D78B5E05D70 /* Products */,
+				20DA9BCAE7DB4315B03402D4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C4CEE9553F17499AAF55FB5A /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,20 +196,20 @@
 /* Begin PBXNativeTarget section */
 		FAC505A258C24509AC1E581C /* Views */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 913EE4DC63814BEF9BEDA8DD /* Build configuration list for PBXNativeTarget "Views" */;
+			buildConfigurationList = 542B6CCBF3B949C7B4AFC4D5 /* Build configuration list for PBXNativeTarget "Views" */;
 			buildPhases = (
-				252DF97216134EB585E0700D /* Sources */,
-				5228C8C60F224670A509EB30 /* Frameworks */,
+				7A949EBC42D042F6A0DC9A89 /* Sources */,
+				692D039B22304AA4A36C55DC /* Frameworks */,
 				D24D0E10A754785209405E9D /* CMake PostBuild Rules */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5812A714C5214A0591550021 /* PBXTargetDependency */,
+				2D824FFB1E65438EAD3B9275 /* PBXTargetDependency */,
 			);
 			name = Views;
 			productName = Views;
-			productReference = 03C31A1F00D749BFA9E42B15 /* Views */;
+			productReference = 7112926A887C4387BA1EB04B /* Views */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -221,18 +221,18 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1240;
 			};
-			buildConfigurationList = FE72AD77282C43AA949AFB75 /* Build configuration list for PBXProject "Views" */;
+			buildConfigurationList = 2F162B0588A74FA392CAF3DC /* Build configuration list for PBXProject "Views" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				117F0782B888459ABDCA1A99 /* Debug */,
-				AC76C6D20F504058A17BF028 /* Release */,
-				6EB5F5CC60244ACE956DFC6E /* MinSizeRel */,
-				8956F553939B44C2B7722CA5 /* RelWithDebInfo */,
+				5EEF1D7538D0415E8E3DC699 /* Debug */,
+				E8F676733CA849CAA54968EB /* Release */,
+				FFDE88A2071B4838BF5A5671 /* MinSizeRel */,
+				0461F34F84D0466D9235A6D7 /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = C4AEB69518E44EBB92A190AA;
+			mainGroup = AB3862971E1547EA96A3CB61;
 			projectDirPath = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views";
 			projectRoot = "";
 			targets = (
@@ -421,42 +421,133 @@ fi
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		252DF97216134EB585E0700D /* Sources */ = {
+		7A949EBC42D042F6A0DC9A89 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B31E27AF93E745EF86F7B1CE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/RectangleView.cpp */,
-				68540F6B132F4D90A7DCE523 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/View.cpp */,
+				F577E6F2E4284587B68C7E36 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/RectangleView.cpp */,
+				FAD35661E165496C9DAE6156 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/Views/View.cpp */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		197A043201164B4F83D12164 /* PBXTargetDependency */ = {
+		2D824FFB1E65438EAD3B9275 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
+			targetProxy = 6F41331B337A44EB9A605E1F /* PBXContainerItemProxy */;
+		};
+		6E412D0CC7334A6B977DFB02 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C170553A14944B729938E9E6 /* ALL_BUILD */;
-			targetProxy = 972C593659914895910221C3 /* PBXContainerItemProxy */;
+			targetProxy = 24CEB2463B9A41A686F550EE /* PBXContainerItemProxy */;
 		};
-		5812A714C5214A0591550021 /* PBXTargetDependency */ = {
+		A7DE5E4A87FB4EA3986F3729 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
-			targetProxy = B4D43C252F804D28844A02DF /* PBXContainerItemProxy */;
+			targetProxy = D84BC4F228D84B27949BC3AA /* PBXContainerItemProxy */;
 		};
-		A5F1E9A7FB774C84B4E04A25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
-			targetProxy = A84510040C7945B9B119CACD /* PBXContainerItemProxy */;
-		};
-		D972622EF3F5488D884DE66A /* PBXTargetDependency */ = {
+		C3093EC45BFF46829CC3154F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FAC505A258C24509AC1E581C /* Views */;
-			targetProxy = 2173AA07543C4F45BC743387 /* PBXContainerItemProxy */;
+			targetProxy = 809398486A1D446DA1C5B4CA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0873BFB716D644A2A3694B10 /* MinSizeRel */ = {
+		0D3B18F01CF447ED918A9223 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		23DC117D366841A98B37003F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views/build";
+			};
+			name = Debug;
+		};
+		39856E4E0A0D41DE939931CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		3FA9EEF9477041968880DE33 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		5052B6AC9266405AB74B5E15 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		55AD062C2AE644EFA923B0F3 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -467,7 +558,27 @@ fi
 			};
 			name = MinSizeRel;
 		};
-		0D39412633A648ED874F9852 /* Debug */ = {
+		56FA4319824B481495A747B7 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		699BDB43BD1C463E8F84DAB9 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -485,9 +596,9 @@ fi
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = Debug;
+			name = MinSizeRel;
 		};
-		14896B5FD9114D67831660A6 /* Release */ = {
+		79E5183355434F108F1AE033 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -507,211 +618,7 @@ fi
 			};
 			name = Release;
 		};
-		20974052CEBA46BA94D8009A /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		3336B69D5A1E485E9021A5AD /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		373240829A034488940EE15F /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		46B7D8C1A8CC44129D2FE41C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		51EE32FD4D8D4A1E8BE91179 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		6EBCF7A643C247ADB7F44CFF /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = "";
-				DYLIB_CURRENT_VERSION = "";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .dylib;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",Views_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'","'ENGINE_DLL=1'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/.","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/ShaderTools/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/AssetLoader/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
-				INSTALL_PATH = "@rpath";
-				LD_RUNPATH_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/MinSizeRel /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/MinSizeRel /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/MinSizeRel /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/MinSizeRel /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/MinSizeRel /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/MinSizeRel /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/MinSizeRel /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/MinSizeRel","$(inherited)");
-				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++17' ";
-				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/MinSizeRel/libObjectBase.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/MinSizeRel/libDiligentHelpers.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/MinSizeRel/libGraphicsEngineOpenGL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/ShaderTools/MinSizeRel/libDiligent-ShaderTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/HLSL2GLSLConverterLib/MinSizeRel/libDiligent-HLSL2GLSLConverterLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/MinSizeRel/libDiligent-GraphicsEngine.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/AssetLoader/MinSizeRel/libDiligent-AssetLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui/MinSizeRel/libDiligent-Imgui.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/MinSizeRel/libTimeEngine.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/MinSizeRel/libVertexEngine.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/TextureLoader/MinSizeRel/libDiligent-TextureLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/MinSizeRel/libDiligent-GraphicsTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/MinSizeRel/libDiligent-GraphicsAccessories.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/MinSizeRel/libLibJpeg.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/MinSizeRel/libLibPng.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/MinSizeRel/libLibTiff.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/MinSizeRel/libZLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/MinSizeRel/libWINAPIKERNEL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/MinSizeRel/libDiligentAnyOpt.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/MinSizeRel/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/MinSizeRel/libMultiTouch.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/MinSizeRel/libDiligent-Log.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/MinSizeRel/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/MinSizeRel/libDiligent-BasicPlatform_LOG.a","-framework AppKit","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/MinSizeRel/libDiligent-Primitives.a");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Views;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		72D18F53D1F146ADA6537609 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = "";
-				DYLIB_CURRENT_VERSION = "";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .dylib;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 2;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",Views_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'","'ENGINE_DLL=1'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/.","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/ShaderTools/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/AssetLoader/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
-				INSTALL_PATH = "@rpath";
-				LD_RUNPATH_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/RelWithDebInfo /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/RelWithDebInfo /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/RelWithDebInfo /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/RelWithDebInfo /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/RelWithDebInfo /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/RelWithDebInfo /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/RelWithDebInfo /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/RelWithDebInfo","$(inherited)");
-				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG -fPIC -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++17' ";
-				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/RelWithDebInfo/libObjectBase.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/RelWithDebInfo/libDiligentHelpers.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/RelWithDebInfo/libGraphicsEngineOpenGL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/ShaderTools/RelWithDebInfo/libDiligent-ShaderTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/HLSL2GLSLConverterLib/RelWithDebInfo/libDiligent-HLSL2GLSLConverterLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/RelWithDebInfo/libDiligent-GraphicsEngine.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/AssetLoader/RelWithDebInfo/libDiligent-AssetLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui/RelWithDebInfo/libDiligent-Imgui.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/RelWithDebInfo/libTimeEngine.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/RelWithDebInfo/libVertexEngine.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/TextureLoader/RelWithDebInfo/libDiligent-TextureLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/RelWithDebInfo/libDiligent-GraphicsTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/RelWithDebInfo/libDiligent-GraphicsAccessories.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/RelWithDebInfo/libLibJpeg.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/RelWithDebInfo/libLibPng.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/RelWithDebInfo/libLibTiff.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/RelWithDebInfo/libZLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/RelWithDebInfo/libWINAPIKERNEL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/RelWithDebInfo/libDiligentAnyOpt.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/RelWithDebInfo/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/RelWithDebInfo/libMultiTouch.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/RelWithDebInfo/libDiligent-Log.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/RelWithDebInfo/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/RelWithDebInfo/libDiligent-BasicPlatform_LOG.a","-framework AppKit","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/RelWithDebInfo/libDiligent-Primitives.a");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Views;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		77C299DBE67A43508627C6C8 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		92EBB3391C74466B9FE598E4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = "";
-				DYLIB_CURRENT_VERSION = "";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .dylib;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",Views_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'","'ENGINE_DLL=1'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/.","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/ShaderTools/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/AssetLoader/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
-				INSTALL_PATH = "@rpath";
-				LD_RUNPATH_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Release /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/Release /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/Release /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/Release /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/Release /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/Release /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/Release /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Release","$(inherited)");
-				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++17' ";
-				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Release/libObjectBase.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/Release/libDiligentHelpers.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/Release/libGraphicsEngineOpenGL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/ShaderTools/Release/libDiligent-ShaderTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/HLSL2GLSLConverterLib/Release/libDiligent-HLSL2GLSLConverterLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/Release/libDiligent-GraphicsEngine.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/AssetLoader/Release/libDiligent-AssetLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui/Release/libDiligent-Imgui.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/Release/libTimeEngine.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/Release/libVertexEngine.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/TextureLoader/Release/libDiligent-TextureLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/Release/libDiligent-GraphicsTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/Release/libDiligent-GraphicsAccessories.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/Release/libLibJpeg.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/Release/libLibPng.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/Release/libLibTiff.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/Release/libZLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/Release/libWINAPIKERNEL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/Release/libDiligentAnyOpt.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/Release/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/Release/libMultiTouch.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Release/libDiligent-Log.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/Release/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/Release/libDiligent-BasicPlatform_LOG.a","-framework AppKit","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/Release/libDiligent-Primitives.a");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Views;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		A93D15085C6042389DDA9E89 /* Debug */ = {
+		7B66B3DD9807438ABCB788FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -724,7 +631,7 @@ fi
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",Views_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE,_DEBUG,DEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'",DILIGENT_DEVELOPMENT,DILIGENT_DEBUG,"'ENGINE_DLL=1'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/.","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/ShaderTools/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/AssetLoader/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/.","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/ShaderTools/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/AssetLoader/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Debug /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/Debug /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/Debug /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/Debug /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/Debug /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/Debug /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/Debug /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Debug","$(inherited)");
 				LIBRARY_STYLE = DYNAMIC;
@@ -739,7 +646,74 @@ fi
 			};
 			name = Debug;
 		};
-		AF5F64F7AD7049D6AD3331AE /* Release */ = {
+		A31C9AA80AAE40459D73C46A /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",Views_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'","'ENGINE_DLL=1'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/.","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/ShaderTools/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/AssetLoader/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/RelWithDebInfo /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/RelWithDebInfo /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/RelWithDebInfo /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/RelWithDebInfo /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/RelWithDebInfo /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/RelWithDebInfo /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/RelWithDebInfo /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/RelWithDebInfo","$(inherited)");
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG -fPIC -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++17' ";
+				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/RelWithDebInfo/libObjectBase.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/RelWithDebInfo/libDiligentHelpers.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/RelWithDebInfo/libGraphicsEngineOpenGL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/ShaderTools/RelWithDebInfo/libDiligent-ShaderTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/HLSL2GLSLConverterLib/RelWithDebInfo/libDiligent-HLSL2GLSLConverterLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/RelWithDebInfo/libDiligent-GraphicsEngine.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/AssetLoader/RelWithDebInfo/libDiligent-AssetLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui/RelWithDebInfo/libDiligent-Imgui.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/RelWithDebInfo/libTimeEngine.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/RelWithDebInfo/libVertexEngine.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/TextureLoader/RelWithDebInfo/libDiligent-TextureLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/RelWithDebInfo/libDiligent-GraphicsTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/RelWithDebInfo/libDiligent-GraphicsAccessories.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/RelWithDebInfo/libLibJpeg.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/RelWithDebInfo/libLibPng.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/RelWithDebInfo/libLibTiff.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/RelWithDebInfo/libZLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/RelWithDebInfo/libWINAPIKERNEL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/RelWithDebInfo/libDiligentAnyOpt.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/RelWithDebInfo/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/RelWithDebInfo/libMultiTouch.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/RelWithDebInfo/libDiligent-Log.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/RelWithDebInfo/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/RelWithDebInfo/libDiligent-BasicPlatform_LOG.a","-framework AppKit","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/RelWithDebInfo/libDiligent-Primitives.a");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Views;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		A3A2BB7D3CB34014BBE466BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",Views_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'","'ENGINE_DLL=1'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/.","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/ShaderTools/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/AssetLoader/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Release /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/Release /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/Release /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/Release /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/Release /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/Release /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/Release /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Release","$(inherited)");
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++17' ";
+				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Release/libObjectBase.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/Release/libDiligentHelpers.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/Release/libGraphicsEngineOpenGL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/ShaderTools/Release/libDiligent-ShaderTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/HLSL2GLSLConverterLib/Release/libDiligent-HLSL2GLSLConverterLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/Release/libDiligent-GraphicsEngine.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/AssetLoader/Release/libDiligent-AssetLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui/Release/libDiligent-Imgui.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/Release/libTimeEngine.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/Release/libVertexEngine.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/TextureLoader/Release/libDiligent-TextureLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/Release/libDiligent-GraphicsTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/Release/libDiligent-GraphicsAccessories.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/Release/libLibJpeg.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/Release/libLibPng.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/Release/libLibTiff.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/Release/libZLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/Release/libWINAPIKERNEL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/Release/libDiligentAnyOpt.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/Release/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/Release/libMultiTouch.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Release/libDiligent-Log.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/Release/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/Release/libDiligent-BasicPlatform_LOG.a","-framework AppKit","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/Release/libDiligent-Primitives.a");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Views;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		A585F3263DA443F6AE6094A5 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views/build";
+			};
+			name = RelWithDebInfo;
+		};
+		AB47426579EA45DA8ABC26A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -756,83 +730,10 @@ fi
 				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		B204B84959AD42B6885911FF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views/build";
-			};
-			name = Release;
-		};
-		B38EE0B503E84098B0923C4D /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views/build";
-			};
-			name = RelWithDebInfo;
-		};
-		B8960EE7FD1B4F29A8DF5174 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		CA2F0C7F56CD4CA3A2A04B89 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views/build";
 			};
 			name = Debug;
 		};
-		F1CD052138D04876ADDAA0E2 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		F4AA8B73B5B04965B8B9ED62 /* RelWithDebInfo */ = {
+		B4A0626766024FD89E16C850 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -852,60 +753,159 @@ fi
 			};
 			name = RelWithDebInfo;
 		};
+		B786123ECA034D19A9ADA983 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",Views_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'","'ENGINE_DLL=1'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentHelpers","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/PlatformBase","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/VertexEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/Objects/.","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/ShaderTools/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/AssetLoader/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imGuIZMO.quat","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/Imgui/../ThirdParty/imgui","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/TextureLoader/interface","$(inherited)");
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/MinSizeRel /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/MinSizeRel /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/MinSizeRel /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/MinSizeRel /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/MinSizeRel /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/MinSizeRel /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/MinSizeRel /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/MinSizeRel","$(inherited)");
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++17' ";
+				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/MinSizeRel/libObjectBase.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/MinSizeRel/libDiligentHelpers.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/MinSizeRel/libGraphicsEngineOpenGL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/ShaderTools/MinSizeRel/libDiligent-ShaderTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/HLSL2GLSLConverterLib/MinSizeRel/libDiligent-HLSL2GLSLConverterLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/MinSizeRel/libDiligent-GraphicsEngine.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/AssetLoader/MinSizeRel/libDiligent-AssetLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/Imgui/MinSizeRel/libDiligent-Imgui.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/MinSizeRel/libTimeEngine.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/VertexEngine/MinSizeRel/libVertexEngine.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/TextureLoader/MinSizeRel/libDiligent-TextureLoader.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/MinSizeRel/libDiligent-GraphicsTools.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/MinSizeRel/libDiligent-GraphicsAccessories.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/MinSizeRel/libLibJpeg.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/lpng-1.6.17/MinSizeRel/libLibPng.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libtiff/MinSizeRel/libLibTiff.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/zlib-1.2.8/MinSizeRel/libZLib.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/WINAPI_KERNEL/SDK/src/Windows/Kernel/MinSizeRel/libWINAPIKERNEL.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentHelpers/MinSizeRel/libDiligentAnyOpt.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/MinSizeRel/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/MinSizeRel/libMultiTouch.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/MinSizeRel/libDiligent-Log.dylib","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/MinSizeRel/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/MinSizeRel/libDiligent-BasicPlatform_LOG.a","-framework AppKit","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/MinSizeRel/libDiligent-Primitives.a");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Views;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		B7ECC52EC1F74349B4867BDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		CD308C85815844F4A346EA8C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		D2D537C86E5446CDB4F93A9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views/build";
+			};
+			name = Release;
+		};
+		FE3BE340B54F41499D0A5F69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/Objects/Views";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		634E7BD971EE4DB19E009A4F /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		2F162B0588A74FA392CAF3DC /* Build configuration list for PBXProject "Views" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0D39412633A648ED874F9852 /* Debug */,
-				14896B5FD9114D67831660A6 /* Release */,
-				20974052CEBA46BA94D8009A /* MinSizeRel */,
-				F4AA8B73B5B04965B8B9ED62 /* RelWithDebInfo */,
+				23DC117D366841A98B37003F /* Debug */,
+				D2D537C86E5446CDB4F93A9D /* Release */,
+				55AD062C2AE644EFA923B0F3 /* MinSizeRel */,
+				A585F3263DA443F6AE6094A5 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		913EE4DC63814BEF9BEDA8DD /* Build configuration list for PBXNativeTarget "Views" */ = {
+		542B6CCBF3B949C7B4AFC4D5 /* Build configuration list for PBXNativeTarget "Views" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A93D15085C6042389DDA9E89 /* Debug */,
-				92EBB3391C74466B9FE598E4 /* Release */,
-				6EBCF7A643C247ADB7F44CFF /* MinSizeRel */,
-				72D18F53D1F146ADA6537609 /* RelWithDebInfo */,
+				7B66B3DD9807438ABCB788FB /* Debug */,
+				A3A2BB7D3CB34014BBE466BA /* Release */,
+				B786123ECA034D19A9ADA983 /* MinSizeRel */,
+				A31C9AA80AAE40459D73C46A /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		F4FD2422472B4AF78F707055 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		737397F1AEA7428BA4C0FC9B /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				46B7D8C1A8CC44129D2FE41C /* Debug */,
-				B8960EE7FD1B4F29A8DF5174 /* Release */,
-				77C299DBE67A43508627C6C8 /* MinSizeRel */,
-				3336B69D5A1E485E9021A5AD /* RelWithDebInfo */,
+				39856E4E0A0D41DE939931CE /* Debug */,
+				0D3B18F01CF447ED918A9223 /* Release */,
+				56FA4319824B481495A747B7 /* MinSizeRel */,
+				3FA9EEF9477041968880DE33 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		F824546FC92F41D0B960A84B /* Build configuration list for PBXAggregateTarget "install" */ = {
+		88EAD263927F49058126AFEE /* Build configuration list for PBXAggregateTarget "install" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				51EE32FD4D8D4A1E8BE91179 /* Debug */,
-				AF5F64F7AD7049D6AD3331AE /* Release */,
-				373240829A034488940EE15F /* MinSizeRel */,
-				F1CD052138D04876ADDAA0E2 /* RelWithDebInfo */,
+				AB47426579EA45DA8ABC26A7 /* Debug */,
+				FE3BE340B54F41499D0A5F69 /* Release */,
+				CD308C85815844F4A346EA8C /* MinSizeRel */,
+				5052B6AC9266405AB74B5E15 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		FE72AD77282C43AA949AFB75 /* Build configuration list for PBXProject "Views" */ = {
+		E8F3ED45D0664CF0BD386E67 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CA2F0C7F56CD4CA3A2A04B89 /* Debug */,
-				B204B84959AD42B6885911FF /* Release */,
-				0873BFB716D644A2A3694B10 /* MinSizeRel */,
-				B38EE0B503E84098B0923C4D /* RelWithDebInfo */,
+				B7ECC52EC1F74349B4867BDC /* Debug */,
+				79E5183355434F108F1AE033 /* Release */,
+				699BDB43BD1C463E8F84DAB9 /* MinSizeRel */,
+				B4A0626766024FD89E16C850 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

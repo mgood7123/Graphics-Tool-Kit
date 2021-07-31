@@ -9,19 +9,19 @@
 /* Begin PBXAggregateTarget section */
 		4C161972DCC540808363BE2C /* install */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 21429AF1476A461CA36EA04B /* Build configuration list for PBXAggregateTarget "install" */;
+			buildConfigurationList = FD3D6E5FCBC246509923967A /* Build configuration list for PBXAggregateTarget "install" */;
 			buildPhases = (
 				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
 			);
 			dependencies = (
-				8D6A577D7D5F40E59AF4AB76 /* PBXTargetDependency */,
+				A6AB91FFB64B439782B9D048 /* PBXTargetDependency */,
 			);
 			name = install;
 			productName = install;
 		};
 		A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 092767FB440D44C9AD49B936 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = 9E1DD83E5B8944849AB6A4CC /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
 				8A46F5B5D6C06B8134EAFE1E /* Generate CMakeFiles/ZERO_CHECK */,
 			);
@@ -32,13 +32,13 @@
 		};
 		C170553A14944B729938E9E6 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 4A9E53364186474CB384A535 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = C750BF1CB9B04507A0A6025A /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
 				5507CF74B43FD47E3F6B29D4 /* Generate CMakeFiles/ALL_BUILD */,
 			);
 			dependencies = (
-				A0327AE00AD2403F9D154679 /* PBXTargetDependency */,
-				B8BA40CC493C446FAD40C5D2 /* PBXTargetDependency */,
+				FDFE361430FA41FD8DCA1EF2 /* PBXTargetDependency */,
+				9F5201AB79C4452AA1951BA9 /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
@@ -46,189 +46,189 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		05A96B2FB4C24101A7A88C77 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatasrc.c */ = {isa = PBXBuildFile; fileRef = 25D0ED3C34BC4BE9A6D01ED2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatasrc.c */; };
-		05D57F26132D46C79D072B6C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdinput.c */ = {isa = PBXBuildFile; fileRef = 70258B3B17E042DCA80B696A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdinput.c */; };
-		06BF4190B59F4FB5A282BBBD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctint.c */ = {isa = PBXBuildFile; fileRef = BBB5A60ED5F84D49BB6BE9AE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctint.c */; };
-		07DD88B49A3946A4B67BD4F6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapimin.c */ = {isa = PBXBuildFile; fileRef = 4D0137EFFE8F4D6EA86567F1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapimin.c */; };
-		140122D322B945439A3E165B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jddctmgr.c */ = {isa = PBXBuildFile; fileRef = 47864BF2A2CA4A9B870FE44D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jddctmgr.c */; };
-		1490D552FC8B4BBABC5D6DF8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemsys.h */ = {isa = PBXBuildFile; fileRef = E0EED85CEFD64C8A90A42449 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemsys.h */; };
-		1716A96B067C4B93AAF33F16 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatadst.c */ = {isa = PBXBuildFile; fileRef = 8371DED2551E4CC2B4D65D0D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatadst.c */; };
-		1B5D1C2EBF294700A968D2FA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmainct.c */ = {isa = PBXBuildFile; fileRef = 3774D2280E8644DB904F92A3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmainct.c */; };
-		1D9A61D6F2FA4A15B9984CA1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapimin.c */ = {isa = PBXBuildFile; fileRef = 44E9D121836346D68C4287A2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapimin.c */; };
-		1E56AFAAD4E947968981D3EB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccoefct.c */ = {isa = PBXBuildFile; fileRef = D8D54FEEB1AA4B409F62F14A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccoefct.c */; };
-		1FE2AE0DC35A4EDEA64B2484 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jutils.c */ = {isa = PBXBuildFile; fileRef = A2AD97924CC04D089AB77A27 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jutils.c */; };
-		210489AE80B34AD9A2241407 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcsample.c */ = {isa = PBXBuildFile; fileRef = 36F4C2CABA3A45A8BA00FB46 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcsample.c */; };
-		24F4856BA10A443BA8053480 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmaster.c */ = {isa = PBXBuildFile; fileRef = 334B86E8EC3A41099BBCB9F8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmaster.c */; };
-		280EA041F75744D5B7A0F184 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmainct.c */ = {isa = PBXBuildFile; fileRef = 92B4BF4261F74EC8BA0C6B66 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmainct.c */; };
-		2B8E2B4094F04A009186950D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jctrans.c */ = {isa = PBXBuildFile; fileRef = 6E75B718950545728132E6F3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jctrans.c */; };
-		2BDF05BBBF454BF08F93D587 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jinclude.h */ = {isa = PBXBuildFile; fileRef = B7D97538763440F58795B843 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jinclude.h */; };
-		2ECD07641ED34AA6AF021C8D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant1.c */ = {isa = PBXBuildFile; fileRef = 02F04AE5B04448A1BF521AD7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant1.c */; };
-		325D950B1C7B40679A008DDA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctfst.c */ = {isa = PBXBuildFile; fileRef = 628BA1C6631C457EBF3891ED /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctfst.c */; };
-		45FC8A2B317344B0884BCABB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpeglib.h */ = {isa = PBXBuildFile; fileRef = 612B137C49BD4179B04BD920 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpeglib.h */; };
-		4ECABC1F164944EBA17BB63B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcarith.c */ = {isa = PBXBuildFile; fileRef = 1A1ED2D63B6347B093A1A0B7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcarith.c */; };
-		5409E52B4DB349188AFBEF11 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcoefct.c */ = {isa = PBXBuildFile; fileRef = 4CF7C2D4490E4B68A5C77B88 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcoefct.c */; };
-		57BE4A9A4B4643429775A918 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdpostct.c */ = {isa = PBXBuildFile; fileRef = 4E9E6FDFBE944A0CA4603171 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdpostct.c */; };
-		5CC3C7CE99E141649C073946 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctflt.c */ = {isa = PBXBuildFile; fileRef = 4B5939E440FB4DF6AF66D702 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctflt.c */; };
-		666F52087369464CA2971465 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 82EB6B4337584FC9A06DA3F5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/CMakeLists.txt */; };
-		66984E6E31844FEAB311A422 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdtrans.c */ = {isa = PBXBuildFile; fileRef = C1FB89D62B31408B8777AF5B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdtrans.c */; };
-		6D03356852264FC1BCB07381 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemmgr.c */ = {isa = PBXBuildFile; fileRef = 68D20FD81F464747BF2F618C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemmgr.c */; };
-		6D22A43A70944D7890026BDC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcomapi.c */ = {isa = PBXBuildFile; fileRef = 48451C3F7F574D3987060893 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcomapi.c */; };
-		7908E4EF0BE44279969C9B73 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmarker.c */ = {isa = PBXBuildFile; fileRef = E938A2BE0928429DA2556962 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmarker.c */; };
-		7C111FEFE02B4434AA6B18D3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jconfig.h */ = {isa = PBXBuildFile; fileRef = 478E841217194F46877F9ACA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jconfig.h */; };
-		8797E813C8DE4BB28C804358 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcinit.c */ = {isa = PBXBuildFile; fileRef = 510712A85EEF4B1AA8AA5D18 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcinit.c */; };
-		8DCF5DE04B084F739823E795 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccolor.c */ = {isa = PBXBuildFile; fileRef = B3637465C3E94F8EACF89202 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccolor.c */; };
-		8F4535EE673E452A894763FB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcdctmgr.c */ = {isa = PBXBuildFile; fileRef = 67C23968E2044794B37FCAB0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcdctmgr.c */; };
-		91FBE7994C68440FA8E06CDE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcprepct.c */ = {isa = PBXBuildFile; fileRef = A605B39653DC48ED914337A0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcprepct.c */; };
-		9439FF4D3EA540D1A196F77D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctint.c */ = {isa = PBXBuildFile; fileRef = 38B1FB73216945158799CCF6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctint.c */; };
-		9BFDCA72CE8F43A5A343E0E1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jchuff.c */ = {isa = PBXBuildFile; fileRef = BBE0966FAE0D4E85B710395D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jchuff.c */; };
-		A1C4A988B6E14928BA284EEB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdarith.c */ = {isa = PBXBuildFile; fileRef = D4E9A141758F4A2DACD1C199 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdarith.c */; };
-		A48D262E717E4509BDEEC178 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapistd.c */ = {isa = PBXBuildFile; fileRef = 3DCB48BBDAF34B14B01FCBE6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapistd.c */; };
-		A6AEBB01C3AA4A97B74EC67F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jaricom.c */ = {isa = PBXBuildFile; fileRef = 35887C8942B14471824AE6BE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jaricom.c */; };
-		A6B113CC4B384618BDCA2AAE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant2.c */ = {isa = PBXBuildFile; fileRef = E9A760B10204419193355C0F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant2.c */; };
-		A6B4585A68444E5797BEFD8C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctfst.c */ = {isa = PBXBuildFile; fileRef = 9D0E04D7C0894A98ADA6091A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctfst.c */; };
-		AFE7BD451E4F47729F34B135 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.h */ = {isa = PBXBuildFile; fileRef = CC9C056B445E4DAAA8213718 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.h */; };
-		B4645FA35E0946EAB50A0C87 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmarker.c */ = {isa = PBXBuildFile; fileRef = 280196B96A79497B943F5111 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmarker.c */; };
-		B5B67F0FE904451A98687369 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmerge.c */ = {isa = PBXBuildFile; fileRef = B76B1A4A36DF4DA2A6A54265 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmerge.c */; };
-		B817EC74F06942F4AB98A7B0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.c */ = {isa = PBXBuildFile; fileRef = B87E0598A66E43E1928356B4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.c */; };
-		C46532D24D2245CFB911FB3C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdct.h */ = {isa = PBXBuildFile; fileRef = 80E3C7DDAEDE4145BF559A29 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdct.h */; };
-		C474C9298D4C47388AC2D1BC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcparam.c */ = {isa = PBXBuildFile; fileRef = 620A539075054C05A32474AA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcparam.c */; };
-		D0236AA329E94C30BE2401F3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemnobs.c */ = {isa = PBXBuildFile; fileRef = 2B08ECCB6ACC422D90FE4AB2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemnobs.c */; };
-		D50BB85F2BC145F39B395D0C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcolor.c */ = {isa = PBXBuildFile; fileRef = 5CF2B1925972456BAB97EAA2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcolor.c */; };
-		DD84718C400A4767ADE43ABC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctflt.c */ = {isa = PBXBuildFile; fileRef = 929161BC6EC14CF6BFFE57C7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctflt.c */; };
-		DE8E7E843BFD4467B2795D16 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdsample.c */ = {isa = PBXBuildFile; fileRef = 5B4FE9D9352B4AF4BF04D096 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdsample.c */; };
-		EDA00DB358284DA690FBFD63 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapistd.c */ = {isa = PBXBuildFile; fileRef = 08C2150623EF4DC88DE15126 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapistd.c */; };
-		F4C0A344C854479A80D25593 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpegint.h */ = {isa = PBXBuildFile; fileRef = E0C03240FEC545E1A11B3CB6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpegint.h */; };
-		F579FC68A78945ECA3AE825F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdhuff.c */ = {isa = PBXBuildFile; fileRef = 2C25BC95721945CFA1C6751C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdhuff.c */; };
-		F5FCD23BC3DB44F88A457B04 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jversion.h */ = {isa = PBXBuildFile; fileRef = 23D10935191F4ED69657FF0E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jversion.h */; };
-		F6341284C9C3499DAA185457 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmaster.c */ = {isa = PBXBuildFile; fileRef = 9781AA13700A4C76A089350A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmaster.c */; };
-		FE0F9C7996C8494CBDAEA016 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmorecfg.h */ = {isa = PBXBuildFile; fileRef = F9B37B486EA54673AA527BDF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmorecfg.h */; };
+		016BF01346DD4BFDB1484ACE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctflt.c */ = {isa = PBXBuildFile; fileRef = 49C5709DC3A249738018962B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctflt.c */; };
+		030874ABFCE640FD8C144D61 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcolor.c */ = {isa = PBXBuildFile; fileRef = 2A9B14FAB7574DA3B4BD9A88 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcolor.c */; };
+		0A7849BAB8CB4BEBA6B4B4DA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jinclude.h */ = {isa = PBXBuildFile; fileRef = 1CC0E1A5D035429B85D93BE4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jinclude.h */; };
+		111EF64D291B4EFC8EAEC84C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmarker.c */ = {isa = PBXBuildFile; fileRef = 45D8BEDF8EC1416BBA7A96D9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmarker.c */; };
+		1B8004B3A0FA4001B8053D7F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatasrc.c */ = {isa = PBXBuildFile; fileRef = 29C95ED260054936B7A64F6F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatasrc.c */; };
+		1EFFC4D2F296459C92ACC896 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcarith.c */ = {isa = PBXBuildFile; fileRef = 28FC16271FFB499BA2510EA7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcarith.c */; };
+		22619CB6CC414F2B8B70126A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemmgr.c */ = {isa = PBXBuildFile; fileRef = 35DA4C94F47945ABA762D216 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemmgr.c */; };
+		242B2CCE3B7D401BAA6FEFC5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jconfig.h */ = {isa = PBXBuildFile; fileRef = C9735158E7954EF9981C87F1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jconfig.h */; };
+		2D617C04E74E4421BB850E3D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctfst.c */ = {isa = PBXBuildFile; fileRef = B8758D042E384F6FAEF1BA25 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctfst.c */; };
+		2E92D6C5395E4EA8B15A954B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccolor.c */ = {isa = PBXBuildFile; fileRef = D3852A96753C4815ABFB8E60 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccolor.c */; };
+		3897D5AC4E6647A18AB9BBB2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcprepct.c */ = {isa = PBXBuildFile; fileRef = F47537D2EC5B478E971CDEFB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcprepct.c */; };
+		3D79A5F5E15644CE9D640ED8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdpostct.c */ = {isa = PBXBuildFile; fileRef = B8EB7539E1DA437E851F9CFD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdpostct.c */; };
+		3E21AFDCC2984BB3ADF02533 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapistd.c */ = {isa = PBXBuildFile; fileRef = EC6015FC7F104E01BEA345F4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapistd.c */; };
+		4274ACC0799941A6B7351C6F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcdctmgr.c */ = {isa = PBXBuildFile; fileRef = DFB7A1A84E2D499FA5D01ECE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcdctmgr.c */; };
+		4785DCD608104C84994C3D67 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jchuff.c */ = {isa = PBXBuildFile; fileRef = 95CDE3365A5E4F7798A10F17 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jchuff.c */; };
+		481D42AAF6EC41FDB6EA205C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jctrans.c */ = {isa = PBXBuildFile; fileRef = C3185DDE976B4D22B55E28B1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jctrans.c */; };
+		4E2AE323979046FF817E7D1B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.c */ = {isa = PBXBuildFile; fileRef = 89D4E4989CC84DB7B1519746 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.c */; };
+		53589AE27CE642CAB5EE4D85 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcparam.c */ = {isa = PBXBuildFile; fileRef = E599F33FD12B422F9AFEE0F5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcparam.c */; };
+		5A4FEF1E05094C628166B247 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmarker.c */ = {isa = PBXBuildFile; fileRef = 1BF7D08430264639A412806B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmarker.c */; };
+		6059BDF6EC0C495CAB94E10A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctint.c */ = {isa = PBXBuildFile; fileRef = 289E640AF23648B38E08495B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctint.c */; };
+		619AEFDF34B14304B371E6CF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdsample.c */ = {isa = PBXBuildFile; fileRef = D06A417458F84488841733DE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdsample.c */; };
+		6C71BD992B53412B8D917DFA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmaster.c */ = {isa = PBXBuildFile; fileRef = 7DC932F97C4A4E959A4364DA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmaster.c */; };
+		6DCC1D2F0AB246D9A9DDEE65 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.h */ = {isa = PBXBuildFile; fileRef = B5A9A17E522B4521BECB7CDB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.h */; };
+		7022258132204A9FABBAC7C9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapistd.c */ = {isa = PBXBuildFile; fileRef = 909AECCD5C604EDDA0221832 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapistd.c */; };
+		71FF34450DAD4BA5B38A7922 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapimin.c */ = {isa = PBXBuildFile; fileRef = 01F30615F4C6437CB099C514 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapimin.c */; };
+		72A2C53BD6294DA8A4B9AFE5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpeglib.h */ = {isa = PBXBuildFile; fileRef = 78B5E3FA6E3840708254CCFD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpeglib.h */; };
+		753611DEAC814FF5B50DD88E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jutils.c */ = {isa = PBXBuildFile; fileRef = ECFC4C0AD19E4298A835131F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jutils.c */; };
+		7D9A8545B50E41E496A27F00 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdarith.c */ = {isa = PBXBuildFile; fileRef = 6D7A65E0683E4D969DEC0D01 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdarith.c */; };
+		7FCC655CCC9B441096EF0445 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant1.c */ = {isa = PBXBuildFile; fileRef = 499F0E55D54A4B13B1EF7C1F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant1.c */; };
+		89934387A31C4A7A83CB9CA3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdct.h */ = {isa = PBXBuildFile; fileRef = 7093AE2C3FC7480686B3A328 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdct.h */; };
+		9B442C21766046B9985AA6AE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcoefct.c */ = {isa = PBXBuildFile; fileRef = 57B68D420CC34D29B28BA8F7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcoefct.c */; };
+		9E2054C615B84E079897F274 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcsample.c */ = {isa = PBXBuildFile; fileRef = B3D8F2AA817F4197A707DE3A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcsample.c */; };
+		9EB26F892B8844C387816C54 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemnobs.c */ = {isa = PBXBuildFile; fileRef = CDF8C1D271E944ACB166FE14 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemnobs.c */; };
+		A17BFE24B4034840B7CA4284 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcomapi.c */ = {isa = PBXBuildFile; fileRef = 7EFEA383F7A44A65B01AACC5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcomapi.c */; };
+		A26B9D5B75B8469E87B8A985 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmaster.c */ = {isa = PBXBuildFile; fileRef = EFA69826CB1E49C088BAB8A4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmaster.c */; };
+		A377EAC4EEDF479794631E0F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpegint.h */ = {isa = PBXBuildFile; fileRef = CEF2370B15F6411EBE4192EC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpegint.h */; };
+		ADBC475247F04DABAC4D2F79 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemsys.h */ = {isa = PBXBuildFile; fileRef = 94029ADD5A5A4163A8359BD1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemsys.h */; };
+		B49A1B10214240CCBB7CC5E4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant2.c */ = {isa = PBXBuildFile; fileRef = 3AB3FB57DD5D4B1498A4397D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant2.c */; };
+		B503267AC08D47F88EB80FD0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatadst.c */ = {isa = PBXBuildFile; fileRef = FFDF7E985154485C842802D4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatadst.c */; };
+		BB17EBD1548E4C1589D02114 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctfst.c */ = {isa = PBXBuildFile; fileRef = 9CF9E1F578A242B8951B5E76 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctfst.c */; };
+		BF8A7CD2347545E79E2AE53E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = FD86A12A02C04F538E946335 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/CMakeLists.txt */; };
+		C3258682DCDF49D38ACA2F7D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdtrans.c */ = {isa = PBXBuildFile; fileRef = 17ABDC43927340998E225486 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdtrans.c */; };
+		C67CC200E74F4E7D972970CA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmerge.c */ = {isa = PBXBuildFile; fileRef = A6AC87033D0D4B73B2CEBD8D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmerge.c */; };
+		CB4B401B17764763AB8A354F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctint.c */ = {isa = PBXBuildFile; fileRef = D6F30FA27A044179AA8391ED /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctint.c */; };
+		CFF567B540B4451DA4593DFA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctflt.c */ = {isa = PBXBuildFile; fileRef = 944E5AD621C44CC2AC255C56 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctflt.c */; };
+		D2D71E16AFE84134A9A99B06 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcinit.c */ = {isa = PBXBuildFile; fileRef = 6985B16FF4D740AFA4BF53BC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcinit.c */; };
+		D6F9B486C1D845ADA9BFA01F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jversion.h */ = {isa = PBXBuildFile; fileRef = 479D9CBAC9224610AD1D389F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jversion.h */; };
+		D7213CC8C10A41C8B6FAA733 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jddctmgr.c */ = {isa = PBXBuildFile; fileRef = 531707F78D5B4FDEBB0B6EAF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jddctmgr.c */; };
+		D76502C3183C4924A8CD1BFB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdhuff.c */ = {isa = PBXBuildFile; fileRef = D8ACF8B5867645A9861573C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdhuff.c */; };
+		D8F80223097048DD97CB252A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jaricom.c */ = {isa = PBXBuildFile; fileRef = 47152FAD048D4C30AA55C378 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jaricom.c */; };
+		DC410B998A5F4363A7E5E3C7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccoefct.c */ = {isa = PBXBuildFile; fileRef = 5821B9AA6FFF401D92C75F74 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccoefct.c */; };
+		E68C812198884555B892CC0A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapimin.c */ = {isa = PBXBuildFile; fileRef = DEBA4DC0C4F44B77B7BD7ED2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapimin.c */; };
+		F3CEACCCB0734AEFB82596DE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdinput.c */ = {isa = PBXBuildFile; fileRef = 70CAC56DCB3D4F5BA913D84C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdinput.c */; };
+		F9E18EFFA8CA49F18CDF1955 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmainct.c */ = {isa = PBXBuildFile; fileRef = 50C2D8D1FD7B4F0DAFEE6A93 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmainct.c */; };
+		FF61AD8AA2834268951E6CCE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmorecfg.h */ = {isa = PBXBuildFile; fileRef = A3442741340A4124898543CF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmorecfg.h */; };
+		FF662660D94942BA9D1F5F4D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmainct.c */ = {isa = PBXBuildFile; fileRef = E12B93CB14F743489A9E0981 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmainct.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		4350794BBBE04ABE91491E56 /* RelWithDebInfo */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = RelWithDebInfo;
-		};
-		A58EBC483B4343B2BAB2C8D0 /* Debug */ = {
+		0928661D6F794CBAA0731910 /* Debug */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = Debug;
 		};
-		BB27D1C4A7A7465D934FA790 /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Release;
-		};
-		FF04F458C0C14433A5BB658F /* MinSizeRel */ = {
+		2367DB7D3C0547B4AFD90FB2 /* MinSizeRel */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = MinSizeRel;
 		};
+		2C6F7F01FF4F4E25BF8D4015 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		8FFD414FFA7B42D892AE7C57 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		65D5D463425B4A0FA5AB6C93 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3FEA98AD40F14BE8833C8587 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
-			remoteInfo = ZERO_CHECK;
-		};
-		7611A7D3ECEB42DBB8F180A5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3FEA98AD40F14BE8833C8587 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
-			remoteInfo = ZERO_CHECK;
-		};
-		A5CCCB74C6B94F5BBC5F7BD3 /* PBXContainerItemProxy */ = {
+		1379AAD0B7EA4B959212CE87 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3FEA98AD40F14BE8833C8587 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C170553A14944B729938E9E6;
 			remoteInfo = ALL_BUILD;
 		};
-		D252551F2E174B69A24A263A /* PBXContainerItemProxy */ = {
+		2EB75B3847BA4225ACDF5CDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FEA98AD40F14BE8833C8587 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
+			remoteInfo = ZERO_CHECK;
+		};
+		4CD3FE8FF0614A50ABD05448 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3FEA98AD40F14BE8833C8587 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9BC266DF969C4C5185C88512;
 			remoteInfo = LibJpeg;
 		};
+		BEDA45C17DEE4DB2B50B64E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FEA98AD40F14BE8833C8587 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
+			remoteInfo = ZERO_CHECK;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02F04AE5B04448A1BF521AD7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant1.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jquant1.c; path = jquant1.c; sourceTree = SOURCE_ROOT; };
-		08C2150623EF4DC88DE15126 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapistd.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcapistd.c; path = jcapistd.c; sourceTree = SOURCE_ROOT; };
-		1A1ED2D63B6347B093A1A0B7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcarith.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcarith.c; path = jcarith.c; sourceTree = SOURCE_ROOT; };
-		23D10935191F4ED69657FF0E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jversion.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jversion.h; path = jversion.h; sourceTree = SOURCE_ROOT; };
-		25D0ED3C34BC4BE9A6D01ED2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatasrc.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdatasrc.c; path = jdatasrc.c; sourceTree = SOURCE_ROOT; };
-		280196B96A79497B943F5111 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmarker.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcmarker.c; path = jcmarker.c; sourceTree = SOURCE_ROOT; };
-		2B08ECCB6ACC422D90FE4AB2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemnobs.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jmemnobs.c; path = jmemnobs.c; sourceTree = SOURCE_ROOT; };
-		2C25BC95721945CFA1C6751C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdhuff.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdhuff.c; path = jdhuff.c; sourceTree = SOURCE_ROOT; };
-		334B86E8EC3A41099BBCB9F8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmaster.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdmaster.c; path = jdmaster.c; sourceTree = SOURCE_ROOT; };
-		35887C8942B14471824AE6BE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jaricom.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jaricom.c; path = jaricom.c; sourceTree = SOURCE_ROOT; };
-		36F4C2CABA3A45A8BA00FB46 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcsample.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcsample.c; path = jcsample.c; sourceTree = SOURCE_ROOT; };
-		3774D2280E8644DB904F92A3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmainct.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdmainct.c; path = jdmainct.c; sourceTree = SOURCE_ROOT; };
-		38B1FB73216945158799CCF6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctint.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jidctint.c; path = jidctint.c; sourceTree = SOURCE_ROOT; };
-		3DCB48BBDAF34B14B01FCBE6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapistd.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdapistd.c; path = jdapistd.c; sourceTree = SOURCE_ROOT; };
-		44E9D121836346D68C4287A2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapimin.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdapimin.c; path = jdapimin.c; sourceTree = SOURCE_ROOT; };
-		47864BF2A2CA4A9B870FE44D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jddctmgr.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jddctmgr.c; path = jddctmgr.c; sourceTree = SOURCE_ROOT; };
-		478E841217194F46877F9ACA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jconfig.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jconfig.h; path = jconfig.h; sourceTree = SOURCE_ROOT; };
-		48451C3F7F574D3987060893 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcomapi.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcomapi.c; path = jcomapi.c; sourceTree = SOURCE_ROOT; };
-		4B5939E440FB4DF6AF66D702 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctflt.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jidctflt.c; path = jidctflt.c; sourceTree = SOURCE_ROOT; };
-		4CF7C2D4490E4B68A5C77B88 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcoefct.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdcoefct.c; path = jdcoefct.c; sourceTree = SOURCE_ROOT; };
-		4D0137EFFE8F4D6EA86567F1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapimin.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcapimin.c; path = jcapimin.c; sourceTree = SOURCE_ROOT; };
-		4E9E6FDFBE944A0CA4603171 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdpostct.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdpostct.c; path = jdpostct.c; sourceTree = SOURCE_ROOT; };
-		510712A85EEF4B1AA8AA5D18 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcinit.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcinit.c; path = jcinit.c; sourceTree = SOURCE_ROOT; };
-		5B4FE9D9352B4AF4BF04D096 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdsample.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdsample.c; path = jdsample.c; sourceTree = SOURCE_ROOT; };
-		5CF2B1925972456BAB97EAA2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcolor.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdcolor.c; path = jdcolor.c; sourceTree = SOURCE_ROOT; };
-		612B137C49BD4179B04BD920 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpeglib.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jpeglib.h; path = jpeglib.h; sourceTree = SOURCE_ROOT; };
-		620A539075054C05A32474AA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcparam.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcparam.c; path = jcparam.c; sourceTree = SOURCE_ROOT; };
-		628BA1C6631C457EBF3891ED /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctfst.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jidctfst.c; path = jidctfst.c; sourceTree = SOURCE_ROOT; };
-		67C23968E2044794B37FCAB0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcdctmgr.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcdctmgr.c; path = jcdctmgr.c; sourceTree = SOURCE_ROOT; };
-		68D20FD81F464747BF2F618C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemmgr.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jmemmgr.c; path = jmemmgr.c; sourceTree = SOURCE_ROOT; };
-		6E75B718950545728132E6F3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jctrans.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jctrans.c; path = jctrans.c; sourceTree = SOURCE_ROOT; };
-		70258B3B17E042DCA80B696A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdinput.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdinput.c; path = jdinput.c; sourceTree = SOURCE_ROOT; };
-		80E3C7DDAEDE4145BF559A29 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdct.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jdct.h; path = jdct.h; sourceTree = SOURCE_ROOT; };
-		82EB6B4337584FC9A06DA3F5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		8371DED2551E4CC2B4D65D0D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatadst.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdatadst.c; path = jdatadst.c; sourceTree = SOURCE_ROOT; };
-		929161BC6EC14CF6BFFE57C7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctflt.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jfdctflt.c; path = jfdctflt.c; sourceTree = SOURCE_ROOT; };
-		92B4BF4261F74EC8BA0C6B66 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmainct.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcmainct.c; path = jcmainct.c; sourceTree = SOURCE_ROOT; };
-		9781AA13700A4C76A089350A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmaster.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcmaster.c; path = jcmaster.c; sourceTree = SOURCE_ROOT; };
-		9D0E04D7C0894A98ADA6091A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctfst.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jfdctfst.c; path = jfdctfst.c; sourceTree = SOURCE_ROOT; };
-		A2AD97924CC04D089AB77A27 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jutils.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jutils.c; path = jutils.c; sourceTree = SOURCE_ROOT; };
-		A605B39653DC48ED914337A0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcprepct.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcprepct.c; path = jcprepct.c; sourceTree = SOURCE_ROOT; };
-		B3637465C3E94F8EACF89202 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccolor.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jccolor.c; path = jccolor.c; sourceTree = SOURCE_ROOT; };
-		B76B1A4A36DF4DA2A6A54265 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmerge.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdmerge.c; path = jdmerge.c; sourceTree = SOURCE_ROOT; };
-		B7D97538763440F58795B843 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jinclude.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jinclude.h; path = jinclude.h; sourceTree = SOURCE_ROOT; };
-		B87E0598A66E43E1928356B4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jerror.c; path = jerror.c; sourceTree = SOURCE_ROOT; };
-		BBB5A60ED5F84D49BB6BE9AE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctint.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jfdctint.c; path = jfdctint.c; sourceTree = SOURCE_ROOT; };
-		BBE0966FAE0D4E85B710395D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jchuff.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jchuff.c; path = jchuff.c; sourceTree = SOURCE_ROOT; };
-		C1FB89D62B31408B8777AF5B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdtrans.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdtrans.c; path = jdtrans.c; sourceTree = SOURCE_ROOT; };
-		CC9C056B445E4DAAA8213718 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jerror.h; path = jerror.h; sourceTree = SOURCE_ROOT; };
-		D4E9A141758F4A2DACD1C199 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdarith.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdarith.c; path = jdarith.c; sourceTree = SOURCE_ROOT; };
-		D8D54FEEB1AA4B409F62F14A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccoefct.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jccoefct.c; path = jccoefct.c; sourceTree = SOURCE_ROOT; };
-		E0C03240FEC545E1A11B3CB6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpegint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jpegint.h; path = jpegint.h; sourceTree = SOURCE_ROOT; };
-		E0EED85CEFD64C8A90A42449 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemsys.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jmemsys.h; path = jmemsys.h; sourceTree = SOURCE_ROOT; };
-		E147D149E64F419DB78629D6 /* LibJpeg */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libLibJpeg.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E938A2BE0928429DA2556962 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmarker.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdmarker.c; path = jdmarker.c; sourceTree = SOURCE_ROOT; };
-		E9A760B10204419193355C0F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant2.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jquant2.c; path = jquant2.c; sourceTree = SOURCE_ROOT; };
-		F9B37B486EA54673AA527BDF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmorecfg.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jmorecfg.h; path = jmorecfg.h; sourceTree = SOURCE_ROOT; };
-		FFCC0C25FA18447D8BAD740D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		01F30615F4C6437CB099C514 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapimin.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdapimin.c; path = jdapimin.c; sourceTree = SOURCE_ROOT; };
+		17ABDC43927340998E225486 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdtrans.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdtrans.c; path = jdtrans.c; sourceTree = SOURCE_ROOT; };
+		1BF7D08430264639A412806B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmarker.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdmarker.c; path = jdmarker.c; sourceTree = SOURCE_ROOT; };
+		1CC0E1A5D035429B85D93BE4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jinclude.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jinclude.h; path = jinclude.h; sourceTree = SOURCE_ROOT; };
+		289E640AF23648B38E08495B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctint.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jfdctint.c; path = jfdctint.c; sourceTree = SOURCE_ROOT; };
+		28FC16271FFB499BA2510EA7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcarith.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcarith.c; path = jcarith.c; sourceTree = SOURCE_ROOT; };
+		29C95ED260054936B7A64F6F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatasrc.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdatasrc.c; path = jdatasrc.c; sourceTree = SOURCE_ROOT; };
+		2A9B14FAB7574DA3B4BD9A88 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcolor.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdcolor.c; path = jdcolor.c; sourceTree = SOURCE_ROOT; };
+		30170C2BC7634C6CB70072ED /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		35DA4C94F47945ABA762D216 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemmgr.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jmemmgr.c; path = jmemmgr.c; sourceTree = SOURCE_ROOT; };
+		3AB3FB57DD5D4B1498A4397D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant2.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jquant2.c; path = jquant2.c; sourceTree = SOURCE_ROOT; };
+		45D8BEDF8EC1416BBA7A96D9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmarker.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcmarker.c; path = jcmarker.c; sourceTree = SOURCE_ROOT; };
+		47152FAD048D4C30AA55C378 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jaricom.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jaricom.c; path = jaricom.c; sourceTree = SOURCE_ROOT; };
+		479D9CBAC9224610AD1D389F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jversion.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jversion.h; path = jversion.h; sourceTree = SOURCE_ROOT; };
+		499F0E55D54A4B13B1EF7C1F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant1.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jquant1.c; path = jquant1.c; sourceTree = SOURCE_ROOT; };
+		49C5709DC3A249738018962B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctflt.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jfdctflt.c; path = jfdctflt.c; sourceTree = SOURCE_ROOT; };
+		50C2D8D1FD7B4F0DAFEE6A93 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmainct.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcmainct.c; path = jcmainct.c; sourceTree = SOURCE_ROOT; };
+		531707F78D5B4FDEBB0B6EAF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jddctmgr.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jddctmgr.c; path = jddctmgr.c; sourceTree = SOURCE_ROOT; };
+		57B68D420CC34D29B28BA8F7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcoefct.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdcoefct.c; path = jdcoefct.c; sourceTree = SOURCE_ROOT; };
+		5821B9AA6FFF401D92C75F74 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccoefct.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jccoefct.c; path = jccoefct.c; sourceTree = SOURCE_ROOT; };
+		6985B16FF4D740AFA4BF53BC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcinit.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcinit.c; path = jcinit.c; sourceTree = SOURCE_ROOT; };
+		6D7A65E0683E4D969DEC0D01 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdarith.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdarith.c; path = jdarith.c; sourceTree = SOURCE_ROOT; };
+		7093AE2C3FC7480686B3A328 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdct.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jdct.h; path = jdct.h; sourceTree = SOURCE_ROOT; };
+		70CAC56DCB3D4F5BA913D84C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdinput.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdinput.c; path = jdinput.c; sourceTree = SOURCE_ROOT; };
+		78B5E3FA6E3840708254CCFD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpeglib.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jpeglib.h; path = jpeglib.h; sourceTree = SOURCE_ROOT; };
+		7DC932F97C4A4E959A4364DA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmaster.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdmaster.c; path = jdmaster.c; sourceTree = SOURCE_ROOT; };
+		7EFEA383F7A44A65B01AACC5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcomapi.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcomapi.c; path = jcomapi.c; sourceTree = SOURCE_ROOT; };
+		89D4E4989CC84DB7B1519746 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jerror.c; path = jerror.c; sourceTree = SOURCE_ROOT; };
+		909AECCD5C604EDDA0221832 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapistd.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcapistd.c; path = jcapistd.c; sourceTree = SOURCE_ROOT; };
+		94029ADD5A5A4163A8359BD1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemsys.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jmemsys.h; path = jmemsys.h; sourceTree = SOURCE_ROOT; };
+		944E5AD621C44CC2AC255C56 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctflt.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jidctflt.c; path = jidctflt.c; sourceTree = SOURCE_ROOT; };
+		95CDE3365A5E4F7798A10F17 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jchuff.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jchuff.c; path = jchuff.c; sourceTree = SOURCE_ROOT; };
+		9CF9E1F578A242B8951B5E76 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctfst.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jfdctfst.c; path = jfdctfst.c; sourceTree = SOURCE_ROOT; };
+		A3442741340A4124898543CF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmorecfg.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jmorecfg.h; path = jmorecfg.h; sourceTree = SOURCE_ROOT; };
+		A6AC87033D0D4B73B2CEBD8D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmerge.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdmerge.c; path = jdmerge.c; sourceTree = SOURCE_ROOT; };
+		B3D8F2AA817F4197A707DE3A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcsample.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcsample.c; path = jcsample.c; sourceTree = SOURCE_ROOT; };
+		B5A9A17E522B4521BECB7CDB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jerror.h; path = jerror.h; sourceTree = SOURCE_ROOT; };
+		B8758D042E384F6FAEF1BA25 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctfst.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jidctfst.c; path = jidctfst.c; sourceTree = SOURCE_ROOT; };
+		B8EB7539E1DA437E851F9CFD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdpostct.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdpostct.c; path = jdpostct.c; sourceTree = SOURCE_ROOT; };
+		B9551BD04EDA4F159F8F7F54 /* LibJpeg */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libLibJpeg.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3185DDE976B4D22B55E28B1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jctrans.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jctrans.c; path = jctrans.c; sourceTree = SOURCE_ROOT; };
+		C9735158E7954EF9981C87F1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jconfig.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jconfig.h; path = jconfig.h; sourceTree = SOURCE_ROOT; };
+		CDF8C1D271E944ACB166FE14 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemnobs.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jmemnobs.c; path = jmemnobs.c; sourceTree = SOURCE_ROOT; };
+		CEF2370B15F6411EBE4192EC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpegint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = jpegint.h; path = jpegint.h; sourceTree = SOURCE_ROOT; };
+		D06A417458F84488841733DE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdsample.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdsample.c; path = jdsample.c; sourceTree = SOURCE_ROOT; };
+		D3852A96753C4815ABFB8E60 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccolor.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jccolor.c; path = jccolor.c; sourceTree = SOURCE_ROOT; };
+		D6F30FA27A044179AA8391ED /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctint.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jidctint.c; path = jidctint.c; sourceTree = SOURCE_ROOT; };
+		D8ACF8B5867645A9861573C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdhuff.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdhuff.c; path = jdhuff.c; sourceTree = SOURCE_ROOT; };
+		DEBA4DC0C4F44B77B7BD7ED2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapimin.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcapimin.c; path = jcapimin.c; sourceTree = SOURCE_ROOT; };
+		DFB7A1A84E2D499FA5D01ECE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcdctmgr.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcdctmgr.c; path = jcdctmgr.c; sourceTree = SOURCE_ROOT; };
+		E12B93CB14F743489A9E0981 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmainct.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdmainct.c; path = jdmainct.c; sourceTree = SOURCE_ROOT; };
+		E599F33FD12B422F9AFEE0F5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcparam.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcparam.c; path = jcparam.c; sourceTree = SOURCE_ROOT; };
+		EC6015FC7F104E01BEA345F4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapistd.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdapistd.c; path = jdapistd.c; sourceTree = SOURCE_ROOT; };
+		ECFC4C0AD19E4298A835131F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jutils.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jutils.c; path = jutils.c; sourceTree = SOURCE_ROOT; };
+		EFA69826CB1E49C088BAB8A4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmaster.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcmaster.c; path = jcmaster.c; sourceTree = SOURCE_ROOT; };
+		F47537D2EC5B478E971CDEFB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcprepct.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jcprepct.c; path = jcprepct.c; sourceTree = SOURCE_ROOT; };
+		FD86A12A02C04F538E946335 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		FFDF7E985154485C842802D4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatadst.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = jdatadst.c; path = jdatadst.c; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		617F0EDEEAF4420D96795DD5 /* Frameworks */ = {
+		948AC91F4AE64929B23486D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -238,140 +238,140 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		060C0E07240949699B381AAA = {
+		00C18A790B364780A792D523 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				9287810A018A445C82E62B85 /* DiligentTools */,
-				B085640F0D10422EADC791B4 /* ALL_BUILD */,
-				36A253D81A014CB3BC526C28 /* Products */,
-				1B9E9DCDE786405499C0F1B6 /* Frameworks */,
+				C9735158E7954EF9981C87F1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jconfig.h */,
+				7093AE2C3FC7480686B3A328 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdct.h */,
+				B5A9A17E522B4521BECB7CDB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.h */,
+				1CC0E1A5D035429B85D93BE4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jinclude.h */,
+				94029ADD5A5A4163A8359BD1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemsys.h */,
+				A3442741340A4124898543CF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmorecfg.h */,
+				CEF2370B15F6411EBE4192EC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpegint.h */,
+				78B5E3FA6E3840708254CCFD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpeglib.h */,
+				479D9CBAC9224610AD1D389F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jversion.h */,
 			);
+			name = include;
 			sourceTree = "<group>";
 		};
-		1B9E9DCDE786405499C0F1B6 /* Frameworks */ = {
+		05253178A14F4C6BBBC37402 /* LibJpeg */ = {
 			isa = PBXGroup;
 			children = (
+				37D3DE57228C43BA93A3A686 /* src */,
+				00C18A790B364780A792D523 /* include */,
+				FD86A12A02C04F538E946335 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/CMakeLists.txt */,
 			);
-			name = Frameworks;
+			name = LibJpeg;
 			sourceTree = "<group>";
 		};
-		33131CF0A3FF4156A9E8402D /* CMake Rules */ = {
+		0BF0291298E1430BAA92F6C2 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		36A253D81A014CB3BC526C28 /* Products */ = {
+		37D3DE57228C43BA93A3A686 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				E147D149E64F419DB78629D6 /* LibJpeg */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		4E7B68AD62054672A40F1FE7 /* LibJpeg */ = {
-			isa = PBXGroup;
-			children = (
-				BCD3B619C76B4B4CBD0DF60E /* src */,
-				71818EDCB1C041A584CADE2A /* include */,
-				82EB6B4337584FC9A06DA3F5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/CMakeLists.txt */,
-			);
-			name = LibJpeg;
-			sourceTree = "<group>";
-		};
-		71818EDCB1C041A584CADE2A /* include */ = {
-			isa = PBXGroup;
-			children = (
-				478E841217194F46877F9ACA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jconfig.h */,
-				80E3C7DDAEDE4145BF559A29 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdct.h */,
-				CC9C056B445E4DAAA8213718 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.h */,
-				B7D97538763440F58795B843 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jinclude.h */,
-				E0EED85CEFD64C8A90A42449 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemsys.h */,
-				F9B37B486EA54673AA527BDF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmorecfg.h */,
-				E0C03240FEC545E1A11B3CB6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpegint.h */,
-				612B137C49BD4179B04BD920 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jpeglib.h */,
-				23D10935191F4ED69657FF0E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jversion.h */,
-			);
-			name = include;
-			sourceTree = "<group>";
-		};
-		9287810A018A445C82E62B85 /* DiligentTools */ = {
-			isa = PBXGroup;
-			children = (
-				EFE67A99ECD84D2097766FFB /* ThirdParty */,
-			);
-			name = DiligentTools;
-			sourceTree = "<group>";
-		};
-		B085640F0D10422EADC791B4 /* ALL_BUILD */ = {
-			isa = PBXGroup;
-			children = (
-				33131CF0A3FF4156A9E8402D /* CMake Rules */,
-				FFCC0C25FA18447D8BAD740D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/CMakeLists.txt */,
-			);
-			name = ALL_BUILD;
-			sourceTree = "<group>";
-		};
-		BCD3B619C76B4B4CBD0DF60E /* src */ = {
-			isa = PBXGroup;
-			children = (
-				35887C8942B14471824AE6BE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jaricom.c */,
-				4D0137EFFE8F4D6EA86567F1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapimin.c */,
-				08C2150623EF4DC88DE15126 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapistd.c */,
-				1A1ED2D63B6347B093A1A0B7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcarith.c */,
-				D8D54FEEB1AA4B409F62F14A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccoefct.c */,
-				B3637465C3E94F8EACF89202 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccolor.c */,
-				67C23968E2044794B37FCAB0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcdctmgr.c */,
-				BBE0966FAE0D4E85B710395D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jchuff.c */,
-				510712A85EEF4B1AA8AA5D18 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcinit.c */,
-				92B4BF4261F74EC8BA0C6B66 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmainct.c */,
-				280196B96A79497B943F5111 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmarker.c */,
-				9781AA13700A4C76A089350A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmaster.c */,
-				48451C3F7F574D3987060893 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcomapi.c */,
-				620A539075054C05A32474AA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcparam.c */,
-				A605B39653DC48ED914337A0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcprepct.c */,
-				36F4C2CABA3A45A8BA00FB46 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcsample.c */,
-				6E75B718950545728132E6F3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jctrans.c */,
-				44E9D121836346D68C4287A2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapimin.c */,
-				3DCB48BBDAF34B14B01FCBE6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapistd.c */,
-				D4E9A141758F4A2DACD1C199 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdarith.c */,
-				8371DED2551E4CC2B4D65D0D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatadst.c */,
-				25D0ED3C34BC4BE9A6D01ED2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatasrc.c */,
-				4CF7C2D4490E4B68A5C77B88 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcoefct.c */,
-				5CF2B1925972456BAB97EAA2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcolor.c */,
-				47864BF2A2CA4A9B870FE44D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jddctmgr.c */,
-				2C25BC95721945CFA1C6751C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdhuff.c */,
-				70258B3B17E042DCA80B696A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdinput.c */,
-				3774D2280E8644DB904F92A3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmainct.c */,
-				E938A2BE0928429DA2556962 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmarker.c */,
-				334B86E8EC3A41099BBCB9F8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmaster.c */,
-				B76B1A4A36DF4DA2A6A54265 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmerge.c */,
-				4E9E6FDFBE944A0CA4603171 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdpostct.c */,
-				5B4FE9D9352B4AF4BF04D096 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdsample.c */,
-				C1FB89D62B31408B8777AF5B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdtrans.c */,
-				B87E0598A66E43E1928356B4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.c */,
-				929161BC6EC14CF6BFFE57C7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctflt.c */,
-				9D0E04D7C0894A98ADA6091A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctfst.c */,
-				BBB5A60ED5F84D49BB6BE9AE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctint.c */,
-				4B5939E440FB4DF6AF66D702 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctflt.c */,
-				628BA1C6631C457EBF3891ED /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctfst.c */,
-				38B1FB73216945158799CCF6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctint.c */,
-				68D20FD81F464747BF2F618C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemmgr.c */,
-				2B08ECCB6ACC422D90FE4AB2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemnobs.c */,
-				02F04AE5B04448A1BF521AD7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant1.c */,
-				E9A760B10204419193355C0F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant2.c */,
-				A2AD97924CC04D089AB77A27 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jutils.c */,
+				47152FAD048D4C30AA55C378 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jaricom.c */,
+				DEBA4DC0C4F44B77B7BD7ED2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapimin.c */,
+				909AECCD5C604EDDA0221832 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapistd.c */,
+				28FC16271FFB499BA2510EA7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcarith.c */,
+				5821B9AA6FFF401D92C75F74 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccoefct.c */,
+				D3852A96753C4815ABFB8E60 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccolor.c */,
+				DFB7A1A84E2D499FA5D01ECE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcdctmgr.c */,
+				95CDE3365A5E4F7798A10F17 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jchuff.c */,
+				6985B16FF4D740AFA4BF53BC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcinit.c */,
+				50C2D8D1FD7B4F0DAFEE6A93 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmainct.c */,
+				45D8BEDF8EC1416BBA7A96D9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmarker.c */,
+				EFA69826CB1E49C088BAB8A4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmaster.c */,
+				7EFEA383F7A44A65B01AACC5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcomapi.c */,
+				E599F33FD12B422F9AFEE0F5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcparam.c */,
+				F47537D2EC5B478E971CDEFB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcprepct.c */,
+				B3D8F2AA817F4197A707DE3A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcsample.c */,
+				C3185DDE976B4D22B55E28B1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jctrans.c */,
+				01F30615F4C6437CB099C514 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapimin.c */,
+				EC6015FC7F104E01BEA345F4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapistd.c */,
+				6D7A65E0683E4D969DEC0D01 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdarith.c */,
+				FFDF7E985154485C842802D4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatadst.c */,
+				29C95ED260054936B7A64F6F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatasrc.c */,
+				57B68D420CC34D29B28BA8F7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcoefct.c */,
+				2A9B14FAB7574DA3B4BD9A88 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcolor.c */,
+				531707F78D5B4FDEBB0B6EAF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jddctmgr.c */,
+				D8ACF8B5867645A9861573C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdhuff.c */,
+				70CAC56DCB3D4F5BA913D84C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdinput.c */,
+				E12B93CB14F743489A9E0981 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmainct.c */,
+				1BF7D08430264639A412806B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmarker.c */,
+				7DC932F97C4A4E959A4364DA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmaster.c */,
+				A6AC87033D0D4B73B2CEBD8D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmerge.c */,
+				B8EB7539E1DA437E851F9CFD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdpostct.c */,
+				D06A417458F84488841733DE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdsample.c */,
+				17ABDC43927340998E225486 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdtrans.c */,
+				89D4E4989CC84DB7B1519746 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.c */,
+				49C5709DC3A249738018962B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctflt.c */,
+				9CF9E1F578A242B8951B5E76 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctfst.c */,
+				289E640AF23648B38E08495B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctint.c */,
+				944E5AD621C44CC2AC255C56 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctflt.c */,
+				B8758D042E384F6FAEF1BA25 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctfst.c */,
+				D6F30FA27A044179AA8391ED /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctint.c */,
+				35DA4C94F47945ABA762D216 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemmgr.c */,
+				CDF8C1D271E944ACB166FE14 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemnobs.c */,
+				499F0E55D54A4B13B1EF7C1F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant1.c */,
+				3AB3FB57DD5D4B1498A4397D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant2.c */,
+				ECFC4C0AD19E4298A835131F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jutils.c */,
 			);
 			name = src;
 			sourceTree = "<group>";
 		};
-		EFE67A99ECD84D2097766FFB /* ThirdParty */ = {
+		3C53120F6AAA4789932800EA /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				4E7B68AD62054672A40F1FE7 /* LibJpeg */,
+				05253178A14F4C6BBBC37402 /* LibJpeg */,
 			);
 			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		4AF2369DEAE74EFBB3743B5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B9551BD04EDA4F159F8F7F54 /* LibJpeg */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63B1CBB6328D4C53BAB4E4E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7EE45D75874C457D896F83F2 = {
+			isa = PBXGroup;
+			children = (
+				D26E4F448496495B85B9B4FF /* DiligentTools */,
+				9F3C79451FF64641BA59A3F6 /* ALL_BUILD */,
+				4AF2369DEAE74EFBB3743B5D /* Products */,
+				63B1CBB6328D4C53BAB4E4E9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9F3C79451FF64641BA59A3F6 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				0BF0291298E1430BAA92F6C2 /* CMake Rules */,
+				30170C2BC7634C6CB70072ED /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		D26E4F448496495B85B9B4FF /* DiligentTools */ = {
+			isa = PBXGroup;
+			children = (
+				3C53120F6AAA4789932800EA /* ThirdParty */,
+			);
+			name = DiligentTools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,19 +379,19 @@
 /* Begin PBXNativeTarget section */
 		9BC266DF969C4C5185C88512 /* LibJpeg */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6B8A0FBB0BD941589C783ABC /* Build configuration list for PBXNativeTarget "LibJpeg" */;
+			buildConfigurationList = 02C9D569D666413CAEC2BCBF /* Build configuration list for PBXNativeTarget "LibJpeg" */;
 			buildPhases = (
-				92B19850CA9E4850A4BCE68C /* Sources */,
-				617F0EDEEAF4420D96795DD5 /* Frameworks */,
+				123DAFF550E14B1A8EF4BA96 /* Sources */,
+				948AC91F4AE64929B23486D1 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				791DBB9D232949B188695F0F /* PBXTargetDependency */,
+				DB7B29D6A83A49769780B4B4 /* PBXTargetDependency */,
 			);
 			name = LibJpeg;
 			productName = LibJpeg;
-			productReference = E147D149E64F419DB78629D6 /* LibJpeg */;
+			productReference = B9551BD04EDA4F159F8F7F54 /* LibJpeg */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -403,18 +403,18 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1240;
 			};
-			buildConfigurationList = 8528AC2F9FCB4D7DA8192E94 /* Build configuration list for PBXProject "LibJpeg" */;
+			buildConfigurationList = 2D5070D05DB4425FBDD12914 /* Build configuration list for PBXProject "LibJpeg" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				A58EBC483B4343B2BAB2C8D0 /* Debug */,
-				BB27D1C4A7A7465D934FA790 /* Release */,
-				FF04F458C0C14433A5BB658F /* MinSizeRel */,
-				4350794BBBE04ABE91491E56 /* RelWithDebInfo */,
+				0928661D6F794CBAA0731910 /* Debug */,
+				8FFD414FFA7B42D892AE7C57 /* Release */,
+				2367DB7D3C0547B4AFD90FB2 /* MinSizeRel */,
+				2C6F7F01FF4F4E25BF8D4015 /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = 060C0E07240949699B381AAA;
+			mainGroup = 7EE45D75874C457D896F83F2;
 			projectDirPath = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
 			projectRoot = "";
 			targets = (
@@ -572,182 +572,86 @@ exit 0";
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		92B19850CA9E4850A4BCE68C /* Sources */ = {
+		123DAFF550E14B1A8EF4BA96 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6AEBB01C3AA4A97B74EC67F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jaricom.c */,
-				07DD88B49A3946A4B67BD4F6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapimin.c */,
-				EDA00DB358284DA690FBFD63 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapistd.c */,
-				4ECABC1F164944EBA17BB63B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcarith.c */,
-				1E56AFAAD4E947968981D3EB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccoefct.c */,
-				8DCF5DE04B084F739823E795 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccolor.c */,
-				8F4535EE673E452A894763FB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcdctmgr.c */,
-				9BFDCA72CE8F43A5A343E0E1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jchuff.c */,
-				8797E813C8DE4BB28C804358 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcinit.c */,
-				280EA041F75744D5B7A0F184 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmainct.c */,
-				B4645FA35E0946EAB50A0C87 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmarker.c */,
-				F6341284C9C3499DAA185457 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmaster.c */,
-				6D22A43A70944D7890026BDC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcomapi.c */,
-				C474C9298D4C47388AC2D1BC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcparam.c */,
-				91FBE7994C68440FA8E06CDE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcprepct.c */,
-				210489AE80B34AD9A2241407 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcsample.c */,
-				2B8E2B4094F04A009186950D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jctrans.c */,
-				1D9A61D6F2FA4A15B9984CA1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapimin.c */,
-				A48D262E717E4509BDEEC178 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapistd.c */,
-				A1C4A988B6E14928BA284EEB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdarith.c */,
-				1716A96B067C4B93AAF33F16 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatadst.c */,
-				05A96B2FB4C24101A7A88C77 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatasrc.c */,
-				5409E52B4DB349188AFBEF11 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcoefct.c */,
-				D50BB85F2BC145F39B395D0C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcolor.c */,
-				140122D322B945439A3E165B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jddctmgr.c */,
-				F579FC68A78945ECA3AE825F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdhuff.c */,
-				05D57F26132D46C79D072B6C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdinput.c */,
-				1B5D1C2EBF294700A968D2FA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmainct.c */,
-				7908E4EF0BE44279969C9B73 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmarker.c */,
-				24F4856BA10A443BA8053480 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmaster.c */,
-				B5B67F0FE904451A98687369 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmerge.c */,
-				57BE4A9A4B4643429775A918 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdpostct.c */,
-				DE8E7E843BFD4467B2795D16 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdsample.c */,
-				66984E6E31844FEAB311A422 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdtrans.c */,
-				B817EC74F06942F4AB98A7B0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.c */,
-				DD84718C400A4767ADE43ABC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctflt.c */,
-				A6B4585A68444E5797BEFD8C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctfst.c */,
-				06BF4190B59F4FB5A282BBBD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctint.c */,
-				5CC3C7CE99E141649C073946 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctflt.c */,
-				325D950B1C7B40679A008DDA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctfst.c */,
-				9439FF4D3EA540D1A196F77D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctint.c */,
-				6D03356852264FC1BCB07381 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemmgr.c */,
-				D0236AA329E94C30BE2401F3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemnobs.c */,
-				2ECD07641ED34AA6AF021C8D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant1.c */,
-				A6B113CC4B384618BDCA2AAE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant2.c */,
-				1FE2AE0DC35A4EDEA64B2484 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jutils.c */,
+				D8F80223097048DD97CB252A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jaricom.c */,
+				E68C812198884555B892CC0A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapimin.c */,
+				7022258132204A9FABBAC7C9 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcapistd.c */,
+				1EFFC4D2F296459C92ACC896 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcarith.c */,
+				DC410B998A5F4363A7E5E3C7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccoefct.c */,
+				2E92D6C5395E4EA8B15A954B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jccolor.c */,
+				4274ACC0799941A6B7351C6F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcdctmgr.c */,
+				4785DCD608104C84994C3D67 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jchuff.c */,
+				D2D71E16AFE84134A9A99B06 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcinit.c */,
+				F9E18EFFA8CA49F18CDF1955 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmainct.c */,
+				111EF64D291B4EFC8EAEC84C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmarker.c */,
+				A26B9D5B75B8469E87B8A985 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcmaster.c */,
+				A17BFE24B4034840B7CA4284 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcomapi.c */,
+				53589AE27CE642CAB5EE4D85 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcparam.c */,
+				3897D5AC4E6647A18AB9BBB2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcprepct.c */,
+				9E2054C615B84E079897F274 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jcsample.c */,
+				481D42AAF6EC41FDB6EA205C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jctrans.c */,
+				71FF34450DAD4BA5B38A7922 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapimin.c */,
+				3E21AFDCC2984BB3ADF02533 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdapistd.c */,
+				7D9A8545B50E41E496A27F00 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdarith.c */,
+				B503267AC08D47F88EB80FD0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatadst.c */,
+				1B8004B3A0FA4001B8053D7F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdatasrc.c */,
+				9B442C21766046B9985AA6AE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcoefct.c */,
+				030874ABFCE640FD8C144D61 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdcolor.c */,
+				D7213CC8C10A41C8B6FAA733 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jddctmgr.c */,
+				D76502C3183C4924A8CD1BFB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdhuff.c */,
+				F3CEACCCB0734AEFB82596DE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdinput.c */,
+				FF662660D94942BA9D1F5F4D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmainct.c */,
+				5A4FEF1E05094C628166B247 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmarker.c */,
+				6C71BD992B53412B8D917DFA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmaster.c */,
+				C67CC200E74F4E7D972970CA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdmerge.c */,
+				3D79A5F5E15644CE9D640ED8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdpostct.c */,
+				619AEFDF34B14304B371E6CF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdsample.c */,
+				C3258682DCDF49D38ACA2F7D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jdtrans.c */,
+				4E2AE323979046FF817E7D1B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jerror.c */,
+				016BF01346DD4BFDB1484ACE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctflt.c */,
+				BB17EBD1548E4C1589D02114 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctfst.c */,
+				6059BDF6EC0C495CAB94E10A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jfdctint.c */,
+				CFF567B540B4451DA4593DFA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctflt.c */,
+				2D617C04E74E4421BB850E3D /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctfst.c */,
+				CB4B401B17764763AB8A354F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jidctint.c */,
+				22619CB6CC414F2B8B70126A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemmgr.c */,
+				9EB26F892B8844C387816C54 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jmemnobs.c */,
+				7FCC655CCC9B441096EF0445 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant1.c */,
+				B49A1B10214240CCBB7CC5E4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jquant2.c */,
+				753611DEAC814FF5B50DD88E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/jutils.c */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		791DBB9D232949B188695F0F /* PBXTargetDependency */ = {
+		9F5201AB79C4452AA1951BA9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
-			targetProxy = 7611A7D3ECEB42DBB8F180A5 /* PBXContainerItemProxy */;
+			targetProxy = 2EB75B3847BA4225ACDF5CDE /* PBXContainerItemProxy */;
 		};
-		8D6A577D7D5F40E59AF4AB76 /* PBXTargetDependency */ = {
+		A6AB91FFB64B439782B9D048 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C170553A14944B729938E9E6 /* ALL_BUILD */;
-			targetProxy = A5CCCB74C6B94F5BBC5F7BD3 /* PBXContainerItemProxy */;
+			targetProxy = 1379AAD0B7EA4B959212CE87 /* PBXContainerItemProxy */;
 		};
-		A0327AE00AD2403F9D154679 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9BC266DF969C4C5185C88512 /* LibJpeg */;
-			targetProxy = D252551F2E174B69A24A263A /* PBXContainerItemProxy */;
-		};
-		B8BA40CC493C446FAD40C5D2 /* PBXTargetDependency */ = {
+		DB7B29D6A83A49769780B4B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
-			targetProxy = 65D5D463425B4A0FA5AB6C93 /* PBXContainerItemProxy */;
+			targetProxy = BEDA45C17DEE4DB2B50B64E2 /* PBXContainerItemProxy */;
+		};
+		FDFE361430FA41FD8DCA1EF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BC266DF969C4C5185C88512 /* LibJpeg */;
+			targetProxy = 4CD3FE8FF0614A50ABD05448 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0CC5E922B0974D778602AC83 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		1C5C1F6603314FF087B53DDA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/.","$(inherited)");
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
-				OTHER_LIBTOOLFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = LibJpeg;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		475ED6C842524C0EB634EE23 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/build";
-			};
-			name = MinSizeRel;
-		};
-		635B20E871A84A5BB0E4A08A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		84D6862CBB9C42FD9FCD13A8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		859D99542DAB4B528667D44C /* Debug */ = {
+		0C508FFFC77742F2A64B6D05 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -758,7 +662,7 @@ exit 0";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,_DEBUG,DEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'",DILIGENT_DEVELOPMENT,DILIGENT_DEBUG);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/.","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/.","$(inherited)");
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
 				OTHER_CFLAGS = "   -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter '-std=gnu11' ";
@@ -772,194 +676,7 @@ exit 0";
 			};
 			name = Debug;
 		};
-		906C95D18272404CA404D41D /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		9CE9615E4F4844D48B02C6A4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		A3716BFA28AD4B6899C4B5AA /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		A4F7828D2BD54DA4BDE2014C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/build";
-			};
-			name = Release;
-		};
-		B7F01B60717B451A870DEB3C /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		C98A445AE81545C9A3ADE1C4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		CA0D286D876E48F7BB8B40F2 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		D0B18746F6E44D308C8C38B0 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/build";
-			};
-			name = RelWithDebInfo;
-		};
-		D2D5B9B923374A09B4D99949 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		DD578183A8F74F55ADF34479 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/.","$(inherited)");
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
-				OTHER_LIBTOOLFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = LibJpeg;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		EE604DDFEC714935B0EB113D /* Debug */ = {
+		1BD900862D944BB595C87B6C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -979,7 +696,58 @@ exit 0";
 			};
 			name = Debug;
 		};
-		F158A72C208E44F1BC070EBD /* RelWithDebInfo */ = {
+		31CEB7E43CA04274994958C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		3CDDC14CA43945C9BD1070C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/build";
+			};
+			name = Debug;
+		};
+		45D0CCE732FD4BA08AE088B5 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		5902C63CEFD14CA2986E8C00 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -990,7 +758,7 @@ exit 0";
 				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/.","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/.","$(inherited)");
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
 				OTHER_CFLAGS = "       -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
@@ -1004,7 +772,109 @@ exit 0";
 			};
 			name = RelWithDebInfo;
 		};
-		FA0BEA2043734999A8CE2DC3 /* MinSizeRel */ = {
+		60685FB69C8B4A0F9D5EF457 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/build";
+			};
+			name = Release;
+		};
+		65C8A31B584C43E19B84B564 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/build";
+			};
+			name = RelWithDebInfo;
+		};
+		7506A1885FB84673A00597D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		752FCEF441B54F5A98D2A34E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		7E45DEC3208E49FDBEBB5DE8 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		83EB5FE784C8431CB2F154D7 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		89F78375CEA84EEEA9A43B1B /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1022,9 +892,139 @@ exit 0";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
+			name = RelWithDebInfo;
+		};
+		98875A0598064852B57C9768 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		D6FCA0BA69DC403994584D32 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/.","$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = LibJpeg;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
 			name = MinSizeRel;
 		};
-		FCB28A0A08094697807A71D9 /* Debug */ = {
+		DC3655706B9B4158BFD81420 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		F099206002594E7CBBD323AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		F229D53331664A3F98D2349C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/.","$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=gnu11' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = LibJpeg;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		F59E2C7D3447408D957B12AD /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		F994A4DDFB5F461D80D55278 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -1033,62 +1033,62 @@ exit 0";
 				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
 				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentTools/ThirdParty/libjpeg-9a/build";
 			};
-			name = Debug;
+			name = MinSizeRel;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		092767FB440D44C9AD49B936 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		02C9D569D666413CAEC2BCBF /* Build configuration list for PBXNativeTarget "LibJpeg" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EE604DDFEC714935B0EB113D /* Debug */,
-				9CE9615E4F4844D48B02C6A4 /* Release */,
-				D2D5B9B923374A09B4D99949 /* MinSizeRel */,
-				CA0D286D876E48F7BB8B40F2 /* RelWithDebInfo */,
+				0C508FFFC77742F2A64B6D05 /* Debug */,
+				F229D53331664A3F98D2349C /* Release */,
+				D6FCA0BA69DC403994584D32 /* MinSizeRel */,
+				5902C63CEFD14CA2986E8C00 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		21429AF1476A461CA36EA04B /* Build configuration list for PBXAggregateTarget "install" */ = {
+		2D5070D05DB4425FBDD12914 /* Build configuration list for PBXProject "LibJpeg" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0CC5E922B0974D778602AC83 /* Debug */,
-				84D6862CBB9C42FD9FCD13A8 /* Release */,
-				906C95D18272404CA404D41D /* MinSizeRel */,
-				B7F01B60717B451A870DEB3C /* RelWithDebInfo */,
+				3CDDC14CA43945C9BD1070C4 /* Debug */,
+				60685FB69C8B4A0F9D5EF457 /* Release */,
+				F994A4DDFB5F461D80D55278 /* MinSizeRel */,
+				65C8A31B584C43E19B84B564 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		4A9E53364186474CB384A535 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		9E1DD83E5B8944849AB6A4CC /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				635B20E871A84A5BB0E4A08A /* Debug */,
-				C98A445AE81545C9A3ADE1C4 /* Release */,
-				FA0BEA2043734999A8CE2DC3 /* MinSizeRel */,
-				A3716BFA28AD4B6899C4B5AA /* RelWithDebInfo */,
+				1BD900862D944BB595C87B6C /* Debug */,
+				F099206002594E7CBBD323AF /* Release */,
+				DC3655706B9B4158BFD81420 /* MinSizeRel */,
+				F59E2C7D3447408D957B12AD /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		6B8A0FBB0BD941589C783ABC /* Build configuration list for PBXNativeTarget "LibJpeg" */ = {
+		C750BF1CB9B04507A0A6025A /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				859D99542DAB4B528667D44C /* Debug */,
-				1C5C1F6603314FF087B53DDA /* Release */,
-				DD578183A8F74F55ADF34479 /* MinSizeRel */,
-				F158A72C208E44F1BC070EBD /* RelWithDebInfo */,
+				98875A0598064852B57C9768 /* Debug */,
+				31CEB7E43CA04274994958C4 /* Release */,
+				45D0CCE732FD4BA08AE088B5 /* MinSizeRel */,
+				89F78375CEA84EEEA9A43B1B /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		8528AC2F9FCB4D7DA8192E94 /* Build configuration list for PBXProject "LibJpeg" */ = {
+		FD3D6E5FCBC246509923967A /* Build configuration list for PBXAggregateTarget "install" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FCB28A0A08094697807A71D9 /* Debug */,
-				A4F7828D2BD54DA4BDE2014C /* Release */,
-				475ED6C842524C0EB634EE23 /* MinSizeRel */,
-				D0B18746F6E44D308C8C38B0 /* RelWithDebInfo */,
+				7506A1885FB84673A00597D9 /* Debug */,
+				752FCEF441B54F5A98D2A34E /* Release */,
+				83EB5FE784C8431CB2F154D7 /* MinSizeRel */,
+				7E45DEC3208E49FDBEBB5DE8 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

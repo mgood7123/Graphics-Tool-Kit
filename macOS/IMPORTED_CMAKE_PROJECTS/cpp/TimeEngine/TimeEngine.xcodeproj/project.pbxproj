@@ -9,19 +9,19 @@
 /* Begin PBXAggregateTarget section */
 		4C161972DCC540808363BE2C /* install */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 19416BCFC89A441282713EAD /* Build configuration list for PBXAggregateTarget "install" */;
+			buildConfigurationList = E1EE123D7C0B4BE39C034ED3 /* Build configuration list for PBXAggregateTarget "install" */;
 			buildPhases = (
 				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
 			);
 			dependencies = (
-				A67A1B079D4B4ABEA101F810 /* PBXTargetDependency */,
+				DFF18FB5EF644783852CC4D7 /* PBXTargetDependency */,
 			);
 			name = install;
 			productName = install;
 		};
 		A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = E2C0751E0024484494E2CE7A /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = 73BBE16595C042719FCBA74D /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
 				EDFC7A58E8C7CDF0AFB0693B /* Generate CMakeFiles/ZERO_CHECK */,
 			);
@@ -32,13 +32,13 @@
 		};
 		C170553A14944B729938E9E6 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = D072226C31984A079359A2CC /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = B53AA9C5A68C420E8572AFF9 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
 				3DD00AB7EEBDB70C0E8CC0FD /* Generate CMakeFiles/ALL_BUILD */,
 			);
 			dependencies = (
-				E269C4C8AE5E4D13B99708AD /* PBXTargetDependency */,
-				750D85BD317640EF950216AA /* PBXTargetDependency */,
+				E3039E4F3EEC44838C4E7F04 /* PBXTargetDependency */,
+				5E7558D3C20549789DB5C66C /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
@@ -46,81 +46,81 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0C342FD703AC489D8FADE161 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/TimeEngine.cpp */ = {isa = PBXBuildFile; fileRef = F99B4E08DBEC44518030C10C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/TimeEngine.cpp */; };
-		AD635E6EC7E946B897395C6C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = C7B58234A34545F098CC79B5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/CMakeLists.txt */; };
+		0E8CB47FA6DE4CDDB0BE9219 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = F7DDE370210343638D15A638 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/CMakeLists.txt */; };
+		64FA76A210FF4012AD9FE32E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/TimeEngine.cpp */ = {isa = PBXBuildFile; fileRef = 755BB58905194EDDB307D764 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/TimeEngine.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		62BEDA9FE43C412680C1F2A7 /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Release;
-		};
-		948F3817F1634A3F812D1637 /* RelWithDebInfo */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = RelWithDebInfo;
-		};
-		B455C1A163E649219FA74710 /* MinSizeRel */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = MinSizeRel;
-		};
-		E1E0278C194D4B5D960FEA5C /* Debug */ = {
+		3E7DF43E00F44A6D9860BF03 /* Debug */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = Debug;
 		};
+		53905CC001334A189FD84AA4 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		646D08E2CB744569BFCD6558 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		92A430F0F13B48F89998E239 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		604F62AA17B246658ECA0016 /* PBXContainerItemProxy */ = {
+		3FEAFC1ED41D4569B48EA7ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3598F902F9DE46DFA8E2BC8C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
 			remoteInfo = ZERO_CHECK;
 		};
-		6F62AFA25037449A9596B518 /* PBXContainerItemProxy */ = {
+		682F4702D3474C6097EDD7F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3598F902F9DE46DFA8E2BC8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
+			remoteInfo = ZERO_CHECK;
+		};
+		8A72BC4B5D2A49F2B205DC43 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3598F902F9DE46DFA8E2BC8C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C170553A14944B729938E9E6;
 			remoteInfo = ALL_BUILD;
 		};
-		CCF48A9261234D4794AA64EB /* PBXContainerItemProxy */ = {
+		F873BE64629643FBAA824418 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3598F902F9DE46DFA8E2BC8C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = ECB98E6C788243AF93A26BC5;
 			remoteInfo = TimeEngine;
 		};
-		D09B1B2108234408A842E0B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3598F902F9DE46DFA8E2BC8C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
-			remoteInfo = ZERO_CHECK;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		74AE3B8FAABE43C78E3C802C /* TimeEngine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libTimeEngine.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7B58234A34545F098CC79B5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		F616DF6A971849D49226316B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		F99B4E08DBEC44518030C10C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/TimeEngine.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = TimeEngine.cpp; path = TimeEngine.cpp; sourceTree = SOURCE_ROOT; };
+		755BB58905194EDDB307D764 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/TimeEngine.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = TimeEngine.cpp; path = TimeEngine.cpp; sourceTree = SOURCE_ROOT; };
+		7AFA3BAEC77A49C191024CFF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		E30E8724B47A48E885605726 /* TimeEngine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libTimeEngine.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7DDE370210343638D15A638 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5003811E42D84B2F84B80ED2 /* Frameworks */ = {
+		8715FCD7067345DE9A126596 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -130,62 +130,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0445FEA5D93C4D32942DE878 /* ALL_BUILD */ = {
+		306723730F4847A78AB8E946 /* ALL_BUILD */ = {
 			isa = PBXGroup;
 			children = (
-				A91A73B0DD55412AA757F2A1 /* CMake Rules */,
-				F616DF6A971849D49226316B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/CMakeLists.txt */,
+				7E27BE9C81464F2CB3D94A09 /* CMake Rules */,
+				7AFA3BAEC77A49C191024CFF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/CMakeLists.txt */,
 			);
 			name = ALL_BUILD;
 			sourceTree = "<group>";
 		};
-		22C9358FCBE04402B80B5EC0 /* Source Files */ = {
+		59E49B64077648759060C5E4 /* TimeEngine */ = {
 			isa = PBXGroup;
 			children = (
-				F99B4E08DBEC44518030C10C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/TimeEngine.cpp */,
+				BF35D01D6C754804B948D4B5 /* Source Files */,
+				F7DDE370210343638D15A638 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/CMakeLists.txt */,
 			);
-			name = "Source Files";
+			name = TimeEngine;
 			sourceTree = "<group>";
 		};
-		27E26CB9D7B04120A7F58391 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				74AE3B8FAABE43C78E3C802C /* TimeEngine */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		4F6B4A987A2C4002ADCB874C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8775BBAE06C94F4AAE486C08 = {
-			isa = PBXGroup;
-			children = (
-				F1724B2F732A458A9849581E /* TimeEngine */,
-				0445FEA5D93C4D32942DE878 /* ALL_BUILD */,
-				27E26CB9D7B04120A7F58391 /* Products */,
-				4F6B4A987A2C4002ADCB874C /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		A91A73B0DD55412AA757F2A1 /* CMake Rules */ = {
+		7E27BE9C81464F2CB3D94A09 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		F1724B2F732A458A9849581E /* TimeEngine */ = {
+		BF35D01D6C754804B948D4B5 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				22C9358FCBE04402B80B5EC0 /* Source Files */,
-				C7B58234A34545F098CC79B5 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/CMakeLists.txt */,
+				755BB58905194EDDB307D764 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/TimeEngine.cpp */,
 			);
-			name = TimeEngine;
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		C33CC961E04E4067B9626818 = {
+			isa = PBXGroup;
+			children = (
+				59E49B64077648759060C5E4 /* TimeEngine */,
+				306723730F4847A78AB8E946 /* ALL_BUILD */,
+				C556AD4907034C32B133F8B8 /* Products */,
+				DA81A49522E64A03A196FFEC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C556AD4907034C32B133F8B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E30E8724B47A48E885605726 /* TimeEngine */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA81A49522E64A03A196FFEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,20 +193,20 @@
 /* Begin PBXNativeTarget section */
 		ECB98E6C788243AF93A26BC5 /* TimeEngine */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B060CBB9A43346DEA27DBE97 /* Build configuration list for PBXNativeTarget "TimeEngine" */;
+			buildConfigurationList = 47452445DEA849008B431726 /* Build configuration list for PBXNativeTarget "TimeEngine" */;
 			buildPhases = (
-				D48EEBCCFE98421A82A786C5 /* Sources */,
-				5003811E42D84B2F84B80ED2 /* Frameworks */,
+				B895A91758E546E083D7909F /* Sources */,
+				8715FCD7067345DE9A126596 /* Frameworks */,
 				0888D516D176099F4609E133 /* CMake PostBuild Rules */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7F4D4E7A875745CC9D948D93 /* PBXTargetDependency */,
+				70D33FE4AFC94634A9A068A3 /* PBXTargetDependency */,
 			);
 			name = TimeEngine;
 			productName = TimeEngine;
-			productReference = 74AE3B8FAABE43C78E3C802C /* TimeEngine */;
+			productReference = E30E8724B47A48E885605726 /* TimeEngine */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -218,18 +218,18 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1240;
 			};
-			buildConfigurationList = 45978F6DD8B948CDB9161481 /* Build configuration list for PBXProject "TimeEngine" */;
+			buildConfigurationList = D69ECFAF40E54ACBAB8D5E71 /* Build configuration list for PBXProject "TimeEngine" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				E1E0278C194D4B5D960FEA5C /* Debug */,
-				62BEDA9FE43C412680C1F2A7 /* Release */,
-				B455C1A163E649219FA74710 /* MinSizeRel */,
-				948F3817F1634A3F812D1637 /* RelWithDebInfo */,
+				3E7DF43E00F44A6D9860BF03 /* Debug */,
+				646D08E2CB744569BFCD6558 /* Release */,
+				53905CC001334A189FD84AA4 /* MinSizeRel */,
+				92A430F0F13B48F89998E239 /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = 8775BBAE06C94F4AAE486C08;
+			mainGroup = C33CC961E04E4067B9626818;
 			projectDirPath = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine";
 			projectRoot = "";
 			targets = (
@@ -418,68 +418,41 @@ fi
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D48EEBCCFE98421A82A786C5 /* Sources */ = {
+		B895A91758E546E083D7909F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C342FD703AC489D8FADE161 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/TimeEngine.cpp */,
+				64FA76A210FF4012AD9FE32E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/TimeEngine/TimeEngine.cpp */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		750D85BD317640EF950216AA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
-			targetProxy = 604F62AA17B246658ECA0016 /* PBXContainerItemProxy */;
-		};
-		7F4D4E7A875745CC9D948D93 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
-			targetProxy = D09B1B2108234408A842E0B2 /* PBXContainerItemProxy */;
-		};
-		A67A1B079D4B4ABEA101F810 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C170553A14944B729938E9E6 /* ALL_BUILD */;
-			targetProxy = 6F62AFA25037449A9596B518 /* PBXContainerItemProxy */;
-		};
-		E269C4C8AE5E4D13B99708AD /* PBXTargetDependency */ = {
+		5E7558D3C20549789DB5C66C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = ECB98E6C788243AF93A26BC5 /* TimeEngine */;
-			targetProxy = CCF48A9261234D4794AA64EB /* PBXContainerItemProxy */;
+			targetProxy = F873BE64629643FBAA824418 /* PBXContainerItemProxy */;
+		};
+		70D33FE4AFC94634A9A068A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
+			targetProxy = 3FEAFC1ED41D4569B48EA7ED /* PBXContainerItemProxy */;
+		};
+		DFF18FB5EF644783852CC4D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C170553A14944B729938E9E6 /* ALL_BUILD */;
+			targetProxy = 8A72BC4B5D2A49F2B205DC43 /* PBXContainerItemProxy */;
+		};
+		E3039E4F3EEC44838C4E7F04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
+			targetProxy = 682F4702D3474C6097EDD7F2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		06735192EA004297835E2FB6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = "";
-				DYLIB_CURRENT_VERSION = "";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .dylib;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",TimeEngine_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
-				INSTALL_PATH = "@rpath";
-				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC '-std=c++17' ";
-				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/Release/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/Release/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/Release/libDiligent-BasicPlatform_LOG.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/Release/libDiligent-Primitives.a","-framework AppKit");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = TimeEngine;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		2F6FBC57A2654C4AB43DDB18 /* Debug */ = {
+		147FB95850EE42C7BCA3E529 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -491,7 +464,7 @@ fi
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = ("");
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
+				PRODUCT_NAME = ZERO_CHECK;
 				SECTORDER_FLAGS = "";
 				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine";
 				USE_HEADERMAP = NO;
@@ -499,7 +472,27 @@ fi
 			};
 			name = Debug;
 		};
-		307E52FAB50446A39DC4C48A /* MinSizeRel */ = {
+		16B25B3190A8417BB0D8A42B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		29D34AA0256044B5BCA904F4 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -517,9 +510,20 @@ fi
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = MinSizeRel;
+			name = RelWithDebInfo;
 		};
-		3E90D61DD4974B9F859CBF28 /* Release */ = {
+		31A2B7E7BCBE47ECA911C988 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/build";
+			};
+			name = Debug;
+		};
+		33CA8753E7D24B65A010D6FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -539,7 +543,27 @@ fi
 			};
 			name = Release;
 		};
-		4187017DA1BD49C2AE7E58B4 /* RelWithDebInfo */ = {
+		5DC8238CF9684F55A49540AE /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		6158CBB21BCC4FEB9E1F703F /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -552,7 +576,7 @@ fi
 				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",TimeEngine_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
 				INSTALL_PATH = "@rpath";
 				LIBRARY_STYLE = DYNAMIC;
 				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG -fPIC '-std=c++17' ";
@@ -566,7 +590,7 @@ fi
 			};
 			name = RelWithDebInfo;
 		};
-		429E15DFEDB34BF4BE184917 /* RelWithDebInfo */ = {
+		6BD87FC66C1043068D85DD3A /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -584,131 +608,9 @@ fi
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = RelWithDebInfo;
-		};
-		4A39113F4E7646049F487CA0 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		4F82261C12E342A081498C90 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		668FBF152FDC43AA8B1BE225 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		7B6E177AC6E946DEB302A3D4 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
 			name = MinSizeRel;
 		};
-		94CCC74EA5AF4E59AF2387CD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/build";
-			};
-			name = Debug;
-		};
-		B36618B0EC6A49DE8D995B13 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/build";
-			};
-			name = MinSizeRel;
-		};
-		B91EDF87FD1843D098F330EC /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		CD1D8015B97048B38AF2165B /* Debug */ = {
+		70BFFEE87FC14351A376AB1D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -721,7 +623,7 @@ fi
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",TimeEngine_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
 				INSTALL_PATH = "@rpath";
 				LIBRARY_STYLE = DYNAMIC;
 				OTHER_CPLUSPLUSFLAGS = "   -fPIC '-std=c++17' ";
@@ -735,18 +637,54 @@ fi
 			};
 			name = Debug;
 		};
-		CFEB1BF6D51B474A9EE77138 /* Release */ = {
+		7863CFEAFA5643C39F197F1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/build";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		9AC3726267754783A046CEDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",TimeEngine_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
+				INSTALL_PATH = "@rpath";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC '-std=c++17' ";
+				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/Release/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/Release/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/Release/libDiligent-BasicPlatform_LOG.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/Release/libDiligent-Primitives.a","-framework AppKit");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = TimeEngine;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
 			};
 			name = Release;
 		};
-		D9070B01E3684CC4AC983865 /* Debug */ = {
+		9B0CE07EDCB245A7881E65E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -764,9 +702,36 @@ fi
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = Debug;
+			name = Release;
 		};
-		DB98350DB6CA40388D966659 /* Release */ = {
+		A121BD7D30204C2C931761AD /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",TimeEngine_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
+				INSTALL_PATH = "@rpath";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC '-std=c++17' ";
+				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/MinSizeRel/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/MinSizeRel/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/MinSizeRel/libDiligent-BasicPlatform_LOG.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/MinSizeRel/libDiligent-Primitives.a","-framework AppKit");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = TimeEngine;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		B477736494584CE2AF264C2C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -786,45 +751,7 @@ fi
 			};
 			name = Release;
 		};
-		EC9A94DEEFF344F485F56779 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = "";
-				DYLIB_CURRENT_VERSION = "";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .dylib;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",TimeEngine_EXPORTS,PLATFORM_MACOS,PLATFORM_APPLE);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","$(inherited)");
-				INSTALL_PATH = "@rpath";
-				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC '-std=c++17' ";
-				OTHER_LDFLAGS = (" -dynamiclib -Wl,-headerpad_max_install_names","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Common/MinSizeRel/libDiligent-Common.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Apple/MinSizeRel/libDiligent-ApplePlatform.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Platforms/Basic/MinSizeRel/libDiligent-BasicPlatform_LOG.a","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/MultiTouch/DiligentLog/Primitives/MinSizeRel/libDiligent-Primitives.a","-framework AppKit");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = TimeEngine;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		F43859F506CB4401A01CA2BE /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/build";
-			};
-			name = RelWithDebInfo;
-		};
-		F851846488884A479B25ABA3 /* Release */ = {
+		B524E53C51084122AC440FBD /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -842,62 +769,135 @@ fi
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
+			name = MinSizeRel;
+		};
+		C1641162AAC74E4C96D78750 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		C9B2F0E5BFDE494797C45680 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/build";
+			};
+			name = RelWithDebInfo;
+		};
+		F7409E11766040F398AFFA2A /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/build";
+			};
+			name = MinSizeRel;
+		};
+		FC7140B7091B4990AA0D54B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		FCBCF0AA89D54C569E1024A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/TimeEngine/build";
+			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		19416BCFC89A441282713EAD /* Build configuration list for PBXAggregateTarget "install" */ = {
+		47452445DEA849008B431726 /* Build configuration list for PBXNativeTarget "TimeEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4F82261C12E342A081498C90 /* Debug */,
-				3E90D61DD4974B9F859CBF28 /* Release */,
-				7B6E177AC6E946DEB302A3D4 /* MinSizeRel */,
-				668FBF152FDC43AA8B1BE225 /* RelWithDebInfo */,
+				70BFFEE87FC14351A376AB1D /* Debug */,
+				9AC3726267754783A046CEDB /* Release */,
+				A121BD7D30204C2C931761AD /* MinSizeRel */,
+				6158CBB21BCC4FEB9E1F703F /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		45978F6DD8B948CDB9161481 /* Build configuration list for PBXProject "TimeEngine" */ = {
+		73BBE16595C042719FCBA74D /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				94CCC74EA5AF4E59AF2387CD /* Debug */,
-				CFEB1BF6D51B474A9EE77138 /* Release */,
-				B36618B0EC6A49DE8D995B13 /* MinSizeRel */,
-				F43859F506CB4401A01CA2BE /* RelWithDebInfo */,
+				147FB95850EE42C7BCA3E529 /* Debug */,
+				9B0CE07EDCB245A7881E65E3 /* Release */,
+				B524E53C51084122AC440FBD /* MinSizeRel */,
+				C1641162AAC74E4C96D78750 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		B060CBB9A43346DEA27DBE97 /* Build configuration list for PBXNativeTarget "TimeEngine" */ = {
+		B53AA9C5A68C420E8572AFF9 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CD1D8015B97048B38AF2165B /* Debug */,
-				06735192EA004297835E2FB6 /* Release */,
-				EC9A94DEEFF344F485F56779 /* MinSizeRel */,
-				4187017DA1BD49C2AE7E58B4 /* RelWithDebInfo */,
+				FC7140B7091B4990AA0D54B7 /* Debug */,
+				B477736494584CE2AF264C2C /* Release */,
+				6BD87FC66C1043068D85DD3A /* MinSizeRel */,
+				29D34AA0256044B5BCA904F4 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		D072226C31984A079359A2CC /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		D69ECFAF40E54ACBAB8D5E71 /* Build configuration list for PBXProject "TimeEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2F6FBC57A2654C4AB43DDB18 /* Debug */,
-				DB98350DB6CA40388D966659 /* Release */,
-				307E52FAB50446A39DC4C48A /* MinSizeRel */,
-				429E15DFEDB34BF4BE184917 /* RelWithDebInfo */,
+				31A2B7E7BCBE47ECA911C988 /* Debug */,
+				FCBCF0AA89D54C569E1024A2 /* Release */,
+				F7409E11766040F398AFFA2A /* MinSizeRel */,
+				C9B2F0E5BFDE494797C45680 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		E2C0751E0024484494E2CE7A /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		E1EE123D7C0B4BE39C034ED3 /* Build configuration list for PBXAggregateTarget "install" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D9070B01E3684CC4AC983865 /* Debug */,
-				F851846488884A479B25ABA3 /* Release */,
-				B91EDF87FD1843D098F330EC /* MinSizeRel */,
-				4A39113F4E7646049F487CA0 /* RelWithDebInfo */,
+				7863CFEAFA5643C39F197F1C /* Debug */,
+				33CA8753E7D24B65A010D6FD /* Release */,
+				16B25B3190A8417BB0D8A42B /* MinSizeRel */,
+				5DC8238CF9684F55A49540AE /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

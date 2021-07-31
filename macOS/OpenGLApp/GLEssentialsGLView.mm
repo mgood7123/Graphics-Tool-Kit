@@ -112,20 +112,52 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
 
 // https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/EventOverview/HandlingTouchEvents/HandlingTouchEvents.html#//apple_ref/doc/uid/10000060i-CH13-SW21
 
+- (NSPoint) getMouse {
+    NSPoint x = [[self window] mouseLocationOutsideOfEventStream];
+    // bottom is 0, top is height
+    // we need top is 0, bottom is height
+    x.y = [self bounds].size.height - x.y;
+    return x;
+}
+
 - (void)touchesBeganWithEvent:(NSEvent *)event {
-    [_renderer touchesBeganWithEvent:[event touchesMatchingPhase:NSTouchPhaseBegan inView:self]];
+    NSSet * touches = [event touchesMatchingPhase:NSTouchPhaseBegan inView:self];
+    NSArray *array = [touches allObjects];
+    NSUInteger numberOfTouches = [array count];
+    for (unsigned long i = 0; i < numberOfTouches; i++) {
+        NSTouch *touch = [array objectAtIndex:i];
+        [_renderer touchesBeganWithTouch:touch.identity AndPoint:[self getMouse]];
+    }
 }
 
 - (void)touchesMovedWithEvent:(NSEvent *)event {
-    [_renderer touchesMovedWithEvent:[event touchesMatchingPhase:NSTouchPhaseMoved inView:self]];
+    NSSet * touches = [event touchesMatchingPhase:NSTouchPhaseMoved inView:self];
+    NSArray *array = [touches allObjects];
+    NSUInteger numberOfTouches = [array count];
+    for (unsigned long i = 0; i < numberOfTouches; i++) {
+        NSTouch *touch = [array objectAtIndex:i];
+        [_renderer touchesMovedWithTouch:touch AndPoint:[self getMouse]];
+    }
 }
 
 - (void)touchesEndedWithEvent:(NSEvent *)event {
-    [_renderer touchesEndedWithEvent:[event touchesMatchingPhase:NSTouchPhaseEnded inView:self]];
+    NSSet * touches = [event touchesMatchingPhase:NSTouchPhaseEnded inView:self];
+    NSArray *array = [touches allObjects];
+    NSUInteger numberOfTouches = [array count];
+    for (unsigned long i = 0; i < numberOfTouches; i++) {
+        NSTouch *touch = [array objectAtIndex:i];
+        [_renderer touchesEndedWithTouch:touch AndPoint:[self getMouse]];
+    }
 }
 
 - (void)touchesCancelledWithEvent:(NSEvent *)event {
-    [_renderer touchesCancelledWithEvent:[event touchesMatchingPhase:NSTouchPhaseAny inView:self]];
+    NSSet * touches = [event touchesMatchingPhase:NSTouchPhaseCancelled inView:self];
+    NSArray *array = [touches allObjects];
+    NSUInteger numberOfTouches = [array count];
+    for (unsigned long i = 0; i < numberOfTouches; i++) {
+        NSTouch *touch = [array objectAtIndex:i];
+        [_renderer touchesCancelledWithTouch:touch AndPoint:[self getMouse]];
+    }
 }
 
 - (void) awakeFromNib

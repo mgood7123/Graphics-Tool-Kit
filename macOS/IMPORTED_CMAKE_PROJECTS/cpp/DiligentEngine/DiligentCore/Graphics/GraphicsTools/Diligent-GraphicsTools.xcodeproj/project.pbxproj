@@ -9,19 +9,19 @@
 /* Begin PBXAggregateTarget section */
 		4C161972DCC540808363BE2C /* install */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 1E629DC8D17A4589A9C3A861 /* Build configuration list for PBXAggregateTarget "install" */;
+			buildConfigurationList = 1792215B302A4EDC9C3BE463 /* Build configuration list for PBXAggregateTarget "install" */;
 			buildPhases = (
 				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
 			);
 			dependencies = (
-				D839551D57C24E0EA8F828A4 /* PBXTargetDependency */,
+				4C3A970B8B4F4FF3920BF92A /* PBXTargetDependency */,
 			);
 			name = install;
 			productName = install;
 		};
 		A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 081732FDF2DA4E4C92895051 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = 982FB1692D564E7BB696B213 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
 				D6FBF26BA36E09527073EBE1 /* Generate CMakeFiles/ZERO_CHECK */,
 			);
@@ -32,13 +32,13 @@
 		};
 		C170553A14944B729938E9E6 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = FCF6A832114A475798D6C4C3 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = C74A8553B8F741EAA994CA05 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
 				94E854A0AE6143A37E945DFA /* Generate CMakeFiles/ALL_BUILD */,
 			);
 			dependencies = (
-				25562E44C8F549AEB798B4D1 /* PBXTargetDependency */,
-				7B76B7D636A54FA3B6C4C6DD /* PBXTargetDependency */,
+				78F6DD89D3F9418A86F40122 /* PBXTargetDependency */,
+				99166FAA8FFE419798C98DBE /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
@@ -46,86 +46,86 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		152ACE90A3C64F348D6167B1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploader.hpp */ = {isa = PBXBuildFile; fileRef = 3BBB209513AD4979AA485690 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploader.hpp */; };
-		1C308CCC06BD4D4AAA5223EC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/MapHelper.hpp */ = {isa = PBXBuildFile; fileRef = DAF22DD1DFFB4CA5A840BE7F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/MapHelper.hpp */; };
-		1E15C7AB45AA4D6896F82104 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScopedQueryHelper.cpp */ = {isa = PBXBuildFile; fileRef = A72B2D6854214CA6A49BF7D2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScopedQueryHelper.cpp */; };
-		368430E944A94981A130AC54 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicBuffer.cpp */ = {isa = PBXBuildFile; fileRef = 7AEE287DEFC94CA0B6EF8CD7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicBuffer.cpp */; };
-		433999895D044F9BB9E5416C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScreenCapture.cpp */ = {isa = PBXBuildFile; fileRef = 545B398D985E4C519B7B1770 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScreenCapture.cpp */; };
-		52C664B919E74DBAB8515B40 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/StreamingBuffer.hpp */ = {isa = PBXBuildFile; fileRef = DE699D9F71474919B2987627 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/StreamingBuffer.hpp */; };
-		5AD27CCA41564EB79D14860B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DurationQueryHelper.cpp */ = {isa = PBXBuildFile; fileRef = FAE0C82E097D48178FDD5091 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DurationQueryHelper.cpp */; };
-		7212E0E30FCA40B781703C55 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicBuffer.hpp */ = {isa = PBXBuildFile; fileRef = 73F9BD223EBE4B19AC23C9C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicBuffer.hpp */; };
-		7DD8C9C73FD14786AC0F6F68 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScreenCapture.hpp */ = {isa = PBXBuildFile; fileRef = 5025FC5C4EBD48568349E6FA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScreenCapture.hpp */; };
-		898A567936044AB18B27B3D7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/CommonlyUsedStates.h */ = {isa = PBXBuildFile; fileRef = 394F3F8F4EFB4C598690B5CD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/CommonlyUsedStates.h */; };
-		9707491EDF4143ED8B744DAD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/BufferSuballocator.cpp */ = {isa = PBXBuildFile; fileRef = D14AF68792DE48C6BE306F74 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/BufferSuballocator.cpp */; };
-		97AD5BB8FE9F4A7C93BBCD12 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScopedQueryHelper.hpp */ = {isa = PBXBuildFile; fileRef = 4EDCB15B74E34F51B9975E94 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScopedQueryHelper.hpp */; };
-		AADBFFDA6545456C81D8E507 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploaderGL.cpp */ = {isa = PBXBuildFile; fileRef = DC9E20AAF7DD4DC2A393B14F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploaderGL.cpp */; };
-		B79D17BEE8AB4623B0DA3CC6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/BufferSuballocator.h */ = {isa = PBXBuildFile; fileRef = 0B7B5D1FFB76497AA9A0622A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/BufferSuballocator.h */; };
-		B8DC59A200834CC99B90D3CA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/GraphicsUtilities.cpp */ = {isa = PBXBuildFile; fileRef = 4E706337954D41E581066480 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/GraphicsUtilities.cpp */; };
-		BF3D5FC0EFBB4B5595C5D088 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/GraphicsUtilities.h */ = {isa = PBXBuildFile; fileRef = CC01AE4D531D42F580C91627 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/GraphicsUtilities.h */; };
-		C5F859FF7CE5472ABE14BBA3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ShaderMacroHelper.hpp */ = {isa = PBXBuildFile; fileRef = 3C4C7EE41B6944E8941996AC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ShaderMacroHelper.hpp */; };
-		C5FB8239BA4B4DF789161AD1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderGL.hpp */ = {isa = PBXBuildFile; fileRef = 142A236B40914B39B2B51ABA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderGL.hpp */; };
-		CAB8E26412D64373AB5D83D3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DurationQueryHelper.hpp */ = {isa = PBXBuildFile; fileRef = 632E082183BF41DC8BF2A4E6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DurationQueryHelper.hpp */; };
-		E17F12D8766541B09D65C681 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicTextureAtlas.cpp */ = {isa = PBXBuildFile; fileRef = C19B9D46985E4F389D0A0928 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicTextureAtlas.cpp */; };
-		ECB9C9BCC03B44D0ACA32F86 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploader.cpp */ = {isa = PBXBuildFile; fileRef = B61F71E187BB48C9ADBC45C6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploader.cpp */; };
-		F4F4CAA535D14AC4A337B2C6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = C576C6203F344F26B46F6F27 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/CMakeLists.txt */; };
-		FBA51AB86B9F459C96E54E1F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicTextureAtlas.h */ = {isa = PBXBuildFile; fileRef = A9367A98322D4B0F8DA51A41 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicTextureAtlas.h */; };
-		FC47E436A6FB413AB1BA7193 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderBase.hpp */ = {isa = PBXBuildFile; fileRef = 0F0B5F9B198E4A22A76FE81C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderBase.hpp */; };
+		01A1447C8DD6448A803F0D52 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ShaderMacroHelper.hpp */ = {isa = PBXBuildFile; fileRef = A9E995285CDD44BD8EC833EF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ShaderMacroHelper.hpp */; };
+		1EDAE6E1068E40E3B92E0778 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/BufferSuballocator.h */ = {isa = PBXBuildFile; fileRef = 670595ABFD9646D78AEFE604 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/BufferSuballocator.h */; };
+		2CA081F090C445A48D8EC3EF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScreenCapture.hpp */ = {isa = PBXBuildFile; fileRef = 3169121904A74BA38BF662F0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScreenCapture.hpp */; };
+		2EE0FCFA27034D71A96C0107 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploader.cpp */ = {isa = PBXBuildFile; fileRef = 55C302FE1FAB4D30AF401CDE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploader.cpp */; };
+		462AF8E25CEF444F8ACC0266 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/BufferSuballocator.cpp */ = {isa = PBXBuildFile; fileRef = DBE2BDAEC0AA4E01ACEB1CBC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/BufferSuballocator.cpp */; };
+		496038F07C28487CA9F10E00 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderGL.hpp */ = {isa = PBXBuildFile; fileRef = 2D6323D74FEB4B859E2D3ACB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderGL.hpp */; };
+		4B35F73948C640E59F8BE6FA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DurationQueryHelper.hpp */ = {isa = PBXBuildFile; fileRef = DF06474C18B040CEA094AF4C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DurationQueryHelper.hpp */; };
+		4DEDB121810D4872B5972FF0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicBuffer.cpp */ = {isa = PBXBuildFile; fileRef = BEEDB28300D74E288B6E22BA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicBuffer.cpp */; };
+		662CB4E247E449F4A60DA4D6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderBase.hpp */ = {isa = PBXBuildFile; fileRef = E0E1F0DFE1614A40A0A71B72 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderBase.hpp */; };
+		728DE62F23FF4FF5BE72F310 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/MapHelper.hpp */ = {isa = PBXBuildFile; fileRef = BFB26CF00B5245ADBBD1A06A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/MapHelper.hpp */; };
+		764E4AA1F64D41F89ABD57BC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = D19B0C166F1D4D1BBA81CBE4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/CMakeLists.txt */; };
+		7AB37E5847D742EDBC7F1E34 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploaderGL.cpp */ = {isa = PBXBuildFile; fileRef = B92DDA62B851489BB4B2131E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploaderGL.cpp */; };
+		7E15359D79144A60AFA70759 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploader.hpp */ = {isa = PBXBuildFile; fileRef = C073250B98144E46BFA108C1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploader.hpp */; };
+		7F238DC33B264768A9752E99 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/GraphicsUtilities.cpp */ = {isa = PBXBuildFile; fileRef = A5915BC1A52C4F098CED48B6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/GraphicsUtilities.cpp */; };
+		8C2BC503B08C403DBD5155BB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/StreamingBuffer.hpp */ = {isa = PBXBuildFile; fileRef = 90774F559C7C459D99BB3AEB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/StreamingBuffer.hpp */; };
+		8EFF2AE54BD74A90AB336E43 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicTextureAtlas.cpp */ = {isa = PBXBuildFile; fileRef = 51D6918370E24A2E8D0CEEB8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicTextureAtlas.cpp */; };
+		8FC2BBFA40FA4732B757FD14 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/CommonlyUsedStates.h */ = {isa = PBXBuildFile; fileRef = 47E8F43CE16342CE9A64B53C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/CommonlyUsedStates.h */; };
+		901DF24CFF144BBF9EAA7DA2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicBuffer.hpp */ = {isa = PBXBuildFile; fileRef = A682B76BFF744F98BD191F04 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicBuffer.hpp */; };
+		A710DDDDF35F4E3BA5286D9F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScopedQueryHelper.cpp */ = {isa = PBXBuildFile; fileRef = 858BF18928B74CD0BC0C9786 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScopedQueryHelper.cpp */; };
+		B76D94DCC9394B2F97B721B3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScreenCapture.cpp */ = {isa = PBXBuildFile; fileRef = D84E562EF18243859DA5A751 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScreenCapture.cpp */; };
+		D0E74F7F5AEA44289E0375F8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicTextureAtlas.h */ = {isa = PBXBuildFile; fileRef = 719C7A6EA75D4305BD3B7C02 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicTextureAtlas.h */; };
+		E7DE3DC248784137B2347C65 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScopedQueryHelper.hpp */ = {isa = PBXBuildFile; fileRef = 336529DF76EB42ED8489D78C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScopedQueryHelper.hpp */; };
+		EC606816968E41388509E915 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/GraphicsUtilities.h */ = {isa = PBXBuildFile; fileRef = 9E4FE40FB2394F20A207A05A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/GraphicsUtilities.h */; };
+		EEEBCFCDFD2B42BB90605FD8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DurationQueryHelper.cpp */ = {isa = PBXBuildFile; fileRef = 47D4ECA03EC142D589E72595 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DurationQueryHelper.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		5FE7690C20F04066A14AB802 /* RelWithDebInfo */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = RelWithDebInfo;
-		};
-		696EA29BD73D4B3FAFDD989A /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Release;
-		};
-		CDA6BABA9A7B4EC4BA95D6FE /* MinSizeRel */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = MinSizeRel;
-		};
-		DE0A4F6546D04FE3943DAB6F /* Debug */ = {
+		2E9A0D7A5E8C45B9BD946B46 /* Debug */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = Debug;
 		};
+		4E74B9E90C8A4CBD8CBBDF47 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		DAA14578FCA0461D847DF967 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		E224BD342A8B420FA238E0B8 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		0D6167D6E0394921845BFD9E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA12D932A5C94B629B886197 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 06B180604CC94AE195BD4C17;
-			remoteInfo = "Diligent-GraphicsTools";
-		};
-		3D5543C0F1304424AFE0AD9C /* PBXContainerItemProxy */ = {
+		68C158C3271C4B07A830FC49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA12D932A5C94B629B886197 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A5FD1883C18C4AD982DE3EF9;
 			remoteInfo = ZERO_CHECK;
 		};
-		AD7089EB0F4D4EA7B1EB9068 /* PBXContainerItemProxy */ = {
+		7B719DA982AC4627A881BE1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA12D932A5C94B629B886197 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06B180604CC94AE195BD4C17;
+			remoteInfo = "Diligent-GraphicsTools";
+		};
+		8E52F25A072D4F288550D90E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA12D932A5C94B629B886197 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C170553A14944B729938E9E6;
 			remoteInfo = ALL_BUILD;
 		};
-		EB608C84B8E84B11B6AFA97C /* PBXContainerItemProxy */ = {
+		9080755DDD4C422B92C6A3C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA12D932A5C94B629B886197 /* Project object */;
 			proxyType = 1;
@@ -135,36 +135,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B7B5D1FFB76497AA9A0622A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/BufferSuballocator.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = BufferSuballocator.h; path = interface/BufferSuballocator.h; sourceTree = SOURCE_ROOT; };
-		0F0B5F9B198E4A22A76FE81C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderBase.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = TextureUploaderBase.hpp; path = interface/TextureUploaderBase.hpp; sourceTree = SOURCE_ROOT; };
-		1118095645394599B780D1EF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		142A236B40914B39B2B51ABA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderGL.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = TextureUploaderGL.hpp; path = interface/TextureUploaderGL.hpp; sourceTree = SOURCE_ROOT; };
-		394F3F8F4EFB4C598690B5CD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/CommonlyUsedStates.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = CommonlyUsedStates.h; path = interface/CommonlyUsedStates.h; sourceTree = SOURCE_ROOT; };
-		3BBB209513AD4979AA485690 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploader.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = TextureUploader.hpp; path = interface/TextureUploader.hpp; sourceTree = SOURCE_ROOT; };
-		3C4C7EE41B6944E8941996AC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ShaderMacroHelper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ShaderMacroHelper.hpp; path = interface/ShaderMacroHelper.hpp; sourceTree = SOURCE_ROOT; };
-		4CF6308372844B73874EC351 /* Diligent-GraphicsTools */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libDiligent-GraphicsTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E706337954D41E581066480 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/GraphicsUtilities.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GraphicsUtilities.cpp; path = src/GraphicsUtilities.cpp; sourceTree = SOURCE_ROOT; };
-		4EDCB15B74E34F51B9975E94 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScopedQueryHelper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ScopedQueryHelper.hpp; path = interface/ScopedQueryHelper.hpp; sourceTree = SOURCE_ROOT; };
-		5025FC5C4EBD48568349E6FA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScreenCapture.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ScreenCapture.hpp; path = interface/ScreenCapture.hpp; sourceTree = SOURCE_ROOT; };
-		545B398D985E4C519B7B1770 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScreenCapture.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ScreenCapture.cpp; path = src/ScreenCapture.cpp; sourceTree = SOURCE_ROOT; };
-		632E082183BF41DC8BF2A4E6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DurationQueryHelper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DurationQueryHelper.hpp; path = interface/DurationQueryHelper.hpp; sourceTree = SOURCE_ROOT; };
-		73F9BD223EBE4B19AC23C9C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicBuffer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DynamicBuffer.hpp; path = interface/DynamicBuffer.hpp; sourceTree = SOURCE_ROOT; };
-		7AEE287DEFC94CA0B6EF8CD7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicBuffer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DynamicBuffer.cpp; path = src/DynamicBuffer.cpp; sourceTree = SOURCE_ROOT; };
-		A72B2D6854214CA6A49BF7D2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScopedQueryHelper.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ScopedQueryHelper.cpp; path = src/ScopedQueryHelper.cpp; sourceTree = SOURCE_ROOT; };
-		A9367A98322D4B0F8DA51A41 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicTextureAtlas.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = DynamicTextureAtlas.h; path = interface/DynamicTextureAtlas.h; sourceTree = SOURCE_ROOT; };
-		B61F71E187BB48C9ADBC45C6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = TextureUploader.cpp; path = src/TextureUploader.cpp; sourceTree = SOURCE_ROOT; };
-		C19B9D46985E4F389D0A0928 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicTextureAtlas.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DynamicTextureAtlas.cpp; path = src/DynamicTextureAtlas.cpp; sourceTree = SOURCE_ROOT; };
-		C576C6203F344F26B46F6F27 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		CC01AE4D531D42F580C91627 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/GraphicsUtilities.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = GraphicsUtilities.h; path = interface/GraphicsUtilities.h; sourceTree = SOURCE_ROOT; };
-		D14AF68792DE48C6BE306F74 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/BufferSuballocator.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = BufferSuballocator.cpp; path = src/BufferSuballocator.cpp; sourceTree = SOURCE_ROOT; };
-		DAF22DD1DFFB4CA5A840BE7F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/MapHelper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = MapHelper.hpp; path = interface/MapHelper.hpp; sourceTree = SOURCE_ROOT; };
-		DC9E20AAF7DD4DC2A393B14F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploaderGL.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = TextureUploaderGL.cpp; path = src/TextureUploaderGL.cpp; sourceTree = SOURCE_ROOT; };
-		DE699D9F71474919B2987627 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/StreamingBuffer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = StreamingBuffer.hpp; path = interface/StreamingBuffer.hpp; sourceTree = SOURCE_ROOT; };
-		FAE0C82E097D48178FDD5091 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DurationQueryHelper.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DurationQueryHelper.cpp; path = src/DurationQueryHelper.cpp; sourceTree = SOURCE_ROOT; };
+		24A4AE20D72C4DAC81275BF9 /* Diligent-GraphicsTools */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libDiligent-GraphicsTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D6323D74FEB4B859E2D3ACB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderGL.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = TextureUploaderGL.hpp; path = interface/TextureUploaderGL.hpp; sourceTree = SOURCE_ROOT; };
+		3169121904A74BA38BF662F0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScreenCapture.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ScreenCapture.hpp; path = interface/ScreenCapture.hpp; sourceTree = SOURCE_ROOT; };
+		336529DF76EB42ED8489D78C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScopedQueryHelper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ScopedQueryHelper.hpp; path = interface/ScopedQueryHelper.hpp; sourceTree = SOURCE_ROOT; };
+		47D4ECA03EC142D589E72595 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DurationQueryHelper.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DurationQueryHelper.cpp; path = src/DurationQueryHelper.cpp; sourceTree = SOURCE_ROOT; };
+		47E8F43CE16342CE9A64B53C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/CommonlyUsedStates.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = CommonlyUsedStates.h; path = interface/CommonlyUsedStates.h; sourceTree = SOURCE_ROOT; };
+		51D6918370E24A2E8D0CEEB8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicTextureAtlas.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DynamicTextureAtlas.cpp; path = src/DynamicTextureAtlas.cpp; sourceTree = SOURCE_ROOT; };
+		55C302FE1FAB4D30AF401CDE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = TextureUploader.cpp; path = src/TextureUploader.cpp; sourceTree = SOURCE_ROOT; };
+		670595ABFD9646D78AEFE604 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/BufferSuballocator.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = BufferSuballocator.h; path = interface/BufferSuballocator.h; sourceTree = SOURCE_ROOT; };
+		719C7A6EA75D4305BD3B7C02 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicTextureAtlas.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = DynamicTextureAtlas.h; path = interface/DynamicTextureAtlas.h; sourceTree = SOURCE_ROOT; };
+		858BF18928B74CD0BC0C9786 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScopedQueryHelper.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ScopedQueryHelper.cpp; path = src/ScopedQueryHelper.cpp; sourceTree = SOURCE_ROOT; };
+		90774F559C7C459D99BB3AEB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/StreamingBuffer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = StreamingBuffer.hpp; path = interface/StreamingBuffer.hpp; sourceTree = SOURCE_ROOT; };
+		9E4FE40FB2394F20A207A05A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/GraphicsUtilities.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = GraphicsUtilities.h; path = interface/GraphicsUtilities.h; sourceTree = SOURCE_ROOT; };
+		A5915BC1A52C4F098CED48B6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/GraphicsUtilities.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GraphicsUtilities.cpp; path = src/GraphicsUtilities.cpp; sourceTree = SOURCE_ROOT; };
+		A682B76BFF744F98BD191F04 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicBuffer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DynamicBuffer.hpp; path = interface/DynamicBuffer.hpp; sourceTree = SOURCE_ROOT; };
+		A9E995285CDD44BD8EC833EF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ShaderMacroHelper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ShaderMacroHelper.hpp; path = interface/ShaderMacroHelper.hpp; sourceTree = SOURCE_ROOT; };
+		B92DDA62B851489BB4B2131E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploaderGL.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = TextureUploaderGL.cpp; path = src/TextureUploaderGL.cpp; sourceTree = SOURCE_ROOT; };
+		BEEDB28300D74E288B6E22BA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicBuffer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DynamicBuffer.cpp; path = src/DynamicBuffer.cpp; sourceTree = SOURCE_ROOT; };
+		BFB26CF00B5245ADBBD1A06A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/MapHelper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = MapHelper.hpp; path = interface/MapHelper.hpp; sourceTree = SOURCE_ROOT; };
+		C073250B98144E46BFA108C1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploader.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = TextureUploader.hpp; path = interface/TextureUploader.hpp; sourceTree = SOURCE_ROOT; };
+		D19B0C166F1D4D1BBA81CBE4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D71190CA839743D081CDDD31 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D84E562EF18243859DA5A751 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScreenCapture.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ScreenCapture.cpp; path = src/ScreenCapture.cpp; sourceTree = SOURCE_ROOT; };
+		DBE2BDAEC0AA4E01ACEB1CBC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/BufferSuballocator.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = BufferSuballocator.cpp; path = src/BufferSuballocator.cpp; sourceTree = SOURCE_ROOT; };
+		DF06474C18B040CEA094AF4C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DurationQueryHelper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DurationQueryHelper.hpp; path = interface/DurationQueryHelper.hpp; sourceTree = SOURCE_ROOT; };
+		E0E1F0DFE1614A40A0A71B72 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderBase.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = TextureUploaderBase.hpp; path = interface/TextureUploaderBase.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5C3DA01413034EFBB7C10307 /* Frameworks */ = {
+		DBCEA5C1648B47B78D343898 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -174,108 +174,108 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2EA85A34CAB242519FF138DC /* Frameworks */ = {
+		27E47BE86ABB49C7B8CF1B64 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				6B8908E38AC54EA1AD0A10CA /* Diligent-GraphicsTools */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		3E3DFE8143AD41ADA0BB7084 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				DBE2BDAEC0AA4E01ACEB1CBC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/BufferSuballocator.cpp */,
+				47D4ECA03EC142D589E72595 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DurationQueryHelper.cpp */,
+				BEEDB28300D74E288B6E22BA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicBuffer.cpp */,
+				51D6918370E24A2E8D0CEEB8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicTextureAtlas.cpp */,
+				A5915BC1A52C4F098CED48B6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/GraphicsUtilities.cpp */,
+				858BF18928B74CD0BC0C9786 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScopedQueryHelper.cpp */,
+				D84E562EF18243859DA5A751 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScreenCapture.cpp */,
+				55C302FE1FAB4D30AF401CDE /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploader.cpp */,
+				B92DDA62B851489BB4B2131E /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploaderGL.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		4CC2821219704048AFD297A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		505878D7AB0647B4B47AA541 = {
+		58404A8EE2E946BE809F4389 /* DiligentCore */ = {
 			isa = PBXGroup;
 			children = (
-				9BC4D18E5856438097A1B7A8 /* DiligentCore */,
-				9F9D2B724B5B445DAB181B1A /* ALL_BUILD */,
-				A77A1596A90C4E8996B07AC6 /* Products */,
-				2EA85A34CAB242519FF138DC /* Frameworks */,
+				27E47BE86ABB49C7B8CF1B64 /* Graphics */,
 			);
+			name = DiligentCore;
 			sourceTree = "<group>";
 		};
-		5384764C3E384F25A2EE35AC /* src */ = {
-			isa = PBXGroup;
-			children = (
-				D14AF68792DE48C6BE306F74 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/BufferSuballocator.cpp */,
-				FAE0C82E097D48178FDD5091 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DurationQueryHelper.cpp */,
-				7AEE287DEFC94CA0B6EF8CD7 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicBuffer.cpp */,
-				C19B9D46985E4F389D0A0928 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicTextureAtlas.cpp */,
-				4E706337954D41E581066480 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/GraphicsUtilities.cpp */,
-				A72B2D6854214CA6A49BF7D2 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScopedQueryHelper.cpp */,
-				545B398D985E4C519B7B1770 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScreenCapture.cpp */,
-				B61F71E187BB48C9ADBC45C6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploader.cpp */,
-				DC9E20AAF7DD4DC2A393B14F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploaderGL.cpp */,
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
-		91A384CDECF048EDADF178DA /* CMake Rules */ = {
+		5A2160DFE5A9497D9FDF1CC0 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		9BC4D18E5856438097A1B7A8 /* DiligentCore */ = {
+		6B8908E38AC54EA1AD0A10CA /* Diligent-GraphicsTools */ = {
 			isa = PBXGroup;
 			children = (
-				9D09D77C62034C6C8AA75063 /* Graphics */,
+				3E3DFE8143AD41ADA0BB7084 /* src */,
+				86B4837B792443BC9327CC7E /* interface */,
+				D19B0C166F1D4D1BBA81CBE4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/CMakeLists.txt */,
 			);
-			name = DiligentCore;
+			name = "Diligent-GraphicsTools";
 			sourceTree = "<group>";
 		};
-		9D09D77C62034C6C8AA75063 /* Graphics */ = {
+		7F85795D78A14DB59F4FBDA9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FBE63D61A6EA43DC949CCAD6 /* Diligent-GraphicsTools */,
-			);
-			name = Graphics;
-			sourceTree = "<group>";
-		};
-		9F9D2B724B5B445DAB181B1A /* ALL_BUILD */ = {
-			isa = PBXGroup;
-			children = (
-				91A384CDECF048EDADF178DA /* CMake Rules */,
-				1118095645394599B780D1EF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/CMakeLists.txt */,
-			);
-			name = ALL_BUILD;
-			sourceTree = "<group>";
-		};
-		A77A1596A90C4E8996B07AC6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4CF6308372844B73874EC351 /* Diligent-GraphicsTools */,
+				24A4AE20D72C4DAC81275BF9 /* Diligent-GraphicsTools */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DD81CFEBB6B74B81A7B44E3B /* interface */ = {
+		81912D840A9446BBB02DED22 /* ALL_BUILD */ = {
 			isa = PBXGroup;
 			children = (
-				0B7B5D1FFB76497AA9A0622A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/BufferSuballocator.h */,
-				394F3F8F4EFB4C598690B5CD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/CommonlyUsedStates.h */,
-				632E082183BF41DC8BF2A4E6 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DurationQueryHelper.hpp */,
-				73F9BD223EBE4B19AC23C9C4 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicBuffer.hpp */,
-				A9367A98322D4B0F8DA51A41 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicTextureAtlas.h */,
-				CC01AE4D531D42F580C91627 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/GraphicsUtilities.h */,
-				DAF22DD1DFFB4CA5A840BE7F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/MapHelper.hpp */,
-				4EDCB15B74E34F51B9975E94 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScopedQueryHelper.hpp */,
-				5025FC5C4EBD48568349E6FA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScreenCapture.hpp */,
-				3C4C7EE41B6944E8941996AC /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ShaderMacroHelper.hpp */,
-				DE699D9F71474919B2987627 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/StreamingBuffer.hpp */,
-				3BBB209513AD4979AA485690 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploader.hpp */,
-				0F0B5F9B198E4A22A76FE81C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderBase.hpp */,
-				142A236B40914B39B2B51ABA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderGL.hpp */,
+				5A2160DFE5A9497D9FDF1CC0 /* CMake Rules */,
+				D71190CA839743D081CDDD31 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		86B4837B792443BC9327CC7E /* interface */ = {
+			isa = PBXGroup;
+			children = (
+				670595ABFD9646D78AEFE604 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/BufferSuballocator.h */,
+				47E8F43CE16342CE9A64B53C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/CommonlyUsedStates.h */,
+				DF06474C18B040CEA094AF4C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DurationQueryHelper.hpp */,
+				A682B76BFF744F98BD191F04 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicBuffer.hpp */,
+				719C7A6EA75D4305BD3B7C02 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/DynamicTextureAtlas.h */,
+				9E4FE40FB2394F20A207A05A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/GraphicsUtilities.h */,
+				BFB26CF00B5245ADBBD1A06A /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/MapHelper.hpp */,
+				336529DF76EB42ED8489D78C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScopedQueryHelper.hpp */,
+				3169121904A74BA38BF662F0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ScreenCapture.hpp */,
+				A9E995285CDD44BD8EC833EF /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/ShaderMacroHelper.hpp */,
+				90774F559C7C459D99BB3AEB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/StreamingBuffer.hpp */,
+				C073250B98144E46BFA108C1 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploader.hpp */,
+				E0E1F0DFE1614A40A0A71B72 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderBase.hpp */,
+				2D6323D74FEB4B859E2D3ACB /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface/TextureUploaderGL.hpp */,
 			);
 			name = interface;
 			sourceTree = "<group>";
 		};
-		FBE63D61A6EA43DC949CCAD6 /* Diligent-GraphicsTools */ = {
+		8B59D53C826046EFBE4CCA5F = {
 			isa = PBXGroup;
 			children = (
-				5384764C3E384F25A2EE35AC /* src */,
-				DD81CFEBB6B74B81A7B44E3B /* interface */,
-				C576C6203F344F26B46F6F27 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/CMakeLists.txt */,
+				58404A8EE2E946BE809F4389 /* DiligentCore */,
+				81912D840A9446BBB02DED22 /* ALL_BUILD */,
+				7F85795D78A14DB59F4FBDA9 /* Products */,
+				4CC2821219704048AFD297A1 /* Frameworks */,
 			);
-			name = "Diligent-GraphicsTools";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,19 +283,19 @@
 /* Begin PBXNativeTarget section */
 		06B180604CC94AE195BD4C17 /* Diligent-GraphicsTools */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A251C43FF4E40A092D2A4A2 /* Build configuration list for PBXNativeTarget "Diligent-GraphicsTools" */;
+			buildConfigurationList = DE0AEBDDE83E4354814501C2 /* Build configuration list for PBXNativeTarget "Diligent-GraphicsTools" */;
 			buildPhases = (
-				D43E732DFA204874999A1E86 /* Sources */,
-				5C3DA01413034EFBB7C10307 /* Frameworks */,
+				57E021E97BF44C00BA6E2876 /* Sources */,
+				DBCEA5C1648B47B78D343898 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0B99A43C866249749031A827 /* PBXTargetDependency */,
+				27D57B50F94B46A4803DC026 /* PBXTargetDependency */,
 			);
 			name = "Diligent-GraphicsTools";
 			productName = "Diligent-GraphicsTools";
-			productReference = 4CF6308372844B73874EC351 /* Diligent-GraphicsTools */;
+			productReference = 24A4AE20D72C4DAC81275BF9 /* Diligent-GraphicsTools */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -307,18 +307,18 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1240;
 			};
-			buildConfigurationList = 093987FCC5324643B24EFBE1 /* Build configuration list for PBXProject "Diligent-GraphicsTools" */;
+			buildConfigurationList = 29FF5D6C96AA4425918ACA01 /* Build configuration list for PBXProject "Diligent-GraphicsTools" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				DE0A4F6546D04FE3943DAB6F /* Debug */,
-				696EA29BD73D4B3FAFDD989A /* Release */,
-				CDA6BABA9A7B4EC4BA95D6FE /* MinSizeRel */,
-				5FE7690C20F04066A14AB802 /* RelWithDebInfo */,
+				2E9A0D7A5E8C45B9BD946B46 /* Debug */,
+				DAA14578FCA0461D847DF967 /* Release */,
+				E224BD342A8B420FA238E0B8 /* MinSizeRel */,
+				4E74B9E90C8A4CBD8CBBDF47 /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = 505878D7AB0647B4B47AA541;
+			mainGroup = 8B59D53C826046EFBE4CCA5F;
 			projectDirPath = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
 			projectRoot = "";
 			targets = (
@@ -476,49 +476,60 @@ fi
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D43E732DFA204874999A1E86 /* Sources */ = {
+		57E021E97BF44C00BA6E2876 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9707491EDF4143ED8B744DAD /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/BufferSuballocator.cpp */,
-				5AD27CCA41564EB79D14860B /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DurationQueryHelper.cpp */,
-				368430E944A94981A130AC54 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicBuffer.cpp */,
-				E17F12D8766541B09D65C681 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicTextureAtlas.cpp */,
-				B8DC59A200834CC99B90D3CA /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/GraphicsUtilities.cpp */,
-				1E15C7AB45AA4D6896F82104 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScopedQueryHelper.cpp */,
-				433999895D044F9BB9E5416C /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScreenCapture.cpp */,
-				ECB9C9BCC03B44D0ACA32F86 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploader.cpp */,
-				AADBFFDA6545456C81D8E507 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploaderGL.cpp */,
+				462AF8E25CEF444F8ACC0266 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/BufferSuballocator.cpp */,
+				EEEBCFCDFD2B42BB90605FD8 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DurationQueryHelper.cpp */,
+				4DEDB121810D4872B5972FF0 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicBuffer.cpp */,
+				8EFF2AE54BD74A90AB336E43 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/DynamicTextureAtlas.cpp */,
+				7F238DC33B264768A9752E99 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/GraphicsUtilities.cpp */,
+				A710DDDDF35F4E3BA5286D9F /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScopedQueryHelper.cpp */,
+				B76D94DCC9394B2F97B721B3 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/ScreenCapture.cpp */,
+				2EE0FCFA27034D71A96C0107 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploader.cpp */,
+				7AB37E5847D742EDBC7F1E34 /* /Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/src/TextureUploaderGL.cpp */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0B99A43C866249749031A827 /* PBXTargetDependency */ = {
+		27D57B50F94B46A4803DC026 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
-			targetProxy = EB608C84B8E84B11B6AFA97C /* PBXContainerItemProxy */;
+			targetProxy = 9080755DDD4C422B92C6A3C2 /* PBXContainerItemProxy */;
 		};
-		25562E44C8F549AEB798B4D1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 06B180604CC94AE195BD4C17 /* Diligent-GraphicsTools */;
-			targetProxy = 0D6167D6E0394921845BFD9E /* PBXContainerItemProxy */;
-		};
-		7B76B7D636A54FA3B6C4C6DD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
-			targetProxy = 3D5543C0F1304424AFE0AD9C /* PBXContainerItemProxy */;
-		};
-		D839551D57C24E0EA8F828A4 /* PBXTargetDependency */ = {
+		4C3A970B8B4F4FF3920BF92A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C170553A14944B729938E9E6 /* ALL_BUILD */;
-			targetProxy = AD7089EB0F4D4EA7B1EB9068 /* PBXContainerItemProxy */;
+			targetProxy = 8E52F25A072D4F288550D90E /* PBXContainerItemProxy */;
+		};
+		78F6DD89D3F9418A86F40122 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06B180604CC94AE195BD4C17 /* Diligent-GraphicsTools */;
+			targetProxy = 7B719DA982AC4627A881BE1A /* PBXContainerItemProxy */;
+		};
+		99166FAA8FFE419798C98DBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5FD1883C18C4AD982DE3EF9 /* ZERO_CHECK */;
+			targetProxy = 68C158C3271C4B07A830FC49 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		04CD90BADB1749DEA6732302 /* MinSizeRel */ = {
+		11FAC95E7AE240D299362165 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/build";
+			};
+			name = RelWithDebInfo;
+		};
+		14BB29934828443AA5DBFF9F /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -538,7 +549,118 @@ fi
 			};
 			name = MinSizeRel;
 		};
-		19F11913A08448B1A1284620 /* RelWithDebInfo */ = {
+		2D4546E6BC364FAEB28C1432 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		38A76B72C1334B6186E47E80 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		4B565CBC6C754CFC90509499 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		73AB324EC5E74D858AD4E67E /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		7B15EF7087E34A0B85AED6A2 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		81F052681A80457CA8943A6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/build";
+			};
+			name = Release;
+		};
+		8884439BE7A840D59B8EBFBA /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -549,7 +671,7 @@ fi
 				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/../GraphicsEngineD3DBase/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/../GraphicsEngineD3DBase/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","$(inherited)");
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
 				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
@@ -563,24 +685,59 @@ fi
 			};
 			name = RelWithDebInfo;
 		};
-		19F8F086D1C54ED0A4D80CBA /* Release */ = {
+		8F2EB81230FB405FB3949647 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/../GraphicsEngineD3DBase/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","$(inherited)");
 				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
-				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_LDFLAGS = ("");
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "Diligent-GraphicsTools";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		A7F2DBB95C6849C7B766C722 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B081684D741642F7BC668B05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
 				SECTORDER_FLAGS = "";
 				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
 				USE_HEADERMAP = NO;
@@ -588,18 +745,27 @@ fi
 			};
 			name = Release;
 		};
-		219602D8B49E4690930D9E8F /* Debug */ = {
+		C2818E1C4AA746C281E33D7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/build";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
 			};
 			name = Debug;
 		};
-		46FA292814F445F4B4BDC1D0 /* Debug */ = {
+		D4BBA071E9B741CD868E0016 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -619,7 +785,18 @@ fi
 			};
 			name = Debug;
 		};
-		4813261CD0FD4BF4BE55EE3F /* Release */ = {
+		D94087F5C9DC44D1B16B0C2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/build";
+			};
+			name = Debug;
+		};
+		E08F6D484204436AA51EBC7E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -639,27 +816,7 @@ fi
 			};
 			name = Release;
 		};
-		493D4FD299014AD0A1F2B4EF /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		5BABC2901F0B42EC9DF41577 /* Release */ = {
+		E5DC9EC33BCC489D99F61639 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -668,89 +825,9 @@ fi
 				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
 				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/build";
 			};
-			name = Release;
-		};
-		5CBDF8882B61417AA75E4B34 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
 			name = MinSizeRel;
 		};
-		6AA16640880A450F9B5EE44B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		73C4F253894247029990F61F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		A3CF085207F04AE086744F74 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		A4749F6D59CE4CEBAE258865 /* Debug */ = {
+		E6C20E39DF15449A881785E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -761,7 +838,7 @@ fi
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,_DEBUG,DEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'",DILIGENT_DEVELOPMENT,DILIGENT_DEBUG);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/../GraphicsEngineD3DBase/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/../GraphicsEngineD3DBase/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","$(inherited)");
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
 				OTHER_CPLUSPLUSFLAGS = "   -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter '-std=c++14' ";
@@ -775,38 +852,32 @@ fi
 			};
 			name = Debug;
 		};
-		B21E2BC2643C4C76A85C2A6A /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/build";
-			};
-			name = RelWithDebInfo;
-		};
-		B4D2B9375AEA4B82A51D20BF /* RelWithDebInfo */ = {
+		EC157CB40AF64AD39C2E3E9D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/../GraphicsEngineD3DBase/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","$(inherited)");
 				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
+				PRODUCT_NAME = "Diligent-GraphicsTools";
 				SECTORDER_FLAGS = "";
 				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = RelWithDebInfo;
+			name = Release;
 		};
-		C0AE394C2ACA4463BDC05566 /* MinSizeRel */ = {
+		F8F774554FAF412EBA318715 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -817,7 +888,7 @@ fi
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PLATFORM_MACOS,PLATFORM_APPLE,NDEBUG,"'__forceinline=inline'","'PLATFORM_MACOS=1'","'D3D11_SUPPORTED=0'","'D3D12_SUPPORTED=0'","'GL_SUPPORTED=1'","'GLES_SUPPORTED=0'","'VULKAN_SUPPORTED=0'","'METAL_SUPPORTED=0'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/Utils","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/../GraphicsEngineD3DBase/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","$(inherited)");
+				HEADER_SEARCH_PATHS = ("/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/WINAPI_KERNEL","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Primitives/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/../GraphicsEngineD3DBase/include","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Common/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Apple/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/Basic/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/MultiTouch/DiligentLog/Platforms/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsAccessories/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngine/interface","/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/app/src/main/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsEngineOpenGL/interface","$(inherited)");
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
 				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Werror -Wall -Wextra -Wuninitialized -Wconditional-uninitialized -Wextra-tokens -Wpointer-arith -Wloop-analysis -Wunused -Wno-overloaded-virtual -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unknown-pragmas -Wno-zero-as-null-pointer-constant -Wno-unused-parameter -Wno-unused-variable '-std=c++14' ";
@@ -831,131 +902,60 @@ fi
 			};
 			name = MinSizeRel;
 		};
-		C79979B9FF6045C49A8E36D2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		D6967CF67B594E47BC5A0F0C /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools/build";
-			};
-			name = MinSizeRel;
-		};
-		D9D277C974A84CF7B265B342 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		F3129E5DEC5843F0B925B5D2 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/smallville7123/StudioProjects/Graphical-Tool-Kit/MacOS/IMPORTED_CMAKE_PROJECTS/cpp/DiligentEngine/DiligentCore/Graphics/GraphicsTools";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		081732FDF2DA4E4C92895051 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		1792215B302A4EDC9C3BE463 /* Build configuration list for PBXAggregateTarget "install" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				46FA292814F445F4B4BDC1D0 /* Debug */,
-				6AA16640880A450F9B5EE44B /* Release */,
-				5CBDF8882B61417AA75E4B34 /* MinSizeRel */,
-				B4D2B9375AEA4B82A51D20BF /* RelWithDebInfo */,
+				C2818E1C4AA746C281E33D7F /* Debug */,
+				2D4546E6BC364FAEB28C1432 /* Release */,
+				8F2EB81230FB405FB3949647 /* MinSizeRel */,
+				A7F2DBB95C6849C7B766C722 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		093987FCC5324643B24EFBE1 /* Build configuration list for PBXProject "Diligent-GraphicsTools" */ = {
+		29FF5D6C96AA4425918ACA01 /* Build configuration list for PBXProject "Diligent-GraphicsTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				219602D8B49E4690930D9E8F /* Debug */,
-				5BABC2901F0B42EC9DF41577 /* Release */,
-				D6967CF67B594E47BC5A0F0C /* MinSizeRel */,
-				B21E2BC2643C4C76A85C2A6A /* RelWithDebInfo */,
+				D94087F5C9DC44D1B16B0C2F /* Debug */,
+				81F052681A80457CA8943A6C /* Release */,
+				E5DC9EC33BCC489D99F61639 /* MinSizeRel */,
+				11FAC95E7AE240D299362165 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		1E629DC8D17A4589A9C3A861 /* Build configuration list for PBXAggregateTarget "install" */ = {
+		982FB1692D564E7BB696B213 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A3CF085207F04AE086744F74 /* Debug */,
-				73C4F253894247029990F61F /* Release */,
-				493D4FD299014AD0A1F2B4EF /* MinSizeRel */,
-				F3129E5DEC5843F0B925B5D2 /* RelWithDebInfo */,
+				D4BBA071E9B741CD868E0016 /* Debug */,
+				B081684D741642F7BC668B05 /* Release */,
+				38A76B72C1334B6186E47E80 /* MinSizeRel */,
+				7B15EF7087E34A0B85AED6A2 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		2A251C43FF4E40A092D2A4A2 /* Build configuration list for PBXNativeTarget "Diligent-GraphicsTools" */ = {
+		C74A8553B8F741EAA994CA05 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A4749F6D59CE4CEBAE258865 /* Debug */,
-				19F8F086D1C54ED0A4D80CBA /* Release */,
-				C0AE394C2ACA4463BDC05566 /* MinSizeRel */,
-				19F11913A08448B1A1284620 /* RelWithDebInfo */,
+				4B565CBC6C754CFC90509499 /* Debug */,
+				E08F6D484204436AA51EBC7E /* Release */,
+				14BB29934828443AA5DBFF9F /* MinSizeRel */,
+				73AB324EC5E74D858AD4E67E /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		FCF6A832114A475798D6C4C3 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		DE0AEBDDE83E4354814501C2 /* Build configuration list for PBXNativeTarget "Diligent-GraphicsTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C79979B9FF6045C49A8E36D2 /* Debug */,
-				4813261CD0FD4BF4BE55EE3F /* Release */,
-				04CD90BADB1749DEA6732302 /* MinSizeRel */,
-				D9D277C974A84CF7B265B342 /* RelWithDebInfo */,
+				E6C20E39DF15449A881785E8 /* Debug */,
+				EC157CB40AF64AD39C2E3E9D /* Release */,
+				F8F774554FAF412EBA318715 /* MinSizeRel */,
+				8884439BE7A840D59B8EBFBA /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

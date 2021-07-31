@@ -50,10 +50,10 @@
 
 - (instancetype) init;
 
-- (void) touchesBeganWithEvent:(NSSet *) touches;
-- (void) touchesMovedWithEvent:(NSSet *) touches;
-- (void) touchesEndedWithEvent:(NSSet *) touches;
-- (void) touchesCancelledWithEvent:(NSSet *) touches;
+- (void) touchesBeganWithTouch:(NSTouch *)touch AndPoint:(NSPoint)point;
+- (void) touchesMovedWithTouch:(NSTouch *)touch AndPoint:(NSPoint)point;
+- (void) touchesEndedWithTouch:(NSTouch *)touch AndPoint:(NSPoint)point;
+- (void) touchesCancelledWithTouch:(NSTouch *)touch AndPoint:(NSPoint)point;
 
 - (void) resizeWithWidth:(GLuint)width AndHeight:(GLuint)height;
 - (void) render;

@@ -15,61 +15,40 @@
     return self;
 }
 
-- (void)touchesBeganWithEvent:(NSSet *) touches {
-    NSArray *array = [touches allObjects];
-    NSUInteger numberOfTouches = [array count];
-    for (unsigned long i = 0; i < numberOfTouches; i++) {
-        NSTouch *t = [array objectAtIndex:i];
-        NSLog(@"touch x: %g, y: %g", t.normalizedPosition.x, t.normalizedPosition.y);
-        multiTouch.addTouch(
-            ((NSInteger) t.identity),
-            t.normalizedPosition.x,
-            t.normalizedPosition.y
-        );
-        appInstance.onTouchEvent(multiTouch);
-    }
+- (void)touchesBeganWithTouch:(NSTouch *)touch AndPoint:(NSPoint)point {
+    multiTouch.addTouch(
+        ((NSInteger) touch.identity),
+        point.x,
+        point.y
+    );
+    appInstance.onTouchEvent(multiTouch);
 }
 
-- (void)touchesMovedWithEvent:(NSSet *) touches {
-    NSArray *array = [touches allObjects];
-    NSUInteger numberOfTouches = [array count];
-    for (unsigned long i = 0; i < numberOfTouches; i++) {
-        NSTouch *t = [array objectAtIndex:i];
-        multiTouch.moveTouch(
-            ((NSInteger) t.identity),
-            t.normalizedPosition.x,
-            t.normalizedPosition.y
-        );
-        appInstance.onTouchEvent(multiTouch);
-    }
+- (void)touchesMovedWithTouch:(NSTouch *)touch AndPoint:(NSPoint)point {
+    multiTouch.moveTouch(
+        ((NSInteger) touch.identity),
+        point.x,
+        point.y
+    );
+    appInstance.onTouchEvent(multiTouch);
 }
 
-- (void)touchesEndedWithEvent:(NSSet *) touches {
-    NSArray *array = [touches allObjects];
-    NSUInteger numberOfTouches = [array count];
-    for (unsigned long i = 0; i < numberOfTouches; i++) {
-        NSTouch *t = [array objectAtIndex:i];
-        multiTouch.removeTouch(
-            ((NSInteger) t.identity),
-            t.normalizedPosition.x,
-            t.normalizedPosition.y
-        );
-        appInstance.onTouchEvent(multiTouch);
-    }
+- (void)touchesEndedWithTouch:(NSTouch *)touch AndPoint:(NSPoint)point {
+    multiTouch.removeTouch(
+        ((NSInteger) touch.identity),
+        point.x,
+        point.y
+    );
+    appInstance.onTouchEvent(multiTouch);
 }
 
-- (void)touchesCancelledWithEvent:(NSSet *) touches {
-    NSArray *array = [touches allObjects];
-    NSUInteger numberOfTouches = [array count];
-    for (unsigned long i = 0; i < numberOfTouches; i++) {
-        NSTouch *t = [array objectAtIndex:i];
-        multiTouch.cancelTouch(
-            ((NSInteger) t.identity),
-            t.normalizedPosition.x,
-            t.normalizedPosition.y
-        );
-        appInstance.onTouchEvent(multiTouch);
-    }
+- (void)touchesCancelledWithTouch:(NSTouch *)touch AndPoint:(NSPoint)point {
+    multiTouch.cancelTouch(
+        ((NSInteger) touch.identity),
+        point.x,
+        point.y
+    );
+    appInstance.onTouchEvent(multiTouch);
 }
 
 - (void) resizeWithWidth:(GLuint)width AndHeight:(GLuint)height
