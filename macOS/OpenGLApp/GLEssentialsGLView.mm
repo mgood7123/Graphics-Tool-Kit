@@ -126,7 +126,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
     NSUInteger numberOfTouches = [array count];
     for (unsigned long i = 0; i < numberOfTouches; i++) {
         NSTouch *touch = [array objectAtIndex:i];
-        [_renderer touchesBeganWithTouch:touch.identity AndPoint:[self getMouse]];
+        [_renderer touchesBeganWithTouch:touch AndPoint:[self getMouse]];
     }
 }
 
