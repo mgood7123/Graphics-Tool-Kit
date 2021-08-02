@@ -3,8 +3,8 @@
 //
 
 #include "AppInstance.h"
-#include <RectangleView.h>
-#include <Cube.h>
+#include <Objects/Views/RectangleView.h>
+#include <Objects/Cube.h>
 
 AppInstance::AppInstance ()
 {

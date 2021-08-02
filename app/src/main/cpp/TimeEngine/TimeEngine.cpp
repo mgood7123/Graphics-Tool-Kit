@@ -5,7 +5,7 @@
 #include "TimeEngine.h"
 #include <chrono>
 #include <iomanip>
-#include <DiligentLog/Primitives/interface/Errors.hpp>
+#include <MultiTouch/DiligentLog/Primitives/interface/Errors.hpp>
 
 TimeEngine::TimeEngine() {
     running.store(false);

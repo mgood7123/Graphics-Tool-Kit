@@ -5,9 +5,9 @@
 #ifndef GRAPHICAL_TOOL_KIT_APPINSTANCE_H
 #define GRAPHICAL_TOOL_KIT_APPINSTANCE_H
 
-#include <AppInstancePlatformBase.h>
-#include <ObjectBase.h>
-#include <SDK/include/AnyOpt.h>
+#include <PlatformBase/AppInstancePlatformBase.h>
+#include <Objects/ObjectBase.h>
+#include <WINAPI_KERNEL/SDK/include/AnyOpt.h>
 
 
 class AppInstance : public AppInstancePlatformBase, public DiligentAppBase

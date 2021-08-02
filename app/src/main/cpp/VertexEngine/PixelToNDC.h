@@ -5,7 +5,7 @@
 #ifndef GRAPHICAL_TOOL_KIT_PIXEL_TO_NDC_H
 #define GRAPHICAL_TOOL_KIT_PIXEL_TO_NDC_H
 
-#include <DiligentLog/Primitives/interface/Errors.hpp>
+#include <MultiTouch/DiligentLog/Primitives/interface/Errors.hpp>
 #include <array>
 
 class PixelToNDC {

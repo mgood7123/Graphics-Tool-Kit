@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 3.10.2)
 
 project(Kit)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -58,49 +58,44 @@ if(PLATFORM_MACOS OR PLATFORM_IOS OR PLATFORM_TVOS)
     add_definitions(-DPLATFORM_APPLE)
 endif()
 
-# TODO: seperate the logging library from Diligent-Common into a submodule DiligentLog
-# TODO: which DiligentCore will then link against
-#
-# add_subdirectory(DiligentEngine/DiligentLog)
-
 add_subdirectory(MultiTouch)
-include_directories(MultiTouch/DiligentLog/Primitives/interface)
+
 add_subdirectory(DiligentEngine/DiligentCore)
 #add_subdirectory(DiligentEngine/DiligentFX)
 add_subdirectory(DiligentEngine/DiligentTools)
 
 include_directories(
+        $(CMAKE_CURRENT_SOURCE_DIR)
         DiligentEngine
-        MultiTouch
-        MultiTouch/Utils
 )
 
 add_subdirectory(TimeEngine)
-include_directories(TimeEngine)
 
 add_subdirectory(DiligentHelpers)
-include_directories(DiligentHelpers)
 
 if (PLATFORM_WIN32 OR PLATFORM_LINUX)
     add_subdirectory(SDL2-2.0.14)
-    include_directories(SDL2-2.0.14/include)
+    set(SDL2_INCLUDE SDL2-2.0.14/include)
 endif()
 
 add_subdirectory(PlatformBase)
-include_directories(PlatformBase)
 
 add_subdirectory(WINAPI_KERNEL)
 
 add_subdirectory(VertexEngine)
-include_directories(VertexEngine)
 
 add_subdirectory(Objects)
-include_directories(Objects)
-include_directories(Objects/Views)
 
 add_library(
         AppInstance SHARED
         AppInstance.cpp
+)
+
+target_include_directories(
+        AppInstance PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        DiligentEngine
+        ${SDL2_INCLUDE}
 )
 
 target_link_libraries(

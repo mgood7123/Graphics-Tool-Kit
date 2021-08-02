@@ -5,9 +5,9 @@
 #ifndef GRAPHICAL_TOOL_KIT_OBJECTBASE_H
 #define GRAPHICAL_TOOL_KIT_OBJECTBASE_H
 
-#include <DiligentAppBase.h>
-#include <VertexEngine.h>
-#include <MultiTouch.h>
+#include <DiligentHelpers/DiligentAppBase.h>
+#include <VertexEngine/VertexEngine.h>
+#include <MultiTouch/MultiTouch.h>
 
 class ObjectBase
 {

@@ -10,11 +10,11 @@
 #include <DiligentCore/Graphics/GraphicsEngine/interface/RenderDevice.h>
 #include <DiligentCore/Graphics/GraphicsEngine/interface/SwapChain.h>
 #include <DiligentCore/Graphics/GraphicsTools/interface/ScreenCapture.hpp>
-#include <DiligentLog/Primitives/interface/Errors.hpp>
+#include <MultiTouch/DiligentLog/Primitives/interface/Errors.hpp>
 #include <DiligentTools/TextureLoader/interface/Image.h>
 #include <DiligentTools/Imgui/interface/ImGuiImplDiligent.hpp>
 #include <DiligentCore/Common/interface/Timer.hpp>
-#include <TimeEngine.h>
+#include <TimeEngine/TimeEngine.h>
 
 class DiligentAppBase
 {

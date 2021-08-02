@@ -6,8 +6,8 @@
 #define GRAPHICAL_TOOL_KIT_VERTEXENGINE_H
 
 #include "PixelToNDC.h"
-#include <SDK/include/Windows/Kernel/WindowsAPIKernel.h>
 #include <vector>
+#include <WINAPI_KERNEL/SDK/include/Windows/Kernel/WindowsAPIKernel.h>
 #include <DiligentTools/TextureLoader/interface/TextureLoader.h>
 #include <DiligentCore/Common/interface/RefCntAutoPtr.hpp>
 #include <DiligentCore/Graphics/GraphicsEngine/interface/DeviceContext.h>

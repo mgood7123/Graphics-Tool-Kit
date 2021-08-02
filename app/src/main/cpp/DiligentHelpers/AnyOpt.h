@@ -8,7 +8,7 @@
 #include <memory>
 #include <string.h>
 #include <assert.h>
-#include <DiligentLog/Primitives/interface/Errors.hpp>
+#include <MultiTouch/DiligentLog/Primitives/interface/Errors.hpp>
 
 // if ANYOPT_RUNTIME_ASSERTION is defined
 // then AnyOpt uses runtime assertions instead of compile-time assertions
