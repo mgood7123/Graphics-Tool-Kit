@@ -110,6 +110,8 @@ target_link_libraries(
         WINAPI::KERNEL
 )
 
-add_library(native-lib SHARED native-lib.cpp)
+if (PLATFORM_ANDROID)
+    add_library(native-lib SHARED native-lib.cpp)
 
-target_link_libraries(native-lib AppInstance)
+    target_link_libraries(native-lib AppInstance)
+endif()
