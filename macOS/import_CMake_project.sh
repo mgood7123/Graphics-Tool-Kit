@@ -7,8 +7,14 @@
 #
 
 showUsage() {
-        echo "usage: $0 [-h, --help] [[-l, --list] [directory]] [-c, --clean] cmake_project_directory [-c, --clean]"
+        echo "usage: $0 [-h, --help] [[-l, --list] [directory]] [-c, --clean] [-r, --remove] cmake_project_directory [-c, --clean] [-r, --remove]"
         echo " -h, --help                   display this help"
+        echo "                              "
+        echo " -r, --remove                 removes a generated project"
+        echo "                              "
+        echo "                              cannot be used with clean"
+        echo "                              cannot be used with list"
+        echo "                              "
         echo " -c, --clean                  cleans the generated project"
         echo "                              directory before importing"
         echo "                              "
@@ -17,12 +23,18 @@ showUsage() {
         echo "                              as XCode errors with"
         echo "                              could not delete '<FOLDER>' because it was not created by the build system."
         echo "                              "
+        echo "                              cannot be used with remove"
+        echo "                              cannot be used with list"
+        echo "                              "
         echo " -l, --list    [directory]    displays a list of found"
         echo "                              directories which contain"
         echo "                              a CMakeLists.txt file"
         echo "                              "
         echo "                              if [directory] is given"
         echo "                              then [directory] will be searched"
+        echo "                              "
+        echo "                              cannot be used with clean"
+        echo "                              cannot be used with remove"
 }
 
 if [[ $# == 0 ]]
@@ -49,7 +61,7 @@ if [[ "$1" == "-l" || "$1" == "--list" ]]
         exit
 fi
 
-if [[ "$1" == "-c" || "$1" == "--clean" ]]
+if [[ "$1" == "-c" || "$1" == "--clean" || "$1" == "-r" || "$1" == "--remove" ]]
     then
         TARGET="$2"
     else
@@ -74,7 +86,7 @@ fi
 
 FILE="$(basename "$TARGET")"
 
-if [[ "$1" == "-c" || "$1" == "--clean" || "$2" == "-c" || "$2" == "--clean" ]]
+if [[ "$1" == "-c" || "$1" == "--clean" || "$2" == "-c" || "$2" == "--clean" || "$1" == "-r" || "$1" == "--remove" || "$2" == "-r" || "$2" == "--remove" ]]
     then
         if [[ -e "IMPORTED_CMAKE_PROJECTS/$FILE" ]]
             then
@@ -85,6 +97,10 @@ if [[ "$1" == "-c" || "$1" == "--clean" || "$2" == "-c" || "$2" == "--clean" ]]
             then
                 echo "removing symlink 'SYMLINK_CMAKE_PROJECT_${FILE}' ..."
                 rm "SYMLINK_CMAKE_PROJECT_${FILE}"
+        fi
+        if [[ "$1" == "-r" || "$1" == "--remove" || "$2" == "-r" || "$2" == "--remove"  ]]
+            then
+                exit
         fi
 fi
 
@@ -108,4 +124,5 @@ echo "SYMLINK_CMAKE_PROJECTS/${FILE}"
 echo
 echo "Right-click on your project inside XCode"
 echo "then click 'Add Files to' and navigate to the following directory and click 'Add'"
+echo
 find "IMPORTED_CMAKE_PROJECTS/$FILE" -name \*.xcodeproj -depth 1
