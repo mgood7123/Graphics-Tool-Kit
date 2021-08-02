@@ -93,11 +93,6 @@ if [[ "$1" == "-c" || "$1" == "--clean" || "$2" == "-c" || "$2" == "--clean" || 
                 echo "removing project in 'IMPORTED_CMAKE_PROJECTS/$FILE' ..."
                 rm -rf "IMPORTED_CMAKE_PROJECTS/$FILE"
         fi
-        if [[ -L "SYMLINK_CMAKE_PROJECT_${FILE}" ]]
-            then
-                echo "removing symlink 'SYMLINK_CMAKE_PROJECT_${FILE}' ..."
-                rm "SYMLINK_CMAKE_PROJECT_${FILE}"
-        fi
         if [[ "$1" == "-r" || "$1" == "--remove" || "$2" == "-r" || "$2" == "--remove"  ]]
             then
                 exit
@@ -105,24 +100,25 @@ if [[ "$1" == "-c" || "$1" == "--clean" || "$2" == "-c" || "$2" == "--clean" || 
 fi
 
 echo "generating project in 'IMPORTED_CMAKE_PROJECTS/$FILE' ..."
-if [[ ! -L "SYMLINK_CMAKE_PROJECT_${FILE}" ]]
-    then
-        ln -s "$TARGET" "SYMLINK_CMAKE_PROJECT_${FILE}"
-fi
 cmake "$TARGET" -G Xcode -B "IMPORTED_CMAKE_PROJECTS/$FILE"
-echo
-echo "You can access the source files via the following directory:"
-echo
-echo "SYMLINK_CMAKE_PROJECTS/${FILE}"
-echo
-echo "You can import the project and source files in XCode by:"
-echo
-echo "Right-click on your project inside XCode"
-echo "then click 'Add Files to' and navigate to the following directory and click 'Add'"
-echo
-echo "SYMLINK_CMAKE_PROJECTS/${FILE}"
-echo
-echo "Right-click on your project inside XCode"
-echo "then click 'Add Files to' and navigate to the following directory and click 'Add'"
-echo
-find "IMPORTED_CMAKE_PROJECTS/$FILE" -name \*.xcodeproj -depth 1
+if [[ $? == 0 ]]
+    then
+        echo
+        echo "You can access the source files via the following directory:"
+        echo
+        echo "SYMLINK_CMAKE_PROJECTS/${FILE}"
+        echo
+        echo "You can import the source files in XCode by:"
+        echo
+        echo "Right-click on your project inside XCode"
+        echo "then click 'Add Files to' and navigate to the following directory and click 'Add'"
+        echo
+        echo "SYMLINK_CMAKE_PROJECTS/${FILE}"
+        echo
+        echo "You can import the project in XCode by:"
+        echo
+        echo "Right-click on your project inside XCode"
+        echo "then click 'Add Files to' and navigate to the following directory and click 'Add'"
+        echo
+        find "IMPORTED_CMAKE_PROJECTS/$FILE" -name \*.xcodeproj -depth 1
+fi
