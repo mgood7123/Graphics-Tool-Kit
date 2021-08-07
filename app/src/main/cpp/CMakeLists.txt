@@ -65,11 +65,15 @@ add_subdirectory(DiligentEngine/DiligentCore)
 add_subdirectory(DiligentEngine/DiligentTools)
 
 include_directories(
-        $(CMAKE_CURRENT_SOURCE_DIR)
+        ${CMAKE_CURRENT_SOURCE_DIR}
         DiligentEngine
 )
 
 add_subdirectory(TimeEngine)
+
+add_subdirectory(DiligentAnyOpt)
+
+add_subdirectory(WINAPI_KERNEL)
 
 add_subdirectory(DiligentHelpers)
 
@@ -79,8 +83,6 @@ if (PLATFORM_WIN32 OR PLATFORM_LINUX)
 endif()
 
 add_subdirectory(PlatformBase)
-
-add_subdirectory(WINAPI_KERNEL)
 
 add_subdirectory(VertexEngine)
 
