@@ -8,6 +8,8 @@
 
 #import "OpenGLRenderer.h"
 
+#include <Objects/Objects.h>
+
 @implementation OpenGLRenderer
 
 - (instancetype) init {

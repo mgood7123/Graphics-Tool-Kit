@@ -6,7 +6,7 @@
 #define GRAPHICAL_TOOL_KIT_APPINSTANCE_H
 
 #include <PlatformBase/AppInstancePlatformBase.h>
-#include <Objects/ObjectBase.h>
+#include <Objects/Objects.h>
 #include <WINAPI_KERNEL/SDK/include/AnyOpt.h>
 
 
@@ -16,11 +16,7 @@ class AppInstance : public AppInstancePlatformBase, public DiligentAppBase
     TimeEngine timeEngine;
     
     std::atomic_bool destroyed;
-
-public:
-
-    AppInstance ();
-    ~AppInstance ();
+    std::atomic_bool createCalled;
 
     template <typename Object>
     AnyOpt createObject(DiligentAppBase * diligentAppBase) {
@@ -28,6 +24,24 @@ public:
         obj->diligentAppBase = diligentAppBase;
         return AnyOpt(obj, true);
     }
+
+public:
+
+    AppInstance ();
+    ~AppInstance ();
+    
+    void callCreate();
+
+    void callDestroy();
+
+    template <typename T>
+    void loadObject() {
+        callDestroy();
+        objectBase = createObject<T>(this);
+        callCreate();
+    }
+
+    void unloadObject();
 
 #if PLATFORM_WIN32 || PLATFORM_LINUX || PLATFORM_MACOS
 
@@ -40,14 +54,6 @@ public:
 #else
     #error "Unknown platform"
 #endif
-
-    struct MousePos {
-        float x;
-        float y;
-    };
-
-    MousePos previous;
-    MousePos current;
 
     void surfaceChanged(int w, int h);
     void onDraw();

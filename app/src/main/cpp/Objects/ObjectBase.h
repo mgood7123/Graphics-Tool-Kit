@@ -14,10 +14,16 @@ class ObjectBase
 public:
     DiligentAppBase * diligentAppBase = nullptr;
 
+    virtual void createPipeline(PipelineManager & pipelineManager);
+    virtual void switchToPipeline(PipelineManager & pipelineManager);
+    virtual void bindShaderResources(PipelineManager & pipelineManager);
+    virtual void destroyPipeline(PipelineManager & pipelineManager);
     virtual void create();
-    virtual void draw();
+    virtual void resize(PipelineManager & pipelineManager);
+    virtual void draw(PipelineManager & pipelineManager);
     virtual bool onTouchEvent(MultiTouch &touch);
     virtual void destroy();
+    virtual bool hasPhysics();
     virtual void physics(const TimeEngine & timeEngine);
     // delete called on non-final that has virtual functions but non-virtual destructor
     virtual ~ObjectBase() = default;

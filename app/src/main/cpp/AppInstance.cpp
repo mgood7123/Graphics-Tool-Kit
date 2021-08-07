@@ -5,20 +5,21 @@
 #include "AppInstance.h"
 #include <Objects/Views/RectangleView.h>
 #include <Objects/Cube.h>
+#include <Objects/Triangle.h>
 
 AppInstance::AppInstance ()
 {
-    objectBase.disableDebug();
-    objectBase = createObject<RectangleView>(this);
+    createCalled.store(false);
+    destroyed.store(true);
+    
+//     800 microseconds
+    timeEngine.physicsTimeStep = 0.000800;
 
-    // 10000000 fps, delta will be incredibly small for each step
-    timeEngine.physicsTimeStep = 0.0000001;
-
-    // 1000000 fps
-    timeEngine.physicsTimeStep = 0.000001;
-
+//     8 milliseconds
+//    timeEngine.physicsTimeStep = 0.008;
+    
     // 60.000024 fps, a bit choppy
-    timeEngine.physicsTimeStep = 0.01666666;
+//    timeEngine.physicsTimeStep = 0.01666666;
 
     // 120.000048 fps, smooth
 //    timeEngine.physicsTimeStep = 0.01666666/2;
@@ -26,11 +27,15 @@ AppInstance::AppInstance ()
 //    timeEngine.physicsTimeStep = 0.01666666/4;
 //    timeEngine.physicsTimeStep = 0.01666666/8;
 //    timeEngine.physicsTimeStep = 0.01666666/16;
-
+    
     timeEngine.physicsCallback = [&](const TimeEngine & timeEngine_) {
-        auto obj = objectBase.get<ObjectBase*>();
-        obj->physics(timeEngine_);
+        ObjectBase * obj = objectBase.get<ObjectBase*>();
+        if (obj != nullptr) {
+            obj->physics(timeEngine_);
+        }
     };
+
+    loadObject<Cube>();
 }
 
 AppInstance::~AppInstance ()
@@ -38,13 +43,46 @@ AppInstance::~AppInstance ()
     destroyResources();
 }
 
+void AppInstance::callCreate() {
+    if (!destroyed.load() && !createCalled.load()) {
+        ObjectBase * obj = objectBase.get<ObjectBase*>();
+        if (obj != nullptr) {
+            createRT_OffScreen(pipelineManager);
+            obj->createPipeline(pipelineManager);
+            obj->create();
+            if (obj->hasPhysics()) {
+                timeEngine.startPhysicsThread();
+            }
+            createCalled.store(true);
+        }
+    }
+}
+
+void AppInstance::callDestroy() {
+    if (createCalled.load()) {
+        ObjectBase *obj = objectBase.get<ObjectBase *>();
+        if (obj != nullptr) {
+            if (obj->hasPhysics()) {
+                timeEngine.stopPhysicsThread();
+            }
+            obj->destroy();
+            obj->destroyPipeline(pipelineManager);
+            destroyRT_OffScreen(pipelineManager);
+            createCalled.store(false);
+        }
+    }
+}
+
+void AppInstance::unloadObject() {
+    callDestroy();
+    objectBase = AnyNullOpt;
+}
+
 void AppInstance::surfaceChanged (int w, int h)
 {
-    bool create = false;
     if (!m_pSwapChain)
     {
         attachToContext(w, h);
-        create = true;
         destroyed.store(false);
     }
 
@@ -52,11 +90,11 @@ void AppInstance::surfaceChanged (int w, int h)
     // to be unbound from the device context
     m_pImmediateContext->SetRenderTargets(0, nullptr, nullptr, Diligent::RESOURCE_STATE_TRANSITION_MODE_NONE);
     m_pSwapChain->Resize(w, h);
-
-    if (create)
-    {
-        objectBase.get<ObjectBase*>()->create();
-//        timeEngine.startPhysicsThread();
+    callCreate();
+    resizeRT_OffScreen(pipelineManager);
+    ObjectBase * obj = objectBase.get<ObjectBase*>();
+    if (obj != nullptr) {
+        obj->resize(pipelineManager);
     }
 }
 
@@ -65,57 +103,18 @@ void AppInstance::onDraw ()
     if (destroyed.load()) return;
     timeEngine.computeDelta();
     auto obj = objectBase.get<ObjectBase*>();
-    obj->draw();
+    if (obj != nullptr) {
+        obj->switchToPipeline(pipelineManager);
+        obj->bindShaderResources(pipelineManager);
+        obj->draw(pipelineManager);
+    }
     swapBuffers();
 }
 
 bool AppInstance::onTouchEvent(MultiTouch & touchEvent) {
     if (destroyed.load()) return false;
-    return objectBase.get<ObjectBase*>()->onTouchEvent(touchEvent);
-//    int pointerIndex = motionEvent.getActionIndex();
-//    int action = motionEvent.getAction(pointerIndex);
-//    bool r;
-//    switch (action) {
-//        case MotionEventSerializer::MOTION_EVENT_ACTION_DOWN:
-//        case MotionEventSerializer::MOTION_EVENT_ACTION_UP: {
-//            /* On a touch screen move events aren't reported when the
-//               finger is moving above (of course), so remember the position
-//               always */
-//            previous = {motionEvent.getX(0), motionEvent.getY(0)};
-//            current = previous;
-//            // MouseEvent e(motionEvent, x, y, motionEvent.getButtonState());
-//            if (action == MotionEventSerializer::MOTION_EVENT_ACTION_DOWN) {
-//                // mousePressEvent(e);
-//            } else {
-//                // mouseReleaseEvent(e);
-//                // reset the relative position
-//                // if the relative position is not reset, then
-//                // the relative position of mouse press will be
-//                // relative to the last location of mouse release
-//                // which differs from desktop behaviour
-//                previous = {-1,-1};
-//            }
-//            r = true;
-//            break;
-//        }
-//
-//        case MotionEventSerializer::MOTION_EVENT_ACTION_MOVE: {
-//            current = {motionEvent.getX(0), motionEvent.getY(0)};
-//            // MouseMoveEvent e{motionEvent, x, y, motionEvent.getButtonState(),
-//            //                  _previousMouseMovePosition == Vector2i{-1} ? Vector2i{} :
-//            //                  position - _previousMouseMovePosition};
-//            previous = current;
-//            // mouseMoveEvent(e);
-//            r = true;
-//            break;
-//        }
-//        default:
-//            r = false;
-//            break;
-//    }
-
-    /** @todo Implement also other input events */
-//    return r;
+    ObjectBase * obj = objectBase.get<ObjectBase*>();
+    return obj != nullptr && obj->onTouchEvent(touchEvent);
 }
 
 void AppInstance::swapBuffers ()
@@ -127,13 +126,17 @@ void AppInstance::destroyResources ()
 {
     if (destroyed.load()) return;
     destroyed.store(true);
-//    timeEngine.stopPhysicsThread();
-    objectBase.get<ObjectBase*>()->destroy();
+
+    // if we unload here then there is no way to restore the loaded object
+    // unless we manually reload it with the correct type
+    // the object is automatically unloaded when this AppInstance object is destroyed
+
+    callDestroy();
+
     m_pImmediateContext->Flush();
     m_pImmediateContext.Release();
     m_pSwapChain.Release();
     m_pDevice.Release();
-    m_pPSO.Release();
 }
 
 #if PLATFORM_WIN32 || PLATFORM_LINUX || PLATFORM_MACOS
@@ -149,6 +152,7 @@ void AppInstance::onEglTearDown ()
     destroyResources();
     AppInstancePlatformBase::onEglTearDown();
 }
+
 #elif PLATFORM_IOS
 #elif PLATFORM_TVOS
 #else

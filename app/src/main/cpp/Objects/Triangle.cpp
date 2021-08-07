@@ -43,33 +43,15 @@ void main(in  PSInput  PSIn,
 }
 )";
 
-void Triangle::create() {
-    
-    // create a pipeline
-    // Pipeline state object encompasses configuration of all GPU stages
-    
-    Diligent::GraphicsPipelineStateCreateInfo PSOCreateInfo;
-    
-    // Pipeline state name is used by the engine to report issues.
-    // It is always a good idea to give objects descriptive names.
-    PSOCreateInfo.PSODesc.Name = "Simple triangle PSO";
-    
-    // This is a graphics pipeline
-    PSOCreateInfo.PSODesc.PipelineType = Diligent::PIPELINE_TYPE_GRAPHICS;
-    
-    // This tutorial will render to a single render target
-    PSOCreateInfo.GraphicsPipeline.NumRenderTargets             = 1;
-    // Set render target format which is the format of the swap chain's color buffer
-    PSOCreateInfo.GraphicsPipeline.RTVFormats[0]                = diligentAppBase->m_pSwapChain->GetDesc().ColorBufferFormat;
-    // Use the depth buffer format from the swap chain
-    PSOCreateInfo.GraphicsPipeline.DSVFormat                    = diligentAppBase->m_pSwapChain->GetDesc().DepthBufferFormat;
-    // Primitive topology defines what kind of primitives will be rendered by this pipeline state
-    PSOCreateInfo.GraphicsPipeline.PrimitiveTopology            = Diligent::PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
-    // No back face culling for this tutorial
-    PSOCreateInfo.GraphicsPipeline.RasterizerDesc.CullMode      = Diligent::CULL_MODE_NONE;
-    // Disable depth testing
-    PSOCreateInfo.GraphicsPipeline.DepthStencilDesc.DepthEnable = false;
-    
+void Triangle::createPipeline(PipelineManager & pipelineManager) {
+    auto & pso = pipelineManager.createPipeline("Triangle");
+    pso.setType(Diligent::PIPELINE_TYPE_GRAPHICS);
+    pso.setNumberOfTargets(1);
+    pso.setFormat(diligentAppBase->m_pSwapChain);
+    pso.setPrimitiveTopology(Diligent::PRIMITIVE_TOPOLOGY_TRIANGLE_LIST);
+    pso.setCullMode(Diligent::CULL_MODE_NONE);
+    pso.setDepthTesting(false);
+
     // create shaders
     Diligent::ShaderCreateInfo ShaderCI;
     // Tell the system that the shader source code is in HLSL.
@@ -78,7 +60,7 @@ void Triangle::create() {
     // OpenGL backend requires emulated combined HLSL texture samplers (g_Texture + g_Texture_sampler combination)
     ShaderCI.UseCombinedTextureSamplers = true;
     // Create a vertex shader
-    Diligent::RefCntAutoPtr<Diligent::IShader> pVS;
+    Diligent::IShader * pVS = nullptr;
     {
         ShaderCI.Desc.ShaderType = Diligent::SHADER_TYPE_VERTEX;
         ShaderCI.EntryPoint      = "main";
@@ -86,9 +68,9 @@ void Triangle::create() {
         ShaderCI.Source          = triangle_VS;
         diligentAppBase->m_pDevice->CreateShader(ShaderCI, &pVS);
     }
-    
+
     // Create a pixel shader
-    Diligent::RefCntAutoPtr<Diligent::IShader> pPS;
+    Diligent::IShader * pPS = nullptr;
     {
         ShaderCI.Desc.ShaderType = Diligent::SHADER_TYPE_PIXEL;
         ShaderCI.EntryPoint      = "main";
@@ -96,32 +78,48 @@ void Triangle::create() {
         ShaderCI.Source          = triangle_PS;
         diligentAppBase->m_pDevice->CreateShader(ShaderCI, &pPS);
     }
-    
+
     // Finally, create the pipeline state
-    PSOCreateInfo.pVS = pVS;
-    PSOCreateInfo.pPS = pPS;
-    diligentAppBase->m_pDevice->CreateGraphicsPipelineState(PSOCreateInfo, &diligentAppBase->m_pPSO);
+    pso.setShaders(pVS, pPS);
+    pso.createPipelineState(diligentAppBase->m_pDevice);
 }
 
-void Triangle::draw ()
+void Triangle::switchToPipeline(PipelineManager & pipelineManager) {
+    pipelineManager.switchToPipeline(
+            PIPELINE_KEY, diligentAppBase->m_pImmediateContext
+    );
+}
+
+void Triangle::bindShaderResources(PipelineManager & pipelineManager) {
+    pipelineManager.commitShaderResourceBinding(
+            PIPELINE_KEY, diligentAppBase->m_pImmediateContext,
+            Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION
+    );
+}
+
+void Triangle::destroyPipeline(PipelineManager & pipelineManager) {
+    pipelineManager.destroyPipeline(PIPELINE_KEY);
+}
+
+void Triangle::draw (PipelineManager & pipelineManager)
 {
     // Clear the back buffer
     const float ClearColor[] = {0.350f, 0.350f, 0.350f, 1.0f};
     // Let the engine perform required state transitions
-    
-    auto* pRTV = diligentAppBase->m_pSwapChain->GetCurrentBackBufferRTV();
-    auto* pDSV = diligentAppBase->m_pSwapChain->GetDepthBufferDSV();
+
+    auto* pRTV = diligentAppBase->getColorRT_OffScreen();
+    auto* pDSV = diligentAppBase->getDepthRT_OffScreen();
     diligentAppBase->m_pImmediateContext->SetRenderTargets(1, &pRTV, pDSV, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
     diligentAppBase->m_pImmediateContext->ClearRenderTarget(pRTV, ClearColor, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
     diligentAppBase->m_pImmediateContext->ClearDepthStencil(pDSV, Diligent::CLEAR_DEPTH_FLAG, 1.f, 0, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
-    
-    // Set the pipeline state in the immediate context
-    diligentAppBase->m_pImmediateContext->SetPipelineState(diligentAppBase->m_pPSO);
-    
-    // Typically we should now call CommitShaderResources(), however shaders in this example don't
-    // use any resources.
-    
     Diligent::DrawAttribs drawAttrs;
     drawAttrs.NumVertices = 3; // We will render 3 vertices
     diligentAppBase->m_pImmediateContext->Draw(drawAttrs);
+
+    VertexEngine v(500, 500);
+    int w = 300;
+    int h = 200;
+    diligentAppBase->bindRT_Screen();
+    diligentAppBase->clearColorAndDepthRT_Screen(DiligentAppBase::black, 1);
+    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 0, 0, w, h);
 }

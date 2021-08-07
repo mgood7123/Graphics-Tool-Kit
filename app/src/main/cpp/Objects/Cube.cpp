@@ -5,13 +5,100 @@
 #include <DiligentCore/Graphics/GraphicsTools/interface/MapHelper.hpp>
 #include "Cube.h"
 
+void Cube::createPipeline(PipelineManager & pipelineManager) {
+    auto & pso = pipelineManager.createPipeline(PIPELINE_KEY);
+    pso.setType(Diligent::PIPELINE_TYPE_GRAPHICS);
+    pso.setNumberOfTargets(1);
+    pso.setFormat(diligentAppBase->m_pSwapChain);
+    pso.setPrimitiveTopology(Diligent::PRIMITIVE_TOPOLOGY_TRIANGLE_LIST);
+    pso.setCullMode(Diligent::CULL_MODE_BACK);
+    pso.setDepthTesting(true);
+
+    Diligent::ShaderCreateInfo ShaderCI;
+    // Tell the system that the shader source code is in HLSL.
+    // For OpenGL, the engine will convert this into GLSL under the hood.
+    ShaderCI.SourceLanguage = Diligent::SHADER_SOURCE_LANGUAGE_HLSL;
+
+    // OpenGL backend requires emulated combined HLSL texture samplers (g_Texture + g_Texture_sampler combination)
+    ShaderCI.UseCombinedTextureSamplers = true;
+
+    // Create a vertex shader
+    Diligent::IShader * pVS = nullptr;
+    {
+        ShaderCI.Desc.ShaderType = Diligent::SHADER_TYPE_VERTEX;
+        ShaderCI.EntryPoint      = "main";
+        ShaderCI.Desc.Name       = "Cube VS";
+        ShaderCI.Source          = cube_VS;
+        diligentAppBase->m_pDevice->CreateShader(ShaderCI, &pVS);
+        // Create dynamic uniform buffer that will store our transformation matrix
+        // Dynamic buffers can be frequently updated by the CPU
+        Diligent::BufferDesc CBDesc;
+        CBDesc.Name           = "VS constants CB";
+        CBDesc.uiSizeInBytes  = sizeof(Diligent::float4x4);
+        CBDesc.Usage          = Diligent::USAGE_DYNAMIC;
+        CBDesc.BindFlags      = Diligent::BIND_UNIFORM_BUFFER;
+        CBDesc.CPUAccessFlags = Diligent::CPU_ACCESS_WRITE;
+        diligentAppBase->m_pDevice->CreateBuffer(CBDesc, nullptr, &m_VSConstants);
+    }
+
+    // Create a pixel shader
+    Diligent::IShader * pPS = nullptr;
+    {
+        ShaderCI.Desc.ShaderType = Diligent::SHADER_TYPE_PIXEL;
+        ShaderCI.EntryPoint      = "main";
+        ShaderCI.Desc.Name       = "Cube PS";
+        ShaderCI.Source          = cube_PS;
+        diligentAppBase->m_pDevice->CreateShader(ShaderCI, &pPS);
+    }
+
+    // clang-format off
+    pso.setInputLayout(
+            {
+                    // Attribute 0 - vertex position
+                    Diligent::LayoutElement{0, 0, 3, Diligent::VT_FLOAT32, false},
+                    // Attribute 1 - vertex color
+                    Diligent::LayoutElement{1, 0, 4, Diligent::VT_FLOAT32, false}
+            }
+    );
+
+    pso.setShaders(pVS, pPS);
+    pso.setDefaultResourceLayoutVariableType(Diligent::SHADER_RESOURCE_VARIABLE_TYPE_STATIC);
+    pso.createPipelineState(diligentAppBase->m_pDevice);
+    pso.getStaticVariableFromVertexShader("Constants")->Set(m_VSConstants);
+    pso.createShaderBinding(true);
+}
+
+void Cube::switchToPipeline(PipelineManager &pipelineManager) {
+    pipelineManager.switchToPipeline(
+            PIPELINE_KEY, diligentAppBase->m_pImmediateContext
+    );
+}
+
+void Cube::bindShaderResources(PipelineManager &pipelineManager) {
+    pipelineManager.commitShaderResourceBinding(
+            PIPELINE_KEY, diligentAppBase->m_pImmediateContext,
+            Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION
+    );
+}
+
+void Cube::destroyPipeline(PipelineManager &pipelineManager) {
+    m_VSConstants.Release();
+    pipelineManager.destroyPipeline(PIPELINE_KEY);
+}
+
 void Cube::create ()
 {
+    using namespace Diligent;
     y = 0.0;
-    CreatePipelineState();
+    auto radY = degreesToRadians(y);
+    CubeModelTransform = float4x4::RotationY(radY) * float4x4::RotationX(-PI_F * 0.1f);
     CreateVertexBuffer();
     CreateIndexBuffer();
-    
+}
+
+bool Cube::hasPhysics()
+{
+    return true;
 }
 
 void Cube::physics (const TimeEngine & timeEngine)
@@ -23,19 +110,12 @@ void Cube::physics (const TimeEngine & timeEngine)
     CubeModelTransform = float4x4::RotationY(radY) * float4x4::RotationX(-PI_F * 0.1f);
 }
 
-void Cube::draw ()
-{
+void Cube::computeViewModel() {
     using namespace Diligent;
-
-    auto* pRTV = diligentAppBase->m_pSwapChain->GetCurrentBackBufferRTV();
-    auto* pDSV = diligentAppBase->m_pSwapChain->GetDepthBufferDSV();
-    diligentAppBase->m_pImmediateContext->SetRenderTargets(1, &pRTV, pDSV, RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
-
-
     // Camera is at (0, 0, -5) looking along the Z axis
     float4x4 View = float4x4::Translation(0.f, 0.0f, 5.0f);
-    
-    
+
+
     // Get pretransform matrix that rotates the scene according the surface orientation
     float4x4 SrfPreTransform;
     const auto& SCDesc = diligentAppBase->m_pSwapChain->GetDesc();
@@ -44,35 +124,35 @@ void Cube::draw ()
         case SURFACE_TRANSFORM_ROTATE_90:
             // The image content is rotated 90 degrees clockwise.
             SrfPreTransform = float4x4::RotationArbitrary(float3{0, 0, 1}, -PI_F / 2.f);
-        
+
         case SURFACE_TRANSFORM_ROTATE_180:
             // The image content is rotated 180 degrees clockwise.
             SrfPreTransform = float4x4::RotationArbitrary(float3{0, 0, 1}, -PI_F);
-        
+
         case SURFACE_TRANSFORM_ROTATE_270:
             // The image content is rotated 270 degrees clockwise.
             SrfPreTransform = float4x4::RotationArbitrary(float3{0, 0, 1}, -PI_F * 3.f / 2.f);
-        
+
         case SURFACE_TRANSFORM_OPTIMAL:
-            UNEXPECTED("SURFACE_TRANSFORM_OPTIMAL is only valid as parameter during swap chain initialization.");
+                    UNEXPECTED("SURFACE_TRANSFORM_OPTIMAL is only valid as parameter during swap chain initialization.");
             SrfPreTransform = float4x4::Identity();
-        
+
         case SURFACE_TRANSFORM_HORIZONTAL_MIRROR:
         case SURFACE_TRANSFORM_HORIZONTAL_MIRROR_ROTATE_90:
         case SURFACE_TRANSFORM_HORIZONTAL_MIRROR_ROTATE_180:
         case SURFACE_TRANSFORM_HORIZONTAL_MIRROR_ROTATE_270:
-            UNEXPECTED("Mirror transforms are not supported");
+                    UNEXPECTED("Mirror transforms are not supported");
             SrfPreTransform = float4x4::Identity();
-        
+
         default:
             SrfPreTransform = float4x4::Identity();
     }
-    
+
     // Get projection matrix adjusted to the current screen orientation
     float FOV = PI_F / 4.0f;
     float NearPlane = 0.1f;
     float FarPlane = 100.f;
-    
+
     float AspectRatio = static_cast<float>(SCDesc.Width) / static_cast<float>(SCDesc.Height);
     float XScale, YScale;
     if (SCDesc.PreTransform == SURFACE_TRANSFORM_ROTATE_90 ||
@@ -90,21 +170,35 @@ void Cube::draw ()
         YScale = 1.f / std::tan(FOV / 2.f);
         XScale = YScale / AspectRatio;
     }
-    
+
     float4x4 Proj;
     Proj._11 = XScale;
     Proj._22 = YScale;
     Proj.SetNearFarClipPlanes(NearPlane, FarPlane, diligentAppBase->m_pDevice->GetDeviceInfo().IsGLDevice());
-    
+
     // Compute world-view-projection matrix
     m_WorldViewProjMatrix = CubeModelTransform * View * SrfPreTransform * Proj;
+}
+
+void Cube::resize(PipelineManager & pipelineManager) {
+}
+
+void Cube::draw (PipelineManager & pipelineManager)
+{
+    using namespace Diligent;
     
-    // Clear the back buffer
+    // draw to off-screen render target
+    
+    auto color = diligentAppBase->getColorRT_OffScreen();
+    auto depth = diligentAppBase->getDepthRT_OffScreen();
+
+    diligentAppBase->m_pImmediateContext->SetRenderTargets(1, &color, depth, RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
     const float ClearColor[] = {0.350f, 0.350f, 0.350f, 1.0f};
-    diligentAppBase->m_pImmediateContext->ClearRenderTarget(pRTV, ClearColor, RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
-    diligentAppBase->m_pImmediateContext->ClearDepthStencil(pDSV, CLEAR_DEPTH_FLAG, 1.f, 0, RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
+    diligentAppBase->m_pImmediateContext->ClearRenderTarget(color, ClearColor, RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
+    diligentAppBase->m_pImmediateContext->ClearDepthStencil(depth, CLEAR_DEPTH_FLAG, 1.f, 0, RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
     
     {
+        computeViewModel();
         // Map the buffer and write current world-view-projection matrix
         MapHelper<float4x4> CBConstants(diligentAppBase->m_pImmediateContext, m_VSConstants, MAP_WRITE, MAP_FLAG_DISCARD);
         *CBConstants = m_WorldViewProjMatrix.Transpose();
@@ -115,117 +209,36 @@ void Cube::draw ()
     IBuffer* pBuffs[] = {m_CubeVertexBuffer};
     diligentAppBase->m_pImmediateContext->SetVertexBuffers(0, 1, pBuffs, &offset, RESOURCE_STATE_TRANSITION_MODE_TRANSITION, SET_VERTEX_BUFFERS_FLAG_RESET);
     diligentAppBase->m_pImmediateContext->SetIndexBuffer(m_CubeIndexBuffer, 0, RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
-    
-    // Set the pipeline state
-    diligentAppBase->m_pImmediateContext->SetPipelineState(m_pPSO);
-    // Commit shader resources. RESOURCE_STATE_TRANSITION_MODE_TRANSITION mode
-    // makes sure that resources are transitioned to required states.
-    diligentAppBase->m_pImmediateContext->CommitShaderResources(m_pSRB, RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
-    
+
     DrawIndexedAttribs DrawAttrs;     // This is an indexed draw call
     DrawAttrs.IndexType  = VT_UINT32; // Index type
     DrawAttrs.NumIndices = 36;
     // Verify the state of vertex and index buffers
     DrawAttrs.Flags = DRAW_FLAG_VERIFY_ALL;
     diligentAppBase->m_pImmediateContext->DrawIndexed(DrawAttrs);
-}
+    
 
-void Cube::CreatePipelineState ()
-{
-    using namespace Diligent;
-    
-    // Pipeline state object encompasses configuration of all GPU stages
-    
-    GraphicsPipelineStateCreateInfo PSOCreateInfo;
-    
-    // Pipeline state name is used by the engine to report issues.
-    // It is always a good idea to give objects descriptive names.
-    PSOCreateInfo.PSODesc.Name = "Cube PSO";
-    
-    // This is a graphics pipeline
-    PSOCreateInfo.PSODesc.PipelineType = PIPELINE_TYPE_GRAPHICS;
-    
-    // clang-format off
-    // This tutorial will render to a single render target
-    PSOCreateInfo.GraphicsPipeline.NumRenderTargets             = 1;
-    // Set render target format which is the format of the swap chain's color buffer
-    PSOCreateInfo.GraphicsPipeline.RTVFormats[0]                = diligentAppBase->m_pSwapChain->GetDesc().ColorBufferFormat;
-    // Set depth buffer format which is the format of the swap chain's back buffer
-    PSOCreateInfo.GraphicsPipeline.DSVFormat                    = diligentAppBase->m_pSwapChain->GetDesc().DepthBufferFormat;
-    // Primitive topology defines what kind of primitives will be rendered by this pipeline state
-    PSOCreateInfo.GraphicsPipeline.PrimitiveTopology            = PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
-    // Cull back faces
-    PSOCreateInfo.GraphicsPipeline.RasterizerDesc.CullMode      = CULL_MODE_BACK;
-    // Enable depth testing
-    PSOCreateInfo.GraphicsPipeline.DepthStencilDesc.DepthEnable = True;
-    // clang-format on
-    
-    ShaderCreateInfo ShaderCI;
-    // Tell the system that the shader source code is in HLSL.
-    // For OpenGL, the engine will convert this into GLSL under the hood.
-    ShaderCI.SourceLanguage = SHADER_SOURCE_LANGUAGE_HLSL;
-    
-    // OpenGL backend requires emulated combined HLSL texture samplers (g_Texture + g_Texture_sampler combination)
-    ShaderCI.UseCombinedTextureSamplers = true;
-    
-    // Create a vertex shader
-    RefCntAutoPtr<IShader> pVS;
-    {
-        ShaderCI.Desc.ShaderType = SHADER_TYPE_VERTEX;
-        ShaderCI.EntryPoint      = "main";
-        ShaderCI.Desc.Name       = "Cube VS";
-        ShaderCI.Source          = cube_VS;
-        diligentAppBase->m_pDevice->CreateShader(ShaderCI, &pVS);
-        // Create dynamic uniform buffer that will store our transformation matrix
-        // Dynamic buffers can be frequently updated by the CPU
-        BufferDesc CBDesc;
-        CBDesc.Name           = "VS constants CB";
-        CBDesc.uiSizeInBytes  = sizeof(float4x4);
-        CBDesc.Usage          = USAGE_DYNAMIC;
-        CBDesc.BindFlags      = BIND_UNIFORM_BUFFER;
-        CBDesc.CPUAccessFlags = CPU_ACCESS_WRITE;
-        diligentAppBase->m_pDevice->CreateBuffer(CBDesc, nullptr, &m_VSConstants);
-    }
-    
-    // Create a pixel shader
-    RefCntAutoPtr<IShader> pPS;
-    {
-        ShaderCI.Desc.ShaderType = SHADER_TYPE_PIXEL;
-        ShaderCI.EntryPoint      = "main";
-        ShaderCI.Desc.Name       = "Cube PS";
-        ShaderCI.Source          = cube_PS;
-        diligentAppBase->m_pDevice->CreateShader(ShaderCI, &pPS);
-    }
-    
-    // clang-format off
-    // Define vertex shader input layout
-    LayoutElement LayoutElems[] =
-                          {
-                                  // Attribute 0 - vertex position
-                                  LayoutElement{0, 0, 3, VT_FLOAT32, False},
-                                  // Attribute 1 - vertex color
-                                  LayoutElement{1, 0, 4, VT_FLOAT32, False}
-                          };
-    // clang-format on
-    PSOCreateInfo.GraphicsPipeline.InputLayout.LayoutElements = LayoutElems;
-    PSOCreateInfo.GraphicsPipeline.InputLayout.NumElements    = _countof(LayoutElems);
-    
-    PSOCreateInfo.pVS = pVS;
-    PSOCreateInfo.pPS = pPS;
-    
-    // Define variable type that will be used by default
-    PSOCreateInfo.PSODesc.ResourceLayout.DefaultVariableType = SHADER_RESOURCE_VARIABLE_TYPE_STATIC;
-    
-    diligentAppBase->m_pDevice->CreateGraphicsPipelineState(PSOCreateInfo, &m_pPSO);
-    
-    // Since we did not explcitly specify the type for 'Constants' variable, default
-    // type (SHADER_RESOURCE_VARIABLE_TYPE_STATIC) will be used. Static variables never
-    // change and are bound directly through the pipeline state object.
-    m_pPSO->GetStaticVariableByName(SHADER_TYPE_VERTEX, "Constants")->Set(m_VSConstants);
-    
-    // Create a shader resource binding object and bind all static resources in it
-    m_pPSO->CreateShaderResourceBinding(&m_pSRB, true);
-    
+    // draw a checker pattern
+
+    // only the VertexEngine's pixel-to-NDC converter is used
+    VertexEngine v(500, 500);
+    int w = 100;
+    int h = 100;
+    diligentAppBase->bindRT_Screen();
+    diligentAppBase->clearColorAndDepthRT_Screen(DiligentAppBase::black, 1);
+    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 0, 0, w, h);
+    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 0, 200, w, h);
+    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 0, 400, w, h);
+    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 200, 0, w, h);
+    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 200, 200, w, h);
+    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 200, 400, w, h);
+    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 400, 0, w, h);
+    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 400, 200, w, h);
+    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 400, 400, w, h);
+    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 100, 100, w, h);
+    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 100, 300, w, h);
+    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 300, 100, w, h);
+    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 300, 300, w, h);
 }
 
 void Cube::CreateVertexBuffer ()
@@ -311,7 +324,10 @@ void Cube::CreateIndexBuffer ()
     diligentAppBase->m_pDevice->CreateBuffer(IndBuffDesc, &IBData, &m_CubeIndexBuffer);
 }
 
-
+void Cube::destroy() {
+    m_CubeVertexBuffer.Release();
+    m_CubeIndexBuffer.Release();
+}
 
 const char * Cube::cube_VS = "cbuffer Constants\n"
                              "{\n"
@@ -362,11 +378,3 @@ const char * Cube::cube_PS = "struct PSInput \n"
                              "{\n"
                              "    PSOut.Color = PSIn.Color; \n"
                              "}";
-
-void Cube::destroy() {
-    this->m_CubeVertexBuffer.Release();
-    this->m_CubeIndexBuffer.Release();
-    this->m_VSConstants.Release();
-    this->m_pPSO.Release();
-    this->m_pSRB.Release();
-}

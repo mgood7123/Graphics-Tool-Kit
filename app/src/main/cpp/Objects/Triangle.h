@@ -12,8 +12,14 @@ class Triangle : public ObjectBase
 public:
     static const char * triangle_VS;
     static const char * triangle_PS;
-    void create() override;
-    void draw() override;
+    static constexpr const char * PIPELINE_KEY = "Triangle";
+
+    void createPipeline(PipelineManager & pipelineManager) override;
+    void switchToPipeline(PipelineManager & pipelineManager) override;
+    void bindShaderResources(PipelineManager & pipelineManager) override;
+    void destroyPipeline(PipelineManager & pipelineManager) override;
+
+    void draw(PipelineManager & pipelineManager) override;
 };
 
 

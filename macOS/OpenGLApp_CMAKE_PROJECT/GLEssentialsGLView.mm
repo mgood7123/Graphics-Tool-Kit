@@ -309,6 +309,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
 
 {
     CGLLockContext([[self openGLContext] CGLContextObj]);
+    [[self openGLContext] makeCurrentContext];
 
     [_renderer destroy];
 
@@ -345,8 +346,8 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
 
     // to [self openGLContext])
 
+    CGLLockContext([[self openGLContext] CGLContextObj]);
     [[self openGLContext] makeCurrentContext];
-
     
 
     // Synchronize buffer swaps with vertical refresh rate
@@ -363,6 +364,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
 
     _renderer = [[OpenGLRenderer alloc] init];
 
+    CGLUnlockContext([[self openGLContext] CGLContextObj]);
 }
 
  
@@ -384,6 +386,8 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
     // simultaneously when resizing.
 
     CGLLockContext([[self openGLContext] CGLContextObj]);
+
+    [[self openGLContext] makeCurrentContext];
 
  
 
@@ -510,11 +514,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
 - (void) drawView
 
 {
-
-    [[self openGLContext] makeCurrentContext];
-
  
-
     // We draw on a secondary thread through the display link
 
     // When resizing the view, -reshape is called automatically on the main
@@ -524,6 +524,8 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
     // simultaneously when resizing
 
     CGLLockContext([[self openGLContext] CGLContextObj]);
+
+    [[self openGLContext] makeCurrentContext];
 
  
 

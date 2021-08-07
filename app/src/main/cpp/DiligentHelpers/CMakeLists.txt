@@ -9,9 +9,8 @@ cmake_minimum_required(VERSION 3.10.2)
 
 project("DiligentHelpers")
 
-add_library(DiligentAnyOpt AnyOpt.cpp)
-target_compile_options(DiligentAnyOpt PRIVATE -DUNICODE -DENGINE_DLL)
-target_link_libraries(DiligentAnyOpt Diligent-Common)
+add_library(PipelineManager PipelineManager.cpp)
+target_link_libraries(PipelineManager DiligentAnyOpt WINAPI::Kernel)
 
 add_library(
         DiligentHelpers SHARED
@@ -29,6 +28,8 @@ endif()
 target_link_libraries(
         DiligentHelpers
         DiligentAnyOpt
+        PipelineManager
+        VertexEngine
 
 #   DiligentCore
         Diligent-BuildSettings
