@@ -47,6 +47,10 @@ Object* Table::Iterator::next() {
     return this->table->table.at(this->index++);
 }
 
+int Table::Iterator::getIndex() {
+    return this->index-1;
+}
+
 Table::Iterator Table::getIterator() {
     return Iterator(this);
 }
