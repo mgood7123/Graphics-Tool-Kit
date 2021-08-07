@@ -88,6 +88,14 @@ void VertexEngine::resize(int width, int height) {
     this->height = height;
 }
 
+int VertexEngine::getWidth() {
+    return width;
+}
+
+int VertexEngine::getHeight() {
+    return height;
+}
+
 void VertexEngine::clear() {
     auto i = vertexBuffer.getIterator();
     while (i.hasNext()) {
@@ -847,6 +855,17 @@ std::array<float, 3> VertexEngine::Canvas::Position3::to_array() const {
 
 std::vector<float> VertexEngine::Canvas::Position3::to_vector() const {
     return {x, y, z};
+}
+
+VertexEngine::Color4::Color4(const float * data) {
+    this->red = data[0];
+    this->green = data[1];
+    this->blue = data[2];
+    this->alpha = data[3];
+    this->key = nullptr;
+    this->isTexture = false;
+    this->textureResource = NAN;
+    this->texture = nullptr;
 }
 
 VertexEngine::Color4::Color4(const std::array<float, 4> &data) {
