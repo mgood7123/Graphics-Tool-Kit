@@ -28,6 +28,7 @@ typedef class Table {
             void skip(size_t amount);
             bool hasNext();
             Object * next();
+            int getIndex();
         };
 
         Iterator getIterator();
