@@ -31,6 +31,7 @@ public:
         // only used for [texture -> color] conversion
         Diligent::ITexture* texture = nullptr;
 
+        Color4(const float * data);
         Color4(const std::array<float, 4> & data);
         Color4(const std::array<float, 6> & data);
         Color4(const float &red, const float &green, const float &blue, const float &alpha);
@@ -192,6 +193,8 @@ public:
     VertexEngine(int width, int height);
     ~VertexEngine();
     void resize(int width, int height);
+    int getWidth();
+    int getHeight();
 
     /**
      * clears the vertex and index buffers
