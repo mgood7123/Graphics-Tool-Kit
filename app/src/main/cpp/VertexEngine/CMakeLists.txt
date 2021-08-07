@@ -16,7 +16,7 @@ add_library(
 
 target_link_libraries(
         VertexEngine
-        Diligent-Common # logging
+        Diligent-Log
         Diligent-TextureLoader
         WINAPI::Kernel
 )
