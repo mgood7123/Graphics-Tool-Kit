@@ -54,7 +54,12 @@ public:
     // since the physics call IS NOT guaranteed to be called
     // every single frame due to thread scheduling
     void startPhysicsThread();
-
+    
+    // a physics thread will ALWAYS be slower than a draw thread
+    // since the physics call IS NOT guaranteed to be called
+    // every single frame due to thread scheduling
+    void mainLoop();
+    
     // a physics thread will ALWAYS be slower than a draw thread
     // since the physics call IS NOT guaranteed to be called
     // every single frame due to thread scheduling

@@ -60,48 +60,32 @@ void TimeEngine::startPhysicsThread() {
     if (running.load()) return;
     running.store(true);
     physicsThread = std::thread([&] {
-        TimeEngine physicsTimeEngine;
-        physicsTimeEngine.resetTimer();
-        uint64_t skipped = 0;
-        while(running.load()) {
-            physicsTimeEngine.elapsedTime();
-            if (physicsTimeEngine.previousElapsedTime == physicsTimeEngine.currentElapsedTime) {
-                skipped++;
-                continue;
-            }
-            if (skipped > 0) {
-                if (logPhysics) LOG_INFO_MESSAGE("physics");
-                if (logPhysics) LOG_INFO_MESSAGE("skipped ", skipped, " empty frame", skipped == 1 ? "" : "s");
-                skipped = 0;
-            }
-            if (physicsTimeEngine.elapsed == physicsTimeStep) {
-                physicsTimeEngine.delta = physicsTimeStep;
-                physicsCallback(physicsTimeEngine);
-                physicsTimeEngine.resetTimer();
-            } else if (physicsTimeEngine.elapsed > physicsTimeStep) {
-                /**
-                 * catch up:
-                 *
-                 * if an object suddenly teleports half way across the map due
-                 * to 8 seconds of delta, then the collision checking code will
-                 * not work or completely break
-                 */
-                physicsTimeEngine.delta = physicsTimeStep;
-                double remaining = physicsTimeEngine.elapsed;
-                int catch_up = 0;
-                while (remaining > physicsTimeStep) {
-                    remaining -= physicsTimeStep;
-                    physicsCallback(physicsTimeEngine);
-                    catch_up++;
-                }
-                physicsTimeEngine.delta = remaining;
-                physicsCallback(physicsTimeEngine);
-                catch_up++;
-                if (logPhysics) LOG_INFO_MESSAGE(std::fixed, "delta caught up by ", catch_up, " frame", catch_up == 1 ? "" : "s");
-                physicsTimeEngine.resetTimer();
-            }
-        }
+        mainLoop();
     });
+}
+
+void TimeEngine::mainLoop() {
+    TimeEngine physicsTimeEngine;
+    physicsTimeEngine.resetTimer();
+    while(running.load()) {
+        /**
+         * run loop at double to fps (8 ms instead of 16.333... ms) to keep
+         * things smooth
+         *
+         * save power by using sleep to keep thread idle
+         *
+         * sleep is not recommended when precision is absolutely needed
+         * due to sleep not waking up at exact specified time due to scheduler
+         *
+         * but it will do for the physics thread
+         */
+        std::this_thread::sleep_for(std::chrono::milliseconds(8));
+        physicsTimeEngine.elapsedTime();
+        if (logPhysics) LOG_INFO_MESSAGE("physics");
+        physicsTimeEngine.delta = physicsTimeStep;
+        physicsCallback(physicsTimeEngine);
+        physicsTimeEngine.resetTimer();
+    }
 }
 
 void TimeEngine::stopPhysicsThread() {
