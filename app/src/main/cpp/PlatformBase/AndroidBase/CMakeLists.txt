@@ -20,4 +20,5 @@ target_link_libraries(AndroidBase
         log
         GLESv3
         DiligentAnyOpt
+        Diligent-Log
 )

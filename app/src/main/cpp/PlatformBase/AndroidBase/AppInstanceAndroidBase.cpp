@@ -2,18 +2,17 @@
 // Created by Matthew Good on 29/6/21.
 //
 
-#include <DiligentLog/Primitives/interface/Errors.hpp>
-
+#include <MultiTouch/DiligentLog/Log.h>
 #include "AppInstanceAndroidBase.h"
 
 void AppInstanceAndroidBase::onEglSetup (JNIEnv * jenv, jobject classInstance, jstring name, jstring signature)
 {
     if (!jvmManager.getJVM(jenv)) {
-        LOG_ERROR_MESSAGE("failed to get JavaVM");
+        Log::Error("failed to get JavaVM");
         return;
     }
     if (!jvmManager.attachJVM()) {
-        LOG_ERROR_MESSAGE("failed to attach JVM");
+        Log::Error("failed to attach JVM");
         return;
     }
     jObject = jvmManager.globalRef(jenv, classInstance);
@@ -21,24 +20,24 @@ void AppInstanceAndroidBase::onEglSetup (JNIEnv * jenv, jobject classInstance, j
     jboolean isCopy1, isCopy2;
     
     if (name == nullptr) {
-        LOG_ERROR_MESSAGE("cannot use a null name (0x0)");
+        Log::Error("cannot use a null name (0x0)");
         return;
     }
     
     if (signature == nullptr) {
-        LOG_ERROR_MESSAGE("cannot use a null signature (0x0)");
+        Log::Error("cannot use a null signature (0x0)");
         return;
     }
     
     const char * n = jvmManager.jenv->GetStringUTFChars(name, &isCopy1);
     if (n == nullptr) {
-        LOG_ERROR_MESSAGE("cannot get UTF chars from name");
+        Log::Error("cannot get UTF chars from name");
         return;
     }
     
     const char * s = jvmManager.jenv->GetStringUTFChars(signature, &isCopy2);
     if (s == nullptr) {
-        LOG_ERROR_MESSAGE("cannot get UTF chars from signature");
+        Log::Error("cannot get UTF chars from signature");
         jvmManager.jenv->ReleaseStringUTFChars(name, n);
         return;
     }
@@ -49,7 +48,7 @@ void AppInstanceAndroidBase::onEglSetup (JNIEnv * jenv, jobject classInstance, j
     jvmManager.jenv->ReleaseStringUTFChars(name, s);
     
     if (jSwapBuffers == nullptr) {
-        LOG_ERROR_MESSAGE(
+        Log::Error(
                 "cannot find method with name '", name, "', and signature '", signature, "'"
         );
     }
