@@ -2,15 +2,15 @@
 // Created by Matthew Good on 14/7/21.
 //
 
-#ifndef GRAPHICAL_TOOL_KIT_VIEW_H
-#define GRAPHICAL_TOOL_KIT_VIEW_H
+#ifndef GRAPHICAL_TOOL_KIT_PAINTER_H
+#define GRAPHICAL_TOOL_KIT_PAINTER_H
 
 #include <Objects/ObjectBase.h>
 
 /**
- * an empty View, this does nothing by itself
+ * an empty Painter, this does nothing by itself
  */
-class View : public ObjectBase {
+class Painter : public ObjectBase {
 private:
     VertexEngine vertexEngine;
     int chunkSize = 3;
@@ -39,13 +39,13 @@ protected:
 
 public:
 
-    void createPipeline(PipelineManager &pipelineManager) override;
+    void createPipeline(PipelineManager &pipelineManager) override final;
 
-    void switchToPipeline(PipelineManager &pipelineManager) override;
+    void switchToPipeline(PipelineManager &pipelineManager) override final;
 
-    void bindShaderResources(PipelineManager &pipelineManager) override;
+    void bindShaderResources(PipelineManager &pipelineManager) override final;
 
-    void destroyPipeline(PipelineManager &pipelineManager) override;
+    void destroyPipeline(PipelineManager &pipelineManager) override final;
 
     void create() override final;
     void draw(DrawTools & drawTools, RenderTarget & renderTarget) override final;
@@ -57,4 +57,4 @@ public:
     static constexpr const char * PIPELINE_KEY = "View";
 };
 
-#endif //GRAPHICAL_TOOL_KIT_VIEW_H
+#endif //GRAPHICAL_TOOL_KIT_PAINTER_H

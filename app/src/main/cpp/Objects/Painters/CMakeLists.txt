@@ -7,15 +7,15 @@ cmake_minimum_required(VERSION 3.10.2)
 
 # Declares and names the project.
 
-project(Views)
+project(Painters)
 
 add_library(
-        Views SHARED
-        View.cpp
-        RectangleView.cpp
+        Painters SHARED
+        Painter.cpp
+        RectanglePainter.cpp
 )
 
 target_link_libraries(
-        Views
+        Painters
         ObjectBase
 )

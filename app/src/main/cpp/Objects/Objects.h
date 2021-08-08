@@ -9,6 +9,6 @@
 #include "Triangle.h"
 #include "Cube.h"
 #include "CubeOnTriangle.h"
-#include "Views/Views.h"
+#include "Painters/Painters.h"
 
 #endif //GRAPHICAL_TOOL_KIT_OBJECTS_H

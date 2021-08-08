@@ -8,10 +8,12 @@
 #include "ObjectBase.h"
 #include "Cube.h"
 #include "Triangle.h"
+#include "Painters/RectanglePainter.h"
 
 class CubeOnTriangle : public ObjectBase {
     Cube cube;
     Triangle triangle;
+    RectanglePainter rectanglePainter;
     RenderTarget rt;
     static constexpr const char * PIPELINE_KEY = "CubeOnTriangle ORT";
 public:

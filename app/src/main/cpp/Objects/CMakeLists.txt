@@ -22,9 +22,7 @@ target_link_libraries(
         MultiTouch
 )
 
-include_directories(.)
-
-add_subdirectory(Views)
+add_subdirectory(Painters)
 
 add_library(
         Objects SHARED
@@ -35,5 +33,5 @@ add_library(
 
 target_link_libraries(
         Objects
-        Views
+        Painters
 )

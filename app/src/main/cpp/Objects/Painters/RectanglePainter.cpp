@@ -2,9 +2,9 @@
 // Created by Matthew Good on 30/6/21.
 //
 
-#include "RectangleView.h"
+#include "RectanglePainter.h"
 
-void RectangleView::onCreate(VertexEngine::TextureManager &textureManager) {
+void RectanglePainter::onCreate(VertexEngine::TextureManager &textureManager) {
     x = 0;
     y = 0;
 #if PLATFORM_ANDROID
@@ -23,7 +23,7 @@ void RectangleView::onCreate(VertexEngine::TextureManager &textureManager) {
 
 
 
-void RectangleView::onDraw(VertexEngine::Canvas &canvas) {
+void RectanglePainter::onDraw(VertexEngine::Canvas &canvas) {
 #if PLATFORM_ANDROID
 #else
     canvas.fill("A");
@@ -50,7 +50,7 @@ void RectangleView::onDraw(VertexEngine::Canvas &canvas) {
 #endif
 }
 
-void RectangleView::onDestroy(VertexEngine::TextureManager &textureManager) {
+void RectanglePainter::onDestroy(VertexEngine::TextureManager &textureManager) {
 #if PLATFORM_ANDROID
 #else
     textureManager.deleteTexture("A");
@@ -59,7 +59,7 @@ void RectangleView::onDestroy(VertexEngine::TextureManager &textureManager) {
 #endif
 }
 
-bool RectangleView::onTouchEvent(MultiTouch &touch) {
+bool RectanglePainter::onTouchEvent(MultiTouch &touch) {
     auto t = touch.getTouchAt(touch.getTouchIndex());
     x = t.x;
     y = t.y;

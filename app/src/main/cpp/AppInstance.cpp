@@ -3,9 +3,6 @@
 //
 
 #include "AppInstance.h"
-#include <Objects/Views/RectangleView.h>
-#include <Objects/Cube.h>
-#include <Objects/Triangle.h>
 
 AppInstance::AppInstance ()
 {
@@ -13,7 +10,7 @@ AppInstance::AppInstance ()
     destroyed.store(true);
     
 //     800 microseconds
-    timeEngine.physicsTimeStep = 0.000800;
+//    timeEngine.physicsTimeStep = 0.000800;
 
 //     8 milliseconds
 //    timeEngine.physicsTimeStep = 0.008;
@@ -22,7 +19,7 @@ AppInstance::AppInstance ()
 //    timeEngine.physicsTimeStep = 0.01666666;
 
     // 120.000048 fps, smooth
-//    timeEngine.physicsTimeStep = 0.01666666/2;
+    timeEngine.physicsTimeStep = 0.01666666/2;
 
 //    timeEngine.physicsTimeStep = 0.01666666/4;
 //    timeEngine.physicsTimeStep = 0.01666666/8;

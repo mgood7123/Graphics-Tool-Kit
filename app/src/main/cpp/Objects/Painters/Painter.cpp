@@ -2,9 +2,9 @@
 // Created by Matthew Good on 14/7/21.
 //
 
-#include "View.h"
+#include "Painter.h"
 
-const char * View::vertexShader = R"(
+const char * Painter::vertexShader = R"(
 struct VSInput
 {
     float3 Pos       : ATTRIB0;
@@ -31,7 +31,7 @@ void main(in  VSInput VSIn,
 }
 )";
 
-const char * View::pixelShader = R"(
+const char * Painter::pixelShader = R"(
 Texture2D    g_Texture;
 SamplerState g_Texture_sampler;
 
@@ -53,7 +53,7 @@ void main(in  PSInput  PSIn,
 }
 )";
 
-void View::create() {
+void Painter::create() {
     VertBuffDesc.Name = "Rectangle vertex buffer";
     VertBuffDesc.Usage = Diligent::USAGE_DEFAULT;
     VertBuffDesc.BindFlags = Diligent::BIND_VERTEX_BUFFER;
@@ -82,7 +82,7 @@ void View::create() {
     onCreate(vertexEngine.textureManager);
 }
 
-void View::draw (DrawTools & drawTools, RenderTarget & renderTarget) {
+void Painter::draw (DrawTools & drawTools, RenderTarget & renderTarget) {
 
     // TODO
 
@@ -108,10 +108,9 @@ void View::draw (DrawTools & drawTools, RenderTarget & renderTarget) {
     VertexEngine::GenerationInfo generationInfo = vertexEngine.generateGL();
 
     drawChunks(generationInfo, drawTools);
-//    renderTarget.draw(drawTools, 0, 0, vertexEngine.getWidth(), vertexEngine.getHeight());
 }
 
-void View::drawChunks(VertexEngine::GenerationInfo &info, DrawTools & drawTools) {
+void Painter::drawChunks(VertexEngine::GenerationInfo &info, DrawTools & drawTools) {
     auto & app = getDiligentAppBase();
 
     // This is an indexed draw call
@@ -177,7 +176,7 @@ void View::drawChunks(VertexEngine::GenerationInfo &info, DrawTools & drawTools)
     // LOG_INFO_MESSAGE("drawn ", info.chunksGenerated, " chunk", info.chunksGenerated == 1 ? "" : "s");
 }
 
-void View::destroy() {
+void Painter::destroy() {
     onDestroy(vertexEngine.textureManager);
     vertexEngine.textureManager.deleteTexture(DUMMY_TEXTURE_KEY);
     shaderResourceVariable_Texture.Release();
@@ -185,19 +184,19 @@ void View::destroy() {
     indexBuffer.Release();
 }
 
-void View::onCreate(VertexEngine::TextureManager &textureManager) {
+void Painter::onCreate(VertexEngine::TextureManager &textureManager) {
 
 }
 
-void View::onDraw(VertexEngine::Canvas & canvas) {
+void Painter::onDraw(VertexEngine::Canvas & canvas) {
 
 }
 
-void View::onDestroy(VertexEngine::TextureManager &textureManager) {
+void Painter::onDestroy(VertexEngine::TextureManager &textureManager) {
 
 }
 
-void View::createPipeline(PipelineManager &pipelineManager) {
+void Painter::createPipeline(PipelineManager &pipelineManager) {
     auto & pso = pipelineManager.createPipeline(PIPELINE_KEY);
     pso.setType(Diligent::PIPELINE_TYPE_GRAPHICS);
     pso.setNumberOfTargets(1);
@@ -219,7 +218,7 @@ void View::createPipeline(PipelineManager &pipelineManager) {
     {
         ShaderCI.Desc.ShaderType = Diligent::SHADER_TYPE_VERTEX;
         ShaderCI.EntryPoint      = "main";
-        ShaderCI.Desc.Name       = "View vertex shader";
+        ShaderCI.Desc.Name       = "Painter vertex shader";
         ShaderCI.Source          = vertexShader;
         getDiligentAppBase().m_pDevice->CreateShader(ShaderCI, &pVS);
     }
@@ -229,7 +228,7 @@ void View::createPipeline(PipelineManager &pipelineManager) {
     {
         ShaderCI.Desc.ShaderType = Diligent::SHADER_TYPE_PIXEL;
         ShaderCI.EntryPoint      = "main";
-        ShaderCI.Desc.Name       = "View pixel shader";
+        ShaderCI.Desc.Name       = "Painter pixel shader";
         ShaderCI.Source          = pixelShader;
         getDiligentAppBase().m_pDevice->CreateShader(ShaderCI, &pPS);
     }
@@ -289,20 +288,20 @@ void View::createPipeline(PipelineManager &pipelineManager) {
     shaderResourceVariable_Texture = tex;
 }
 
-void View::switchToPipeline(PipelineManager &pipelineManager) {
+void Painter::switchToPipeline(PipelineManager &pipelineManager) {
     // Set the pipeline state in the immediate context
     pipelineManager.switchToPipeline(
             PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext
     );
 }
 
-void View::bindShaderResources(PipelineManager &pipelineManager) {
+void Painter::bindShaderResources(PipelineManager &pipelineManager) {
     pipelineManager.commitShaderResourceBinding(
             PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext,
             Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION
     );
 }
 
-void View::destroyPipeline(PipelineManager &pipelineManager) {
+void Painter::destroyPipeline(PipelineManager &pipelineManager) {
     pipelineManager.destroyPipeline(PIPELINE_KEY);
 }

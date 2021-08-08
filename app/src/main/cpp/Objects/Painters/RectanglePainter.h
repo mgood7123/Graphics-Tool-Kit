@@ -2,12 +2,12 @@
 // Created by Matthew Good on 30/6/21.
 //
 
-#ifndef GRAPHICAL_TOOL_KIT_RECTANGLEVIEW_H
-#define GRAPHICAL_TOOL_KIT_RECTANGLEVIEW_H
+#ifndef GRAPHICAL_TOOL_KIT_RECTANGLEPAINTER_H
+#define GRAPHICAL_TOOL_KIT_RECTANGLEPAINTER_H
 
-#include "View.h"
+#include "Painter.h"
 
-class RectangleView : public View
+class RectanglePainter : public Painter
 {
     float x, y;
 public:
