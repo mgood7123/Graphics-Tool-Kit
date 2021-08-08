@@ -9,7 +9,7 @@ void Cube::createPipeline(PipelineManager & pipelineManager) {
     auto & pso = pipelineManager.createPipeline(PIPELINE_KEY);
     pso.setType(Diligent::PIPELINE_TYPE_GRAPHICS);
     pso.setNumberOfTargets(1);
-    pso.setFormat(diligentAppBase->m_pSwapChain);
+    pso.setFormat(getDiligentAppBase().m_pSwapChain);
     pso.setPrimitiveTopology(Diligent::PRIMITIVE_TOPOLOGY_TRIANGLE_LIST);
     pso.setCullMode(Diligent::CULL_MODE_BACK);
     pso.setDepthTesting(true);
@@ -29,7 +29,7 @@ void Cube::createPipeline(PipelineManager & pipelineManager) {
         ShaderCI.EntryPoint      = "main";
         ShaderCI.Desc.Name       = "Cube VS";
         ShaderCI.Source          = cube_VS;
-        diligentAppBase->m_pDevice->CreateShader(ShaderCI, &pVS);
+        getDiligentAppBase().m_pDevice->CreateShader(ShaderCI, &pVS);
         // Create dynamic uniform buffer that will store our transformation matrix
         // Dynamic buffers can be frequently updated by the CPU
         Diligent::BufferDesc CBDesc;
@@ -38,7 +38,7 @@ void Cube::createPipeline(PipelineManager & pipelineManager) {
         CBDesc.Usage          = Diligent::USAGE_DYNAMIC;
         CBDesc.BindFlags      = Diligent::BIND_UNIFORM_BUFFER;
         CBDesc.CPUAccessFlags = Diligent::CPU_ACCESS_WRITE;
-        diligentAppBase->m_pDevice->CreateBuffer(CBDesc, nullptr, &m_VSConstants);
+        getDiligentAppBase().m_pDevice->CreateBuffer(CBDesc, nullptr, &m_VSConstants);
     }
 
     // Create a pixel shader
@@ -48,7 +48,7 @@ void Cube::createPipeline(PipelineManager & pipelineManager) {
         ShaderCI.EntryPoint      = "main";
         ShaderCI.Desc.Name       = "Cube PS";
         ShaderCI.Source          = cube_PS;
-        diligentAppBase->m_pDevice->CreateShader(ShaderCI, &pPS);
+        getDiligentAppBase().m_pDevice->CreateShader(ShaderCI, &pPS);
     }
 
     // clang-format off
@@ -63,20 +63,20 @@ void Cube::createPipeline(PipelineManager & pipelineManager) {
 
     pso.setShaders(pVS, pPS);
     pso.setDefaultResourceLayoutVariableType(Diligent::SHADER_RESOURCE_VARIABLE_TYPE_STATIC);
-    pso.createPipelineState(diligentAppBase->m_pDevice);
+    pso.createPipelineState(getDiligentAppBase().m_pDevice);
     pso.getStaticVariableFromVertexShader("Constants")->Set(m_VSConstants);
     pso.createShaderBinding(true);
 }
 
 void Cube::switchToPipeline(PipelineManager &pipelineManager) {
     pipelineManager.switchToPipeline(
-            PIPELINE_KEY, diligentAppBase->m_pImmediateContext
+            PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext
     );
 }
 
 void Cube::bindShaderResources(PipelineManager &pipelineManager) {
     pipelineManager.commitShaderResourceBinding(
-            PIPELINE_KEY, diligentAppBase->m_pImmediateContext,
+            PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext,
             Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION
     );
 }
@@ -89,8 +89,10 @@ void Cube::destroyPipeline(PipelineManager &pipelineManager) {
 void Cube::create ()
 {
     using namespace Diligent;
-    y = 0.0;
-    auto radY = degreesToRadians(y);
+    width = MATCH_PARENT;
+    height = MATCH_PARENT;
+    obj_y = 0.0;
+    auto radY = degreesToRadians(obj_y);
     CubeModelTransform = float4x4::RotationY(radY) * float4x4::RotationX(-PI_F * 0.1f);
     CreateVertexBuffer();
     CreateIndexBuffer();
@@ -105,8 +107,8 @@ void Cube::physics (const TimeEngine & timeEngine)
 {
     using namespace Diligent;
 
-    y += 70.0 * timeEngine.delta;
-    auto radY = degreesToRadians(y);
+    obj_y += 70.0 * timeEngine.delta;
+    auto radY = degreesToRadians(obj_y);
     CubeModelTransform = float4x4::RotationY(radY) * float4x4::RotationX(-PI_F * 0.1f);
 }
 
@@ -118,7 +120,7 @@ void Cube::computeViewModel() {
 
     // Get pretransform matrix that rotates the scene according the surface orientation
     float4x4 SrfPreTransform;
-    const auto& SCDesc = diligentAppBase->m_pSwapChain->GetDesc();
+    const auto& SCDesc = getDiligentAppBase().m_pSwapChain->GetDesc();
     switch (SCDesc.PreTransform)
     {
         case SURFACE_TRANSFORM_ROTATE_90:
@@ -174,7 +176,7 @@ void Cube::computeViewModel() {
     float4x4 Proj;
     Proj._11 = XScale;
     Proj._22 = YScale;
-    Proj.SetNearFarClipPlanes(NearPlane, FarPlane, diligentAppBase->m_pDevice->GetDeviceInfo().IsGLDevice());
+    Proj.SetNearFarClipPlanes(NearPlane, FarPlane, getDiligentAppBase().m_pDevice->GetDeviceInfo().IsGLDevice());
 
     // Compute world-view-projection matrix
     m_WorldViewProjMatrix = CubeModelTransform * View * SrfPreTransform * Proj;
@@ -183,62 +185,60 @@ void Cube::computeViewModel() {
 void Cube::resize(PipelineManager & pipelineManager) {
 }
 
-void Cube::draw (PipelineManager & pipelineManager)
+void Cube::draw (DrawTools & drawTools, RenderTarget & renderTarget)
 {
     using namespace Diligent;
-    
-    // draw to off-screen render target
-    
-    auto color = diligentAppBase->getColorRT_OffScreen();
-    auto depth = diligentAppBase->getDepthRT_OffScreen();
 
-    diligentAppBase->m_pImmediateContext->SetRenderTargets(1, &color, depth, RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
-    const float ClearColor[] = {0.350f, 0.350f, 0.350f, 1.0f};
-    diligentAppBase->m_pImmediateContext->ClearRenderTarget(color, ClearColor, RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
-    diligentAppBase->m_pImmediateContext->ClearDepthStencil(depth, CLEAR_DEPTH_FLAG, 1.f, 0, RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
-    
+    auto & app = getDiligentAppBase();
+
+    renderTarget.bind(app.m_pImmediateContext);
+    renderTarget.clearColorAndDepth(
+            {0.350f, 0.350f, 0.350f, 1.0f},
+            1.0f,
+            app.m_pImmediateContext
+    );
+
     {
         computeViewModel();
         // Map the buffer and write current world-view-projection matrix
-        MapHelper<float4x4> CBConstants(diligentAppBase->m_pImmediateContext, m_VSConstants, MAP_WRITE, MAP_FLAG_DISCARD);
+        MapHelper<float4x4> CBConstants(app.m_pImmediateContext, m_VSConstants, MAP_WRITE, MAP_FLAG_DISCARD);
         *CBConstants = m_WorldViewProjMatrix.Transpose();
     }
     
     // Bind vertex and index buffers
     Uint32   offset   = 0;
     IBuffer* pBuffs[] = {m_CubeVertexBuffer};
-    diligentAppBase->m_pImmediateContext->SetVertexBuffers(0, 1, pBuffs, &offset, RESOURCE_STATE_TRANSITION_MODE_TRANSITION, SET_VERTEX_BUFFERS_FLAG_RESET);
-    diligentAppBase->m_pImmediateContext->SetIndexBuffer(m_CubeIndexBuffer, 0, RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
+    app.m_pImmediateContext->SetVertexBuffers(0, 1, pBuffs, &offset, RESOURCE_STATE_TRANSITION_MODE_TRANSITION, SET_VERTEX_BUFFERS_FLAG_RESET);
+    app.m_pImmediateContext->SetIndexBuffer(m_CubeIndexBuffer, 0, RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
 
     DrawIndexedAttribs DrawAttrs;     // This is an indexed draw call
     DrawAttrs.IndexType  = VT_UINT32; // Index type
     DrawAttrs.NumIndices = 36;
     // Verify the state of vertex and index buffers
     DrawAttrs.Flags = DRAW_FLAG_VERIFY_ALL;
-    diligentAppBase->m_pImmediateContext->DrawIndexed(DrawAttrs);
+    app.m_pImmediateContext->DrawIndexed(DrawAttrs);
     
 
-    // draw a checker pattern
-
-    // only the VertexEngine's pixel-to-NDC converter is used
-    VertexEngine v(500, 500);
-    int w = 100;
-    int h = 100;
-    diligentAppBase->bindRT_Screen();
-    diligentAppBase->clearColorAndDepthRT_Screen(DiligentAppBase::black, 1);
-    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 0, 0, w, h);
-    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 0, 200, w, h);
-    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 0, 400, w, h);
-    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 200, 0, w, h);
-    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 200, 200, w, h);
-    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 200, 400, w, h);
-    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 400, 0, w, h);
-    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 400, 200, w, h);
-    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 400, 400, w, h);
-    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 100, 100, w, h);
-    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 100, 300, w, h);
-    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 300, 100, w, h);
-    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, v, 300, 300, w, h);
+//    // draw a checker pattern
+//
+//    drawTools.pixelToNDC.resize(500, 500);
+//    int w = 100;
+//    int h = 100;
+//    getDiligentAppBase().bindRT_Screen();
+//    getDiligentAppBase().clearColorAndDepthRT_Screen(DiligentAppBase::black, 1);
+//    getDiligentAppBase().draw_OffScreen_RT_To_Screen_RT(drawTools, 0, 0, w, h);
+//    getDiligentAppBase().draw_OffScreen_RT_To_Screen_RT(drawTools, 0, 200, w, h);
+//    getDiligentAppBase().draw_OffScreen_RT_To_Screen_RT(drawTools, 0, 400, w, h);
+//    getDiligentAppBase().draw_OffScreen_RT_To_Screen_RT(drawTools, 200, 0, w, h);
+//    getDiligentAppBase().draw_OffScreen_RT_To_Screen_RT(drawTools, 200, 200, w, h);
+//    getDiligentAppBase().draw_OffScreen_RT_To_Screen_RT(drawTools, 200, 400, w, h);
+//    getDiligentAppBase().draw_OffScreen_RT_To_Screen_RT(drawTools, 400, 0, w, h);
+//    getDiligentAppBase().draw_OffScreen_RT_To_Screen_RT(drawTools, 400, 200, w, h);
+//    getDiligentAppBase().draw_OffScreen_RT_To_Screen_RT(drawTools, 400, 400, w, h);
+//    getDiligentAppBase().draw_OffScreen_RT_To_Screen_RT(drawTools, 100, 100, w, h);
+//    getDiligentAppBase().draw_OffScreen_RT_To_Screen_RT(drawTools, 100, 300, w, h);
+//    getDiligentAppBase().draw_OffScreen_RT_To_Screen_RT(drawTools, 300, 100, w, h);
+//    getDiligentAppBase().draw_OffScreen_RT_To_Screen_RT(drawTools, 300, 300, w, h);
 }
 
 void Cube::CreateVertexBuffer ()
@@ -293,7 +293,7 @@ void Cube::CreateVertexBuffer ()
     BufferData VBData;
     VBData.pData    = CubeVerts;
     VBData.DataSize = sizeof(CubeVerts);
-    diligentAppBase->m_pDevice->CreateBuffer(VertBuffDesc, &VBData, &m_CubeVertexBuffer);
+    getDiligentAppBase().m_pDevice->CreateBuffer(VertBuffDesc, &VBData, &m_CubeVertexBuffer);
     
 }
 
@@ -321,7 +321,7 @@ void Cube::CreateIndexBuffer ()
     BufferData IBData;
     IBData.pData    = Indices;
     IBData.DataSize = sizeof(Indices);
-    diligentAppBase->m_pDevice->CreateBuffer(IndBuffDesc, &IBData, &m_CubeIndexBuffer);
+    getDiligentAppBase().m_pDevice->CreateBuffer(IndBuffDesc, &IBData, &m_CubeIndexBuffer);
 }
 
 void Cube::destroy() {

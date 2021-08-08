@@ -14,14 +14,21 @@ class AppInstance : public AppInstancePlatformBase, public DiligentAppBase
 {
     AnyOpt objectBase;
     TimeEngine timeEngine;
-    
+    PipelineManager pipelineManager;
+    PixelToNDC pixelToNDC;
+    int width;
+    int height;
+    static constexpr const char * PIPELINE_KEY = "AppInstance RT";
+    static constexpr const char * OFFSCREEN_PIPELINE_KEY = "AppInstance ORT";
+    RenderTarget screenRenderTarget;
+
     std::atomic_bool destroyed;
     std::atomic_bool createCalled;
 
-    template <typename Object>
+    template <typename Object, typename std::enable_if<std::is_base_of<ObjectBase, Object>::value>::type* = nullptr>
     AnyOpt createObject(DiligentAppBase * diligentAppBase) {
         Object * obj = new Object;
-        obj->diligentAppBase = diligentAppBase;
+        dynamic_cast<ObjectBase*>(obj)->setDiligentAppBase(diligentAppBase);
         return AnyOpt(obj, true);
     }
 

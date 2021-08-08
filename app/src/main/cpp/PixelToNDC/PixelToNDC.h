@@ -11,6 +11,11 @@
 class PixelToNDC {
 public:
     bool LOG_PRINT_CONVERSIONS = false;
+    int width;
+    int height;
+    PixelToNDC() = default;
+    PixelToNDC(int width, int height);
+    void resize(int width, int height);
 
     template<typename TYPE> float inverse(TYPE num) {
         return num < 0 ? -num : -(num);
@@ -44,6 +49,11 @@ public:
     static const int CONVERSION_ORIGIN_BOTTOM_RIGHT = 3;
 
     int CONVERSION_ORIGIN = CONVERSION_ORIGIN_TOP_LEFT;
+
+    template<typename TYPEFROM, typename TYPETO>
+    Coordinates<TYPETO> toNDC(TYPETO TYPETO_INITIALIZER, TYPEFROM x, TYPEFROM y, TYPEFROM z, bool clip) {
+        return toNDC(TYPETO_INITIALIZER, x, y, z, width, height, clip);
+    }
 
     template<typename TYPEFROM, typename TYPETO>
     Coordinates<TYPETO> toNDC(TYPETO TYPETO_INITIALIZER, TYPEFROM x, TYPEFROM y, TYPEFROM z, TYPEFROM w, TYPEFROM h, bool clip) {
@@ -116,13 +126,28 @@ public:
     }
 
     template<typename TYPEFROM, typename TYPETO>
+    Coordinates<TYPETO> toNDC(TYPETO TYPETO_INITIALIZER, TYPEFROM x, TYPEFROM y, bool clip) {
+        return toNDC<TYPEFROM, TYPETO>(TYPETO_INITIALIZER, x, y, 0, width, height, clip);
+    }
+
+    template<typename TYPEFROM, typename TYPETO>
     Coordinates<TYPETO> toNDC(TYPETO TYPETO_INITIALIZER, TYPEFROM x, TYPEFROM y, TYPEFROM w, TYPEFROM h, bool clip) {
         return toNDC<TYPEFROM, TYPETO>(TYPETO_INITIALIZER, x, y, 0, w, h, clip);
     }
 
     template<typename TYPEFROM, typename TYPETO>
+    Coordinates<TYPETO> toNDC(TYPEFROM x, TYPEFROM y) {
+        return toNDC<TYPEFROM, TYPETO>(0, x, y, 0, width, height, true);
+    }
+
+    template<typename TYPEFROM, typename TYPETO>
     Coordinates<TYPETO> toNDC(TYPEFROM x, TYPEFROM y, TYPEFROM w, TYPEFROM h) {
         return toNDC<TYPEFROM, TYPETO>(0, x, y, 0, w, h, true);
+    }
+
+    template<typename TYPEFROM, typename TYPETO>
+    Coordinates<TYPETO> toNDC(TYPEFROM x, TYPEFROM y, TYPEFROM z) {
+        return toNDC<TYPEFROM, TYPETO>(0, x, y, z, width, height, true);
     }
 
     template<typename TYPEFROM, typename TYPETO>

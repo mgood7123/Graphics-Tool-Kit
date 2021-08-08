@@ -29,10 +29,9 @@ public:
     void resize(PipelineManager & pipelineManager) override;
     bool hasPhysics() override;
     void physics(const TimeEngine & timeEngine) override;
-    void draw(PipelineManager & pipelineManager) override;
+    void draw(DrawTools & drawTools, RenderTarget & renderTarget) override;
     void destroy() override;
 
-    void CreatePipelineState();
     void CreateVertexBuffer();
     void CreateIndexBuffer();
     
@@ -40,7 +39,7 @@ public:
     Diligent::RefCntAutoPtr<Diligent::IBuffer>                m_CubeIndexBuffer;
     Diligent::RefCntAutoPtr<Diligent::IBuffer>                m_VSConstants;
     Diligent::float4x4                                        m_WorldViewProjMatrix;
-    double                                                    y;
+    double                                                    obj_y;
     Diligent::float4x4                                        CubeModelTransform;
 
     static constexpr const char *PIPELINE_KEY = "Cube";

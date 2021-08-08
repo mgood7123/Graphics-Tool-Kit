@@ -35,7 +35,7 @@ void RectangleView::onDraw(VertexEngine::Canvas &canvas) {
     canvas.plane(140, 140, 200, 200, blue);
     canvas.plane(160, 160, 80, 80, pink);
 
-    auto desc = diligentAppBase->m_pSwapChain->GetDesc();
+    auto desc = getDiligentAppBase().m_pSwapChain->GetDesc();
     float newWidth = canvas.width;
     float newHeight = canvas.height;
     float currentWidth = desc.Width;

@@ -4,13 +4,29 @@
 
 #include "ObjectBase.h"
 
+void ObjectBase::setDiligentAppBase(DiligentAppBase *dab) {
+    diligentAppBase = dab;
+}
+
+DiligentAppBase &ObjectBase::getDiligentAppBase() {
+    return *diligentAppBase;
+}
+
+void ObjectBase::createPipeline(PipelineManager & pipelineManager) {}
+
+void ObjectBase::switchToPipeline(PipelineManager & pipelineManager) {}
+
+void ObjectBase::bindShaderResources(PipelineManager & pipelineManager) {}
+
+void ObjectBase::destroyPipeline(PipelineManager & pipelineManager) {}
+
 void ObjectBase::create ()
 {}
 
 void ObjectBase::resize(PipelineManager & pipelineManager)
 {}
 
-void ObjectBase::draw (PipelineManager & pipelineManager)
+void ObjectBase::draw (DrawTools & drawTools, RenderTarget & renderTarget)
 {}
 
 bool ObjectBase::onTouchEvent(MultiTouch &multiTouch) {
@@ -32,11 +48,3 @@ double ObjectBase::degreesToRadians(double y)
 {
     return y * (M_PI/180);
 }
-
-void ObjectBase::createPipeline(PipelineManager & pipelineManager) {}
-
-void ObjectBase::switchToPipeline(PipelineManager & pipelineManager) {}
-
-void ObjectBase::bindShaderResources(PipelineManager & pipelineManager) {}
-
-void ObjectBase::destroyPipeline(PipelineManager & pipelineManager) {}

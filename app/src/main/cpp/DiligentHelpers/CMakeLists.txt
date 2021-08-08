@@ -12,6 +12,12 @@ project("DiligentHelpers")
 add_library(PipelineManager PipelineManager.cpp)
 target_link_libraries(PipelineManager DiligentAnyOpt WINAPI::Kernel)
 
+add_library(DrawTools DrawTools.cpp)
+target_link_libraries(DrawTools PipelineManager PixelToNDC)
+
+add_library(RenderTarget RenderTarget.cpp)
+target_link_libraries(RenderTarget DrawTools)
+
 add_library(
         DiligentHelpers SHARED
         DiligentAppBase.cpp
@@ -28,7 +34,7 @@ endif()
 target_link_libraries(
         DiligentHelpers
         DiligentAnyOpt
-        PipelineManager
+        RenderTarget
         VertexEngine
 
 #   DiligentCore

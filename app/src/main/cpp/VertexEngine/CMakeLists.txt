@@ -16,7 +16,7 @@ add_library(
 
 target_link_libraries(
         VertexEngine
-        Diligent-Log
         Diligent-TextureLoader
+        PixelToNDC
         WINAPI::Kernel
 )

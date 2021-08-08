@@ -35,7 +35,7 @@ AppInstance::AppInstance ()
         }
     };
 
-    loadObject<Cube>();
+    loadObject<CubeOnTriangle>();
 }
 
 AppInstance::~AppInstance ()
@@ -47,7 +47,7 @@ void AppInstance::callCreate() {
     if (!destroyed.load() && !createCalled.load()) {
         ObjectBase * obj = objectBase.get<ObjectBase*>();
         if (obj != nullptr) {
-            createRT_OffScreen(pipelineManager);
+            screenRenderTarget.create(PIPELINE_KEY, pipelineManager, m_pSwapChain, m_pDevice);
             obj->createPipeline(pipelineManager);
             obj->create();
             if (obj->hasPhysics()) {
@@ -67,7 +67,7 @@ void AppInstance::callDestroy() {
             }
             obj->destroy();
             obj->destroyPipeline(pipelineManager);
-            destroyRT_OffScreen(pipelineManager);
+            screenRenderTarget.destroy(pipelineManager);
             createCalled.store(false);
         }
     }
@@ -90,8 +90,10 @@ void AppInstance::surfaceChanged (int w, int h)
     // to be unbound from the device context
     m_pImmediateContext->SetRenderTargets(0, nullptr, nullptr, Diligent::RESOURCE_STATE_TRANSITION_MODE_NONE);
     m_pSwapChain->Resize(w, h);
+    width = w;
+    height = h;
     callCreate();
-    resizeRT_OffScreen(pipelineManager);
+    screenRenderTarget.resize(pipelineManager, m_pSwapChain, m_pDevice);
     ObjectBase * obj = objectBase.get<ObjectBase*>();
     if (obj != nullptr) {
         obj->resize(pipelineManager);
@@ -104,9 +106,18 @@ void AppInstance::onDraw ()
     timeEngine.computeDelta();
     auto obj = objectBase.get<ObjectBase*>();
     if (obj != nullptr) {
+        DrawTools drawTools(pipelineManager, pixelToNDC);
+
         obj->switchToPipeline(pipelineManager);
         obj->bindShaderResources(pipelineManager);
-        obj->draw(pipelineManager);
+        obj->draw(drawTools, screenRenderTarget);
+
+        drawTools.pixelToNDC.resize(width, height);
+        auto color = m_pSwapChain->GetCurrentBackBufferRTV();
+        auto depth = m_pSwapChain->GetDepthBufferDSV();
+        RenderTarget::bind(color, depth, m_pImmediateContext);
+        RenderTarget::clearColorAndDepth(RenderTarget::black, 1, color, depth, m_pImmediateContext);
+        screenRenderTarget.draw(drawTools, obj->x, obj->y, obj->width, obj->height, m_pImmediateContext);
     }
     swapBuffers();
 }

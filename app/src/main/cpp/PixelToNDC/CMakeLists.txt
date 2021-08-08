@@ -7,14 +7,14 @@ cmake_minimum_required(VERSION 3.10.2)
 
 # Declares and names the project.
 
-project("TimeEngine")
+project(PixelToNDC)
 
 add_library(
-        TimeEngine SHARED
-        TimeEngine.cpp
+        PixelToNDC SHARED
+        PixelToNDC.cpp
 )
 
 target_link_libraries(
-        TimeEngine
+        PixelToNDC
         Diligent-Log
 )

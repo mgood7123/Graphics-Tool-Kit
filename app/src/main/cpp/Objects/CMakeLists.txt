@@ -30,6 +30,7 @@ add_library(
         Objects SHARED
         Triangle.cpp
         Cube.cpp
+        CubeOnTriangle.cpp
 )
 
 target_link_libraries(

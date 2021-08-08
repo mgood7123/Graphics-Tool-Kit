@@ -75,6 +75,8 @@ add_subdirectory(DiligentAnyOpt)
 
 add_subdirectory(WINAPI_KERNEL)
 
+add_subdirectory(PixelToNDC)
+
 add_subdirectory(DiligentHelpers)
 
 if (PLATFORM_WIN32 OR PLATFORM_LINUX)

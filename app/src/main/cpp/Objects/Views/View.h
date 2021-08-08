@@ -19,7 +19,7 @@ private:
     int canvas_width = 400;
     int canvas_height = 400;
 
-    void drawChunks(VertexEngine::GenerationInfo &info);
+    void drawChunks(VertexEngine::GenerationInfo &info, DrawTools & tools);
 
 
     static const char * vertexShader;
@@ -48,7 +48,7 @@ public:
     void destroyPipeline(PipelineManager &pipelineManager) override;
 
     void create() override final;
-    void draw(PipelineManager & pipelineManager) override final;
+    void draw(DrawTools & drawTools, RenderTarget & renderTarget) override final;
     void destroy() override final;
     virtual void onCreate(VertexEngine::TextureManager & textureManager);
     virtual void onDraw(VertexEngine::Canvas & canvas);

@@ -64,14 +64,14 @@ void View::create() {
     IndBuffDesc.BindFlags = Diligent::BIND_INDEX_BUFFER;
     IndBuffDesc.uiSizeInBytes = sizeof(uint32_t)*chunkSize;
 
-    diligentAppBase->m_pDevice->CreateBuffer(VertBuffDesc, &VBData, &vertexBuffer);
-    diligentAppBase->m_pDevice->CreateBuffer(IndBuffDesc, &IBData, &indexBuffer);
+    getDiligentAppBase().m_pDevice->CreateBuffer(VertBuffDesc, &VBData, &vertexBuffer);
+    getDiligentAppBase().m_pDevice->CreateBuffer(IndBuffDesc, &IBData, &indexBuffer);
 
     vertexEngine.resize(canvas_width, canvas_height);
 
     vertexEngine.textureManager.setDefaultDevices(
-            diligentAppBase->m_pDevice.RawPtr(),
-            diligentAppBase->m_pImmediateContext.RawPtr()
+            getDiligentAppBase().m_pDevice.RawPtr(),
+            getDiligentAppBase().m_pImmediateContext.RawPtr()
     );
 
     vertexEngine.textureManager.createSolidColorTexture(DUMMY_TEXTURE_KEY, {0,0,0,1});
@@ -82,22 +82,24 @@ void View::create() {
     onCreate(vertexEngine.textureManager);
 }
 
-void View::draw (PipelineManager & pipelineManager) {
-    // Clear the back buffer
-    const float ClearColor[] = {0.350f, 0.350f, 0.350f, 1.0f};
-    // Let the engine perform required state transitions
+void View::draw (DrawTools & drawTools, RenderTarget & renderTarget) {
 
-    auto* pRTV = diligentAppBase->getColorRT_OffScreen();
-    auto* pDSV = diligentAppBase->getDepthRT_OffScreen();
-    diligentAppBase->m_pImmediateContext->SetRenderTargets(1, &pRTV, pDSV, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
-    diligentAppBase->m_pImmediateContext->ClearRenderTarget(pRTV, ClearColor, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
-    diligentAppBase->m_pImmediateContext->ClearDepthStencil(pDSV, Diligent::CLEAR_DEPTH_FLAG, 1.f, 0, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
+    // TODO
+
+    auto & app = getDiligentAppBase();
+
+    renderTarget.bind(app.m_pImmediateContext);
+    renderTarget.clearColorAndDepth(
+            {0.350f, 0.350f, 0.350f, 1.0f},
+            1.0f,
+            app.m_pImmediateContext
+    );
 
     // Bind the vertex and index buffers
     Diligent::Uint32   offset   = 0;
     Diligent::IBuffer* pBuffs[] = {vertexBuffer};
-    diligentAppBase->m_pImmediateContext->SetVertexBuffers(0, 1, pBuffs, &offset, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION, Diligent::SET_VERTEX_BUFFERS_FLAG_RESET);
-    diligentAppBase->m_pImmediateContext->SetIndexBuffer(indexBuffer, 0, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
+    app.m_pImmediateContext->SetVertexBuffers(0, 1, pBuffs, &offset, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION, Diligent::SET_VERTEX_BUFFERS_FLAG_RESET);
+    app.m_pImmediateContext->SetIndexBuffer(indexBuffer, 0, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
 
     vertexEngine.clear();
     VertexEngine::Canvas canvas(&vertexEngine, 400, 400);
@@ -105,13 +107,13 @@ void View::draw (PipelineManager & pipelineManager) {
 
     VertexEngine::GenerationInfo generationInfo = vertexEngine.generateGL();
 
-    drawChunks(generationInfo);
-    diligentAppBase->bindRT_Screen();
-    diligentAppBase->clearColorAndDepthRT_Screen({0,0,0,1}, 1);
-    diligentAppBase->draw_OffScreen_RT_To_Screen_RT(pipelineManager, vertexEngine, 0, 0, vertexEngine.getWidth(), vertexEngine.getHeight());
+    drawChunks(generationInfo, drawTools);
+//    renderTarget.draw(drawTools, 0, 0, vertexEngine.getWidth(), vertexEngine.getHeight());
 }
 
-void View::drawChunks(VertexEngine::GenerationInfo &info) {
+void View::drawChunks(VertexEngine::GenerationInfo &info, DrawTools & drawTools) {
+    auto & app = getDiligentAppBase();
+
     // This is an indexed draw call
     Diligent::DrawIndexedAttribs DrawAttrs;
 
@@ -152,16 +154,16 @@ void View::drawChunks(VertexEngine::GenerationInfo &info) {
             shaderResourceVariable_Texture->Set(dummyTextureView);
         }
 
-        bindShaderResources(diligentAppBase->pipelineManager);
+        bindShaderResources(drawTools.pipelineManager);
 
-        diligentAppBase->m_pImmediateContext->UpdateBuffer(
+        app.m_pImmediateContext->UpdateBuffer(
                 vertexBuffer,
                 0, chunk.sizeInBytesData,
                 chunk.data,
                 Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION
         );
 
-        diligentAppBase->m_pImmediateContext->UpdateBuffer(
+        app.m_pImmediateContext->UpdateBuffer(
                 indexBuffer,
                 0, chunk.sizeInBytesIndices,
                 chunk.indices,
@@ -170,7 +172,7 @@ void View::drawChunks(VertexEngine::GenerationInfo &info) {
 
         DrawAttrs.NumIndices = chunk.lengthIndices;
 
-        diligentAppBase->m_pImmediateContext->DrawIndexed(DrawAttrs);
+        app.m_pImmediateContext->DrawIndexed(DrawAttrs);
     }
     // LOG_INFO_MESSAGE("drawn ", info.chunksGenerated, " chunk", info.chunksGenerated == 1 ? "" : "s");
 }
@@ -199,7 +201,7 @@ void View::createPipeline(PipelineManager &pipelineManager) {
     auto & pso = pipelineManager.createPipeline(PIPELINE_KEY);
     pso.setType(Diligent::PIPELINE_TYPE_GRAPHICS);
     pso.setNumberOfTargets(1);
-    pso.setFormat(diligentAppBase->m_pSwapChain.RawPtr());
+    pso.setFormat(getDiligentAppBase().m_pSwapChain.RawPtr());
     pso.setPrimitiveTopology(Diligent::PRIMITIVE_TOPOLOGY_TRIANGLE_LIST);
     pso.setCullMode(Diligent::CULL_MODE_NONE);
     pso.setDepthTesting(false);
@@ -219,7 +221,7 @@ void View::createPipeline(PipelineManager &pipelineManager) {
         ShaderCI.EntryPoint      = "main";
         ShaderCI.Desc.Name       = "View vertex shader";
         ShaderCI.Source          = vertexShader;
-        diligentAppBase->m_pDevice->CreateShader(ShaderCI, &pVS);
+        getDiligentAppBase().m_pDevice->CreateShader(ShaderCI, &pVS);
     }
 
     // Create a pixel shader
@@ -229,7 +231,7 @@ void View::createPipeline(PipelineManager &pipelineManager) {
         ShaderCI.EntryPoint      = "main";
         ShaderCI.Desc.Name       = "View pixel shader";
         ShaderCI.Source          = pixelShader;
-        diligentAppBase->m_pDevice->CreateShader(ShaderCI, &pPS);
+        getDiligentAppBase().m_pDevice->CreateShader(ShaderCI, &pPS);
     }
     pso.setShaders(pVS, pPS);
 
@@ -277,7 +279,7 @@ void View::createPipeline(PipelineManager &pipelineManager) {
             }
     );
 
-    pso.createPipelineState(diligentAppBase->m_pDevice);
+    pso.createPipelineState(getDiligentAppBase().m_pDevice);
     pso.createShaderBinding(true);
 
     auto * tex = pso.getVariableFromPixelShader("g_Texture");
@@ -290,13 +292,13 @@ void View::createPipeline(PipelineManager &pipelineManager) {
 void View::switchToPipeline(PipelineManager &pipelineManager) {
     // Set the pipeline state in the immediate context
     pipelineManager.switchToPipeline(
-            PIPELINE_KEY, diligentAppBase->m_pImmediateContext
+            PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext
     );
 }
 
 void View::bindShaderResources(PipelineManager &pipelineManager) {
     pipelineManager.commitShaderResourceBinding(
-            PIPELINE_KEY, diligentAppBase->m_pImmediateContext,
+            PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext,
             Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION
     );
 }

@@ -8,6 +8,7 @@
 #include "ObjectBase.h"
 #include "Triangle.h"
 #include "Cube.h"
+#include "CubeOnTriangle.h"
 #include "Views/Views.h"
 
 #endif //GRAPHICAL_TOOL_KIT_OBJECTS_H

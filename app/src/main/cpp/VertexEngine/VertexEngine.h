@@ -5,7 +5,7 @@
 #ifndef GRAPHICAL_TOOL_KIT_VERTEXENGINE_H
 #define GRAPHICAL_TOOL_KIT_VERTEXENGINE_H
 
-#include "PixelToNDC.h"
+#include <PixelToNDC/PixelToNDC.h>
 #include <vector>
 #include <WINAPI_KERNEL/SDK/include/Windows/Kernel/WindowsAPIKernel.h>
 #include <DiligentTools/TextureLoader/interface/TextureLoader.h>
