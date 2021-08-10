@@ -12,7 +12,9 @@
 
 class CubeOnTriangle : public ObjectGroup {
     RenderTarget rt;
+    RenderTarget rt2;
     static constexpr const char * PIPELINE_KEY = "CubeOnTriangle ORT";
+    static constexpr const char * PIPELINE_KEY2 = "CubeOnTriangle ORT2";
 public:
     void createPipeline(PipelineManager & pipelineManager) override;
     void destroyPipeline(PipelineManager & pipelineManager) override;
