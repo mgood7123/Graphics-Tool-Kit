@@ -112,9 +112,12 @@ void AppInstance::onDraw ()
         drawTools.pixelToNDC.resize(width, height);
         auto color = m_pSwapChain->GetCurrentBackBufferRTV();
         auto depth = m_pSwapChain->GetDepthBufferDSV();
-        RenderTarget::bind(color, depth, m_pImmediateContext);
+        screenRenderTarget.bind(color, depth, m_pImmediateContext);
         RenderTarget::clearColorAndDepth(RenderTarget::black, 1, color, depth, m_pImmediateContext);
-        screenRenderTarget.draw(drawTools, obj->x, obj->y, obj->width, obj->height, m_pImmediateContext);
+
+        Diligent::Rect f {0, 0, width, height};
+        m_pImmediateContext->SetScissorRects(1, &f, width, height);
+        screenRenderTarget.draw(drawTools, obj->position.x, obj->position.y, obj->position.width, obj->position.height, m_pImmediateContext);
     }
     swapBuffers();
 }
@@ -122,7 +125,10 @@ void AppInstance::onDraw ()
 bool AppInstance::onTouchEvent(MultiTouch & touchEvent) {
     if (destroyed.load()) return false;
     ObjectBase * obj = objectBase.get<ObjectBase*>();
-    return obj != nullptr && obj->onTouchEvent(touchEvent);
+    if (obj != nullptr) {
+        return obj->onTouchEvent(touchEvent);
+    }
+    return false;
 }
 
 void AppInstance::swapBuffers ()

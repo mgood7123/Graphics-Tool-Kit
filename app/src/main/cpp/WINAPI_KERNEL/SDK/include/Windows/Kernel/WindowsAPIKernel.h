@@ -41,7 +41,13 @@ class Kernel {
 
         Object *newObject(ObjectType type, ObjectFlag flags);
 
-        template <typename T> Object * newObject(ObjectType type, ObjectFlag flags, T && resource) {
+        template <typename T>
+        Object * newObject(ObjectType type, ObjectFlag flags, T * resource) {
+            return this->table->add(type, flags, resource);
+        }
+
+        template <typename T>
+        Object * newObject(ObjectType type, ObjectFlag flags, T && resource) {
             return this->table->add(type, flags, resource);
         }
 

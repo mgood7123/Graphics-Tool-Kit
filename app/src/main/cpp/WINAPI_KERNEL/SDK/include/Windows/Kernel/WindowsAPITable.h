@@ -28,7 +28,7 @@ typedef class Table {
             void skip(size_t amount);
             bool hasNext();
             Object * next();
-            int getIndex();
+            int getIndex() const;
         };
 
         Iterator getIterator();
@@ -57,6 +57,18 @@ typedef class Table {
             return this->table[i];
         }
 
+        template <typename T> Object * add(ObjectType type, ObjectFlag flags, const T & resource) {
+            if (this->Page.count() == 0 || !this->hasFreeIndex()) this->Page.add();
+            auto x = this->nextFreeIndex();
+            if (!x) return nullptr;
+            size_t i = x.value();
+            this->table[i] = new Object();
+            this->table[i]->type = type;
+            this->table[i]->flags = flags;
+            this->table[i]->resource.store(resource);
+            return this->table[i];
+        }
+
         template <typename T> Object * add(ObjectType type, ObjectFlag flags, T && resource) {
             if (this->Page.count() == 0 || !this->hasFreeIndex()) this->Page.add();
             auto x = this->nextFreeIndex();
@@ -74,6 +86,15 @@ typedef class Table {
         Object *add(Object &object);
 
         void DELETE(size_t index);
+
+        template <typename T> void remove(T * resource) {
+            auto it = getIterator();
+            while (it.hasNext()) {
+                if (it.next()->resource.template get<T*>() == resource) {
+                    DELETE(it.getIndex());
+                }
+            }
+        }
 
         void remove(Object *object);
 
@@ -101,5 +122,6 @@ typedef class Table {
 
         } Page;
 
+    size_t objectCount();
 } WindowsAPITable;
 #endif //MEDIA_PLAYER_PRO_WINDOWSAPITABLE_H

@@ -4,8 +4,21 @@
 
 #include "ObjectBase.h"
 
-void ObjectBase::setDiligentAppBase(DiligentAppBase *dab) {
-    diligentAppBase = dab;
+const Position ObjectBase::ZERO_POSITION = {0, 0, Position::MATCH_PARENT, Position::MATCH_PARENT};
+const Position ObjectBase::NO_CROPPING = {0, 0, 0, 0};
+const Position ObjectBase::NO_PADDING = {0, 0, 0, 0};
+const Position ObjectBase::NO_MARGIN = {0, 0, 0, 0};
+
+void ObjectBase::setTag(const char *name) {
+    tag = name;
+}
+
+const char * ObjectBase::getTag() {
+    return tag;
+}
+
+void ObjectBase::setDiligentAppBase(DiligentAppBase * diligentAppBase) {
+    this->diligentAppBase = diligentAppBase;
 }
 
 DiligentAppBase &ObjectBase::getDiligentAppBase() {

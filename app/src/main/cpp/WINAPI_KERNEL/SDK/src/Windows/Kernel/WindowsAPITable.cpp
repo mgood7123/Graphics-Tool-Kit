@@ -47,7 +47,7 @@ Object* Table::Iterator::next() {
     return this->table->table.at(this->index++);
 }
 
-int Table::Iterator::getIndex() {
+int Table::Iterator::getIndex() const {
     return this->index-1;
 }
 
@@ -143,6 +143,18 @@ void Table::remove(Object *object) {
 
 void Table::remove(Object &object) {
     this->remove(&object);
+}
+
+size_t Table::objectCount() {
+    size_t count = 0;
+    int page = 1;
+    size_t index;
+    for (; page <= Page.count(); page++) {
+        index = ((page_size * page) - page_size);
+        for (; index < page_size * page; index++)
+            if (table[index] != nullptr) count++;
+    }
+    return count;
 }
 
 void Table::Page::add() {

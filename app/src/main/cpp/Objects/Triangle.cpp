@@ -101,11 +101,6 @@ void Triangle::destroyPipeline(PipelineManager & pipelineManager) {
     pipelineManager.destroyPipeline(PIPELINE_KEY);
 }
 
-void Triangle::create() {
-    width = MATCH_PARENT;
-    height = MATCH_PARENT;
-}
-
 void Triangle::draw (DrawTools & drawTools, RenderTarget & renderTarget)
 {
 

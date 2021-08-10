@@ -2,10 +2,10 @@
 // Created by Matthew Good on 8/8/21.
 //
 
-#include <Objects/ObjectBase.h>
 #include <DiligentCore/Graphics/GraphicsTools/interface/CommonlyUsedStates.h>
 #include <DiligentCore/Graphics/GraphicsTools/interface/ShaderMacroHelper.hpp>
 #include <DiligentCore/Common/interface/BasicMath.hpp>
+#include <VertexEngine/VertexEngine.h>
 #include "RenderTarget.h"
 
 const char * RenderTarget::VS = R"(
@@ -117,6 +117,14 @@ void main(in  PSInput  PSIn,
 }
 )";
 
+int RenderTarget::getWidth() {
+    return width;
+}
+
+int RenderTarget::getHeight() {
+    return height;
+}
+
 void RenderTarget::create(const char * PIPELINE_KEY, PipelineManager & pipelineManager, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice) {
     this->PIPELINE_KEY = PIPELINE_KEY;
     auto & pso = pipelineManager.createPipeline(PIPELINE_KEY);
@@ -126,6 +134,7 @@ void RenderTarget::create(const char * PIPELINE_KEY, PipelineManager & pipelineM
     pso.setPrimitiveTopology(Diligent::PRIMITIVE_TOPOLOGY_TRIANGLE_STRIP);
     pso.setCullMode(Diligent::CULL_MODE_BACK);
     pso.setDepthTesting(false);
+    pso.setScissorEnable(true);
 
     Diligent::ShaderCreateInfo ShaderCI;
     // Tell the system that the shader source code is in HLSL.
@@ -292,6 +301,8 @@ Diligent::ITexture * RenderTarget::createDepthTexture(Diligent::ISwapChain * swa
 }
 
 void RenderTarget::resize(PipelineManager & pipelineManager, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice) {
+    width = swapChain->GetDesc().Width;
+    height = swapChain->GetDesc().Height;
     depth_texture.Attach(createDepthTexture(swapChain, renderDevice));
     depthTV = depth_texture->GetDefaultView(Diligent::TEXTURE_VIEW_DEPTH_STENCIL);
 
@@ -316,6 +327,8 @@ void RenderTarget::bind(Diligent::IDeviceContext * deviceContext) {
 
 void RenderTarget::bind(Diligent::ITextureView * color, Diligent::ITextureView * depth, Diligent::IDeviceContext * deviceContext) {
     deviceContext->SetRenderTargets(1, &color, depth, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
+    Diligent::Rect r {0, 0, width, height};
+    deviceContext->SetScissorRects(1, &r, width, height);
 }
 
 void RenderTarget::clearColor(const float * color, Diligent::IDeviceContext * deviceContext) {
@@ -366,8 +379,52 @@ void RenderTarget::clearColorAndDepth(const VertexEngine::Color4 & color, float 
     clearColorAndDepth(colorArray.data(), depth, colorTV, depthTV, deviceContext);
 }
 
+void RenderTarget::clip(const Position & position, DrawTools & drawTools, const float & draw_w, const float & draw_h, Diligent::IDeviceContext * deviceContext) {
+    clip(position.x, position.y, position.width, position.height, drawTools, draw_w, draw_h, deviceContext);
+}
+
+void RenderTarget::clip(const float & x, const float & y, const float & w, const float & h, DrawTools & drawTools, const float & draw_w, const float & draw_h, Diligent::IDeviceContext * deviceContext) {
+    float window_width = width;
+    float window_height = height;
+    
+    // transform window by drawTools
+    
+    float percent_drawTools_w = draw_w / drawTools.pixelToNDC.width;
+    float percent_drawTools_h = draw_h / drawTools.pixelToNDC.height;
+    
+    float transformed_window_w = window_width * percent_drawTools_w;
+    float transformed_window_h = window_height * percent_drawTools_h;
+    
+    // transform draw region by transformed window
+
+    float percent_draw_region_x = x / draw_w;
+    float percent_draw_region_y = y / draw_h;
+    float percent_draw_region_w = w / draw_w;
+    float percent_draw_region_h = h / draw_h;
+    
+    float transformed_window_region_x = transformed_window_w * percent_draw_region_x;
+    float transformed_window_region_y = transformed_window_h * percent_draw_region_y;
+    float transformed_window_region_w = transformed_window_w * percent_draw_region_w;
+    float transformed_window_region_h = transformed_window_h * percent_draw_region_h;
+
+    Diligent::Rect r {
+        static_cast<Diligent::Int32>(transformed_window_region_x),
+        static_cast<Diligent::Int32>(transformed_window_region_y),
+        static_cast<Diligent::Int32>(transformed_window_region_w),
+        static_cast<Diligent::Int32>(transformed_window_region_h),
+    };
+    
+    deviceContext->SetScissorRects(1, &r, width, height);
+}
+
 void RenderTarget::draw(
-        DrawTools & drawTools, int x, int y, int w, int h, Diligent::IDeviceContext * deviceContext
+        DrawTools & drawTools, const Position & position, Diligent::IDeviceContext * deviceContext
+) {
+    draw(drawTools, position.x, position.y, position.width, position.height, deviceContext);
+}
+
+void RenderTarget::draw(
+        DrawTools & drawTools, const int & x, const int & y, const int & w, const int & h, Diligent::IDeviceContext * deviceContext
 ) {
     drawTools.pipelineManager.switchToPipeline(PIPELINE_KEY, deviceContext);
     drawTools.pipelineManager.commitShaderResourceBinding(
@@ -382,8 +439,8 @@ void RenderTarget::draw(
 
     int from_X = x;
     int from_Y = y;
-    int to_X = x + (w == ObjectBase::MATCH_PARENT ? drawTools.pixelToNDC.width : w);
-    int to_Y = y + (h == ObjectBase::MATCH_PARENT ? drawTools.pixelToNDC.height : h);
+    int to_X = x + (w == Position::MATCH_PARENT ? drawTools.pixelToNDC.width : w);
+    int to_Y = y + (h == Position::MATCH_PARENT ? drawTools.pixelToNDC.height : h);
 
     auto a = drawTools.pixelToNDC.toNDC<int, float>(from_X, to_Y, 0);
     auto b = drawTools.pixelToNDC.toNDC<int, float>(from_X, from_Y, 0);

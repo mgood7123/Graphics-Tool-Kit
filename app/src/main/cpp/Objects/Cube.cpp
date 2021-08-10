@@ -89,8 +89,6 @@ void Cube::destroyPipeline(PipelineManager &pipelineManager) {
 void Cube::create ()
 {
     using namespace Diligent;
-    width = MATCH_PARENT;
-    height = MATCH_PARENT;
     obj_y = 0.0;
     auto radY = degreesToRadians(obj_y);
     CubeModelTransform = float4x4::RotationY(radY) * float4x4::RotationX(-PI_F * 0.1f);

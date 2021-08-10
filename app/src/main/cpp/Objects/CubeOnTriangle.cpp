@@ -4,40 +4,40 @@
 
 #include "CubeOnTriangle.h"
 
-void CubeOnTriangle::setDiligentAppBase(DiligentAppBase *diligentAppBase) {
-    ObjectBase::setDiligentAppBase(diligentAppBase);
-    triangle.setDiligentAppBase(diligentAppBase);
-    cube.setDiligentAppBase(diligentAppBase);
-    rectanglePainter.setDiligentAppBase(diligentAppBase);
-}
-
 void CubeOnTriangle::createPipeline(PipelineManager &pipelineManager) {
-    triangle.createPipeline(pipelineManager);
-    cube.createPipeline(pipelineManager);
-    rectanglePainter.createPipeline(pipelineManager);
+    ObjectGroup::createPipeline(pipelineManager);
     auto & app = getDiligentAppBase();
     rt.create(PIPELINE_KEY, pipelineManager, app.m_pSwapChain, app.m_pDevice);
 }
 
 void CubeOnTriangle::destroyPipeline(PipelineManager &pipelineManager) {
-    triangle.destroyPipeline(pipelineManager);
-    cube.destroyPipeline(pipelineManager);
-    rectanglePainter.destroyPipeline(pipelineManager);
+    ObjectGroup::destroyPipeline(pipelineManager);
     rt.destroy(pipelineManager);
 }
 
 void CubeOnTriangle::create() {
-    width = MATCH_PARENT;
-    height = MATCH_PARENT;
-    triangle.create();
-    cube.create();
-    rectanglePainter.create();
+    ObjectGroup::create();
+
+    // we know how large we will be drawing our objects
+    auto tri = new Triangle();
+    tri->padding = 20;
+    tri->position.width = 80;
+    addChild(tri);
+    
+    auto cube = new Cube();
+    cube->cropping = 23;
+    cube->padding = 40;
+    addChild(cube);
+    
+    auto painter = new RectanglePainter();
+    painter->padding = 60;
+    addChild(painter);
+    
+    addChild(this);
 }
 
 void CubeOnTriangle::resize(PipelineManager &pipelineManager) {
-    triangle.resize(pipelineManager);
-    cube.resize(pipelineManager);
-    rectanglePainter.resize(pipelineManager);
+    ObjectGroup::resize(pipelineManager);
     auto & app = getDiligentAppBase();
     rt.resize(pipelineManager, app.m_pSwapChain, app.m_pDevice);
 }
@@ -45,63 +45,82 @@ void CubeOnTriangle::resize(PipelineManager &pipelineManager) {
 void CubeOnTriangle::draw(DrawTools & drawTools, RenderTarget & renderTarget) {
     auto & app = getDiligentAppBase();
 
-    // draw triangle to render target `rt`
-    triangle.switchToPipeline(drawTools.pipelineManager);
-    triangle.bindShaderResources(drawTools.pipelineManager);
-    triangle.draw(drawTools, rt);
-    
-    // draw rt to render target
-    renderTarget.bind(app.m_pImmediateContext);
-    renderTarget.clearColorAndDepth(RenderTarget::black, 1.0f, app.m_pImmediateContext);
-    drawTools.pixelToNDC.resize(400, 400);
-    rt.draw(drawTools, 0, 0, 200, 200, app.m_pImmediateContext);
+    auto array = getChildren();
+    bool first = true;
+    size_t count = 0;
+    for (ObjectBase *obj : array) {
+        // if obj == this then draw render target to itself (can produce artifacts)
+        // otherwise draw the object to rt and then draw rt to render target
+        if (obj != this) {
+            // draw object to render target `rt`
+            obj->switchToPipeline(drawTools.pipelineManager);
+            obj->bindShaderResources(drawTools.pipelineManager);
+            obj->draw(drawTools, rt);
+        }
 
-    // draw cube to render target `rt`
-    cube.switchToPipeline(drawTools.pipelineManager);
-    cube.bindShaderResources(drawTools.pipelineManager);
-    cube.draw(drawTools, rt);
+        // draw rt to render target
+        renderTarget.bind(app.m_pImmediateContext);
+        
+        // clear on first draw
+        if (first) {
+            renderTarget.clearColorAndDepth(RenderTarget::black, 1.0f, app.m_pImmediateContext);
+            first = false;
+        }
 
-    // draw rt to render target
-    renderTarget.bind(app.m_pImmediateContext);
-    // dont clear, use existing contents
-    drawTools.pixelToNDC.resize(400, 400);
-    rt.draw(drawTools, 200, 200, 200, 200, app.m_pImmediateContext);
+        // draw as a 4x4 grid
+        drawTools.pixelToNDC.resize(400, 400);
 
-    // draw rectanglePainter to render target `rt`
-    rectanglePainter.switchToPipeline(drawTools.pipelineManager);
-    rectanglePainter.bindShaderResources(drawTools.pipelineManager);
-    rectanglePainter.draw(drawTools, rt);
-
-    // draw rt to render target
-    renderTarget.bind(app.m_pImmediateContext);
-    // dont clear, use existing contents
-    drawTools.pixelToNDC.resize(400, 400);
-    rt.draw(drawTools, 0, 200, 200, 200, app.m_pImmediateContext);
+        LOOP:
+        switch (count) {
+            case 0:
+                if (obj->position.x < 200 && obj->position.y < 200) {
+                    drawAndClipToBoundaries(
+                            obj, obj == this ? renderTarget : rt, drawTools,
+                            obj->applyPadding({0, 0, 200, 200}),
+                            app.m_pImmediateContext
+                    );
+                }
+                break;
+            case 1:
+                if (obj->position.x < 200 && obj->position.y < 200) {
+                    drawAndClipToBoundaries(
+                            obj, obj == this ? renderTarget : rt, drawTools,
+                            obj->applyPadding({200, 0, 200, 200}),
+                            app.m_pImmediateContext
+                    );
+                }
+                break;
+            case 2:
+                if (obj->position.x < 200 && obj->position.y < 200) {
+                    drawAndClipToBoundaries(
+                            obj, obj == this ? renderTarget : rt, drawTools,
+                            obj->applyPadding({0, 200, 200, 200}),
+                            app.m_pImmediateContext
+                    );
+                }
+                break;
+            case 3:
+                if (obj->position.x < 200 && obj->position.y < 200) {
+                    drawAndClipToBoundaries(
+                            obj, obj == this ? renderTarget : rt, drawTools,
+                            obj->applyPadding({200, 200, 200, 200}),
+                            app.m_pImmediateContext
+                    );
+                }
+                break;
+            default:
+                // wrap around
+                count = 0;
+                goto LOOP;
+        }
+        count++;
+    }
 }
 
 bool CubeOnTriangle::onTouchEvent(MultiTouch &touch) {
-    // TODO: translate touch event to actual view position/boundaries
-    return triangle.onTouchEvent(touch)
-    || cube.onTouchEvent(touch)
-    || rectanglePainter.onTouchEvent(touch)
-    ;
+    return ObjectGroup::onTouchEvent(touch);
 }
 
 void CubeOnTriangle::destroy() {
-    triangle.destroy();
-    cube.destroy();
-    rectanglePainter.destroy();
-}
-
-bool CubeOnTriangle::hasPhysics() {
-    return triangle.hasPhysics()
-    || cube.hasPhysics()
-    || rectanglePainter.hasPhysics()
-    ;
-}
-
-void CubeOnTriangle::physics(const TimeEngine &timeEngine) {
-    triangle.physics(timeEngine);
-    cube.physics(timeEngine);
-    rectanglePainter.physics(timeEngine);
+    ObjectGroup::destroy();
 }

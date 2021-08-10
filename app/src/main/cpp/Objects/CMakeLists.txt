@@ -22,6 +22,16 @@ target_link_libraries(
         MultiTouch
 )
 
+add_library(
+        ObjectGroup SHARED
+        ObjectGroup.cpp
+)
+
+target_link_libraries(
+        ObjectGroup
+        ObjectBase
+)
+
 add_subdirectory(Painters)
 
 add_library(
@@ -33,5 +43,7 @@ add_library(
 
 target_link_libraries(
         Objects
+        ObjectBase
+        ObjectGroup
         Painters
 )

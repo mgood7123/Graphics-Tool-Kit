@@ -16,7 +16,7 @@ add_library(DrawTools DrawTools.cpp)
 target_link_libraries(DrawTools PipelineManager PixelToNDC)
 
 add_library(RenderTarget RenderTarget.cpp)
-target_link_libraries(RenderTarget DrawTools)
+target_link_libraries(RenderTarget DrawTools VertexEngine)
 
 add_library(
         DiligentHelpers SHARED
@@ -35,7 +35,6 @@ target_link_libraries(
         DiligentHelpers
         DiligentAnyOpt
         RenderTarget
-        VertexEngine
 
 #   DiligentCore
         Diligent-BuildSettings

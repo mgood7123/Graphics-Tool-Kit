@@ -19,7 +19,6 @@ public:
     void bindShaderResources(PipelineManager & pipelineManager) override;
     void destroyPipeline(PipelineManager & pipelineManager) override;
 
-    void create() override;
     void draw(DrawTools & drawTools, RenderTarget & renderTarget) override;
 };
 

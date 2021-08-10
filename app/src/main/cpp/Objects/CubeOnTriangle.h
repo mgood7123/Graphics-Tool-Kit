@@ -5,20 +5,15 @@
 #ifndef GRAPHICAL_TOOL_KIT_CUBEONTRIANGLE_H
 #define GRAPHICAL_TOOL_KIT_CUBEONTRIANGLE_H
 
-#include "ObjectBase.h"
+#include "ObjectGroup.h"
 #include "Cube.h"
 #include "Triangle.h"
 #include "Painters/RectanglePainter.h"
 
-class CubeOnTriangle : public ObjectBase {
-    Cube cube;
-    Triangle triangle;
-    RectanglePainter rectanglePainter;
+class CubeOnTriangle : public ObjectGroup {
     RenderTarget rt;
     static constexpr const char * PIPELINE_KEY = "CubeOnTriangle ORT";
 public:
-    void setDiligentAppBase(DiligentAppBase *diligentAppBase) override;
-
     void createPipeline(PipelineManager & pipelineManager) override;
     void destroyPipeline(PipelineManager & pipelineManager) override;
     void create() override;
@@ -26,8 +21,6 @@ public:
     void draw(DrawTools & drawTools, RenderTarget & renderTarget) override;
     bool onTouchEvent(MultiTouch &touch) override;
     void destroy() override;
-    bool hasPhysics() override;
-    void physics(const TimeEngine & timeEngine) override;
 };
 
 
