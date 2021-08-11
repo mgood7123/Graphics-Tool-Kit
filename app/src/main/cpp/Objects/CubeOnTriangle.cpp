@@ -34,8 +34,6 @@ void CubeOnTriangle::create() {
     auto painter = new RectanglePainter();
     painter->padding = 60;
     addChild(painter);
-    
-    addChild(this);
 }
 
 void CubeOnTriangle::resize(PipelineManager &pipelineManager) {
