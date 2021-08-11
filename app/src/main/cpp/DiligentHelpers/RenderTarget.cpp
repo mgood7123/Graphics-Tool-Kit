@@ -125,7 +125,17 @@ int RenderTarget::getHeight() {
     return height;
 }
 
+RenderTarget::~RenderTarget() {
+    if (this->PIPELINE_KEY != nullptr) {
+        Log::Error_And_Throw("`destroy(", this->PIPELINE_KEY, ");` has not been called");
+    }
+}
+
+
 void RenderTarget::create(const char * PIPELINE_KEY, PipelineManager & pipelineManager, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice) {
+    if (this->PIPELINE_KEY != nullptr) {
+        Log::Error_And_Throw("attempting to create a RenderTarget without first destroying existing RenderTarget, please call `destroy(", this->PIPELINE_KEY, ");` before calling `create(", PIPELINE_KEY, ");`");
+    }
     this->PIPELINE_KEY = PIPELINE_KEY;
     auto & pso = pipelineManager.createPipeline(PIPELINE_KEY);
     pso.setType(Diligent::PIPELINE_TYPE_GRAPHICS);
@@ -488,6 +498,7 @@ void RenderTarget::destroy(PipelineManager & pipelineManager) {
     indexBuffer.Release();
     m_PSConstants.Release();
     pipelineManager.destroyPipeline(PIPELINE_KEY);
+    PIPELINE_KEY = nullptr;
 }
 
 float RenderTarget::black[4] = { 0.0f,  0.0f,  0.0f, 1.0f };

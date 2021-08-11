@@ -32,7 +32,7 @@ typedef class Object {
         char *name;
         ObjectFlag flags;
         HANDLE handle;
-        int handles;
+        size_t handles;
         ResourceType resource;
 
         void clean();

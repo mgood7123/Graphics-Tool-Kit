@@ -19,7 +19,7 @@ private:
     int canvas_width = 400;
     int canvas_height = 400;
 
-    void drawChunks(VertexEngine::GenerationInfo &info, DrawTools & tools);
+    void drawChunks(VertexEngine::GenerationInfo && info, DrawTools & tools);
 
 
     static const char * vertexShader;

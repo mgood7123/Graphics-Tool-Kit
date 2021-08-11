@@ -25,8 +25,9 @@ class RenderTarget {
     Diligent::BufferDesc IndBuffDesc;
     Diligent::RefCntAutoPtr<Diligent::IBuffer> vertexBuffer;
     Diligent::RefCntAutoPtr<Diligent::IBuffer> indexBuffer;
-    const char * PIPELINE_KEY;
+    const char * PIPELINE_KEY = nullptr;
 public:
+    ~RenderTarget();
     int getWidth();
     int getHeight();
     void create(const char * PIPELINE_KEY, PipelineManager & pipelineManager, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice);

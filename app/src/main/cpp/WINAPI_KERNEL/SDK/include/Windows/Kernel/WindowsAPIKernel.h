@@ -13,6 +13,7 @@
 #include <cstdint>
 
 class Kernel {
+    size_t handles;
     public:
         Kernel();
 

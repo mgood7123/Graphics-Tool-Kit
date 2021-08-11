@@ -91,9 +91,10 @@ public:
 
 private:
     Kernel PSOs;
-
+    size_t pipelines;
 public:
     PipelineManager();
+    ~PipelineManager();
     PipelineObject & createPipeline(const char * key);
 
     std::pair<PipelineObject *, size_t> findPipeline(const char *key);

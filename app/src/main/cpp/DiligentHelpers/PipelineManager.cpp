@@ -147,9 +147,22 @@ void PipelineManager::PipelineObject::setDefaultResourceLayoutVariableType(
 
 PipelineManager::PipelineManager() {
     PSOs.table->page_size = 2;
+    pipelines = 0;
+}
+
+PipelineManager::~PipelineManager() {
+    if (pipelines != 0) {
+        if (pipelines == 1) {
+            Log::Error_And_Throw("Cannot destroy pipelinemanager: a pipeline has not been manually destroyed");
+        } else {
+            Log::Error_And_Throw("Cannot destroy pipelinemanager: there are ", pipelines,
+                                 " pipelines that have not been manually destroyed");
+        }
+    }
 }
 
 PipelineManager::PipelineObject &PipelineManager::createPipeline(const char *key) {
+    pipelines++;
     return PSOs.newObject(ObjectTypeNone, ObjectFlagNone, std::move(PipelineObject(key)))->resource.get<PipelineObject &>();
 }
 
@@ -221,5 +234,6 @@ void PipelineManager::destroyPipeline(const char *key) {
             binding.Release();
         }
         PSOs.table->DELETE(po.second);
+        pipelines--;
     }
 }

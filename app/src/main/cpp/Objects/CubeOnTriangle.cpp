@@ -25,7 +25,7 @@ void CubeOnTriangle::create() {
     tri->padding = 20;
     tri->position.width = 80;
     addChild(tri);
-    
+
     auto cube = new Cube();
     cube->cropping = 23;
     cube->padding = 40;

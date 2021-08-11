@@ -22,6 +22,7 @@ Table::~Table() {
 
 Table::Iterator::Iterator(Table *t) {
     table = t;
+    tableIsEmpty = t == nullptr || table->table.empty();
 }
 
 void Table::Iterator::skip(size_t amount) {
@@ -29,6 +30,7 @@ void Table::Iterator::skip(size_t amount) {
 }
 
 bool Table::Iterator::hasNext() {
+    if (tableIsEmpty) return false;
     size_t page_size = this->table->page_size;
     for (; this->page <= this->table->Page.count(); this->page++) {
         size_t idx = ((page_size * this->page) - page_size);
@@ -44,7 +46,7 @@ bool Table::Iterator::hasNext() {
 }
 
 Object* Table::Iterator::next() {
-    return this->table->table.at(this->index++);
+    return tableIsEmpty ? nullptr : this->table->table.at(this->index++);
 }
 
 int Table::Iterator::getIndex() const {

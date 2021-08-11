@@ -12,6 +12,7 @@
 #include <DiligentCore/Common/interface/RefCntAutoPtr.hpp>
 #include <DiligentCore/Graphics/GraphicsEngine/interface/DeviceContext.h>
 #include <DiligentCore/Graphics/GraphicsEngine/interface/RenderDevice.h>
+#include <MultiTouch/Utils/AutoResizingArray.h>
 
 class VertexEngine {
 public:
@@ -98,11 +99,12 @@ public:
 private:
     template <typename data_type, typename storage_type>
     class Buffer {
-        Kernel kernel = Kernel(8);
+        Kernel kernel {8};
     public:
         HANDLE add(data_type data);
 
         storage_type * get(HANDLE handle);
+        storage_type * get(Object * object);
         storage_type * get(const size_t & index);
         tl::optional<size_t> getIndex(HANDLE handle);
 
@@ -181,6 +183,8 @@ private:
      */
     void order(const std::vector<HANDLE>& data);
 
+    bool externalTextureManager = false;
+
 public:
     static const int positionCount = 3;
     static const int colorCount = 4;
@@ -208,16 +212,18 @@ public:
 
         size_t chunksGenerated;
 
-        const size_t lengthData;
-        const size_t sizeInBytesData;
+        size_t lengthData;
+        size_t sizeInBytesData;
         float * data;
 
-        const size_t lengthIndices;
-        const size_t sizeInBytesIndices;
+        size_t lengthIndices;
+        size_t sizeInBytesIndices;
         uint32_t * indices;
 
         bool isTexture;
         tl::optional<size_t> textureIndex;
+
+        GenerationInfo();
 
         GenerationInfo(
                 VertexEngine * engine, const size_t lengthData, const float *data,
@@ -230,13 +236,13 @@ public:
                 const bool isTexture
         );
 
-        GenerationInfo(const GenerationInfo& m) = delete;
+        GenerationInfo(const GenerationInfo& m);
 
-        GenerationInfo& operator=(const GenerationInfo& m) = delete;
+        GenerationInfo& operator=(const GenerationInfo& m);
 
-        GenerationInfo(GenerationInfo && m);
+        GenerationInfo(GenerationInfo && m) noexcept;
 
-        GenerationInfo& operator=(GenerationInfo&& m) = delete;
+        GenerationInfo& operator=(GenerationInfo&& m) noexcept;
 
         ~GenerationInfo();
 
@@ -264,6 +270,8 @@ public:
 
     class Canvas {
         VertexEngine * vertexEngine = nullptr;
+        std::vector<std::pair<HANDLE, std::vector<HANDLE>>> vertexBufferHandles;
+        std::vector<HANDLE> indexHandles;
 
         typedef std::pair<HANDLE, const std::vector<float>&> Data;
 
@@ -352,15 +360,20 @@ public:
     private:
         void checkIfTextureKeyExists(const Color4& colorData);
 
+        Canvas * parent = nullptr;
+
     public:
+        GenerationInfo generateGL();
 
         const int x;
         const int y;
         const int width;
         const int height;
 
+        Canvas(Canvas * parent, int x, int y, int width, int height);
         Canvas(VertexEngine * engine, int x, int y, int width, int height);
         Canvas(VertexEngine * engine, int width, int height);
+        ~Canvas();
 
         Canvas subCanvas(int x, int y, int width, int height);
 
@@ -386,7 +399,7 @@ public:
         static Color4 black;
         static uint32_t black_RGBA_unsigned_32bit_int;
         static uint32_t black_ARGB_unsigned_32bit_int;
-
+        
         /**
          * alias for fill(black);
          */
@@ -401,7 +414,6 @@ public:
 
         void planeAt(int from_X, int from_Y, int to_X, int to_Y, const Color4& colorData);
         void plane(int x, int y, int width, int height, const Color4& colorData);
-
     };
 
     class TextureManager {
@@ -434,6 +446,14 @@ public:
                 Diligent::IRenderDevice  * m_pDevice,
                 Diligent::IDeviceContext * m_pImmediateContext
         );
+        
+        /**
+         * set the default device and context to use for texture operations
+         * <br>
+         * <br>
+         * the devices are obtained from the given texture manager
+         */
+        void setDefaultDevices(const TextureManager * textureManager);
 
         std::pair<bool, std::vector<uint8_t>> imageIsSolidColor(Diligent::RefCntAutoPtr<Diligent::Image> image);
 
@@ -554,7 +574,10 @@ public:
         bool keyMatches(const char *key, Triple<const char *, size_t, Color4> *pTriple);
     };
 
-    TextureManager textureManager;
+    TextureManager * textureManager;
+    VertexEngine(int width, int height, TextureManager * textureManager);
+
+    void removeIndexHandle(HANDLE handle);
 };
 
 

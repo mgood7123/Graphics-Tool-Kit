@@ -119,9 +119,9 @@ HandleClass::~HandleClass() {
 }
 
 bool Kernel::validateHandle(HANDLE hObject) {
-    if (hObject == nullptr) return 0;
+    if (hObject == nullptr) return false;
     HandleClass *h = this->getHandle(hObject);
-    if (h->object == nullptr) return 0;
+    if (h->object == nullptr) return false;
     return !h->invalidated;
 }
 
@@ -130,6 +130,7 @@ HANDLE Kernel::newHandle(ObjectType type) {
 }
 
 HANDLE Kernel::newHandle(ObjectType type, ResourceType resource) {
+    handles++;
     HandleClass *hObject = new HandleClass();
     hObject->object = this->newObject(type, 0, resource);
     assert(hObject->object != nullptr);
@@ -141,9 +142,16 @@ HANDLE Kernel::newHandle(ObjectType type, ResourceType resource) {
 }
 
 HandleClass *Kernel::getHandle(HANDLE handle) {
-    return static_cast<HandleClass *>(handle);
+    HandleClass * h = static_cast<HandleClass *>(handle);
+    if (h->invalidated) {
+        Log::Error_And_Throw("attempting to obtain an invalidated handle");
+    }
+    return h;
 }
 
 void Kernel::removeHandle(HANDLE handle) {
-    deleteObject(getHandle(handle)->object);
+    handles--;
+    HandleClass * h = getHandle(handle);
+    deleteObject(h->object);
+    delete h;
 }

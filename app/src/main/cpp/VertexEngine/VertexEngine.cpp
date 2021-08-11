@@ -25,6 +25,11 @@ storage_type *VertexEngine::Buffer<data_type, storage_type>::get(HANDLE handle) 
 }
 
 template<typename data_type, typename storage_type>
+storage_type *VertexEngine::Buffer<data_type, storage_type>::get(Object * object) {
+    return object->resource.template get<storage_type*>();
+}
+
+template<typename data_type, typename storage_type>
 storage_type *VertexEngine::Buffer<data_type, storage_type>::get(const size_t & index) {
     return kernel.table->objectAt(index)->resource.template get<storage_type*>();
 }
@@ -62,25 +67,33 @@ VertexEngine::VertexInfo::VertexInfo(size_t length, bool is_static) {
     this->is_static = is_static;
 }
 
-VertexEngine::VertexEngine(int width, int height) :
+VertexEngine::VertexEngine(int width, int height, TextureManager * textureManager) :
         defaultPositionBuffer(addDataBuffer(positionCount)),
         defaultColorBuffer(addDataBuffer(colorCount+colorExtraCount)),
         defaultTextureCoordinateBuffer(addDataBuffer(textureCoordinatesCount)),
         width(width),
         height(height),
         indexPosition(0),
-        textureManager(this)
+        textureManager(textureManager == nullptr ? new TextureManager(this) : textureManager),
+        externalTextureManager(textureManager != nullptr)
 {
     order({defaultPositionBuffer, defaultColorBuffer, defaultTextureCoordinateBuffer});
 }
 
+VertexEngine::VertexEngine(int width, int height) :
+        VertexEngine::VertexEngine(width, height, nullptr)
+{
+}
+
 VertexEngine::VertexEngine() :
-        VertexEngine::VertexEngine(0,0)
+        VertexEngine::VertexEngine(0,0, nullptr)
 {
 }
 
 VertexEngine::~VertexEngine() {
     clear();
+    vertexBuffer.clear();
+    if (!externalTextureManager) delete textureManager;
 }
 
 void VertexEngine::resize(int width, int height) {
@@ -99,7 +112,14 @@ int VertexEngine::getHeight() {
 void VertexEngine::clear() {
     auto i = vertexBuffer.getIterator();
     while (i.hasNext()) {
-        auto v = vertexBuffer.get(i.next()->handle);
+        Object * o = i.next();
+        bool HANDLE_IS_DEFAULT_POSITION_BUFFER = defaultPositionBuffer == o->handle;
+        bool HANDLE_IS_DEFAULT_COLOR_BUFFER = defaultColorBuffer == o->handle;
+        bool HANDLE_IS_DEFAULT_TEXCORD_BUFFER = defaultTextureCoordinateBuffer == o->handle;
+//        Log::Info("handle is default position buffer: ", HANDLE_IS_DEFAULT_POSITION_BUFFER);
+//        Log::Info("handle is default color buffer: ", HANDLE_IS_DEFAULT_COLOR_BUFFER);
+//        Log::Info("handle is default texcord buffer: ", HANDLE_IS_DEFAULT_TEXCORD_BUFFER);
+        auto v = vertexBuffer.get(o);
         v->dataBuffer.clear();
     }
     indexBuffer.clear();
@@ -121,6 +141,21 @@ void VertexEngine::removeDataBuffer(HANDLE handle) {
 
 void VertexEngine::order(const std::vector<HANDLE>& data) {
     vertexBufferOrder = data;
+}
+
+VertexEngine::GenerationInfo::GenerationInfo() :
+        vertexEngine(nullptr),
+        data(nullptr),
+        lengthData(0),
+        sizeInBytesData(0),
+        indices(nullptr),
+        lengthIndices(0),
+        sizeInBytesIndices(0),
+        isTexture(false),
+        textureIndex(0),
+        chunkReader(0),
+        chunksGenerated(0)
+{
 }
 
 VertexEngine::GenerationInfo::GenerationInfo(
@@ -155,7 +190,33 @@ VertexEngine::GenerationInfo::GenerationInfo(
 {
 }
 
-VertexEngine::GenerationInfo::GenerationInfo(VertexEngine::GenerationInfo &&m) :
+VertexEngine::GenerationInfo::GenerationInfo(const VertexEngine::GenerationInfo &m) :
+    GenerationInfo(m.vertexEngine, m.lengthData, m.data, m.lengthIndices, m.indices, m.isTexture)
+{
+}
+
+VertexEngine::GenerationInfo& VertexEngine::GenerationInfo::operator=(const VertexEngine::GenerationInfo& m) {
+    delete[] data;
+    data = new float[m.lengthData];
+    memcpy(data, m.data, m.sizeInBytesData);
+    lengthData = m.lengthData;
+    sizeInBytesData = m.sizeInBytesData;
+
+    delete[] indices;
+    indices = new uint32_t[m.lengthIndices];
+    memcpy(indices, m.indices, m.sizeInBytesIndices);
+    lengthIndices = m.lengthIndices;
+    sizeInBytesIndices = m.sizeInBytesIndices;
+
+    vertexEngine = m.vertexEngine;
+    isTexture = m.isTexture;
+    textureIndex = m.textureIndex;
+    chunkReader = m.chunkReader;
+    chunksGenerated = m.chunksGenerated;
+    return *this;
+}
+
+VertexEngine::GenerationInfo::GenerationInfo(VertexEngine::GenerationInfo &&m) noexcept :
         vertexEngine(m.vertexEngine),
         data(m.data),
         lengthData(m.lengthData),
@@ -163,13 +224,48 @@ VertexEngine::GenerationInfo::GenerationInfo(VertexEngine::GenerationInfo &&m) :
         indices(m.indices),
         lengthIndices(m.lengthIndices),
         sizeInBytesIndices(m.sizeInBytesIndices),
-        chunkReader(0),
-        chunksGenerated(0),
-        isTexture(m.isTexture)
+        chunkReader(m.chunkReader),
+        chunksGenerated(m.chunksGenerated),
+        isTexture(m.isTexture),
+        textureIndex(m.textureIndex)
 {
     m.vertexEngine = nullptr;
     m.data = nullptr;
+    m.lengthData = 0;
+    m.sizeInBytesData = 0;
     m.indices = nullptr;
+    m.lengthIndices = 0;
+    m.sizeInBytesIndices = 0;
+    m.chunkReader = 0;
+    m.chunksGenerated = 0;
+    m.isTexture = false;
+    m.textureIndex = 0;
+}
+
+VertexEngine::GenerationInfo& VertexEngine::GenerationInfo::operator=(VertexEngine::GenerationInfo&& m) noexcept {
+    vertexEngine = m.vertexEngine;
+    m.vertexEngine = nullptr;
+    data = m.data;
+    m.data = nullptr;
+    lengthData = m.lengthData;
+    m.lengthData = 0;
+    sizeInBytesData = m.sizeInBytesData;
+    m.sizeInBytesData = 0;
+    indices = m.indices;
+    m.indices = nullptr;
+    lengthIndices = m.lengthIndices;
+    m.lengthIndices = 0;
+    sizeInBytesIndices = m.sizeInBytesIndices;
+    m.sizeInBytesIndices = 0;
+    chunkReader = m.chunkReader;
+    m.chunkReader = 0;
+    chunksGenerated = m.chunksGenerated;
+    m.chunksGenerated = 0;
+    isTexture = m.isTexture;
+    m.isTexture = false;
+    textureIndex = m.textureIndex;
+    m.textureIndex = 0;
+    return *this;
 }
 
 VertexEngine::GenerationInfo::~GenerationInfo() {
@@ -325,7 +421,7 @@ void VertexEngine::GenerationInfo::fillColorDataAndDisableTextureFlag(const char
     if (key == nullptr) {
         LOG_ERROR_AND_THROW("cannot fill color data from a nullptr key");
     }
-    auto tex = vertexEngine->textureManager.getTexture(key);
+    auto tex = vertexEngine->textureManager->getTexture(key);
     if (tex == nullptr) {
         LOG_ERROR_AND_THROW("key '", key, "' does not exist");
     }
@@ -466,9 +562,25 @@ VertexEngine::GenerationInfo VertexEngine::generateGL() {
     }
 }
 
+void VertexEngine::removeIndexHandle(HANDLE handle) {
+    indexBuffer.remove(handle);
+    std::vector<HANDLE> rebuild;
+    for (HANDLE h : indexHandles) {
+        if (h != handle) rebuild.push_back(h);
+    }
+    indexHandles = std::move(rebuild);
+}
+
 VertexEngine::TextureManager::TextureManager(VertexEngine *engine):
         vertexEngine(engine)
 {
+}
+
+void VertexEngine::TextureManager::setDefaultDevices(
+        const TextureManager * textureManager
+) {
+    m_pDevice = textureManager->m_pDevice;
+    m_pImmediateContext = textureManager->m_pImmediateContext;
 }
 
 void VertexEngine::TextureManager::setDefaultDevices(
@@ -665,6 +777,28 @@ bool VertexEngine::TextureManager::keyMatches(
 }
 
 HANDLE VertexEngine::Canvas::addData_(HANDLE dataBufferHandle, const std::vector<float>& data) {
+    bool containsHandle = false;
+    std::pair<HANDLE, std::vector<HANDLE>> * pair;
+    for (auto & pair_ : vertexBufferHandles) {
+        if (pair_.first == dataBufferHandle) {
+            pair = &pair_;
+            containsHandle = true;
+            break;
+        }
+    }
+
+    if (!containsHandle) {
+        vertexBufferHandles.push_back({dataBufferHandle, {}});
+        // find the added handle
+        for (auto & pair_ : vertexBufferHandles) {
+            if (pair_.first == dataBufferHandle) {
+                pair = &pair_;
+                containsHandle = true;
+                break;
+            }
+        }
+    }
+
     VertexInfo * buffer = vertexEngine->vertexBuffer.get(dataBufferHandle);
     size_t dataLength = data.size();
     size_t bufferLength = buffer->length;
@@ -673,12 +807,25 @@ HANDLE VertexEngine::Canvas::addData_(HANDLE dataBufferHandle, const std::vector
     }
     if (buffer->is_static) {
         if (buffer->static_data != nullptr) {
-            buffer->dataBuffer.remove(buffer->static_data);
+            size_t c = pair->second.size();
+            for (size_t i = 0; i < c; ++i) {
+                if (pair->second[i] == buffer->static_data) {
+                    buffer->dataBuffer.remove(pair->second[i]);
+                    pair->second[i] = buffer->dataBuffer.add(data);
+                    buffer->static_data = pair->second[i];
+                    return pair->second[i];
+                }
+            }
+            Log::Error_And_Throw("buffer is non null but does not exist in known handles");
+        } else {
+            buffer->static_data = buffer->dataBuffer.add(data);
+            pair->second.push_back(buffer->static_data);
+            return buffer->static_data;
         }
-        buffer->static_data = buffer->dataBuffer.add(data);
-        return buffer->static_data;
     } else {
-        return buffer->dataBuffer.add(data);
+        HANDLE handle = buffer->dataBuffer.add(data);
+        pair->second.push_back(handle);
+        return handle;
     }
 }
 
@@ -695,33 +842,72 @@ std::vector<HANDLE> VertexEngine::Canvas::addData_(
 HANDLE VertexEngine::Canvas::addIndexData_(const std::vector<uint32_t>& data) {
     HANDLE handle = vertexEngine->indexBuffer.add(data);
     vertexEngine->indexHandles.push_back(handle);
+    indexHandles.push_back(handle);
     return handle;
 }
 
+VertexEngine::Canvas::Canvas(VertexEngine::Canvas *parent, int x, int y, int width, int height) :
+        x(x), y(y), width(width), height(height)
+{
+    if(parent == nullptr) {
+        LOG_FATAL_ERROR_AND_THROW("parent cannot be nullptr");
+    }
+    int actualX = parent->x + x;
+    int actualY = parent->y + y;
+    int actualWidth = actualX + width;
+    int actualHeight = actualY + height;
+
+    if(actualWidth > parent->width) {
+        LOG_FATAL_ERROR_AND_THROW("subcanvas actual width (", actualWidth, ") is greater than canvas width (", parent->width, ")");
+    }
+    if(actualHeight > parent->height) {
+        LOG_FATAL_ERROR_AND_THROW("subcanvas actual height (", actualHeight, ") is greater than canvas height (", parent->height, ")");
+    }
+    // attach vertex engine
+    vertexEngine = parent->vertexEngine;
+    this->parent = parent;
+}
+
 VertexEngine::Canvas::Canvas(VertexEngine *engine, int x, int y, int width, int height) :
-    x(x), y(y), width(width), height(height),
-    vertexEngine(engine)
-{}
+    x(x), y(y), width(width), height(height)
+{
+    vertexEngine = new VertexEngine(engine->width, engine->height, engine->textureManager);
+}
 
 VertexEngine::Canvas::Canvas(VertexEngine *engine, int width, int height) :
         VertexEngine::Canvas(engine, 0, 0, width, height)
 {
 }
 
+VertexEngine::Canvas::~Canvas() {
+    if (parent == nullptr) {
+        for (std::pair<HANDLE, std::vector<HANDLE>> & pair : vertexBufferHandles) {
+            VertexInfo * vertexInfo = vertexEngine->vertexBuffer.get(pair.first);
+            for (HANDLE handle : pair.second) {
+                vertexInfo->dataBuffer.remove(handle);
+            }
+        }
+
+        for (HANDLE handle : indexHandles) {
+            vertexEngine->removeIndexHandle(handle);
+        }
+        delete vertexEngine;
+    } else {
+        // add our handles to parent handles
+        // handles will probogate up the call chain to root object
+        for (std::pair<HANDLE, std::vector<HANDLE>> & pair : vertexBufferHandles) {
+            parent->vertexBufferHandles.push_back(pair);
+        }
+
+        for (HANDLE handle : indexHandles) {
+            parent->indexHandles.push_back(handle);
+        }
+        // dont delete vertex engine as it points to parent vertex engine
+    }
+}
+
 VertexEngine::Canvas VertexEngine::Canvas::subCanvas(int x, int y, int width, int height) {
-    int actualX = this->x + x;
-    int actualY = this->y + y;
-    int actualWidth = actualX + width;
-    int actualHeight = actualY + height;
-
-    if(actualWidth > this->width) {
-        LOG_FATAL_ERROR_AND_THROW("subcanvas actual width (", actualWidth, ") is greater than canvas width (", this->width, ")");
-    }
-    if(actualHeight > this->height) {
-        LOG_FATAL_ERROR_AND_THROW("subcanvas actual height (", actualHeight, ") is greater than canvas height (", this->height, ")");
-    }
-
-    return VertexEngine::Canvas(vertexEngine, x, y, width, height);
+    return {this, x, y, width, height};
 }
 
 void VertexEngine::Canvas::addData(const std::vector<Triple<const Position3&, const Color4&, const TextureCoordinate2&>>& data) {
@@ -789,15 +975,15 @@ void VertexEngine::Canvas::checkIfTextureKeyExists(const VertexEngine::Canvas::C
         if (colorData.key == nullptr) {
             LOG_FATAL_ERROR_AND_THROW("key must not be nullptr");
         }
-        auto & tm = vertexEngine->textureManager;
-        auto textureIndex = tm.findTextureIndex(colorData.key);
+        TextureManager * tm = vertexEngine->textureManager;
+        auto textureIndex = tm->findTextureIndex(colorData.key);
         if (!textureIndex.has_value()) {
             LOG_WARNING_MESSAGE(
                     "the key '", colorData.key, "' is not associated to any texture"
             );
             c.textureResource = -1;
         } else {
-            auto & texColor = tm.getTexture(textureIndex.value())->third;
+            auto & texColor = tm->getTexture(textureIndex.value())->third;
             if (texColor.texture != nullptr) {
                 // texture is not solid color
                 c.textureResource = textureIndex.value();
@@ -812,6 +998,10 @@ void VertexEngine::Canvas::checkIfTextureKeyExists(const VertexEngine::Canvas::C
             }
         }
     }
+}
+
+VertexEngine::GenerationInfo VertexEngine::Canvas::generateGL() {
+    return vertexEngine->generateGL();
 }
 
 VertexEngine::Canvas::Position2::Position2(const std::array<float, 2> &data) {

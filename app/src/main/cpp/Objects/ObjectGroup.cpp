@@ -91,8 +91,7 @@ bool ObjectGroup::onTouchEvent(MultiTouch &touch) {
 void ObjectGroup::destroy() {
     auto array = getChildren();
     for (ObjectBase *obj : array) {
-        if (obj == this) continue; // skip self
-        obj->destroy();
+        if (obj != this) removeChild(obj);
     }
     createCalled = false;
     destroyCalled = true;
@@ -154,5 +153,10 @@ void ObjectGroup::addChild(ObjectBase * obj) {
 
 void ObjectGroup::removeChild(ObjectBase *obj) {
     // obj is destroyed here
+    if (createCalled && !destroyCalled) obj->destroy();
+    if (!destroyPipelineCalled) obj->destroyPipeline(*pipelineManagerUsed);
     children.table->remove(obj);
+}
+
+ObjectGroup::~ObjectGroup() {
 }

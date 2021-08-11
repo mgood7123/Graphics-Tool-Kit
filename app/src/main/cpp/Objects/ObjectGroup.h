@@ -68,6 +68,8 @@ public:
 
     void addChild(ObjectBase * obj);
     void removeChild(ObjectBase * obj);
+
+    ~ObjectGroup();;
 };
 
 

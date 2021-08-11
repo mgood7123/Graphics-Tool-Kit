@@ -21,6 +21,7 @@ typedef class Table {
 
         class Iterator {
             Table * table;
+            bool tableIsEmpty;
             size_t index = 0;
             size_t page = 1;
         public:

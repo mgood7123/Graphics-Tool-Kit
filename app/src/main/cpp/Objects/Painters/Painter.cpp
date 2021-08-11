@@ -69,17 +69,17 @@ void Painter::create() {
 
     vertexEngine.resize(canvas_width, canvas_height);
 
-    vertexEngine.textureManager.setDefaultDevices(
+    vertexEngine.textureManager->setDefaultDevices(
             getDiligentAppBase().m_pDevice.RawPtr(),
             getDiligentAppBase().m_pImmediateContext.RawPtr()
     );
 
-    vertexEngine.textureManager.createSolidColorTexture(DUMMY_TEXTURE_KEY, {0,0,0,1});
-    auto c = vertexEngine.textureManager.getTexture(DUMMY_TEXTURE_KEY)->third;
+    vertexEngine.textureManager->createSolidColorTexture(DUMMY_TEXTURE_KEY, {0,0,0,1});
+    auto c = vertexEngine.textureManager->getTexture(DUMMY_TEXTURE_KEY)->third;
     dummyTextureColorRef = c.to_RGBA_array();
     dummyTextureView = c.texture->GetDefaultView(Diligent::TEXTURE_VIEW_SHADER_RESOURCE);
 
-    onCreate(vertexEngine.textureManager);
+    onCreate(*vertexEngine.textureManager);
 }
 
 void Painter::draw (DrawTools & drawTools, RenderTarget & renderTarget) {
@@ -105,12 +105,10 @@ void Painter::draw (DrawTools & drawTools, RenderTarget & renderTarget) {
     VertexEngine::Canvas canvas(&vertexEngine, 400, 400);
     onDraw(canvas);
 
-    VertexEngine::GenerationInfo generationInfo = vertexEngine.generateGL();
-
-    drawChunks(generationInfo, drawTools);
+    drawChunks(canvas.generateGL(), drawTools);
 }
 
-void Painter::drawChunks(VertexEngine::GenerationInfo &info, DrawTools & drawTools) {
+void Painter::drawChunks(VertexEngine::GenerationInfo && info, DrawTools & drawTools) {
     auto & app = getDiligentAppBase();
 
     // This is an indexed draw call
@@ -128,7 +126,7 @@ void Painter::drawChunks(VertexEngine::GenerationInfo &info, DrawTools & drawToo
         if (chunk.isTexture) {
             if (chunk.textureIndex.has_value()) {
                 size_t textureIndex = chunk.textureIndex.value();
-                auto tex = vertexEngine.textureManager.getTexture(textureIndex);
+                auto tex = vertexEngine.textureManager->getTexture(textureIndex);
                 if (tex == nullptr) {
                     LOG_WARNING_MESSAGE(
                             "texture container referenced by index '", textureIndex, "' is nullptr"
@@ -177,8 +175,8 @@ void Painter::drawChunks(VertexEngine::GenerationInfo &info, DrawTools & drawToo
 }
 
 void Painter::destroy() {
-    onDestroy(vertexEngine.textureManager);
-    vertexEngine.textureManager.deleteTexture(DUMMY_TEXTURE_KEY);
+    onDestroy(*vertexEngine.textureManager);
+    vertexEngine.textureManager->deleteTexture(DUMMY_TEXTURE_KEY);
     shaderResourceVariable_Texture.Release();
     vertexBuffer.Release();
     indexBuffer.Release();
