@@ -117,11 +117,11 @@ void main(in  PSInput  PSIn,
 }
 )";
 
-int RenderTarget::getWidth() {
+int RenderTarget::getWidth() const {
     return width;
 }
 
-int RenderTarget::getHeight() {
+int RenderTarget::getHeight() const {
     return height;
 }
 
@@ -137,7 +137,7 @@ void RenderTarget::create(const char * PIPELINE_KEY, PipelineManager & pipelineM
         Log::Error_And_Throw("attempting to create a RenderTarget without first destroying existing RenderTarget, please call `destroy(", this->PIPELINE_KEY, ");` before calling `create(", PIPELINE_KEY, ");`");
     }
     this->PIPELINE_KEY = PIPELINE_KEY;
-    auto & pso = pipelineManager.createPipeline(PIPELINE_KEY);
+    auto & pso = pipelineManager.createPipeline(this, PIPELINE_KEY);
     pso.setType(Diligent::PIPELINE_TYPE_GRAPHICS);
     pso.setNumberOfTargets(1);
     pso.setFormat(swapChain);
@@ -319,7 +319,7 @@ void RenderTarget::resize(PipelineManager & pipelineManager, Diligent::ISwapChai
     color_texture.Attach(createColorTexture(swapChain, renderDevice));
     colorTV = color_texture->GetDefaultView(Diligent::TEXTURE_VIEW_RENDER_TARGET);
 
-    auto k = pipelineManager.findPipeline(PIPELINE_KEY);
+    auto k = pipelineManager.findPipeline(this, PIPELINE_KEY);
     if (k.first != nullptr) {
         // We need to release and create a new SRB that references new off-screen render target SRV
         k.first->getBinding().Release();
@@ -389,39 +389,16 @@ void RenderTarget::clearColorAndDepth(const VertexEngine::Color4 & color, float 
     clearColorAndDepth(colorArray.data(), depth, colorTV, depthTV, deviceContext);
 }
 
-void RenderTarget::clip(const Position & position, DrawTools & drawTools, const float & draw_w, const float & draw_h, Diligent::IDeviceContext * deviceContext) {
-    clip(position.x, position.y, position.width, position.height, drawTools, draw_w, draw_h, deviceContext);
+void RenderTarget::clip(const Position & position, Diligent::IDeviceContext * deviceContext) {
+    clip(position.x, position.y, position.width, position.height, deviceContext);
 }
 
-void RenderTarget::clip(const float & x, const float & y, const float & w, const float & h, DrawTools & drawTools, const float & draw_w, const float & draw_h, Diligent::IDeviceContext * deviceContext) {
-    float window_width = width;
-    float window_height = height;
-    
-    // transform window by drawTools
-    
-    float percent_drawTools_w = draw_w / drawTools.pixelToNDC.width;
-    float percent_drawTools_h = draw_h / drawTools.pixelToNDC.height;
-    
-    float transformed_window_w = window_width * percent_drawTools_w;
-    float transformed_window_h = window_height * percent_drawTools_h;
-    
-    // transform draw region by transformed window
-
-    float percent_draw_region_x = x / draw_w;
-    float percent_draw_region_y = y / draw_h;
-    float percent_draw_region_w = w / draw_w;
-    float percent_draw_region_h = h / draw_h;
-    
-    float transformed_window_region_x = transformed_window_w * percent_draw_region_x;
-    float transformed_window_region_y = transformed_window_h * percent_draw_region_y;
-    float transformed_window_region_w = transformed_window_w * percent_draw_region_w;
-    float transformed_window_region_h = transformed_window_h * percent_draw_region_h;
-
+void RenderTarget::clip(const float & x, const float & y, const float & w, const float & h, Diligent::IDeviceContext * deviceContext) {
     Diligent::Rect r {
-        static_cast<Diligent::Int32>(transformed_window_region_x),
-        static_cast<Diligent::Int32>(transformed_window_region_y),
-        static_cast<Diligent::Int32>(transformed_window_region_w),
-        static_cast<Diligent::Int32>(transformed_window_region_h),
+        static_cast<Diligent::Int32>(x),
+        static_cast<Diligent::Int32>(y),
+        static_cast<Diligent::Int32>(w),
+        static_cast<Diligent::Int32>(h),
     };
     
     deviceContext->SetScissorRects(1, &r, width, height);
@@ -436,9 +413,9 @@ void RenderTarget::draw(
 void RenderTarget::draw(
         DrawTools & drawTools, const int & x, const int & y, const int & w, const int & h, Diligent::IDeviceContext * deviceContext
 ) {
-    drawTools.pipelineManager.switchToPipeline(PIPELINE_KEY, deviceContext);
+    drawTools.pipelineManager.switchToPipeline(this, PIPELINE_KEY, deviceContext);
     drawTools.pipelineManager.commitShaderResourceBinding(
-            PIPELINE_KEY, deviceContext,
+            this, PIPELINE_KEY, deviceContext,
             Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION
     );
 
@@ -497,7 +474,7 @@ void RenderTarget::destroy(PipelineManager & pipelineManager) {
     vertexBuffer.Release();
     indexBuffer.Release();
     m_PSConstants.Release();
-    pipelineManager.destroyPipeline(PIPELINE_KEY);
+    pipelineManager.destroyPipeline(this, PIPELINE_KEY);
     PIPELINE_KEY = nullptr;
 }
 

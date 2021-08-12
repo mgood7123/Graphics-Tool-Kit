@@ -135,12 +135,6 @@ private:
     Buffer<const std::vector<uint32_t>&, std::vector<uint32_t>> indexBuffer;
     uint32_t indexPosition;
 
-    int width;
-    int height;
-    PixelToNDC pixelConverter;
-
-
-
     // until we can figure out how to make these customizable, we need
     // to have these as private due to output generation being dependant
     // on the color buffer configuration
@@ -192,13 +186,8 @@ public:
     static const int textureCoordinatesCount = 2;
     static const int strideLength = 3+5+2;
 
-    PixelToNDC::Coordinates<float> toNDC(int x, int y, int z);
     VertexEngine();
-    VertexEngine(int width, int height);
     ~VertexEngine();
-    void resize(int width, int height);
-    int getWidth();
-    int getHeight();
 
     /**
      * clears the vertex and index buffers
@@ -362,6 +351,8 @@ public:
 
         Canvas * parent = nullptr;
 
+        PixelToNDC pixelConverter;
+
     public:
         GenerationInfo generateGL();
 
@@ -395,6 +386,13 @@ public:
          * @return a handle to the added data
          */
         HANDLE addIndexData(const std::vector<uint32_t>& data);
+
+        /**
+         * converts the given coordinates into
+         * NDC coordinates based on the Canvas's height
+         * @return the resulting NDC coordinates
+         */
+        PixelToNDC::Coordinates<float> toNDC(int x, int y, int z);
 
         static Color4 black;
         static uint32_t black_RGBA_unsigned_32bit_int;
@@ -575,7 +573,7 @@ public:
     };
 
     TextureManager * textureManager;
-    VertexEngine(int width, int height, TextureManager * textureManager);
+    VertexEngine(TextureManager * textureManager);
 
     void removeIndexHandle(HANDLE handle);
 };

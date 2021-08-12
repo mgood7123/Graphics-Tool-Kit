@@ -21,7 +21,13 @@ void RectanglePainter::onCreate(VertexEngine::TextureManager &textureManager) {
 #endif
 }
 
+int RectanglePainter::getCanvasWidth() {
+    return 400;
+}
 
+int RectanglePainter::getCanvasHeight() {
+    return 400;
+}
 
 void RectanglePainter::onDraw(VertexEngine::Canvas &canvas) {
 #if PLATFORM_ANDROID
@@ -32,17 +38,10 @@ void RectanglePainter::onDraw(VertexEngine::Canvas &canvas) {
     canvas.planeAt(20, 20, 200, 200, "B");
 #endif
 //     from [x, y] to [x+width, y+width]
-//    canvas.plane(140, 140, 200, 200, blue);
+    canvas.plane(140, 140, 200, 200, blue);
     canvas.plane(160, 160, 80, 80, pink);
-
-//    auto desc = getDiligentAppBase().m_pSwapChain->GetDesc();
-//    float newWidth = canvas.width;
-//    float newHeight = canvas.height;
-//    float currentWidth = desc.Width;
-//    float currentHeight = desc.Height;
-//    auto newX = (x/currentWidth)*newWidth;
-//    auto newY = (y/currentHeight)*newHeight;
-//    canvas.plane(((int)newX)-20, ((int)newY)-20, 40, 40, red);
+    
+    canvas.plane(x-20, y-20, 40, 40, red);
 
 #if PLATFORM_ANDROID
 #else
@@ -60,8 +59,8 @@ void RectanglePainter::onDestroy(VertexEngine::TextureManager &textureManager) {
 }
 
 bool RectanglePainter::onTouchEvent(MultiTouch &touch) {
-//    auto t = touch.getTouchAt(touch.getTouchIndex());
-//    x = t.x;
-//    y = t.y;
+    auto t = touch.getTouchAt(touch.getTouchIndex());
+    x = t.x;
+    y = t.y;
     return true;
 }

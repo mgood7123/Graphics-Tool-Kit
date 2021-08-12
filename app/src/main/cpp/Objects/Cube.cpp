@@ -6,7 +6,7 @@
 #include "Cube.h"
 
 void Cube::createPipeline(PipelineManager & pipelineManager) {
-    auto & pso = pipelineManager.createPipeline(PIPELINE_KEY);
+    auto & pso = pipelineManager.createPipeline(this, PIPELINE_KEY);
     pso.setType(Diligent::PIPELINE_TYPE_GRAPHICS);
     pso.setNumberOfTargets(1);
     pso.setFormat(getDiligentAppBase().m_pSwapChain);
@@ -70,20 +70,20 @@ void Cube::createPipeline(PipelineManager & pipelineManager) {
 
 void Cube::switchToPipeline(PipelineManager &pipelineManager) {
     pipelineManager.switchToPipeline(
-            PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext
+            this, PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext
     );
 }
 
 void Cube::bindShaderResources(PipelineManager &pipelineManager) {
     pipelineManager.commitShaderResourceBinding(
-            PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext,
+            this, PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext,
             Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION
     );
 }
 
 void Cube::destroyPipeline(PipelineManager &pipelineManager) {
     m_VSConstants.Release();
-    pipelineManager.destroyPipeline(PIPELINE_KEY);
+    pipelineManager.destroyPipeline(this, PIPELINE_KEY);
 }
 
 void Cube::create ()

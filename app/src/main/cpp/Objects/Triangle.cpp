@@ -44,7 +44,7 @@ void main(in  PSInput  PSIn,
 )";
 
 void Triangle::createPipeline(PipelineManager & pipelineManager) {
-    auto & pso = pipelineManager.createPipeline("Triangle");
+    auto & pso = pipelineManager.createPipeline(this, PIPELINE_KEY);
     pso.setType(Diligent::PIPELINE_TYPE_GRAPHICS);
     pso.setNumberOfTargets(1);
     pso.setFormat(getDiligentAppBase().m_pSwapChain);
@@ -86,19 +86,19 @@ void Triangle::createPipeline(PipelineManager & pipelineManager) {
 
 void Triangle::switchToPipeline(PipelineManager & pipelineManager) {
     pipelineManager.switchToPipeline(
-            PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext
+            this, PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext
     );
 }
 
 void Triangle::bindShaderResources(PipelineManager & pipelineManager) {
     pipelineManager.commitShaderResourceBinding(
-            PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext,
+            this, PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext,
             Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION
     );
 }
 
 void Triangle::destroyPipeline(PipelineManager & pipelineManager) {
-    pipelineManager.destroyPipeline(PIPELINE_KEY);
+    pipelineManager.destroyPipeline(this, PIPELINE_KEY);
 }
 
 void Triangle::draw (DrawTools & drawTools, RenderTarget & renderTarget)

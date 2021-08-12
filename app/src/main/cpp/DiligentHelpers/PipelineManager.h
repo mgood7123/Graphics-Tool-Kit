@@ -17,8 +17,20 @@
 
 class PipelineManager {
 public:
+    struct Key {
+    public:
+        std::string key;
+        inline Key() {
+            key = "";
+        }
+        inline Key(const std::string & key) {
+            this->key = key;
+        }
+    };
+    
     class PipelineObject {
         Diligent::GraphicsPipelineStateCreateInfo pipelineStateCreateInfo;
+        char * c_internal_key;
         size_t keyLen;
         Diligent::RefCntAutoPtr<Diligent::IPipelineState> state;
         Diligent::RefCntAutoPtr<Diligent::IShaderResourceBinding> binding;
@@ -28,7 +40,65 @@ public:
         std::vector<Diligent::ShaderResourceVariableDesc> resourceVariables;
     public:
         PipelineObject();
-        PipelineObject(const char *name);
+        PipelineObject(void * instance, const char * name);
+        
+        inline PipelineObject (const PipelineObject & obj) {
+            auto & p = const_cast<PipelineObject&>(obj);
+            pipelineStateCreateInfo = std::move(p.pipelineStateCreateInfo);
+            c_internal_key = p.c_internal_key;
+            p.c_internal_key = nullptr;
+            keyLen = p.keyLen;
+            p.keyLen = 0;
+            state = std::move(p.state);
+            binding = std::move(p.binding);
+            inputLayoutElements = std::move(p.inputLayoutElements);
+            resourceImmutableSamplers = std::move(p.resourceImmutableSamplers);
+            resourceVariables = std::move(p.resourceVariables);
+        }
+
+        inline PipelineObject (PipelineObject && obj) {
+            pipelineStateCreateInfo = std::move(obj.pipelineStateCreateInfo);
+            c_internal_key = obj.c_internal_key;
+            obj.c_internal_key = nullptr;
+            keyLen = obj.keyLen;
+            obj.keyLen = 0;
+            state = std::move(obj.state);
+            binding = std::move(obj.binding);
+            inputLayoutElements = std::move(obj.inputLayoutElements);
+            resourceImmutableSamplers = std::move(obj.resourceImmutableSamplers);
+            resourceVariables = std::move(obj.resourceVariables);
+        }
+
+        inline PipelineObject & operator= (const PipelineObject & obj) {
+            auto & p = const_cast<PipelineObject&>(obj);
+            pipelineStateCreateInfo = std::move(p.pipelineStateCreateInfo);
+            c_internal_key = p.c_internal_key;
+            p.c_internal_key = nullptr;
+            keyLen = p.keyLen;
+            p.keyLen = 0;
+            state = std::move(p.state);
+            binding = std::move(p.binding);
+            inputLayoutElements = std::move(p.inputLayoutElements);
+            resourceImmutableSamplers = std::move(p.resourceImmutableSamplers);
+            resourceVariables = std::move(p.resourceVariables);
+            return *this;
+        }
+
+        inline PipelineObject & operator= (PipelineObject && obj) {
+            pipelineStateCreateInfo = std::move(obj.pipelineStateCreateInfo);
+            c_internal_key = obj.c_internal_key;
+            obj.c_internal_key = nullptr;
+            keyLen = obj.keyLen;
+            obj.keyLen = 0;
+            state = std::move(obj.state);
+            binding = std::move(obj.binding);
+            inputLayoutElements = std::move(obj.inputLayoutElements);
+            resourceImmutableSamplers = std::move(obj.resourceImmutableSamplers);
+            resourceVariables = std::move(obj.resourceVariables);
+            return *this;
+        }
+
+        ~PipelineObject();
 
         const Diligent::GraphicsPipelineStateCreateInfo &getPipelineStateCreateInfo() const;
 
@@ -84,7 +154,8 @@ public:
 
         const char *getName();
 
-        bool keyMatches(const char *key);
+        bool keyMatches(const Key & key);
+        bool keyMatches(void * ptr, const char *key);
 
         void setDefaultResourceLayoutVariableType(Diligent::SHADER_RESOURCE_VARIABLE_TYPE type);
     };
@@ -93,14 +164,18 @@ private:
     Kernel PSOs;
     size_t pipelines;
 public:
+    
     PipelineManager();
     ~PipelineManager();
-    PipelineObject & createPipeline(const char * key);
+    
+    static Key make_key(void * ptr, const char * key);
+    
+    PipelineObject & createPipeline(void * instance, const char * key);
 
-    std::pair<PipelineObject *, size_t> findPipeline(const char *key);
+    std::pair<PipelineObject *, size_t> findPipeline(void * instance, const char *key);
 
     void switchToPipeline(
-            const char *key, Diligent::IDeviceContext *deviceContext
+            void * instance, const char *key, Diligent::IDeviceContext *deviceContext
     );
 
     void switchToPipeline(
@@ -108,7 +183,7 @@ public:
     );
 
     void commitShaderResourceBinding(
-            const char *key, Diligent::IDeviceContext *deviceContext,
+            void * instance, const char *key, Diligent::IDeviceContext *deviceContext,
             Diligent::RESOURCE_STATE_TRANSITION_MODE resourceStateTransitionMode
     );
 
@@ -118,7 +193,7 @@ public:
     );
     
     void switchToPipelineAndCommitShaderResourceBinding(
-            const char *key, Diligent::IDeviceContext *deviceContext,
+            void * instance, const char *key, Diligent::IDeviceContext *deviceContext,
             Diligent::RESOURCE_STATE_TRANSITION_MODE resourceStateTransitionMode
     );
 
@@ -127,7 +202,7 @@ public:
             Diligent::RESOURCE_STATE_TRANSITION_MODE resourceStateTransitionMode
     );
 
-    void destroyPipeline(const char *key);
+    void destroyPipeline(void * instance, const char *key);
 };
 
 

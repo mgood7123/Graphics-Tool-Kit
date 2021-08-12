@@ -7,18 +7,18 @@
 void ObjectGroup::setDiligentAppBase(DiligentAppBase *diligentAppBase) {
     ObjectBase::setDiligentAppBase(diligentAppBase);
     auto array = getChildren();
-    for (ObjectBase *obj : array) {
-        if (obj == this) continue; // skip self
-        obj->setDiligentAppBase(diligentAppBase);
+    for (ChildInfo *child : array) {
+        if (child->object == this) continue; // skip self
+        child->object->setDiligentAppBase(diligentAppBase);
     }
     setDiligentAppBaseCalled = true;
 }
 
 void ObjectGroup::createPipeline(PipelineManager &pipelineManager) {
     auto array = getChildren();
-    for (ObjectBase *obj : array) {
-        if (obj == this) continue; // skip self
-        obj->createPipeline(pipelineManager);
+    for (ChildInfo *child : array) {
+        if (child->object == this) continue; // skip self
+        child->object->createPipeline(pipelineManager);
     }
     pipelineManagerUsed = &pipelineManager;
     destroyPipelineCalled = false;
@@ -27,9 +27,9 @@ void ObjectGroup::createPipeline(PipelineManager &pipelineManager) {
 
 void ObjectGroup::destroyPipeline(PipelineManager &pipelineManager) {
     auto array = getChildren();
-    for (ObjectBase *obj : array) {
-        if (obj == this) continue; // skip self
-        obj->destroyPipeline(pipelineManager);
+    for (ChildInfo *child : array) {
+        if (child->object == this) continue; // skip self
+        child->object->destroyPipeline(pipelineManager);
     }
     pipelineManagerUsed = &pipelineManager;
     createPipelineCalled = false;
@@ -38,51 +38,56 @@ void ObjectGroup::destroyPipeline(PipelineManager &pipelineManager) {
 
 void ObjectGroup::create() {
     auto array = getChildren();
-    for (ObjectBase *obj : array) {
-        if (obj == this) continue; // skip self
-        obj->create();
+    for (ChildInfo *child : array) {
+        if (child->object == this) continue; // skip self
+        child->object->create();
     }
     destroyCalled = false;
     createCalled = true;
 }
 
 void ObjectGroup::resize(PipelineManager &pipelineManager) {
+    resizeWidth = getDiligentAppBase().swapChainWidth;
+    resizeHeight = getDiligentAppBase().swapChainHeight;
     auto array = getChildren();
-    for (ObjectBase *obj : array) {
-        if (obj == this) continue; // skip self
-        obj->resize(pipelineManager);
+    for (ChildInfo *child : array) {
+        if (child->object == this) continue; // skip self
+        child->object->resize(pipelineManager);
     }
     pipelineManagerUsed = &pipelineManager;
     resizeCalled = true;
 }
 
 bool ObjectGroup::onTouchEvent(MultiTouch &touch) {
-    // To incorporate translated multi touch, we need to convert this
-    // to a group
-//    auto desc = getDiligentAppBase().m_pSwapChain->GetDesc();
-//    float currentWidth = desc.Width;
-//    float currentHeight = desc.Height;
+//    auto & app = getDiligentAppBase();
     long count = touch.getTouchCount();
     auto array = getChildren();
-    for (ObjectBase *obj : array) {
-        if (obj == this) continue; // skip self
+    for (ChildInfo *child : array) {
+        if (child->object == this) continue; // skip self
         for (long l = 0; l < count; l++) {
             MultiTouch::TouchData copy = touch.getTouchAt(touch.getTouchIndex());
-            if (copy.state == MultiTouch::TouchState::TOUCH_DOWN) {
-                if (copy.x >= 0 && copy.x <= copy.x + 200) {
-    //                copy.x
+            bool touch_is_inside_view = false;
+            if (copy.x > child->positionInWindow.x) {
+                if (copy.y > child->positionInWindow.y) {
+                    if (copy.x < child->positionInWindow.width) {
+                        if (copy.y < child->positionInWindow.height) {
+                            touch_is_inside_view = true;
+                        }
+                    }
                 }
             }
-            // compute triangle
-    //        {
-    //            float newWidth = 200;
-    //            float newHeight = 200;
-    //            copy.x = (copy.x/currentWidth)*newWidth;
-    //            copy.y = (copy.y/currentHeight)*newHeight;
-    //        }
-        }
-        if (obj->onTouchEvent(touch)) {
-            return true;
+            Log::Debug("TOUCH IS ", touch_is_inside_view ? "INSIDE" : "OUTSIDE", " VIEW");
+            if (touch_is_inside_view) {
+                if (copy.state == MultiTouch::TouchState::TOUCH_DOWN) {
+                    child->object->focus = true;
+                    if (child->object->onTouchEvent(touch)) {
+                        return true;
+                    }
+                }
+            }
+            if (copy.state == MultiTouch::TouchState::TOUCH_UP) {
+                child->object->focus = false;
+            }
         }
     }
     return false;
@@ -90,8 +95,8 @@ bool ObjectGroup::onTouchEvent(MultiTouch &touch) {
 
 void ObjectGroup::destroy() {
     auto array = getChildren();
-    for (ObjectBase *obj : array) {
-        if (obj != this) removeChild(obj);
+    for (ChildInfo *child : array) {
+        removeChild(child);
     }
     createCalled = false;
     destroyCalled = true;
@@ -100,9 +105,9 @@ void ObjectGroup::destroy() {
 bool ObjectGroup::hasPhysics() {
     bool hasPhysics_ = false;
     auto array = getChildren();
-    for (ObjectBase *obj : array) {
-        if (obj == this) continue; // skip self
-        if (obj->hasPhysics()) {
+    for (ChildInfo *child : array) {
+        if (child->object == this) continue; // skip self
+        if (child->object->hasPhysics()) {
             hasPhysics_ = true;
             break;
         }
@@ -114,9 +119,9 @@ bool ObjectGroup::hasPhysics() {
 void ObjectGroup::physics(const TimeEngine &timeEngine) {
     // TODO: support mulitple time engines
     auto array = getChildren();
-    for (ObjectBase *obj : array) {
-        if (obj == this) continue; // skip self
-        obj->physics(timeEngine);
+    for (ChildInfo *child : array) {
+        if (child->object == this) continue; // skip self
+        child->object->physics(timeEngine);
     }
 }
 
@@ -124,39 +129,101 @@ size_t ObjectGroup::getChildCount() const {
     return children.table->objectCount();
 }
 
-AutoResizingArray<ObjectBase *> ObjectGroup::getChildren() const {
+AutoResizingArray<ObjectGroup::ChildInfo *> ObjectGroup::getChildren() const {
     // TODO: optimize
-    AutoResizingArray<ObjectBase*> array;
+    AutoResizingArray<ChildInfo *> array;
     auto it = children.table->getIterator();
-    while (it.hasNext()) array.add(it.next()->resource.get<ObjectBase*>());
+    while (it.hasNext()) array.add(it.next()->resource.get<ChildInfo*>());
     return array;
 }
 
 void ObjectGroup::addChild(ObjectBase * obj) {
-    if (obj == this) {
-        // do not deallocate myself when removed
-        children.newObject(ObjectTypeNone, ObjectFlagNone, obj);
-        return;
+    if (obj != this && obj->parent != nullptr) {
+        Log::Error_And_Throw("cannot add an Object that has a parent, please call `ObjectGroup::removeFromParent(obj);` before calling `addChild(obj);`");
     }
-    children.newObject(ObjectTypeNone, ObjectFlagAutoDeallocateResource, obj);
-    if (setDiligentAppBaseCalled) obj->setDiligentAppBase(&getDiligentAppBase());
+    addChild({obj, obj != this});
+}
+
+void ObjectGroup::addChild(const ChildInfo & childInfo) {
+    if (childInfo.object != this && childInfo.object->parent != nullptr) {
+        Log::Error_And_Throw("cannot add an Object that has a parent, please call `ObjectGroup::removeFromParent(childInfo.object);` before calling `addChild(childInfo);`");
+    }
+    
+    ChildInfo childCopy(childInfo, false);
+
+    children.newObject(ObjectTypeNone, ObjectFlagNone, childInfo);
+
+    if (childCopy.object == this) return;
+
+    childCopy.object->parent = this;
+
+    if (setDiligentAppBaseCalled) childCopy.object->setDiligentAppBase(&getDiligentAppBase());
     if (!destroyPipelineCalled) {
-        if (createPipelineCalled) obj->createPipeline(*pipelineManagerUsed);
+        if (createPipelineCalled) childCopy.object->createPipeline(*pipelineManagerUsed);
     }
     if (!destroyCalled) {
-        if (createCalled) obj->create();
-        if (resizeCalled) obj->resize(*pipelineManagerUsed);
+        if (createCalled) childCopy.object->create();
+        if (resizeCalled) childCopy.object->resize(*pipelineManagerUsed);
     }
 
-    if (hasPhysicsCalled) obj->hasPhysics();
+    if (hasPhysicsCalled) childCopy.object->hasPhysics();
+}
+
+void ObjectGroup::addChild(ChildInfo * childInfo) {
+    if (childInfo->object != this && childInfo->object->parent != nullptr) {
+        Log::Error_And_Throw("cannot add an Object that has a parent, please call `ObjectGroup::detachFromParent(childInfo->object);` before calling `addChild(childInfo);`");
+    }
+    addChild(*childInfo);
 }
 
 void ObjectGroup::removeChild(ObjectBase *obj) {
-    // obj is destroyed here
-    if (createCalled && !destroyCalled) obj->destroy();
-    if (!destroyPipelineCalled) obj->destroyPipeline(*pipelineManagerUsed);
-    children.table->remove(obj);
+    // child->object is destroyed here
+    auto it = children.table->getIterator();
+    while (it.hasNext()) {
+        ChildInfo * child = it.next()->resource.get<ChildInfo *>();
+        if (child->object == obj) {
+            removeChild(child);
+            return;
+        }
+    }
 }
 
-ObjectGroup::~ObjectGroup() {
+void ObjectGroup::removeChild(ChildInfo *childInfo) {
+    removeChild(*childInfo);
+}
+
+void ObjectGroup::removeChild(ChildInfo & childInfo) {
+    // child->object is destroyed here
+    if (childInfo.object != this) {
+        if (createCalled && !destroyCalled) childInfo.object->destroy();
+        if (!destroyPipelineCalled) childInfo.object->destroyPipeline(*pipelineManagerUsed);
+    }
+    children.table->remove(&childInfo);
+}
+
+void ObjectGroup::detachChild(ObjectBase *obj) {
+    // child->object is destroyed here
+    auto it = children.table->getIterator();
+    while (it.hasNext()) {
+        ChildInfo * child = it.next()->resource.get<ChildInfo *>();
+        if (child->object == obj) {
+            detachChild(child);
+            return;
+        }
+    }
+}
+
+void ObjectGroup::detachChild(ChildInfo *childInfo) {
+    detachChild(*childInfo);
+}
+
+void ObjectGroup::detachChild(ChildInfo & childInfo) {
+    // child->object is destroyed here
+    if (childInfo.object != this) {
+        if (createCalled && !destroyCalled) childInfo.object->destroy();
+        if (!destroyPipelineCalled) childInfo.object->destroyPipeline(*pipelineManagerUsed);
+    }
+    // disable allocation and remove
+    children.table->removeWithoutDeallocating(&childInfo);
+    childInfo.object->parent = nullptr;
 }

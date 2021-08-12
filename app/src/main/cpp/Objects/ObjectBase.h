@@ -26,6 +26,9 @@ class ObjectBase {
     
 public:
     
+    ObjectBase * parent = nullptr;
+    bool focus = false;
+    
     static const Position ZERO_POSITION;
     static const Position NO_CROPPING;
     static const Position NO_PADDING;
@@ -45,12 +48,33 @@ public:
     }
 
     inline Position applyPadding(const Position & input) {
-        return {
+        int padding_w = padding.x + padding.width;
+        int padding_h = padding.y + padding.height;
+        Position padding_ = {
             input.x + padding.x,
             input.y + padding.y,
-            input.width - padding.x - padding.width ,
-            input.height - padding.y - padding.height
+            input.width - padding_w,
+            input.height - padding_h
         };
+        if (padding_.x < 0) {
+            Log::Error_And_Throw("result of padding x is less than zero");
+        }
+        if (padding_.y < 0) {
+            Log::Error_And_Throw("result of padding y is less than zero");
+        }
+        if (padding_.width < 0) {
+            Log::Error_And_Throw("result of padding width is less than zero");
+        }
+        if (padding_.height < 0) {
+            Log::Error_And_Throw("result of padding height is less than zero");
+        }
+        if (padding_.x > padding_.x + padding_.width) {
+            Log::Error_And_Throw("result of padding x is greater than result of padding x + width");
+        }
+        if (padding_.y > padding_.y + padding_.height) {
+            Log::Error_And_Throw("result of padding y is greater than result of padding y + height");
+        }
+        return padding_;
     }
 
     void setTag(const char * name);

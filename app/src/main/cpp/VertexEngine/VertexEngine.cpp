@@ -58,21 +58,15 @@ Table::Iterator VertexEngine::Buffer<data_type, storage_type>::getIterator() {
 }
 
 
-PixelToNDC::Coordinates<float> VertexEngine::toNDC(int x, int y, int z) {
-    return pixelConverter.toNDC<int, float>(x, y, z, width, height);
-}
-
 VertexEngine::VertexInfo::VertexInfo(size_t length, bool is_static) {
     this->length = length;
     this->is_static = is_static;
 }
 
-VertexEngine::VertexEngine(int width, int height, TextureManager * textureManager) :
+VertexEngine::VertexEngine(TextureManager * textureManager) :
         defaultPositionBuffer(addDataBuffer(positionCount)),
         defaultColorBuffer(addDataBuffer(colorCount+colorExtraCount)),
         defaultTextureCoordinateBuffer(addDataBuffer(textureCoordinatesCount)),
-        width(width),
-        height(height),
         indexPosition(0),
         textureManager(textureManager == nullptr ? new TextureManager(this) : textureManager),
         externalTextureManager(textureManager != nullptr)
@@ -80,13 +74,8 @@ VertexEngine::VertexEngine(int width, int height, TextureManager * textureManage
     order({defaultPositionBuffer, defaultColorBuffer, defaultTextureCoordinateBuffer});
 }
 
-VertexEngine::VertexEngine(int width, int height) :
-        VertexEngine::VertexEngine(width, height, nullptr)
-{
-}
-
 VertexEngine::VertexEngine() :
-        VertexEngine::VertexEngine(0,0, nullptr)
+        VertexEngine::VertexEngine(nullptr)
 {
 }
 
@@ -96,31 +85,10 @@ VertexEngine::~VertexEngine() {
     if (!externalTextureManager) delete textureManager;
 }
 
-void VertexEngine::resize(int width, int height) {
-    this->width = width;
-    this->height = height;
-}
-
-int VertexEngine::getWidth() {
-    return width;
-}
-
-int VertexEngine::getHeight() {
-    return height;
-}
-
 void VertexEngine::clear() {
     auto i = vertexBuffer.getIterator();
     while (i.hasNext()) {
-        Object * o = i.next();
-        bool HANDLE_IS_DEFAULT_POSITION_BUFFER = defaultPositionBuffer == o->handle;
-        bool HANDLE_IS_DEFAULT_COLOR_BUFFER = defaultColorBuffer == o->handle;
-        bool HANDLE_IS_DEFAULT_TEXCORD_BUFFER = defaultTextureCoordinateBuffer == o->handle;
-//        Log::Info("handle is default position buffer: ", HANDLE_IS_DEFAULT_POSITION_BUFFER);
-//        Log::Info("handle is default color buffer: ", HANDLE_IS_DEFAULT_COLOR_BUFFER);
-//        Log::Info("handle is default texcord buffer: ", HANDLE_IS_DEFAULT_TEXCORD_BUFFER);
-        auto v = vertexBuffer.get(o);
-        v->dataBuffer.clear();
+        vertexBuffer.get(i.next())->dataBuffer.clear();
     }
     indexBuffer.clear();
     indexHandles.clear();
@@ -777,26 +745,27 @@ bool VertexEngine::TextureManager::keyMatches(
 }
 
 HANDLE VertexEngine::Canvas::addData_(HANDLE dataBufferHandle, const std::vector<float>& data) {
-    bool containsHandle = false;
-    std::pair<HANDLE, std::vector<HANDLE>> * pair;
+    std::pair<HANDLE, std::vector<HANDLE>> * pair = nullptr;
     for (auto & pair_ : vertexBufferHandles) {
         if (pair_.first == dataBufferHandle) {
             pair = &pair_;
-            containsHandle = true;
             break;
         }
     }
 
-    if (!containsHandle) {
+    if (pair == nullptr) {
         vertexBufferHandles.push_back({dataBufferHandle, {}});
         // find the added handle
         for (auto & pair_ : vertexBufferHandles) {
             if (pair_.first == dataBufferHandle) {
                 pair = &pair_;
-                containsHandle = true;
                 break;
             }
         }
+    }
+
+    if (pair == nullptr) {
+        Log::Error_And_Throw("failed to add data buffer handle");
     }
 
     VertexInfo * buffer = vertexEngine->vertexBuffer.get(dataBufferHandle);
@@ -871,7 +840,7 @@ VertexEngine::Canvas::Canvas(VertexEngine::Canvas *parent, int x, int y, int wid
 VertexEngine::Canvas::Canvas(VertexEngine *engine, int x, int y, int width, int height) :
     x(x), y(y), width(width), height(height)
 {
-    vertexEngine = new VertexEngine(engine->width, engine->height, engine->textureManager);
+    vertexEngine = new VertexEngine(engine->textureManager);
 }
 
 VertexEngine::Canvas::Canvas(VertexEngine *engine, int width, int height) :
@@ -894,7 +863,7 @@ VertexEngine::Canvas::~Canvas() {
         delete vertexEngine;
     } else {
         // add our handles to parent handles
-        // handles will probogate up the call chain to root object
+        // handles will propagate up the call chain to root Canvas object
         for (std::pair<HANDLE, std::vector<HANDLE>> & pair : vertexBufferHandles) {
             parent->vertexBufferHandles.push_back(pair);
         }
@@ -927,6 +896,10 @@ HANDLE VertexEngine::Canvas::addIndexData(const std::vector<uint32_t>& data) {
     return addIndexData_(data);
 }
 
+PixelToNDC::Coordinates<float> VertexEngine::Canvas::toNDC(int x, int y, int z) {
+    return pixelConverter.toNDC<int, float>(x, y, z, width, height);
+}
+
 VertexEngine::Canvas::Color4 VertexEngine::Canvas::black = {0,0,0,1};
 uint32_t VertexEngine::Canvas::black_RGBA_unsigned_32bit_int = VertexEngine::Color4::float_to_RGBA_unsigned_32bit_int(0, 0, 0, 1);
 uint32_t VertexEngine::Canvas::black_ARGB_unsigned_32bit_int = VertexEngine::Color4::float_to_ARGB_unsigned_32bit_int(1, 0, 0, 0);
@@ -950,10 +923,10 @@ void VertexEngine::Canvas::plane(int x, int y, int width, int height, const Colo
 void VertexEngine::Canvas::planeAt(int from_X, int from_Y, int to_X, int to_Y,
                            const Color4 &colorData) {
     checkIfTextureKeyExists(colorData);
-    Position3 topLeft = vertexEngine->toNDC(x + from_X, y + from_Y, 0).to_array();
-    Position3 topRight = vertexEngine->toNDC(x + to_X, y + from_Y, 0).to_array();
-    Position3 bottomRight = vertexEngine->toNDC(x + to_X, y + to_Y, 0).to_array();
-    Position3 bottomLeft = vertexEngine->toNDC(x + from_X, y + to_Y, 0).to_array();
+    Position3 topLeft = toNDC(x + from_X, y + from_Y, 0).to_array();
+    Position3 topRight = toNDC(x + to_X, y + from_Y, 0).to_array();
+    Position3 bottomRight = toNDC(x + to_X, y + to_Y, 0).to_array();
+    Position3 bottomLeft = toNDC(x + from_X, y + to_Y, 0).to_array();
 
     addData({
         {topLeft, colorData, {0,0}},
@@ -1001,6 +974,9 @@ void VertexEngine::Canvas::checkIfTextureKeyExists(const VertexEngine::Canvas::C
 }
 
 VertexEngine::GenerationInfo VertexEngine::Canvas::generateGL() {
+    if (parent != nullptr) {
+        Log::Error_And_Throw("only the root canvas object can call generateGL()");
+    }
     return vertexEngine->generateGL();
 }
 

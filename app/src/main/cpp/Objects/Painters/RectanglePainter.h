@@ -22,6 +22,10 @@ public:
 
     void onDraw(VertexEngine::Canvas &canvas) override;
     void onDestroy(VertexEngine::TextureManager & textureManager) override;
+
+    int getCanvasWidth() override;
+
+    int getCanvasHeight() override;
 };
 
 

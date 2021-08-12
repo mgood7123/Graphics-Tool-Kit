@@ -22,7 +22,9 @@
 class DiligentAppBase
 {
 public:
-    Diligent::SwapChainDesc                                        m_pSCDesc;
+    Diligent::Uint32 swapChainWidth = 0;
+    Diligent::Uint32 swapChainHeight = 0;
+    Diligent::SwapChainDesc                                        m_pSwapChainCreationDescription;
     Diligent::RENDER_DEVICE_TYPE                                   m_DeviceType;
     Diligent::RefCntAutoPtr<Diligent::IEngineFactory>              m_pEngineFactory;
     Diligent::RefCntAutoPtr<Diligent::IRenderDevice>               m_pDevice;
@@ -30,7 +32,7 @@ public:
     std::vector<Diligent::RefCntAutoPtr<Diligent::IDeviceContext>> m_pDeferredContexts;
     Diligent::RefCntAutoPtr<Diligent::ISwapChain>                  m_pSwapChain;
     Diligent::ImGuiImplDiligent *                                  m_pImGui = nullptr;
-
+    
     DiligentAppBase ();
     ~DiligentAppBase ();
     

@@ -28,8 +28,8 @@ class RenderTarget {
     const char * PIPELINE_KEY = nullptr;
 public:
     ~RenderTarget();
-    int getWidth();
-    int getHeight();
+    int getWidth() const;
+    int getHeight() const;
     void create(const char * PIPELINE_KEY, PipelineManager & pipelineManager, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice);
     Diligent::ITextureView * getColor();
     Diligent::ITextureView * getDepth();
@@ -48,8 +48,8 @@ public:
     static void clearColorAndDepth(const float * color, float depth, Diligent::ITextureView * colorTV, Diligent::ITextureView * depthTV, Diligent::IDeviceContext * deviceContext);
     void clearColorAndDepth(const VertexEngine::Color4 & color, float depth, Diligent::IDeviceContext * deviceContext);
     static void clearColorAndDepth(const VertexEngine::Color4 & color, float depth, Diligent::ITextureView * colorTV, Diligent::ITextureView * depthTV, Diligent::IDeviceContext * deviceContext);
-    void clip(const Position & position, DrawTools & drawTools, const float & draw_w, const float & draw_h, Diligent::IDeviceContext * deviceContext);
-    void clip(const float & x, const float & y, const float & w, const float & h, DrawTools & drawTools, const float & draw_w, const float & draw_h, Diligent::IDeviceContext * deviceContext);
+    void clip(const Position & position, Diligent::IDeviceContext * deviceContext);
+    void clip(const float & x, const float & y, const float & w, const float & h, Diligent::IDeviceContext * deviceContext);
     void draw(DrawTools & drawTools, const Position & position, Diligent::IDeviceContext * deviceContext);
     void draw(DrawTools & drawTools, const int & x, const int & y, const int & w, const int & h, Diligent::IDeviceContext * deviceContext);
     void destroy(PipelineManager & pipelineManager);

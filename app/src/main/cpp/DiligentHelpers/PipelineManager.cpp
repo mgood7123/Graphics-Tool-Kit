@@ -4,13 +4,23 @@
 
 #include "PipelineManager.h"
 
-PipelineManager::PipelineObject::PipelineObject(): PipelineObject(nullptr) {
+PipelineManager::PipelineObject::PipelineObject() {
+    c_internal_key = nullptr;
+    pipelineStateCreateInfo.PSODesc.Name = nullptr;
+    keyLen = 0;
 }
 
-PipelineManager::PipelineObject::PipelineObject(const char *key) {
-    pipelineStateCreateInfo.PSODesc.Name = key;
-    keyLen = key == nullptr ? 0 : strlen(key);
+PipelineManager::PipelineObject::PipelineObject(void * instance, const char * name) {
+    Key k = std::move(make_key(instance, name));
+    c_internal_key = strdup(k.key.c_str());
+    pipelineStateCreateInfo.PSODesc.Name = c_internal_key;
+    keyLen = k.key.length();
+}
 
+PipelineManager::PipelineObject::~PipelineObject() {
+    if (c_internal_key != nullptr) {
+        free(c_internal_key);
+    }
 }
 
 Diligent::RefCntAutoPtr<Diligent::IPipelineState> &PipelineManager::PipelineObject::getState() {
@@ -128,16 +138,21 @@ PipelineManager::PipelineObject::getVariableFromPixelShader(const char *name) {
 }
 
 const char *PipelineManager::PipelineObject::getName() {
-    return pipelineStateCreateInfo.PSODesc.Name;
+    return c_internal_key;
 }
 
 const Diligent::GraphicsPipelineStateCreateInfo &PipelineManager::PipelineObject::getPipelineStateCreateInfo() const {
     return pipelineStateCreateInfo;
 }
 
-bool PipelineManager::PipelineObject::keyMatches(const char *key) {
-    return strlen(key) == keyLen && memcmp(getName(), key, keyLen) == 0;
+bool PipelineManager::PipelineObject::keyMatches(void * ptr, const char *key) {
+    if (key == nullptr) return false;
+    PipelineManager::Key k = std::move(make_key(ptr, key));
+    return k.key.length() == keyLen && memcmp(c_internal_key, k.key.c_str(), keyLen) == 0;
+}
 
+bool PipelineManager::PipelineObject::keyMatches(const PipelineManager::Key & key) {
+    return key.key.length() == keyLen && memcmp(c_internal_key, key.key.c_str(), keyLen) == 0;
 }
 
 void PipelineManager::PipelineObject::setDefaultResourceLayoutVariableType(
@@ -161,24 +176,41 @@ PipelineManager::~PipelineManager() {
     }
 }
 
-PipelineManager::PipelineObject &PipelineManager::createPipeline(const char *key) {
-    pipelines++;
-    return PSOs.newObject(ObjectTypeNone, ObjectFlagNone, std::move(PipelineObject(key)))->resource.get<PipelineObject &>();
+PipelineManager::Key PipelineManager::make_key(void *ptr, const char *key) {
+    if (key == nullptr) {
+        Log::Error_And_Throw("key cannot be nullptr");
+    }
+    if (strlen(key) == 0) {
+        Log::Error_And_Throw("key cannot be zero length");
+    }
+    std::stringstream ss;
+    ss << key;
+    if (ptr != nullptr) {
+        ss << "_";
+        ss << ptr;
+    }
+    return Key(ss.str());
 }
 
-std::pair<PipelineManager::PipelineObject *, size_t> PipelineManager::findPipeline(const char *key) {
+PipelineManager::PipelineObject &PipelineManager::createPipeline(void * instance, const char *key) {
+    pipelines++;
+    return PSOs.newObject(ObjectTypeNone, ObjectFlagNone, std::move(PipelineObject(instance, key)))->resource.get<PipelineObject &>();
+}
+
+std::pair<PipelineManager::PipelineObject *, size_t> PipelineManager::findPipeline(void * instance, const char *key) {
+    Key k = std::move(make_key(instance, key));
     auto iter = PSOs.table->getIterator();
     while (iter.hasNext()) {
         PipelineObject & po = iter.next()->resource.get<PipelineObject &>();
-        if (po.keyMatches(key)) {
+        if (po.keyMatches(k)) {
             return {&po, iter.getIndex()};
         }
     }
     return {nullptr, 0};
 }
 
-void PipelineManager::switchToPipeline(const char *key, Diligent::IDeviceContext *deviceContext) {
-    std::pair<PipelineObject *, size_t> po = findPipeline(key);
+void PipelineManager::switchToPipeline(void * instance, const char *key, Diligent::IDeviceContext *deviceContext) {
+    std::pair<PipelineObject *, size_t> po = findPipeline(instance, key);
     if (po.first != nullptr) {
         switchToPipeline(*po.first, deviceContext);
     }
@@ -189,10 +221,10 @@ void PipelineManager::switchToPipeline(PipelineManager::PipelineObject &pipeline
     deviceContext->SetPipelineState(pipelineObject.getState());
 }
 
-void PipelineManager::commitShaderResourceBinding(const char *key,
+void PipelineManager::commitShaderResourceBinding(void * instance, const char *key,
                                                   Diligent::IDeviceContext *deviceContext,
                                                   Diligent::RESOURCE_STATE_TRANSITION_MODE resourceStateTransitionMode) {
-    std::pair<PipelineObject *, size_t> po = findPipeline(key);
+    std::pair<PipelineObject *, size_t> po = findPipeline(instance, key);
     if (po.first != nullptr) {
         commitShaderResourceBinding(*po.first, deviceContext, resourceStateTransitionMode);
     }
@@ -208,10 +240,10 @@ void PipelineManager::commitShaderResourceBinding(PipelineManager::PipelineObjec
 }
 
 void PipelineManager::switchToPipelineAndCommitShaderResourceBinding(
-    const char *key, Diligent::IDeviceContext *deviceContext,
+    void * instance, const char *key, Diligent::IDeviceContext *deviceContext,
     Diligent::RESOURCE_STATE_TRANSITION_MODE resourceStateTransitionMode
 ) {
-    std::pair<PipelineObject *, size_t> po = findPipeline(key);
+    std::pair<PipelineObject *, size_t> po = findPipeline(instance, key);
     if (po.first != nullptr) {
         switchToPipelineAndCommitShaderResourceBinding(*po.first, deviceContext, resourceStateTransitionMode);
     }
@@ -225,8 +257,8 @@ void PipelineManager::switchToPipelineAndCommitShaderResourceBinding(
     commitShaderResourceBinding(pipelineObject, deviceContext, resourceStateTransitionMode);
 }
 
-void PipelineManager::destroyPipeline(const char *key) {
-    std::pair<PipelineObject *, size_t> po = findPipeline(key);
+void PipelineManager::destroyPipeline(void * instance, const char *key) {
+    std::pair<PipelineObject *, size_t> po = findPipeline(instance, key);
     if (po.first != nullptr) {
         po.first->getState().Release();
         auto & binding = po.first->getBinding();

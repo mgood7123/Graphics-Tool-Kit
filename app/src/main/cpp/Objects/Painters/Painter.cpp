@@ -67,8 +67,6 @@ void Painter::create() {
     getDiligentAppBase().m_pDevice->CreateBuffer(VertBuffDesc, &VBData, &vertexBuffer);
     getDiligentAppBase().m_pDevice->CreateBuffer(IndBuffDesc, &IBData, &indexBuffer);
 
-    vertexEngine.resize(canvas_width, canvas_height);
-
     vertexEngine.textureManager->setDefaultDevices(
             getDiligentAppBase().m_pDevice.RawPtr(),
             getDiligentAppBase().m_pImmediateContext.RawPtr()
@@ -102,7 +100,7 @@ void Painter::draw (DrawTools & drawTools, RenderTarget & renderTarget) {
     app.m_pImmediateContext->SetIndexBuffer(indexBuffer, 0, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
 
     vertexEngine.clear();
-    VertexEngine::Canvas canvas(&vertexEngine, 400, 400);
+    VertexEngine::Canvas canvas(&vertexEngine, getCanvasWidth(), getCanvasHeight());
     onDraw(canvas);
 
     drawChunks(canvas.generateGL(), drawTools);
@@ -195,7 +193,7 @@ void Painter::onDestroy(VertexEngine::TextureManager &textureManager) {
 }
 
 void Painter::createPipeline(PipelineManager &pipelineManager) {
-    auto & pso = pipelineManager.createPipeline(PIPELINE_KEY);
+    auto & pso = pipelineManager.createPipeline(this, PIPELINE_KEY);
     pso.setType(Diligent::PIPELINE_TYPE_GRAPHICS);
     pso.setNumberOfTargets(1);
     pso.setFormat(getDiligentAppBase().m_pSwapChain.RawPtr());
@@ -289,17 +287,25 @@ void Painter::createPipeline(PipelineManager &pipelineManager) {
 void Painter::switchToPipeline(PipelineManager &pipelineManager) {
     // Set the pipeline state in the immediate context
     pipelineManager.switchToPipeline(
-            PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext
+            this, PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext
     );
 }
 
 void Painter::bindShaderResources(PipelineManager &pipelineManager) {
     pipelineManager.commitShaderResourceBinding(
-            PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext,
+            this, PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext,
             Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION
     );
 }
 
 void Painter::destroyPipeline(PipelineManager &pipelineManager) {
-    pipelineManager.destroyPipeline(PIPELINE_KEY);
+    pipelineManager.destroyPipeline(this, PIPELINE_KEY);
+}
+
+int Painter::getCanvasWidth() {
+    return 0;
+}
+
+int Painter::getCanvasHeight() {
+    return 0;
 }

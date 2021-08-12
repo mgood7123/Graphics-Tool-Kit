@@ -25,13 +25,6 @@ class AppInstance : public AppInstancePlatformBase, public DiligentAppBase
     std::atomic_bool destroyed;
     std::atomic_bool createCalled;
 
-    template <typename Object, typename std::enable_if<std::is_base_of<ObjectBase, Object>::value>::type* = nullptr>
-    AnyOpt createObject(DiligentAppBase * diligentAppBase) {
-        Object * obj = new Object;
-        dynamic_cast<ObjectBase*>(obj)->setDiligentAppBase(diligentAppBase);
-        return AnyOpt(obj, true);
-    }
-
 public:
 
     AppInstance ();
@@ -41,11 +34,19 @@ public:
 
     void callDestroy();
 
-    template <typename T>
-    void loadObject() {
-        callDestroy();
-        objectBase = createObject<T>(this);
+    void loadObject(ObjectBase * obj) {
+        unloadObject();
+        obj->setDiligentAppBase(this);
+        objectBase = AnyOpt(obj, true);
         callCreate();
+    }
+
+    template <typename T, typename std::enable_if<std::is_base_of<ObjectBase, T>::value>::type* = nullptr>
+    T * loadObject() {
+        unloadObject();
+        T * obj = new T;
+        loadObject(obj);
+        return obj;
     }
 
     void unloadObject();

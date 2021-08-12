@@ -31,8 +31,10 @@ AppInstance::AppInstance ()
             obj->physics(timeEngine_);
         }
     };
-
-    loadObject<CubeOnTriangle>();
+    
+    CubeOnTriangle * t = new CubeOnTriangle();
+    t->addChild(new CubeOnTriangle());
+    loadObject(t);
 }
 
 AppInstance::~AppInstance ()
@@ -89,6 +91,8 @@ void AppInstance::surfaceChanged (int w, int h)
     m_pSwapChain->Resize(w, h);
     width = w;
     height = h;
+    swapChainWidth = w;
+    swapChainHeight = h;
     callCreate();
     screenRenderTarget.resize(pipelineManager, m_pSwapChain, m_pDevice);
     ObjectBase * obj = objectBase.get<ObjectBase*>();

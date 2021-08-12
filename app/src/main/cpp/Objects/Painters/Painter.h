@@ -16,9 +16,6 @@ private:
     int chunkSize = 3;
     const char * DUMMY_TEXTURE_KEY = "DEFAULT_WHEN_NO_TEXTURE";
 
-    int canvas_width = 400;
-    int canvas_height = 400;
-
     void drawChunks(VertexEngine::GenerationInfo && info, DrawTools & tools);
 
 
@@ -50,6 +47,9 @@ public:
     void create() override final;
     void draw(DrawTools & drawTools, RenderTarget & renderTarget) override final;
     void destroy() override final;
+
+    virtual int getCanvasWidth();
+    virtual int getCanvasHeight();
     virtual void onCreate(VertexEngine::TextureManager & textureManager);
     virtual void onDraw(VertexEngine::Canvas & canvas);
     virtual void onDestroy(VertexEngine::TextureManager & textureManager);

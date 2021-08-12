@@ -88,6 +88,37 @@ typedef class Table {
 
         void DELETE(size_t index);
 
+        template <typename T> Object * findObject(const T & resource) {
+            auto it = getIterator();
+            while (it.hasNext()) {
+                Object * obj = it.next();
+                if (obj->resource.template get<T&>() == resource) {
+                    return obj;
+                }
+            }
+            return nullptr;
+        }
+    
+        template <typename T> Object * findObject(T * resource) {
+            auto it = getIterator();
+            while (it.hasNext()) {
+                Object * obj = it.next();
+                if (obj->resource.template get<T*>() == resource) {
+                    return obj;
+                }
+            }
+            return nullptr;
+        }
+    
+        template <typename T> void remove(const T & resource) {
+            auto it = getIterator();
+            while (it.hasNext()) {
+                if (it.next()->resource.template get<T&>() == resource) {
+                    DELETE(it.getIndex());
+                }
+            }
+        }
+    
         template <typename T> void remove(T * resource) {
             auto it = getIterator();
             while (it.hasNext()) {
@@ -97,6 +128,28 @@ typedef class Table {
             }
         }
 
+        template <typename T> void removeWithoutDeallocating(const T & resource) {
+            auto it = getIterator();
+            while (it.hasNext()) {
+                Object * obj = it.next();
+                if (obj->resource.template get<T&>() == resource) {
+                    obj->resource.data_is_allocated = false;
+                    DELETE(it.getIndex());
+                }
+            }
+        }
+
+        template <typename T> void removeWithoutDeallocating(T * resource) {
+            auto it = getIterator();
+            while (it.hasNext()) {
+                Object * obj = it.next();
+                if (obj->resource.template get<T*>() == resource) {
+                    obj->resource.data_is_allocated = false;
+                    DELETE(it.getIndex());
+                }
+            }
+        }
+    
         void remove(Object *object);
 
         void remove(Object &object);
