@@ -104,21 +104,26 @@ cmake "$TARGET" -G Xcode -B "IMPORTED_CMAKE_PROJECTS/$FILE"
 if [[ $? == 0 ]]
     then
         echo
-        echo "You can access the source files via the following directory:"
-        echo
-        echo "SYMLINK_CMAKE_PROJECTS/${FILE}"
-        echo
-        echo "You can import the source files in XCode by:"
-        echo
-        echo "Right-click on your project inside XCode"
-        echo "then click 'Add Files to' and navigate to the following directory and click 'Add'"
-        echo
-        echo "SYMLINK_CMAKE_PROJECTS/${FILE}"
-        echo
         echo "You can import the project in XCode by:"
         echo
         echo "Right-click on your project inside XCode"
         echo "then click 'Add Files to' and navigate to the following directory and click 'Add'"
         echo
         find "IMPORTED_CMAKE_PROJECTS/$FILE" -name \*.xcodeproj -depth 1
+        echo
+        echo
+        echo "or you can build the project directly by executing the following commands:"
+        echo
+        echo "cd IMPORTED_CMAKE_PROJECTS/$FILE"
+        echo "xcodebuild -list"
+        echo "xcodebuild -scheme <a scheme chosen from list>"
+        echo
+        echo
+        echo "for example, to build a cube executable (assuming it exists):"
+        echo
+        echo "cd IMPORTED_CMAKE_PROJECTS/$FILE"
+        echo "xcodebuild -scheme cube"
+        echo
+        echo
+        echo "cube is specified by add_executable(cube ... )"
 fi
