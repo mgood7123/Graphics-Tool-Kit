@@ -9,7 +9,7 @@
 
 class RectanglePainter : public PainterView
 {
-    float x, y;
+    Position mousePosition;
 public:
     VertexEngine::Canvas::Color4 green = {0, 1, 0, 1};
     VertexEngine::Canvas::Color4 blue = {0, 0, 1, 1};

@@ -5,8 +5,7 @@
 #include "RectanglePainter.h"
 
 void RectanglePainter::onCreate(VertexEngine::TextureManager &textureManager) {
-    x = 0;
-    y = 0;
+    mousePosition = 0;
 #if PLATFORM_ANDROID
 #else
     auto pathA = "/Users/smallville7123/Documents/s1.png";
@@ -41,18 +40,12 @@ void RectanglePainter::onDraw(VertexEngine::Canvas &canvas) {
     canvas.plane(140, 140, 200, 200, blue);
     canvas.plane(160, 160, 80, 80, pink);
 
-    int x_ = x;
-    int y_ = y;
-    if (parent != nullptr) {
-        auto p = parent->getAbsolutePosition();
-        x_ = ((x - p.topLeft.x)/(p.bottomRight.x - p.topLeft.x))*(getCanvasWidth() - p.topLeft.x);
-        y_ = ((y - p.topLeft.y)/(p.bottomRight.y - p.topLeft.y))*(getCanvasHeight() - p.topLeft.y);
-    }
-    canvas.plane(x_, y_, 40, 40, red);
+    canvas.plane(mousePosition.x-40, mousePosition.y-40, 80, 80, red);
+    canvas.plane(200, 200, 90, 90, "C");
 
 #if PLATFORM_ANDROID
 #else
-    canvas.subCanvas(200, 200, 90, 90).fill("C");
+//    canvas.subCanvas(200, 200, 90, 90).fill("C");
 #endif
 }
 
@@ -67,7 +60,7 @@ void RectanglePainter::onDestroy(VertexEngine::TextureManager &textureManager) {
 
 bool RectanglePainter::onTouchEvent(MultiTouch &touch) {
     auto t = touch.getTouchAt(touch.getTouchIndex());
-    x = t.x;
-    y = t.y;
+    mousePosition = ((Position(t.x, t.y) - getAbsolutePosition().topLeft) / getRelativePosition().topLeft) * Position(getCanvasWidth(), getCanvasHeight());
+    Log::Debug("mouse = ", mousePosition.toString());
     return true;
 }

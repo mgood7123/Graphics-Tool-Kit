@@ -49,7 +49,7 @@ class View {
     void buildAbsoluteCoordinatesFromRelativeCoordinates();
 
 public:
-    bool printLogging = true;
+    bool printLogging = false;
 
     View * parent = nullptr;
     bool focus = false;

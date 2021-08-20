@@ -74,11 +74,6 @@ void AppInstance::unloadView() {
     contents = AnyNullOpt;
 }
 
-RootView * a;
-RootView * b;
-GridView * c;
-TouchDetectorPainter * t;
-
 void AppInstance::surfaceChanged (int w, int h)
 {
     Log::Info("root window: w: ", w, ", h: ", h);
@@ -87,6 +82,10 @@ void AppInstance::surfaceChanged (int w, int h)
         attachToContext(w, h);
         destroyed.store(false);
         
+        RootView * a;
+        RootView * b;
+        GridView * c;
+
         a = new RootView();
         a->setTag("root");
         a->padding = 25;
@@ -104,7 +103,7 @@ void AppInstance::surfaceChanged (int w, int h)
         x->padding = 50;
         c->addView(x);
         c->addView(new TouchDetectorPainter());
-        c->addView(new TouchDetectorPainter());
+        c->addView(new RectanglePainter());
         b->addView(c);
     }
 
