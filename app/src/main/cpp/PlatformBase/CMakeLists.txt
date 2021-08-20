@@ -38,12 +38,30 @@ elseif (PLATFORM_LINUX)
 elseif (PLATFORM_MACOS)
     add_subdirectory(MacOSBase)
     target_link_libraries(PlatformBase MacOSBase MultiTouch)
+    set_target_properties(
+            PlatformBase PROPERTIES
+            FRAMEWORK TRUE
+            XCODE_EMBED_FRAMEWORKS "MacOSBase"
+            XCODE_EMBED_FRAMEWORKS_CODE_SIGN_ON_COPY TRUE
+    )
 elseif (PLATFORM_IOS)
     add_subdirectory(iOSBase)
-    target_link_libraries(PlatformBase iOSBase MultiTouch)
+    target_link_libraries(PlatformBase iOSBase)
+    set_target_properties(
+            PlatformBase PROPERTIES
+            FRAMEWORK TRUE
+            XCODE_EMBED_FRAMEWORKS "iOSBase"
+            XCODE_EMBED_FRAMEWORKS_CODE_SIGN_ON_COPY TRUE
+    )
 elseif (PLATFORM_TVOS)
     add_subdirectory(TvOSBase)
     target_link_libraries(PlatformBase TvOSBase MultiTouch)
+    set_target_properties(
+            PlatformBase PROPERTIES
+            FRAMEWORK TRUE
+            XCODE_EMBED_FRAMEWORKS "TvOSBase"
+            XCODE_EMBED_FRAMEWORKS_CODE_SIGN_ON_COPY TRUE
+    )
 else()
     message(FATAL_ERROR "Unsupported platform")
 endif()

@@ -9,16 +9,13 @@
 #include <DiligentCore/Graphics/GraphicsEngine/interface/PipelineState.h>
 #include <DiligentCore/Graphics/GraphicsEngine/interface/ShaderResourceBinding.h>
 #include <DiligentCore/Graphics/GraphicsEngine/interface/Buffer.h>
-#include "ObjectBase.h"
+#include "View.h"
 
-class Cube : public ObjectBase
+class CubeView : public View
 {
 public:
     static const char * cube_VS;
     static const char * cube_PS;
-
-    static constexpr const char *PIPELINE_RT_KEY = "Cube Render Target";
-
 
     void createPipeline(PipelineManager & pipelineManager) override;
     void switchToPipeline(PipelineManager & pipelineManager) override;
@@ -29,7 +26,7 @@ public:
     void resize(PipelineManager & pipelineManager) override;
     bool hasPhysics() override;
     void physics(const TimeEngine & timeEngine) override;
-    void draw(DrawTools & drawTools, RenderTarget & renderTarget) override;
+    void draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override;
     void destroy() override;
 
     void CreateVertexBuffer();
@@ -42,7 +39,7 @@ public:
     double                                                    obj_y;
     Diligent::float4x4                                        CubeModelTransform;
 
-    static constexpr const char *PIPELINE_KEY = "Cube";
+    static constexpr const char *PIPELINE_KEY = "CubeView";
 
     void computeViewModel();
 };

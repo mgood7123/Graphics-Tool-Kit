@@ -2,9 +2,9 @@
 // Created by Matthew Good on 30/6/21.
 //
 
-#include "Triangle.h"
+#include "TriangleView.h"
 
-const char * Triangle::triangle_VS = R"(
+const char * TriangleView::triangle_VS = R"(
 struct PSInput
 {
     float4 Pos   : SV_POSITION;
@@ -26,7 +26,7 @@ void main(in  uint    VertId : SV_VertexID,
 }
 )";
 
-const char * Triangle::triangle_PS = R"(
+const char * TriangleView::triangle_PS = R"(
 struct PSInput
 {
     float4 Pos   : SV_POSITION;
@@ -43,7 +43,7 @@ void main(in  PSInput  PSIn,
 }
 )";
 
-void Triangle::createPipeline(PipelineManager & pipelineManager) {
+void TriangleView::createPipeline(PipelineManager & pipelineManager) {
     auto & pso = pipelineManager.createPipeline(this, PIPELINE_KEY);
     pso.setType(Diligent::PIPELINE_TYPE_GRAPHICS);
     pso.setNumberOfTargets(1);
@@ -64,7 +64,7 @@ void Triangle::createPipeline(PipelineManager & pipelineManager) {
     {
         ShaderCI.Desc.ShaderType = Diligent::SHADER_TYPE_VERTEX;
         ShaderCI.EntryPoint      = "main";
-        ShaderCI.Desc.Name       = "Triangle vertex shader";
+        ShaderCI.Desc.Name       = "TriangleView vertex shader";
         ShaderCI.Source          = triangle_VS;
         getDiligentAppBase().m_pDevice->CreateShader(ShaderCI, &pVS);
     }
@@ -74,7 +74,7 @@ void Triangle::createPipeline(PipelineManager & pipelineManager) {
     {
         ShaderCI.Desc.ShaderType = Diligent::SHADER_TYPE_PIXEL;
         ShaderCI.EntryPoint      = "main";
-        ShaderCI.Desc.Name       = "Triangle pixel shader";
+        ShaderCI.Desc.Name       = "TriangleView pixel shader";
         ShaderCI.Source          = triangle_PS;
         getDiligentAppBase().m_pDevice->CreateShader(ShaderCI, &pPS);
     }
@@ -84,25 +84,24 @@ void Triangle::createPipeline(PipelineManager & pipelineManager) {
     pso.createPipelineState(getDiligentAppBase().m_pDevice);
 }
 
-void Triangle::switchToPipeline(PipelineManager & pipelineManager) {
+void TriangleView::switchToPipeline(PipelineManager & pipelineManager) {
     pipelineManager.switchToPipeline(
             this, PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext
     );
 }
 
-void Triangle::bindShaderResources(PipelineManager & pipelineManager) {
+void TriangleView::bindShaderResources(PipelineManager & pipelineManager) {
     pipelineManager.commitShaderResourceBinding(
             this, PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext,
             Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION
     );
 }
 
-void Triangle::destroyPipeline(PipelineManager & pipelineManager) {
+void TriangleView::destroyPipeline(PipelineManager & pipelineManager) {
     pipelineManager.destroyPipeline(this, PIPELINE_KEY);
 }
 
-void Triangle::draw (DrawTools & drawTools, RenderTarget & renderTarget)
-{
+void TriangleView::draw(DrawTools & drawTools, RenderTarget & screenRenderTarget, RenderTarget & renderTarget) {
 
     auto & app = getDiligentAppBase();
 

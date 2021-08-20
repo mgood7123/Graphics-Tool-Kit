@@ -4,7 +4,6 @@
 
 #include "DiligentAppBase.h"
 #include <EngineFactoryOpenGL.h>
-#include <Objects/ObjectBase.h>
 
 DiligentAppBase::DiligentAppBase ()
 {

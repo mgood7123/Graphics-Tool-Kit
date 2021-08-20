@@ -88,7 +88,7 @@ add_subdirectory(PlatformBase)
 
 add_subdirectory(VertexEngine)
 
-add_subdirectory(Objects)
+add_subdirectory(Views)
 
 add_library(
         AppInstance SHARED
@@ -104,9 +104,16 @@ target_include_directories(
 
 target_link_libraries(
         AppInstance
-        Objects
+        Views
         PlatformBase
         WINAPI::KERNEL
+)
+
+set_target_properties(
+        AppInstance PROPERTIES
+        FRAMEWORK TRUE
+        XCODE_EMBED_FRAMEWORKS "Diligent-GraphicsEngineOpenGL-shared;Views;DiligentAnyOpt;DiligentHelpers;TimeEngine;VertexEngine;MultiTouch;PixelToNDC;PlatformBase;WINAPI::KERNEL"
+        XCODE_EMBED_FRAMEWORKS_CODE_SIGN_ON_COPY TRUE
 )
 
 if (PLATFORM_ANDROID)

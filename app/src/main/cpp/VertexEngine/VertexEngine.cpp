@@ -7,6 +7,7 @@
 #include <DiligentTools/TextureLoader/interface/TextureUtilities.h>
 #include <DiligentTools/TextureLoader/interface/TextureLoader.h>
 #include <DiligentCore/Graphics/GraphicsAccessories/interface/GraphicsAccessories.hpp>
+#include <utility>
 #include <DiligentTools/TextureLoader/interface/Image.h>
 
 template<typename A, typename B, typename C>
@@ -539,8 +540,11 @@ void VertexEngine::removeIndexHandle(HANDLE handle) {
     indexHandles = std::move(rebuild);
 }
 
-VertexEngine::TextureManager::TextureManager(VertexEngine *engine):
-        vertexEngine(engine)
+VertexEngine::TextureManager::TextureManager(): TextureManager(nullptr)
+{
+}
+
+VertexEngine::TextureManager::TextureManager(VertexEngine *engine): vertexEngine(engine)
 {
 }
 
@@ -650,10 +654,23 @@ void VertexEngine::TextureManager::createTextureFromFile(
     if (getTexture(key) != nullptr) {
         LOG_ERROR_AND_THROW("a texture with the key '", key, "' already exists");
     }
+
+    size_t pathLen = strlen(FilePath);
+    size_t keyLen = strlen(key);
+    TextureCache::TextureInfo * textureInfo = vertexEngineTextureFileCache.findPath(FilePath, pathLen);
+    if (textureInfo != nullptr) {
+        vertexEngineTextureFileCache.addRef(FilePath, pathLen, this, key, keyLen);
+        vertexEngine->textureBuffer.add({key, keyLen, textureInfo->textureReference.texture});
+        return;
+    }
+    // load texture from file
+
     Diligent::RefCntAutoPtr<Diligent::Image>     pImage;
     Diligent::RefCntAutoPtr<Diligent::IDataBlob> pRawData;
 
     auto ImgFmt = Diligent::CreateImageFromFile(FilePath, &pImage, &pRawData);
+
+    Diligent::ITexture * tex = nullptr;
 
     if (pImage) {
         auto r = imageIsSolidColor(pImage);
@@ -666,26 +683,24 @@ void VertexEngine::TextureManager::createTextureFromFile(
             });
             return;
         } else {
-            Diligent::ITexture * tex = nullptr;
             Diligent::CreateTextureFromImage(pImage, TexLoadInfo, m_pDevice, &tex);
-            vertexEngine->textureBuffer.add({key, strlen(key), tex});
         }
     } else if (pRawData) {
         // TODO: can DDS and KTX be solid color?
         if (ImgFmt == Diligent::IMAGE_FILE_FORMAT_DDS) {
-            Diligent::ITexture * tex = nullptr;
             Diligent::CreateTextureFromDDS(pRawData->GetConstDataPtr(), pRawData->GetSize(),
                                            TexLoadInfo, m_pDevice, &tex);
-            vertexEngine->textureBuffer.add({key, strlen(key), tex});
         } else if (ImgFmt == Diligent::IMAGE_FILE_FORMAT_KTX) {
-            Diligent::ITexture * tex = nullptr;
             Diligent::CreateTextureFromKTX(pRawData->GetConstDataPtr(), pRawData->GetSize(),
                                            TexLoadInfo, m_pDevice, &tex);
-            vertexEngine->textureBuffer.add({key, strlen(key), tex});
         } else {
             LOG_ERROR_AND_THROW("Unexpected format");
         }
     }
+
+    // cache the texture
+    vertexEngineTextureFileCache.addRef(FilePath, pathLen, this, key, keyLen, tex);
+    vertexEngine->textureBuffer.add({key, keyLen, tex});
 }
 
 Diligent::ITexture * VertexEngine::TextureManager::findTexture(const char * key) {
@@ -723,6 +738,19 @@ tl::optional<size_t> VertexEngine::TextureManager::findTextureIndex(const char *
     return tl::nullopt;
 }
 
+tl::optional<size_t> VertexEngine::TextureManager::findTexture(Diligent::ITexture * texture) {
+    auto i = vertexEngine->textureBuffer.getIterator();
+    while (i.hasNext()) {
+        auto idx = vertexEngine->textureBuffer.getIndex(i.next()->handle);
+        if (!idx) continue;
+        auto r = vertexEngine->textureBuffer.get(idx.value());
+        if (r->third.texture == texture) {
+            return idx;
+        }
+    }
+    return tl::nullopt;
+}
+
 void VertexEngine::TextureManager::deleteTexture(const char * key) {
     if (key != nullptr) {
         auto i = vertexEngine->textureBuffer.getIterator();
@@ -730,7 +758,9 @@ void VertexEngine::TextureManager::deleteTexture(const char * key) {
             HANDLE h = i.next()->handle;
             auto r = vertexEngine->textureBuffer.get(h);
             if (keyMatches(key, r)) {
-                if (r->third.texture != nullptr) r->third.texture->Release();
+                if (r->third.texture != nullptr) {
+                    vertexEngineTextureFileCache.removeRef(r->third.texture);
+                }
                 vertexEngine->textureBuffer.remove(h);
                 break;
             }
@@ -1281,4 +1311,104 @@ std::array<float, 4> VertexEngine::Color4::unsigned_8bit_vector_to_float_array(
 std::vector<float> VertexEngine::Color4::unsigned_8bit_vector_to_float_vector(
         const std::vector<uint8_t> &data) {
     return {static_cast<float>(data[0]) / 255.0f, static_cast<float>(data[1]) / 255.0f, static_cast<float>(data[2]) / 255.0f, static_cast<float>(data[3]) / 255.0f};
+}
+
+VertexEngine::TextureCache::StringInfo::StringInfo(const char *string, size_t stringLength)
+        : string(string), stringLength(stringLength) {}
+
+VertexEngine::TextureCache::KeyInfo::KeyInfo(const char *string, size_t stringLength,
+                                             TextureManager * id)
+        : StringInfo(string, stringLength), id(id) {}
+
+VertexEngine::TextureCache::TextureReference::TextureReference(
+        size_t count,
+        Diligent::ITexture *texture
+) : count(count), texture(texture)
+{}
+
+VertexEngine::TextureCache::TextureInfo::TextureInfo(
+        const VertexEngine::TextureCache::StringInfo &path,
+        std::vector<KeyInfo> keys,
+        const VertexEngine::TextureCache::TextureReference &textureReference
+) : path(path), keys(std::move(keys)), textureReference(textureReference)
+{}
+
+VertexEngine::TextureCache::TextureInfo *
+VertexEngine::TextureCache::findPath(const char *filePath, size_t filePathStrLen) {
+    for (TextureInfo & t : textureCacheBuffer) {
+        if (t.path.stringLength == filePathStrLen) {
+            if (memcmp(t.path.string, filePath, filePathStrLen) == 0) {
+                return &t;
+            }
+        }
+    }
+    return nullptr;
+}
+
+VertexEngine::TextureCache::TextureInfo *
+VertexEngine::TextureCache::findKey(const char *key, size_t keyStrLen,
+                                    VertexEngine::TextureManager *id) {
+    for (TextureInfo & t : textureCacheBuffer) {
+        for (const KeyInfo s : t.keys) {
+            if (s.stringLength == keyStrLen) {
+                if (memcmp(s.string, key, keyStrLen) == 0) {
+                    if (s.id == id) {
+                        return &t;
+                    }
+                }
+            }
+        }
+    }
+    return nullptr;
+}
+
+void
+VertexEngine::TextureCache::addRef(const char *filePath, size_t filePathStrLen, TextureManager * id,
+                                   const char *key, size_t keyLen,
+                                   Diligent::ITexture *texture) {
+    TextureInfo * textureInfo = VertexEngine::TextureCache::findPath(filePath, filePathStrLen);
+    if (textureInfo == nullptr) {
+        textureCacheBuffer.push_back(
+                {
+                        {filePath, filePathStrLen},
+                        {{ key, keyLen, id }},
+                        { 1, texture },
+                }
+        );
+    } else {
+        LOG_ERROR_AND_THROW("texture already loaded from file, please use findPath(", filePath, ", ", filePathStrLen, ");");
+    }
+}
+
+void
+VertexEngine::TextureCache::addRef(const char *filePath, size_t filePathStrLen, TextureManager * id,
+                                   const char *key, Diligent::ITexture *texture) {
+    addRef(filePath, filePathStrLen, id, key, strlen(key), texture);
+}
+
+void
+VertexEngine::TextureCache::addRef(const char *filePath, size_t filePathStrLen, TextureManager * id,
+                                   const char *key, size_t keyLen) {
+    TextureInfo * textureInfo = VertexEngine::TextureCache::findPath(filePath, filePathStrLen);
+    if (textureInfo == nullptr) {
+        LOG_ERROR_AND_THROW("failed to path '", filePath, "' in cache");
+    }
+    textureInfo->keys.emplace_back(key, keyLen, id);
+    textureInfo->textureReference.count++;
+}
+
+void
+VertexEngine::TextureCache::addRef(const char *filePath, size_t filePathStrLen, TextureManager * id, const char * key) {
+    addRef(filePath, filePathStrLen, id, key, strlen(key));
+}
+
+void VertexEngine::TextureCache::removeRef(Diligent::ITexture * tex) {
+    for (TextureInfo & t : textureCacheBuffer) {
+        if (t.textureReference.texture == tex) {
+            t.textureReference.count--;
+            if (t.textureReference.count == 0) {
+                tex->Release();
+            }
+        }
+    }
 }

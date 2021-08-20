@@ -313,32 +313,42 @@ Diligent::ITexture * RenderTarget::createDepthTexture(Diligent::ISwapChain * swa
 void RenderTarget::resize(PipelineManager & pipelineManager, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice) {
     width = swapChain->GetDesc().Width;
     height = swapChain->GetDesc().Height;
-    depth_texture.Attach(createDepthTexture(swapChain, renderDevice));
-    depthTV = depth_texture->GetDefaultView(Diligent::TEXTURE_VIEW_DEPTH_STENCIL);
-
-    color_texture.Attach(createColorTexture(swapChain, renderDevice));
-    colorTV = color_texture->GetDefaultView(Diligent::TEXTURE_VIEW_RENDER_TARGET);
-
-    auto k = pipelineManager.findPipeline(this, PIPELINE_KEY);
-    if (k.first != nullptr) {
-        // We need to release and create a new SRB that references new off-screen render target SRV
-        k.first->getBinding().Release();
-        k.first->createShaderBinding(true);
-
-        // Set render target color texture SRV in the SRB
-        color_res = color_texture->GetDefaultView(Diligent::TEXTURE_VIEW_SHADER_RESOURCE);
-        k.first->getVariableFromPixelShader("g_Texture")->Set(color_res);
+    
+    if (!depthTV_wrapped) {
+        depth_texture.Attach(createDepthTexture(swapChain, renderDevice));
+        depthTV = depth_texture->GetDefaultView(Diligent::TEXTURE_VIEW_DEPTH_STENCIL);
     }
+    
+    if (!colorTV_wrapped) {
+        color_texture.Attach(createColorTexture(swapChain, renderDevice));
+        colorTV = color_texture->GetDefaultView(Diligent::TEXTURE_VIEW_RENDER_TARGET);
+    
+        auto k = pipelineManager.findPipeline(this, PIPELINE_KEY);
+        if (k.first != nullptr) {
+            // We need to release and create a new SRB that references new off-screen render target SRV
+            k.first->getBinding().Release();
+            k.first->createShaderBinding(true);
+
+            // Set render target color texture SRV in the SRB
+            color_res = color_texture->GetDefaultView(Diligent::TEXTURE_VIEW_SHADER_RESOURCE);
+            k.first->getVariableFromPixelShader("g_Texture")->Set(color_res);
+        }
+    }
+ }
+
+void RenderTarget::wrap(Diligent::ITextureView * color, Diligent::ITextureView * depth) {
+    colorTV_wrapped = color != nullptr;
+    if (colorTV_wrapped) colorTV = color;
+    depthTV_wrapped = depth != nullptr;
+    if (depthTV_wrapped) depthTV = depth;
 }
 
-void RenderTarget::bind(Diligent::IDeviceContext * deviceContext) {
+void RenderTarget::bind(Diligent::IDeviceContext * deviceContext) const {
     bind(colorTV, depthTV, deviceContext);
 }
 
 void RenderTarget::bind(Diligent::ITextureView * color, Diligent::ITextureView * depth, Diligent::IDeviceContext * deviceContext) {
     deviceContext->SetRenderTargets(1, &color, depth, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
-    Diligent::Rect r {0, 0, width, height};
-    deviceContext->SetScissorRects(1, &r, width, height);
 }
 
 void RenderTarget::clearColor(const float * color, Diligent::IDeviceContext * deviceContext) {
@@ -389,28 +399,28 @@ void RenderTarget::clearColorAndDepth(const VertexEngine::Color4 & color, float 
     clearColorAndDepth(colorArray.data(), depth, colorTV, depthTV, deviceContext);
 }
 
-void RenderTarget::clip(const Position & position, Diligent::IDeviceContext * deviceContext) {
-    clip(position.x, position.y, position.width, position.height, deviceContext);
+void RenderTarget::clipAbsolutePosition(const Rectangle & position, Diligent::IDeviceContext * deviceContext) {
+    clipAbsolutePosition(position.topLeft.x, position.topLeft.y, position.bottomRight.x, position.bottomRight.y, deviceContext);
 }
 
-void RenderTarget::clip(const float & x, const float & y, const float & w, const float & h, Diligent::IDeviceContext * deviceContext) {
+void RenderTarget::clipAbsolutePosition(const float & x, const float & y, const float & w, const float & h, Diligent::IDeviceContext * deviceContext) {
     Diligent::Rect r {
         static_cast<Diligent::Int32>(x),
         static_cast<Diligent::Int32>(y),
         static_cast<Diligent::Int32>(w),
         static_cast<Diligent::Int32>(h),
     };
-    
+
     deviceContext->SetScissorRects(1, &r, width, height);
 }
 
-void RenderTarget::draw(
-        DrawTools & drawTools, const Position & position, Diligent::IDeviceContext * deviceContext
+void RenderTarget::drawAbsolutePosition(
+        DrawTools & drawTools, const Rectangle & position, Diligent::IDeviceContext * deviceContext
 ) {
-    draw(drawTools, position.x, position.y, position.width, position.height, deviceContext);
+    drawAbsolutePosition(drawTools, position.topLeft.x, position.topLeft.y, position.bottomRight.x, position.bottomRight.y, deviceContext);
 }
 
-void RenderTarget::draw(
+void RenderTarget::drawAbsolutePosition(
         DrawTools & drawTools, const int & x, const int & y, const int & w, const int & h, Diligent::IDeviceContext * deviceContext
 ) {
     drawTools.pipelineManager.switchToPipeline(this, PIPELINE_KEY, deviceContext);
@@ -424,15 +434,11 @@ void RenderTarget::draw(
     deviceContext->SetVertexBuffers(0, 1, pBuffs_, &offset_, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION, Diligent::SET_VERTEX_BUFFERS_FLAG_RESET);
     deviceContext->SetIndexBuffer(indexBuffer, 0, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
 
-    int from_X = x;
-    int from_Y = y;
-    int to_X = x + (w == Position::MATCH_PARENT ? drawTools.pixelToNDC.width : w);
-    int to_Y = y + (h == Position::MATCH_PARENT ? drawTools.pixelToNDC.height : h);
-
-    auto a = drawTools.pixelToNDC.toNDC<int, float>(from_X, to_Y, 0);
-    auto b = drawTools.pixelToNDC.toNDC<int, float>(from_X, from_Y, 0);
-    auto c = drawTools.pixelToNDC.toNDC<int, float>(to_X, to_Y, 0);
-    auto d = drawTools.pixelToNDC.toNDC<int, float>(to_X, from_Y, 0);
+    drawTools.pixelToNDC.resize(width, height);
+    auto a = drawTools.pixelToNDC.toNDC<int, float>(x, h, 0);
+    auto b = drawTools.pixelToNDC.toNDC<int, float>(x, y, 0);
+    auto c = drawTools.pixelToNDC.toNDC<int, float>(w, h, 0);
+    auto d = drawTools.pixelToNDC.toNDC<int, float>(w, y, 0);
 
     float pos[] {
             a.x, a.y, a.z, // bottom left
@@ -466,6 +472,26 @@ void RenderTarget::draw(
     // Verify the state of vertex and index buffers
     DrawAttrs_.Flags = Diligent::DRAW_FLAG_VERIFY_ALL;
     deviceContext->DrawIndexed(DrawAttrs_);
+}
+
+void RenderTarget::drawAbsolutePositionAndClipToBoundaries(DrawTools &drawTools,
+                                                        const Rectangle & position,
+                                                        Diligent::IDeviceContext *deviceContext) {
+    clipAbsolutePosition(position, deviceContext);
+    drawAbsolutePosition(drawTools, position, deviceContext);
+}
+
+void RenderTarget::drawToRenderTarget(
+                                      DrawTools &drawTools,
+                                      const RenderTarget &renderTarget,
+                                      Diligent::IDeviceContext *deviceContext
+) {
+    renderTarget.bind(deviceContext);
+    drawAbsolutePositionAndClipToBoundaries(
+                                            drawTools,
+                                            {0, 0, width, height},
+                                            deviceContext
+    );
 }
 
 void RenderTarget::destroy(PipelineManager & pipelineManager) {

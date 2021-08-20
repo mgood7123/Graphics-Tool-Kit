@@ -26,15 +26,11 @@ AppInstance::AppInstance ()
 //    timeEngine.physicsTimeStep = 0.01666666/16;
     
     timeEngine.physicsCallback = [&](const TimeEngine & timeEngine_) {
-        ObjectBase * obj = objectBase.get<ObjectBase*>();
-        if (obj != nullptr) {
-            obj->physics(timeEngine_);
+        View * view = contents.get<View*>();
+        if (view != nullptr) {
+            view->physics(timeEngine_);
         }
     };
-    
-    CubeOnTriangle * t = new CubeOnTriangle();
-    t->addChild(new CubeOnTriangle());
-    loadObject(t);
 }
 
 AppInstance::~AppInstance ()
@@ -44,45 +40,72 @@ AppInstance::~AppInstance ()
 
 void AppInstance::callCreate() {
     if (!destroyed.load() && !createCalled.load()) {
-        ObjectBase * obj = objectBase.get<ObjectBase*>();
-        if (obj != nullptr) {
-            screenRenderTarget.create(PIPELINE_KEY, pipelineManager, m_pSwapChain, m_pDevice);
-            obj->createPipeline(pipelineManager);
-            obj->create();
-            if (obj->hasPhysics()) {
+        // create even if we dont have a view
+        rt.create(PIPELINE_KEY, pipelineManager, m_pSwapChain, m_pDevice);
+        View * view = contents.get<View*>();
+        if (view != nullptr) {
+            view->createPipeline(pipelineManager);
+            view->create();
+            if (view->hasPhysics()) {
                 timeEngine.startPhysicsThread();
             }
-            createCalled.store(true);
         }
+        createCalled.store(true);
     }
 }
 
 void AppInstance::callDestroy() {
     if (createCalled.load()) {
-        ObjectBase *obj = objectBase.get<ObjectBase *>();
-        if (obj != nullptr) {
-            if (obj->hasPhysics()) {
+        View *view = contents.get<View *>();
+        if (view != nullptr) {
+            if (view->hasPhysics()) {
                 timeEngine.stopPhysicsThread();
             }
-            obj->destroy();
-            obj->destroyPipeline(pipelineManager);
-            screenRenderTarget.destroy(pipelineManager);
-            createCalled.store(false);
+            view->destroy();
+            view->destroyPipeline(pipelineManager);
         }
+        rt.destroy(pipelineManager);
+        createCalled.store(false);
     }
 }
 
-void AppInstance::unloadObject() {
+void AppInstance::unloadView() {
     callDestroy();
-    objectBase = AnyNullOpt;
+    contents = AnyNullOpt;
 }
+
+RootView * a;
+RootView * b;
+GridView * c;
+TouchDetectorPainter * t;
 
 void AppInstance::surfaceChanged (int w, int h)
 {
+    Log::Info("root window: w: ", w, ", h: ", h);
     if (!m_pSwapChain)
     {
         attachToContext(w, h);
         destroyed.store(false);
+        
+        a = new RootView();
+        a->setTag("root");
+        a->padding = 25;
+        loadView(a);
+        
+        b = new RootView();
+        b->setTag("root child");
+//        b->padding = 25;
+        a->addView(b);
+        
+        c = new GridView();
+        c->setTag("grid");
+        c->addView(new TouchDetectorPainter());
+        auto * x = new TouchDetectorPainter();
+        x->padding = 50;
+        c->addView(x);
+        c->addView(new TouchDetectorPainter());
+        c->addView(new TouchDetectorPainter());
+        b->addView(c);
     }
 
     // Resizing the swap chain requires back and depth-stencil buffers
@@ -94,10 +117,15 @@ void AppInstance::surfaceChanged (int w, int h)
     swapChainWidth = w;
     swapChainHeight = h;
     callCreate();
-    screenRenderTarget.resize(pipelineManager, m_pSwapChain, m_pDevice);
-    ObjectBase * obj = objectBase.get<ObjectBase*>();
-    if (obj != nullptr) {
-        obj->resize(pipelineManager);
+    screen.wrap(
+        m_pSwapChain->GetCurrentBackBufferRTV(),
+        m_pSwapChain->GetDepthBufferDSV()
+    );
+    screen.resize(pipelineManager, m_pSwapChain, m_pDevice);
+    rt.resize(pipelineManager, m_pSwapChain, m_pDevice);
+    View * view = contents.get<View*>();
+    if (view != nullptr) {
+        view->resize(pipelineManager);
     }
 }
 
@@ -105,32 +133,43 @@ void AppInstance::onDraw ()
 {
     if (destroyed.load()) return;
     timeEngine.computeDelta();
-    auto obj = objectBase.get<ObjectBase*>();
-    if (obj != nullptr) {
+
+    // clear screen
+    screen.bind(m_pImmediateContext);
+    screen.clearColorAndDepth(RenderTarget::black, 1, m_pImmediateContext);
+
+    auto view = contents.get<View*>();
+    if (view != nullptr) {
         DrawTools drawTools(pipelineManager, pixelToNDC);
+        Rectangle drawPosition = {0, 0, 100, 100};
 
-        obj->switchToPipeline(pipelineManager);
-        obj->bindShaderResources(pipelineManager);
-        obj->draw(drawTools, screenRenderTarget);
+        view->switchToPipeline(pipelineManager);
+        view->bindShaderResources(pipelineManager);
 
-        drawTools.pixelToNDC.resize(width, height);
-        auto color = m_pSwapChain->GetCurrentBackBufferRTV();
-        auto depth = m_pSwapChain->GetDepthBufferDSV();
-        screenRenderTarget.bind(color, depth, m_pImmediateContext);
-        RenderTarget::clearColorAndDepth(RenderTarget::black, 1, color, depth, m_pImmediateContext);
+        drawTools.pixelToNDC.resize(100, 100);
 
-        Diligent::Rect f {0, 0, width, height};
-        m_pImmediateContext->SetScissorRects(1, &f, width, height);
-        screenRenderTarget.draw(drawTools, obj->position.x, obj->position.y, obj->position.width, obj->position.height, m_pImmediateContext);
+        view->buildCoordinates(drawPosition, drawTools, rt);
+
+        // clear render target
+        rt.bind(m_pImmediateContext);
+        rt.clearColorAndDepth(RenderTarget::black, 1, m_pImmediateContext);
+
+        // draw view to render target, screen is unused
+        // each ViewGroup draws its RT to the argument `rt`
+        // rt.drawToRenderTarget(drawTools, renderTarget, app.m_pImmediateContext);
+        view->draw(drawTools, screen, rt);
+
+        // draw render target to screen
+        rt.drawToRenderTarget(drawTools, screen, m_pImmediateContext);
     }
     swapBuffers();
 }
 
 bool AppInstance::onTouchEvent(MultiTouch & touchEvent) {
     if (destroyed.load()) return false;
-    ObjectBase * obj = objectBase.get<ObjectBase*>();
-    if (obj != nullptr) {
-        return obj->onTouchEvent(touchEvent);
+    View * view = contents.get<View*>();
+    if (view != nullptr) {
+        return view->onTouchEvent(touchEvent);
     }
     return false;
 }
@@ -145,9 +184,12 @@ void AppInstance::destroyResources ()
     if (destroyed.load()) return;
     destroyed.store(true);
 
-    // if we unload here then there is no way to restore the loaded object
-    // unless we manually reload it with the correct type
-    // the object is automatically unloaded when this AppInstance object is destroyed
+    // if we unload here then there is no way to restore the loaded
+    // view unless we manually reload it with the correct type
+    // which is impossible since types cannot be saved at runtime
+    //
+    // the view is automatically unloaded when this AppInstance
+    // object is destroyed
 
     callDestroy();
 

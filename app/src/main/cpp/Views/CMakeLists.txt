@@ -7,43 +7,41 @@ cmake_minimum_required(VERSION 3.10.2)
 
 # Declares and names the project.
 
-project(Objects)
+project(Views)
 
 add_library(
-        ObjectBase SHARED
-        ObjectBase.cpp
+        View SHARED
+        View.cpp
+        ViewGroup.cpp
 )
 
 target_link_libraries(
-        ObjectBase
+        View
         DiligentHelpers
         TimeEngine
         VertexEngine
         MultiTouch
 )
 
+add_subdirectory(PainterViews)
+
 add_library(
-        ObjectGroup SHARED
-        ObjectGroup.cpp
+        Views SHARED
+        CubeView.cpp
+        GridView.cpp
+        RootView.cpp
+        TriangleView.cpp
 )
 
 target_link_libraries(
-        ObjectGroup
-        ObjectBase
+        Views
+        View
+        PainterViews
 )
 
-add_subdirectory(Painters)
-
-add_library(
-        Objects SHARED
-        Triangle.cpp
-        Cube.cpp
-        CubeOnTriangle.cpp
-)
-
-target_link_libraries(
-        Objects
-        ObjectBase
-        ObjectGroup
-        Painters
+set_target_properties(
+        Views PROPERTIES
+        FRAMEWORK TRUE
+        XCODE_EMBED_FRAMEWORKS "View;PainterViews"
+        XCODE_EMBED_FRAMEWORKS_CODE_SIGN_ON_COPY TRUE
 )

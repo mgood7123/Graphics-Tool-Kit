@@ -72,14 +72,14 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
 
 - (void)mouseEntered:(NSEvent *)event {
     if (!mouseInView) {
-        NSLog(@"mouseEntered");
+//        NSLog(@"mouseEntered");
         mouseInView = YES;
     }
 }
 
 -(void)mouseExited:(NSEvent *)event {
     if (mouseInView) {
-        NSLog(@"mouseExited");
+//        NSLog(@"mouseExited");
         mouseInView = NO;
     }
 }
@@ -168,6 +168,12 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
     
     [[self window] orderFrontRegardless];
     [self setAcceptsTouchEvents:YES];
+    
+    NSSize s;
+    s.width = 100;
+    s.height = 100;
+
+    [[self window] setContentSize:s];
 
     NSOpenGLPixelFormatAttribute attrs[] =
 

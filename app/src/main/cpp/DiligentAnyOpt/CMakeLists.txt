@@ -9,5 +9,5 @@ cmake_minimum_required(VERSION 3.10.2)
 
 project("DiligentAnyOpt")
 
-add_library(DiligentAnyOpt AnyOpt.cpp)
+add_library(DiligentAnyOpt SHARED AnyOpt.cpp)
 target_link_libraries(DiligentAnyOpt Diligent-Log)

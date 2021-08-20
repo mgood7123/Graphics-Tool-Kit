@@ -5,7 +5,9 @@
 #ifndef GRAPHICAL_TOOL_KIT_PAINTERS_H
 #define GRAPHICAL_TOOL_KIT_PAINTERS_H
 
-#include "Painter.h"
+#include "PainterView.h"
+#include "ColorPainter.h"
+#include "TouchDetectorPainter.h"
 #include "RectanglePainter.h"
 
 #endif //GRAPHICAL_TOOL_KIT_PAINTERS_H

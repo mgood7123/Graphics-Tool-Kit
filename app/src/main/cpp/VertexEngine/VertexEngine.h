@@ -419,7 +419,10 @@ public:
         Diligent::IRenderDevice  * m_pDevice;
         Diligent::IDeviceContext * m_pImmediateContext;
     public:
+        TextureManager();
         TextureManager(VertexEngine * engine);
+
+        void addRef();
 
         /**
          * set the default device and context to use for texture operations
@@ -555,6 +558,15 @@ public:
         Triple<const char *, size_t, Color4> * getTexture(const char *key);
 
         /**
+         * finds a texture
+         * @param texture the texture to locate
+         * @return tl::nullopt if the texture cannot be found
+         *          or `getTexture(returnedIndex.value())->third.texture == nullptr`
+         *          if the texture has been converted into color data
+         */
+        tl::optional<size_t> findTexture(Diligent::ITexture * texture);
+
+        /**
          * finds a texture associated with the key used to create the texture
          * @param key the key to locate the texture
          * @return tl::nullopt if the key cannot be found
@@ -572,11 +584,65 @@ public:
         bool keyMatches(const char *key, Triple<const char *, size_t, Color4> *pTriple);
     };
 
-    TextureManager * textureManager;
+    class TextureCache {
+    public:
+        struct StringInfo {
+            const char * string;
+            size_t stringLength;
+            StringInfo(const char *string, size_t stringLength);
+        };
+        
+        struct KeyInfo : public StringInfo {
+            TextureManager * id;
+
+            KeyInfo(const char *string, size_t stringLength, TextureManager * id);
+        };
+        
+        struct TextureReference {
+            size_t count;
+            Diligent::ITexture* texture;
+
+            TextureReference(size_t count, Diligent::ITexture *texture);
+        };
+        struct TextureInfo {
+            StringInfo path;
+            std::vector<KeyInfo> keys;
+            TextureReference textureReference;
+
+            TextureInfo(const StringInfo &path, std::vector<KeyInfo> keys,
+                        const TextureReference &textureReference);
+        };
+    private:
+        std::vector<TextureInfo> textureCacheBuffer;
+    public:
+        TextureInfo * findPath(const char *filePath, size_t filePathStrLen);
+
+        TextureInfo * findKey(const char *key, size_t keyStrLen, TextureManager * id);
+
+        void
+        addRef(const char *filePath, size_t filePathStrLen, TextureManager * id, const char *key,
+               Diligent::ITexture *texture);
+
+        void
+        addRef(const char *filePath, size_t filePathStrLen, TextureManager * id, const char *key,
+               size_t keyLen, Diligent::ITexture *texture);
+
+        void
+        addRef(const char *filePath, size_t filePathStrLen, TextureManager * id, const char *key);
+
+        void
+        addRef(const char *filePath, size_t filePathStrLen, TextureManager * id, const char *key,
+               size_t keyLen);
+
+        void removeRef(Diligent::ITexture * tex);
+    };
+
+    TextureManager * textureManager = nullptr;
     VertexEngine(TextureManager * textureManager);
 
     void removeIndexHandle(HANDLE handle);
 };
 
+static VertexEngine::TextureCache vertexEngineTextureFileCache;
 
 #endif //GRAPHICAL_TOOL_KIT_VERTEXENGINE_H

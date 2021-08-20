@@ -6,21 +6,21 @@
 #define GRAPHICAL_TOOL_KIT_APPINSTANCE_H
 
 #include <PlatformBase/AppInstancePlatformBase.h>
-#include <Objects/Objects.h>
+#include <Views/Views.h>
 #include <WINAPI_KERNEL/SDK/include/AnyOpt.h>
 
 
 class AppInstance : public AppInstancePlatformBase, public DiligentAppBase
 {
-    AnyOpt objectBase;
+    AnyOpt contents;
     TimeEngine timeEngine;
     PipelineManager pipelineManager;
     PixelToNDC pixelToNDC;
     int width;
     int height;
     static constexpr const char * PIPELINE_KEY = "AppInstance RT";
-    static constexpr const char * OFFSCREEN_PIPELINE_KEY = "AppInstance ORT";
-    RenderTarget screenRenderTarget;
+    RenderTarget screen;
+    RenderTarget rt;
 
     std::atomic_bool destroyed;
     std::atomic_bool createCalled;
@@ -34,22 +34,22 @@ public:
 
     void callDestroy();
 
-    void loadObject(ObjectBase * obj) {
-        unloadObject();
-        obj->setDiligentAppBase(this);
-        objectBase = AnyOpt(obj, true);
+    void loadView(View * view) {
+        unloadView();
+        view->setDiligentAppBase(this);
+        contents = AnyOpt(view, true);
         callCreate();
     }
 
-    template <typename T, typename std::enable_if<std::is_base_of<ObjectBase, T>::value>::type* = nullptr>
-    T * loadObject() {
-        unloadObject();
+    template <typename T, typename std::enable_if<std::is_base_of<View, T>::value>::type* = nullptr>
+    T * loadView() {
+        unloadView();
         T * obj = new T;
-        loadObject(obj);
+        loadView(obj);
         return obj;
     }
 
-    void unloadObject();
+    void unloadView();
 
 #if PLATFORM_WIN32 || PLATFORM_LINUX || PLATFORM_MACOS
 

@@ -5,9 +5,9 @@
 #ifndef GRAPHICAL_TOOL_KIT_RECTANGLEPAINTER_H
 #define GRAPHICAL_TOOL_KIT_RECTANGLEPAINTER_H
 
-#include "Painter.h"
+#include "PainterView.h"
 
-class RectanglePainter : public Painter
+class RectanglePainter : public PainterView
 {
     float x, y;
 public:
@@ -29,4 +29,4 @@ public:
 };
 
 
-#endif //GRAPHICAL_TOOL_KIT_RECTANGLE_H
+#endif //GRAPHICAL_TOOL_KIT_RECTANGLEPAINTER_H

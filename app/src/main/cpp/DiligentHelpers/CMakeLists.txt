@@ -9,14 +9,28 @@ cmake_minimum_required(VERSION 3.10.2)
 
 project("DiligentHelpers")
 
-add_library(PipelineManager PipelineManager.cpp)
+add_library(PipelineManager SHARED PipelineManager.cpp)
 target_link_libraries(PipelineManager DiligentAnyOpt WINAPI::Kernel)
 
-add_library(DrawTools DrawTools.cpp)
+add_library(DrawTools SHARED DrawTools.cpp)
 target_link_libraries(DrawTools PipelineManager PixelToNDC)
 
-add_library(RenderTarget RenderTarget.cpp)
+set_target_properties(
+        DrawTools PROPERTIES
+        FRAMEWORK TRUE
+        XCODE_EMBED_FRAMEWORKS PipelineManager
+        XCODE_EMBED_FRAMEWORKS_CODE_SIGN_ON_COPY TRUE
+)
+
+add_library(RenderTarget SHARED RenderTarget.cpp)
 target_link_libraries(RenderTarget DrawTools VertexEngine)
+
+set_target_properties(
+        RenderTarget PROPERTIES
+        FRAMEWORK TRUE
+        XCODE_EMBED_FRAMEWORKS DrawTools
+        XCODE_EMBED_FRAMEWORKS_CODE_SIGN_ON_COPY TRUE
+)
 
 add_library(
         DiligentHelpers SHARED
@@ -50,4 +64,11 @@ target_link_libraries(
         Diligent-AssetLoader
         Diligent-Imgui
         Diligent-TextureLoader
+)
+
+set_target_properties(
+        DiligentHelpers PROPERTIES
+        FRAMEWORK TRUE
+        XCODE_EMBED_FRAMEWORKS RenderTarget
+        XCODE_EMBED_FRAMEWORKS_CODE_SIGN_ON_COPY TRUE
 )

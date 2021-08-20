@@ -2,15 +2,15 @@
 // Created by Matthew Good on 14/7/21.
 //
 
-#ifndef GRAPHICAL_TOOL_KIT_PAINTER_H
-#define GRAPHICAL_TOOL_KIT_PAINTER_H
+#ifndef GRAPHICAL_TOOL_KIT_PAINTERVIEW_H
+#define GRAPHICAL_TOOL_KIT_PAINTERVIEW_H
 
-#include <Objects/ObjectBase.h>
+#include <Views/View.h>
 
 /**
- * an empty Painter, this does nothing by itself
+ * an empty Painter View, this by itself does nothing
  */
-class Painter : public ObjectBase {
+class PainterView : public View {
 private:
     VertexEngine vertexEngine;
     int chunkSize = 3;
@@ -45,7 +45,7 @@ public:
     void destroyPipeline(PipelineManager &pipelineManager) override final;
 
     void create() override final;
-    void draw(DrawTools & drawTools, RenderTarget & renderTarget) override final;
+    void draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override final;
     void destroy() override final;
 
     virtual int getCanvasWidth();
@@ -54,7 +54,7 @@ public:
     virtual void onDraw(VertexEngine::Canvas & canvas);
     virtual void onDestroy(VertexEngine::TextureManager & textureManager);
 
-    static constexpr const char * PIPELINE_KEY = "View";
+    static constexpr const char * PIPELINE_KEY = "PainterView";
 };
 
 #endif //GRAPHICAL_TOOL_KIT_PAINTER_H

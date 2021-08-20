@@ -3,9 +3,9 @@
 //
 
 #include <DiligentCore/Graphics/GraphicsTools/interface/MapHelper.hpp>
-#include "Cube.h"
+#include "CubeView.h"
 
-void Cube::createPipeline(PipelineManager & pipelineManager) {
+void CubeView::createPipeline(PipelineManager & pipelineManager) {
     auto & pso = pipelineManager.createPipeline(this, PIPELINE_KEY);
     pso.setType(Diligent::PIPELINE_TYPE_GRAPHICS);
     pso.setNumberOfTargets(1);
@@ -68,25 +68,25 @@ void Cube::createPipeline(PipelineManager & pipelineManager) {
     pso.createShaderBinding(true);
 }
 
-void Cube::switchToPipeline(PipelineManager &pipelineManager) {
+void CubeView::switchToPipeline(PipelineManager &pipelineManager) {
     pipelineManager.switchToPipeline(
             this, PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext
     );
 }
 
-void Cube::bindShaderResources(PipelineManager &pipelineManager) {
+void CubeView::bindShaderResources(PipelineManager &pipelineManager) {
     pipelineManager.commitShaderResourceBinding(
             this, PIPELINE_KEY, getDiligentAppBase().m_pImmediateContext,
             Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION
     );
 }
 
-void Cube::destroyPipeline(PipelineManager &pipelineManager) {
+void CubeView::destroyPipeline(PipelineManager &pipelineManager) {
     m_VSConstants.Release();
     pipelineManager.destroyPipeline(this, PIPELINE_KEY);
 }
 
-void Cube::create ()
+void CubeView::create ()
 {
     using namespace Diligent;
     obj_y = 0.0;
@@ -96,12 +96,12 @@ void Cube::create ()
     CreateIndexBuffer();
 }
 
-bool Cube::hasPhysics()
+bool CubeView::hasPhysics()
 {
     return true;
 }
 
-void Cube::physics (const TimeEngine & timeEngine)
+void CubeView::physics (const TimeEngine & timeEngine)
 {
     using namespace Diligent;
 
@@ -110,7 +110,7 @@ void Cube::physics (const TimeEngine & timeEngine)
     CubeModelTransform = float4x4::RotationY(radY) * float4x4::RotationX(-PI_F * 0.1f);
 }
 
-void Cube::computeViewModel() {
+void CubeView::computeViewModel() {
     using namespace Diligent;
     // Camera is at (0, 0, -5) looking along the Z axis
     float4x4 View = float4x4::Translation(0.f, 0.0f, 5.0f);
@@ -180,11 +180,10 @@ void Cube::computeViewModel() {
     m_WorldViewProjMatrix = CubeModelTransform * View * SrfPreTransform * Proj;
 }
 
-void Cube::resize(PipelineManager & pipelineManager) {
+void CubeView::resize(PipelineManager & pipelineManager) {
 }
 
-void Cube::draw (DrawTools & drawTools, RenderTarget & renderTarget)
-{
+void CubeView::draw(DrawTools & drawTools, RenderTarget & screenRenderTarget, RenderTarget & renderTarget) {
     using namespace Diligent;
 
     auto & app = getDiligentAppBase();
@@ -239,7 +238,7 @@ void Cube::draw (DrawTools & drawTools, RenderTarget & renderTarget)
 //    getDiligentAppBase().draw_OffScreen_RT_To_Screen_RT(drawTools, 300, 300, w, h);
 }
 
-void Cube::CreateVertexBuffer ()
+void CubeView::CreateVertexBuffer ()
 {
     using namespace Diligent;
     
@@ -295,7 +294,7 @@ void Cube::CreateVertexBuffer ()
     
 }
 
-void Cube::CreateIndexBuffer ()
+void CubeView::CreateIndexBuffer ()
 {
     using namespace Diligent;
     
@@ -322,12 +321,12 @@ void Cube::CreateIndexBuffer ()
     getDiligentAppBase().m_pDevice->CreateBuffer(IndBuffDesc, &IBData, &m_CubeIndexBuffer);
 }
 
-void Cube::destroy() {
+void CubeView::destroy() {
     m_CubeVertexBuffer.Release();
     m_CubeIndexBuffer.Release();
 }
 
-const char * Cube::cube_VS = "cbuffer Constants\n"
+const char * CubeView::cube_VS = "cbuffer Constants\n"
                              "{\n"
                              "    float4x4 g_WorldViewProj;\n"
                              "};\n"
@@ -357,7 +356,7 @@ const char * Cube::cube_VS = "cbuffer Constants\n"
                              "    PSIn.Color = VSIn.Color;\n"
                              "}";
 
-const char * Cube::cube_PS = "struct PSInput \n"
+const char * CubeView::cube_PS = "struct PSInput \n"
                              "{ \n"
                              "    float4 Pos   : SV_POSITION; \n"
                              "    float4 Color : COLOR0; \n"

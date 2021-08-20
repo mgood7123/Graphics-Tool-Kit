@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.10.2)
 project(CMAKE_OPENGL_APP_BUNDLE)
 
+# Generate XCode schemes
+set(CMAKE_XCODE_GENERATE_SCHEME TRUE)
+
 # Application Bundle
 
 set(CMAKE_CXX_STANDARD 11)
@@ -65,6 +68,8 @@ target_link_libraries(
 
 set_target_properties(cube PROPERTIES
     MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/Info.plist
+    XCODE_EMBED_FRAMEWORKS AppInstance
+    XCODE_EMBED_FRAMEWORKS_CODE_SIGN_ON_COPY TRUE
 )
 
 # The RESOURCE target property cannot be used in conjunction with the MACOSX_PACKAGE_LOCATION
