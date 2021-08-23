@@ -112,6 +112,10 @@ public:
             const RenderTarget & renderTarget
     );
 
+    MultiTouch::TouchData transformTouch(
+            const MultiTouch::TouchData & touch, float newWidth, float newHeight
+    );
+
     virtual void createPipeline(PipelineManager & pipelineManager);
     virtual void switchToPipeline(PipelineManager & pipelineManager);
     virtual void bindShaderResources(PipelineManager & pipelineManager);

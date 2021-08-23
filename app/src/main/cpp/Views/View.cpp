@@ -168,3 +168,17 @@ double View::degreesToRadians(double y)
 {
     return y * (M_PI/180);
 }
+
+MultiTouch::TouchData
+View::transformTouch(const MultiTouch::TouchData &touch, float newWidth, float newHeight) {
+    auto local = Position(touch.x, touch.y) - getAbsolutePosition().topLeft;
+    auto percentage = local / getRelativePosition().topLeft;
+    auto pos = percentage * Position(newWidth, newHeight);
+    return {
+            touch.identity,
+            touch.timestamp,
+            pos.x, pos.y,
+            touch.size, touch.pressure,
+            touch.state, touch.moved
+    };
+}

@@ -62,67 +62,186 @@ void ViewGroup::create() {
     onCreate();
 }
 
+// if you have a viewgroup with A and B children,
+// the viewgroup will receive a MotionEvent with two pointers,
+// and is then responsible for splitting them up and only
+// dispatching the relevant pointer to each view.
 bool ViewGroup::onTouchEvent(MultiTouch &touch) {
-    auto array = getChildren();
-    MultiTouch::TouchData copy = touch.getTouchAt(touch.getTouchIndex());
-    Log::Debug("touch : x: ", copy.x, ", y: ", copy.y);
+    Log::Info(getTag(), ": ", "onTouchEvent enter");
+    bool handled = false;
+    Log::Info(touch.toString());
+
     Rectangle absolutePosition;
     if (parent == nullptr) absolutePosition = getAbsolutePosition();
-    for (View *view : array) {
-        if (view == this) continue; // skip self
-        bool touch_is_inside_view = false;
-        if (parent != nullptr) {
-            absolutePosition = view->getAbsolutePosition();
-        }
-        if (copy.x > absolutePosition.topLeft.x) {
-            if (copy.y > absolutePosition.topLeft.y) {
-                if (copy.x < absolutePosition.bottomRight.x) {
-                    if (copy.y < absolutePosition.bottomRight.y) {
-                        touch_is_inside_view = true;
+    
+    bool hasCancellation = false;
+
+    auto split = getChildren();
+    for (View *view : split) {
+        if (parent != nullptr) absolutePosition = view->getAbsolutePosition();
+        auto it = touch.getIterator();
+        while (it.hasNext()) {
+            MultiTouch::TouchData * touchData = it.next();
+            
+            // if a cancellation event occurs, send cancellation to all views as last event
+            if (touchData->state == MultiTouch::TouchState::TOUCH_CANCELLED) {
+                hasCancellation = true;
+            }
+            if (touchData->state == MultiTouch::TouchState::TOUCH_DOWN) {
+                if (touchData->x > absolutePosition.topLeft.x) {
+                    if (touchData->y > absolutePosition.topLeft.y) {
+                        if (touchData->x < absolutePosition.bottomRight.x) {
+                            if (touchData->y < absolutePosition.bottomRight.y) {
+                                if (tracked_views.table->objectCount() == 0) {
+                                    Log::Info(getTag(), ": ", "tracking view");
+                                    // obtain a reference, do not obtain a copy
+                                    MultiTouch & x = tracked_views.newObject(ObjectTypeNone, ObjectFlagAutoDeallocateResource, new TrackingData(view, {}))->resource.get<TrackingData*>()->second;
+                                    x.debug = true;
+                                    x.setMaxSupportedTouches(touch.getMaxSupportedTouches());
+                                    // store copy of touch data
+                                    x.addTouch(*touchData);
+                                    view->focus = true;
+                                } else {
+                                    bool found = false;
+                                    auto i = tracked_views.table->getIterator();
+                                    while (i.hasNext()) {
+                                        TrackingData * td = i.next()->resource.get<TrackingData*>();
+                                        if (td->first == view) {
+                                            found = true;
+                                            
+                                            bool exists = false;
+                                            
+                                            // check if touch exists
+                                            auto it2 = td->second.getIterator();
+                                            while (it2.hasNext()) {
+                                                if (it2.next()->identity == touchData->identity) {
+                                                    exists = true;
+                                                    break;
+                                                }
+                                            }
+                                            
+                                            // store copy of touch data if it doesnt exist
+                                            if (!exists) {
+                                                Log::Info(getTag(), ": ", "touch with identity ", touchData->identity, " does not exist, adding");
+                                                td->second.addTouch(*touchData);
+                                            } else {
+                                                Log::Info(getTag(), ": ", "touch with identity ", touchData->identity, " already exists, skipping");
+                                            }
+                                            break;
+                                        }
+                                    }
+                                    if (!found) {
+                                        Log::Info(getTag(), ": ", "tracking view");
+                                        // obtain a reference, do not obtain a copy
+                                        MultiTouch & x = tracked_views.newObject(ObjectTypeNone, ObjectFlagAutoDeallocateResource, new TrackingData(view, {}))->resource.get<TrackingData*>()->second;
+                                        x.debug = true;
+                                        x.setMaxSupportedTouches(touch.getMaxSupportedTouches());
+                                        // store copy of touch data
+                                        x.addTouch(*touchData);
+                                        view->focus = true;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
-        if (touch_is_inside_view) {
-            if (copy.state == MultiTouch::TouchState::TOUCH_DOWN) {
-                identity = copy.identity;
-//                Log::Debug("identity:      ", identity);
-//                Log::Debug("copy.identity: ", copy.identity);
-                view->focus = true;
-//                Log::Info("FOCUS GAIN");
-                if (view->onTouchEvent(touch)) {
-                    return true;
+    }
+    
+    // for each view, update the associated touch pointer
+    auto i = tracked_views.table->getIterator();
+    while (i.hasNext()) {
+        TrackingData * td = i.next()->resource.get<TrackingData*>();
+        // obtain a reference, do not obtain a copy
+        MultiTouch & multiTouch = td->second;
+
+        MultiTouch::TouchData cancel;
+        
+        bool matches = false;
+        bool lastUp = false;
+
+        // touch up/down are guaranteed to always be sent as separate events
+        std::vector<MultiTouch::TouchData*> pointer_ups;
+
+        // check if we match any associated touch pointers
+        auto it = multiTouch.getIterator();
+        while (it.hasNext()) {
+            MultiTouch::TouchData * touchData = it.next();
+
+            // if cancelling, pick first touch as cancellation point
+            if (hasCancellation && it.getIndex() == 0) cancel = *touchData;
+            
+            // check against available touch pointers
+            auto it2 = touch.getIterator();
+            while (it2.hasNext()) {
+                MultiTouch::TouchData * touchData2 = it2.next();
+
+                // if touch matches view's associated touch
+                if (touchData2->identity == touchData->identity) {
+                    matches = true;
+                    
+                    // update touch data
+                    if (touchData2->state == MultiTouch::TouchState::TOUCH_MOVE) {
+                        multiTouch.moveTouch(*touchData2);
+                    }
+                    
+                    // handle touch up
+                    if (touchData2->state == MultiTouch::TouchState::TOUCH_UP) {
+                        pointer_ups.push_back(touchData2);
+                    }
                 }
             }
         }
-        if (
-            view->focus
-            && copy.state == MultiTouch::TouchState::TOUCH_MOVE
-            && view->onTouchEvent(touch)
-        ) {
-            return true;
+        
+        // skip this view if no touches match this view
+        // can this ever happen?
+        if (!matches) {
+            Log::Error(getTag(), ": ", "DOES NOT MATCH! THIS MIGHT BE A BUG!");
+            continue;
         }
-//        Log::Debug("identity:      ", identity);
-//        Log::Debug("copy.identity: ", copy.identity);
-//        Log::Debug("state:         ", MultiTouch::stateToString(copy.state));
-        if (
-            copy.identity == identity &&
-            (
-             copy.state == MultiTouch::TouchState::TOUCH_UP
-             || copy.state == MultiTouch::TouchState::TOUCH_CANCELLED
-            )
-        ) {
-            if (view->focus) {
-                identity = 0;
-//                Log::Info("FOCUS LOST");
-                view->focus = false;
-                if (view->onTouchEvent(touch)) {
-                    return true;
-                }
+
+        // issue pointer up event after pointer move
+        if (pointer_ups.size() > 1) {
+            Log::Error("pointer ups is greater than 1, THIS SHOULD NOT HAPPEN!!!");
+        }
+        for (MultiTouch::TouchData * touchUp : pointer_ups) {
+            multiTouch.removeTouch(*touchUp);
+
+            // if touch count is 1, the last touch has gone up
+            lastUp = multiTouch.getTouchCount() == 1;
+        }
+
+        // issue touch event
+        
+        if (td->first->onTouchEvent(multiTouch)) {
+            handled = true;
+        }
+
+        // issue cancellation as last event
+        
+        if (hasCancellation) {
+            multiTouch.cancelTouch(cancel);
+            if (td->first->onTouchEvent(multiTouch)) {
+                handled = true;
             }
+        }
+        
+        // if the last touch has gone up, untrack the view
+        if (lastUp) {
+            Log::Info(getTag(), ": ", "untracking view");
+            if (!td->first->focus) {
+                Log::Error_And_Throw(getTag(), ": ", "cannot loose focus for a view that has no focus");
+            }
+            td->first->focus = false;
+            
+            // TrackingData has no internal allocation
+            // it is safe to delete primary allocation
+            tracked_views.deleteObject(td);
         }
     }
-    return false;
+    Log::Info(getTag(), ": ", "onTouchEvent exit");
+    return handled;
 }
 
 void ViewGroup::destroy() {

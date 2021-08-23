@@ -41,10 +41,10 @@ void RectanglePainter::onDraw(VertexEngine::Canvas &canvas) {
     canvas.plane(160, 160, 80, 80, pink);
 
     canvas.plane(mousePosition.x-40, mousePosition.y-40, 80, 80, red);
-    canvas.plane(200, 200, 90, 90, "C");
 
 #if PLATFORM_ANDROID
 #else
+    canvas.plane(200, 200, 90, 90, "C");
 //    canvas.subCanvas(200, 200, 90, 90).fill("C");
 #endif
 }
@@ -60,7 +60,7 @@ void RectanglePainter::onDestroy(VertexEngine::TextureManager &textureManager) {
 
 bool RectanglePainter::onTouchEvent(MultiTouch &touch) {
     auto t = touch.getTouchAt(touch.getTouchIndex());
-    mousePosition = ((Position(t.x, t.y) - getAbsolutePosition().topLeft) / getRelativePosition().topLeft) * Position(getCanvasWidth(), getCanvasHeight());
-    Log::Debug("mouse = ", mousePosition.toString());
+    t = transformTouch(t, getCanvasWidth(), getCanvasHeight());
+    mousePosition = {t.x, t.y};
     return true;
 }

@@ -49,6 +49,7 @@ public class DiligentEngineView extends EGLTextureView {
         int id = 0;
         boolean isUpDown = false;
         switch (action) {
+            case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_DOWN:
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_POINTER_DOWN:
@@ -61,33 +62,6 @@ public class DiligentEngineView extends EGLTextureView {
         int c = event.getPointerCount();
         for (int i = 0; i < c; i++) {
             int pid = event.getPointerId(i);
-            if (isUpDown) {
-                if (actionIndex == i) {
-                    switch (action) {
-                        case MotionEvent.ACTION_DOWN:
-                        case MotionEvent.ACTION_POINTER_DOWN:
-                            renderer.addTouch(
-                                    id,
-                                    event.getX(actionIndex),
-                                    event.getY(actionIndex),
-                                    event.getSize(actionIndex),
-                                    event.getPressure(actionIndex)
-                            );
-                            break;
-                        case MotionEvent.ACTION_UP:
-                        case MotionEvent.ACTION_POINTER_UP:
-                            renderer.removeTouch(
-                                    id,
-                                    event.getX(actionIndex),
-                                    event.getY(actionIndex),
-                                    event.getSize(actionIndex),
-                                    event.getPressure(actionIndex)
-                            );
-                            break;
-                    }
-                }
-            }
-
             if (actionIndex != i || !isUpDown) {
                 renderer.moveTouch(
                         pid,
@@ -96,6 +70,39 @@ public class DiligentEngineView extends EGLTextureView {
                         event.getSize(i),
                         event.getPressure(i)
                 );
+            }
+        }
+        if (isUpDown) {
+            switch (action) {
+                case MotionEvent.ACTION_CANCEL:
+                    renderer.cancelTouch(
+                            id,
+                            event.getX(actionIndex),
+                            event.getY(actionIndex),
+                            event.getSize(actionIndex),
+                            event.getPressure(actionIndex)
+                    );
+                    break;
+                case MotionEvent.ACTION_DOWN:
+                case MotionEvent.ACTION_POINTER_DOWN:
+                    renderer.addTouch(
+                            id,
+                            event.getX(actionIndex),
+                            event.getY(actionIndex),
+                            event.getSize(actionIndex),
+                            event.getPressure(actionIndex)
+                    );
+                    break;
+                case MotionEvent.ACTION_UP:
+                case MotionEvent.ACTION_POINTER_UP:
+                    renderer.removeTouch(
+                            id,
+                            event.getX(actionIndex),
+                            event.getY(actionIndex),
+                            event.getSize(actionIndex),
+                            event.getPressure(actionIndex)
+                    );
+                    break;
             }
         }
         return renderer.onTouchEvent(renderer.nativeInstance);

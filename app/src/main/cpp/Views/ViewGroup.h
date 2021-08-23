@@ -23,8 +23,12 @@ class ViewGroup : public View {
     
     int resizeWidth = 0;
     int resizeHeight = 0;
-    long identity = 0;
-    
+
+    typedef std::pair<View*, MultiTouch> TrackingData;
+    // use {} to call constructor
+    // using () is reserved for functions
+    Kernel tracked_views{2};
+
 public:
 
     static inline ViewGroup * getParent(View * view) {
@@ -33,18 +37,6 @@ public:
 
     static inline void detachViewFromParent(View * view) {
         getParent(view)->detachView(view);
-    }
-
-    inline MultiTouch::TouchData transformTouchCoordinates(
-        const MultiTouch::TouchData & touch, float currentWidth, float currentHeight, float newWidth, float newHeight
-    ) {
-        return {
-            touch.identity,
-            (touch.x/currentWidth)*newWidth,
-            (touch.y/currentHeight)*newHeight,
-            touch.size, touch.pressure,
-            touch.state, touch.moved
-        };
     }
 
     void setDiligentAppBase(DiligentAppBase *diligentAppBase) override final;
