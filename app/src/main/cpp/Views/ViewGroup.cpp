@@ -156,7 +156,7 @@ bool ViewGroup::onTouchEvent(MultiTouch &touch) {
         // obtain a reference, do not obtain a copy
         MultiTouch & multiTouch = td->second;
 
-        MultiTouch::TouchData cancel;
+        MultiTouch::TouchData * cancel = nullptr;
         
         bool matches = false;
         bool lastUp = false;
@@ -170,7 +170,7 @@ bool ViewGroup::onTouchEvent(MultiTouch &touch) {
             MultiTouch::TouchData * touchData = it.next();
 
             // if cancelling, pick first touch as cancellation point
-            if (hasCancellation && it.getIndex() == 0) cancel = *touchData;
+            if (hasCancellation && cancel == nullptr) cancel = touchData;
             
             // check against available touch pointers
             auto it2 = touch.getIterator();
@@ -221,7 +221,7 @@ bool ViewGroup::onTouchEvent(MultiTouch &touch) {
         // issue cancellation as last event
         
         if (hasCancellation) {
-            multiTouch.cancelTouch(cancel);
+            multiTouch.cancelTouch(*cancel);
             if (td->first->onTouchEvent(multiTouch)) {
                 handled = true;
             }
