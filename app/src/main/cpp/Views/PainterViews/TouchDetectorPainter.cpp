@@ -20,7 +20,7 @@ bool TouchDetectorPainter::onTouchEvent(MultiTouch &touch) {
     auto t = touch.getTouchAt(touch.getTouchIndex());
     if (t.state == MultiTouch::TOUCH_DOWN) {
         color = {0,1,0,1};
-    } else if (t.state == MultiTouch::TOUCH_UP) {
+    } else if (t.state == MultiTouch::TOUCH_UP || t.state == MultiTouch::TOUCH_CANCELLED) {
         color = {1,0,0,1};
     }
     return true;
