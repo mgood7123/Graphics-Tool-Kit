@@ -29,7 +29,7 @@ typedef class Table {
             void skip(size_t amount);
             bool hasNext();
             Object * next();
-            int getIndex() const;
+            size_t getIndex() const;
         };
 
         Iterator getIterator();

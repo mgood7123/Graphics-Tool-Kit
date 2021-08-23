@@ -49,7 +49,7 @@ Object* Table::Iterator::next() {
     return tableIsEmpty ? nullptr : this->table->table.at(this->index++);
 }
 
-int Table::Iterator::getIndex() const {
+size_t Table::Iterator::getIndex() const {
     return this->index-1;
 }
 

@@ -56,7 +56,12 @@ class Kernel {
 
         void deleteObject(Object &object);
 
-        pid PID_LAST = 0;
+        template <typename T>
+        void deleteObject(const T & resource) {
+            return this->table->remove(resource);
+        }
+
+    pid PID_LAST = 0;
 
 };
 
