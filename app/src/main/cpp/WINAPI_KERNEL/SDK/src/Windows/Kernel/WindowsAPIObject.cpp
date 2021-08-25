@@ -14,8 +14,20 @@ const ObjectType ObjectTypeWindow = 3;
 const ObjectFlag ObjectFlagNone = 0;
 const ObjectFlag ObjectFlagAutoDeallocateResource = 1;
 
+Object *Kernel::newObject() {
+    return this->table->add(ObjectTypeNone, ObjectFlagNone, AnyNullOpt);
+}
+
+Object *Kernel::newObject(ObjectFlag flags) {
+    return this->table->add(ObjectTypeNone, flags, AnyNullOpt);
+}
+
 Object *Kernel::newObject(ObjectType type, ObjectFlag flags) {
     return this->table->add(type, flags, AnyNullOpt);
+}
+
+size_t Kernel::objectCount() const {
+    return table->objectCount();
 }
 
 void Kernel::deleteObject(Object *object) {

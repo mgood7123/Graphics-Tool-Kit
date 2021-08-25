@@ -124,6 +124,7 @@ typedef class Table {
             while (it.hasNext()) {
                 if (it.next()->resource.template get<T*>() == resource) {
                     DELETE(it.getIndex());
+                    break;
                 }
             }
         }
@@ -135,6 +136,7 @@ typedef class Table {
                 if (obj->resource.template get<T&>() == resource) {
                     obj->resource.data_is_allocated = false;
                     DELETE(it.getIndex());
+                    break;
                 }
             }
         }
@@ -146,6 +148,7 @@ typedef class Table {
                 if (obj->resource.template get<T*>() == resource) {
                     obj->resource.data_is_allocated = false;
                     DELETE(it.getIndex());
+                    break;
                 }
             }
         }

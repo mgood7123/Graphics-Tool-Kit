@@ -40,6 +40,9 @@ class Kernel {
 
         void removeHandle(HANDLE handle);
 
+        Object * newObject();
+
+        Object *newObject(ObjectFlag flags);
         Object *newObject(ObjectType type, ObjectFlag flags);
 
         template <typename T>
@@ -48,9 +51,31 @@ class Kernel {
         }
 
         template <typename T>
+        Object * newObject(ObjectFlag flags, T * resource) {
+            return this->table->add(ObjectTypeNone, flags, resource);
+        }
+
+        template <typename T>
+        Object * newObject(T * resource) {
+            return this->table->add(ObjectTypeNone, ObjectFlagNone, resource);
+        }
+
+        template <typename T>
         Object * newObject(ObjectType type, ObjectFlag flags, T && resource) {
             return this->table->add(type, flags, resource);
         }
+
+        template <typename T>
+        Object * newObject(ObjectFlag flags, T && resource) {
+            return this->table->add(ObjectTypeNone, flags, resource);
+        }
+
+        template <typename T>
+        Object * newObject(T && resource) {
+            return this->table->add(ObjectTypeNone, ObjectFlagNone, resource);
+        }
+
+        size_t objectCount() const;
 
         void deleteObject(Object *object);
 

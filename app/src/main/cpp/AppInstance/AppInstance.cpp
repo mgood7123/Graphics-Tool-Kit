@@ -4,173 +4,66 @@
 
 #include "AppInstance.h"
 
-AppInstance::AppInstance ()
-{
-    createCalled.store(false);
-    destroyed.store(true);
-
-//     800 microseconds
-//    timeEngine.physicsTimeStep = 0.000800;
-
-//     8 milliseconds
-//    timeEngine.physicsTimeStep = 0.008;
-
-    // 60.000024 fps, a bit choppy
-//    timeEngine.physicsTimeStep = 0.01666666;
-
-    // 120.000048 fps, smooth
-    timeEngine.physicsTimeStep = 0.01666666/2;
-
-//    timeEngine.physicsTimeStep = 0.01666666/4;
-//    timeEngine.physicsTimeStep = 0.01666666/8;
-//    timeEngine.physicsTimeStep = 0.01666666/16;
-
-    timeEngine.physicsCallback = [&](const TimeEngine & timeEngine_) {
-        View * view = contents.get<View*>();
-        if (view != nullptr) {
-            view->physics(timeEngine_);
-        }
-    };
+AppInstance::AppInstance() {
+    loadApplication("test1", loader.getSelfApplicationInstancer());
 }
 
 AppInstance::~AppInstance ()
 {
     destroyResources();
+
+    // life muse be deleted before ApplicationLoader's destructor is called
+    unloadApplication();
 }
 
-void AppInstance::callCreate() {
-    if (!destroyed.load() && !createCalled.load()) {
-        // create even if we dont have a view
-        rt.create(PIPELINE_KEY, pipelineManager, m_pSwapChain, m_pDevice);
-        View * view = contents.get<View*>();
-        if (view != nullptr) {
-            view->createPipeline(pipelineManager);
-            view->create();
-            if (view->hasPhysics()) {
-                timeEngine.startPhysicsThread();
-            }
-        }
-        createCalled.store(true);
-    }
+void AppInstance::loadApplication(const char * name, ApplicationLoader::ApplicationInstancer * appInstancer) {
+    life.setApplication(name, appInstancer, this);
+    life.create();
 }
 
-void AppInstance::callDestroy() {
-    if (createCalled.load()) {
-        View *view = contents.get<View *>();
-        if (view != nullptr) {
-            if (view->hasPhysics()) {
-                timeEngine.stopPhysicsThread();
-            }
-            view->destroy();
-            view->destroyPipeline(pipelineManager);
-        }
-        rt.destroy(pipelineManager);
-        createCalled.store(false);
-    }
+void AppInstance::loadApplication(ApplicationInstance *appInstance) {
+    life.setApplication(appInstance, this);
+    life.create();
 }
 
-void AppInstance::unloadView() {
-    callDestroy();
-    contents = AnyNullOpt;
+void AppInstance::loadApplication(Application *app) {
+    life.setApplication(app, this);
+    life.create();
+}
+
+void AppInstance::unloadApplication() {
+    life.deleteApplication();
 }
 
 void AppInstance::surfaceChanged (int w, int h)
 {
     Log::Info("root window: w: ", w, ", h: ", h);
-    if (!m_pSwapChain)
-    {
+
+    if (!m_pSwapChain) {
         attachToContext(w, h);
-        destroyed.store(false);
-
-        RootView * a;
-        RootView * b;
-        GridView * c;
-
-        a = new RootView();
-        a->setTag("root");
-        a->padding = 25;
-        loadView(a);
-
-        b = new RootView();
-        b->setTag("root child");
-//        b->padding = 25;
-        a->addView(b);
-
-        c = new GridView();
-        c->setTag("grid");
-        c->addView(new TouchDetectorPainter());
-        auto * x = new TouchDetectorPainter();
-        x->padding = 50;
-        c->addView(x);
-        c->addView(new TouchDetectorPainter());
-        c->addView(new RectanglePainter());
-        b->addView(c);
     }
 
     // Resizing the swap chain requires back and depth-stencil buffers
     // to be unbound from the device context
     m_pImmediateContext->SetRenderTargets(0, nullptr, nullptr, Diligent::RESOURCE_STATE_TRANSITION_MODE_NONE);
     m_pSwapChain->Resize(w, h);
-    width = w;
-    height = h;
     swapChainWidth = w;
     swapChainHeight = h;
-    callCreate();
-    screen.wrap(
-            m_pSwapChain->GetCurrentBackBufferRTV(),
-            m_pSwapChain->GetDepthBufferDSV()
-    );
-    screen.resize(pipelineManager, m_pSwapChain, m_pDevice);
-    rt.resize(pipelineManager, m_pSwapChain, m_pDevice);
-    View * view = contents.get<View*>();
-    if (view != nullptr) {
-        view->resize(pipelineManager);
-    }
+    life.onResize(w, h, m_pSwapChain, m_pDevice);
 }
 
 void AppInstance::onDraw ()
 {
-    if (destroyed.load()) return;
-    timeEngine.computeDelta();
-
-    // clear screen
-    screen.bind(m_pImmediateContext);
-    screen.clearColorAndDepth(RenderTarget::black, 1, m_pImmediateContext);
-
-    auto view = contents.get<View*>();
-    if (view != nullptr) {
-        DrawTools drawTools(pipelineManager, pixelToNDC);
-        Rectangle drawPosition = {0, 0, 100, 100};
-
-        view->switchToPipeline(pipelineManager);
-        view->bindShaderResources(pipelineManager);
-
-        drawTools.pixelToNDC.resize(100, 100);
-
-        view->buildCoordinates(drawPosition, drawTools, rt);
-
-        // clear render target
-        rt.bind(m_pImmediateContext);
-        rt.clearColorAndDepth(RenderTarget::black, 1, m_pImmediateContext);
-
-        // draw view to render target, screen is unused
-        // each ViewGroup draws its RT to the argument `rt`
-        // rt.drawToRenderTarget(drawTools, renderTarget, app.m_pImmediateContext);
-        view->draw(drawTools, screen, rt);
-
-        // draw render target to screen
-        rt.drawToRenderTarget(drawTools, screen, m_pImmediateContext);
+    if (life.isDestroyed()) {
+        // don't swapping buffers if application is in destroyed state
+        return;
     }
+    life.onDraw(m_pImmediateContext);
     swapBuffers();
 }
 
 bool AppInstance::onTouchEvent(MultiTouch & touchEvent) {
-    if (destroyed.load()) return false;
-    View * view = contents.get<View*>();
-    if (view != nullptr) {
-        return view->onTouchEvent(touchEvent);
-    }
-    return false;
+    return life.onTouchEvent(touchEvent);
 }
 
 void AppInstance::swapBuffers ()
@@ -180,17 +73,8 @@ void AppInstance::swapBuffers ()
 
 void AppInstance::destroyResources ()
 {
-    if (destroyed.load()) return;
-    destroyed.store(true);
-
-    // if we unload here then there is no way to restore the loaded
-    // view unless we manually reload it with the correct type
-    // which is impossible since types cannot be saved at runtime
-    //
-    // the view is automatically unloaded when this AppInstance
-    // object is destroyed
-
-    callDestroy();
+    if (life.isDestroyed()) return;
+    life.destroy();
 
     m_pImmediateContext->Flush();
     m_pImmediateContext.Release();

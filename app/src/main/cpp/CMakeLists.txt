@@ -90,9 +90,19 @@ add_subdirectory(VertexEngine)
 
 add_subdirectory(Views)
 
+add_subdirectory(Application)
+
+add_subdirectory(Applications)
+
 add_library(
         AppInstance SHARED
         AppInstance/AppInstance.cpp
+)
+
+target_link_libraries(
+        AppInstance
+        Applications
+        PlatformBase
 )
 
 if (PLATFORM_ANDROID)
@@ -108,22 +118,9 @@ target_include_directories(
         ${SDL2_INCLUDE}
 )
 
-target_link_libraries(
-        AppInstance
-        Views
-        PlatformBase
-        WINAPI::KERNEL
-)
-
 set_target_properties(
         AppInstance PROPERTIES
         FRAMEWORK TRUE
-        XCODE_EMBED_FRAMEWORKS "Diligent-GraphicsEngineOpenGL-shared;Views;DiligentAnyOpt;DiligentHelpers;TimeEngine;VertexEngine;MultiTouch;PixelToNDC;PlatformBase;WINAPI::KERNEL"
+        XCODE_EMBED_FRAMEWORKS "Diligent-GraphicsEngineOpenGL-shared;Views;DiligentAnyOpt;DiligentHelpers;TimeEngine;VertexEngine;MultiTouch;PixelToNDC;PlatformBase;WINAPI::KERNEL;Application;Applications"
         XCODE_EMBED_FRAMEWORKS_CODE_SIGN_ON_COPY TRUE
 )
-
-if (PLATFORM_ANDROID)
-    add_library(native-lib SHARED native-lib.cpp)
-
-    target_link_libraries(native-lib AppInstance)
-endif()

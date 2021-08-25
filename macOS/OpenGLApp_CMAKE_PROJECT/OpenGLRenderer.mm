@@ -14,6 +14,7 @@
 
 - (instancetype) init {
     multiTouch.setMaxSupportedTouches(10);
+    appInstance = new AppInstance();
     return self;
 }
 
@@ -23,7 +24,7 @@
         point.x,
         point.y
     );
-    appInstance.onTouchEvent(multiTouch);
+    appInstance->onTouchEvent(multiTouch);
 }
 
 - (void)touchesMovedWithTouch:(NSTouch *)touch AndPoint:(NSPoint)point {
@@ -32,7 +33,7 @@
         point.x,
         point.y
     );
-    appInstance.onTouchEvent(multiTouch);
+    appInstance->onTouchEvent(multiTouch);
 }
 
 - (void)touchesEndedWithTouch:(NSTouch *)touch AndPoint:(NSPoint)point {
@@ -41,7 +42,7 @@
         point.x,
         point.y
     );
-    appInstance.onTouchEvent(multiTouch);
+    appInstance->onTouchEvent(multiTouch);
 }
 
 - (void)touchesCancelledWithTouch:(NSTouch *)touch AndPoint:(NSPoint)point {
@@ -50,24 +51,24 @@
         point.x,
         point.y
     );
-    appInstance.onTouchEvent(multiTouch);
+    appInstance->onTouchEvent(multiTouch);
 }
 
 - (void) resizeWithWidth:(GLuint)width AndHeight:(GLuint)height
 
 {
-    appInstance.surfaceChanged(width, height);
+    appInstance->surfaceChanged(width, height);
 }
 
 - (void) render
 
 {
-    appInstance.onDraw();
+    appInstance->onDraw();
 }
 
 - (void) destroy
 {
-    appInstance.destroyResources();
+    delete appInstance;
 }
 
 @end

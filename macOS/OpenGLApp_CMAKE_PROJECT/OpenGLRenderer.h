@@ -40,12 +40,12 @@
 #endif // !TARGET_IOS
 
 #import <Cocoa/Cocoa.h> // NSTouch
-#include <AppInstance.h>
+#include <AppInstance/AppInstance.h>
 
 @interface OpenGLRenderer : NSObject
 {
     MultiTouch multiTouch;
-    AppInstance appInstance;
+    AppInstance * appInstance;
 }
 
 - (instancetype) init;

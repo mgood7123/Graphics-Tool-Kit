@@ -105,7 +105,9 @@ public class DiligentEngineView extends EGLTextureView {
                     break;
             }
         }
-        return renderer.onTouchEvent(renderer.nativeInstance);
+        renderer.onTouchEvent(renderer.nativeInstance);
+        // should a ViewGroup always return true for onTouchEvent?
+        return true;
     }
 
     private class DiligentEngineRenderer implements Renderer {

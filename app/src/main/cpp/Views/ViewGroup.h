@@ -30,6 +30,7 @@ class ViewGroup : public View {
     Kernel tracked_views{2};
 
 public:
+    bool log_TouchEvents = false;
 
     static inline ViewGroup * getParent(View * view) {
         return castToViewType<ViewGroup>(view->parent);

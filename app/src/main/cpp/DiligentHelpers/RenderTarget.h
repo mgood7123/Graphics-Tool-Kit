@@ -72,6 +72,8 @@ public:
     void destroy(PipelineManager & pipelineManager);
 
     static float black[4];
+
+    bool exists();
 };
 
 #endif //GRAPHICAL_TOOL_KIT_RENDERTARGET_H

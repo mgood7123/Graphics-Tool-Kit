@@ -128,8 +128,8 @@ public:
     virtual bool hasPhysics();
     virtual void physics(const TimeEngine & timeEngine);
 
-    // delete called on non-final that has virtual functions but non-virtual destructor
-    // make virtual default to fix
+    // Virtual destructor makes sure all derived classes can be destroyed
+    // through the pointer to the base class
     virtual ~View() = default;
 
     static double degreesToRadians(double y);
