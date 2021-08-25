@@ -29,7 +29,7 @@ public:
 
     AppInstance ();
     ~AppInstance ();
-    
+
     void callCreate();
 
     void callDestroy();

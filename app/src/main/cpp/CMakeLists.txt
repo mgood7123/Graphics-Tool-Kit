@@ -92,8 +92,14 @@ add_subdirectory(Views)
 
 add_library(
         AppInstance SHARED
-        AppInstance.cpp
+        AppInstance/AppInstance.cpp
 )
+
+if (PLATFORM_ANDROID)
+    add_library(native-lib SHARED AppInstance/native-lib.cpp)
+
+    target_link_libraries(native-lib AppInstance)
+endif()
 
 target_include_directories(
         AppInstance PUBLIC

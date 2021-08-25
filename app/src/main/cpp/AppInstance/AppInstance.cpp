@@ -8,13 +8,13 @@ AppInstance::AppInstance ()
 {
     createCalled.store(false);
     destroyed.store(true);
-    
+
 //     800 microseconds
 //    timeEngine.physicsTimeStep = 0.000800;
 
 //     8 milliseconds
 //    timeEngine.physicsTimeStep = 0.008;
-    
+
     // 60.000024 fps, a bit choppy
 //    timeEngine.physicsTimeStep = 0.01666666;
 
@@ -24,7 +24,7 @@ AppInstance::AppInstance ()
 //    timeEngine.physicsTimeStep = 0.01666666/4;
 //    timeEngine.physicsTimeStep = 0.01666666/8;
 //    timeEngine.physicsTimeStep = 0.01666666/16;
-    
+
     timeEngine.physicsCallback = [&](const TimeEngine & timeEngine_) {
         View * view = contents.get<View*>();
         if (view != nullptr) {
@@ -81,7 +81,7 @@ void AppInstance::surfaceChanged (int w, int h)
     {
         attachToContext(w, h);
         destroyed.store(false);
-        
+
         RootView * a;
         RootView * b;
         GridView * c;
@@ -90,12 +90,12 @@ void AppInstance::surfaceChanged (int w, int h)
         a->setTag("root");
         a->padding = 25;
         loadView(a);
-        
+
         b = new RootView();
         b->setTag("root child");
 //        b->padding = 25;
         a->addView(b);
-        
+
         c = new GridView();
         c->setTag("grid");
         c->addView(new TouchDetectorPainter());
@@ -117,8 +117,8 @@ void AppInstance::surfaceChanged (int w, int h)
     swapChainHeight = h;
     callCreate();
     screen.wrap(
-        m_pSwapChain->GetCurrentBackBufferRTV(),
-        m_pSwapChain->GetDepthBufferDSV()
+            m_pSwapChain->GetCurrentBackBufferRTV(),
+            m_pSwapChain->GetDepthBufferDSV()
     );
     screen.resize(pipelineManager, m_pSwapChain, m_pDevice);
     rt.resize(pipelineManager, m_pSwapChain, m_pDevice);
