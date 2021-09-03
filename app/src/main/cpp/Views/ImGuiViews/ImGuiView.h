@@ -14,6 +14,8 @@
 class ImGuiView : public View {
     Diligent::ImGuiImplDiligent * m_pImGui = nullptr;
 public:
+    ImGuiContext * imgui_context = nullptr;
+    ImGuiIO * imgui_io = nullptr;
 
     void createPipeline(PipelineManager &pipelineManager) override final;
 

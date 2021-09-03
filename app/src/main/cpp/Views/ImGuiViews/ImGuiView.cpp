@@ -11,11 +11,13 @@ void ImGuiView::create() {
             getDiligentAppBase().m_pSwapChain->GetDesc().DepthBufferFormat
     );
     m_pImGui->CreateDeviceObjects();
+    imgui_context = ImGui::GetCurrentContext();
+    imgui_io = &ImGui::GetIO();
     onCreate();
 }
 
 void ImGuiView::resize(PipelineManager &pipelineManager) {
-    ImGui::GetIO().DisplaySize = {
+    imgui_io->DisplaySize = {
             static_cast<float>(getDiligentAppBase().swapChainWidth),
             static_cast<float>(getDiligentAppBase().swapChainHeight)
     };
@@ -51,6 +53,8 @@ ImGuiView::draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTa
 void ImGuiView::destroy() {
     onDestroy();
     m_pImGui->InvalidateDeviceObjects();
+    imgui_io = nullptr;
+    imgui_context = nullptr;
     delete m_pImGui;
 }
 

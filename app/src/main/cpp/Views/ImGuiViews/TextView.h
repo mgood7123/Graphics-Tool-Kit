@@ -9,7 +9,7 @@
 
 class TextView : public ImGuiView {
     MultiTouch touchCopy;
-    
+
     ImVec2 cache_displaySize {0, 0};
 
     std::atomic<ImFont *> font = {nullptr};
@@ -17,7 +17,7 @@ class TextView : public ImGuiView {
     std::atomic_bool needsFontSet {false};
     
     bool log_cache = false;
-    bool log_font_loading = true;
+    bool log_font_loading = false;
     
     float fontSize_Load = 13;
     float font_size_to_set = 13;
@@ -66,8 +66,6 @@ private:
 
 public:
     void beforeFrame() override;
-
-    void onResize() override;
 
     TextResizeMode getTextResizeMode() const;
 

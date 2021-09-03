@@ -15,11 +15,7 @@ bool TextView::onTouchEvent(MultiTouch &touch) {
     return true;
 }
 
-void TextView::onResize() {
-}
-
 void TextView::beforeFrame() {
-    ImGuiIO & io = ImGui::GetIO();
 
     // imgui does not appear to have an array of MousePos
     // which suggests it is unable to track multiple touches
@@ -33,24 +29,38 @@ void TextView::beforeFrame() {
     if (it.hasNext()) {
         auto * touchData = it.next();
 
-        io.MousePosPrev = io.MousePos;
-        io.MousePos = {touchData->x, touchData->y};
+        imgui_io->MousePosPrev = imgui_io->MousePos;
+        imgui_io->MousePos = {touchData->x, touchData->y};
 
         if (touchData->state == MultiTouch::TOUCH_DOWN) {
-            io.MouseReleased[0] = false;
-            io.MouseClicked[0] = true;
-            io.MouseDown[0] = ImGuiMouseButton_Left;
+            imgui_io->MouseReleased[0] = false;
+            imgui_io->MouseClicked[0] = true;
+            imgui_io->MouseDown[0] = ImGuiMouseButton_Left;
         }
 
         if (touchData->state == MultiTouch::TOUCH_DOWN) {
-            io.MouseClicked[0] = false;
-            io.MouseReleased[0] = true;
+            imgui_io->MouseClicked[0] = false;
+            imgui_io->MouseReleased[0] = true;
             // imgui does not seem to have a MouseUp
         }
     }
 
     if (once) {
-        font_size_to_set = fontSize_Load;
+        if (textResizeMode == height) {
+            // optimization - we know that textSize.y is equal to font size
+            //
+            // this is only true when wrap is less than 0.0f
+            //
+            // avoid unnessisary font loading
+
+            // since we know that the font size is directly equal to display height
+            // then if we are not wrapping text we can directly set the height
+
+            font_size_to_set = imgui_io->DisplaySize.y;
+        } else {
+            font_size_to_set = fontSize_Load;
+        }
+        imgui_context->FontSize = font_size_to_set;
         cache();
         once = false;
     }
@@ -61,9 +71,9 @@ void TextView::beforeFrame() {
     }
 
     bool needsRecalc = false;
-    if (cache_displaySize.x != io.DisplaySize.x || cache_displaySize.y != io.DisplaySize.y) {
-        cache_displaySize.x = io.DisplaySize.x;
-        cache_displaySize.y = io.DisplaySize.y;
+    if (cache_displaySize.x != imgui_io->DisplaySize.x || cache_displaySize.y != imgui_io->DisplaySize.y) {
+        cache_displaySize.x = imgui_io->DisplaySize.x;
+        cache_displaySize.y = imgui_io->DisplaySize.y;
         needsRecalc = true;
     }
 
@@ -73,7 +83,7 @@ void TextView::beforeFrame() {
     }
 
     if (font_size_change.load()) {
-        ImGui::GetCurrentContext()->FontSize = font_size_to_set;
+        imgui_context->FontSize = font_size_to_set;
         needsRecalc = true;
         font_size_change.store(false);
     }
@@ -84,16 +94,15 @@ void TextView::beforeFrame() {
         } else {
             computeFontSize(text.c_str());
         }
-        computed_font_size = ImGui::GetCurrentContext()->FontSize;
+        computed_font_size = imgui_context->FontSize;
     }
 }
 
 void TextView::onDraw() {
     if (font.load() == nullptr || needsFontSet.load()) return;
-    ImGuiIO & io = ImGui::GetIO();
 
     ImGui::SetNextWindowPos({0.0f, 0.0f});
-    ImGui::SetNextWindowSize(io.DisplaySize);
+    ImGui::SetNextWindowSize(imgui_io->DisplaySize);
 
     ImVec2 box = {1, 0};
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, box);
@@ -112,7 +121,7 @@ void TextView::onDraw() {
                  | ImGuiWindowFlags_::ImGuiWindowFlags_AlwaysAutoResize
     );
 
-    ImGui::PushClipRect({1, 0}, {io.DisplaySize.x-1, io.DisplaySize.y}, true);
+    ImGui::PushClipRect({1, 0}, {imgui_io->DisplaySize.x-1, imgui_io->DisplaySize.y}, true);
 
     ImGui::PushTextWrapPos(-1.0f);
 
@@ -120,7 +129,7 @@ void TextView::onDraw() {
     // when the window is created by Imgui::Begin
     // restore it
 
-    ImGui::GetCurrentContext()->FontSize = computed_font_size;
+    imgui_context->FontSize = computed_font_size;
 
     ImVec2 bottomRight;
 
@@ -131,13 +140,14 @@ void TextView::onDraw() {
             // i = 2, substr = ab
             // i = 3, substr = abc
             std::string substr = text.substr(0, i);
-            bottomRight = ImGui::CalcTextSize(substr.c_str());
+            bottomRight = ImGui::CalcTextSize(substr.c_str(), nullptr, false, -1.0f);
             ImGui::GetWindowDrawList()->AddRect(box, bottomRight, boundingBoxCharacterColor.to_RGBA_unsigned_32bit_int());
         } catch(const std::out_of_range& e) {
             Log::Error_And_Throw("pos ", i, " exceeds string size ", text.size());
         }
     }
 
+    // set bounding box to wrapped text bounds
     bottomRight = ImGui::CalcTextSize(text.c_str());
     ImGui::GetWindowDrawList()->AddRect(box, bottomRight, boundingBoxColor.to_RGBA_unsigned_32bit_int());
 
@@ -153,28 +163,44 @@ void TextView::onDraw() {
     // when the window is popped by Imgui::End
     // restore it
 
-    ImGui::GetCurrentContext()->FontSize = computed_font_size;
+    imgui_context->FontSize = computed_font_size;
 
     ImGui::PopStyleColor();
     ImGui::PopStyleVar();
 }
 
 void TextView::computeFontSize(const char * text) {
-    ImGuiIO & io = ImGui::GetIO();
+    // it seems that, in ImGui
+    // assuming no text wrapping,
+    // textSize.y is equal to the font size
 
-    ImVec2 textSize = ImGui::CalcTextSize(text);
+    if (textResizeMode == height) {
+        // optimization - we know that textSize.y is equal to font size
+        //
+        // this is only true when wrap is less than 0.0f
+        //
+        // avoid unnessisary font loading
 
-    // if we are larger than our text view, incrementally try smaller sizes until we fit
-    while (textSize.y > io.DisplaySize.y) {
-        ImGui::GetCurrentContext()->FontSize -= 1;
+        // since we know that the font size is directly equal to display height
+        // then if we are not wrapping text we can directly set the height
+
+        imgui_context->FontSize = imgui_io->DisplaySize.y;
         cache();
-        textSize = ImGui::CalcTextSize(text);
-    }
-    // if we are smaller than our text view, incrementally try larger sizes until we fit
-    while (textSize.y < io.DisplaySize.y) {
-        ImGui::GetCurrentContext()->FontSize += 1;
-        cache();
-        textSize = ImGui::CalcTextSize(text);
+    } else {
+        ImVec2 textSize = ImGui::CalcTextSize(text, nullptr, false, -1.0f);
+
+        // if we are larger than our text view, incrementally try smaller sizes until we fit
+        while (textSize.y > imgui_io->DisplaySize.y) {
+            imgui_context->FontSize -= 1;
+            cache();
+            textSize = ImGui::CalcTextSize(text, nullptr, false, -1.0f);
+        }
+        // if we are smaller than our text view, incrementally try larger sizes until we fit
+        while (textSize.y < imgui_io->DisplaySize.y) {
+            imgui_context->FontSize += 1;
+            cache();
+            textSize = ImGui::CalcTextSize(text, nullptr, false, -1.0f);
+        }
     }
 }
 
@@ -210,7 +236,7 @@ void TextView::cache() {
     CacheDirection direction;
 
     // font size
-    float font_size = ImGui::GetCurrentContext()->FontSize;
+    float font_size = imgui_context->FontSize;
     if (cache_font_size != font_size) {
         direction = font_size < cache_font_size ? down : up;
         cache_direction = direction;
@@ -277,7 +303,7 @@ void TextView::cache() {
         generateFontTextures();
         setFontInternal(font.load());
         needsFontSet.store(false);
-        ImGui::GetCurrentContext()->FontSize = font_size;
+        imgui_context->FontSize = font_size;
         min_loaded = cache_fontSize_Load == min;
     }
 }
@@ -291,7 +317,7 @@ void TextView::setTextResizeMode(TextView::TextResizeMode textResizeMode) {
 }
 
 float TextView::getFontSize() const {
-    return ImGui::GetCurrentContext()->FontSize;
+    return imgui_context->FontSize;
 }
 
 void TextView::setFontSize(float fontSize) {
@@ -325,7 +351,7 @@ void TextView::setFont(ImFont *font) {
 }
 
 void TextView::setFontDefault(const ImFontConfig *font_cfg_template) {
-    auto * default_font_cfg = ImGui::GetIO().Fonts->Fonts.Data[0]->ConfigData;
+    auto * default_font_cfg = imgui_io->Fonts->Fonts.Data[0]->ConfigData;
     ImFontConfig font_cfg;
     font_cfg.OversampleH = default_font_cfg->OversampleH;
     font_cfg.OversampleV = default_font_cfg->OversampleV;
@@ -350,35 +376,31 @@ void TextView::setFontDefault(const ImFontConfig *font_cfg_template) {
 void TextView::setFontFromFileTTF(const char *filename, float size_pixels,
                                    const ImFontConfig *font_cfg_template,
                                    const ImWchar *glyph_ranges) {
-    auto & io = ImGui::GetIO();
-    io.Fonts->Clear();
-    setFont(io.Fonts->AddFontFromFileTTF(filename, size_pixels, font_cfg_template, glyph_ranges));
+    imgui_io->Fonts->Clear();
+    setFont(imgui_io->Fonts->AddFontFromFileTTF(filename, size_pixels, font_cfg_template, glyph_ranges));
 }
 
 void TextView::setFontFromMemoryTTF(void *ttf_data, int ttf_size, float size_pixels,
                                      const ImFontConfig *font_cfg_template,
                                      const ImWchar *glyph_ranges) {
-    auto & io = ImGui::GetIO();
-    io.Fonts->Clear();
-    setFont(io.Fonts->AddFontFromMemoryTTF(ttf_data, ttf_size, size_pixels, font_cfg_template, glyph_ranges));
+    imgui_io->Fonts->Clear();
+    setFont(imgui_io->Fonts->AddFontFromMemoryTTF(ttf_data, ttf_size, size_pixels, font_cfg_template, glyph_ranges));
 }
 
 void
 TextView::setFontFromMemoryCompressedTTF(const void *compressed_ttf_data, int compressed_ttf_size,
                                           float size_pixels, const ImFontConfig *font_cfg_template,
                                           const ImWchar *glyph_ranges) {
-    auto & io = ImGui::GetIO();
-    io.Fonts->Clear();
-    setFont(io.Fonts->AddFontFromMemoryCompressedTTF(compressed_ttf_data, compressed_ttf_size, size_pixels, font_cfg_template, glyph_ranges));
+    imgui_io->Fonts->Clear();
+    setFont(imgui_io->Fonts->AddFontFromMemoryCompressedTTF(compressed_ttf_data, compressed_ttf_size, size_pixels, font_cfg_template, glyph_ranges));
 }
 
 void TextView::setFontFromMemoryCompressedBase85TTF(const char *compressed_ttf_data_base85,
                                                      float size_pixels,
                                                      const ImFontConfig *font_cfg,
                                                      const ImWchar *glyph_ranges) {
-    auto & io = ImGui::GetIO();
-    io.Fonts->Clear();
-    setFont(io.Fonts->AddFontFromMemoryCompressedBase85TTF(compressed_ttf_data_base85, size_pixels, font_cfg, glyph_ranges));
+    imgui_io->Fonts->Clear();
+    setFont(imgui_io->Fonts->AddFontFromMemoryCompressedBase85TTF(compressed_ttf_data_base85, size_pixels, font_cfg, glyph_ranges));
 }
 
 void TextView::setFontInternal(ImFont *pFont) {
@@ -386,7 +408,7 @@ void TextView::setFontInternal(ImFont *pFont) {
     // the font size is only set if we have a window,
     // however the font cannot be loaded inside a frame
     // so we need to manually set the font size
-    ImGui::GetCurrentContext()->FontSize = pFont->FontSize;
+    imgui_context->FontSize = pFont->FontSize;
 }
 
 #pragma clang diagnostic pop
