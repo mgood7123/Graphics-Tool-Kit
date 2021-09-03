@@ -111,7 +111,6 @@ public class DiligentEngineView extends EGLTextureView {
     }
 
     private class DiligentEngineRenderer implements Renderer {
-        Cleaner.Cleanable cleanable;
         native long createNativeInstance();
         native void destroyNativeInstance(long instance);
         native void onEglSetup(long instance, Object classInstance, String name, String signature);
@@ -135,12 +134,11 @@ public class DiligentEngineView extends EGLTextureView {
 
         DiligentEngineRenderer() {
             System.loadLibrary("native-lib");
-            nativeInstance = createNativeInstance();
-            cleanable = Cleaner.register(this, () -> destroyNativeInstance(nativeInstance));
         }
 
         @Override
         public void onEglSetup() {
+            nativeInstance = createNativeInstance();
             onEglSetup(nativeInstance, DiligentEngineView.this,
                     getJavaNameForJNI(METHOD.SWAP_BUFFERS),
                     getJavaSignatureForJNI(METHOD.SWAP_BUFFERS)
@@ -150,6 +148,7 @@ public class DiligentEngineView extends EGLTextureView {
         @Override
         public void onEglTearDown() {
             onEglTearDown(nativeInstance);
+            destroyNativeInstance(nativeInstance);
         }
 
         @Override
