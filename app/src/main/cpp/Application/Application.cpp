@@ -49,7 +49,6 @@ void Application::destroyState() {
     }
 }
 
-
 Application::~Application() {
     onDestroyViews();
     destroyState();
