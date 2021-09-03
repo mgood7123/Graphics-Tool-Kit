@@ -120,6 +120,14 @@ public:
         
         void setScissorEnable(bool scissorEnable);
 
+        void enableAlpha(uint8_t index);
+
+        void disableAlpha(uint8_t index);
+
+        void enableAlpha(
+                const Diligent::RenderTargetBlendDesc & renderTargetBlendDesc, uint8_t index
+        );
+
         void setInputLayout(const std::vector<Diligent::LayoutElement> & layoutElements);
 
         void setResourceLayoutSamplers(

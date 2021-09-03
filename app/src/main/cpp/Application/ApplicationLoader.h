@@ -15,7 +15,6 @@ class ApplicationLoader {
 public:
     class SymbolTable {
         std::string path;
-        bool self = false;
         void * symbol_table = nullptr;
     public:
         SymbolTable(const char * path, void * table);
@@ -41,7 +40,6 @@ public:
 private:
 
     Kernel symbols {4};
-    SymbolTable * self = nullptr;
 
     SymbolTable * createSymbolTable(const char * path, void * symbolTable) {
         return symbols.newObject(
@@ -120,32 +118,16 @@ private:
         )->resource.get<ApplicationInstancer*>();
     }
 
-    ApplicationInstancer * self_instancer = nullptr;
 public:
 
     ApplicationLoader() {
-        void * sym = dlopen(NULL, RTLD_LAZY);
-        if (sym == nullptr) {
-            Log::Error_And_Throw("cannot open self: ", dlerror());
-        }
-        self_instancer = createApplicationInstancer(nullptr, sym);
-        self = self_instancer->getSymbolTable();
     }
 
     ~ApplicationLoader() {
-        unloadApplication(self_instancer);
         size_t count = getLoadedApplicationCount();
         if (count != 0) {
             Log::Error_And_Throw("failed to call 'unloadApplication' on ", count, " loaded application", count == 1 ? "s" : "");
         }
-    }
-
-    SymbolTable * getSelf() {
-        return self;
-    }
-
-    ApplicationInstancer * getSelfApplicationInstancer() {
-        return self_instancer;
     }
 
     size_t getLoadedApplicationCount() {

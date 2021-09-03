@@ -10,6 +10,7 @@
 #include "CubeView.h"
 #include "RootView.h"
 #include "GridView.h"
+#include "ImGuiViews/ImGuiViews.h"
 #include "PainterViews/PainterViews.h"
 
 #endif //GRAPHICAL_TOOL_KIT_VIEWS_H

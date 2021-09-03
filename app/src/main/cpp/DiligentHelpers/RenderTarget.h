@@ -8,6 +8,35 @@
 #include "DrawTools.h"
 #include <Views/Rectangle.h>
 
+/* TODO: texture chunk loader :
+    //
+    // draw large texture as smaller textures
+    //
+    auto* pixels = new unsigned char[512*512*4];
+    unsigned int width = 512;
+    unsigned int height = 512;
+    auto * quarter_TL = RenderTarget::createColorTexture(
+            256, 256, swapChain, renderDevice
+    );
+    auto * quarter_TR = RenderTarget::createColorTexture(
+            256, 256, swapChain, renderDevice
+    );
+    auto* pixelsTopLeft = new unsigned char[256*256*4];
+    auto* pixelsTopRight = new unsigned char[256*256*4];
+    copyPixels(pixels, pixelsTopLeft, 0, 0, 256, 256);
+    copyPixels(pixels, pixelsTopRight, 256, 256, 256, 256);
+    context->UpdateTexture(
+            quarter_TL, 0, 0, {0, 256, 0, 256},
+            {pixelsTopLeft, width * 4},
+            Diligent::RESOURCE_STATE_TRANSITION_MODE_NONE, Diligent::RESOURCE_STATE_TRANSITION_MODE_NONE
+    );
+    context->UpdateTexture(
+            quarter_TR, 0, 0, {0, 256, 0, 256},
+            {pixelsTopRight, width * 4},
+            Diligent::RESOURCE_STATE_TRANSITION_MODE_NONE, Diligent::RESOURCE_STATE_TRANSITION_MODE_NONE
+    );
+ */
+
 class RenderTarget {
     static const char * VS;
     static const char * PS;
@@ -36,7 +65,9 @@ public:
     void create(const char * PIPELINE_KEY, PipelineManager & pipelineManager, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice);
     Diligent::ITextureView * getColor();
     Diligent::ITextureView * getDepth();
+    static Diligent::ITexture * createColorTexture(Diligent::Uint32 width, Diligent::Uint32 height, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice);
     static Diligent::ITexture * createColorTexture(Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice);
+    static Diligent::ITexture * createDepthTexture(Diligent::Uint32 width, Diligent::Uint32 height, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice);
     static Diligent::ITexture * createDepthTexture(Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice);
     void resize(PipelineManager & pipelineManager, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice);
     void wrap(Diligent::ITextureView * color, Diligent::ITextureView * depth);

@@ -6,5 +6,6 @@
 #define GRAPHICAL_TOOL_KIT_APPLICATIONS_H
 
 #include "test1.h"
+#include "imgui.h"
 
 #endif //GRAPHICAL_TOOL_KIT_APPLICATIONS_H

@@ -65,12 +65,12 @@ VertexEngine::VertexInfo::VertexInfo(size_t length, bool is_static) {
 }
 
 VertexEngine::VertexEngine(TextureManager * textureManager) :
+        indexPosition(0),
         defaultPositionBuffer(addDataBuffer(positionCount)),
         defaultColorBuffer(addDataBuffer(colorCount+colorExtraCount)),
         defaultTextureCoordinateBuffer(addDataBuffer(textureCoordinatesCount)),
-        indexPosition(0),
-        textureManager(textureManager == nullptr ? new TextureManager(this) : textureManager),
-        externalTextureManager(textureManager != nullptr)
+        externalTextureManager(textureManager != nullptr),
+        textureManager(textureManager == nullptr ? new TextureManager(this) : textureManager)
 {
     order({defaultPositionBuffer, defaultColorBuffer, defaultTextureCoordinateBuffer});
 }
@@ -113,17 +113,17 @@ void VertexEngine::order(const std::vector<HANDLE>& data) {
 }
 
 VertexEngine::GenerationInfo::GenerationInfo() :
+        chunkReader(0),
         vertexEngine(nullptr),
-        data(nullptr),
+        chunksGenerated(0),
         lengthData(0),
         sizeInBytesData(0),
-        indices(nullptr),
+        data(nullptr),
         lengthIndices(0),
         sizeInBytesIndices(0),
+        indices(nullptr),
         isTexture(false),
-        textureIndex(0),
-        chunkReader(0),
-        chunksGenerated(0)
+        textureIndex(0)
 {
 }
 
@@ -133,17 +133,17 @@ VertexEngine::GenerationInfo::GenerationInfo(
         const size_t lengthIndices, const uint32_t *indices,
         const bool isTexture
 ) :
+    chunkReader(0),
     vertexEngine(engine),
-    data(new float[lengthData]),
+    chunksGenerated(0),
     lengthData(lengthData),
     sizeInBytesData(lengthData * sizeof(float)),
-    indices(new uint32_t[lengthIndices]),
+    data(new float[lengthData]),
     lengthIndices(lengthIndices),
     sizeInBytesIndices(lengthIndices * sizeof(uint32_t)),
+    indices(new uint32_t[lengthIndices]),
     isTexture(isTexture),
-    textureIndex(0),
-    chunkReader(0),
-    chunksGenerated(0)
+    textureIndex(0)
 {
     if (data != nullptr) memcpy(this->data, data, sizeInBytesData);
     else memset(this->data, 0, sizeInBytesData);
@@ -186,15 +186,15 @@ VertexEngine::GenerationInfo& VertexEngine::GenerationInfo::operator=(const Vert
 }
 
 VertexEngine::GenerationInfo::GenerationInfo(VertexEngine::GenerationInfo &&m) noexcept :
+        chunkReader(m.chunkReader),
         vertexEngine(m.vertexEngine),
-        data(m.data),
+        chunksGenerated(m.chunksGenerated),
         lengthData(m.lengthData),
         sizeInBytesData(m.sizeInBytesData),
-        indices(m.indices),
+        data(m.data),
         lengthIndices(m.lengthIndices),
         sizeInBytesIndices(m.sizeInBytesIndices),
-        chunkReader(m.chunkReader),
-        chunksGenerated(m.chunksGenerated),
+        indices(m.indices),
         isTexture(m.isTexture),
         textureIndex(m.textureIndex)
 {
@@ -278,9 +278,9 @@ VertexEngine::GenerationInfo VertexEngine::GenerationInfo::generateChunk(size_t 
 //        index + 10; // tex y
 
     bool first = true;
-    float firstIsTexture;
-    bool firstTextureIndexIsNan;
-    float firstTextureIndex;
+    float firstIsTexture = 0;
+    bool firstTextureIndexIsNan = false;
+    float firstTextureIndex = 0;
 
     while(indicesIndex < chunkSize && chunkReader < lengthIndices) {
         uint32_t index = indices[chunkReader] * (strideLength + 1);
@@ -711,7 +711,7 @@ Diligent::ITexture * VertexEngine::TextureManager::findTexture(const char * key)
 
 VertexEngine::Triple<const char *, size_t, VertexEngine::Color4> *
 VertexEngine::TextureManager::getTexture(const size_t & index) {
-    if (index == -1) return nullptr;
+    if (static_cast<ssize_t>(index) == -1) return nullptr;
     auto * r = vertexEngine->textureBuffer.get(index);
     return r == nullptr ? nullptr : r;
 }
@@ -816,6 +816,7 @@ HANDLE VertexEngine::Canvas::addData_(HANDLE dataBufferHandle, const std::vector
                 }
             }
             Log::Error_And_Throw("buffer is non null but does not exist in known handles");
+            return nullptr; // control flow
         } else {
             buffer->static_data = buffer->dataBuffer.add(data);
             pair->second.push_back(buffer->static_data);
@@ -1349,7 +1350,7 @@ VertexEngine::TextureCache::TextureInfo *
 VertexEngine::TextureCache::findKey(const char *key, size_t keyStrLen,
                                     VertexEngine::TextureManager *id) {
     for (TextureInfo & t : textureCacheBuffer) {
-        for (const KeyInfo s : t.keys) {
+        for (const KeyInfo & s : t.keys) {
             if (s.stringLength == keyStrLen) {
                 if (memcmp(s.string, key, keyStrLen) == 0) {
                     if (s.id == id) {

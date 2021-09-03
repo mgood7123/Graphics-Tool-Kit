@@ -23,6 +23,7 @@ target_link_libraries(
         MultiTouch
 )
 
+add_subdirectory(ImGuiViews)
 add_subdirectory(PainterViews)
 
 add_library(
@@ -36,12 +37,13 @@ add_library(
 target_link_libraries(
         Views
         View
+        ImGuiViews
         PainterViews
 )
 
 set_target_properties(
         Views PROPERTIES
         FRAMEWORK TRUE
-        XCODE_EMBED_FRAMEWORKS "View;PainterViews"
+        XCODE_EMBED_FRAMEWORKS "View;ImGuiViews;PainterViews"
         XCODE_EMBED_FRAMEWORKS_CODE_SIGN_ON_COPY TRUE
 )

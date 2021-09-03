@@ -26,6 +26,7 @@ class Application {
 
 public:
     Application();
+    Application(View * content);
 
     // Virtual destructor makes sure all derived classes can be destroyed
     // through the pointer to the base class
@@ -69,8 +70,31 @@ public:
     ApplicationInstance & operator=(ApplicationInstance &&x) = delete;
 };
 
-#define MAKE_APPLICATION_PUBLIC__HEADER(name) extern "C" ApplicationInstance * newInstance__##name(); extern "C" void deleteInstance__##name(ApplicationInstance * instance);
+#define MAKE_APPLICATION_PUBLIC__HEADER(name) \
+ \
+extern "C" __attribute__ ((visibility("default"))) \
+ApplicationInstance * newInstance__##name(); \
+ \
+extern "C" __attribute__ ((visibility("default")))\
+void deleteInstance__##name(ApplicationInstance * instance);
 
-#define MAKE_APPLICATION_PUBLIC__SOURCE(name) ApplicationInstance * newInstance__##name() { return new ApplicationInstance(new name()); }; void deleteInstance__##name(ApplicationInstance * instance) { if (instance == nullptr) { Log::Error_And_Throw("attempting to destroy a nullptr instance"); }; if (instance->app == nullptr) { Log::Error_And_Throw("attempting to destroy a nullptr application"); }; delete instance->app; delete instance; };
+#define MAKE_APPLICATION_PUBLIC__SOURCE(name) \
+__attribute__ ((visibility("default"))) \
+ \
+ApplicationInstance * newInstance__##name() { \
+    return new ApplicationInstance(new name()); \
+}; \
+ \
+__attribute__ ((visibility("default"))) \
+void deleteInstance__##name(ApplicationInstance * instance) { \
+    if (instance == nullptr) { \
+        Log::Error_And_Throw("attempting to destroy a nullptr instance"); \
+    }; \
+    if (instance->app == nullptr) { \
+        Log::Error_And_Throw("attempting to destroy a nullptr application"); \
+    }; \
+    delete instance->app; \
+    delete instance; \
+};
 
 #endif //GRAPHICAL_TOOL_KIT_APPLICATION_H

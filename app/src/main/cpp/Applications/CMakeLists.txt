@@ -12,6 +12,8 @@ project(Applications)
 add_library(
         Applications SHARED
         test1.cpp
+        imgui.cpp
+        cube.cpp
 )
 
 target_link_libraries(

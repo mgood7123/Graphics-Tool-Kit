@@ -14,7 +14,7 @@ void test1::onCreateViews() {
     a = new RootView();
     a->setTag("root");
     a->padding = 25;
-    Application::setContentView(a);
+    setContentView(a);
 
     b = new RootView();
     b->setTag("root child");

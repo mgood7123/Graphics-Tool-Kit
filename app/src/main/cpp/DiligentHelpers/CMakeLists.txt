@@ -37,33 +37,11 @@ add_library(
         DiligentAppBase.cpp
 )
 
-target_compile_options(DiligentHelpers PRIVATE -DUNICODE -DENGINE_DLL)
-
-if (DILIGENT_NO_VULKAN)
-    set(VK_LIB "")
-else()
-    set(VK_LIB Diligent-GraphicsEngineVk-shared)
-endif()
-
 target_link_libraries(
         DiligentHelpers
         DiligentAnyOpt
         RenderTarget
-
-#   DiligentCore
-        Diligent-BuildSettings
-        Diligent-Common
-        Diligent-GraphicsAccessories
-        Diligent-GraphicsEngineOpenGL-shared
-        Diligent-GraphicsTools
-        Diligent-ShaderTools
-        Diligent-TargetPlatform
-        ${VK_LIB}
-
-#   DiligentTools
-        Diligent-AssetLoader
-        Diligent-Imgui
-        Diligent-TextureLoader
+        DiligentLibrary
 )
 
 set_target_properties(

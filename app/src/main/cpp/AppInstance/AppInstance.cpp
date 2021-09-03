@@ -5,7 +5,7 @@
 #include "AppInstance.h"
 
 AppInstance::AppInstance() {
-    loadApplication("test1", loader.getSelfApplicationInstancer());
+    loadApplication(new imgui());
 }
 
 AppInstance::~AppInstance ()
@@ -37,8 +37,6 @@ void AppInstance::unloadApplication() {
 
 void AppInstance::surfaceChanged (int w, int h)
 {
-    Log::Info("root window: w: ", w, ", h: ", h);
-
     if (!m_pSwapChain) {
         attachToContext(w, h);
     }

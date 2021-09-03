@@ -63,6 +63,23 @@ void PipelineManager::PipelineObject::setScissorEnable(bool scissorEnable) {
     pipelineStateCreateInfo.GraphicsPipeline.RasterizerDesc.ScissorEnable = scissorEnable;
 }
 
+void PipelineManager::PipelineObject::enableAlpha(uint8_t index) {
+    enableAlpha(Diligent::RenderTargetBlendDesc(), index);
+}
+
+void PipelineManager::PipelineObject::disableAlpha(uint8_t index) {
+    auto & blendDesc = pipelineStateCreateInfo.GraphicsPipeline.BlendDesc;
+    blendDesc.RenderTargets[index] = Diligent::RenderTargetBlendDesc();
+}
+
+void PipelineManager::PipelineObject::enableAlpha(
+        const Diligent::RenderTargetBlendDesc & renderTargetBlendDesc, uint8_t index
+) {
+    auto & blendDesc = pipelineStateCreateInfo.GraphicsPipeline.BlendDesc;
+    blendDesc.RenderTargets[index] = renderTargetBlendDesc;
+    blendDesc.RenderTargets[index].BlendEnable = true;
+}
+
 void
 PipelineManager::PipelineObject::setInputLayout(
         const std::vector<Diligent::LayoutElement> & layoutElements

@@ -7,16 +7,15 @@ cmake_minimum_required(VERSION 3.10.2)
 
 # Declares and names the project.
 
-project(VertexEngine)
+project(ImGuiViews)
 
 add_library(
-        VertexEngine SHARED
-        VertexEngine.cpp
+        ImGuiViews SHARED
+        ImGuiView.cpp
+        TextView.cpp
 )
 
 target_link_libraries(
-        VertexEngine
-        DiligentLibrary
-        PixelToNDC
-        WINAPI::Kernel
+        ImGuiViews
+        View
 )

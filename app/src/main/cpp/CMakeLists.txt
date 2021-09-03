@@ -13,6 +13,13 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/OUTPUT)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY})
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY})
+
 # Diligent Engine exposes the following macros:
 #
 # PLATFORM_WIN32
@@ -60,6 +67,28 @@ endif()
 
 add_subdirectory(MultiTouch)
 
+# imgui
+    # Use stb_printf's faster implementation of vsnprintf instead of the one from libc
+    # we know that IMGUI_DISABLE_DEFAULT_FORMAT_FUNCTIONS is not defined so this is safe
+    include_directories(stb)
+    add_definitions(-DIMGUI_USE_STB_SPRINTF)
+
+    # enable 32-bit indexes for vertex buffers greater than 64k
+    # specifically this allows for a potential maximum of 4GB worth of data
+    # this allows for signifigantly more drawing commands to be issued in a single draw
+    add_definitions("-DImDrawIdx=unsigned int")
+
+    # support the extended range of unicode beyond 0xFFFF
+    # (e.g. emoticons, dingbats, symbols, shapes, ancient languages, etc...)
+    add_definitions(-DIMGUI_USE_WCHAR32)
+
+    # enable freetype support for faster font loading
+    add_definitions(-DIMGUI_ENABLE_FREETYPE)
+    add_subdirectory(freetype-cmake)
+
+    # let Diligent know that we have freetype
+    set(DILIGENT_DEAR_IMGUI_FREETYPE TRUE CACHE BOOL "enable freetype support")
+
 add_subdirectory(DiligentEngine/DiligentCore)
 #add_subdirectory(DiligentEngine/DiligentFX)
 add_subdirectory(DiligentEngine/DiligentTools)
@@ -69,6 +98,8 @@ include_directories(
         DiligentEngine
 )
 
+add_subdirectory(DiligentLibrary)
+
 add_subdirectory(TimeEngine)
 
 add_subdirectory(DiligentAnyOpt)
@@ -76,6 +107,8 @@ add_subdirectory(DiligentAnyOpt)
 add_subdirectory(WINAPI_KERNEL)
 
 add_subdirectory(PixelToNDC)
+
+add_subdirectory(VertexEngine)
 
 add_subdirectory(DiligentHelpers)
 
@@ -85,8 +118,6 @@ if (PLATFORM_WIN32 OR PLATFORM_LINUX)
 endif()
 
 add_subdirectory(PlatformBase)
-
-add_subdirectory(VertexEngine)
 
 add_subdirectory(Views)
 
@@ -121,6 +152,6 @@ target_include_directories(
 set_target_properties(
         AppInstance PROPERTIES
         FRAMEWORK TRUE
-        XCODE_EMBED_FRAMEWORKS "Diligent-GraphicsEngineOpenGL-shared;Views;DiligentAnyOpt;DiligentHelpers;TimeEngine;VertexEngine;MultiTouch;PixelToNDC;PlatformBase;WINAPI::KERNEL;Application;Applications"
+        XCODE_EMBED_FRAMEWORKS "zlib-cmake;png-cmake;bzip2-cmake;brotli-cmake;graphite-cmake;harfbuzz-cmake;freetype-cmake;DiligentLibrary;Diligent-GraphicsEngineOpenGL-shared;Views;DiligentAnyOpt;DiligentHelpers;TimeEngine;VertexEngine;MultiTouch;PixelToNDC;PlatformBase;WINAPI::KERNEL;Application;Applications"
         XCODE_EMBED_FRAMEWORKS_CODE_SIGN_ON_COPY TRUE
 )

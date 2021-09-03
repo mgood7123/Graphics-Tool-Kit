@@ -14,6 +14,10 @@ Application::Application() {
     };
 }
 
+Application::Application(View * content): Application() {
+    setContentView(content);
+}
+
 void Application::createState() {
     // protect against createState being called multiple times
     if (destroyed.load() && !createCalled.load()) {
@@ -54,6 +58,9 @@ Application::~Application() {
 
 void Application::setDiligentAppBase(DiligentAppBase *base) {
     diligentAppBase = base;
+    if (contentView != nullptr) {
+        contentView->setDiligentAppBase(diligentAppBase);
+    }
 }
 
 void Application::onCreateViews() {

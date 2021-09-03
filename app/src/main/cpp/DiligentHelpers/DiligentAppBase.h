@@ -31,8 +31,7 @@ public:
     Diligent::RefCntAutoPtr<Diligent::IDeviceContext>              m_pImmediateContext;
     std::vector<Diligent::RefCntAutoPtr<Diligent::IDeviceContext>> m_pDeferredContexts;
     Diligent::RefCntAutoPtr<Diligent::ISwapChain>                  m_pSwapChain;
-    Diligent::ImGuiImplDiligent *                                  m_pImGui = nullptr;
-    
+
     DiligentAppBase ();
     ~DiligentAppBase ();
     

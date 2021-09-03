@@ -5,8 +5,7 @@
 #include "ApplicationLoader.h"
 
 ApplicationLoader::SymbolTable::SymbolTable(const char *path, void *table) {
-    self = path == nullptr;
-    this->path = self ? "<self>" : path;
+    this->path = path;
     symbol_table = table;
 }
 

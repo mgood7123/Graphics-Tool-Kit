@@ -284,12 +284,16 @@ Diligent::ITextureView * RenderTarget::getDepth() {
 
 Diligent::ITexture * RenderTarget::createColorTexture(Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice) {
     auto desc = swapChain->GetDesc();
+    return createColorTexture(desc.Width, desc.Height, swapChain, renderDevice);
+}
+
+Diligent::ITexture * RenderTarget::createColorTexture(Diligent::Uint32 width, Diligent::Uint32 height, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice) {
     Diligent::TextureDesc RTColorDesc;
     RTColorDesc.Type        = Diligent::RESOURCE_DIM_TEX_2D;
-    RTColorDesc.Width       = desc.Width;
-    RTColorDesc.Height      = desc.Height;
+    RTColorDesc.Width       = width;
+    RTColorDesc.Height      = height;
     RTColorDesc.MipLevels   = 1;
-    RTColorDesc.Format      = desc.ColorBufferFormat;
+    RTColorDesc.Format      = swapChain->GetDesc().ColorBufferFormat;
     RTColorDesc.BindFlags   = Diligent::BIND_SHADER_RESOURCE | Diligent::BIND_RENDER_TARGET;
     Diligent::ITexture * pRTColor = nullptr;
     renderDevice->CreateTexture(RTColorDesc, nullptr, &pRTColor);
@@ -298,12 +302,16 @@ Diligent::ITexture * RenderTarget::createColorTexture(Diligent::ISwapChain * swa
 
 Diligent::ITexture * RenderTarget::createDepthTexture(Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice) {
     auto desc = swapChain->GetDesc();
+    return createDepthTexture(desc.Width, desc.Height, swapChain, renderDevice);
+}
+
+Diligent::ITexture * RenderTarget::createDepthTexture(Diligent::Uint32 width, Diligent::Uint32 height, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice) {
     Diligent::TextureDesc RTDepthDesc;
     RTDepthDesc.Type        = Diligent::RESOURCE_DIM_TEX_2D;
-    RTDepthDesc.Width       = desc.Width;
-    RTDepthDesc.Height      = desc.Height;
+    RTDepthDesc.Width       = width;
+    RTDepthDesc.Height      = height;
     RTDepthDesc.MipLevels   = 1;
-    RTDepthDesc.Format      = desc.DepthBufferFormat;
+    RTDepthDesc.Format      = swapChain->GetDesc().DepthBufferFormat;
     RTDepthDesc.BindFlags   = Diligent::BIND_SHADER_RESOURCE | Diligent::BIND_DEPTH_STENCIL;
     Diligent::ITexture * pRTDepth = nullptr;
     renderDevice->CreateTexture(RTDepthDesc, nullptr, &pRTDepth);
