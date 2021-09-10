@@ -92,13 +92,68 @@ void TextView::onLayout(bool changed, const Rectangle &dimensions, DrawTools &dr
     layoutData = dimensions.withBottomRightY(computed_font_size);
 }
 
-void TextView::onDraw() {
-    if (font.load() == nullptr || needsFontSet.load()) return;
-
+void TextView::drawBoundings() {
     ImGui::SetNextWindowPos({0, 0});
     ImGui::SetNextWindowSize(imgui_io->DisplaySize);
 
-    ImVec2 box = {1, 0};
+    ImVec2 box = {1, 1};
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, box);
+
+    ImGui::Begin("TextView Boundings", nullptr,
+                 ImGuiWindowFlags_::ImGuiWindowFlags_NoNav
+                 | ImGuiWindowFlags_::ImGuiWindowFlags_NoMove
+                 | ImGuiWindowFlags_::ImGuiWindowFlags_NoResize
+                 | ImGuiWindowFlags_::ImGuiWindowFlags_NoNavInputs
+                 | ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse
+                 | ImGuiWindowFlags_::ImGuiWindowFlags_NoScrollbar
+                 | ImGuiWindowFlags_::ImGuiWindowFlags_NoBackground
+                 | ImGuiWindowFlags_::ImGuiWindowFlags_NoDecoration
+                 | ImGuiWindowFlags_::ImGuiWindowFlags_NoSavedSettings
+                 | ImGuiWindowFlags_::ImGuiWindowFlags_AlwaysAutoResize
+    );
+
+    // the font size is set to the loaded font size
+    // when the window is created by Imgui::Begin
+    // restore it
+
+    imgui_context->FontSize = computed_font_size;
+    
+    ImVec2 bottomRight;
+
+    for (size_t i = 1; i <= text.size(); i++) {
+        try {
+            // text: abc
+            // i = 1, substr = a
+            // i = 2, substr = ab
+            // i = 3, substr = abc
+            std::string substr = text.substr(0, i);
+            bottomRight = ImGui::CalcTextSize(substr.c_str(), nullptr, false, -1.0f);
+            ImGui::GetWindowDrawList()->AddRect(box, {bottomRight.x+1, bottomRight.y - 1}, boundingBoxCharacterColor.to_RGBA_unsigned_32bit_int());
+        } catch(const std::out_of_range& e) {
+            Log::Error_And_Throw("pos ", i, " exceeds string size ", text.size());
+        }
+    }
+
+    // set bounding box to wrapped text bounds
+    bottomRight = ImGui::CalcTextSize(text.c_str());
+    ImGui::GetWindowDrawList()->AddRect(box, {bottomRight.x+1, bottomRight.y - 1}, boundingBoxColor.to_RGBA_unsigned_32bit_int());
+
+    ImGui::End();
+
+    // the font size is set to the loaded font size
+    // when the window is popped by Imgui::End
+    // restore it
+
+    imgui_context->FontSize = computed_font_size;
+
+    ImGui::PopStyleVar();
+}
+
+void TextView::drawText() {
+    ImGui::SetNextWindowPos({0, 0});
+    ImGui::SetNextWindowSize(imgui_io->DisplaySize);
+
+    box = {1, 0};
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, box);
     ImGui::PushStyleColor(ImGuiCol_Text, textColor.to_RGBA_unsigned_32bit_int());
 
@@ -115,8 +170,6 @@ void TextView::onDraw() {
                  | ImGuiWindowFlags_::ImGuiWindowFlags_AlwaysAutoResize
     );
 
-    ImGui::PushClipRect({1, 0}, {imgui_io->DisplaySize.x-1, imgui_io->DisplaySize.y}, true);
-
     ImGui::PushTextWrapPos(-1.0f);
 
     // the font size is set to the loaded font size
@@ -125,31 +178,9 @@ void TextView::onDraw() {
 
     imgui_context->FontSize = computed_font_size;
 
-    ImVec2 bottomRight;
-
-    for (size_t i = 1; i <= text.size(); i++) {
-        try {
-            // text: abc
-            // i = 1, substr = a
-            // i = 2, substr = ab
-            // i = 3, substr = abc
-            std::string substr = text.substr(0, i);
-            bottomRight = ImGui::CalcTextSize(substr.c_str(), nullptr, false, -1.0f);
-            ImGui::GetWindowDrawList()->AddRect(box, bottomRight, boundingBoxCharacterColor.to_RGBA_unsigned_32bit_int());
-        } catch(const std::out_of_range& e) {
-            Log::Error_And_Throw("pos ", i, " exceeds string size ", text.size());
-        }
-    }
-
-    // set bounding box to wrapped text bounds
-    bottomRight = ImGui::CalcTextSize(text.c_str());
-    ImGui::GetWindowDrawList()->AddRect(box, bottomRight, boundingBoxColor.to_RGBA_unsigned_32bit_int());
-
     ImGui::Text("%s", text.c_str());
 
     ImGui::PopTextWrapPos();
-
-    ImGui::PopClipRect();
 
     ImGui::End();
 
@@ -161,6 +192,13 @@ void TextView::onDraw() {
 
     ImGui::PopStyleColor();
     ImGui::PopStyleVar();
+}
+
+void TextView::onDraw() {
+    if (font.load() == nullptr || needsFontSet.load()) return;
+    
+    drawBoundings();
+    drawText();
 }
 
 void TextView::computeFontSize(const Rectangle &dimensions, const char * text) {

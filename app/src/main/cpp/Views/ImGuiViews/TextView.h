@@ -8,6 +8,7 @@
 #include "ImGuiView.h"
 
 class TextView : public ImGuiView {
+        
     MultiTouch touchCopy;
 
     ImVec2 cache_displaySize {0, 0};
@@ -62,6 +63,10 @@ private:
     TextResizeMode textResizeMode = TextResizeMode::height;
 
     void computeFontSize(const Rectangle &dimensions, const char * text);
+    
+    void drawBoundings();
+    
+    void drawText();
 
 public:
     void beforeFrame() override;
