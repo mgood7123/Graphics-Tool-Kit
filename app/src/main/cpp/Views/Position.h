@@ -34,17 +34,17 @@ public:
     float y;
 
     constexpr inline
-    Position() : Position(0, 0) {}
+    Position() noexcept : Position(0, 0) {}
 
     constexpr inline
-    Position(const int & value) : Position(value, value) {}
+    Position(const int & value) noexcept : Position(value, value) {}
 
     constexpr inline
-    Position(const float & value) : Position(value, value) {}
+    Position(const float & value) noexcept : Position(value, value) {}
 
 #define POSITION_CONSTRUCTOR(T1, T2) \
 constexpr inline \
-Position(const T1 & x, const T2 & y) : x(x), y(y) {}
+Position(const T1 & x, const T2 & y) noexcept : x(x), y(y) {}
 
     POSITION_CONSTRUCTOR(int, int)
     POSITION_CONSTRUCTOR(float, float)
@@ -359,12 +359,36 @@ Position(const T1 & x, const T2 & y) : x(x), y(y) {}
         return !(*this < rhs);
     }
 
+    inline
     const Position invert() const {
         return {
             -x,
             -y
         };
     }
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wshadow"
+    inline
+    Position withX(const int & x) const {
+        return {x, y};
+    }
+
+    inline
+    Position withX(const float & x) const {
+        return {x, y};
+    }
+
+    inline
+    Position withY(const int & y) const {
+        return {x, y};
+    }
+
+    inline
+    Position withY(const float & y) const {
+        return {x, y};
+    }
+#pragma clang diagnostic pop
 };
 
 #endif //GRAPHICAL_TOOL_KIT_POSITION_H

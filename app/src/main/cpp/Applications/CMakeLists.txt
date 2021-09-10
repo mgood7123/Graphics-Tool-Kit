@@ -11,9 +11,9 @@ project(Applications)
 
 add_library(
         Applications SHARED
-        test1.cpp
-        imgui.cpp
-        cube.cpp
+        GridViewTest.cpp
+        LinearLayoutTest.cpp
+        TextViewTest.cpp
 )
 
 target_link_libraries(

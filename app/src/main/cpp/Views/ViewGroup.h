@@ -7,11 +7,21 @@
 
 #include "View.h"
 
+// Note: Compose UI does not permit multi-pass measurement.
+// This means that a layout element may not measure any of its children more than once
+// in order to try different measurement configurations.
+
+// Single-pass measurement is good for performance,
+// allowing Compose to efficiently handle deep UI trees.
+// If an element measured its child twice and that child measured one of its children twice and so on,
+// a single attempt to lay out a whole UI would have to do a lot of work,
+// making it hard to keep your app performing well.
+
 class ViewGroup : public View {
     // use {} to call constructor
     // using () is reserved for functions
     Kernel children {8};
-    
+
     PipelineManager *pipelineManagerUsed = nullptr;
     bool setDiligentAppBaseCalled = false;
     bool createPipelineCalled = false;
@@ -28,9 +38,12 @@ class ViewGroup : public View {
     // use {} to call constructor
     // using () is reserved for functions
     Kernel tracked_views{2};
-
+    
 public:
+
     bool log_TouchEvents = false;
+    bool log_TouchEnterExit = false;
+    bool log_TouchPointers = false;
 
     static inline ViewGroup * getParent(View * view) {
         return castToViewType<ViewGroup>(view->parent);
@@ -58,10 +71,8 @@ public:
 
     size_t getChildCount() const;
 
-    View * viewAt(size_t index) const;
+    View * getChildAt(size_t index) const;
     AutoResizingArray<View *> getChildren() const;
-
-    virtual void drawRenderTarget(DrawTools &tools, Diligent::IDeviceContext *deviceContext);
 
     virtual void addView(View * view);
     virtual void removeView(View * view);

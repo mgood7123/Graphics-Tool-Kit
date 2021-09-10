@@ -5,7 +5,8 @@
 #ifndef GRAPHICAL_TOOL_KIT_APPLICATIONS_H
 #define GRAPHICAL_TOOL_KIT_APPLICATIONS_H
 
-#include "test1.h"
-#include "imgui.h"
+#include "GridViewTest.h"
+#include "LinearLayoutTest.h"
+#include "TextViewTest.h"
 
 #endif //GRAPHICAL_TOOL_KIT_APPLICATIONS_H

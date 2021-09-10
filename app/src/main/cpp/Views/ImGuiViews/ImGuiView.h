@@ -13,6 +13,12 @@
  */
 class ImGuiView : public View {
     Diligent::ImGuiImplDiligent * m_pImGui = nullptr;
+    
+    RenderTarget rt;
+    static constexpr const char * PIPELINE_KEY = "ImGuiView RT";
+    
+    PipelineManager * resizePipeline;
+    
 public:
     ImGuiContext * imgui_context = nullptr;
     ImGuiIO * imgui_io = nullptr;

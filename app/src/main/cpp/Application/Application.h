@@ -14,8 +14,8 @@ class Application {
 
     PipelineManager pipelineManager;
     PixelToNDC pixelToNDC;
-    int width;
-    int height;
+    float width;
+    float height;
     static constexpr const char *PIPELINE_KEY = "AppInstance RT";
     RenderTarget screen;
     RenderTarget rt;
@@ -37,6 +37,10 @@ public:
     void
     onResize(int w, int h, Diligent::ISwapChain *swapChain, Diligent::IRenderDevice *renderDevice);
 
+    void onMeasure();
+
+    void onLayout();
+    
     void onDraw(Diligent::IDeviceContext *deviceContext);
 
     bool onTouchEvent(MultiTouch &touch);
@@ -69,6 +73,10 @@ public:
 
     ApplicationInstance & operator=(ApplicationInstance &&x) = delete;
 };
+
+// TODO:
+//  generate a function list and function string mapping
+//  then search the list by string for a match and then call the associated function
 
 #define MAKE_APPLICATION_PUBLIC__HEADER(name) \
  \

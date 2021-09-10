@@ -32,6 +32,8 @@ add_library(
         GridView.cpp
         RootView.cpp
         TriangleView.cpp
+        DebugView.cpp
+        LinearLayout.cpp
 )
 
 target_link_libraries(

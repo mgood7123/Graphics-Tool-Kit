@@ -44,27 +44,13 @@ void TextView::beforeFrame() {
             // imgui does not seem to have a MouseUp
         }
     }
+}
 
-    if (once) {
-        if (textResizeMode == height) {
-            // optimization - we know that textSize.y is equal to font size
-            //
-            // this is only true when wrap is less than 0.0f
-            //
-            // avoid unnessisary font loading
+void TextView::onCreate() {
+    setFontSize(fontSize_Load);
+}
 
-            // since we know that the font size is directly equal to display height
-            // then if we are not wrapping text we can directly set the height
-
-            font_size_to_set = imgui_io->DisplaySize.y;
-        } else {
-            font_size_to_set = fontSize_Load;
-        }
-        imgui_context->FontSize = font_size_to_set;
-        cache();
-        once = false;
-    }
-
+void TextView::onMeasure() {
     if (needsFontSet.load()) {
         setFontInternal(font.load());
         needsFontSet.store(false);
@@ -89,19 +75,27 @@ void TextView::beforeFrame() {
     }
 
     if (needsRecalc) {
-        if (textResizeMode == none) {
-            cache();
-        } else {
-            computeFontSize(text.c_str());
-        }
+        cache();
         computed_font_size = imgui_context->FontSize;
     }
+
+    setMeasuredDimensions(MeasureSpec::MATCH_PARENT, 13);
+}
+
+void TextView::onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) {
+    if (textResizeMode == none) {
+        cache();
+    } else {
+        computeFontSize(dimensions, text.c_str());
+    }
+    computed_font_size = imgui_context->FontSize;
+    layoutData = dimensions.withBottomRightY(computed_font_size);
 }
 
 void TextView::onDraw() {
     if (font.load() == nullptr || needsFontSet.load()) return;
 
-    ImGui::SetNextWindowPos({0.0f, 0.0f});
+    ImGui::SetNextWindowPos({0, 0});
     ImGui::SetNextWindowSize(imgui_io->DisplaySize);
 
     ImVec2 box = {1, 0};
@@ -169,7 +163,7 @@ void TextView::onDraw() {
     ImGui::PopStyleVar();
 }
 
-void TextView::computeFontSize(const char * text) {
+void TextView::computeFontSize(const Rectangle &dimensions, const char * text) {
     // it seems that, in ImGui
     // assuming no text wrapping,
     // textSize.y is equal to the font size
@@ -184,19 +178,19 @@ void TextView::computeFontSize(const char * text) {
         // since we know that the font size is directly equal to display height
         // then if we are not wrapping text we can directly set the height
 
-        imgui_context->FontSize = imgui_io->DisplaySize.y;
+        imgui_context->FontSize = dimensions.bottomRight.y;
         cache();
     } else {
         ImVec2 textSize = ImGui::CalcTextSize(text, nullptr, false, -1.0f);
 
         // if we are larger than our text view, incrementally try smaller sizes until we fit
-        while (textSize.y > imgui_io->DisplaySize.y) {
+        while (textSize.y > dimensions.bottomRight.y) {
             imgui_context->FontSize -= 1;
             cache();
             textSize = ImGui::CalcTextSize(text, nullptr, false, -1.0f);
         }
         // if we are smaller than our text view, incrementally try larger sizes until we fit
-        while (textSize.y < imgui_io->DisplaySize.y) {
+        while (textSize.y < dimensions.bottomRight.y) {
             imgui_context->FontSize += 1;
             cache();
             textSize = ImGui::CalcTextSize(text, nullptr, false, -1.0f);

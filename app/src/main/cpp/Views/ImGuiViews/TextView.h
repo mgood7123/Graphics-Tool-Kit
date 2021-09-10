@@ -25,8 +25,7 @@ class TextView : public ImGuiView {
     float computed_font_size = 0;
     
     bool min_loaded = false;
-    bool once = true;
-    
+
     float cache_fontSize_Load = 0;
     float cache_fontSize_Upper = 0;
     float cache_fontSize_Lower = 0;
@@ -62,7 +61,7 @@ private:
     
     TextResizeMode textResizeMode = TextResizeMode::height;
 
-    void computeFontSize(const char * text);
+    void computeFontSize(const Rectangle &dimensions, const char * text);
 
 public:
     void beforeFrame() override;
@@ -92,11 +91,17 @@ public:
 
     void setTextColor(const VertexEngine::Color4 &textColor);
 
+    void onCreate() override;
+
     void onDraw() override;
 
     bool onTouchEvent(MultiTouch &touch) override;
 
     void setFontInternal(ImFont *pFont);
+
+    void onMeasure() override;
+
+    void onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override;
 };
 
 

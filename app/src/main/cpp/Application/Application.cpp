@@ -86,6 +86,26 @@ void Application::onResize(int w, int h, Diligent::ISwapChain * swapChain, Dilig
     }
 }
 
+void Application::onMeasure() {
+    if (contentView != nullptr) {
+        contentView->measure();
+    }
+}
+
+void Application::onLayout() {
+    if (contentView != nullptr) {
+        Position dim = contentView->getMeasuredDimensions();
+
+        float w = View::minmax(dim.x, 100);
+        float h = View::minmax(dim.y, 100);
+
+        DrawTools drawTools(pipelineManager, pixelToNDC);
+        drawTools.pixelToNDC.resize(100, 100);
+        contentView->buildCoordinates({0, 0, w, h}, drawTools, rt);
+        contentView->layout(contentView->getRelativePosition(), drawTools, screen, rt);
+    }
+}
+
 void Application::onDraw(Diligent::IDeviceContext *deviceContext) {
     timeEngine.computeDelta();
 
@@ -95,22 +115,22 @@ void Application::onDraw(Diligent::IDeviceContext *deviceContext) {
 
     if (contentView != nullptr) {
         DrawTools drawTools(pipelineManager, pixelToNDC);
-        Rectangle drawPosition = {0, 0, 100, 100};
-
         contentView->switchToPipeline(pipelineManager);
         contentView->bindShaderResources(pipelineManager);
-
-        drawTools.pixelToNDC.resize(100, 100);
-
-        contentView->buildCoordinates(drawPosition, drawTools, rt);
 
         // clear render target
         rt.bind(deviceContext);
         rt.clearColorAndDepth(RenderTarget::black, 1, deviceContext);
 
+        // children have likely resized the pixel grid, restore it
+        drawTools.pixelToNDC.resize(100, 100);
+
         // draw view to render target, screen is unused
         // each ViewGroup draws its RT to the argument `rt`
         contentView->draw(drawTools, screen, rt);
+
+        // children have likely resized the pixel grid, restore it
+        drawTools.pixelToNDC.resize(100, 100);
 
         // draw render target to screen
         rt.drawToRenderTarget(drawTools, screen, deviceContext);
@@ -134,7 +154,17 @@ void Application::setContentView(View *view) {
         contentView->destroyPipeline(pipelineManager);
     }
     delete contentView;
-    contentView = view;
+    if (view != nullptr) {
+        if (View::isInstanceOf<ViewGroup>(view)) {
+            contentView = view;
+        } else {
+            Log::Info("wrapping View inside of a RootView");
+            // wrap the view inside of view group
+            auto * r = new RootView();
+            r->addView(view);
+            contentView = r;
+        }
+    }
     if (contentView != nullptr) {
         contentView->setDiligentAppBase(diligentAppBase);
     }

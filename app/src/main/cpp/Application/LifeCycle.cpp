@@ -111,6 +111,18 @@ bool LifeCycle::isDestroyed() {
     return LifeCycle::destroyed.load();
 }
 
+void LifeCycle::onMeasure() {
+    if (LifeCycle::application != nullptr) {
+        LifeCycle::application->app->onMeasure();
+    }
+}
+
+void LifeCycle::onLayout() {
+    if (LifeCycle::application != nullptr) {
+        LifeCycle::application->app->onLayout();
+    }
+}
+
 void LifeCycle::onDraw(Diligent::IDeviceContext *deviceContext) {
     if (LifeCycle::application != nullptr) {
         LifeCycle::application->app->onDraw(deviceContext);

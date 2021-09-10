@@ -32,26 +32,59 @@ class Rectangle {
         return str;
     }
 public:
-    enum POSITION_ENUM {
-        MATCH_PARENT = -1
-    };
 
     Position topLeft;
     Position bottomRight;
 
     constexpr inline
-    Rectangle() : Rectangle(0, 0, MATCH_PARENT, MATCH_PARENT) {}
+    Rectangle() noexcept : Rectangle(0, 0, 0, 0) {}
 
     constexpr inline
-    Rectangle(const int & value) : Rectangle(value, value, value, value) {}
+    Rectangle(const int & value) noexcept : Rectangle(value, value, value, value) {}
 
     constexpr inline
-    Rectangle(const float & value) : Rectangle(value, value, value, value) {}
+    Rectangle(const float & value) noexcept : Rectangle(value, value, value, value) {}
+
+    constexpr inline
+    Rectangle(const Position & topLeft, const Position & bottomRight) noexcept :
+            Rectangle(topLeft.x, topLeft.y, bottomRight.x, bottomRight.y) {}
+
+    constexpr inline
+    Rectangle(const int & topLeft_x, const int & topLeft_y, const Position & bottomRight) noexcept :
+    Rectangle(topLeft_x, topLeft_y, bottomRight.x, bottomRight.y) {}
+
+    constexpr inline
+    Rectangle(const float & topLeft_x, const float & topLeft_y, const Position & bottomRight) noexcept :
+            Rectangle(topLeft_x, topLeft_y, bottomRight.x, bottomRight.y) {}
+
+    constexpr inline
+    Rectangle(const float & topLeft_x, const int & topLeft_y, const Position & bottomRight) noexcept :
+            Rectangle(topLeft_x, topLeft_y, bottomRight.x, bottomRight.y) {}
+
+    constexpr inline
+    Rectangle(const int & topLeft_x, const float & topLeft_y, const Position & bottomRight) noexcept :
+            Rectangle(topLeft_x, topLeft_y, bottomRight.x, bottomRight.y) {}
+
+    constexpr inline
+    Rectangle(const Position & topLeft, const int & bottomRight_x, const int & bottomRight_y) noexcept :
+            Rectangle(topLeft.x, topLeft.y, bottomRight_x, bottomRight_y) {}
+
+    constexpr inline
+    Rectangle(const Position & topLeft, const float & bottomRight_x, const float & bottomRight_y) noexcept :
+            Rectangle(topLeft.x, topLeft.y, bottomRight_x, bottomRight_y) {}
+
+    constexpr inline
+    Rectangle(const Position & topLeft, const float & bottomRight_x, const int & bottomRight_y) noexcept :
+            Rectangle(topLeft.x, topLeft.y, bottomRight_x, bottomRight_y) {}
+
+    constexpr inline
+    Rectangle(const Position & topLeft, const int & bottomRight_x, const float & bottomRight_y) noexcept :
+            Rectangle(topLeft.x, topLeft.y, bottomRight_x, bottomRight_y) {}
 
 #define POSITION_CONSTRUCTOR(T1, T2, T3, T4) \
 constexpr inline \
 Rectangle(const T1 & topLeft_x, const T2 & topLeft_y, const T3 & bottomRight_x, \
-         const T4 & bottomRight_y) : \
+         const T4 & bottomRight_y) noexcept : \
             topLeft(topLeft_x, topLeft_y), bottomRight(bottomRight_x, bottomRight_y) {}
 
     POSITION_CONSTRUCTOR(int, int, int, int)
@@ -102,17 +135,12 @@ Rectangle(const T1 & topLeft_x, const T2 & topLeft_y, const T3 & bottomRight_x, 
     }
 
     inline
-    bool isMatchParent() const {
-        return bottomRight.x == MATCH_PARENT || bottomRight.y == MATCH_PARENT;
-    }
-    
-    inline
     Rectangle resizeBy(const Rectangle & value) const {
         return {
             topLeft.x + value.topLeft.x,
             topLeft.y + value.topLeft.y,
-            bottomRight.x - value.bottomRight.x,
-            bottomRight.y - value.bottomRight.y
+            bottomRight.x - value.topLeft.x - value.bottomRight.x,
+            bottomRight.y - value.topLeft.y - value.bottomRight.y
         };
     }
 
@@ -122,8 +150,8 @@ Rectangle(const T1 & topLeft_x, const T2 & topLeft_y, const T3 & bottomRight_x, 
             {
                 padding.topLeft.x,
                 padding.topLeft.y,
-                -padding.bottomRight.x,
-                -padding.bottomRight.y
+                -padding.topLeft.x - -padding.bottomRight.x,
+                -padding.topLeft.y - -padding.bottomRight.y
             }
         );
     }
@@ -507,6 +535,100 @@ Rectangle(const T1 & topLeft_x, const T2 & topLeft_y, const T3 & bottomRight_x, 
             -bottomRight.y
         };
     }
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wshadow"
+    inline
+    Rectangle withTopLeft(const Position & topLeft) const {
+        return {topLeft, bottomRight};
+    }
+
+    inline
+    Rectangle withBottomRight(const Position & bottomRight) const {
+        return {topLeft, bottomRight};
+    }
+#pragma clang diagnostic pop
+
+    inline
+    Rectangle withTopLeft(const int & x, const int & y) const {
+        return {{x, y}, bottomRight};
+    }
+
+    inline
+    Rectangle withTopLeft(const float & x, const int & y) const {
+        return {{x, y}, bottomRight};
+    }
+
+    inline
+    Rectangle withTopLeft(const int & x, const float & y) const {
+        return {{x, y}, bottomRight};
+    }
+
+    inline
+    Rectangle withTopLeft(const float & x, const float & y) const {
+        return {{x, y}, bottomRight};
+    }
+
+    inline
+    Rectangle withBottomRight(const int & x, const int & y) const {
+        return {topLeft, {x, y}};
+    }
+
+    inline
+    Rectangle withBottomRight(const float & x, const int & y) const {
+        return {topLeft, {x, y}};
+    }
+
+    inline
+    Rectangle withBottomRight(const int & x, const float & y) const {
+        return {topLeft, {x, y}};
+    }
+
+    inline
+    Rectangle withBottomRight(const float & x, const float & y) const {
+        return {topLeft, {x, y}};
+    }
+
+    inline
+    Rectangle withTopLeftX(const int & x) const {
+        return withTopLeft(topLeft.withX(x));
+    }
+
+    inline
+    Rectangle withTopLeftX(const float & x) const {
+        return withTopLeft(topLeft.withX(x));
+    }
+
+    inline
+    Rectangle withTopLeftY(const int & y) const {
+        return withTopLeft(topLeft.withY(y));
+    }
+
+    inline
+    Rectangle withTopLeftY(const float & y) const {
+        return withTopLeft(topLeft.withY(y));
+    }
+
+    inline
+    Rectangle withBottomRightX(const int & x) const {
+        return withBottomRight(bottomRight.withX(x));
+    }
+
+    inline
+    Rectangle withBottomRightX(const float & x) const {
+        return withBottomRight(bottomRight.withX(x));
+    }
+
+    inline
+    Rectangle withBottomRightY(const int & y) const {
+        return withBottomRight(bottomRight.withY(y));
+    }
+
+    inline
+    Rectangle withBottomRightY(const float & y) const {
+        return withBottomRight(bottomRight.withY(y));
+    }
+
 };
 
 #endif //GRAPHICAL_TOOL_KIT_RECTANGLE_H

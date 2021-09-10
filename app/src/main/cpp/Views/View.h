@@ -27,7 +27,11 @@ class View {
     Rectangle relativePosition;
     Rectangle relativePositionPadding;
     Rectangle absolutePosition;
-    
+
+    static Position INVALID_MEASUREMENT_DIMENSION;
+    Position measuredDimension;
+
+private:
 
     /**
      * this is meant to be called before `buildAbsoluteCoordinatesFromRelativeCoordinates`, please use `buildCoordinates` instead
@@ -47,8 +51,21 @@ class View {
      * this is meant to be called after `buildRelativeCoordinatesFromVirtualCoordinates`, please use `buildCoordinates` instead
      */
     void buildAbsoluteCoordinatesFromRelativeCoordinates();
+    
+    Rectangle cache_layoutData;
+    
 
 public:
+    class MeasureSpec {
+    public:
+        enum Mode {
+            MATCH_PARENT = -1,
+            WRAP_CONTENT = -2,
+            INVALID = -3
+        };
+    };
+    Rectangle layoutData;
+
     bool printLogging = false;
 
     View * parent = nullptr;
@@ -59,10 +76,17 @@ public:
     static const Rectangle NO_PADDING;
     static const Rectangle NO_MARGIN;
 
+    Position maximumSize {MeasureSpec::MATCH_PARENT, MeasureSpec::MATCH_PARENT};
+
     Rectangle position = ZERO_POSITION;
     Rectangle cropping = NO_CROPPING;
     Rectangle padding = NO_PADDING;
     Rectangle margin = NO_MARGIN;
+
+    template <typename T>
+    inline T * castToViewType() {
+        return dynamic_cast<T*>(this);
+    }
 
     template <typename T>
     static inline T * castToViewType(View & view) {
@@ -72,6 +96,11 @@ public:
     template <typename T>
     static inline T * castToViewType(View * view) {
         return dynamic_cast<T*>(view);
+    }
+
+    template <typename T>
+    inline bool isInstanceOf() {
+        return castToViewType<T>(this) != nullptr;
     }
 
     template <typename T>
@@ -87,15 +116,15 @@ public:
     inline
     Rectangle replace_MATCH_PARENT_with(const Rectangle & input, const int & width, const int & height) {
         Rectangle output = input;
-        replaceIfMatches<float, int>(output.bottomRight.x, Rectangle::MATCH_PARENT, width);
-        replaceIfMatches<float, int>(output.bottomRight.y, Rectangle::MATCH_PARENT, height);
+        replaceIfMatches<float, int>(output.bottomRight.x, MeasureSpec::MATCH_PARENT, width);
+        replaceIfMatches<float, int>(output.bottomRight.y, MeasureSpec::MATCH_PARENT, height);
         return output;
     }
 
     void setTag(const char * name);
     const char * getTag();
 
-    virtual void setDiligentAppBase(DiligentAppBase * diligentAppBase);
+    virtual void setDiligentAppBase(DiligentAppBase * pDiligentAppBase);
     DiligentAppBase & getDiligentAppBase();
 
     Rectangle getAbsolutePosition();
@@ -116,12 +145,29 @@ public:
             const MultiTouch::TouchData & touch, float newWidth, float newHeight
     );
 
+    /**
+     * if value is MATCH_PARENT, return max
+     * else if value is greater than max, return max
+     * else return value
+     */
+    static constexpr inline float minmax(float value, float max) {
+        return value == MeasureSpec::MATCH_PARENT ? max : value > max ? max : value;
+    }
+
     virtual void createPipeline(PipelineManager & pipelineManager);
     virtual void switchToPipeline(PipelineManager & pipelineManager);
     virtual void bindShaderResources(PipelineManager & pipelineManager);
     virtual void destroyPipeline(PipelineManager & pipelineManager);
     virtual void create();
     virtual void resize(PipelineManager & pipelineManager);
+    void measure();
+    virtual void onMeasure();
+    void setMeasuredDimensions(float width, float height);
+    Position getMeasuredDimensions();
+    float getMeasuredWidth();
+    float getMeasuredHeight();
+    void layout(const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget);
+    virtual void onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget);
     virtual void draw(DrawTools & drawTools, RenderTarget &screenRenderTarget, RenderTarget & renderTarget);
     virtual bool onTouchEvent(MultiTouch &touch);
     virtual void destroy();
@@ -134,6 +180,8 @@ public:
 
     static double degreesToRadians(double y);
 };
+
+#define ALLOCATE_VIEW(name, type) type * name = new type(); name->setTag(#name)
 
 #endif //GRAPHICAL_TOOL_KIT_VIEW_H
 

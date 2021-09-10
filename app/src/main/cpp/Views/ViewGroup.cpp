@@ -67,19 +67,18 @@ void ViewGroup::create() {
 // and is then responsible for splitting them up and only
 // dispatching the relevant pointer to each view.
 bool ViewGroup::onTouchEvent(MultiTouch &touch) {
-    if (log_TouchEvents) {
+    if (log_TouchEnterExit) {
         Log::Info(getTag(), ": ", "onTouchEvent enter");
     }
     bool handled = false;
 
     Rectangle absolutePosition;
-    if (parent == nullptr) absolutePosition = getAbsolutePosition();
 
     bool hasCancellation = false;
 
     auto split = getChildren();
     for (View *view : split) {
-        if (parent != nullptr) absolutePosition = view->getAbsolutePosition();
+        absolutePosition = view->getAbsolutePosition();
         auto it = touch.getIterator();
         while (it.hasNext()) {
             MultiTouch::TouchData *touchData = it.next();
@@ -95,14 +94,14 @@ bool ViewGroup::onTouchEvent(MultiTouch &touch) {
                             if (touchData->y < absolutePosition.bottomRight.y) {
                                 if (tracked_views.objectCount() == 0) {
                                     if (log_TouchEvents) {
-                                        Log::Info(getTag(), ": ", "tracking view");
+                                        Log::Info(getTag(), ": ", "tracking view at ", absolutePosition.toString());
                                     }
                                     // obtain a reference, do not obtain a copy
                                     MultiTouch &x = tracked_views.newObject(ObjectTypeNone,
                                                                             ObjectFlagAutoDeallocateResource,
                                                                             new TrackingData(view,
                                                                                              {}))->resource.get<TrackingData *>()->second;
-                                    if (log_TouchEvents) {
+                                    if (log_TouchPointers) {
                                         x.debug = true;
                                     }
                                     x.setMaxSupportedTouches(touch.getMaxSupportedTouches());
@@ -152,7 +151,7 @@ bool ViewGroup::onTouchEvent(MultiTouch &touch) {
                                     }
                                     if (!found) {
                                         if (log_TouchEvents) {
-                                            Log::Info(getTag(), ": ", "tracking view");
+                                            Log::Info(getTag(), ": ", "tracking view at ", absolutePosition.toString());
                                         }
                                         // obtain a reference, do not obtain a copy
                                         MultiTouch &x = tracked_views.newObject(ObjectTypeNone,
@@ -160,7 +159,7 @@ bool ViewGroup::onTouchEvent(MultiTouch &touch) {
                                                                                 new TrackingData(
                                                                                         view,
                                                                                         {}))->resource.get<TrackingData *>()->second;
-                                        if (log_TouchEvents) {
+                                        if (log_TouchPointers) {
                                             x.debug = true;
                                         }
                                         x.setMaxSupportedTouches(touch.getMaxSupportedTouches());
@@ -259,7 +258,7 @@ bool ViewGroup::onTouchEvent(MultiTouch &touch) {
         // if the last touch has gone up, untrack the view
         if (lastUp) {
             if (log_TouchEvents) {
-                Log::Info(getTag(), ": ", "untracking view");
+                Log::Info(getTag(), ": ", "untracking view at ", td->first->getAbsolutePosition().toString());
             }
             if (!td->first->focus) {
                 Log::Error_And_Throw(getTag(), ": ",
@@ -272,7 +271,7 @@ bool ViewGroup::onTouchEvent(MultiTouch &touch) {
             tracked_views.deleteObject(td);
         }
     }
-    if (log_TouchEvents) {
+    if (log_TouchEnterExit) {
         Log::Info(getTag(), ": ", "onTouchEvent exit");
     }
     return handled;
@@ -315,12 +314,16 @@ size_t ViewGroup::getChildCount() const {
     return children.objectCount();
 }
 
-View * ViewGroup::viewAt(size_t index) const {
+View * ViewGroup::getChildAt(size_t index) const {
+    // TODO: optimize
     size_t count = 0;
     auto it = children.table->getIterator();
     while (it.hasNext()) {
         Object * obj = it.next();
-        if (count != index) continue;
+        if (count != index) {
+            count++;
+            continue;
+        }
         return obj->resource.get<View*>();
     }
     return nullptr;
@@ -333,9 +336,6 @@ AutoResizingArray<View *> ViewGroup::getChildren() const {
     auto it = children.table->getIterator();
     while (it.hasNext()) array.add(it.next()->resource.get<View*>());
     return array;
-}
-
-void ViewGroup::drawRenderTarget(DrawTools &tools, Diligent::IDeviceContext *deviceContext) {
 }
 
 void ViewGroup::addView(View * view) {

@@ -17,10 +17,7 @@ void ImGuiView::create() {
 }
 
 void ImGuiView::resize(PipelineManager &pipelineManager) {
-    imgui_io->DisplaySize = {
-            static_cast<float>(getDiligentAppBase().swapChainWidth),
-            static_cast<float>(getDiligentAppBase().swapChainHeight)
-    };
+    resizePipeline = &pipelineManager;
 }
 
 void ImGuiView::generateFontTextures() {
@@ -31,23 +28,42 @@ void
 ImGuiView::draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) {
 
     auto & app = getDiligentAppBase();
+    
+    if (layoutData.bottomRight.x == 0 || layoutData.bottomRight.y == 0) {
+        return;
+    }
 
-    renderTarget.bind(app.m_pImmediateContext);
-    renderTarget.clearColorAndDepth(
-            RenderTarget::black, 1.0f, app.m_pImmediateContext
-    );
-
+    imgui_io->DisplaySize = {
+        layoutData.bottomRight.x,
+        layoutData.bottomRight.y
+    };
+    
     beforeFrame();
 
     m_pImGui->NewFrame(
-            app.swapChainWidth,
-            app.swapChainHeight,
-            app.m_pSwapChain->GetDesc().PreTransform
+        layoutData.bottomRight.x,
+        layoutData.bottomRight.y,
+        app.m_pSwapChain->GetDesc().PreTransform
     );
 
     onDraw();
 
+    rt.resize(*resizePipeline, layoutData.bottomRight.x, layoutData.bottomRight.y, app.m_pSwapChain, app.m_pDevice);
+    rt.bind(app.m_pImmediateContext);
+    rt.clearColorAndDepth(
+        RenderTarget::black, 1.0f, app.m_pImmediateContext
+    );
+    
     m_pImGui->Render(app.m_pImmediateContext);
+
+    renderTarget.bind(app.m_pImmediateContext);
+    renderTarget.clearColorAndDepth(
+        RenderTarget::black, 1.0f, app.m_pImmediateContext
+    );
+
+    drawTools.pixelToNDC.resize(renderTarget.getWidth(), renderTarget.getHeight());
+    renderTarget.clipAbsolutePosition({0, 0, renderTarget.getWidth(), renderTarget.getHeight()}, app.m_pImmediateContext);
+    rt.drawAbsolutePosition(drawTools, {0, 0, renderTarget.getWidth(), renderTarget.getHeight()}, app.m_pImmediateContext);
 }
 
 void ImGuiView::destroy() {
@@ -83,7 +99,8 @@ void ImGuiView::onDestroy() {
 }
 
 void ImGuiView::createPipeline(PipelineManager &pipelineManager) {
-
+    auto & app = getDiligentAppBase();
+    rt.create(PIPELINE_KEY, pipelineManager, app.m_pSwapChain, app.m_pDevice);
 }
 
 void ImGuiView::switchToPipeline(PipelineManager &pipelineManager) {
@@ -95,5 +112,5 @@ void ImGuiView::bindShaderResources(PipelineManager &pipelineManager) {
 }
 
 void ImGuiView::destroyPipeline(PipelineManager &pipelineManager) {
-
+    rt.destroy(pipelineManager);
 }

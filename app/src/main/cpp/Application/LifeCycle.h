@@ -39,6 +39,10 @@ public:
 
     bool isDestroyed();
 
+    void onMeasure();
+
+    void onLayout();
+
     void onDraw(Diligent::IDeviceContext *deviceContext);
 
     bool onTouchEvent(MultiTouch &touch);

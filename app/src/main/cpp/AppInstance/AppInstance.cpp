@@ -5,7 +5,13 @@
 #include "AppInstance.h"
 
 AppInstance::AppInstance() {
-    loadApplication(new imgui());
+//    loadApplication(new TriangleView());
+    loadApplication(new TextViewTest());
+//    loadApplication(new GridViewTest());
+//    loadApplication(new LinearLayoutTest());
+//    DebugView * debugView = new DebugView();
+//    debugView->addView(new CubeView());
+//    loadApplication(new Application(debugView));
 }
 
 AppInstance::~AppInstance ()
@@ -61,6 +67,8 @@ void AppInstance::onDraw ()
         // don't swapping buffers if application is in destroyed state
         return;
     }
+    life.onMeasure();
+    life.onLayout();
     life.onDraw(m_pImmediateContext);
     swapBuffers();
 }
