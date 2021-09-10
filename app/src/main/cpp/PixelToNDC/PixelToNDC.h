@@ -11,11 +11,11 @@
 class PixelToNDC {
 public:
     bool LOG_PRINT_CONVERSIONS = false;
-    int width;
-    int height;
+    float width;
+    float height;
     PixelToNDC() = default;
-    PixelToNDC(int width, int height);
-    void resize(int width, int height);
+    PixelToNDC(float width, float height);
+    void resize(float width, float height);
 
     template<typename TYPE> float inverse(TYPE num) {
         return num < 0 ? -num : -(num);

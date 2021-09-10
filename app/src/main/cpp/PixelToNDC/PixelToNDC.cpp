@@ -4,11 +4,11 @@
 
 #include "PixelToNDC.h"
 
-PixelToNDC::PixelToNDC(int width, int height) {
+PixelToNDC::PixelToNDC(float width, float height) {
     resize(width, height);
 }
 
-void PixelToNDC::resize(int width, int height) {
+void PixelToNDC::resize(float width, float height) {
     this->width = width;
     this->height = height;
 }
