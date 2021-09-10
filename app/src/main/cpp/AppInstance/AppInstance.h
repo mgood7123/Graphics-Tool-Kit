@@ -22,6 +22,7 @@ public:
     void loadApplication(const char * name, ApplicationLoader::ApplicationInstancer * appInstancer);
     void loadApplication(ApplicationInstance * appInstance);
     void loadApplication(Application * app);
+    void loadApplication(View *view);
 
     void unloadApplication();
 

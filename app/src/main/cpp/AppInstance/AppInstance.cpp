@@ -31,6 +31,11 @@ void AppInstance::loadApplication(Application *app) {
     life.create();
 }
 
+void AppInstance::loadApplication(View *view) {
+    loadApplication(new Application(view));
+}
+
+
 void AppInstance::unloadApplication() {
     life.deleteApplication();
 }
