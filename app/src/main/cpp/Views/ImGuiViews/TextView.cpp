@@ -89,7 +89,6 @@ void TextView::onLayout(bool changed, const Rectangle &dimensions, DrawTools &dr
         computeFontSize(dimensions, text.c_str());
     }
     computed_font_size = imgui_context->FontSize;
-    layoutData = dimensions.withBottomRightY(computed_font_size);
 }
 
 void TextView::drawBoundings() {
@@ -153,7 +152,7 @@ void TextView::drawText() {
     ImGui::SetNextWindowPos({0, 0});
     ImGui::SetNextWindowSize(imgui_io->DisplaySize);
 
-    box = {1, 0};
+    ImVec2 box = {1, 0};
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, box);
     ImGui::PushStyleColor(ImGuiCol_Text, textColor.to_RGBA_unsigned_32bit_int());
 
