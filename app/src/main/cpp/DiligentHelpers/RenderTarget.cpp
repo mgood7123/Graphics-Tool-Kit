@@ -342,7 +342,33 @@ void RenderTarget::resize(PipelineManager & pipelineManager, Diligent::ISwapChai
             k.first->getVariableFromPixelShader("g_Texture")->Set(color_res);
         }
     }
- }
+}
+
+void RenderTarget::resize(PipelineManager & pipelineManager, int width, int height, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice) {
+    this->width = width;
+    this->height = height;
+    
+    if (!depthTV_wrapped) {
+        depth_texture.Attach(createDepthTexture(width, height, swapChain, renderDevice));
+        depthTV = depth_texture->GetDefaultView(Diligent::TEXTURE_VIEW_DEPTH_STENCIL);
+    }
+    
+    if (!colorTV_wrapped) {
+        color_texture.Attach(createColorTexture(width, height, swapChain, renderDevice));
+        colorTV = color_texture->GetDefaultView(Diligent::TEXTURE_VIEW_RENDER_TARGET);
+    
+        auto k = pipelineManager.findPipeline(this, PIPELINE_KEY);
+        if (k.first != nullptr) {
+            // We need to release and create a new SRB that references new off-screen render target SRV
+            k.first->getBinding().Release();
+            k.first->createShaderBinding(true);
+
+            // Set render target color texture SRV in the SRB
+            color_res = color_texture->GetDefaultView(Diligent::TEXTURE_VIEW_SHADER_RESOURCE);
+            k.first->getVariableFromPixelShader("g_Texture")->Set(color_res);
+        }
+    }
+}
 
 void RenderTarget::wrap(Diligent::ITextureView * color, Diligent::ITextureView * depth) {
     colorTV_wrapped = color != nullptr;

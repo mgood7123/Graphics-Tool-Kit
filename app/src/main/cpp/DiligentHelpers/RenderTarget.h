@@ -69,6 +69,7 @@ public:
     static Diligent::ITexture * createColorTexture(Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice);
     static Diligent::ITexture * createDepthTexture(Diligent::Uint32 width, Diligent::Uint32 height, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice);
     static Diligent::ITexture * createDepthTexture(Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice);
+    void resize(PipelineManager & pipelineManager, int width, int height, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice);
     void resize(PipelineManager & pipelineManager, Diligent::ISwapChain * swapChain, Diligent::IRenderDevice * renderDevice);
     void wrap(Diligent::ITextureView * color, Diligent::ITextureView * depth);
     void bind(Diligent::IDeviceContext * deviceContext) const;
