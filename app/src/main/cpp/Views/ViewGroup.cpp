@@ -71,6 +71,10 @@ bool ViewGroup::onTouchEvent(MultiTouch &touch) {
         Log::Info(getTag(), ": ", "onTouchEvent enter");
     }
     bool handled = false;
+    auto * t_ = &touch.getTouchAt(touch.getTouchIndex());
+    if (log_TouchPosition) {
+        Log::Info(getTag(), ": ", "touch position ", Position(t_->x, t_->y));
+    }
 
     Rectangle absolutePosition;
 

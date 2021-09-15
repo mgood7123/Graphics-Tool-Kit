@@ -44,6 +44,7 @@ public:
     bool log_TouchEvents = false;
     bool log_TouchEnterExit = false;
     bool log_TouchPointers = false;
+    bool log_TouchPosition = false;
 
     static inline ViewGroup * getParent(View * view) {
         return castToViewType<ViewGroup>(view->parent);
