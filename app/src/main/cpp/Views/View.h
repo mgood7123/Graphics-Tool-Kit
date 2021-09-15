@@ -194,12 +194,12 @@ public:
     Rectangle getRelativePositionPadding();
 
     /**
-     * @param drawPosition the draw position within the virtual canvas
+     * @param virtualViewport the draw position within the virtual canvas
      * @param drawTools the virtual canvas
      * @param renderTarget the render target to obtain info from if the input childInfo has no parent
      */
     void buildCoordinates(
-            const Rectangle & drawPosition,
+            const Rectangle & virtualViewport,
             const DrawTools & drawTools,
             const RenderTarget & renderTarget
     );

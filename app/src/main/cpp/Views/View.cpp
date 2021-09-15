@@ -148,10 +148,10 @@ void View::buildAbsoluteCoordinatesFromRelativeCoordinates() {
     }
 }
 
-void View::buildCoordinates(const Rectangle &drawPosition,
+void View::buildCoordinates(const Rectangle &virtualViewport,
                                  const DrawTools &drawTools,
                                  const RenderTarget &renderTarget) {
-    buildRelativeCoordinatesFromVirtualCoordinates(drawPosition, drawTools, renderTarget);
+    buildRelativeCoordinatesFromVirtualCoordinates(virtualViewport, drawTools, renderTarget);
     buildAbsoluteCoordinatesFromRelativeCoordinates();
 }
 
