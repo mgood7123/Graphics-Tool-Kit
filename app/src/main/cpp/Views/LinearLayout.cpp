@@ -37,31 +37,30 @@ void LinearLayout::onResize(PipelineManager &pipelineManager) {
 }
 
 void LinearLayout::onMeasure() {
+    auto array = getChildren();
+    for (View *view : array) view->measure();
+    setMeasuredDimensions(100, 100);
+}
+
+void LinearLayout::onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) {
     // for a linear layout, we divide the size by the children count
 
-    float count = getChildCount();
+    auto canvasSize = getVirtualCanvasSize();
+    Position section = canvasSize / (float) getChildCount();
 
-    float view_full_width = 600;
-    float view_full_height = 600;
-
-    float view_width = view_full_width;
-    float view_height = view_full_height;
-
-    if (orientation == Vertical) {
-        view_height /= count;
-    } else {
-        view_width /= count;
-    }
-
-    Rectangle drawPosition = {0, 0, view_width, view_height};
-
-    for (size_t i = 0; i < count; i++) {
-//        measurementData.add(drawPosition);
-        if (orientation == Vertical) {
-            drawPosition.topLeft.y += view_height;
+    auto array = getChildren();
+    size_t count = 0;
+    for (View *view : array) {
+        Rectangle drawPosition;
+        if (orientation == Horizontal) {
+            drawPosition = {section.x * count, 0, section.x * (count + 1), canvasSize.y};
         } else {
-            drawPosition.topLeft.x += view_width;
+            drawPosition = {0, section.y * count, canvasSize.x, section.y * (count + 1)};
         }
+        drawTools.pixelToNDC.resize(canvasSize.x, canvasSize.y);
+        view->buildCoordinates(drawPosition, drawTools, renderTarget);
+        view->layout(view->getRelativePosition(), drawTools, screenRenderTarget, renderTarget);
+        count++;
     }
 }
 
@@ -71,13 +70,10 @@ void LinearLayout::draw(DrawTools & drawTools, RenderTarget & screenRenderTarget
     rt.bind(app.m_pImmediateContext);
     rt.clearColorAndDepth(RenderTarget::black, 1.0f, app.m_pImmediateContext);
 
-    float view_full_width = 600;
-    float view_full_height = 600;
+    auto canvasSize = getVirtualCanvasSize();
 
-    float count = getChildCount();
-
-    for (size_t i = 0; i < count; i++) {
-        View * view = getChildAt(i);
+    auto array = getChildren();
+    for (View *view : array) {
         // if obj == this
         //     draw render target to temporary render target
         //     and then draw temporary render target to render target
@@ -86,32 +82,30 @@ void LinearLayout::draw(DrawTools & drawTools, RenderTarget & screenRenderTarget
         // otherwise
         //     draw the object to rt and then draw rt to render target
 
-        if (view != this) {
-            // draw object to render target `rt`
-            rt2.bind(app.m_pImmediateContext);
-            rt2.clearColorAndDepth(RenderTarget::black, 1.0f, app.m_pImmediateContext);
-            view->switchToPipeline(drawTools.pipelineManager);
-            view->bindShaderResources(drawTools.pipelineManager);
-            // resize the grid to full before building coordinates
-            drawTools.pixelToNDC.resize(view_full_width, view_full_height);
-//            view->buildCoordinates(measurementData[i], drawTools, renderTarget);
-            view->draw(drawTools, screenRenderTarget, rt2);
-        }
-
+        // draw object to render target `rt`
+        rt2.bind(app.m_pImmediateContext);
+        rt2.clearColorAndDepth(RenderTarget::black, 1.0f, app.m_pImmediateContext);
+        view->switchToPipeline(drawTools.pipelineManager);
+        view->bindShaderResources(drawTools.pipelineManager);
         // children have likely resized the pixel grid, restore it
-        drawTools.pixelToNDC.resize(view_full_width, view_full_height);
-        
-        if (view == this) {
-            rt2.bind(app.m_pImmediateContext);
-            rt2.clearColorAndDepth(RenderTarget::black, 1.0f, app.m_pImmediateContext);
-//            renderTarget.drawAbsolutePosition(drawTools, measurementData[i], app.m_pImmediateContext);
-        }
+        drawTools.pixelToNDC.resize(canvasSize.x, canvasSize.y);
+        view->draw(drawTools, screenRenderTarget, rt2);
 
         rt.bind(app.m_pImmediateContext);
-        rt2.drawAbsolutePositionAndClipToBoundaries(
-            drawTools, view->getAbsolutePosition(), app.m_pImmediateContext
-        );
+
+        Position drawDimensions = view->getDrawDimensions();
+        Rectangle drawPosition = view->getDrawPosition();
+
+        if (printLogging) {
+            Log::Info("TAG: ", getTag(), " -> ", view->getTag(), ", resizing pixel grid to             : ", drawDimensions);
+        }
+        drawTools.pixelToNDC.resize(drawDimensions.x, drawDimensions.y);
+        rt2.clip(app.m_pImmediateContext);
+        if (printLogging) {
+            Log::Info("TAG: ", getTag(), " -> ", view->getTag(), ", drawing absolute position          : ", drawPosition);
+        }
+        rt2.drawAbsolutePosition(drawTools, drawPosition, app.m_pImmediateContext);
     }
-    
+
     rt.drawToRenderTarget(drawTools, renderTarget, app.m_pImmediateContext);
 }

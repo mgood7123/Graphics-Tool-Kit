@@ -28,6 +28,7 @@ public:
     void draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override;
 
     virtual void onMeasure() override;
+    virtual void onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override;
 };
 
 #endif //GRAPHICAL_TOOL_KIT_LINEARLAYOUT_H
