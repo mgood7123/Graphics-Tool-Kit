@@ -133,10 +133,20 @@ Rectangle(const T1 & topLeft_x, const T2 & topLeft_y, const T3 & bottomRight_x, 
         return topLeft.x != bottomRight.x && topLeft.x != bottomRight.y
             && topLeft.x <= bottomRight.x && topLeft.y <= bottomRight.y;
     }
+    
+    inline Position size() const {
+        return {bottomRight - topLeft};
+    }
 
     inline
     Rectangle resizeBy(const Rectangle & value) const {
         return {
+            // if this = 10, 10, 20, 20
+            // resize value = 0, 0, 5, 5, result = 10, 10, 15, 15
+            // resize value = 0, 0, -5, -5, result = 10, 10, 25, 25
+            // resize value = 5, 5, 0, 0, result = 15, 15, 20, 20
+            // resize value = 5, 5, 5, 5, result = 15, 15, 15, 15
+            // resize value = 5, 5, -5, -5, result = 15, 15, 25, 25
             topLeft.x + value.topLeft.x,
             topLeft.y + value.topLeft.y,
             bottomRight.x - value.topLeft.x - value.bottomRight.x,
@@ -284,7 +294,116 @@ Rectangle(const T1 & topLeft_x, const T2 & topLeft_y, const T3 & bottomRight_x, 
     bool operator>=(const Rectangle &rhs) const {
         return rhs == *this || !(rhs < *this);
     }
-    
+
+    inline
+    const Rectangle operator+(const Position &rhs) const {
+        return {
+                topLeft.x + rhs.x,
+                topLeft.y + rhs.y,
+                bottomRight.x + rhs.x,
+                bottomRight.y + rhs.y,
+        };
+    }
+
+    inline
+    const Rectangle operator-(const Position &rhs) const {
+        return {
+                topLeft.x - rhs.x,
+                topLeft.y - rhs.y,
+                bottomRight.x - rhs.x,
+                bottomRight.y - rhs.y,
+        };
+    }
+
+    inline
+    const Rectangle operator*(const Position &rhs) const {
+        return {
+                topLeft.x * rhs.x,
+                topLeft.y * rhs.y,
+                bottomRight.x * rhs.x,
+                bottomRight.y * rhs.y,
+        };
+    }
+
+    inline
+    const Rectangle operator/(const Position &rhs) const {
+        return {
+                topLeft.x / rhs.x,
+                topLeft.y / rhs.y,
+                bottomRight.x / rhs.x,
+                bottomRight.y / rhs.y,
+        };
+    }
+
+    inline
+    Rectangle& operator+=(const Position &rhs) {
+        *this = *this + rhs;
+        return *this;
+    }
+
+    inline
+    Rectangle& operator-=(const Position &rhs) {
+        *this = *this - rhs;
+        return *this;
+    }
+
+    inline
+    Rectangle& operator*=(const Position &rhs) {
+        *this = *this * rhs;
+        return *this;
+    }
+
+    inline
+    Rectangle& operator/=(const Position &rhs) {
+        *this = *this / rhs;
+        return *this;
+    }
+
+    inline
+    bool operator==(const Position &rhs) const {
+        return topLeft.x == rhs.x &&
+               topLeft.y == rhs.y &&
+               bottomRight.x == rhs.x &&
+               bottomRight.y == rhs.y;
+    }
+
+    inline
+    bool operator!=(const Position &rhs) const {
+        return !(rhs == topLeft && rhs == bottomRight);
+    }
+
+    inline
+    bool operator<(const Position &rhs) const {
+        if (topLeft.x < rhs.x)
+            return true;
+        if (rhs.x < topLeft.x)
+            return false;
+        if (topLeft.y < rhs.y)
+            return true;
+        if (rhs.y < topLeft.y)
+            return false;
+        if (bottomRight.x < rhs.x)
+            return true;
+        if (rhs.x < bottomRight.x)
+            return false;
+        return bottomRight.y < rhs.y;
+    }
+
+    inline
+    bool operator>(const Position &rhs) const {
+        return rhs < topLeft && rhs < bottomRight;
+    }
+
+    inline
+    bool operator<=(const Position &rhs) const {
+        return (rhs == topLeft && rhs == bottomRight) || (rhs < topLeft && rhs < bottomRight);
+    }
+
+    inline
+    bool operator>=(const Position &rhs) const {
+        return (rhs == topLeft && rhs == bottomRight) || !(rhs < topLeft && rhs < bottomRight);
+    }
+
     inline
     const Rectangle operator+(const int &rhs) const {
         return {
