@@ -382,6 +382,12 @@ void RenderTarget::bind(Diligent::IDeviceContext * deviceContext) const {
 }
 
 void RenderTarget::bind(Diligent::ITextureView * color, Diligent::ITextureView * depth, Diligent::IDeviceContext * deviceContext) {
+    if (color == nullptr) {
+        Log::Error_And_Throw("Render Target color is nullptr");
+    }
+    if (depth == nullptr) {
+        Log::Error_And_Throw("Render Target depth is nullptr");
+    }
     deviceContext->SetRenderTargets(1, &color, depth, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
 }
 
@@ -433,6 +439,10 @@ void RenderTarget::clearColorAndDepth(const VertexEngine::Color4 & color, float 
     clearColorAndDepth(colorArray.data(), depth, colorTV, depthTV, deviceContext);
 }
 
+void RenderTarget::clip(Diligent::IDeviceContext * deviceContext) {
+    clipAbsolutePosition(0, 0, width, height, deviceContext);
+}
+
 void RenderTarget::clipAbsolutePosition(const Rectangle & position, Diligent::IDeviceContext * deviceContext) {
     clipAbsolutePosition(position.topLeft.x, position.topLeft.y, position.bottomRight.x, position.bottomRight.y, deviceContext);
 }
@@ -455,7 +465,7 @@ void RenderTarget::drawAbsolutePosition(
 }
 
 void RenderTarget::drawAbsolutePosition(
-        DrawTools & drawTools, const int & x, const int & y, const int & w, const int & h, Diligent::IDeviceContext * deviceContext
+        DrawTools & drawTools, const float & x, const float & y, const float & w, const float & h, Diligent::IDeviceContext * deviceContext
 ) {
     drawTools.pipelineManager.switchToPipeline(this, PIPELINE_KEY, deviceContext);
     drawTools.pipelineManager.commitShaderResourceBinding(
@@ -468,11 +478,10 @@ void RenderTarget::drawAbsolutePosition(
     deviceContext->SetVertexBuffers(0, 1, pBuffs_, &offset_, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION, Diligent::SET_VERTEX_BUFFERS_FLAG_RESET);
     deviceContext->SetIndexBuffer(indexBuffer, 0, Diligent::RESOURCE_STATE_TRANSITION_MODE_TRANSITION);
 
-    drawTools.pixelToNDC.resize(width, height);
-    auto a = drawTools.pixelToNDC.toNDC<int, float>(x, h, 0);
-    auto b = drawTools.pixelToNDC.toNDC<int, float>(x, y, 0);
-    auto c = drawTools.pixelToNDC.toNDC<int, float>(w, h, 0);
-    auto d = drawTools.pixelToNDC.toNDC<int, float>(w, y, 0);
+    auto a = drawTools.pixelToNDC.toNDC<float, float>(x, h, 0, false);
+    auto b = drawTools.pixelToNDC.toNDC<float, float>(x, y, 0, false);
+    auto c = drawTools.pixelToNDC.toNDC<float, float>(w, h, 0, false);
+    auto d = drawTools.pixelToNDC.toNDC<float, float>(w, y, 0, false);
 
     float pos[] {
             a.x, a.y, a.z, // bottom left
@@ -521,6 +530,7 @@ void RenderTarget::drawToRenderTarget(
                                       Diligent::IDeviceContext *deviceContext
 ) {
     renderTarget.bind(deviceContext);
+    drawTools.pixelToNDC.resize(width, height);
     drawAbsolutePositionAndClipToBoundaries(
                                             drawTools,
                                             {0, 0, width, height},

@@ -84,10 +84,11 @@ public:
     static void clearColorAndDepth(const float * color, float depth, Diligent::ITextureView * colorTV, Diligent::ITextureView * depthTV, Diligent::IDeviceContext * deviceContext);
     void clearColorAndDepth(const VertexEngine::Color4 & color, float depth, Diligent::IDeviceContext * deviceContext);
     static void clearColorAndDepth(const VertexEngine::Color4 & color, float depth, Diligent::ITextureView * colorTV, Diligent::ITextureView * depthTV, Diligent::IDeviceContext * deviceContext);
+    void clip(Diligent::IDeviceContext * deviceContext);
     void clipAbsolutePosition(const Rectangle & position, Diligent::IDeviceContext * deviceContext);
     void clipAbsolutePosition(const float & x, const float & y, const float & w, const float & h, Diligent::IDeviceContext * deviceContext);
     void drawAbsolutePosition(DrawTools & drawTools, const Rectangle & position, Diligent::IDeviceContext * deviceContext);
-    void drawAbsolutePosition(DrawTools & drawTools, const int & x, const int & y, const int & w, const int & h, Diligent::IDeviceContext * deviceContext);
+    void drawAbsolutePosition(DrawTools & drawTools, const float & x, const float & y, const float & w, const float & h, Diligent::IDeviceContext * deviceContext);
     
     void drawAbsolutePositionAndClipToBoundaries(
             DrawTools & drawTools,
