@@ -154,6 +154,26 @@ public:
     Coordinates<TYPETO> toNDC(TYPEFROM x, TYPEFROM y, TYPEFROM z, TYPEFROM w, TYPEFROM h) {
         return toNDC<TYPEFROM, TYPETO>(0, x, y, z, w, h, true);
     }
+
+    template<typename TYPEFROM, typename TYPETO>
+    Coordinates<TYPETO> toNDC(TYPEFROM x, TYPEFROM y, bool clip) {
+        return toNDC<TYPEFROM, TYPETO>(0, x, y, 0, width, height, clip);
+    }
+
+    template<typename TYPEFROM, typename TYPETO>
+    Coordinates<TYPETO> toNDC(TYPEFROM x, TYPEFROM y, TYPEFROM w, TYPEFROM h, bool clip) {
+        return toNDC<TYPEFROM, TYPETO>(0, x, y, 0, w, h, clip);
+    }
+
+    template<typename TYPEFROM, typename TYPETO>
+    Coordinates<TYPETO> toNDC(TYPEFROM x, TYPEFROM y, TYPEFROM z, bool clip) {
+        return toNDC<TYPEFROM, TYPETO>(0, x, y, z, width, height, clip);
+    }
+
+    template<typename TYPEFROM, typename TYPETO>
+    Coordinates<TYPETO> toNDC(TYPEFROM x, TYPEFROM y, TYPEFROM z, TYPEFROM w, TYPEFROM h, bool clip) {
+        return toNDC<TYPEFROM, TYPETO>(0, x, y, z, w, h, clip);
+    }
 };
 
 
