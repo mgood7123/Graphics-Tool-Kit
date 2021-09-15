@@ -5,6 +5,13 @@
 #include <DiligentCore/Graphics/GraphicsTools/interface/MapHelper.hpp>
 #include "CubeView.h"
 
+void CubeView::onMeasure() {
+    setMeasuredDimensions(MeasureSpec::MATCH_PARENT, MeasureSpec::MATCH_PARENT);
+}
+
+void CubeView::onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) {
+}
+
 void CubeView::createPipeline(PipelineManager & pipelineManager) {
     auto & pso = pipelineManager.createPipeline(this, PIPELINE_KEY);
     pso.setType(Diligent::PIPELINE_TYPE_GRAPHICS);

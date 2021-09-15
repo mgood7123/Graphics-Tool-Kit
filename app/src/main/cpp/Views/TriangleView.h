@@ -14,6 +14,9 @@ public:
     static const char * triangle_PS;
     static constexpr const char * PIPELINE_KEY = "TriangleView";
 
+    void onMeasure() override final;
+    void onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override final;
+
     void createPipeline(PipelineManager & pipelineManager) override;
     void switchToPipeline(PipelineManager & pipelineManager) override;
     void bindShaderResources(PipelineManager & pipelineManager) override;

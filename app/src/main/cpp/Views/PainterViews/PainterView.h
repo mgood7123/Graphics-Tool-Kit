@@ -35,6 +35,9 @@ protected:
     Diligent::RefCntAutoPtr<Diligent::IShaderResourceVariable> shaderResourceVariable_Texture;
 
 public:
+    
+    void onMeasure() override final;
+    void onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override final;
 
     void createPipeline(PipelineManager &pipelineManager) override final;
 

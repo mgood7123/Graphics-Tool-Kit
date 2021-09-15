@@ -192,6 +192,13 @@ void PainterView::onDestroy(VertexEngine::TextureManager &textureManager) {
 
 }
 
+void PainterView::onMeasure() {
+    setMeasuredDimensions(MeasureSpec::MATCH_PARENT, MeasureSpec::MATCH_PARENT);
+}
+
+void PainterView::onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) {
+}
+
 void PainterView::createPipeline(PipelineManager &pipelineManager) {
     auto & pso = pipelineManager.createPipeline(this, PIPELINE_KEY);
     pso.setType(Diligent::PIPELINE_TYPE_GRAPHICS);

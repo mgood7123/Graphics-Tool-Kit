@@ -22,6 +22,9 @@ public:
     void bindShaderResources(PipelineManager & pipelineManager) override;
     void destroyPipeline(PipelineManager & pipelineManager) override;
 
+    void onMeasure() override final;
+    void onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override final;
+
     void create() override;
     void resize(PipelineManager & pipelineManager) override;
     bool hasPhysics() override;
