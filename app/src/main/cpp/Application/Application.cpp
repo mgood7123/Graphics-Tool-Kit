@@ -122,18 +122,24 @@ void Application::onDraw(Diligent::IDeviceContext *deviceContext) {
         rt.bind(deviceContext);
         rt.clearColorAndDepth(RenderTarget::black, 1, deviceContext);
 
-        // children have likely resized the pixel grid, restore it
-        drawTools.pixelToNDC.resize(100, 100);
-
         // draw view to render target, screen is unused
         // each ViewGroup draws its RT to the argument `rt`
         contentView->draw(drawTools, screen, rt);
 
-        // children have likely resized the pixel grid, restore it
-        drawTools.pixelToNDC.resize(100, 100);
+        screen.bind(deviceContext);
+        
+        Position drawDimensions = contentView->getDrawDimensions();
+        Rectangle drawPosition = contentView->getDrawPosition();
 
-        // draw render target to screen
-        rt.drawToRenderTarget(drawTools, screen, deviceContext);
+        if (contentView->printLogging) {
+            Log::Info("TAG: ", "APPLICATION -> ", contentView->getTag(), ", resizing pixel grid to             : ", drawDimensions);
+        }
+        drawTools.pixelToNDC.resize(drawDimensions.x, drawDimensions.y);
+        rt.clip(deviceContext);
+        if (contentView->printLogging) {
+            Log::Info("TAG: ", "APPLICATION -> ", contentView->getTag(), ", drawing absolute position          : ", drawPosition);
+        }
+        rt.drawAbsolutePosition(drawTools, drawPosition, deviceContext);
     }
 }
 

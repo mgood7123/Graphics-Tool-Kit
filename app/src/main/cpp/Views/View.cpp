@@ -4,7 +4,8 @@
 
 #include "View.h"
 
-const Rectangle View::ZERO_POSITION = {0, 0, MeasureSpec::MATCH_PARENT, MeasureSpec::MATCH_PARENT};
+const Position View::NO_OFFSET = {0, 0};
+const Position View::NO_SIZE = {MeasureSpec::MATCH_PARENT, MeasureSpec::MATCH_PARENT};
 const Rectangle View::NO_CROPPING = {0, 0, 0, 0};
 const Rectangle View::NO_PADDING = {0, 0, 0, 0};
 const Rectangle View::NO_MARGIN = {0, 0, 0, 0};
@@ -17,90 +18,131 @@ const char * View::getTag() {
     return tag;
 }
 
-void View::buildRelativeCoordinatesFromVirtualCoordinates(const Rectangle &drawPosition,
+void View::setVirtualCanvasSize(const int & width, const int & height) {
+    setVirtualCanvasSize({width, height});
+}
+
+void View::setVirtualCanvasSize(const int & width, const float & height) {
+    setVirtualCanvasSize({width, height});
+}
+
+void View::setVirtualCanvasSize(const float & width, const int & height) {
+    setVirtualCanvasSize({width, height});
+}
+
+void View::setVirtualCanvasSize(const float & width, const float & height) {
+    setVirtualCanvasSize({width, height});
+}
+
+void View::setVirtualCanvasSize(const Position & size) {
+    virtualCanvas = size;
+}
+
+Position View::getVirtualCanvasSize() {
+    return virtualCanvas;
+}
+
+// TODO: maybe implement Jetpack Compose's Modifier stategy
+//  example: Modifier.padding(16).height(10dp); // height 66, content 50, padding 16
+//  example: Modifier.height(50dp).padding(16); // height 50, content 34, padding 16
+//
+// Size 20       (0, 0, 20, 20)
+// Pad 2         (2, 2, 16, 16)
+// MinHeight 20  Invalid
+// available space 14
+//
+// Vs
+//
+// Size 20       (0, 0, 20, 20)
+// MinHeight 20  (0, 0, 20, 20)
+// Pad 2         (2, 2, 16, 16)
+// available space 14
+
+void View::buildRelativeCoordinatesFromVirtualCoordinates(const Rectangle &virtualViewport,
                                                           const DrawTools &drawTools,
                                                           const RenderTarget &renderTarget) {
-    float w = 0;
-    float h = 0;
+    // coordinates are build from virtual canvas
+    //
+    // virtual canvas size is specified by the user
+    //
+    // offset, size, and padding are also specified by the user
+    //
+    // it is the user's responsibility to make sure that
+    //   offset, size, and padding are within acceptable ranges
+    //   in regards to virtual canvas size
+    //
+    // we need to compute two sets of coordinates
+    //   draw coordinates - these consume the entire virtual canvas size
+    //   relative coordinates - these consume the entire view size
 
-    if (parent != nullptr) {
-        absolutePosition = parent->absolutePosition;
-        relativePosition = absolutePosition;
-        relativePosition.bottomRight -= relativePosition.topLeft;
-        relativePosition.topLeft = 0;
+    // calculate drawing coordinates:
+    //   drawing coordinates  --- drawPosition.bottomRight
 
-        w = relativePosition.bottomRight.x;
-        h = relativePosition.bottomRight.y;
-    } else {
-        if (position.bottomRight == MeasureSpec::MATCH_PARENT) {
-            w = renderTarget.getWidth();
-            h = renderTarget.getHeight();
-        } else {
-            w = position.bottomRight.x;
-            h = position.bottomRight.y;
-        }
-
-        relativePosition = {position.topLeft.x, position.topLeft.y, w, h};
-        absolutePosition = relativePosition;
-    }
+    this->drawPosition = 0;
+    drawDimensions = virtualCanvas;
     
-    float drawTools_w = drawTools.pixelToNDC.width;
-    float drawTools_h = drawTools.pixelToNDC.height;
+    // the drawPosition indicates the position and length of our draw
+    //   drawPosition.topLeft = x,y position start
+    //   drawPosition.bottomRight = x,y position end
+    
+    Rectangle virtual_canvas_draw_position = 0;
+    
+    virtual_canvas_draw_position.bottomRight = replace_MATCH_PARENT_with(sizeInVirtualCanvas, drawDimensions);
+    virtual_canvas_draw_position += offsetInVirtualCanvas;
 
-    // transform window by drawTools
+    virtual_canvas_draw_position.topLeft += paddingInVirtualCanvas.topLeft;
+    virtual_canvas_draw_position.bottomRight -= paddingInVirtualCanvas.bottomRight;
 
-    // optimization:
-    //   skip multiplication and division if not needed:
-    //     if value is 0, return 0
-    //     if value is max, return real max
-    //     otherwise compute value
+    Rectangle virtual_canvas_draw_position_percentage = (virtual_canvas_draw_position / drawDimensions);
 
-    float padding_x = padding.topLeft.x == 0 ? 0 : padding.topLeft.x == drawTools_w ? w : roundf((padding.topLeft.x / drawTools_w) * w);
-    float position_x = drawPosition.topLeft.x == 0 ? 0 : drawPosition.topLeft.x == drawTools_w ? w : roundf(((drawPosition.topLeft.x + position.topLeft.x) / drawTools_w) * w);
+    this->drawPosition = virtual_canvas_draw_position_percentage * virtualViewport.size();
+    this->drawPosition += virtualViewport.topLeft;
 
-    float padding_y = padding.topLeft.y == 0 ? 0 : padding.topLeft.y == drawTools_h ? h : roundf((padding.topLeft.y / drawTools_h) * h);
-    float position_y = drawPosition.topLeft.y == 0 ? 0 : drawPosition.topLeft.y == drawTools_w ? h : roundf(((drawPosition.topLeft.y + position.topLeft.y) / drawTools_h) * h);
+    // calculate relative coordinates:
+    //   relative coordinates --- w, h
+    //
 
-    float padding_w = padding.bottomRight.x == 0 ? 0 : padding.bottomRight.x == drawTools_w ? w : roundf((padding.bottomRight.x / drawTools_w) * w);
-    float position_w = drawPosition.bottomRight.x == 0 ? 0 : drawPosition.bottomRight.x == drawTools_w ? w : roundf(((drawPosition.bottomRight.x +
-                                (position.bottomRight.x == MeasureSpec::MATCH_PARENT ? 0
-                                : position.bottomRight.x)) /
-                               drawTools_w) * w);
+    // we already calculated the percentages above, so no need to recalculate
+    
+    // scale the resulting drawing position by the upper level size
+    // this will be the size of the container that holds this view
+    // it may be a parent view, or it may be a GL/Vulkan window
+    //   usually the size of the OS window
+    //   it may also be the size of smaller GL/Vulkan view
+    //     that resides in the UI of the OS window
+    
+    Position topLevelSize;
+    
+    if (parent != nullptr) {
+        topLevelSize = parent->absolutePosition.size();
+    } else {
+        topLevelSize = {renderTarget.getWidth(), renderTarget.getHeight()};
+    }
 
-    float padding_h = padding.bottomRight.y == 0 ? 0 : padding.bottomRight.y == drawTools_h ? h : roundf((padding.bottomRight.y / drawTools_h) * h);
-    float position_h = drawPosition.bottomRight.y == 0 ? 0 : drawPosition.bottomRight.y == drawTools_h ? h : roundf(((drawPosition.bottomRight.y +
-                                (position.bottomRight.y == MeasureSpec::MATCH_PARENT ? 0
-                                : position.bottomRight.y)) /
-                               drawTools_h) * h);
+    Rectangle relative_percentage = this->drawPosition / drawDimensions;
 
-    relativePositionPadding = {padding_x, padding_y, padding_w, padding_h};
-    relativePosition = {
-            position_x,
-            position_y,
-            position_w,
-            position_h
-    };
+    relativePosition = relative_percentage * topLevelSize;
 
     if (printLogging) {
-        Log::Info("TAG: ", getTag(), ", relative position         : ", relativePosition);
-        Log::Info("TAG: ", getTag(), ", relative position padding : ", relativePositionPadding);
+        Log::Info("TAG: ", getTag(), ", virtual viewport                        : ", virtualViewport);
+        Log::Info("TAG: ", getTag(), ", draw dimensions                         : ", drawDimensions);
+        Log::Info("TAG: ", getTag(), ", offset in virtual canvas                : ", offsetInVirtualCanvas);
+        Log::Info("TAG: ", getTag(), ", size in virtual canvas                  : ", sizeInVirtualCanvas);
+        Log::Info("TAG: ", getTag(), ", padding in virtual canvas               : ", paddingInVirtualCanvas);
+        Log::Info("TAG: ", getTag(), ", virtual_canvas_draw_position            : ", virtual_canvas_draw_position);
+        Log::Info("TAG: ", getTag(), ", virtual_canvas_draw_position percentage : ", virtual_canvas_draw_position_percentage);
+        Log::Info("TAG: ", getTag(), ", resulting draw position                 : ", this->drawPosition);
+        Log::Info("TAG: ", getTag(), ", top level size                          : ", topLevelSize);
+        Log::Info("TAG: ", getTag(), ", relative position                       : ", relativePosition);
+        Log::Info("TAG: ", getTag(), ", relative percentage                     : ", relative_percentage);
     }
 }
 
 void View::buildAbsoluteCoordinatesFromRelativeCoordinates() {
-    // lots of help from Akronymus from libera-chat ##programming
-
-    if (parent != nullptr) {
-        absolutePosition.topLeft = parent->absolutePosition.topLeft + relativePosition.topLeft;
-    } else {
-        absolutePosition.topLeft = relativePosition.topLeft;
-    }
-
-    absolutePosition.bottomRight = absolutePosition.topLeft + relativePosition.bottomRight;
-
-    absolutePosition.topLeft += relativePositionPadding.topLeft;
-    absolutePosition.bottomRight -= relativePositionPadding.bottomRight;
-
+    
+    Position parent_TL = parent == nullptr ? 0 : parent->absolutePosition.topLeft;
+    absolutePosition = relativePosition + parent_TL;
+    
     if (printLogging) {
         Log::Info("TAG: ", getTag(), ", absolute position         : ", absolutePosition);
     }
@@ -124,12 +166,24 @@ DiligentAppBase &View::getDiligentAppBase() {
     return *diligentAppBase;
 }
 
+Rectangle View::getDrawPosition() {
+    return drawPosition;
+}
+
+Position View::getDrawDimensions() {
+    return drawDimensions;
+}
+
 Rectangle View::getAbsolutePosition() {
     return absolutePosition;
 }
 
 Rectangle View::getRelativePosition() {
-    return relativePosition.resizeBy(relativePositionPadding);
+    return relativePosition;
+}
+
+Rectangle View::getRelativePositionPadding() {
+    return relativePositionPadding;
 }
 
 void View::createPipeline(PipelineManager & pipelineManager) {}
@@ -215,13 +269,18 @@ double View::degreesToRadians(double y)
 
 MultiTouch::TouchData
 View::transformTouch(const MultiTouch::TouchData &touch, float newWidth, float newHeight) {
-    auto local = Position(touch.x, touch.y) - getAbsolutePosition().topLeft;
-    auto percentage = local / getRelativePosition().bottomRight;
-    auto pos = percentage * Position(newWidth, newHeight);
+    // we need to convert to local in order to account for absolute offset
+    // if mouse location is 50, and absolute start is 50, and absolute end is 100
+    // then percentage will be 0.5 instead of 0
+    Position local = Position(touch.x, touch.y) - absolutePosition.topLeft;
+    
+    // obtain percentage by dividing by relative size, as relative may be offset
+    Position percentage = local / relativePosition.size();
+    Position position = percentage * Position(newWidth, newHeight);
     return {
             touch.identity,
             touch.timestamp,
-            pos.x, pos.y,
+            position.x, position.y,
             touch.size, touch.pressure,
             touch.state, touch.moved
     };

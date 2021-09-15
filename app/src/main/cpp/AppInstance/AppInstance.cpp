@@ -6,8 +6,8 @@
 
 AppInstance::AppInstance() {
 //    loadApplication(new TriangleView());
-    loadApplication(new TextViewTest());
-//    loadApplication(new GridViewTest());
+//    loadApplication(new TextViewTest());
+    loadApplication(new GridViewTest());
 //    loadApplication(new LinearLayoutTest());
 //    DebugView * debugView = new DebugView();
 //    debugView->addView(new CubeView());

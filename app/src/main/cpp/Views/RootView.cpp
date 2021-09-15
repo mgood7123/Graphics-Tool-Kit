@@ -14,18 +14,22 @@ void RootView::onLayout(bool changed, const Rectangle &dimensions, DrawTools &dr
     View * view = getChildAt(0);
     if (view != nullptr) {
         auto dim = view->getMeasuredDimensions();
+        
+        auto canvasSize = getVirtualCanvasSize();
 
-        float view_full_width = 100;
-        float view_full_height = 100;
+        float w = minmax(dim.x, canvasSize.x);
+        float h = minmax(dim.y, canvasSize.y);
 
-        float w = minmax(dim.x, view_full_width);
-        float h = minmax(dim.y, view_full_height);
-
-        drawTools.pixelToNDC.resize(view_full_width, view_full_height);
+        drawTools.pixelToNDC.resize(canvasSize.x, canvasSize.y);
         view->buildCoordinates({0, 0, w, h}, drawTools, renderTarget);
         view->layout(view->getRelativePosition(), drawTools, screenRenderTarget, renderTarget);
-        // TODO: do the coordinates need to be rebuilt after layout?
     }
+}
+
+void RootView::onResize(PipelineManager &pipelineManager) {
+    auto & app = getDiligentAppBase();
+    rt.resize(pipelineManager, app.m_pSwapChain, app.m_pDevice);
+    rt2.resize(pipelineManager, app.m_pSwapChain, app.m_pDevice);
 }
 
 void RootView::draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) {
@@ -36,9 +40,8 @@ void RootView::draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, Rend
     rt.bind(app.m_pImmediateContext);
     rt.clearColorAndDepth({1,0,1,1}, 1.0f, app.m_pImmediateContext);
 
-    float view_full_width = 100;
-    float view_full_height = 100;
-
+    auto canvasSize = getVirtualCanvasSize();
+    
     // we only support a single child
 
     View * view = getChildAt(0);
@@ -46,36 +49,32 @@ void RootView::draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, Rend
     if (view != nullptr) {
         // we draw fill entire contents
 
-        // if obj == this
-        //     draw render target to temporary render target
-        //     and then draw temporary render target to render target
-        //     this avoids artifacts that might occur
-        //     when the render target is drawing to itself
-        // otherwise
-        //     draw the object to rt and then draw rt to render target
-
-        if (view != this) {
-            // draw object to render target `rt`
-            rt2.bind(app.m_pImmediateContext);
-            rt2.clearColorAndDepth(RenderTarget::black, 1.0f, app.m_pImmediateContext);
-            view->switchToPipeline(drawTools.pipelineManager);
-            view->bindShaderResources(drawTools.pipelineManager);
-            // children have likely resized the pixel grid, restore it
-            drawTools.pixelToNDC.resize(view_full_width, view_full_height);
-            view->draw(drawTools, screenRenderTarget, rt2);
-        }
-
+        // draw object to render target `rt`
+        rt2.bind(app.m_pImmediateContext);
+        rt2.clearColorAndDepth(RenderTarget::black, 1.0f, app.m_pImmediateContext);
+        view->switchToPipeline(drawTools.pipelineManager);
+        view->bindShaderResources(drawTools.pipelineManager);
         // children have likely resized the pixel grid, restore it
-        drawTools.pixelToNDC.resize(view_full_width, view_full_height);
+        drawTools.pixelToNDC.resize(canvasSize.x, canvasSize.y);
+        view->draw(drawTools, screenRenderTarget, rt2);
 
         rt.bind(app.m_pImmediateContext);
-        rt2.drawAbsolutePositionAndClipToBoundaries(
-            drawTools, view->getAbsolutePosition(), app.m_pImmediateContext
-        );
+        
+        Position drawDimensions = view->getDrawDimensions();
+        Rectangle drawPosition = view->getDrawPosition();
+
+        if (printLogging) {
+            Log::Info("TAG: ", getTag(), " -> ", view->getTag(), ", resizing pixel grid to             : ", drawDimensions);
+        }
+        drawTools.pixelToNDC.resize(drawDimensions.x, drawDimensions.y);
+        rt2.clip(app.m_pImmediateContext);
+        if (printLogging) {
+            Log::Info("TAG: ", getTag(), " -> ", view->getTag(), ", drawing absolute position          : ", drawPosition);
+        }
+        rt2.drawAbsolutePosition(drawTools, drawPosition, app.m_pImmediateContext);
     }
     
-    // children have likely resized the pixel grid, restore it
-    drawTools.pixelToNDC.resize(view_full_width, view_full_height);
+    // drawToRenderTarget modifies pixel grid
     rt.drawToRenderTarget(drawTools, renderTarget, app.m_pImmediateContext);
 }
 
@@ -88,12 +87,6 @@ void RootView::onCreatePipeline(PipelineManager &pipelineManager) {
 void RootView::onDestroyPipeline(PipelineManager &pipelineManager) {
     rt.destroy(pipelineManager);
     rt2.destroy(pipelineManager);
-}
-
-void RootView::onResize(PipelineManager &pipelineManager) {
-    auto & app = getDiligentAppBase();
-    rt.resize(pipelineManager, app.m_pSwapChain, app.m_pDevice);
-    rt2.resize(pipelineManager, app.m_pSwapChain, app.m_pDevice);
 }
 
 void RootView::addView(View * view) {

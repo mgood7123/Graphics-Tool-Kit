@@ -24,6 +24,8 @@ class View {
         if (value == match) value = replacement;
     }
 
+    Rectangle drawPosition;
+    Position drawDimensions;
     Rectangle relativePosition;
     Rectangle relativePositionPadding;
     Rectangle absolutePosition;
@@ -31,18 +33,14 @@ class View {
     static Position INVALID_MEASUREMENT_DIMENSION;
     Position measuredDimension;
 
-private:
-
     /**
      * this is meant to be called before `buildAbsoluteCoordinatesFromRelativeCoordinates`, please use `buildCoordinates` instead
-     * @param childInfo the childInfo to store data into
-     * @param drawPosition the draw position within the virtual canvas
+     * @param virtualViewport the draw position within the virtual canvas
      * @param drawTools the virtual canvas
      * @param renderTarget the render target to obtain info from if the input childInfo has no parent
-     * @return the parent ChildInfo* of the input ChildInfo, otherwise nullptr
      */
     void buildRelativeCoordinatesFromVirtualCoordinates(
-            const Rectangle &drawPosition,
+            const Rectangle &virtualViewport,
             const DrawTools &drawTools,
             const RenderTarget &renderTarget
     );
@@ -53,7 +51,9 @@ private:
     void buildAbsoluteCoordinatesFromRelativeCoordinates();
     
     Rectangle cache_layoutData;
-    
+
+    // this has a default size of 100, 100
+    Position virtualCanvas = {100, 100};
 
 public:
     class MeasureSpec {
@@ -71,17 +71,52 @@ public:
     View * parent = nullptr;
     bool focus = false;
     
-    static const Rectangle ZERO_POSITION;
+    static const Position NO_OFFSET;
+    static const Position NO_SIZE;
     static const Rectangle NO_CROPPING;
     static const Rectangle NO_PADDING;
     static const Rectangle NO_MARGIN;
 
-    Position maximumSize {MeasureSpec::MATCH_PARENT, MeasureSpec::MATCH_PARENT};
+    // offset is defined as the amount the view is shifted inside the canvas
+    // eg
+    //  in a canvas size of 50
+    //   position this view at 10, 10
+    //
+    Position offsetInVirtualCanvas = NO_OFFSET;
+    
+    // size is defined as width and height
+    // eg
+    //  in a canvas size of 50
+    //   give this view a width of 20 and a height of 30
+    //
+    Position sizeInVirtualCanvas = NO_SIZE;
 
-    Rectangle position = ZERO_POSITION;
-    Rectangle cropping = NO_CROPPING;
-    Rectangle padding = NO_PADDING;
-    Rectangle margin = NO_MARGIN;
+    Rectangle croppingInVirtualCanvas = NO_CROPPING;
+
+    // padding is defined as a type of position that resizes the view
+    // eg
+    //  in a canvas size of 50
+    //   position this view at 10, 10, with a width of 30 and height of 30
+    //   and pad this view with padding position of 5, 5, with a width of 5 and height of 5
+    //
+    //     this means that this view will be positioned at
+    //       15, 15, with a width of 20 and a height of 20
+    //
+    //  padding is calculated as follows
+    //
+    //    pad the position:
+    //      pos.topLeft.x += padding.topLeft.x         // x
+    //      pos.topLeft.y += padding.topLeft.y         // y
+    //
+    //    shrink the width and height to match the padded position:
+    //      pos.bottomRight.x -= padding.topLeft.x     // x
+    //      pos.bottomRight.y -= padding.topLeft.y     // y
+    //
+    //    pad the width and height
+    //      pos.bottomRight.x -= padding.bottomRight.x // width
+    //      pos.bottomRight.y -= padding.bottomRight.y // height
+    //
+    Rectangle paddingInVirtualCanvas = NO_PADDING;
 
     template <typename T>
     inline T * castToViewType() {
@@ -114,10 +149,28 @@ public:
     }
     
     inline
+    Rectangle replace_MATCH_PARENT_with(const Rectangle & input, const Position & size) {
+        return replace_MATCH_PARENT_with(input, size.x, size.y);
+    }
+
+    inline
     Rectangle replace_MATCH_PARENT_with(const Rectangle & input, const int & width, const int & height) {
         Rectangle output = input;
-        replaceIfMatches<float, int>(output.bottomRight.x, MeasureSpec::MATCH_PARENT, width);
-        replaceIfMatches<float, int>(output.bottomRight.y, MeasureSpec::MATCH_PARENT, height);
+        replaceIfMatches<float, float>(output.bottomRight.x, MeasureSpec::MATCH_PARENT, width);
+        replaceIfMatches<float, float>(output.bottomRight.y, MeasureSpec::MATCH_PARENT, height);
+        return output;
+    }
+
+    inline
+    Position replace_MATCH_PARENT_with(const Position & input, const Position & size) {
+        return replace_MATCH_PARENT_with(input, size.x, size.y);
+    }
+
+    inline
+    Position replace_MATCH_PARENT_with(const Position & input, const int & width, const int & height) {
+        Position output = input;
+        replaceIfMatches<float, float>(output.x, MeasureSpec::MATCH_PARENT, width);
+        replaceIfMatches<float, float>(output.y, MeasureSpec::MATCH_PARENT, height);
         return output;
     }
 
@@ -127,8 +180,18 @@ public:
     virtual void setDiligentAppBase(DiligentAppBase * pDiligentAppBase);
     DiligentAppBase & getDiligentAppBase();
 
+    void setVirtualCanvasSize(const int & width, const int & height);
+    void setVirtualCanvasSize(const int & width, const float & height);
+    void setVirtualCanvasSize(const float & width, const int & height);
+    void setVirtualCanvasSize(const float & width, const float & height);
+    void setVirtualCanvasSize(const Position & size);
+    Position getVirtualCanvasSize();
+
+    Rectangle getDrawPosition();
+    Position getDrawDimensions();
     Rectangle getAbsolutePosition();
     Rectangle getRelativePosition();
+    Rectangle getRelativePositionPadding();
 
     /**
      * @param drawPosition the draw position within the virtual canvas
@@ -153,7 +216,31 @@ public:
     static constexpr inline float minmax(float value, float max) {
         return value == MeasureSpec::MATCH_PARENT ? max : value > max ? max : value;
     }
+    
+    /**
+     * if value is MATCH_PARENT, return max
+     * else if value is greater than max, return max
+     * else return value
+     */
+    static constexpr inline Position minmax(Position value, Position max) {
+        return {
+            minmax(value.x, max.x),
+            minmax(value.y, max.y)
+        };
+    }
 
+    /**
+     * if value is MATCH_PARENT, return max
+     * else if value is greater than max, return max
+     * else return value
+     */
+    static constexpr inline Rectangle minmax(Rectangle value, Rectangle max) {
+        return {
+            minmax(value.topLeft, max.topLeft),
+            minmax(value.bottomRight, max.bottomRight)
+        };
+    }
+    
     virtual void createPipeline(PipelineManager & pipelineManager);
     virtual void switchToPipeline(PipelineManager & pipelineManager);
     virtual void bindShaderResources(PipelineManager & pipelineManager);
