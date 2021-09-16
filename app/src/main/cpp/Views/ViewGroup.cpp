@@ -23,6 +23,9 @@ void ViewGroup::createPipeline(PipelineManager &pipelineManager) {
     pipelineManagerUsed = &pipelineManager;
     destroyPipelineCalled = false;
     createPipelineCalled = true;
+    auto & app = getDiligentAppBase();
+    rt.create(getPipelineKeyA(), pipelineManager, app.m_pSwapChain, app.m_pDevice);
+    rt2.create(getPipelineKeyB(), pipelineManager, app.m_pSwapChain, app.m_pDevice);
     onCreatePipeline(pipelineManager);
 }
 
@@ -35,6 +38,8 @@ void ViewGroup::destroyPipeline(PipelineManager &pipelineManager) {
     pipelineManagerUsed = &pipelineManager;
     createPipelineCalled = false;
     destroyPipelineCalled = true;
+    rt.destroy(pipelineManager);
+    rt2.destroy(pipelineManager);
     onDestroyPipeline(pipelineManager);
 }
 
@@ -49,6 +54,9 @@ void ViewGroup::resize(PipelineManager &pipelineManager) {
     pipelineManagerUsed = &pipelineManager;
     resizeCalled = true;
     onResize(pipelineManager);
+    auto & app = getDiligentAppBase();
+    rt.resize(pipelineManager, app.m_pSwapChain, app.m_pDevice);
+    rt2.resize(pipelineManager, app.m_pSwapChain, app.m_pDevice);
 }
 
 void ViewGroup::create() {
@@ -343,7 +351,10 @@ AutoResizingArray<View *> ViewGroup::getChildren() const {
 }
 
 void ViewGroup::addView(View * view) {
-    if (view != this && view->parent != nullptr) {
+    if (view == this) {
+        Log::Error_And_Throw("cannot add myself as my own child: myself->addView(myself)");
+    }
+    if (view->parent != nullptr) {
         Log::Error_And_Throw("cannot add a View that has a parent, please call `ViewGroup::removeFromParent(view);` before calling `addView(view);`");
     }
     
@@ -385,7 +396,6 @@ void ViewGroup::removeView(View *view) {
 }
 
 void ViewGroup::detachView(View *view) {
-    // child->view is destroyed here
     auto it = children.table->getIterator();
     while (it.hasNext()) {
         if (it.next()->resource.get<View *>() == view) {
@@ -408,11 +418,9 @@ void ViewGroup::onCreatePipeline(PipelineManager &pipelineManager) {
 }
 
 void ViewGroup::onDestroyPipeline(PipelineManager &pipelineManager) {
-
 }
 
 void ViewGroup::onResize(PipelineManager &pipelineManager) {
-
 }
 
 void ViewGroup::onCreate() {
@@ -421,4 +429,43 @@ void ViewGroup::onCreate() {
 
 void ViewGroup::onDestroy() {
 
+}
+
+void ViewGroup::draw(DrawTools &drawTools, RenderTarget &screenRenderTarget,
+                     RenderTarget &renderTarget) {
+    auto & app = getDiligentAppBase();
+
+    rt.bind(app.m_pImmediateContext);
+    rt.clearColorAndDepth(RenderTarget::black, 1.0f, app.m_pImmediateContext);
+
+    auto canvasSize = getVirtualCanvasSize();
+
+    auto array = getChildren();
+    for (View *view : array) {
+        // draw object to render target `rt`
+        rt2.bind(app.m_pImmediateContext);
+        rt2.clearColorAndDepth(RenderTarget::black, 1.0f, app.m_pImmediateContext);
+        view->switchToPipeline(drawTools.pipelineManager);
+        view->bindShaderResources(drawTools.pipelineManager);
+        // children have likely resized the pixel grid, restore it
+        drawTools.pixelToNDC.resize(canvasSize.x, canvasSize.y);
+        view->draw(drawTools, screenRenderTarget, rt2);
+
+        rt.bind(app.m_pImmediateContext);
+
+        Position drawDimensions = view->getDrawDimensions();
+        Rectangle drawPosition = view->getDrawPosition();
+
+        if (printLogging) {
+            Log::Info("TAG: ", getTag(), " -> ", view->getTag(), ", resizing pixel grid to             : ", drawDimensions);
+        }
+        drawTools.pixelToNDC.resize(drawDimensions.x, drawDimensions.y);
+        rt2.clip(app.m_pImmediateContext);
+        if (printLogging) {
+            Log::Info("TAG: ", getTag(), " -> ", view->getTag(), ", drawing absolute position          : ", drawPosition);
+        }
+        rt2.drawAbsolutePosition(drawTools, drawPosition, app.m_pImmediateContext);
+    }
+
+    rt.drawToRenderTarget(drawTools, renderTarget, app.m_pImmediateContext);
 }

@@ -8,17 +8,13 @@
 #include "ViewGroup.h"
 
 class GridView : public ViewGroup {
-    RenderTarget rt;
-    RenderTarget rt2;
-    static constexpr const char * PIPELINE_KEY = "GridView ORT";
-    static constexpr const char * PIPELINE_KEY2 = "GridView ORT2";
 public:
+    const char *getPipelineKeyA() override;
+
+    const char *getPipelineKeyB() override;
+
     virtual void onMeasure() override;
     virtual void onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override;
-    void onCreatePipeline(PipelineManager & pipelineManager) override;
-    void onDestroyPipeline(PipelineManager & pipelineManager) override;
-    void onResize(PipelineManager & pipelineManager) override;
-    void draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override;
 };
 
 

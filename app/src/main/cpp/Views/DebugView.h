@@ -6,22 +6,18 @@
 #define GRAPHICAL_TOOL_KIT_DEBUGVIEW_H
 
 #include "ViewGroup.h"
+#include "LinearLayout.h"
 
 class DebugView : public ViewGroup {
-    RenderTarget rt;
-    static constexpr const char * PIPELINE_KEY = "DebugView RT";
+    LinearLayout * linearLayout = nullptr;
+    View * contentView = nullptr;
 public:
-
-    void draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override;
-
-    virtual void onCreatePipeline(PipelineManager &pipelineManager) override;
-
-    virtual void onDestroyPipeline(PipelineManager &pipelineManager) override;
-
-    virtual void onResize(PipelineManager &pipelineManager) override;
-
+    virtual const char *getPipelineKeyA() override;
+    virtual const char *getPipelineKeyB() override;
+    virtual void onCreate() override;
     virtual void addView(View * view) override;
-};
 
+    virtual void onDestroy() override;
+};
 
 #endif //GRAPHICAL_TOOL_KIT_DEBUGVIEW_H

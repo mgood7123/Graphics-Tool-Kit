@@ -38,6 +38,9 @@ class ViewGroup : public View {
     // use {} to call constructor
     // using () is reserved for functions
     Kernel tracked_views{2};
+
+    RenderTarget rt;
+    RenderTarget rt2;
     
 public:
 
@@ -78,6 +81,11 @@ public:
     virtual void addView(View * view);
     virtual void removeView(View * view);
     virtual void detachView(View * view);
+
+    virtual const char * getPipelineKeyA() = 0;
+    virtual const char * getPipelineKeyB() = 0;
+
+    virtual void draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override;
 };
 
 

@@ -67,6 +67,146 @@ public:
             INVALID = -3
         };
     };
+
+    class Map {
+        Kernel objects{16};
+
+    public:
+        typedef std::pair<std::string, AnyOpt> Data;
+
+    private:
+        Data * getData(const std::string & key) {
+            auto it = objects.table->getIterator();
+            while (it.hasNext()) {
+                Data * data = it.next()->resource.get<Data*>();
+                if (data->first == key) {
+                    return data;
+                }
+            }
+            return nullptr;
+        }
+
+        void throwIfKeyDoesNotExist(const std::string & key) {
+            Data *x = getData(key);
+            if (x != nullptr) {
+                Log::Error_And_Throw("cannot set key: key \"", key, "\" already exists");
+            }
+        }
+
+    public:
+
+        template <typename T>
+        T * setAllocatedPointer(const std::string & key, T * resource) {
+            throwIfKeyDoesNotExist(key);
+            return objects.template newObject(Data(key, AnyOpt(resource, true)))
+                    ->resource.template get<Data*>()->second.template get<T*>();
+        }
+
+        template <typename T>
+        T * set(const std::string & key, T && resource) {
+            throwIfKeyDoesNotExist(key);
+            return objects.template newObject(Data(key, std::move(resource)))
+                    ->resource.template get<Data*>()->second.template get<T*>();
+        }
+
+        template <typename T>
+        T * set(const std::string & key, const T & resource) {
+            throwIfKeyDoesNotExist(key);
+            objects.template newObject(Data(key, resource))
+                    ->resource.template get<Data*>()->second.template get<T*>();
+        }
+
+        template <typename T>
+        T * trySetAllocatedPointer(const std::string & key, T * resource) {
+            Data *x = getData(key);
+            if (x != nullptr) {
+                return objects.template newObject(Data(key, AnyOpt(resource, true)))
+                        ->resource.template get<Data *>()->second.template get<T *>();
+            } else {
+                return nullptr;
+            }
+        }
+
+        template <typename T>
+        T * trySet(const std::string & key, T && resource) {
+            Data *x = getData(key);
+            if (x != nullptr) {
+                return objects.template newObject(Data(key, std::move(resource)))
+                        ->resource.template get<Data*>()->second.template get<T*>();
+            } else {
+                return nullptr;
+            }
+        }
+
+        template <typename T>
+        T * trySet(const std::string & key, const T & resource) {
+            Data *x = getData(key);
+            if (x != nullptr) {
+                objects.template newObject(Data(key, resource))
+                        ->resource.template get<Data*>()->second.template get<T*>();
+            } else {
+                return nullptr;
+            }
+        }
+
+        template <typename T>
+        T * replaceAllocatedPointer(const std::string & key, T * resource) {
+            Data * x = getData(key);
+            if (x != nullptr) {
+                x->second = resource;
+            } else {
+                x = objects.template newObject(Data(key, AnyOpt(resource, true)))
+                        ->resource.template get<Data*>();
+            }
+            return x->second.template get<T*>();
+        }
+
+        template <typename T>
+        T * replace(const std::string & key, T && resource) {
+            Data * x = getData(key);
+            if (x != nullptr) {
+                x->second = std::move(resource);
+            } else {
+                x = objects.template newObject(Data(key, std::move(resource)))
+                        ->resource.template get<Data*>();
+            }
+            return x->second.template get<T*>();
+        }
+
+        template <typename T>
+        T * replace(const std::string & key, const T & resource) {
+            Data * x = getData(key);
+            if (x != nullptr) {
+                x->second = resource;
+            } else {
+                x = objects.template newObject(Data(key, resource))
+                        ->resource.template get<Data*>();
+            }
+            return x->second.template get<T*>();
+        }
+
+        template <typename T>
+        T * get(const std::string & key) {
+            Data * x = getData(key);
+            if (x != nullptr) {
+                return x->second.template get<T *>();
+            }
+            return nullptr;
+        }
+
+        void remove(const std::string & key) {
+            auto it = objects.table->getIterator();
+            while (it.hasNext()) {
+                Data * data = it.next()->resource.get<Data*>();
+                if (data->first == key) {
+                    objects.table->DELETE(it.getIndex());
+                }
+            }
+        }
+    };
+
+    Map userData;
+
     Rectangle layoutData;
 
     bool printLogging = false;
@@ -78,7 +218,6 @@ public:
     static const Position NO_SIZE;
     static const Rectangle NO_CROPPING;
     static const Rectangle NO_PADDING;
-    static const Rectangle NO_MARGIN;
 
     // offset is defined as the amount the view is shifted inside the canvas
     // eg

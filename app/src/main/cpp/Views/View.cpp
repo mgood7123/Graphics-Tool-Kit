@@ -8,7 +8,6 @@ const Position View::NO_OFFSET = {0, 0};
 const Position View::NO_SIZE = {MeasureSpec::MATCH_PARENT, MeasureSpec::MATCH_PARENT};
 const Rectangle View::NO_CROPPING = {0, 0, 0, 0};
 const Rectangle View::NO_PADDING = {0, 0, 0, 0};
-const Rectangle View::NO_MARGIN = {0, 0, 0, 0};
 
 void View::setTag(const char *name) {
     tag = name;

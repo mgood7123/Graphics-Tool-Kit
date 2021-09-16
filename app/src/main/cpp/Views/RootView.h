@@ -13,23 +13,13 @@
  * a RootView supports padding
  */
 class RootView : public ViewGroup {
-    RenderTarget rt;
-    RenderTarget rt2;
-    static constexpr const char * PIPELINE_KEY = "RootView RT";
-    static constexpr const char * PIPELINE_KEY2 = "RootView RT2";
 public:
+    virtual const char *getPipelineKeyA() override;
+
+    virtual const char *getPipelineKeyB() override;
 
     virtual void onMeasure() override;
     virtual void onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override;
-
-    virtual void draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override;
-
-    virtual void onCreatePipeline(PipelineManager &pipelineManager) override;
-
-    virtual void onDestroyPipeline(PipelineManager &pipelineManager) override;
-
-    virtual void onResize(PipelineManager &pipelineManager) override;
-    
     virtual void addView(View * view) override;
 };
 

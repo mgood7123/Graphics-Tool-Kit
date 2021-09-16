@@ -19,23 +19,6 @@ LinearLayout::Orientation LinearLayout::getOrientation() {
     return orientation;
 }
 
-void LinearLayout::onCreatePipeline(PipelineManager &pipelineManager) {
-    auto & app = getDiligentAppBase();
-    rt.create(PIPELINE_KEY, pipelineManager, app.m_pSwapChain, app.m_pDevice);
-    rt2.create(PIPELINE_KEY2, pipelineManager, app.m_pSwapChain, app.m_pDevice);
-}
-
-void LinearLayout::onDestroyPipeline(PipelineManager &pipelineManager) {
-    rt.destroy(pipelineManager);
-    rt2.destroy(pipelineManager);
-}
-
-void LinearLayout::onResize(PipelineManager &pipelineManager) {
-    auto & app = getDiligentAppBase();
-    rt.resize(pipelineManager, app.m_pSwapChain, app.m_pDevice);
-    rt2.resize(pipelineManager, app.m_pSwapChain, app.m_pDevice);
-}
-
 void LinearLayout::onMeasure() {
     auto array = getChildren();
     for (View *view : array) view->measure();
@@ -104,16 +87,10 @@ void LinearLayout::addView(View *view) {
     ViewGroup::addView(view);
 }
 
-        if (printLogging) {
-            Log::Info("TAG: ", getTag(), " -> ", view->getTag(), ", resizing pixel grid to             : ", drawDimensions);
-        }
-        drawTools.pixelToNDC.resize(drawDimensions.x, drawDimensions.y);
-        rt2.clip(app.m_pImmediateContext);
-        if (printLogging) {
-            Log::Info("TAG: ", getTag(), " -> ", view->getTag(), ", drawing absolute position          : ", drawPosition);
-        }
-        rt2.drawAbsolutePosition(drawTools, drawPosition, app.m_pImmediateContext);
-    }
+const char *LinearLayout::getPipelineKeyA() {
+    return "LinearLayout A";
+}
 
-    rt.drawToRenderTarget(drawTools, renderTarget, app.m_pImmediateContext);
+const char *LinearLayout::getPipelineKeyB() {
+    return "LinearLayout B";
 }

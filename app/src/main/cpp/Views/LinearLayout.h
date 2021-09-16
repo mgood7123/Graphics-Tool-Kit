@@ -12,17 +12,15 @@ public:
     enum Orientation {
         Horizontal, Vertical
     };
-    
 private:
     Orientation orientation = Vertical;
 public:
+    virtual const char *getPipelineKeyA() override;
+
+    virtual const char *getPipelineKeyB() override;
+
     void setOrientation(Orientation orientation);
     Orientation getOrientation();
-    void onCreatePipeline(PipelineManager & pipelineManager) override;
-    void onDestroyPipeline(PipelineManager & pipelineManager) override;
-    void onResize(PipelineManager & pipelineManager) override;
-    void draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override;
-
     virtual void onMeasure() override;
     virtual void onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override;
     virtual void addView(View *view) override;
