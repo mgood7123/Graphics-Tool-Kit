@@ -422,8 +422,6 @@ public:
         TextureManager();
         TextureManager(VertexEngine * engine);
 
-        void addRef();
-
         /**
          * set the default device and context to use for texture operations
          * <br>
