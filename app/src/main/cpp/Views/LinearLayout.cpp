@@ -45,56 +45,64 @@ void LinearLayout::onMeasure() {
 void LinearLayout::onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) {
     // for a linear layout, we divide the size by the children count
 
+    //23:16:40 Roughy: layout_weight is basically just the normalized weight * view size, except the weights kinda work in reverse so if you have 1.0 and 2.0 the 1.0 will take up 2/3rds'ish instead of the more logical opposite, if I Recall correctly
+    //23:16:58 smallville7123: this is what i have at the moment
+    //23:21:26 Roughy: if the weights made sense you'd just do ( weight / sum_of_weights ) * total_size_to_fill.
+    //23:23:03 Roughy: in the case of Android's reversed weight values ( 1 - (weight / sum_of_weights ) ) I guess
+    //23:26:01 smallville7123: so for example, if two views take up 50 each, and parent is 100, then
+    //23:26:50 smallville7123: child_1.section = ( 1 - (childAt(0).weight / sum_of_weights ) );      child_2.section = ( 1 - (childAt(1).weight / sum_of_weights ) )
+    //23:27:08 smallville7123: _section  *
+    //23:28:47 Roughy: that should give you 0.5 for each of them. Multiply by 100 gives you 50 for each
+
     auto canvasSize = getVirtualCanvasSize();
-    Position section = canvasSize / (float) getChildCount();
 
     auto array = getChildren();
-    size_t count = 0;
+
+    float weightSum = 0;
+
+    for(View *view : array) weightSum += view->weight;
+
+    bool first = true;
+    Rectangle drawPosition = 0;
+    float section = 0;
+    float prevSection = 0;
     for (View *view : array) {
-        Rectangle drawPosition;
+        float multiplier = (view->weight / weightSum);
+        prevSection = section;
         if (orientation == Horizontal) {
-            drawPosition = {section.x * count, 0, section.x * (count + 1), canvasSize.y};
+            section = multiplier * canvasSize.x;
+            if (first) {
+                first = false;
+                drawPosition.bottomRight.y = canvasSize.y;
+            } else {
+                drawPosition.topLeft.x += prevSection;
+            }
+            drawPosition.bottomRight.x += section;
         } else {
-            drawPosition = {0, section.y * count, canvasSize.x, section.y * (count + 1)};
+            section = multiplier * canvasSize.y;
+            if (first) {
+                first = false;
+                drawPosition.bottomRight.x = canvasSize.x;
+            } else {
+                drawPosition.topLeft.y += prevSection;
+            }
+            drawPosition.bottomRight.y += section;
         }
         drawTools.pixelToNDC.resize(canvasSize.x, canvasSize.y);
         view->buildCoordinates(drawPosition, drawTools, renderTarget);
         view->layout(view->getRelativePosition(), drawTools, screenRenderTarget, renderTarget);
-        count++;
     }
 }
 
-void LinearLayout::draw(DrawTools & drawTools, RenderTarget & screenRenderTarget, RenderTarget & renderTarget) {
-    auto & app = getDiligentAppBase();
+void LinearLayout::addView(View *view, float weight) {
+    view->weight = weight;
+    ViewGroup::addView(view);
+}
 
-    rt.bind(app.m_pImmediateContext);
-    rt.clearColorAndDepth(RenderTarget::black, 1.0f, app.m_pImmediateContext);
-
-    auto canvasSize = getVirtualCanvasSize();
-
-    auto array = getChildren();
-    for (View *view : array) {
-        // if obj == this
-        //     draw render target to temporary render target
-        //     and then draw temporary render target to render target
-        //     this avoids artifacts that might occur
-        //     when the render target is drawing to itself
-        // otherwise
-        //     draw the object to rt and then draw rt to render target
-
-        // draw object to render target `rt`
-        rt2.bind(app.m_pImmediateContext);
-        rt2.clearColorAndDepth(RenderTarget::black, 1.0f, app.m_pImmediateContext);
-        view->switchToPipeline(drawTools.pipelineManager);
-        view->bindShaderResources(drawTools.pipelineManager);
-        // children have likely resized the pixel grid, restore it
-        drawTools.pixelToNDC.resize(canvasSize.x, canvasSize.y);
-        view->draw(drawTools, screenRenderTarget, rt2);
-
-        rt.bind(app.m_pImmediateContext);
-
-        Position drawDimensions = view->getDrawDimensions();
-        Rectangle drawPosition = view->getDrawPosition();
+void LinearLayout::addView(View *view) {
+    view->weight = 1;
+    ViewGroup::addView(view);
+}
 
         if (printLogging) {
             Log::Info("TAG: ", getTag(), " -> ", view->getTag(), ", resizing pixel grid to             : ", drawDimensions);

@@ -56,6 +56,9 @@ class View {
     Position virtualCanvas = {100, 100};
 
 public:
+
+    float weight = 1;
+
     class MeasureSpec {
     public:
         enum Mode {

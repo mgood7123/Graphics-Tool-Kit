@@ -14,10 +14,6 @@ public:
     };
     
 private:
-    RenderTarget rt;
-    RenderTarget rt2;
-    static constexpr const char * PIPELINE_KEY = "GridView ORT";
-    static constexpr const char * PIPELINE_KEY2 = "GridView ORT2";
     Orientation orientation = Vertical;
 public:
     void setOrientation(Orientation orientation);
@@ -29,6 +25,8 @@ public:
 
     virtual void onMeasure() override;
     virtual void onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override;
+    virtual void addView(View *view) override;
+    virtual void addView(View *view, float weight);
 };
 
 #endif //GRAPHICAL_TOOL_KIT_LINEARLAYOUT_H
