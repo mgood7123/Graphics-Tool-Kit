@@ -193,7 +193,7 @@ void View::bindShaderResources(PipelineManager & pipelineManager) {}
 
 void View::destroyPipeline(PipelineManager & pipelineManager) {}
 
-void View::create()
+void View::createState()
 {}
 
 void View::resize(PipelineManager & pipelineManager)
@@ -250,7 +250,7 @@ bool View::onTouchEvent(MultiTouch &multiTouch) {
     return false;
 }
 
-void View::destroy ()
+void View::destroyState()
 {}
 
 bool View::hasPhysics()

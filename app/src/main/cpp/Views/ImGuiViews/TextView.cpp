@@ -442,4 +442,12 @@ void TextView::setFontInternal(ImFont *pFont) {
     imgui_context->FontSize = pFont->FontSize;
 }
 
+TextView::TextView() {
+    setFontSize(fontSize_Load);
+}
+
+TextView::TextView(const std::string &text) : text(text) {
+    setFontSize(fontSize_Load);
+}
+
 #pragma clang diagnostic pop

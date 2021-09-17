@@ -25,12 +25,12 @@ public:
     void onMeasure() override final;
     void onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override final;
 
-    void create() override;
+    void createState() override;
     void resize(PipelineManager & pipelineManager) override;
     bool hasPhysics() override;
     void physics(const TimeEngine & timeEngine) override;
     void draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override;
-    void destroy() override;
+    void destroyState() override;
 
     void CreateVertexBuffer();
     void CreateIndexBuffer();

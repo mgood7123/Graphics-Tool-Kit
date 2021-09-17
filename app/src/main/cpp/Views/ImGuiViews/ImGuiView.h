@@ -31,22 +31,22 @@ public:
 
     void destroyPipeline(PipelineManager &pipelineManager) override final;
 
-    void create() override final;
+    void createState() override final;
 
     void resize(PipelineManager &pipelineManager) override final;
 
     void draw(DrawTools &drawTools, RenderTarget &screenRenderTarget,
               RenderTarget &renderTarget) override final;
 
-    void destroy() override final;
+    void destroyState() override final;
 
-    virtual void onCreate();
+    virtual void onCreateState();
     virtual void onResize();
     virtual void onUpdateFontTextures();
     void generateFontTextures();
     virtual void beforeFrame();
     virtual void onDraw();
-    virtual void onDestroy();
+    virtual void onDestroyState();
 };
 
 #endif //GRAPHICAL_TOOL_KIT_IMGUIVIEW_H

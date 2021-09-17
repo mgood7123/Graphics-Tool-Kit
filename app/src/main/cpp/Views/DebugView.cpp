@@ -25,10 +25,13 @@ const char *DebugView::getPipelineKeyB() {
 
 DebugView::DebugView() {
     linearLayout = new LinearLayout;
-    linearLayout->addView(new TouchDetectorPainter(), new LinearLayout::LinearLayoutParams(
-            LayoutParams::GRAVITY_LEFT,
-            1
-    ));
+    LinearLayout * x = new LinearLayout();
+    x->setOrientation(LinearLayout::Horizontal);
+    x->addView((new TextView("DebugView"))->setFontSize(100));
+//    x->addView((new TextView("DebugView"))->setFontSize(100));
+//    x->addView((new TextView("DebugView"))->setFontSize(100));
+//    x->addView((new TextView("DebugView"))->setFontSize(100));
+    linearLayout->addView(x);
     RootView::addView(linearLayout);
 }
 

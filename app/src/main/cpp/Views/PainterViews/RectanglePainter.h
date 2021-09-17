@@ -16,12 +16,12 @@ public:
     VertexEngine::Canvas::Color4 pink = {1, 0, 1, 1};
     VertexEngine::Canvas::Color4 red = {1, 0, 0, 1};
 
-    void onCreate(VertexEngine::TextureManager & textureManager) override;
+    void onCreateState(VertexEngine::TextureManager & textureManager) override;
 
     bool onTouchEvent(MultiTouch &touch) override;
 
     void onDraw(VertexEngine::Canvas &canvas) override;
-    void onDestroy(VertexEngine::TextureManager & textureManager) override;
+    void onDestroyState(VertexEngine::TextureManager & textureManager) override;
 
     int getCanvasWidth() override;
 

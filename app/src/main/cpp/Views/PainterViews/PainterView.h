@@ -47,15 +47,15 @@ public:
 
     void destroyPipeline(PipelineManager &pipelineManager) override final;
 
-    void create() override final;
+    void createState() override final;
     void draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override final;
-    void destroy() override final;
+    void destroyState() override final;
 
     virtual int getCanvasWidth();
     virtual int getCanvasHeight();
-    virtual void onCreate(VertexEngine::TextureManager & textureManager);
+    virtual void onCreateState(VertexEngine::TextureManager & textureManager);
     virtual void onDraw(VertexEngine::Canvas & canvas);
-    virtual void onDestroy(VertexEngine::TextureManager & textureManager);
+    virtual void onDestroyState(VertexEngine::TextureManager & textureManager);
 
     static constexpr const char * PIPELINE_KEY = "PainterView";
 };

@@ -59,15 +59,15 @@ void ViewGroup::resize(PipelineManager &pipelineManager) {
     rt2.resize(pipelineManager, app.m_pSwapChain, app.m_pDevice);
 }
 
-void ViewGroup::create() {
+void ViewGroup::createState() {
     auto array = getChildren();
     for (View *view : array) {
         if (view == this) continue; // skip self
-        view->create();
+        view->createState();
     }
     destroyCalled = false;
     createCalled = true;
-    onCreate();
+    onCreateState();
 }
 
 // if you have a viewgroup with A and B children,
@@ -289,14 +289,14 @@ bool ViewGroup::onTouchEvent(MultiTouch &touch) {
     return handled;
 }
 
-void ViewGroup::destroy() {
+void ViewGroup::destroyState() {
     auto array = getChildren();
     for (View *view : array) {
         removeView(view);
     }
     createCalled = false;
     destroyCalled = true;
-    onDestroy();
+    onDestroyState();
 }
 
 bool ViewGroup::hasPhysics() {
@@ -381,7 +381,7 @@ void ViewGroup::addView(View * view, LayoutParams * layoutParams) {
         if (createPipelineCalled) view->createPipeline(*pipelineManagerUsed);
     }
     if (!destroyCalled) {
-        if (createCalled) view->create();
+        if (createCalled) view->createState();
         if (resizeCalled) view->resize(*pipelineManagerUsed);
     }
 
@@ -394,7 +394,7 @@ void ViewGroup::removeView(View *view) {
     while (it.hasNext()) {
         if (it.next()->resource.get<View *>() == view) {
             if (view != this) {
-                if (createCalled && !destroyCalled) view->destroy();
+                if (createCalled && !destroyCalled) view->destroyState();
                 if (!destroyPipelineCalled) view->destroyPipeline(*pipelineManagerUsed);
             }
             children.table->remove(view);
@@ -408,7 +408,7 @@ void ViewGroup::detachView(View *view) {
     while (it.hasNext()) {
         if (it.next()->resource.get<View *>() == view) {
             if (view != this) {
-                if (createCalled && !destroyCalled) view->destroy();
+                if (createCalled && !destroyCalled) view->destroyState();
                 if (!destroyPipelineCalled) view->destroyPipeline(*pipelineManagerUsed);
             }
             // disable allocation and remove
@@ -431,11 +431,11 @@ void ViewGroup::onDestroyPipeline(PipelineManager &pipelineManager) {
 void ViewGroup::onResize(PipelineManager &pipelineManager) {
 }
 
-void ViewGroup::onCreate() {
+void ViewGroup::onCreateState() {
 
 }
 
-void ViewGroup::onDestroy() {
+void ViewGroup::onDestroyState() {
 
 }
 

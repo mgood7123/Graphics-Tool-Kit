@@ -8,7 +8,11 @@
 #include "ImGuiView.h"
 
 class TextView : public ImGuiView {
-        
+public:
+    TextView();
+    TextView(const std::string &text);
+
+private:
     MultiTouch touchCopy;
 
     ImVec2 cache_displaySize {0, 0};

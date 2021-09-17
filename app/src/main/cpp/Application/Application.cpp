@@ -23,7 +23,7 @@ void Application::createState() {
     if (destroyed.load() && !createCalled.load()) {
         if (contentView != nullptr) {
             contentView->createPipeline(pipelineManager);
-            contentView->create();
+            contentView->createState();
             if (contentView->hasPhysics()) {
                 timeEngine.startPhysicsThread();
             }
@@ -40,7 +40,7 @@ void Application::destroyState() {
             if (contentView->hasPhysics()) {
                 timeEngine.stopPhysicsThread();
             }
-            contentView->destroy();
+            contentView->destroyState();
             contentView->destroyPipeline(pipelineManager);
         }
         if (rt.exists()) rt.destroy(pipelineManager);
@@ -156,7 +156,7 @@ void Application::setContentView(View *view) {
         if (contentView->hasPhysics()) {
             timeEngine.stopPhysicsThread();
         }
-        contentView->destroy();
+        contentView->destroyState();
         contentView->destroyPipeline(pipelineManager);
     }
     delete contentView;

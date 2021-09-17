@@ -4,7 +4,7 @@
 
 #include "ImGuiView.h"
 
-void ImGuiView::create() {
+void ImGuiView::createState() {
     m_pImGui = new Diligent::ImGuiImplDiligent(
             getDiligentAppBase().m_pDevice,
             getDiligentAppBase().m_pSwapChain->GetDesc().ColorBufferFormat,
@@ -13,7 +13,7 @@ void ImGuiView::create() {
     m_pImGui->CreateDeviceObjects();
     imgui_context = ImGui::GetCurrentContext();
     imgui_io = &ImGui::GetIO();
-    onCreate();
+    onCreateState();
 }
 
 void ImGuiView::resize(PipelineManager &pipelineManager) {
@@ -37,7 +37,7 @@ ImGuiView::draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTa
         layoutData.bottomRight.x,
         layoutData.bottomRight.y
     };
-    
+
     beforeFrame();
 
     m_pImGui->NewFrame(
@@ -66,15 +66,15 @@ ImGuiView::draw(DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTa
     rt.drawAbsolutePosition(drawTools, {0, 0, renderTarget.getWidth(), renderTarget.getHeight()}, app.m_pImmediateContext);
 }
 
-void ImGuiView::destroy() {
-    onDestroy();
+void ImGuiView::destroyState() {
+    onDestroyState();
     m_pImGui->InvalidateDeviceObjects();
     imgui_io = nullptr;
     imgui_context = nullptr;
     delete m_pImGui;
 }
 
-void ImGuiView::onCreate() {
+void ImGuiView::onCreateState() {
 
 }
 
@@ -94,7 +94,7 @@ void ImGuiView::onDraw() {
 
 }
 
-void ImGuiView::onDestroy() {
+void ImGuiView::onDestroyState() {
 
 }
 

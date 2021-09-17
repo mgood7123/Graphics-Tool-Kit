@@ -4,7 +4,7 @@
 
 #include "RectanglePainter.h"
 
-void RectanglePainter::onCreate(VertexEngine::TextureManager &textureManager) {
+void RectanglePainter::onCreateState(VertexEngine::TextureManager &textureManager) {
     mousePosition = 0;
 #if PLATFORM_ANDROID
 #else
@@ -49,7 +49,7 @@ void RectanglePainter::onDraw(VertexEngine::Canvas &canvas) {
 #endif
 }
 
-void RectanglePainter::onDestroy(VertexEngine::TextureManager &textureManager) {
+void RectanglePainter::onDestroyState(VertexEngine::TextureManager &textureManager) {
 #if PLATFORM_ANDROID
 #else
     textureManager.deleteTexture("A");

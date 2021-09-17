@@ -53,7 +53,7 @@ void main(in  PSInput  PSIn,
 }
 )";
 
-void PainterView::create() {
+void PainterView::createState() {
     VertBuffDesc.Name = "PainterView vertex buffer";
     VertBuffDesc.Usage = Diligent::USAGE_DEFAULT;
     VertBuffDesc.BindFlags = Diligent::BIND_VERTEX_BUFFER;
@@ -77,7 +77,7 @@ void PainterView::create() {
     dummyTextureColorRef = c.to_RGBA_array();
     dummyTextureView = c.texture->GetDefaultView(Diligent::TEXTURE_VIEW_SHADER_RESOURCE);
 
-    onCreate(*vertexEngine.textureManager);
+    onCreateState(*vertexEngine.textureManager);
 }
 
 void PainterView::draw(DrawTools & drawTools, RenderTarget & screenRenderTarget, RenderTarget & renderTarget) {
@@ -172,15 +172,15 @@ void PainterView::drawChunks(VertexEngine::GenerationInfo && info, DrawTools & d
     // LOG_INFO_MESSAGE("drawn ", info.chunksGenerated, " chunk", info.chunksGenerated == 1 ? "" : "s");
 }
 
-void PainterView::destroy() {
-    onDestroy(*vertexEngine.textureManager);
+void PainterView::destroyState() {
+    onDestroyState(*vertexEngine.textureManager);
     vertexEngine.textureManager->deleteTexture(DUMMY_TEXTURE_KEY);
     shaderResourceVariable_Texture.Release();
     vertexBuffer.Release();
     indexBuffer.Release();
 }
 
-void PainterView::onCreate(VertexEngine::TextureManager &textureManager) {
+void PainterView::onCreateState(VertexEngine::TextureManager &textureManager) {
 
 }
 
@@ -188,7 +188,7 @@ void PainterView::onDraw(VertexEngine::Canvas & canvas) {
 
 }
 
-void PainterView::onDestroy(VertexEngine::TextureManager &textureManager) {
+void PainterView::onDestroyState(VertexEngine::TextureManager &textureManager) {
 
 }
 

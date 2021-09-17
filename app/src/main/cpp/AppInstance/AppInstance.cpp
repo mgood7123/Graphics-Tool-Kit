@@ -10,7 +10,7 @@ AppInstance::AppInstance() {
 //    loadApplication(new GridViewTest());
 //    loadApplication(new LinearLayoutTest());
     DebugView * debugView = new DebugView();
-    debugView->addView(new CubeView());
+    debugView->addView(new TriangleView());
     loadApplication(debugView);
 }
 

@@ -431,7 +431,7 @@ public:
     virtual void switchToPipeline(PipelineManager & pipelineManager);
     virtual void bindShaderResources(PipelineManager & pipelineManager);
     virtual void destroyPipeline(PipelineManager & pipelineManager);
-    virtual void create();
+    virtual void createState();
     virtual void resize(PipelineManager & pipelineManager);
     void measure();
     virtual void onMeasure();
@@ -443,7 +443,7 @@ public:
     virtual void onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget);
     virtual void draw(DrawTools & drawTools, RenderTarget &screenRenderTarget, RenderTarget & renderTarget);
     virtual bool onTouchEvent(MultiTouch &touch);
-    virtual void destroy();
+    virtual void destroyState();
     virtual bool hasPhysics();
     virtual void physics(const TimeEngine & timeEngine);
 

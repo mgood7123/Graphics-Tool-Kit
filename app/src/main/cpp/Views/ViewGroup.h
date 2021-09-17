@@ -61,17 +61,17 @@ public:
     void createPipeline(PipelineManager & pipelineManager) override final;
     void destroyPipeline(PipelineManager & pipelineManager) override final;
     void resize(PipelineManager & pipelineManager) override final;
-    void create() override final;
-    void destroy() override final;
+    void createState() override final;
+    void destroyState() override final;
     bool hasPhysics() override final;
     void physics(const TimeEngine & timeEngine) override final;
 
     virtual void onCreatePipeline(PipelineManager & pipelineManager);
     virtual void onResize(PipelineManager & pipelineManager);
     virtual void onDestroyPipeline(PipelineManager & pipelineManager);
-    virtual void onCreate();
+    virtual void onCreateState();
     virtual bool onTouchEvent(MultiTouch &touch) override;
-    virtual void onDestroy();
+    virtual void onDestroyState();
 
     size_t getChildCount() const;
 

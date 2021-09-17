@@ -93,7 +93,7 @@ void CubeView::destroyPipeline(PipelineManager &pipelineManager) {
     pipelineManager.destroyPipeline(this, PIPELINE_KEY);
 }
 
-void CubeView::create ()
+void CubeView::createState()
 {
     using namespace Diligent;
     obj_y = 0.0;
@@ -328,7 +328,7 @@ void CubeView::CreateIndexBuffer ()
     getDiligentAppBase().m_pDevice->CreateBuffer(IndBuffDesc, &IBData, &m_CubeIndexBuffer);
 }
 
-void CubeView::destroy() {
+void CubeView::destroyState() {
     m_CubeVertexBuffer.Release();
     m_CubeIndexBuffer.Release();
 }
