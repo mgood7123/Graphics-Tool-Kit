@@ -15,6 +15,15 @@ public:
 private:
     Orientation orientation = Vertical;
 public:
+
+    class LinearLayoutParams : public LayoutParams {
+    public:
+        float weight;
+        LinearLayoutParams() : weight(1.0f) {}
+        LinearLayoutParams(float weight) : weight(weight) {}
+        LinearLayoutParams(GRAVITY gravity, float weight) : LayoutParams(gravity), weight(weight) {}
+    };
+
     virtual const char *getPipelineKeyA() override;
 
     virtual const char *getPipelineKeyB() override;
@@ -23,8 +32,6 @@ public:
     Orientation getOrientation();
     virtual void onMeasure() override;
     virtual void onLayout(bool changed, const Rectangle &dimensions, DrawTools &drawTools, RenderTarget &screenRenderTarget, RenderTarget &renderTarget) override;
-    virtual void addView(View *view) override;
-    virtual void addView(View *view, float weight);
 };
 
 #endif //GRAPHICAL_TOOL_KIT_LINEARLAYOUT_H

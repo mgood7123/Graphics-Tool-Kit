@@ -43,14 +43,27 @@ void LinearLayout::onLayout(bool changed, const Rectangle &dimensions, DrawTools
 
     float weightSum = 0;
 
-    for(View *view : array) weightSum += view->weight;
+    for(View *view : array) {
+        auto * l = view->castToLayoutParamsType<LinearLayoutParams>();
+        if (l == nullptr) {
+            weightSum += 1;
+        } else {
+            weightSum += l->weight;
+        }
+    }
 
     bool first = true;
     Rectangle drawPosition = 0;
     float section = 0;
     float prevSection = 0;
     for (View *view : array) {
-        float multiplier = (view->weight / weightSum);
+        float multiplier;
+        auto * l = view->castToLayoutParamsType<LinearLayoutParams>();
+        if (l == nullptr) {
+            multiplier = 1 / weightSum;
+        } else {
+            multiplier = l->weight / weightSum;
+        }
         prevSection = section;
         if (orientation == Horizontal) {
             section = multiplier * canvasSize.x;
@@ -75,16 +88,6 @@ void LinearLayout::onLayout(bool changed, const Rectangle &dimensions, DrawTools
         view->buildCoordinates(drawPosition, drawTools, renderTarget);
         view->layout(view->getRelativePosition(), drawTools, screenRenderTarget, renderTarget);
     }
-}
-
-void LinearLayout::addView(View *view, float weight) {
-    view->weight = weight;
-    ViewGroup::addView(view);
-}
-
-void LinearLayout::addView(View *view) {
-    view->weight = 1;
-    ViewGroup::addView(view);
 }
 
 const char *LinearLayout::getPipelineKeyA() {

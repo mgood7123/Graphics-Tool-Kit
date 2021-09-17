@@ -11,8 +11,8 @@ void LinearLayoutTest::onCreateViews() {
     ALLOCATE_VIEW(A, TouchDetectorPainter);
     ALLOCATE_VIEW(B, RectanglePainter);
     ALLOCATE_VIEW(C, TouchDetectorPainter);
-    linearLayout->addView(A, 1);
-    linearLayout->addView(B, 4);
-    linearLayout->addView(C, 1);
+    linearLayout->addView(A, new LinearLayout::LinearLayoutParams(1));
+    linearLayout->addView(B, new LinearLayout::LinearLayoutParams(4));
+    linearLayout->addView(C, new LinearLayout::LinearLayoutParams(1));
     setContentView(linearLayout);
 }
