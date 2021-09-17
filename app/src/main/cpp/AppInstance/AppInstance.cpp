@@ -8,10 +8,10 @@ AppInstance::AppInstance() {
 //    loadApplication(new TriangleView());
 //    loadApplication(new TextViewTest());
 //    loadApplication(new GridViewTest());
-    loadApplication(new LinearLayoutTest());
-//    DebugView * debugView = new DebugView();
-//    debugView->addView(new CubeView());
-//    loadApplication(new Application(debugView));
+//    loadApplication(new LinearLayoutTest());
+    DebugView * debugView = new DebugView();
+    debugView->addView(new CubeView());
+    loadApplication(debugView);
 }
 
 AppInstance::~AppInstance ()

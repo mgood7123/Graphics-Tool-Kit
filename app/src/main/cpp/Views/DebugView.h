@@ -8,16 +8,15 @@
 #include "ViewGroup.h"
 #include "LinearLayout.h"
 
-class DebugView : public ViewGroup {
+class DebugView : public RootView {
     LinearLayout * linearLayout = nullptr;
     View * contentView = nullptr;
 public:
+    DebugView();
     virtual const char *getPipelineKeyA() override;
     virtual const char *getPipelineKeyB() override;
-    virtual void onCreate() override;
     virtual void addView(View * view) override;
-
-    virtual void onDestroy() override;
+    virtual ~DebugView();
 };
 
 #endif //GRAPHICAL_TOOL_KIT_DEBUGVIEW_H
