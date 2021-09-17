@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    smallville7123.graphical.tool.kit.DiligentEngineView diligentEngineView;
+    DiligentEngineView diligentEngineView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
