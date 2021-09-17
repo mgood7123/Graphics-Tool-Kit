@@ -57,7 +57,51 @@ class View {
 
 public:
 
-    float weight = 1;
+    class LayoutParams {
+    public:
+        enum GRAVITY {
+            GRAVITY_NONE,
+            GRAVITY_LEFT,
+            GRAVITY_CENTER,
+            GRAVITY_RIGHT
+        };
+
+        GRAVITY gravity;
+
+        constexpr inline
+        LayoutParams() : gravity(GRAVITY_NONE) {}
+
+        constexpr inline
+        LayoutParams(GRAVITY gravity) : gravity(gravity) {}
+
+        // Virtual destructor makes sure all derived classes can be destroyed
+        // through the pointer to the base class
+        virtual ~LayoutParams() = default;
+    };
+
+private:
+    LayoutParams * layoutParams = nullptr;
+
+public:
+
+    LayoutParams *getLayoutParams() const;
+
+    void setLayoutParams(LayoutParams *layoutParams);
+
+    template <typename T>
+    inline T * castToLayoutParamsType() {
+        return dynamic_cast<T*>(layoutParams);
+    }
+
+    template <typename T>
+    inline T * castToLayoutParamsType(LayoutParams & layoutParams) {
+        return dynamic_cast<T*>(&layoutParams);
+    }
+
+    template <typename T>
+    inline T * castToLayoutParamsType(LayoutParams * layoutParams) {
+        return dynamic_cast<T*>(layoutParams);
+    }
 
     class MeasureSpec {
     public:
@@ -405,7 +449,7 @@ public:
 
     // Virtual destructor makes sure all derived classes can be destroyed
     // through the pointer to the base class
-    virtual ~View() = default;
+    virtual ~View();
 
     static double degreesToRadians(double y);
 };

@@ -79,6 +79,7 @@ public:
     AutoResizingArray<View *> getChildren() const;
 
     virtual void addView(View * view);
+    virtual void addView(View * view, LayoutParams * layoutParams);
     virtual void removeView(View * view);
     virtual void detachView(View * view);
 

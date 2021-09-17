@@ -284,3 +284,27 @@ View::transformTouch(const MultiTouch::TouchData &touch, float newWidth, float n
             touch.state, touch.moved
     };
 }
+
+View::LayoutParams *View::getLayoutParams() const {
+    return layoutParams;
+}
+
+void View::setLayoutParams(View::LayoutParams *layoutParams) {
+    // important optimization:
+    // if layoutParams are self, then
+    //   do not delete this->layoutParams
+    //     it will invalidate/corrupt the passed layoutParams
+    //     since it points this->layoutParams, resulting in use-after-free
+    //
+    //   avoid this useless assignment:
+    //     LayoutParams * layoutParams = this->layoutParams;
+    //     this->layoutParams = layoutParams;
+    if (layoutParams != this->layoutParams) {
+        delete this->layoutParams;
+        this->layoutParams = layoutParams;
+    }
+}
+
+View::~View() {
+    delete layoutParams;
+}

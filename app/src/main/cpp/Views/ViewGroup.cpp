@@ -351,20 +351,28 @@ AutoResizingArray<View *> ViewGroup::getChildren() const {
 }
 
 void ViewGroup::addView(View * view) {
+    LayoutParams * l = view->getLayoutParams();
+    addView(view,  l != nullptr ? l : new LayoutParams(LayoutParams::GRAVITY_NONE));
+}
+
+void ViewGroup::addView(View * view, LayoutParams * layoutParams) {
     if (view == this) {
         Log::Error_And_Throw("cannot add myself as my own child: myself->addView(myself)");
     }
     if (view->parent != nullptr) {
         Log::Error_And_Throw("cannot add a View that has a parent, please call `ViewGroup::removeFromParent(view);` before calling `addView(view);`");
     }
+    if (layoutParams == nullptr) {
+        Log::Error_And_Throw("cannot set layout params to nullptr");
+    }
+
+    view->setLayoutParams(layoutParams);
     
     children.newObject(
         ObjectTypeNone,
-        view != this ? ObjectFlagAutoDeallocateResource : ObjectFlagNone,
+        ObjectFlagAutoDeallocateResource,
         view
     );
-
-    if (view == this) return;
 
     view->parent = this;
 
