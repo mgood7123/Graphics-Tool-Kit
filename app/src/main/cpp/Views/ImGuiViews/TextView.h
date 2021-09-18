@@ -61,52 +61,50 @@ public:
     
 private:
     CacheDirection cache_direction;
-    
-    void cache();
-    
-    TextResizeMode textResizeMode = TextResizeMode::height;
 
-    void computeFontSize(const Rectangle &dimensions, const char * text);
+    TextView * cache();
     
-    void drawBoundings();
-    
-    void drawText();
+    TextResizeMode textResizeMode = TextResizeMode::none;
+
+    TextView * computeFontSize(const Rectangle &dimensions, const char * text);
+
+    TextView * drawBoundings();
+
+    TextView * drawText();
 
 public:
     void beforeFrame() override;
 
     TextResizeMode getTextResizeMode() const;
 
-    void setTextResizeMode(TextResizeMode textResizeMode);
+    TextView * setTextResizeMode(TextResizeMode textResizeMode);
 
     ImFont *getFont() const;
-    void setFont(ImFont *font);
+    TextView * setFont(ImFont *font);
 
-    void setFontDefault(const ImFontConfig* font_cfg = NULL);
-    void setFontFromFileTTF(const char* filename, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL);
-    void setFontFromMemoryTTF(void* font_data, int font_size, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL); // Note: Transfer ownership of 'ttf_data' to ImFontAtlas! Will be deleted after destruction of the atlas. Set font_cfg->FontDataOwnedByAtlas=false to keep ownership of your data and it won't be freed.
-    void setFontFromMemoryCompressedTTF(const void* compressed_font_data, int compressed_font_size, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL); // 'compressed_font_data' still owned by caller. Compress with binary_to_compressed_c.cpp.
-    void setFontFromMemoryCompressedBase85TTF(const char* compressed_font_data_base85, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL);              // 'compressed_font_data_base85' still owned by caller. Compress with binary_to_compressed_c.cpp with -base85 parameter.
+    TextView * setFontDefault(const ImFontConfig* font_cfg = NULL);
+    TextView * setFontFromFileTTF(const char* filename, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL);
+    TextView * setFontFromMemoryTTF(void* font_data, int font_size, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL); // Note: Transfer ownership of 'ttf_data' to ImFontAtlas! Will be deleted after destruction of the atlas. Set font_cfg->FontDataOwnedByAtlas=false to keep ownership of your data and it won't be freed.
+    TextView * setFontFromMemoryCompressedTTF(const void* compressed_font_data, int compressed_font_size, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL); // 'compressed_font_data' still owned by caller. Compress with binary_to_compressed_c.cpp.
+    TextView * setFontFromMemoryCompressedBase85TTF(const char* compressed_font_data_base85, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL);              // 'compressed_font_data_base85' still owned by caller. Compress with binary_to_compressed_c.cpp with -base85 parameter.
 
     float getFontSize() const;
 
-    void setFontSize(float fontSize);
+    TextView * setFontSize(float fontSize);
 
     const std::string &getText() const;
 
-    void setText(const std::string &text);
+    TextView * setText(const std::string &text);
 
     const VertexEngine::Color4 &getTextColor() const;
 
-    void setTextColor(const VertexEngine::Color4 &textColor);
-
-    void onCreate() override;
+    TextView * setTextColor(const VertexEngine::Color4 &textColor);
 
     void onDraw() override;
 
     bool onTouchEvent(MultiTouch &touch) override;
 
-    void setFontInternal(ImFont *pFont);
+    TextView * setFontInternal(ImFont *pFont);
 
     void onMeasure() override;
 

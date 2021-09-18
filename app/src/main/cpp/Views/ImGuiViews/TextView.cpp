@@ -6,8 +6,9 @@
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wshadow"
-#define IMGUI_DEFINE_MATH_OPERATORS
 
+// access ImguiContext and other internals
+#define IMGUI_DEFINE_MATH_OPERATORS
 #include <imgui_internal.h>
 
 bool TextView::onTouchEvent(MultiTouch &touch) {
@@ -44,10 +45,6 @@ void TextView::beforeFrame() {
             // imgui does not seem to have a MouseUp
         }
     }
-}
-
-void TextView::onCreate() {
-    setFontSize(fontSize_Load);
 }
 
 void TextView::onMeasure() {
@@ -91,7 +88,7 @@ void TextView::onLayout(bool changed, const Rectangle &dimensions, DrawTools &dr
     computed_font_size = imgui_context->FontSize;
 }
 
-void TextView::drawBoundings() {
+TextView * TextView::drawBoundings() {
     ImGui::SetNextWindowPos({0, 0});
     ImGui::SetNextWindowSize(imgui_io->DisplaySize);
 
@@ -146,9 +143,10 @@ void TextView::drawBoundings() {
     imgui_context->FontSize = computed_font_size;
 
     ImGui::PopStyleVar();
+    return this;
 }
 
-void TextView::drawText() {
+TextView * TextView::drawText() {
     ImGui::SetNextWindowPos({0, 0});
     ImGui::SetNextWindowSize(imgui_io->DisplaySize);
 
@@ -191,16 +189,16 @@ void TextView::drawText() {
 
     ImGui::PopStyleColor();
     ImGui::PopStyleVar();
+    return this;
 }
 
 void TextView::onDraw() {
     if (font.load() == nullptr || needsFontSet.load()) return;
-    
-    drawBoundings();
-    drawText();
+
+    drawBoundings()->drawText();
 }
 
-void TextView::computeFontSize(const Rectangle &dimensions, const char * text) {
+TextView * TextView::computeFontSize(const Rectangle &dimensions, const char * text) {
     // it seems that, in ImGui
     // assuming no text wrapping,
     // textSize.y is equal to the font size
@@ -233,6 +231,7 @@ void TextView::computeFontSize(const Rectangle &dimensions, const char * text) {
             textSize = ImGui::CalcTextSize(text, nullptr, false, -1.0f);
         }
     }
+    return this;
 }
 
 float TextView::getUpperBound(std::vector<float> & vec, float input) {
@@ -255,7 +254,7 @@ float TextView::getLowerBound(std::vector<float> & vec, float input) {
     return *n;
 };
 
-void TextView::cache() {
+TextView * TextView::cache() {
     size_t size = values.size();
     if (size < 2) {
         Log::Error_And_Throw("values must contain at least 2 elements");
@@ -337,51 +336,57 @@ void TextView::cache() {
         imgui_context->FontSize = font_size;
         min_loaded = cache_fontSize_Load == min;
     }
+    return this;
 }
 
 TextView::TextResizeMode TextView::getTextResizeMode() const {
     return textResizeMode;
 }
 
-void TextView::setTextResizeMode(TextView::TextResizeMode textResizeMode) {
+TextView * TextView::setTextResizeMode(TextView::TextResizeMode textResizeMode) {
     TextView::textResizeMode = textResizeMode;
+    return this;
 }
 
 float TextView::getFontSize() const {
     return imgui_context->FontSize;
 }
 
-void TextView::setFontSize(float fontSize) {
+TextView * TextView::setFontSize(float fontSize) {
     font_size_to_set = fontSize;
     font_size_change.store(true);
+    return this;
 }
 
 const std::string &TextView::getText() const {
     return text;
 }
 
-void TextView::setText(const std::string &text) {
+TextView * TextView::setText(const std::string &text) {
     TextView::text = text;
+    return this;
 }
 
 const VertexEngine::Color4 &TextView::getTextColor() const {
     return textColor;
 }
 
-void TextView::setTextColor(const VertexEngine::Color4 &textColor) {
+TextView * TextView::setTextColor(const VertexEngine::Color4 &textColor) {
     TextView::textColor = textColor;
+    return this;
 }
 
 ImFont *TextView::getFont() const {
     return font.load();
 }
 
-void TextView::setFont(ImFont *font) {
+TextView * TextView::setFont(ImFont *font) {
     TextView::font.store(font);
     needsFontSet.store(true);
+    return this;
 }
 
-void TextView::setFontDefault(const ImFontConfig *font_cfg_template) {
+TextView * TextView::setFontDefault(const ImFontConfig *font_cfg_template) {
     auto * default_font_cfg = imgui_io->Fonts->Fonts.Data[0]->ConfigData;
     ImFontConfig font_cfg;
     font_cfg.OversampleH = default_font_cfg->OversampleH;
@@ -396,7 +401,7 @@ void TextView::setFontDefault(const ImFontConfig *font_cfg_template) {
     font_cfg.EllipsisChar = default_font_cfg->EllipsisChar;
     font_cfg.GlyphOffset.y = 1;
 
-    setFontFromMemoryTTF(
+    return setFontFromMemoryTTF(
                          FontData,
                          default_font_cfg->FontDataSize,
                          font_cfg.SizePixels, &font_cfg,
@@ -404,42 +409,43 @@ void TextView::setFontDefault(const ImFontConfig *font_cfg_template) {
     );
 }
 
-void TextView::setFontFromFileTTF(const char *filename, float size_pixels,
+TextView * TextView::setFontFromFileTTF(const char *filename, float size_pixels,
                                    const ImFontConfig *font_cfg_template,
                                    const ImWchar *glyph_ranges) {
     imgui_io->Fonts->Clear();
-    setFont(imgui_io->Fonts->AddFontFromFileTTF(filename, size_pixels, font_cfg_template, glyph_ranges));
+    return setFont(imgui_io->Fonts->AddFontFromFileTTF(filename, size_pixels, font_cfg_template, glyph_ranges));
 }
 
-void TextView::setFontFromMemoryTTF(void *ttf_data, int ttf_size, float size_pixels,
+TextView * TextView::setFontFromMemoryTTF(void *ttf_data, int ttf_size, float size_pixels,
                                      const ImFontConfig *font_cfg_template,
                                      const ImWchar *glyph_ranges) {
     imgui_io->Fonts->Clear();
-    setFont(imgui_io->Fonts->AddFontFromMemoryTTF(ttf_data, ttf_size, size_pixels, font_cfg_template, glyph_ranges));
+    return setFont(imgui_io->Fonts->AddFontFromMemoryTTF(ttf_data, ttf_size, size_pixels, font_cfg_template, glyph_ranges));
 }
 
-void
-TextView::setFontFromMemoryCompressedTTF(const void *compressed_ttf_data, int compressed_ttf_size,
-                                          float size_pixels, const ImFontConfig *font_cfg_template,
+TextView * TextView::setFontFromMemoryCompressedTTF(const void *compressed_ttf_data,
+                                          int compressed_ttf_size, float size_pixels,
+                                          const ImFontConfig *font_cfg_template,
                                           const ImWchar *glyph_ranges) {
     imgui_io->Fonts->Clear();
-    setFont(imgui_io->Fonts->AddFontFromMemoryCompressedTTF(compressed_ttf_data, compressed_ttf_size, size_pixels, font_cfg_template, glyph_ranges));
+    return setFont(imgui_io->Fonts->AddFontFromMemoryCompressedTTF(compressed_ttf_data, compressed_ttf_size, size_pixels, font_cfg_template, glyph_ranges));
 }
 
-void TextView::setFontFromMemoryCompressedBase85TTF(const char *compressed_ttf_data_base85,
+TextView * TextView::setFontFromMemoryCompressedBase85TTF(const char *compressed_ttf_data_base85,
                                                      float size_pixels,
                                                      const ImFontConfig *font_cfg,
                                                      const ImWchar *glyph_ranges) {
     imgui_io->Fonts->Clear();
-    setFont(imgui_io->Fonts->AddFontFromMemoryCompressedBase85TTF(compressed_ttf_data_base85, size_pixels, font_cfg, glyph_ranges));
+    return setFont(imgui_io->Fonts->AddFontFromMemoryCompressedBase85TTF(compressed_ttf_data_base85, size_pixels, font_cfg, glyph_ranges));
 }
 
-void TextView::setFontInternal(ImFont *pFont) {
+TextView * TextView::setFontInternal(ImFont *pFont) {
     ImGui::SetCurrentFont(pFont);
     // the font size is only set if we have a window,
     // however the font cannot be loaded inside a frame
     // so we need to manually set the font size
     imgui_context->FontSize = pFont->FontSize;
+    return this;
 }
 
 TextView::TextView() {
